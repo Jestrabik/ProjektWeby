@@ -16,6 +16,11 @@ snake case (př. nazev_databaze)
 česky
 
 pascal case (př. NazevModelu)
+### Názvy složek
+česky
+
+jednotné číslo, všechno malým písmenem
+
 ### Názvy Views:
 česky
 
