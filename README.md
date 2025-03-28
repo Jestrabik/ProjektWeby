@@ -8,29 +8,29 @@
 ## Jazyk
 **Databáze:**
 
-česky
+anglicky
 
 jednotné číslo, všechno malým písmenem
 snake case (př. nazev_databaze)
 ### Modelů, kontrolerů, migrací, seederů a knihoven:
-česky
+anglicky
 
 pascal case (př. NazevModelu)
 ### Názvy složek Views
-česky
+anglicky
 
 jednotné číslo, všechno malým písmenem
 
 ### Názvy Views:
-česky
+anglicky
 
 camel case (př. hlavniStrana)
 ### Názvy ostatních tříd, metod a proměnných:
-česky
+anglicky
 
 camel case (př. nazevTridy)
 
 ### Názvy route
-česky
+anglicky
 
 kebab case (př. pridat-uzivatel)
