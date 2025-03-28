@@ -24,3 +24,8 @@ camel case (př. hlavniStrana)
 česky
 
 camel case (př. nazevTridy)
+
+### Názvy route
+česky
+
+kebab case (př. pridat-uzivatel)
