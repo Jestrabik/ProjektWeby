@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => 'fojtik',
+        'username'     => 'root',
         'password'     => '',
-        'database'     => '',
+        'database'     => 'fojtik',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
