@@ -1,0 +1,16 @@
+insert into r6_maps (map_name) values ('Lair');
+insert into r6_maps (map_name) values ('Nighthaven Labs');
+insert into r6_maps (map_name) values ('Emerald Plains');
+insert into r6_maps (map_name) values ('Bank');
+insert into r6_maps (map_name) values ('Border');
+insert into r6_maps (map_name) values ('Chalet');
+insert into r6_maps (map_name) values ('Clubhouse');
+insert into r6_maps (map_name) values ('Coastline');
+insert into r6_maps (map_name) values ('Oregon');
+insert into r6_maps (map_name) values ('Kanal');
+insert into r6_maps (map_name) values ('Kafe Dostoyevsky');
+insert into r6_maps (map_name) values ('Consulate');
+insert into r6_maps (map_name) values ('Outback');
+insert into r6_maps (map_name) values ('Skyscraper');
+insert into r6_maps (map_name) values ('Theme Park');
+insert into r6_maps (map_name) values ('Villa');
