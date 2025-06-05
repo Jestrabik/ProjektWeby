@@ -47,6 +47,22 @@ class R6Player extends Migration
                 'type'       => 'INT',
                 'constraint' => 5,
             ],
+            'created_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'description' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
         ]);
 
         // Primární klíč
