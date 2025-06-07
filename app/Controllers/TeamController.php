@@ -19,9 +19,9 @@ class TeamController extends BaseController
         $db = \Config\Database::connect();
         $builder = $db->table('r6_team');
         $builder->select('r6_team.*, COUNT(r6_player.id) as player_count');
-        $builder->join('r6_player', 'r6_player.team_id = r6_team.id AND r6_player.deleted_at IS NULL', 'left');
+        $builder->join('r6_player', 'r6_player.team_id = r6_team.team_id AND r6_player.deleted_at IS NULL', 'left');
         $builder->where('r6_team.deleted_at', null);
-        $builder->groupBy('r6_team.id');
+        $builder->groupBy('r6_team.team_id');
         $teams = $builder->get()->getResultArray();
 
         return view('team/list', [

@@ -1,3 +1,13 @@
+CREATE TABLE r6_match (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    map VARCHAR(100),
+    match_date DATE,
+    match_duration FLOAT,
+    winning_team VARCHAR(100),
+    final_result VARCHAR(10),
+    mvp VARCHAR(100)
+);
+
 insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-09-27', 0.55, 'DarkZero Esports (DZ)', '4:5', 'Cletis Arnoldi');
 insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-07-19', 1.39, 'KOI', '2:4', 'Tony Gummer');
 insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-08-04', 2.72, 'Virtus.pro', '5:4', 'Kaela Cumbes');

@@ -16,7 +16,7 @@ class PlayerModel extends Model
         'player_name',
         'team_id',
         'nationality_id',
-        'role_id',
+        'role',
         'age',
         'headshot_percentage',
         'total_games',

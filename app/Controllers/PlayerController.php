@@ -22,20 +22,20 @@ class PlayerController extends BaseController
         $this->playerModel = new PlayerModel();
         $this->nationalityModel = new NationalityModel();
         $this->teamModel = new TeamModel();
-        $this->roleModel = new PlayerRoleModel();
     }
 
     // Výpis hráčů (joiny + stránkování)
     public function index()
     {
-        $playerModel = new \App\Models\PlayerModel();
         $perPage = (new Players())->perPage;
 
-        $players = $playerModel
-            ->where('deleted_at', null)
+        $players = $this->playerModel
+            ->select('r6_player.*, r6_team.team_name')
+            ->join('r6_team', 'r6_player.team_id = r6_team.team_id', 'left')
+            ->where('r6_player.deleted_at', null)
             ->paginate($perPage);
 
-        $pager = $playerModel->pager;
+        $pager = $this->playerModel->pager;
 
         return view('player/list', [
             'players' => $players,
@@ -167,5 +167,24 @@ class PlayerController extends BaseController
             AlertLibrary::setAlert('danger', 'Smazání hráče se nezdařilo.');
         }
         return redirect()->to('/players');
+    }
+
+    public function detail($id)
+    {
+        $player = $this->playerModel
+            ->select('r6_player.*, r6_team.team_name, nationalities.nationality')
+            ->join('r6_team', 'r6_player.team_id = r6_team.team_id', 'left')
+            ->join('nationalities', 'r6_player.nationality = nationalities.nationality', 'left')
+            ->where('r6_player.id', $id)
+            ->where('r6_player.deleted_at', null)
+            ->first();
+
+        if (!$player) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Hráč nenalezen');
+        }
+
+        return view('player/detail', [
+            'player' => $player,
+        ]);
     }
 }

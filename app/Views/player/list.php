@@ -13,14 +13,16 @@
     <?php foreach ($players as $player): ?>
     <div class="col">
         <div class="card h-100">
-            <?php if (!empty($player['image'])): ?>
-                <img src="<?= base_url('uploads/' . $player['image']) ?>" class="card-img-top" alt="<?= esc($player['name']) ?>">
-            <?php endif; ?>
-            <div class="card-body">
-                <h5 class="card-title"><?= esc($player['name']) ?></h5>
-                <p class="card-text"><?= esc($player['description']) ?></p>
-                <a href="<?= site_url('players/detail/' . $player['id'] . '/' . urlencode($player['name'])) ?>" class="btn btn-primary">Detail</a>
-                <!-- V kartě hráče -->
+            <div class="card-body text-center">
+                <h5 class="card-title"><?= esc($player['player_name']) ?></h5>
+                <p class="card-text">
+                    <?php if (isset($player['team_name'])): ?>
+                        <?= esc($player['team_name']) ?>
+                    <?php else: ?>
+                        Tým neznámý
+                    <?php endif; ?>
+                </p>
+                <a href="<?= site_url('players/detail/' . $player['id'] . '/' . urlencode($player['player_name'])) ?>" class="btn btn-primary">Detail</a>
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $player['id'] ?>">
                     Smazat
                 </button>
@@ -30,8 +32,9 @@
     <?php endforeach; ?>
 </div>
 
-<div class="mt-4">
-    <?= $pager->links() ?>
+<!-- Stránkování dole pod kartami jako tlačítka -->
+<div class="mt-4 d-flex justify-content-center">
+    <?= $pager->links('default', 'default_full') ?>
 </div>
 
 <?php foreach ($players as $player): ?>
@@ -44,7 +47,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
       </div>
       <div class="modal-body">
-        Opravdu chcete smazat hráče <strong><?= esc($player['name']) ?></strong>?
+        Opravdu chcete smazat hráče <strong><?= esc($player['player_name']) ?></strong>?
       </div>
       <div class="modal-footer">
         <form method="post" action="<?= site_url('players/delete/' . $player['id']) ?>">
