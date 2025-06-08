@@ -1,2010 +1,2072 @@
-CREATE TABLE r6_match (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    map VARCHAR(100),
-    match_date DATE,
-    match_duration FLOAT,
-    winning_team VARCHAR(100),
-    final_result VARCHAR(10),
-    mvp VARCHAR(100)
-);
+-- phpMyAdmin SQL Dump
+-- version 5.2.2
+-- https://www.phpmyadmin.net/
+--
+-- Počítač: localhost
+-- Vytvořeno: Ned 08. čen 2025, 07:16
+-- Verze serveru: 8.4.3
+-- Verze PHP: 8.3.16
 
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-09-27', 0.55, 'DarkZero Esports (DZ)', '4:5', 'Cletis Arnoldi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-07-19', 1.39, 'KOI', '2:4', 'Tony Gummer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-08-04', 2.72, 'Virtus.pro', '5:4', 'Kaela Cumbes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-01-01', 1.25, 'FaZe Clan', '4:5', 'Wadsworth Soitoux');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-10-20', 1.47, 'Elevate', '0:3', 'Arty Englishby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-08-03', 2.01, 'Team Liquid', '4:5', 'Scotti Rawson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-05-09', 2.77, 'KOI', '5:4', 'Leonhard Haker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-02-08', 1.97, 'w7m esports', '3:0', 'Amberly Huntar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-04-25', 2.16, 'G2 Esports', '4:5', 'Kenn Bedingfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-01-06', 2.6, 'Oxygen Esports', '0:3', 'Dorrie Foxwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-07-02', 1.59, 'Soniqs', '4:2', 'Cory Mcettrick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-07-09', 2.11, 'Wolves Esports', '5:3', 'Ravi Eronie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-12-15', 3.6, 'M80', '4:2', 'Micah Mitkov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-06-15', 2.35, 'Soniqs', '5:4', 'Nannette Kingescot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-01-18', 2.77, 'Team Liquid', '5:4', 'Ki Vince');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-03-18', 4.95, 'Team BDS', '3:5', 'Ginger Walker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-09-02', 1.61, 'Spacestation Gaming (SSG)', '2:4', 'Lauritz Eivers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-03-09', 4.0, 'Los + oNe', '4:2', 'Tonia M''Chirrie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-05-02', 1.2, 'MNM Gaming', '3:5', 'Lombard Durning');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-09-11', 0.52, 'KOI', '4:2', 'Dredi Monni');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-11-13', 4.88, 'Dplus', '4:2', 'Gaile Vakhlov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-07-01', 3.05, 'FURY', '5:3', 'Madelena Tosspell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-12-18', 4.24, 'FaZe Clan', '3:5', 'Stanfield Unwin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-08-20', 0.43, 'FURIA Esports', '3:0', 'Kean Obal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-11-26', 2.85, 'Dplus', '0:3', 'Heriberto Nudds');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-04-05', 0.53, 'Dplus', '5:4', 'Nikkie Delacroux');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-08-25', 2.09, 'DarkZero Esports (DZ)', '4:2', 'Rhys Farry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-02-02', 1.03, 'Natus Vincere (NAVI)', '5:3', 'Maximilianus Elijahu');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-04-17', 1.84, 'w7m esports', '4:5', 'Padraic Daintith');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-03-19', 3.45, 'Team BDS', '4:5', 'Pam Cowx');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-04-13', 0.45, 'Natus Vincere (NAVI)', '4:5', 'Perren Pound');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-02-23', 0.29, 'Natus Vincere (NAVI)', '3:0', 'Anna-diane Tash');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-06-01', 1.19, 'Dplus', '5:3', 'Alexia Top');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-03-24', 4.82, 'FURY', '4:2', 'Artemus Stapells');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-09-05', 4.39, 'DarkZero Esports (DZ)', '5:4', 'Gigi Ivatts');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-18', 3.72, 'KOI', '4:5', 'Nevins Stanesby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-07-19', 2.59, 'Team BDS', '4:2', 'Freida Vasyunkin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-04-27', 4.54, 'Los + oNe', '4:2', 'Cord Hacquel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-01-03', 0.21, 'DarkZero Esports (DZ)', '3:0', 'Beckie Robinet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-21', 1.69, 'Virtus.pro', '5:4', 'Katrine Ridsdole');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-03-02', 4.89, 'Soniqs', '5:3', 'Morgan Dunk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-03-28', 3.38, 'MNM Gaming', '3:0', 'Klarika Puddin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-12-01', 0.94, 'DarkZero Esports (DZ)', '3:5', 'Celia Harman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-05-24', 3.8, 'Soniqs', '5:3', 'Andros Tschiersch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-04-21', 0.38, 'Natus Vincere (NAVI)', '4:5', 'Andreana Brentnall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-01-17', 2.91, 'SCARZ', '5:3', 'Urbanus Theriot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-03-18', 1.74, 'Soniqs', '0:3', 'Chris Bilton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-02-13', 1.38, 'Virtus.pro', '4:5', 'Filip Bundock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-12-06', 4.66, 'Virtus.pro', '0:3', 'Gnni Tankus');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-03-21', 2.04, 'KOI', '4:2', 'Cherin Le Noire');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-08', 3.27, 'KOI', '2:4', 'Kevyn Cuss');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-11-05', 2.2, 'MNM Gaming', '4:2', 'Alexandra Salasar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-02-26', 2.59, 'w7m esports', '3:5', 'Alanson Stidston');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-01-11', 0.01, 'Soniqs', '5:3', 'Chrissy Dudenie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-02-26', 0.75, 'Oxygen Esports', '4:5', 'Eugenio Mackilpatrick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-10-12', 0.53, 'w7m esports', '4:5', 'Emmalynn Gatchel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-05-20', 4.25, 'Los + oNe', '4:2', 'Ilka Blundel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-01', 4.92, 'w7m esports', '5:3', 'Marilin Gomersal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-12-05', 3.21, 'Team BDS', '2:4', 'Thedrick Fedynski');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-07-17', 4.31, 'KOI', '0:3', 'Simmonds Dulany');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-03-12', 4.25, 'MNM Gaming', '5:3', 'Boony Brimley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-09-13', 4.94, 'G2 Esports', '4:2', 'Darrelle Hartigan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-03-29', 1.28, 'G2 Esports', '4:2', 'Ingar Pickwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-11-12', 0.41, 'Team Liquid', '3:5', 'Alon Whiston');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-11-12', 0.4, 'M80', '4:5', 'Virgie Eastham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-01-10', 4.16, 'M80', '4:2', 'Steve Clews');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-01-16', 1.31, 'Soniqs', '3:0', 'Frazier Tattersall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-03-29', 2.09, 'Oxygen Esports', '5:4', 'Cordey Gwilliams');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-06-15', 2.74, 'Los + oNe', '5:4', 'Naoma Birdwistle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-04-15', 1.1, 'SCARZ', '0:3', 'Gino Vittery');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-07-22', 4.4, 'FURY', '5:4', 'Donall Reckus');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-12-06', 4.31, 'Soniqs', '3:5', 'Spence Trulock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-05-08', 3.98, 'Team BDS', '3:0', 'Tanney Restieaux');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-03-16', 0.54, 'FaZe Clan', '2:4', 'Keary Meech');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-01-11', 3.68, 'FaZe Clan', '5:4', 'Alida Colleck');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-11-22', 4.87, 'Team Liquid', '0:3', 'Nial Hance');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-04-16', 0.6, 'FURIA Esports', '5:4', 'Sharity Edington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-08-23', 4.57, 'w7m esports', '2:4', 'Marga Miche');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-10-08', 2.63, 'Wolves Esports', '5:3', 'Riane Abrahmovici');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-08-27', 3.01, 'FaZe Clan', '4:5', 'Friedrich Ciobutaro');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-07-23', 0.23, 'Virtus.pro', '2:4', 'Anstice Mc Andrew');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-12-20', 1.9, 'DarkZero Esports (DZ)', '5:4', 'Wendie Cartmer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-04-22', 0.94, 'Dplus', '0:3', 'Sacha Bales');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-08-26', 4.12, 'Elevate', '4:2', 'Kristo Cawt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-04-28', 4.51, 'w7m esports', '3:5', 'Louisa Vacher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-03-05', 2.56, 'FaZe Clan', '3:5', 'Iormina Cornelleau');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-09-27', 4.69, 'G2 Esports', '4:2', 'Galina Shippam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-04-18', 3.4, 'w7m esports', '5:4', 'Marthena McCardle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-12-28', 3.16, 'w7m esports', '5:4', 'Kort Sinott');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-12-10', 0.22, 'Team Liquid', '5:4', 'Arvin Ranby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-01-06', 3.83, 'SCARZ', '3:5', 'Jonell Ferrotti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-06-19', 4.4, 'M80', '3:5', 'Jerrine Van Arsdale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-04-22', 3.54, 'MNM Gaming', '3:5', 'Roseanna Deviney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-02-12', 4.91, 'Oxygen Esports', '4:2', 'Brynne Franzelini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-03', 3.55, 'Virtus.pro', '2:4', 'Petra Levis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-08-31', 0.13, 'M80', '2:4', 'Karlen O''Hern');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-07-04', 4.58, 'Soniqs', '3:0', 'Kalie Summerlad');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-01-02', 2.82, 'Elevate', '4:2', 'Silva Bates');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-03-06', 1.41, 'G2 Esports', '5:3', 'Casey Mathiasen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-21', 4.77, 'FURY', '4:2', 'Ephraim Ettles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-05-13', 4.31, 'Oxygen Esports', '4:5', 'Kelli Lomaz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-10-11', 0.12, 'Virtus.pro', '3:5', 'Deanna Eastment');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-10-01', 4.57, 'KOI', '5:4', 'Odelia Matei');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-11-06', 0.02, 'Natus Vincere (NAVI)', '4:5', 'Jaime Bannister');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-05-10', 2.34, 'FURY', '5:4', 'Silvio Whyffen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-09-01', 3.57, 'FURIA Esports', '4:5', 'Seana Botcherby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-03-11', 4.5, 'SCARZ', '4:2', 'Anstice Tillman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-04', 2.38, 'Team Liquid', '2:4', 'Winfield Plewes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-06-12', 0.82, 'Team Liquid', '3:5', 'Micheil Allan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-02-02', 2.68, 'MNM Gaming', '4:2', 'Cassie Faustin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-07-04', 4.44, 'M80', '0:3', 'Jennette Canizares');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-03-31', 2.73, 'G2 Esports', '4:2', 'Avictor Houlison');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-10-23', 4.67, 'Elevate', '5:3', 'Avram Pic');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-27', 2.61, 'Virtus.pro', '4:5', 'Boigie Lowe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-10-31', 0.21, 'Team Liquid', '3:5', 'Micki Gaskins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-05-04', 0.64, 'Oxygen Esports', '3:5', 'Jermaine Parfett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-02-22', 4.13, 'Oxygen Esports', '3:5', 'Pammie Scowcraft');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-05-26', 2.8, 'DarkZero Esports (DZ)', '3:0', 'Hillyer Duly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-14', 2.69, 'MNM Gaming', '2:4', 'Maxine Pasterfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-06-09', 0.33, 'Soniqs', '3:0', 'Ramona Hallward');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-09-25', 4.44, 'Team Liquid', '3:0', 'Griswold Thurlborn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-07-24', 4.46, 'Wolves Esports', '4:5', 'Marya Brennon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-11-09', 2.03, 'FURY', '3:0', 'Andriette Radke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-01-03', 2.99, 'FaZe Clan', '5:4', 'Clevey Dalli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-02-27', 0.12, 'FaZe Clan', '0:3', 'Antonino Wraith');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-30', 3.52, 'Wolves Esports', '3:0', 'Gayel Plackstone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-10-18', 2.59, 'Spacestation Gaming (SSG)', '3:5', 'Sibilla Packwood');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-07-27', 2.74, 'Team BDS', '4:5', 'Wolfie Tunnah');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-02-03', 1.3, 'Virtus.pro', '3:5', 'Annmarie Bleacher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-09-24', 4.99, 'Elevate', '4:2', 'Lauri Ruperti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-01-20', 1.2, 'Los + oNe', '5:3', 'Christal Grievson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-07-09', 1.69, 'Elevate', '5:4', 'Arden Chastney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-09-02', 3.41, 'Spacestation Gaming (SSG)', '5:4', 'Brander Sheilds');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-05-21', 1.44, 'Team Liquid', '4:5', 'Sterne Desforges');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-03-19', 0.59, 'Team Liquid', '3:0', 'Read Trayton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-06-01', 4.45, 'G2 Esports', '5:3', 'Nadia Frier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-12-12', 1.45, 'Virtus.pro', '4:2', 'Mandel Plimmer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-08-25', 2.61, 'Virtus.pro', '3:5', 'Hollie Jefferd');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-05-06', 2.31, 'FURIA Esports', '3:5', 'Gelya Jimpson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-03-17', 4.5, 'Spacestation Gaming (SSG)', '3:0', 'Gunther Zanini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-09-03', 3.22, 'Natus Vincere (NAVI)', '3:0', 'Johnny Goodread');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-10-23', 2.09, 'FURY', '5:3', 'Eve Alentyev');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-09-21', 1.85, 'Elevate', '4:5', 'Myrlene Belsham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-01-05', 4.07, 'Spacestation Gaming (SSG)', '3:0', 'Deirdre Brigham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-01-04', 2.03, 'Soniqs', '4:2', 'Egbert Freeburn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-10-02', 4.65, 'FURY', '4:5', 'Allen Bristo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-04-05', 4.61, 'MNM Gaming', '4:5', 'Walt Wolters');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-10-08', 4.31, 'FaZe Clan', '2:4', 'Jonie Danielsen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-09-21', 3.47, 'KOI', '5:3', 'Felita Angear');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-01-21', 1.1, 'M80', '3:5', 'Cecilio Wards');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-07-31', 3.92, 'Virtus.pro', '3:0', 'Alvis Rosander');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-01-12', 0.54, 'DarkZero Esports (DZ)', '5:4', 'Carmela Dilland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-06-03', 1.14, 'Natus Vincere (NAVI)', '2:4', 'Gradeigh Kelway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-01-14', 4.95, 'Natus Vincere (NAVI)', '4:5', 'Thatcher Yeoman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-12-18', 2.37, 'DarkZero Esports (DZ)', '4:5', 'Lenard Hachette');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-01-12', 0.4, 'Wolves Esports', '5:4', 'Averyl MacKeig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-12-28', 0.35, 'Dplus', '3:5', 'Algernon Brunton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-21', 1.43, 'Dplus', '4:2', 'Lonnie Higgonet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-09-09', 0.86, 'Soniqs', '3:5', 'Chucho Sydney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-07-03', 3.53, 'Los + oNe', '3:0', 'Emmery Cerie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-07-08', 1.54, 'FURIA Esports', '4:2', 'Kelly Frankema');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-07-27', 0.51, 'MNM Gaming', '5:3', 'Clyve Gyles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-06-29', 0.71, 'Oxygen Esports', '3:5', 'Madelyn Duhig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-11-07', 4.53, 'DarkZero Esports (DZ)', '2:4', 'Lonna Christon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-07-02', 2.13, 'Virtus.pro', '4:5', 'Jorgan Ponter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-06-12', 2.82, 'Spacestation Gaming (SSG)', '5:3', 'Charlena Czaja');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-09-24', 1.42, 'Team Liquid', '3:0', 'Carmencita Humpherson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-05-23', 1.71, 'Virtus.pro', '3:0', 'Isac McAloren');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-10-30', 4.57, 'Soniqs', '5:3', 'Jeana Crowley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-09-07', 3.5, 'FURY', '4:5', 'Kristo Celloni');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-09-25', 2.42, 'SCARZ', '3:5', 'Anders Halse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-04-12', 1.59, 'w7m esports', '4:5', 'Donall Mattia');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-01-24', 0.49, 'Wolves Esports', '5:4', 'Burtie Annwyl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-01-04', 2.94, 'Wolves Esports', '5:4', 'Tam Wagnerin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-05-23', 2.88, 'FURIA Esports', '2:4', 'Inglis Sivier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-08-24', 0.77, 'w7m esports', '4:2', 'Curt Brunon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-06-11', 0.99, 'SCARZ', '4:5', 'Stanfield Addenbrooke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-09-25', 2.03, 'FURY', '4:5', 'Chuck Domnick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-12-04', 0.7, 'Wolves Esports', '5:4', 'Ulrick Coopland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-12-13', 2.43, 'FURIA Esports', '0:3', 'Wilhelm Brislawn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-09-17', 2.04, 'FURY', '4:5', 'Aloise Mushart');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-02-13', 1.68, 'KOI', '0:3', 'Carie Ortes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-02-23', 4.14, 'Natus Vincere (NAVI)', '3:0', 'Petey Veart');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-07-10', 1.01, 'FaZe Clan', '5:4', 'Simeon Hoggan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-09-14', 1.03, 'SCARZ', '4:2', 'Riobard Walter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-07-21', 2.55, 'Spacestation Gaming (SSG)', '5:4', 'Georgina Poetz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-03-03', 4.01, 'SCARZ', '5:3', 'Elvis Milington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-03-29', 0.0, 'FURIA Esports', '0:3', 'Amalee Tutton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-03-13', 1.92, 'w7m esports', '3:5', 'Bobbie Goshawk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-09-30', 1.81, 'KOI', '3:0', 'Carin Ebden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-03-25', 0.82, 'Wolves Esports', '3:0', 'Bliss Oldale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-04-03', 4.86, 'DarkZero Esports (DZ)', '5:3', 'Fee Emlin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-02-08', 0.6, 'MNM Gaming', '2:4', 'Mordy Benbough');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-02-28', 4.09, 'Team BDS', '3:0', 'Mervin Lody');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-12-30', 4.02, 'FaZe Clan', '3:0', 'Lauren Hindge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-12-27', 1.75, 'Elevate', '4:2', 'Kerri Zahor');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-05-18', 0.26, 'DarkZero Esports (DZ)', '4:5', 'Felike Ilyushkin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-08-04', 0.11, 'FaZe Clan', '4:2', 'Ramonda Olechnowicz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-01-17', 2.44, 'Soniqs', '5:3', 'Kermie O''Beirne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-09-20', 4.47, 'Virtus.pro', '5:4', 'Tiena Ratchford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-11-04', 0.21, 'Los + oNe', '5:4', 'Bekki Arbuckle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-02-08', 2.95, 'Virtus.pro', '3:5', 'Annmaria Summerson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-02-16', 3.29, 'Dplus', '3:5', 'Colly Atmore');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-10-28', 2.3, 'DarkZero Esports (DZ)', '3:0', 'Collie Andrieu');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-12-24', 3.39, 'MNM Gaming', '3:0', 'Libbie Deluca');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-08-31', 3.19, 'Dplus', '4:2', 'Hillyer Newitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-02-10', 2.0, 'KOI', '2:4', 'Nico Greatham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-12-25', 4.7, 'M80', '4:5', 'Quintus Franzewitch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-11-06', 2.76, 'FaZe Clan', '2:4', 'Con Kohrding');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-12-08', 1.53, 'w7m esports', '3:5', 'Dorree Maxsted');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-07-20', 2.74, 'Natus Vincere (NAVI)', '4:5', 'Raff Emeney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-09-22', 2.09, 'Virtus.pro', '3:5', 'Haily Remirez');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-08-10', 2.92, 'FaZe Clan', '3:0', 'Tildie Skillern');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-11-15', 2.2, 'w7m esports', '2:4', 'Aldin Berthon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-09-08', 4.64, 'FURY', '2:4', 'Pernell Iron');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-09-18', 2.53, 'Elevate', '4:5', 'Eloisa Lincoln');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-20', 0.83, 'Oxygen Esports', '5:4', 'Verne Perryn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-02-28', 4.06, 'Los + oNe', '5:4', 'Kylie Lodge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-03-05', 0.9, 'Oxygen Esports', '4:2', 'Aurelea Geator');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-12-10', 3.77, 'M80', '4:2', 'Bordie Gribbell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-03-18', 0.32, 'Team Liquid', '0:3', 'Merrill Landrieu');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-09-20', 2.77, 'Spacestation Gaming (SSG)', '4:2', 'Basilio Francke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-01-08', 0.29, 'Soniqs', '4:5', 'Everett Abells');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-01-13', 2.64, 'Virtus.pro', '4:5', 'Tamera Husthwaite');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-09', 3.69, 'M80', '0:3', 'Meridel Lavin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-04-14', 0.19, 'Los + oNe', '3:5', 'Benoit Bockin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-11-13', 2.91, 'Natus Vincere (NAVI)', '5:3', 'Tildi Brand-Hardy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-03-27', 2.78, 'Soniqs', '4:5', 'Daren Melledy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-12', 2.36, 'Team Liquid', '5:3', 'Jolene Gimbart');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-04-01', 1.05, 'KOI', '4:2', 'Isaac Ondrak');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-08-11', 4.67, 'Virtus.pro', '0:3', 'Morgen Dauber');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-01-24', 3.12, 'SCARZ', '5:3', 'Ode Matyushenko');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-03-10', 3.7, 'Team BDS', '3:0', 'Che Culvey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-05-24', 3.85, 'Los + oNe', '3:5', 'Bobbe Lapham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-10-31', 0.89, 'Elevate', '2:4', 'Nata Carstairs');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-29', 4.75, 'M80', '3:0', 'Mirabella Willshere');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-06-09', 2.67, 'DarkZero Esports (DZ)', '3:5', 'Hugo Smither');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-09-28', 2.97, 'MNM Gaming', '5:3', 'Angelita Smeall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-12-01', 0.11, 'Team Liquid', '0:3', 'Leora Waples');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-08-31', 2.85, 'Natus Vincere (NAVI)', '5:4', 'Kristien Stiven');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-02-10', 3.33, 'Team BDS', '3:0', 'Hill Twigley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-02-12', 3.14, 'w7m esports', '4:5', 'Vaclav Hornig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-04-14', 2.98, 'Team Liquid', '0:3', 'Tommy Leadston');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-09-11', 1.42, 'G2 Esports', '2:4', 'Maxie Northall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-09-15', 4.63, 'Elevate', '2:4', 'Garwin Presnail');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-05-28', 3.04, 'Los + oNe', '5:4', 'Ardeen MacVicar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-02-02', 3.7, 'Spacestation Gaming (SSG)', '3:5', 'Loralyn Sanzio');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-09-03', 4.66, 'Spacestation Gaming (SSG)', '4:2', 'Claudianus Murt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-05-18', 4.42, 'MNM Gaming', '3:0', 'Eugenius Matthessen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-11-15', 0.48, 'Los + oNe', '4:5', 'Nevil Kadd');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-12-18', 1.29, 'Spacestation Gaming (SSG)', '2:4', 'Boot Albro');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-09-19', 3.68, 'DarkZero Esports (DZ)', '5:4', 'Gayla Lithcow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-06-23', 4.87, 'DarkZero Esports (DZ)', '3:0', 'Hogan Grissett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-06-15', 0.77, 'Soniqs', '3:0', 'Mic Craggs');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-07-01', 3.81, 'KOI', '5:4', 'Daffy Girton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-04-17', 1.18, 'Spacestation Gaming (SSG)', '5:3', 'Maureene Spargo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-05-07', 2.17, 'Team Liquid', '5:3', 'Gayle Athey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-11-04', 0.6, 'Team Liquid', '5:3', 'Bertram Leamy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-12-28', 4.22, 'SCARZ', '0:3', 'Ginelle Twede');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-02-25', 1.76, 'FaZe Clan', '3:5', 'Chloette Foyston');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-02-06', 0.51, 'Dplus', '0:3', 'Pia Bibby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-06-27', 0.77, 'Wolves Esports', '5:4', 'Haley Baglan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-01-31', 2.46, 'Spacestation Gaming (SSG)', '5:4', 'Barnaby Kellogg');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-02-05', 4.48, 'Elevate', '5:4', 'Stillmann Hands');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-08-22', 3.31, 'M80', '5:4', 'Darda Hendrik');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-11-12', 4.98, 'Elevate', '3:0', 'Dana Mayfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-10-16', 4.06, 'Oxygen Esports', '5:4', 'Verne Malkinson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-12-16', 4.43, 'Team Liquid', '2:4', 'Zebedee MacGillacolm');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-10-05', 0.83, 'M80', '3:0', 'Maddie Blewmen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-07-17', 1.83, 'Spacestation Gaming (SSG)', '3:0', 'Laura Soggee');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-09-20', 4.13, 'DarkZero Esports (DZ)', '0:3', 'Hortense Kincaid');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-05-02', 1.8, 'MNM Gaming', '3:5', 'Jesse O''Gavin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-04-11', 1.43, 'Virtus.pro', '4:5', 'Irvin Treneer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-06-10', 0.55, 'SCARZ', '3:5', 'Amble Tailby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-04-05', 1.84, 'Dplus', '5:3', 'Phaedra Chable');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-15', 4.93, 'Oxygen Esports', '2:4', 'Steffie Ianne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-04-12', 3.34, 'KOI', '0:3', 'Gussi Stiegar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-03-18', 2.6, 'M80', '5:3', 'Nonnah Flewin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-11-07', 3.74, 'Spacestation Gaming (SSG)', '0:3', 'Alain Gilmour');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-08-18', 2.01, 'Wolves Esports', '5:4', 'Winnie Zottoli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-07-02', 3.91, 'MNM Gaming', '4:5', 'Sax Flaonier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-03-28', 1.11, 'Team Liquid', '4:2', 'Maiga Wynrahame');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-06-18', 0.2, 'MNM Gaming', '2:4', 'Dorry Dusey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-02-02', 0.2, 'Virtus.pro', '5:4', 'Yankee Stoffers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-12-12', 2.32, 'Spacestation Gaming (SSG)', '3:0', 'Dugald Lawley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-03-26', 4.45, 'Virtus.pro', '3:0', 'Gannon Shakelade');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-07-21', 3.36, 'Natus Vincere (NAVI)', '2:4', 'Monte Veljes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-11-09', 2.51, 'Virtus.pro', '5:3', 'Kareem Darmody');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-07-24', 0.17, 'MNM Gaming', '0:3', 'Bennie Perigeaux');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-08-24', 0.7, 'MNM Gaming', '4:5', 'Rochette Sesons');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-04-17', 3.57, 'DarkZero Esports (DZ)', '5:3', 'Scarface Combe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-07-09', 3.96, 'Natus Vincere (NAVI)', '0:3', 'Layla Gatenby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-07-10', 1.79, 'M80', '3:5', 'Corrinne Devall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-05-18', 0.22, 'FURIA Esports', '3:0', 'Molly Paulazzi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-06-24', 2.14, 'Wolves Esports', '3:0', 'Sindee Caudrelier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-01-03', 2.36, 'SCARZ', '0:3', 'Saloma Scandroot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-01-24', 4.09, 'Spacestation Gaming (SSG)', '0:3', 'Collen Bladon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-09-29', 0.04, 'M80', '0:3', 'Ariel Greader');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-09-08', 1.12, 'M80', '3:5', 'Gregorio Mc Grath');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-01-21', 4.64, 'FURIA Esports', '3:5', 'Aurea Kerfod');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-05-29', 3.16, 'Wolves Esports', '4:5', 'Christoper Lazenby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-06-11', 2.19, 'Natus Vincere (NAVI)', '0:3', 'Rutter Coady');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-01-15', 4.99, 'FaZe Clan', '4:5', 'Des Langeley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-06-19', 0.37, 'Los + oNe', '4:2', 'Cathryn Crookshanks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-09-29', 2.06, 'Oxygen Esports', '4:5', 'Pennie Ivanusyev');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-05-30', 3.36, 'KOI', '0:3', 'Catlee Scare');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-10-25', 0.9, 'Natus Vincere (NAVI)', '5:3', 'Shane Beadon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-10-28', 0.19, 'DarkZero Esports (DZ)', '3:5', 'Beale Wemes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-01-18', 4.64, 'DarkZero Esports (DZ)', '4:5', 'Clara Talby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-11-26', 4.82, 'Natus Vincere (NAVI)', '4:2', 'Beverley Trowill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-08-21', 4.68, 'Team Liquid', '4:2', 'Mimi Pergens');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-04-02', 4.84, 'Team BDS', '2:4', 'Eddie Sapena');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-11-18', 2.62, 'SCARZ', '3:5', 'Lezlie Dreossi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-05-22', 3.92, 'Natus Vincere (NAVI)', '0:3', 'Bale Hugin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-10-10', 4.57, 'DarkZero Esports (DZ)', '4:5', 'Fleur Baudassi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-05-09', 0.86, 'Elevate', '5:4', 'Justinn Robardet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-12-06', 4.03, 'Dplus', '5:3', 'Bentley Meaker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-04-27', 1.74, 'Team Liquid', '3:5', 'Christye Weiner');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-04-15', 4.11, 'Los + oNe', '4:5', 'Neile Di Dello');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-01-11', 4.64, 'Soniqs', '3:5', 'Linell Keatch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-02-11', 2.9, 'FURIA Esports', '4:2', 'Madalyn Ionesco');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-10-06', 1.52, 'Dplus', '4:5', 'Barbette Rogier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-08-13', 4.56, 'SCARZ', '2:4', 'Margarethe Clarycott');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-06-29', 0.51, 'w7m esports', '4:5', 'Lowe Duer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-02-24', 4.13, 'G2 Esports', '4:2', 'Darice Ousbie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-07-06', 1.89, 'FURIA Esports', '0:3', 'Kamilah Stuart');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-04-28', 2.7, 'Oxygen Esports', '3:0', 'Shena Everard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-10-30', 0.24, 'KOI', '5:4', 'Shelia Sclanders');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-06-30', 3.73, 'MNM Gaming', '4:5', 'Georgeanna Bertenshaw');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-06-14', 2.96, 'Team Liquid', '4:5', 'Atalanta Relph');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-06-28', 0.97, 'Team BDS', '4:2', 'Collete McInally');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-08-06', 3.34, 'KOI', '4:5', 'Quintilla Bukowski');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-05-21', 4.78, 'Dplus', '0:3', 'Alford Lusher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-05-11', 3.84, 'KOI', '3:5', 'Hebert Spofford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-08-10', 0.2, 'Oxygen Esports', '4:5', 'Sonia Milsap');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-08-31', 2.36, 'w7m esports', '5:4', 'Trumann Teodori');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-07-08', 2.43, 'Los + oNe', '3:0', 'Jacynth Poyle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-09-24', 2.85, 'KOI', '3:5', 'Benedict Matthai');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-04-26', 2.91, 'Virtus.pro', '0:3', 'Turner Mundy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-07-15', 2.6, 'MNM Gaming', '5:4', 'Grannie Matthiae');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-05-31', 3.81, 'Spacestation Gaming (SSG)', '3:5', 'Nicky Hourstan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-02-13', 3.72, 'Dplus', '0:3', 'Wileen Cunnow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-01-04', 2.66, 'Soniqs', '5:4', 'Kristi Dinis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-18', 2.35, 'KOI', '5:3', 'Anny Thickin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-08-26', 2.18, 'Dplus', '4:2', 'Tani Welton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-08-27', 1.87, 'MNM Gaming', '0:3', 'Evan Johl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-06-10', 1.35, 'Soniqs', '4:5', 'Emera Merida');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-12-17', 1.13, 'w7m esports', '3:0', 'Leora Mc Grath');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-07-18', 3.62, 'Virtus.pro', '5:3', 'Taffy Dyke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-01-09', 0.42, 'DarkZero Esports (DZ)', '5:3', 'Shaughn Hernik');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-08-14', 4.6, 'FURIA Esports', '4:2', 'Cristian Fruser');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-03-18', 2.66, 'Team BDS', '2:4', 'Alica Goring');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-04-28', 4.32, 'KOI', '5:4', 'Deirdre Bonallack');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-02-22', 4.76, 'MNM Gaming', '4:2', 'Bondie Smalles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-04-06', 3.07, 'M80', '3:0', 'Nichols Eskriet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-07-30', 3.08, 'G2 Esports', '5:3', 'Mischa Strafford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-06-05', 3.61, 'G2 Esports', '3:0', 'Kaiser Selman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-01-20', 3.03, 'Dplus', '5:3', 'Justinn Thurby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-05-06', 3.95, 'FURY', '3:0', 'Reena Harpham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-06-21', 2.62, 'w7m esports', '3:5', 'Bengt Bowra');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-04-09', 0.47, 'Soniqs', '5:3', 'Pieter Toun');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-05-16', 3.3, 'FaZe Clan', '5:4', 'Stafani Mines');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-07-17', 3.51, 'Virtus.pro', '2:4', 'Cointon Chantillon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-06-02', 2.91, 'Los + oNe', '2:4', 'Ronda Iskov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-05-14', 4.46, 'Spacestation Gaming (SSG)', '4:2', 'Kayne Decourt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-02-25', 3.88, 'Virtus.pro', '0:3', 'Candie Curnok');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-04-14', 1.57, 'Wolves Esports', '4:2', 'Rudolph Colquitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-08-18', 4.26, 'SCARZ', '5:4', 'Serena Wolffers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-03-17', 3.57, 'FURIA Esports', '5:4', 'Aliza Lardeur');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-10-17', 0.8, 'KOI', '4:5', 'Shelden Ciardo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-12-03', 1.43, 'Wolves Esports', '0:3', 'Jermayne Rodmell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-05-10', 2.38, 'Team Liquid', '0:3', 'Candi Hext');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-10-12', 2.46, 'Oxygen Esports', '3:0', 'Hal Shaves');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-10-01', 1.52, 'G2 Esports', '4:2', 'Sabrina Tremmil');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-07-21', 2.68, 'Dplus', '5:3', 'Peterus Chapier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-04-23', 1.13, 'Los + oNe', '2:4', 'Adelaida Matei');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-05-25', 2.54, 'Spacestation Gaming (SSG)', '3:5', 'Rodge Gladwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-10-22', 0.44, 'FaZe Clan', '3:0', 'Brynn Grieves');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-07-27', 4.36, 'Oxygen Esports', '3:5', 'Maddi Bellenger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-08-31', 2.74, 'Oxygen Esports', '3:5', 'Jere Muris');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-09-06', 3.03, 'Spacestation Gaming (SSG)', '5:4', 'Lilian Fenna');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-05-09', 3.12, 'MNM Gaming', '5:3', 'Maribel Cammock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-03-22', 1.59, 'Wolves Esports', '5:3', 'Enoch Colborn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-01-30', 1.19, 'Team BDS', '5:4', 'Walther Tzar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-05-08', 2.16, 'SCARZ', '0:3', 'Adolpho Howship');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-10-03', 4.14, 'Elevate', '3:0', 'Osmund Deabill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-08-26', 3.88, 'M80', '2:4', 'Glynda Roobottom');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-11-04', 1.72, 'FURIA Esports', '4:5', 'Adamo Nuth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-11-27', 3.56, 'Wolves Esports', '5:3', 'Ilene Muston');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-01-15', 0.33, 'Wolves Esports', '2:4', 'Ollie Aleveque');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-07-16', 1.91, 'Soniqs', '3:0', 'Erin Chazier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-06-14', 2.97, 'Elevate', '2:4', 'Dawn Laffan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-07-27', 3.26, 'KOI', '4:2', 'Karin Giffon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-01-04', 1.69, 'Dplus', '5:3', 'Teodora Wyles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-12-28', 0.59, 'MNM Gaming', '2:4', 'Nikolaos Ugoletti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-10-12', 1.21, 'Team Liquid', '4:2', 'Pip Patek');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-07-12', 3.82, 'Oxygen Esports', '4:5', 'Gussie Pulteneye');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-08-30', 3.35, 'Elevate', '5:3', 'Karry Barge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-05', 1.5, 'Wolves Esports', '3:5', 'Tiebout Astin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-02-17', 1.14, 'FURIA Esports', '0:3', 'Celestyna Golsby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-05-25', 1.92, 'M80', '3:5', 'Wilfred Braybrook');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-11-26', 0.32, 'SCARZ', '4:5', 'Latia Jaffa');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-06-24', 4.36, 'DarkZero Esports (DZ)', '3:5', 'Stacy Clorley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-06-17', 0.18, 'Soniqs', '2:4', 'Hillie Gabbat');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-02-12', 4.75, 'SCARZ', '4:2', 'Alexandr Emburey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-07-01', 3.14, 'w7m esports', '3:0', 'Druci Ponder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-01-10', 4.06, 'Oxygen Esports', '4:5', 'Keelby Wilmut');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-06-07', 3.62, 'Team BDS', '5:3', 'Delcina Jewiss');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-08-18', 1.17, 'Virtus.pro', '2:4', 'Cherri Goscomb');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-12-11', 2.15, 'FURIA Esports', '3:5', 'Catha Parradye');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-08-26', 0.64, 'Soniqs', '5:3', 'Zenia Kurton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-04-13', 1.81, 'FURIA Esports', '4:2', 'Delainey Tulloch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-02-17', 3.84, 'Team BDS', '2:4', 'Winthrop Titterton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-02-24', 4.23, 'Los + oNe', '5:4', 'Byron Benjefield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-08-15', 3.61, 'Team BDS', '4:2', 'Livvyy Nornable');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-09-13', 1.47, 'MNM Gaming', '4:2', 'Base Piatti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-11-23', 2.57, 'Virtus.pro', '3:0', 'Galen Woolway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-06-14', 2.95, 'FURIA Esports', '4:2', 'Faith Mackie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-12-01', 4.25, 'FURIA Esports', '3:0', 'Marleen Outibridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-06-03', 0.16, 'M80', '2:4', 'Donnie Redhouse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-01-01', 3.38, 'Natus Vincere (NAVI)', '2:4', 'Maisie Beddin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-12-22', 0.84, 'FURY', '4:2', 'Milena Olek');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-07-27', 0.91, 'Dplus', '3:5', 'Jeth Randall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-02-22', 2.03, 'Soniqs', '5:3', 'Frederich Rimell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-08-16', 0.95, 'MNM Gaming', '0:3', 'Mattie Kuschke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-04-26', 3.37, 'Wolves Esports', '4:2', 'Kelsy Mayne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-01-19', 3.13, 'FURIA Esports', '4:5', 'Chucho Iacavone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-09-28', 2.46, 'SCARZ', '2:4', 'Lian Strutton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-10-20', 2.39, 'DarkZero Esports (DZ)', '5:3', 'Val Studdert');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-03-20', 3.06, 'Elevate', '5:4', 'Luz Sheran');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-01-13', 2.82, 'Dplus', '2:4', 'Shawn Weild');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-04-07', 1.34, 'Soniqs', '4:2', 'Webb Marlen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-04-20', 3.48, 'Virtus.pro', '3:0', 'Gwenny Merrin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-02-04', 2.06, 'SCARZ', '3:0', 'Trudie Sasser');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-10-04', 0.96, 'FURY', '5:3', 'Gene Ladewig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-03-15', 3.56, 'w7m esports', '0:3', 'Dottie Matz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-09-06', 4.61, 'FURIA Esports', '5:3', 'Nelson Sudron');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-02-26', 2.41, 'Virtus.pro', '3:5', 'Giffie Gerhardt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-06-21', 0.35, 'Elevate', '5:4', 'Clarisse Bucke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-07-23', 0.81, 'KOI', '0:3', 'Chrissie Flatley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-11-21', 2.0, 'Team BDS', '2:4', 'Gifford Girvin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-05-21', 1.33, 'Wolves Esports', '5:3', 'Janessa Blacklock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-07-19', 0.47, 'M80', '3:0', 'Rhys Essel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-05-04', 3.95, 'Elevate', '3:5', 'Tadeas Petracco');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-09-19', 0.13, 'Oxygen Esports', '3:0', 'Dennis Durnill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-04-19', 4.04, 'MNM Gaming', '5:4', 'Linell Jervois');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-09-20', 4.23, 'FaZe Clan', '5:4', 'Thaxter Cherry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-11-29', 4.84, 'G2 Esports', '3:5', 'Denys Zoppie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-02-01', 4.59, 'Natus Vincere (NAVI)', '5:4', 'Virge Leebeter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-01-29', 0.27, 'Spacestation Gaming (SSG)', '3:5', 'Trina Burgan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-01-28', 0.18, 'MNM Gaming', '0:3', 'Kiri Lethibridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-05-08', 0.53, 'Los + oNe', '2:4', 'Guillaume Faltin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-10-23', 3.31, 'Virtus.pro', '0:3', 'Jolyn Pearcehouse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-08-05', 4.67, 'Wolves Esports', '4:2', 'Othelia Pringell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-09-20', 4.74, 'Natus Vincere (NAVI)', '3:0', 'Ginevra Leebeter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-09-28', 0.17, 'Virtus.pro', '5:3', 'Tiler Slyne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-08-20', 2.43, 'Virtus.pro', '5:3', 'Alonzo Pickrell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-10-01', 1.85, 'Spacestation Gaming (SSG)', '2:4', 'Karoly Gurton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-20', 3.35, 'Dplus', '2:4', 'Daria Weatherall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-01-22', 3.75, 'Oxygen Esports', '5:4', 'Mabelle Christley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-07-16', 0.2, 'Natus Vincere (NAVI)', '3:5', 'Martie Stanhope');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-06-12', 2.05, 'Dplus', '4:5', 'Rayshell Dillon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-09-14', 2.79, 'Team BDS', '5:3', 'Mateo Dallison');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-03-23', 2.36, 'FURIA Esports', '5:3', 'Marcia Gerber');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-04-10', 0.38, 'Team BDS', '4:2', 'Kent Cathie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-12-15', 4.25, 'Elevate', '5:3', 'Rodge Jakeway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-08-08', 2.62, 'MNM Gaming', '3:5', 'Forbes Furse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-05-30', 0.88, 'MNM Gaming', '0:3', 'Gwendolyn Klima');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-01-11', 2.86, 'MNM Gaming', '3:5', 'Marlena Delafont');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-11-26', 1.02, 'Wolves Esports', '5:3', 'Tina Langeley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-01-08', 0.04, 'DarkZero Esports (DZ)', '0:3', 'Broderick Wauchope');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-08-22', 3.58, 'G2 Esports', '5:3', 'Celle Hupe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-10-15', 3.05, 'Natus Vincere (NAVI)', '5:3', 'Brear Hambric');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-05-30', 1.65, 'G2 Esports', '4:5', 'Tyson Musso');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-02-12', 1.58, 'FaZe Clan', '0:3', 'Jessika Webland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-05-08', 1.7, 'M80', '4:2', 'Adriana Wardle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-04-26', 2.1, 'SCARZ', '3:0', 'Analiese Hayen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-04-23', 4.45, 'G2 Esports', '5:3', 'Genia Lendon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-25', 3.13, 'DarkZero Esports (DZ)', '3:0', 'Joly Fane');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-10-20', 1.42, 'FURY', '2:4', 'Ferdinand Tudball');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-06-21', 3.92, 'Team BDS', '3:5', 'Charmian Goulding');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-30', 2.49, 'Soniqs', '3:0', 'Georgianne Duddridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-04-25', 0.53, 'Dplus', '5:4', 'Lutero Strand');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-09-22', 0.46, 'G2 Esports', '3:5', 'Gerhard Vallerine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-10-26', 3.45, 'FaZe Clan', '3:0', 'Teddie Waker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-01-20', 0.56, 'Los + oNe', '5:3', 'Latisha Yeatman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-11-13', 2.35, 'Dplus', '3:5', 'Aguste Weippert');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-09-15', 3.16, 'FURIA Esports', '4:2', 'Cesar Rawstorn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-12-22', 3.31, 'Virtus.pro', '2:4', 'Perri Maliphant');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-01-17', 4.31, 'Oxygen Esports', '3:5', 'Cassi Flude');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-05-27', 4.6, 'Dplus', '3:0', 'Steffi Benitti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-05-15', 1.29, 'M80', '5:4', 'Kassandra Fairlam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-06-11', 0.96, 'Virtus.pro', '5:3', 'Gerianne Cawdron');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-07-08', 1.44, 'Spacestation Gaming (SSG)', '0:3', 'Leroi Stockwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-01-08', 4.3, 'Virtus.pro', '4:5', 'Andreana Bartolini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-08', 3.95, 'Soniqs', '4:5', 'Appolonia Postians');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-12-11', 2.01, 'MNM Gaming', '4:5', 'Had Bardwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-03-06', 0.31, 'KOI', '3:5', 'Nevil Brellin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-02-05', 0.65, 'DarkZero Esports (DZ)', '5:4', 'Becca Stanier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-12-06', 3.05, 'Natus Vincere (NAVI)', '2:4', 'Kleon Wilber');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-11-02', 2.1, 'KOI', '4:2', 'Oberon Ornils');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-11-21', 0.58, 'Oxygen Esports', '3:5', 'Emlynne Brine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-11-06', 3.74, 'FaZe Clan', '5:4', 'Harriot Shama');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-08-24', 3.77, 'MNM Gaming', '5:4', 'Aveline Philipsen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-01-05', 2.28, 'Spacestation Gaming (SSG)', '0:3', 'Phillis Menel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-05-01', 0.51, 'Soniqs', '3:0', 'Christel Edworthye');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-12-06', 3.33, 'Soniqs', '5:3', 'Nani Sinyard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-03-03', 1.45, 'Soniqs', '2:4', 'Tiertza Milbank');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-10-06', 4.83, 'Dplus', '5:4', 'Prince Irnys');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-09-28', 0.51, 'Team BDS', '5:4', 'Tailor Clarycott');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-10-17', 4.07, 'FURY', '3:0', 'Gusti Hussey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-12', 1.42, 'Team Liquid', '4:5', 'Scot Scholig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-03-01', 2.45, 'MNM Gaming', '3:5', 'Estel Younie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-05-05', 4.79, 'FURIA Esports', '0:3', 'Kanya Cloney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-04-13', 1.58, 'Wolves Esports', '3:5', 'Harriette McCullagh');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-11-19', 2.61, 'SCARZ', '5:3', 'Alister Prodrick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-09-28', 4.02, 'w7m esports', '3:0', 'Selina Dickey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-02-04', 4.54, 'Oxygen Esports', '5:4', 'Abbey Mayze');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-05-17', 0.49, 'Oxygen Esports', '4:5', 'Jocko Cleverly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-08-02', 4.92, 'Dplus', '0:3', 'Leese Pinch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-07-05', 1.84, 'Spacestation Gaming (SSG)', '3:5', 'Lizzie Springham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-11-04', 1.51, 'G2 Esports', '4:2', 'Eric Badrock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-05-30', 3.11, 'DarkZero Esports (DZ)', '4:2', 'Liane Stables');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-04-04', 4.84, 'FURIA Esports', '4:5', 'Damiano Lannen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-08-31', 3.33, 'FaZe Clan', '4:2', 'Leyla Dickerline');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-11-17', 4.2, 'Team BDS', '4:2', 'Jay MacGlory');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-11-11', 2.24, 'SCARZ', '5:3', 'Letty Bromley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-03-19', 4.14, 'Wolves Esports', '4:5', 'Jo Salleir');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-08-05', 1.15, 'Virtus.pro', '2:4', 'Ham Manginot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-06-26', 4.71, 'Soniqs', '5:3', 'Leta Brunsdon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-11-17', 2.5, 'G2 Esports', '3:5', 'Phylys Wheelband');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-11-14', 2.79, 'G2 Esports', '5:4', 'Olive Di Boldi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-01-29', 1.1, 'FURIA Esports', '4:5', 'Inglis Ludwig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-12-07', 1.11, 'Los + oNe', '3:0', 'Brigid Iwanicki');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-07-13', 0.39, 'M80', '3:0', 'Sidnee Sloey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-07-03', 4.99, 'KOI', '5:3', 'Victoir Latus');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-05-19', 0.1, 'G2 Esports', '5:3', 'Gradeigh Brennon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-07-04', 2.11, 'Team BDS', '2:4', 'Maren Neathway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-06-25', 2.8, 'Los + oNe', '0:3', 'Babbie Lapidus');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-07-08', 0.84, 'SCARZ', '3:5', 'Adrian Turbitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-04-20', 4.93, 'Team Liquid', '2:4', 'Monroe Guyonnet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-05-07', 4.14, 'Virtus.pro', '3:0', 'Moishe Ughi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-12-22', 0.27, 'M80', '5:3', 'Mannie D''Alwis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-04-24', 3.08, 'MNM Gaming', '4:2', 'Walliw Paeckmeyer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-07-04', 2.89, 'MNM Gaming', '5:3', 'Allin Landon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-10-30', 1.2, 'Los + oNe', '0:3', 'Hewe Sharply');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-02-17', 3.78, 'Team BDS', '3:5', 'Devin Chadband');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-05-13', 2.85, 'MNM Gaming', '5:3', 'Eugen Plose');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-06-03', 1.2, 'Elevate', '3:5', 'Gleda Caughan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-11-14', 2.7, 'Elevate', '0:3', 'Aldrich Oddy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-08-21', 0.54, 'FURY', '3:5', 'Darby Loins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-01-15', 1.96, 'Virtus.pro', '2:4', 'Loralyn Fucher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-02-02', 3.98, 'FURIA Esports', '5:4', 'Ax Portt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-04-10', 1.69, 'Soniqs', '4:2', 'Hobey MacGrath');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-04-02', 1.16, 'Elevate', '3:5', 'Seana Trinder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-09-10', 2.92, 'DarkZero Esports (DZ)', '3:0', 'Adriane Greensted');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-11-20', 4.53, 'w7m esports', '4:2', 'Darb Durman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-09-24', 3.15, 'FURY', '5:3', 'Karyn Thornally');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-10-07', 0.77, 'FURIA Esports', '3:5', 'Daria Skelington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-04-12', 0.44, 'FaZe Clan', '0:3', 'Wenonah Peskett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-09-05', 2.79, 'Spacestation Gaming (SSG)', '3:5', 'Casandra Eloy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-07-14', 1.05, 'FURY', '3:5', 'Alanson Grubb');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-07-22', 2.27, 'SCARZ', '4:5', 'Donia Zanassi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-03-18', 4.8, 'Natus Vincere (NAVI)', '3:0', 'Vassili Lacotte');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-02-03', 4.51, 'Natus Vincere (NAVI)', '4:5', 'Berta Bertl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-08-20', 2.54, 'Spacestation Gaming (SSG)', '4:2', 'Amanda Hunnisett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-07-23', 3.89, 'FURIA Esports', '4:5', 'Udale Cuesta');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-02-22', 0.29, 'FURIA Esports', '5:3', 'Elinore Maclean');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-25', 0.75, 'Virtus.pro', '5:4', 'Davine Hardage');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-11-13', 4.81, 'Team BDS', '4:2', 'Bartel Lambertz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-02-26', 1.27, 'Team BDS', '2:4', 'Massimiliano Wadie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-05-16', 0.12, 'Team BDS', '3:0', 'Kessiah Busk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-05-02', 3.51, 'SCARZ', '0:3', 'Johnna Aldrick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-09-27', 0.42, 'w7m esports', '0:3', 'Tersina Adamovitch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-07-10', 4.42, 'Team Liquid', '4:2', 'Danni Bencher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-11-20', 4.91, 'MNM Gaming', '0:3', 'Tiff Dulake');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-11-05', 4.88, 'FaZe Clan', '4:5', 'Gertrud Snipe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-07-08', 2.87, 'FURIA Esports', '3:5', 'Barny Challiss');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-07-17', 1.98, 'FURY', '4:2', 'Jaquelyn Chaudron');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-09-15', 4.9, 'FURY', '2:4', 'Arvie Dysart');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-07-21', 1.79, 'Spacestation Gaming (SSG)', '5:4', 'Kevin Howler');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-04-01', 4.64, 'M80', '5:3', 'Pier Macias');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-10-08', 3.9, 'MNM Gaming', '5:4', 'Lenette Sinkins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-06-17', 2.54, 'w7m esports', '3:5', 'Massimiliano Osgar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-12-20', 0.25, 'w7m esports', '3:0', 'Cobbie Vasilevich');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-12-13', 2.45, 'Natus Vincere (NAVI)', '0:3', 'Fraze Renne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-11-15', 3.69, 'KOI', '4:5', 'Peyton Lanchester');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-12-30', 2.35, 'G2 Esports', '5:3', 'Dulsea Tideswell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-01-06', 0.94, 'Los + oNe', '5:3', 'Bendite Starmore');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-09-14', 0.4, 'SCARZ', '2:4', 'Felizio Ourry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-07-12', 2.53, 'Wolves Esports', '3:0', 'Chrissie Eouzan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-09-23', 4.17, 'G2 Esports', '5:4', 'Towny Cozens');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-09-19', 0.19, 'Los + oNe', '5:3', 'Killy Jamme');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-07-14', 1.19, 'M80', '4:2', 'Conni Mullane');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-03-03', 3.89, 'Team BDS', '2:4', 'Vassili Losebie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-01-03', 0.52, 'Soniqs', '4:5', 'Kathryne Meadley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-04', 2.5, 'Spacestation Gaming (SSG)', '4:2', 'Marybeth Salliere');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-04-19', 2.72, 'Elevate', '5:4', 'Derry Gillbanks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-05-01', 0.12, 'Oxygen Esports', '0:3', 'Babara Sacchetti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-08-23', 3.89, 'SCARZ', '5:4', 'Catherin Klageman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-01-21', 3.02, 'G2 Esports', '3:0', 'Brandea Wadeson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-11-30', 0.85, 'Team BDS', '3:5', 'Karim Debney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-07-27', 0.81, 'MNM Gaming', '4:2', 'Martie Deehan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-04-14', 1.2, 'Team BDS', '3:0', 'Merilee Schwieso');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-12-12', 4.32, 'KOI', '4:5', 'Annalee Bettison');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-05-17', 0.13, 'Virtus.pro', '3:0', 'Gaile McGinnis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-10-27', 0.92, 'MNM Gaming', '5:4', 'Malorie Overington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-02-07', 2.05, 'M80', '5:3', 'Alexandre Cornfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-01-30', 1.65, 'FURIA Esports', '4:5', 'Caldwell Slide');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-24', 3.34, 'w7m esports', '0:3', 'Mart Cocklie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-01-26', 0.53, 'Los + oNe', '2:4', 'Brigitta McCumskay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-09-18', 0.41, 'Oxygen Esports', '3:0', 'Linoel Thrussell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-02-10', 0.59, 'Spacestation Gaming (SSG)', '5:4', 'Erma Werrit');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-03-15', 0.74, 'Natus Vincere (NAVI)', '0:3', 'Aurelia Bonwick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-06-26', 3.02, 'MNM Gaming', '4:5', 'Phylys Fursse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-11', 1.63, 'MNM Gaming', '3:0', 'Susann Deinhardt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-11-02', 3.48, 'MNM Gaming', '5:4', 'Johnna Beenham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-05-07', 2.2, 'FURY', '4:2', 'Slade Cayley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-03-26', 1.13, 'Virtus.pro', '4:2', 'Neda Barthot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-11-17', 1.34, 'Team BDS', '4:5', 'Kizzie Denyer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-12-15', 4.95, 'Soniqs', '3:5', 'Jere Ronca');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-02-02', 2.44, 'Oxygen Esports', '3:0', 'Yance Smales');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-02-22', 2.28, 'w7m esports', '4:2', 'Lynnell Sloper');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-01-07', 2.86, 'FaZe Clan', '3:0', 'Lyda Badini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-05-09', 3.61, 'SCARZ', '2:4', 'Carley Garland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-06-19', 1.28, 'Team BDS', '0:3', 'Ailsun Fearon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-07-27', 3.34, 'SCARZ', '4:5', 'Alma Rush');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-11-07', 1.32, 'FaZe Clan', '5:3', 'Dionne Karel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-05-14', 0.67, 'M80', '5:4', 'Gun Hillock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-07-04', 2.34, 'Team BDS', '4:5', 'Valeria Gellibrand');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-10-02', 3.88, 'Virtus.pro', '5:4', 'Ludovika Guirardin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-03-26', 3.19, 'Soniqs', '3:0', 'Aimee Chantler');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-01-17', 2.95, 'G2 Esports', '5:3', 'Emelda Simonsen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-05-20', 1.58, 'Spacestation Gaming (SSG)', '3:5', 'Gualterio Natt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-03-19', 1.65, 'Natus Vincere (NAVI)', '4:2', 'Chucho Itzkovici');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-06-05', 0.28, 'FURIA Esports', '2:4', 'Scarface Oscroft');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-05-07', 2.2, 'Los + oNe', '3:0', 'Torrence Stringman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-08-10', 1.33, 'Team BDS', '5:3', 'Jerrold Pistol');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-04-17', 2.73, 'SCARZ', '3:0', 'Meredithe Huleatt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-12-06', 2.04, 'Los + oNe', '0:3', 'Portia Farriar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-01-30', 1.02, 'Elevate', '5:4', 'Kizzie Barthorpe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-08-06', 4.67, 'Dplus', '5:4', 'Nan Keslake');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-12-16', 2.12, 'Oxygen Esports', '4:2', 'Dewain Maynell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-04-22', 3.22, 'DarkZero Esports (DZ)', '2:4', 'Inglis Arniz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-04-23', 3.66, 'Spacestation Gaming (SSG)', '5:3', 'Horst Hollyland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-07-14', 1.07, 'Oxygen Esports', '4:2', 'Nickolaus Duce');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-12-04', 0.52, 'KOI', '3:5', 'Phebe Grimestone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-06-05', 3.82, 'Wolves Esports', '5:4', 'Tobye Densey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-05-20', 2.43, 'KOI', '4:2', 'Ophelie Antonazzi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-10-05', 3.79, 'FURIA Esports', '2:4', 'Marinna Szach');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-01-22', 4.61, 'M80', '4:2', 'Dukie Greatreax');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-07-31', 0.36, 'Soniqs', '0:3', 'Ryley Sherville');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-04-07', 0.98, 'FURY', '0:3', 'Bel Critch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-12-11', 4.56, 'Wolves Esports', '5:3', 'Bastian Marie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-05-04', 1.59, 'Spacestation Gaming (SSG)', '4:2', 'Malena Weld');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-10-19', 2.86, 'FURIA Esports', '5:3', 'Clair Danihel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-10-11', 0.67, 'FURIA Esports', '5:3', 'Clim Margetts');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-03-13', 0.84, 'KOI', '4:2', 'Edgardo Wrotham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-11-10', 2.67, 'G2 Esports', '5:4', 'Ab Thornley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-12-08', 1.82, 'Wolves Esports', '4:2', 'Yovonnda Luparto');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-05-05', 4.78, 'FURIA Esports', '3:5', 'Ilse Heymann');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-02-24', 2.54, 'G2 Esports', '4:5', 'Chris Saladin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-02-01', 2.33, 'SCARZ', '3:0', 'Anica Grix');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-11-01', 1.91, 'Spacestation Gaming (SSG)', '4:5', 'Domenico Peterson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-09-28', 2.38, 'M80', '2:4', 'Ania Vidgeon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-11-08', 3.93, 'SCARZ', '3:5', 'Wynnie Cairns');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-09-09', 2.57, 'Elevate', '3:0', 'Jessalyn Deroche');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-03-12', 2.61, 'Natus Vincere (NAVI)', '3:5', 'Phillipp Gobel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-01-31', 5.0, 'Wolves Esports', '2:4', 'Toddy Stebles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-07-05', 4.5, 'w7m esports', '3:0', 'Caitrin Rabl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-08-29', 3.68, 'KOI', '5:4', 'Percival Counter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-08-25', 2.44, 'M80', '4:5', 'Sonja Wycliffe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-12-06', 3.06, 'Dplus', '4:2', 'Aryn Whiteside');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-07-24', 3.46, 'Soniqs', '4:2', 'Annie Dyne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-05-30', 0.6, 'SCARZ', '4:2', 'Graham Feacham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-01-08', 2.7, 'KOI', '3:5', 'Sibel Mackro');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-12-16', 1.71, 'Soniqs', '3:0', 'Mignonne Twell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-09-13', 4.83, 'w7m esports', '5:3', 'Lucky Fritzer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-01-29', 2.63, 'Virtus.pro', '4:2', 'Thornton Barriball');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-08-29', 4.09, 'FURY', '3:5', 'Andrej Bayman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-08-07', 4.07, 'Soniqs', '0:3', 'Brittni La Padula');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-12-29', 4.67, 'Soniqs', '2:4', 'Aldwin Eckly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-07-20', 2.56, 'SCARZ', '0:3', 'Abrahan Durran');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-01-19', 4.23, 'Spacestation Gaming (SSG)', '2:4', 'Haywood Sey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-04-22', 3.17, 'G2 Esports', '3:0', 'Allegra Shelmerdine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-05-15', 3.2, 'Oxygen Esports', '4:5', 'Hillary Inkle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-09-20', 4.35, 'Dplus', '0:3', 'Barret Boodell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-10-05', 3.49, 'FaZe Clan', '3:5', 'Marlon Eland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-02-15', 0.35, 'Virtus.pro', '4:2', 'Anne-corinne Brick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-03-06', 4.02, 'SCARZ', '3:0', 'Cherida Measen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-06-03', 4.55, 'DarkZero Esports (DZ)', '3:0', 'Eudora Fairn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-04-15', 3.19, 'Wolves Esports', '5:4', 'Allis Ratlee');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-08-27', 4.72, 'Spacestation Gaming (SSG)', '0:3', 'Carena Darton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-14', 1.54, 'Spacestation Gaming (SSG)', '4:5', 'Wes Renon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-10-25', 2.99, 'M80', '5:3', 'Antons Twyning');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-12-28', 4.74, 'Dplus', '2:4', 'Chariot Ambroise');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-10-15', 1.08, 'Spacestation Gaming (SSG)', '3:0', 'Lesly Gander');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-12-04', 2.07, 'Dplus', '3:5', 'Melisse Wehner');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-03-30', 0.84, 'Spacestation Gaming (SSG)', '3:5', 'Barnabas Wells');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-04-10', 4.72, 'G2 Esports', '4:5', 'Noella Tillard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-08-07', 1.13, 'M80', '4:2', 'Webster Lavell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-03-06', 4.2, 'Wolves Esports', '0:3', 'Etti Ellsworthe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-06-06', 3.62, 'M80', '3:0', 'Ragnar Stonhouse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-10-07', 2.06, 'Team BDS', '2:4', 'Dolf Edlyne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-02-11', 1.85, 'SCARZ', '5:3', 'Delmor Losemann');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-09-18', 1.38, 'DarkZero Esports (DZ)', '3:0', 'Luce Nary');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-06-04', 2.56, 'Elevate', '4:5', 'Vivyan Husk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-02-18', 2.04, 'Natus Vincere (NAVI)', '4:2', 'Auroora Dunne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-10-25', 1.52, 'w7m esports', '5:4', 'Demetris Sorbie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-04-06', 4.36, 'Los + oNe', '4:5', 'Myra Gonnin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-04-10', 3.45, 'w7m esports', '3:0', 'Rozina O'' Quirk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-10-05', 4.62, 'Elevate', '0:3', 'Giff Stainbridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-09-23', 2.5, 'Spacestation Gaming (SSG)', '5:3', 'Roselin Engall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-04-26', 3.31, 'Soniqs', '5:3', 'Sully McBoyle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-09-26', 2.86, 'Oxygen Esports', '4:5', 'Jerome Gorden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-09-02', 3.58, 'FURY', '5:3', 'Lexy Dressel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-08-29', 2.47, 'Virtus.pro', '3:0', 'Gretel Dalgarnowch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-10-11', 1.4, 'Natus Vincere (NAVI)', '0:3', 'Susy Cours');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-07-05', 3.31, 'MNM Gaming', '2:4', 'Isidor Ayto');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-11-06', 1.47, 'Elevate', '4:2', 'Ibrahim Gosney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-03-25', 2.62, 'Wolves Esports', '5:4', 'Liva Pregal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-12-27', 1.99, 'Virtus.pro', '3:0', 'Bambie Lambdon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-09-10', 1.81, 'Elevate', '2:4', 'Juliet Robinett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-08-29', 2.91, 'w7m esports', '4:5', 'Sascha Maw');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-10', 0.63, 'w7m esports', '2:4', 'Ettie Bristo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-01-11', 3.79, 'Team Liquid', '0:3', 'Laetitia Stuehmeyer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-02-22', 2.32, 'DarkZero Esports (DZ)', '3:0', 'Thebault Patient');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-11-30', 4.02, 'Team Liquid', '3:5', 'Patti Gauson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-04-29', 0.57, 'G2 Esports', '0:3', 'Tobye Asbrey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-01-17', 1.53, 'Wolves Esports', '2:4', 'Pip Points');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-05-28', 0.97, 'Natus Vincere (NAVI)', '3:5', 'Nollie Lippard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-11-21', 1.92, 'FURY', '5:3', 'Kimberli Thal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-03-26', 0.41, 'DarkZero Esports (DZ)', '5:3', 'Lise Clayden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-04-11', 2.96, 'Spacestation Gaming (SSG)', '4:5', 'Shea Androlli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-08-07', 1.83, 'Virtus.pro', '2:4', 'My Orrey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-01-08', 4.5, 'FURY', '3:0', 'Carol-jean Kalkofer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-03-16', 0.26, 'FaZe Clan', '4:5', 'Dagny Fredi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-11', 4.71, 'Natus Vincere (NAVI)', '3:0', 'Jayme Cleverley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-10-29', 0.06, 'FURIA Esports', '5:4', 'Bonnibelle Landal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-03-03', 4.52, 'w7m esports', '3:0', 'Daryl Magor');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-03-31', 4.88, 'w7m esports', '0:3', 'Tessi Gossage');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-05-16', 4.59, 'Soniqs', '0:3', 'Staford Klawi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-04-29', 0.53, 'Oxygen Esports', '5:3', 'Rosemaria Rogers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-02-12', 0.2, 'Natus Vincere (NAVI)', '5:3', 'Melony Densumbe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-07-14', 1.55, 'Wolves Esports', '5:4', 'Florenza Turbern');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-03-16', 1.57, 'Dplus', '4:5', 'Meade Wybourne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-11', 2.72, 'Team Liquid', '4:2', 'Ezechiel Bowkley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-10-08', 2.23, 'Los + oNe', '3:5', 'Jarib Goss');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-04-10', 0.45, 'Spacestation Gaming (SSG)', '5:4', 'Deeanne Flindall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-08-30', 0.98, 'DarkZero Esports (DZ)', '0:3', 'Dominique Seeman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-12-04', 4.01, 'Wolves Esports', '4:2', 'Kellsie Holborn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-06-05', 1.95, 'KOI', '3:0', 'Cordelia Struthers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-11-29', 1.94, 'SCARZ', '4:5', 'Adah Varsey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-01-04', 1.9, 'Team BDS', '0:3', 'Franny Nare');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-12-04', 3.97, 'Los + oNe', '4:2', 'Yehudi Pughsley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-04-04', 0.34, 'Elevate', '5:4', 'Yancy Werny');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-03-07', 0.88, 'Elevate', '4:2', 'Winonah Ganter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-04-05', 3.21, 'FURIA Esports', '4:2', 'Anastasia Loadsman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-11-15', 2.29, 'DarkZero Esports (DZ)', '3:5', 'Cyndy Feehely');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-08-24', 4.05, 'Los + oNe', '2:4', 'Claudianus Bussons');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-10-02', 4.86, 'Spacestation Gaming (SSG)', '5:3', 'Miran Mouncher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-02-02', 0.07, 'FaZe Clan', '4:2', 'Vanya Konzel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-06-01', 0.98, 'Wolves Esports', '0:3', 'Winnie Loomes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-01-14', 2.86, 'DarkZero Esports (DZ)', '4:5', 'Carlos Brinsford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-09-09', 4.07, 'Team Liquid', '2:4', 'Maisie Cristea');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-05-08', 0.31, 'Soniqs', '4:5', 'Bertina Tice');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-10-24', 3.71, 'Los + oNe', '2:4', 'Saul Poskitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-08-27', 1.62, 'KOI', '5:3', 'Maura Mainds');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-07-10', 1.65, 'Elevate', '4:5', 'Joya Simonyi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-03-11', 0.0, 'Natus Vincere (NAVI)', '4:5', 'Say Danielut');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-06-06', 3.33, 'SCARZ', '2:4', 'Lissie Mendonca');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-02-09', 4.75, 'DarkZero Esports (DZ)', '5:3', 'Raffaello Riolfi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-07-20', 3.26, 'FaZe Clan', '3:0', 'Corny Mobley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-08', 4.35, 'Natus Vincere (NAVI)', '2:4', 'Krisha Carlisle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-04', 3.48, 'Virtus.pro', '2:4', 'Teirtza Coetzee');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-08-13', 4.69, 'Soniqs', '0:3', 'Imogen Fricke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-02-25', 2.85, 'Team BDS', '4:2', 'Kally Mourge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-02-03', 3.4, 'SCARZ', '3:5', 'Kristofer Willingam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-06-01', 2.81, 'Dplus', '4:5', 'Patrizia Ghioni');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-12-27', 3.38, 'Natus Vincere (NAVI)', '5:3', 'Candace Battleson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-10-25', 0.89, 'KOI', '4:2', 'Sutherlan Rozycki');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-02-17', 4.32, 'FURY', '4:2', 'Jacqui Chesnay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-01-10', 0.11, 'MNM Gaming', '4:2', 'Rena MacKeller');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-12-23', 4.99, 'Spacestation Gaming (SSG)', '3:0', 'Garrek Fallawe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-03-19', 1.96, 'Virtus.pro', '3:0', 'Meyer Hickeringill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-01-09', 2.8, 'w7m esports', '4:5', 'Raviv Crispin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-02-02', 3.81, 'M80', '4:5', 'Tiffi Vassbender');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-07-10', 1.3, 'M80', '3:0', 'Skippy Ure');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-09-07', 4.33, 'Team BDS', '4:2', 'Angil Stihl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-01-17', 1.98, 'Wolves Esports', '5:3', 'Pauline Gonzalvo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-05-29', 2.66, 'FURIA Esports', '4:5', 'Mellisent Vamplew');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-03-17', 3.56, 'Team Liquid', '4:2', 'Bertine Jikylls');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-11-20', 1.8, 'MNM Gaming', '4:5', 'Shepperd Fredi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-11-16', 3.93, 'FURIA Esports', '4:5', 'Rudiger Debrett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-06-11', 4.73, 'Elevate', '5:4', 'Herc Sabattier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-07-30', 1.64, 'Team BDS', '3:5', 'Lou Corroyer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-08-06', 3.94, 'SCARZ', '4:2', 'Marice Hulburd');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-06-19', 3.72, 'Wolves Esports', '3:0', 'Korry Dosedale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-11-21', 4.34, 'MNM Gaming', '5:3', 'Garvey Gilmour');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-07-04', 1.06, 'Team Liquid', '2:4', 'Nona Benn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-10-13', 0.5, 'Oxygen Esports', '3:5', 'Cornelle Silvermann');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-01-13', 2.98, 'SCARZ', '0:3', 'Jania MacGeffen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-01-23', 4.95, 'G2 Esports', '5:3', 'Dan Greenway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-08-25', 2.25, 'Spacestation Gaming (SSG)', '4:2', 'Tiffanie Swinbourne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-04-18', 4.1, 'G2 Esports', '5:3', 'Homer Millwater');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-07-17', 2.25, 'FURIA Esports', '5:4', 'Hestia Weavill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-02-04', 3.18, 'Wolves Esports', '5:4', 'Claudius Sine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-05-23', 3.34, 'FaZe Clan', '0:3', 'Rowe Hurdman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-07-06', 1.51, 'FaZe Clan', '5:4', 'Cammy Chree');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-12-18', 2.78, 'Wolves Esports', '0:3', 'Alisha Baudin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-10-29', 3.93, 'Virtus.pro', '5:4', 'Lena Priddis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-10-13', 1.01, 'Natus Vincere (NAVI)', '5:4', 'Brendis Dundendale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-09-27', 1.56, 'MNM Gaming', '5:4', 'Eveline Opie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-04-04', 2.99, 'MNM Gaming', '5:3', 'Britt Bentzen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-02-02', 2.22, 'SCARZ', '4:5', 'Cindelyn Imorts');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-04-23', 3.16, 'SCARZ', '4:2', 'Linette Feldmesser');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-02-15', 3.85, 'Oxygen Esports', '0:3', 'Mitch Ledington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-10-19', 0.97, 'FURIA Esports', '5:3', 'Giffy Besson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-01-28', 4.42, 'M80', '2:4', 'Marin Fosdick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-03-15', 1.56, 'FURY', '3:5', 'Iggy Batecok');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-12-04', 0.14, 'Virtus.pro', '2:4', 'Carri Ricks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-03-26', 3.24, 'Natus Vincere (NAVI)', '5:4', 'Margo Bullcock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-08-20', 1.93, 'MNM Gaming', '5:3', 'Felicity Lorriman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-07-18', 3.74, 'Spacestation Gaming (SSG)', '2:4', 'Shamus Andrys');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-09-28', 0.32, 'Team BDS', '5:3', 'Gary Skiplorne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-03-25', 4.6, 'DarkZero Esports (DZ)', '0:3', 'Emmaline Martino');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-08-27', 3.95, 'FURIA Esports', '5:3', 'Vikky Dugan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-11-25', 4.93, 'Virtus.pro', '5:3', 'Annelise Hopfer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-08-05', 2.31, 'KOI', '2:4', 'Ferd Mayzes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-11-03', 1.19, 'G2 Esports', '3:5', 'Lemmie Alejandre');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-08-02', 3.46, 'Wolves Esports', '0:3', 'Sherie Feldharker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-08-01', 2.1, 'Oxygen Esports', '4:2', 'Rowena Crawley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-03-28', 1.37, 'MNM Gaming', '3:5', 'Seth Terzza');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-14', 0.6, 'Los + oNe', '5:4', 'Marina O''Finan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-06-20', 4.04, 'Team BDS', '0:3', 'Anett Tripp');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-09-06', 3.71, 'Wolves Esports', '0:3', 'Charlean Kall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-05-22', 0.75, 'G2 Esports', '3:0', 'Domenic Duckers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-07-17', 1.58, 'DarkZero Esports (DZ)', '3:0', 'Shayna Lemasney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-09-04', 1.37, 'Los + oNe', '5:4', 'Humbert McGrah');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-12-30', 2.59, 'Team Liquid', '3:0', 'Amye Raffeorty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-04-22', 1.01, 'Elevate', '3:0', 'Ardra Dilleway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-07', 0.38, 'KOI', '4:5', 'Noami Coorington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-02-17', 3.2, 'Team BDS', '3:0', 'Atalanta Rocca');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-05-15', 0.91, 'Spacestation Gaming (SSG)', '3:0', 'Meaghan Fick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-08-16', 2.18, 'MNM Gaming', '5:3', 'Kimbell Durdle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-05-08', 0.51, 'FaZe Clan', '3:5', 'Sherlock Langstone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-02-03', 2.29, 'FaZe Clan', '2:4', 'Lorne Boles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-06-28', 0.21, 'Team Liquid', '0:3', 'Roselle Estcot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-08-14', 3.15, 'FURY', '5:4', 'Ephrayim Sclanders');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-11-07', 0.45, 'Soniqs', '4:2', 'Tootsie Skough');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-23', 3.36, 'Elevate', '3:0', 'Fredrick Roggers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-04-18', 1.49, 'FURY', '0:3', 'Egbert Blagden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-08-27', 2.44, 'M80', '4:5', 'Hall Dederich');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-10-31', 1.45, 'M80', '0:3', 'Sharline Ryle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-06-19', 0.26, 'FURY', '4:2', 'Almeda Jossum');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-12-24', 1.86, 'Spacestation Gaming (SSG)', '4:2', 'Justen Martinet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-08', 2.41, 'KOI', '4:2', 'Kerby Rickis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-12-08', 2.75, 'KOI', '5:4', 'Theodora Meltetal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-12-18', 3.64, 'KOI', '5:3', 'Emerson Rosbrough');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-09-27', 4.37, 'FaZe Clan', '3:5', 'Roth Birth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-11-28', 2.5, 'Team BDS', '5:4', 'Jodee Romain');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-12-21', 0.01, 'Virtus.pro', '4:2', 'Sol Barg');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-03', 4.52, 'Spacestation Gaming (SSG)', '4:2', 'Easter Scarff');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-03-21', 1.36, 'w7m esports', '4:5', 'Diandra Neale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-03-16', 1.82, 'KOI', '3:0', 'Eleonora McGahey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-06-10', 0.25, 'Spacestation Gaming (SSG)', '3:0', 'Guntar Southard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-02-22', 1.62, 'Los + oNe', '5:3', 'Baryram McGettigan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-10-04', 1.79, 'MNM Gaming', '3:5', 'Alena Kertess');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-11-14', 4.8, 'Natus Vincere (NAVI)', '5:4', 'Pavel Scay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-01-19', 1.68, 'Los + oNe', '3:5', 'Filip Thame');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-10-07', 2.11, 'Wolves Esports', '4:2', 'Rosco Aldwick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-04-11', 0.99, 'Natus Vincere (NAVI)', '3:0', 'Franz Vido');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-05-30', 3.43, 'Los + oNe', '5:3', 'Arleyne Olivari');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-11-19', 1.43, 'Los + oNe', '0:3', 'Samantha Kebbell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-01-05', 1.23, 'Oxygen Esports', '4:5', 'Mickey Geeves');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-05-11', 2.41, 'Spacestation Gaming (SSG)', '4:2', 'Mattie Aphale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-17', 3.97, 'Spacestation Gaming (SSG)', '4:5', 'Fabe Daber');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-11-16', 3.75, 'KOI', '5:4', 'Ezmeralda Smetoun');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-06-27', 1.58, 'M80', '2:4', 'Silvester Pero');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-01-25', 0.85, 'w7m esports', '5:3', 'Packston Molnar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-05-13', 0.96, 'Wolves Esports', '4:5', 'Carlynne Dmiterko');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-12-12', 3.95, 'Natus Vincere (NAVI)', '4:2', 'Thalia Plumtree');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-09-19', 0.49, 'FURY', '4:5', 'Rayner Chimes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-02-19', 3.2, 'FURY', '5:4', 'Margarete Server');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-10-15', 4.69, 'G2 Esports', '0:3', 'Franky Minett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-06-23', 2.2, 'Spacestation Gaming (SSG)', '0:3', 'Dorisa Paulley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-01-01', 2.27, 'KOI', '2:4', 'Nita Crawforth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-10-14', 0.3, 'MNM Gaming', '0:3', 'Barbabas Fitzgerald');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-06-04', 3.27, 'FaZe Clan', '5:3', 'Viv Rummins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-10-28', 3.37, 'G2 Esports', '5:4', 'Lucho Klazenga');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-08-09', 4.48, 'Spacestation Gaming (SSG)', '3:0', 'Cherie Kender');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-06-07', 0.51, 'Elevate', '4:5', 'Babette O''Regan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-12-10', 2.41, 'KOI', '4:5', 'Peder Lowfill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-12-09', 2.76, 'FaZe Clan', '3:0', 'Adolph Brotherick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-09-25', 1.34, 'Natus Vincere (NAVI)', '2:4', 'Anne-corinne Donaghy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-03-01', 1.02, 'Wolves Esports', '3:0', 'Frannie Withams');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-11-18', 3.09, 'KOI', '3:0', 'Bethena Selman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-06-19', 4.15, 'Natus Vincere (NAVI)', '5:4', 'Klarrisa Shrawley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-07-26', 3.57, 'Team Liquid', '5:4', 'Avril Paulino');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-09-11', 3.34, 'FURY', '5:3', 'Leigh Delacote');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-06-14', 3.79, 'Los + oNe', '5:3', 'Rorie Message');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-06-15', 4.13, 'Team BDS', '5:4', 'Inge Bazoche');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-10-08', 0.49, 'Natus Vincere (NAVI)', '3:0', 'Gard Hook');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-03-15', 3.13, 'w7m esports', '4:5', 'Clayson Hollyar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-08-29', 2.11, 'Oxygen Esports', '0:3', 'Hans Denziloe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-10-22', 1.97, 'Soniqs', '4:2', 'Natalya Giggs');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-11-06', 1.1, 'G2 Esports', '4:2', 'Ursuline Bleazard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-12-16', 2.19, 'Oxygen Esports', '4:2', 'Hastie Langdridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-07-30', 3.08, 'Elevate', '0:3', 'Stephannie Veryan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-07-25', 0.67, 'Spacestation Gaming (SSG)', '0:3', 'Sinclair Bossons');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-07-21', 0.34, 'Oxygen Esports', '4:2', 'Kendricks Burnside');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-09-19', 4.56, 'KOI', '5:3', 'Melodee Roadknight');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-07', 0.67, 'FURIA Esports', '3:5', 'Val Furman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-05-25', 2.95, 'Elevate', '3:0', 'Kelila Eubank');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-21', 0.38, 'Spacestation Gaming (SSG)', '4:5', 'Vania Antao');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-08-09', 0.82, 'Soniqs', '4:2', 'Francine Claybourne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-26', 4.37, 'w7m esports', '3:0', 'Loren MacShirie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-01-23', 4.89, 'DarkZero Esports (DZ)', '5:3', 'Cammy Goly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-06-17', 2.77, 'G2 Esports', '2:4', 'Haleigh Merrill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-11-04', 0.01, 'Los + oNe', '3:0', 'Ardath Kenrack');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-22', 0.64, 'SCARZ', '2:4', 'Ermin Keilty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-12-29', 2.87, 'G2 Esports', '3:0', 'Marje Pittwood');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-08-18', 0.32, 'Los + oNe', '3:5', 'Rudolf Quinnelly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-11', 4.73, 'Soniqs', '3:5', 'Arie Cartmill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-02-16', 2.4, 'Dplus', '2:4', 'Ginny Wisedale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-02-08', 3.18, 'MNM Gaming', '2:4', 'Ynes Vedenisov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-02-25', 1.19, 'FURIA Esports', '3:0', 'Madalena Brace');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-09-23', 2.22, 'Virtus.pro', '4:2', 'Maryanne Rochester');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-01-20', 4.53, 'Team Liquid', '2:4', 'Booth Devinn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-06-02', 1.39, 'Team BDS', '2:4', 'Richard Tubridy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-03-16', 0.55, 'Oxygen Esports', '3:0', 'Tobi Oliphand');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-06-11', 4.92, 'w7m esports', '3:5', 'Cornela Aleksahkin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-05-26', 1.4, 'w7m esports', '4:2', 'Bald O'' Brian');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-29', 3.32, 'DarkZero Esports (DZ)', '5:3', 'Amby Corby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-07-22', 3.4, 'Virtus.pro', '4:5', 'Sander Richardon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-06-20', 0.23, 'MNM Gaming', '3:0', 'Becka Hammell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-08-27', 2.06, 'FURY', '3:0', 'Melvin Tranfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-06-05', 2.75, 'Wolves Esports', '5:4', 'Danice Kubis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-03-08', 0.74, 'Elevate', '3:5', 'Ingunna Drinkel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-06-16', 1.98, 'Soniqs', '4:2', 'Algernon Witton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-09-21', 3.59, 'M80', '4:2', 'Poppy Quickenden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-02-19', 3.78, 'KOI', '4:5', 'Angil Boog');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-11-25', 1.58, 'Virtus.pro', '3:5', 'Jeannie Clausen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-12-23', 4.56, 'Wolves Esports', '0:3', 'Beatrix Dunn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-11-05', 3.7, 'MNM Gaming', '5:4', 'Constantin Haxby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-08-10', 3.44, 'Natus Vincere (NAVI)', '3:0', 'Tobit Greenmon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-08-18', 2.06, 'Team Liquid', '2:4', 'Fremont Paquet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-07-02', 1.03, 'Team BDS', '5:4', 'Sigfried Cogley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-07-13', 2.47, 'Dplus', '5:3', 'Hugues Emms');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-03-22', 0.58, 'Dplus', '5:3', 'Kele Slimming');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-06-09', 1.72, 'Spacestation Gaming (SSG)', '3:5', 'Maribeth Eckersley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-06-11', 3.86, 'FURY', '2:4', 'Morty Jacobsz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-09-15', 0.57, 'MNM Gaming', '4:2', 'Cathy Comettoi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-12-31', 1.83, 'Natus Vincere (NAVI)', '4:2', 'Kevina Klimek');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-11-06', 1.23, 'Natus Vincere (NAVI)', '4:2', 'Aidan Weaver');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-09-16', 1.49, 'Soniqs', '0:3', 'Paton Pabst');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-03', 4.99, 'DarkZero Esports (DZ)', '4:2', 'Karel Allibon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-08-30', 3.2, 'FaZe Clan', '3:5', 'Judon Szymanzyk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-08-07', 2.58, 'Wolves Esports', '4:5', 'Austina Evershed');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-10-24', 0.12, 'MNM Gaming', '5:3', 'Xenia Chasle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-11-30', 4.07, 'Soniqs', '3:5', 'Lydia Roch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-02-28', 1.9, 'Natus Vincere (NAVI)', '2:4', 'Rosabelle Talby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-06-25', 1.67, 'w7m esports', '2:4', 'Shaylynn Vickery');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-05-14', 0.03, 'Team BDS', '3:5', 'Kevyn Peedell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-06-07', 3.94, 'G2 Esports', '5:4', 'Archy Pauls');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-07-07', 1.58, 'DarkZero Esports (DZ)', '3:0', 'Cecil Pearmain');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-03-08', 2.74, 'Elevate', '4:5', 'Amelia Iacapucci');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-02-10', 3.53, 'Dplus', '3:0', 'Cherye Crickmoor');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-12-04', 1.45, 'Oxygen Esports', '0:3', 'Ianthe Crone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-09-16', 1.08, 'Natus Vincere (NAVI)', '5:3', 'Matty Stock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-09-25', 4.51, 'M80', '5:4', 'Sibley Killcross');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-07-19', 0.93, 'w7m esports', '5:3', 'Chev Canto');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-07-14', 0.14, 'G2 Esports', '3:5', 'Mattie Hanster');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-01-02', 3.78, 'FURY', '3:5', 'Viv Harteley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-08-06', 3.38, 'DarkZero Esports (DZ)', '5:4', 'Samuele Paladino');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-10-17', 2.37, 'SCARZ', '4:5', 'Warde Geale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-11-09', 3.25, 'FURIA Esports', '5:4', 'Ravi MacGorman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-01-19', 3.31, 'FURIA Esports', '4:5', 'Shannon Greedier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-08-06', 3.9, 'Oxygen Esports', '5:4', 'Jean McGiveen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-04-09', 3.88, 'Team Liquid', '5:4', 'Allen Richarson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-22', 2.0, 'M80', '4:5', 'Richy Diable');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-08-31', 1.5, 'MNM Gaming', '4:2', 'Wayland Brobyn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-08-08', 2.68, 'Oxygen Esports', '2:4', 'Nial Wingeat');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-01-04', 2.87, 'w7m esports', '3:0', 'Elyse Haggarth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-10-08', 0.11, 'FURIA Esports', '0:3', 'Bronson Krikorian');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-05-23', 2.9, 'Spacestation Gaming (SSG)', '4:2', 'Auberon Hanes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-29', 4.08, 'Soniqs', '0:3', 'Sibilla Puttrell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-11-16', 1.29, 'FURY', '4:5', 'Moses Elijahu');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-10-14', 0.54, 'FURIA Esports', '4:5', 'Markos Gilbert');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-27', 0.34, 'MNM Gaming', '3:0', 'Bibi Charlwood');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-05-12', 2.44, 'Dplus', '0:3', 'Jeff Vasilmanov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-03-27', 2.75, 'Team Liquid', '2:4', 'Anestassia Ballingal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-10-13', 1.27, 'FURY', '0:3', 'Renato Wimes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-12-09', 3.8, 'Soniqs', '2:4', 'Bunnie Pavluk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-01-21', 0.78, 'KOI', '5:4', 'Paddie McDonand');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-06-29', 3.15, 'SCARZ', '5:4', 'Alida Roux');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-08-17', 2.22, 'Spacestation Gaming (SSG)', '2:4', 'Katya Greenig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-04-09', 3.55, 'MNM Gaming', '0:3', 'Johnny Wadie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-09-01', 3.52, 'w7m esports', '5:3', 'Ellsworth Walton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-06-12', 1.55, 'Team Liquid', '4:5', 'Alva MacGeffen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-09-05', 2.66, 'Oxygen Esports', '3:0', 'Che Halvorsen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-03-08', 1.93, 'Team Liquid', '4:5', 'Sheena Vidyapin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-11-19', 0.53, 'KOI', '4:5', 'Laurena Pierri');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-02-20', 0.08, 'G2 Esports', '2:4', 'Katerina Troup');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-08-06', 3.35, 'Los + oNe', '4:5', 'Wesley MacPake');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-07-20', 1.59, 'Team BDS', '3:5', 'Dulcea Haxbie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-11-01', 0.19, 'Soniqs', '5:3', 'Minetta Rohlfing');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-04-13', 2.97, 'Elevate', '3:5', 'Golda Stainton - Skinn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-03-21', 0.94, 'Team BDS', '5:3', 'Nikki Puddephatt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-07-24', 0.93, 'Los + oNe', '5:4', 'Coleen Gutowska');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-05-14', 2.61, 'Wolves Esports', '4:5', 'Vidovik Petrovykh');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-08-04', 3.66, 'G2 Esports', '3:5', 'Verena Rogeon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-06-10', 0.57, 'M80', '4:5', 'Adolphus Noads');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-04-14', 0.66, 'DarkZero Esports (DZ)', '3:5', 'Asa Harower');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-11-18', 0.28, 'FURIA Esports', '4:5', 'Fionna Hundey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-03-08', 1.06, 'KOI', '5:3', 'Penelopa Iori');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-03-06', 0.08, 'Natus Vincere (NAVI)', '4:5', 'Adel Crosskill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-10-13', 3.17, 'Los + oNe', '0:3', 'Daven Whitmore');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-03-22', 3.0, 'Dplus', '2:4', 'Myrilla Tumayan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-07-26', 0.02, 'FaZe Clan', '3:5', 'Alisha Norster');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-09-21', 2.75, 'Elevate', '5:3', 'Clarine Frondt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-10-12', 2.78, 'Team BDS', '2:4', 'Ciel Scipsey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-06-06', 2.23, 'MNM Gaming', '3:5', 'Vinny Antham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-03-10', 4.8, 'Natus Vincere (NAVI)', '5:3', 'Gabey Kaveney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-07-26', 0.39, 'Natus Vincere (NAVI)', '5:3', 'Neil Chezier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-05-29', 4.5, 'Wolves Esports', '2:4', 'Vivianne Bridat');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-09-25', 0.32, 'M80', '5:3', 'Ruggiero Von Der Empten');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-03-29', 3.32, 'FaZe Clan', '4:2', 'Wiatt Viel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-05-24', 1.13, 'FaZe Clan', '3:0', 'Chandra Matsell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-10-16', 0.87, 'KOI', '4:5', 'Yovonnda Blackley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-02-10', 2.66, 'DarkZero Esports (DZ)', '5:3', 'Winnie Bannell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-11-29', 0.46, 'Virtus.pro', '4:5', 'Jaclyn Cohen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-03-11', 4.33, 'FURIA Esports', '3:0', 'Edeline Fairnie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-22', 4.72, 'SCARZ', '2:4', 'Baxter Lelievre');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-11-25', 4.21, 'Virtus.pro', '5:4', 'Shaughn Maurice');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-01-02', 3.66, 'Soniqs', '0:3', 'Ozzy Bamfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-11-21', 0.58, 'Natus Vincere (NAVI)', '4:2', 'Ari Rosin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-09-17', 3.67, 'Team Liquid', '3:0', 'Roxy Chittim');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-06-11', 2.46, 'w7m esports', '3:0', 'Joanna Bayley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-11-24', 2.81, 'FURIA Esports', '5:3', 'Nobe Selborne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-05-18', 4.9, 'Team BDS', '3:0', 'Jimmy Paaso');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-04-06', 4.3, 'G2 Esports', '2:4', 'Lilyan Dixcee');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-01-05', 2.74, 'MNM Gaming', '5:3', 'Ameline Jehan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-10-29', 4.98, 'Team Liquid', '4:2', 'Jasmina Haburne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-08-11', 4.23, 'G2 Esports', '5:3', 'Darleen Girton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-02-05', 0.83, 'Elevate', '2:4', 'Howie Hicks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-11-16', 2.42, 'Team Liquid', '2:4', 'Daveta Lissandrini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-04-21', 3.63, 'DarkZero Esports (DZ)', '3:5', 'Galina Hubble');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-01-30', 4.74, 'Team BDS', '2:4', 'Sophie Nind');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-01-02', 1.37, 'FURIA Esports', '0:3', 'Hope Bartosch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-06-25', 2.72, 'Natus Vincere (NAVI)', '2:4', 'Beverie Ackery');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-11-22', 2.06, 'FaZe Clan', '4:5', 'Barnabe Droogan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-03-28', 3.16, 'Soniqs', '4:2', 'Karlotte Degue');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-14', 1.51, 'w7m esports', '4:5', 'Rasla Smeaton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-09-08', 3.21, 'G2 Esports', '4:5', 'Leopold Dunkley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-12-09', 2.16, 'Dplus', '0:3', 'Violet Milligan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-03-08', 1.43, 'SCARZ', '4:2', 'Mikey Grass');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-01-14', 0.79, 'SCARZ', '3:5', 'Jobey Cicerone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-12-21', 0.25, 'G2 Esports', '5:3', 'Thaxter Whetnall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-06-05', 2.18, 'SCARZ', '4:2', 'Nert Fasson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-08-02', 1.77, 'FURY', '5:4', 'Ignatius Stodart');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-09-01', 4.6, 'Elevate', '4:5', 'Chiquia Bowerman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-02-15', 1.42, 'FaZe Clan', '5:4', 'Elvin Freshwater');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-12-12', 2.38, 'G2 Esports', '4:2', 'Olivier Mattaus');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-03-08', 1.65, 'DarkZero Esports (DZ)', '5:3', 'Corissa Ahearne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-09', 0.3, 'Team Liquid', '5:4', 'Laughton Katt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-12-15', 0.03, 'Los + oNe', '2:4', 'Binni Kollas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-03-23', 3.97, 'FURIA Esports', '3:0', 'Franklyn Rylett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-04-29', 1.9, 'FURIA Esports', '5:4', 'Trumann Carder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-12-28', 2.75, 'Elevate', '4:2', 'Chrissie Shooter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-11-26', 2.57, 'Oxygen Esports', '3:0', 'Ileane Penkethman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-01-30', 4.95, 'Los + oNe', '3:0', 'Winne Lanphere');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-08-14', 3.8, 'Elevate', '0:3', 'Katharina Corby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-06', 0.17, 'DarkZero Esports (DZ)', '3:0', 'Molly Appleford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-04-20', 3.7, 'MNM Gaming', '5:4', 'Gillian Jarratt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-10-30', 4.56, 'FURY', '4:5', 'Son Swancock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-01-07', 4.8, 'KOI', '2:4', 'Meyer Normanvill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-11-12', 3.24, 'Wolves Esports', '4:2', 'Karole Owers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-05-18', 3.23, 'Team BDS', '2:4', 'Esta Arsmith');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-07', 2.11, 'Natus Vincere (NAVI)', '0:3', 'Katina Troughton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-03-23', 1.3, 'w7m esports', '3:0', 'Dulci Tewes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-08-01', 4.59, 'SCARZ', '2:4', 'Nickolaus Hadeke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-10-07', 0.55, 'SCARZ', '4:2', 'Jaquelyn Sergent');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-05-21', 2.8, 'Soniqs', '3:0', 'Gilemette Ambrozik');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-06-26', 4.53, 'Team BDS', '0:3', 'Karla Camel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-11-05', 0.71, 'Wolves Esports', '0:3', 'Adelina Rollitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-08-07', 0.11, 'Team Liquid', '5:3', 'Shir Odda');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-06-28', 3.21, 'Spacestation Gaming (SSG)', '0:3', 'Elvis Phoenix');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-03-31', 1.1, 'DarkZero Esports (DZ)', '5:3', 'Hernando Maybury');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-11-21', 1.49, 'FaZe Clan', '4:5', 'Fee Castrillo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-06-20', 3.97, 'Oxygen Esports', '3:0', 'Annabella Boik');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-03-24', 2.17, 'M80', '5:3', 'Ethelyn Halling');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-07-10', 1.47, 'w7m esports', '5:3', 'Rea Tutsell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-04-13', 4.52, 'Los + oNe', '3:5', 'Katuscha Brugmann');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-07-12', 1.97, 'Oxygen Esports', '4:5', 'Pedro Gillespey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-12-07', 2.85, 'MNM Gaming', '0:3', 'Rowen Blagbrough');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-01-15', 2.61, 'SCARZ', '3:0', 'Janos Kollatsch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-09-20', 4.82, 'FURIA Esports', '2:4', 'Gratiana Gulvin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-07-08', 2.26, 'FURIA Esports', '4:2', 'Iorgos Ferie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-01-08', 4.44, 'FURY', '5:4', 'Althea Hardy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-08-24', 0.26, 'Oxygen Esports', '0:3', 'Melody Bernon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-23', 2.75, 'Team Liquid', '5:4', 'Shani Brookes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-04-27', 1.11, 'SCARZ', '0:3', 'Kial Gocher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-05-14', 4.21, 'M80', '5:4', 'Hildagarde Greathead');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-11-07', 4.22, 'Dplus', '4:5', 'Mala Dallosso');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-11-22', 4.33, 'Wolves Esports', '4:2', 'Barbi Storks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-02-01', 2.33, 'FURY', '3:0', 'Kerwin Nourse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-08-12', 2.82, 'DarkZero Esports (DZ)', '4:2', 'Cazzie Martinuzzi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-02-22', 1.38, 'Natus Vincere (NAVI)', '3:5', 'Merell Verrechia');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-08-02', 0.24, 'Dplus', '4:5', 'Elsbeth Massinger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-08-05', 3.75, 'FaZe Clan', '3:5', 'Farleigh Troyes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-10-11', 2.17, 'Wolves Esports', '4:5', 'Everett Andor');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-01-21', 3.61, 'DarkZero Esports (DZ)', '3:0', 'Abagael Frew');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-09-28', 3.0, 'DarkZero Esports (DZ)', '4:2', 'Elliot Lillow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-01-17', 4.42, 'MNM Gaming', '3:5', 'Chalmers MacAulay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-04-02', 0.48, 'Team Liquid', '2:4', 'Peadar Moore');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-10-14', 1.71, 'FURY', '3:0', 'Gerrie Tettersell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-12-26', 0.62, 'Team Liquid', '3:5', 'Olivier Layhe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-09-02', 2.66, 'G2 Esports', '3:0', 'Florencia Hearse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-04-14', 2.35, 'Virtus.pro', '5:4', 'Connor Pierton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-10-03', 2.8, 'Soniqs', '2:4', 'Arly Beagen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-11-25', 3.85, 'Spacestation Gaming (SSG)', '5:4', 'Jodie Chagg');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-01-15', 3.28, 'Soniqs', '5:4', 'Nolie Ruff');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-03-26', 4.86, 'DarkZero Esports (DZ)', '5:4', 'Ellwood Marthen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-07', 3.4, 'Wolves Esports', '0:3', 'Elayne Ironmonger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-09-04', 4.07, 'Spacestation Gaming (SSG)', '3:0', 'Marlow Jarrette');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-08-27', 1.51, 'M80', '0:3', 'Seana Blabber');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-11-09', 3.07, 'Spacestation Gaming (SSG)', '3:0', 'Bailie Adamiec');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-01-03', 2.2, 'Virtus.pro', '3:5', 'Sophey Cristofolini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-05', 2.14, 'Oxygen Esports', '0:3', 'Liana O''Logan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-03-18', 3.19, 'Virtus.pro', '2:4', 'Camilla Stratz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-01-24', 2.95, 'FaZe Clan', '5:3', 'Stirling Chance');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-16', 1.16, 'G2 Esports', '4:5', 'Heidie Teesdale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-07-19', 0.86, 'Spacestation Gaming (SSG)', '5:3', 'Malorie Doust');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-10-23', 3.43, 'w7m esports', '3:5', 'Rosco Franzini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-20', 4.55, 'Oxygen Esports', '4:2', 'Jacintha Spollen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-12-05', 2.06, 'Dplus', '0:3', 'Austin Dilleway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-03-16', 3.21, 'w7m esports', '0:3', 'Silvia Rosenfelder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-03-21', 0.78, 'FURY', '4:2', 'Charlie Lasty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-12-26', 0.6, 'FaZe Clan', '4:5', 'Dylan Beevors');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-02-16', 4.11, 'Soniqs', '3:0', 'Salome Leebeter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-07-21', 0.41, 'Dplus', '4:2', 'Emiline Degli Abbati');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-11-16', 1.0, 'KOI', '3:5', 'Dulcia Leggett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-10-18', 0.13, 'FURIA Esports', '5:3', 'Debora Caunter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-02', 1.83, 'FURIA Esports', '2:4', 'Bonnibelle Yurin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-01-13', 1.56, 'Team BDS', '5:4', 'Wini Roantree');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-04-10', 2.78, 'Dplus', '4:5', 'Max Bellie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-12-16', 4.9, 'SCARZ', '4:5', 'Kym Sorel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-11-18', 3.26, 'Oxygen Esports', '3:0', 'Carl Thomkins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-12-27', 2.25, 'Elevate', '0:3', 'Nina Lorkings');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-07-15', 1.49, 'DarkZero Esports (DZ)', '3:0', 'Dalston Lilley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-08-17', 1.78, 'Spacestation Gaming (SSG)', '5:3', 'Darrell Oles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-11-03', 0.67, 'DarkZero Esports (DZ)', '5:4', 'Darlleen Wallicker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-08-12', 2.26, 'Wolves Esports', '2:4', 'Gusty Flageul');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-08-14', 4.13, 'Oxygen Esports', '3:5', 'Madonna Bunning');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-12-11', 2.39, 'M80', '3:5', 'Carlie Shew');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-09-28', 1.53, 'Natus Vincere (NAVI)', '2:4', 'Lulita Kirsop');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-04-22', 3.62, 'Oxygen Esports', '4:2', 'Timmy Gurko');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-07-21', 1.06, 'Virtus.pro', '5:3', 'Thayne Matyukon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-06', 2.14, 'DarkZero Esports (DZ)', '0:3', 'Grady Garbutt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-12-25', 0.29, 'M80', '4:5', 'Davie Orbine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-10-26', 1.7, 'Natus Vincere (NAVI)', '2:4', 'Lynett Render');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-05-26', 1.74, 'Virtus.pro', '0:3', 'Heather Ades');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-05-09', 2.04, 'FURIA Esports', '3:5', 'Lloyd Dallin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-09-12', 4.98, 'M80', '5:4', 'Katti Cankett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-06-19', 2.97, 'FURY', '2:4', 'Ingaborg Geering');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-01-26', 0.19, 'Wolves Esports', '4:5', 'Fredi Bryer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-08-10', 1.42, 'DarkZero Esports (DZ)', '3:5', 'Anet Castillou');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-04', 3.06, 'G2 Esports', '4:5', 'Coleen Filipyev');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-11-17', 3.64, 'Wolves Esports', '2:4', 'Shayne Minet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-02-16', 3.28, 'MNM Gaming', '3:5', 'Penni Coxen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-02-05', 0.97, 'FaZe Clan', '5:4', 'Alastair McCadden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-07-03', 1.54, 'Natus Vincere (NAVI)', '2:4', 'Shandeigh Guswell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-11-18', 4.24, 'Team Liquid', '3:5', 'Lek Sattin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-12-23', 4.39, 'G2 Esports', '2:4', 'Celinka Trustey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-02-09', 1.08, 'Dplus', '2:4', 'Ede Blagburn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-30', 1.38, 'Spacestation Gaming (SSG)', '5:3', 'Vale Sheirlaw');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-06-28', 2.82, 'Wolves Esports', '4:2', 'Berti Sorsby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-11-08', 1.28, 'Team BDS', '5:4', 'Skipper Kilroy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-05-03', 1.23, 'Team BDS', '3:0', 'Kimble Cunney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-11-18', 3.76, 'Natus Vincere (NAVI)', '5:4', 'Veronique Tatem');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-08-20', 4.79, 'Team Liquid', '3:0', 'Caril Meeks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-12-04', 1.39, 'G2 Esports', '4:5', 'Devonna Barstock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-04-01', 0.07, 'Spacestation Gaming (SSG)', '2:4', 'Hatty Mioni');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-05-07', 0.37, 'Virtus.pro', '4:2', 'Layla McParland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-07-13', 0.76, 'Wolves Esports', '0:3', 'Aldridge Glasser');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-11-23', 3.97, 'FaZe Clan', '3:5', 'Katy Yeude');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-01-10', 4.57, 'MNM Gaming', '3:5', 'Callie Eltune');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-10-18', 3.29, 'G2 Esports', '3:5', 'Kellby Skeel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-08-23', 2.22, 'FURIA Esports', '0:3', 'Hyacinth McAne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-11-12', 2.92, 'FURY', '2:4', 'Margo Cardenas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-07-26', 2.09, 'Natus Vincere (NAVI)', '4:5', 'Berti Tunsley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-05-16', 0.64, 'Virtus.pro', '5:4', 'Cassandra Choudhury');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-12-09', 3.41, 'MNM Gaming', '4:5', 'Moyna Isenor');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-05-02', 0.97, 'Spacestation Gaming (SSG)', '4:5', 'Francine Blades');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-06-08', 3.36, 'Natus Vincere (NAVI)', '3:0', 'Nikolas Howitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-03', 4.86, 'SCARZ', '3:5', 'Vallie Blampey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-11', 3.29, 'w7m esports', '3:0', 'Jacqui Simmons');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-08-11', 1.91, 'Wolves Esports', '0:3', 'Arlana Vooght');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-08-24', 1.39, 'Wolves Esports', '5:3', 'Dorey McKernan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-03-20', 1.13, 'Spacestation Gaming (SSG)', '3:5', 'Gris Scatchard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-12-10', 1.0, 'Team BDS', '5:3', 'Cornelia Dogg');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-02-25', 1.13, 'Los + oNe', '4:2', 'Brewster Sertin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-05-02', 3.91, 'KOI', '5:4', 'Titos Arnoud');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-04-19', 3.61, 'FURIA Esports', '0:3', 'Drucie Statefield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-11-09', 1.91, 'DarkZero Esports (DZ)', '5:3', 'Teri Leathers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-12-05', 1.18, 'Natus Vincere (NAVI)', '4:2', 'Penni Perri');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-10-06', 4.25, 'Wolves Esports', '3:5', 'Skye Nassie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-08-10', 0.04, 'DarkZero Esports (DZ)', '3:0', 'Kipp Ullock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-12-23', 4.78, 'Natus Vincere (NAVI)', '4:5', 'Cordell Holworth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-06-28', 3.25, 'SCARZ', '2:4', 'Genna Gadsden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-04-30', 1.41, 'w7m esports', '5:4', 'Thacher Ruhben');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-09-17', 3.28, 'SCARZ', '3:5', 'Moise Pickworth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-03-13', 4.57, 'Dplus', '0:3', 'Othella McNirlin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-04-19', 4.17, 'G2 Esports', '2:4', 'Kori Windeatt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-02-07', 1.84, 'FURIA Esports', '5:3', 'Patricio Gammons');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-05-05', 1.62, 'Spacestation Gaming (SSG)', '3:5', 'Cassie Thame');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-04-28', 0.17, 'Los + oNe', '5:3', 'Dianemarie Prine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-08-22', 1.31, 'Team BDS', '4:2', 'Christiane Lamas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-29', 1.96, 'Team BDS', '4:5', 'Sile Sleaford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-07-03', 4.03, 'Team Liquid', '5:3', 'Loydie Novak');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-05', 4.57, 'DarkZero Esports (DZ)', '5:4', 'Barbee Murch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-05-10', 1.68, 'SCARZ', '4:5', 'Berthe Pearne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-02-05', 2.25, 'Elevate', '2:4', 'Mordy Weedon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-11-29', 3.2, 'FURIA Esports', '0:3', 'Richmond Aronovich');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-04-12', 2.58, 'DarkZero Esports (DZ)', '5:4', 'Dena Betser');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-05-30', 4.28, 'M80', '5:4', 'Dmitri Scotney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-07-14', 2.18, 'Soniqs', '3:0', 'Cele Venning');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-12-04', 3.85, 'Spacestation Gaming (SSG)', '0:3', 'Efrem Bursnell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-03-10', 0.91, 'G2 Esports', '0:3', 'Adelaida Potteridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-11-23', 2.86, 'Wolves Esports', '2:4', 'Godfry Pidgeley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-07-18', 0.18, 'M80', '3:5', 'Maury Blunderfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-02-14', 0.89, 'Team Liquid', '0:3', 'Blakeley Mucklow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-08-25', 4.18, 'Team BDS', '3:0', 'Willis Gwatkin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-11-21', 3.84, 'G2 Esports', '4:5', 'Yancey Sparwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-07-08', 1.2, 'FaZe Clan', '5:3', 'Beverlie Roots');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-01-26', 2.75, 'Soniqs', '2:4', 'Janella Kleen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-06-23', 1.72, 'Natus Vincere (NAVI)', '5:3', 'Zedekiah Perrins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-11-18', 2.43, 'Wolves Esports', '3:0', 'Broderick Revie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-02-28', 2.79, 'FaZe Clan', '3:5', 'Omar Lethebridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-11-25', 4.37, 'FaZe Clan', '3:5', 'Phil McKeveney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-07-17', 3.78, 'Oxygen Esports', '4:5', 'Jemie Gammel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-01-22', 1.98, 'w7m esports', '3:5', 'Wilie Corp');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-07-04', 1.51, 'Soniqs', '3:0', 'Monah Hilland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-03-27', 2.12, 'FaZe Clan', '4:2', 'Arlan Folds');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-02-28', 2.22, 'Soniqs', '3:5', 'Minda Garratty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-02-18', 4.51, 'Wolves Esports', '3:0', 'Warde Confait');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-11-22', 4.98, 'KOI', '4:2', 'Gradeigh Maginn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-08-17', 0.73, 'SCARZ', '3:5', 'Nellie Chastagnier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-08-08', 4.24, 'Soniqs', '0:3', 'Friedrich Stroyan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-12-21', 0.58, 'FaZe Clan', '4:5', 'Nikola Rakestraw');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-04-25', 1.74, 'Team Liquid', '5:4', 'Miles Fitzharris');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-03-20', 4.56, 'Los + oNe', '5:3', 'Winifred Ivanyushkin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-18', 0.03, 'w7m esports', '3:0', 'Dyane Dincke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-05-07', 4.09, 'Los + oNe', '3:5', 'Drake Lammertz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-11-28', 0.23, 'FURY', '5:4', 'Royce Scapelhorn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-05-22', 2.01, 'Natus Vincere (NAVI)', '0:3', 'Paule Littrick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-05-29', 0.77, 'FaZe Clan', '3:5', 'Caroline Jearum');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-12', 1.1, 'Los + oNe', '4:5', 'Karlee Mackie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-02-02', 2.21, 'w7m esports', '2:4', 'Phyllys Dell Casa');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-02-23', 1.62, 'DarkZero Esports (DZ)', '2:4', 'Zebedee Cormack');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-02-11', 0.01, 'DarkZero Esports (DZ)', '5:3', 'Dulcinea Amott');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-04-18', 3.49, 'Los + oNe', '4:2', 'Berkley Kaman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-07-27', 3.7, 'M80', '3:0', 'Pet Lambourne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-03-14', 0.37, 'Team Liquid', '5:4', 'Carola Minchenton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-10-25', 3.22, 'Los + oNe', '5:3', 'Wiley Autry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-06-26', 3.14, 'w7m esports', '3:0', 'Dulcy Armfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-01', 3.07, 'Team BDS', '4:5', 'Yasmeen Brame');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-12-11', 1.88, 'Natus Vincere (NAVI)', '3:5', 'Fae Kennsley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-06-08', 2.43, 'Wolves Esports', '3:5', 'Devina O''Hartnedy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-04-28', 3.58, 'DarkZero Esports (DZ)', '4:5', 'Sofie Shimmin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-11-01', 0.31, 'DarkZero Esports (DZ)', '5:3', 'Emlynne Milson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-03-06', 1.26, 'Dplus', '0:3', 'Alley Jeske');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-12-30', 2.1, 'Wolves Esports', '2:4', 'Sofia Petchey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-02-06', 1.95, 'FaZe Clan', '4:5', 'Hasty Pinch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-10-15', 4.87, 'DarkZero Esports (DZ)', '5:4', 'Marena Malafe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-05-16', 2.34, 'Wolves Esports', '4:2', 'Christalle Kenny');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-11-18', 1.25, 'FURY', '4:2', 'Cello Moultrie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-10-02', 4.89, 'Team Liquid', '3:5', 'Yule Westwick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-08-15', 1.93, 'w7m esports', '3:5', 'Reena Petrolli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-08-04', 2.81, 'Los + oNe', '5:4', 'Cos Killingbeck');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-06-22', 2.73, 'DarkZero Esports (DZ)', '2:4', 'Gardner Cullimore');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-09-17', 4.06, 'FURIA Esports', '4:5', 'Marni Chedzoy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-10-07', 3.89, 'Dplus', '3:5', 'Court O''Dempsey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-11-15', 2.84, 'Soniqs', '4:5', 'Ash Foxton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-05-27', 2.14, 'Oxygen Esports', '3:0', 'Templeton Soro');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-08-03', 4.31, 'DarkZero Esports (DZ)', '4:5', 'Janela Mossom');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-10-02', 0.59, 'Soniqs', '0:3', 'Hart Suart');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-01-10', 4.01, 'G2 Esports', '4:5', 'Alverta Klamp');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-01-24', 3.59, 'M80', '4:2', 'Pasquale O''Dulchonta');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-11-18', 2.66, 'Dplus', '4:5', 'Liva Bowhay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-07-11', 2.2, 'Natus Vincere (NAVI)', '4:5', 'Genvieve Higgoe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-26', 3.49, 'Elevate', '0:3', 'Rosanne Apfler');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-01-16', 2.04, 'FaZe Clan', '4:2', 'Langsdon Ovenden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-09-24', 2.62, 'Soniqs', '0:3', 'Carlo Blamires');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-09-01', 4.21, 'Oxygen Esports', '3:5', 'Alva McMullen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-03-25', 3.79, 'FURIA Esports', '4:5', 'Tessi Shorte');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-05-04', 3.91, 'Wolves Esports', '5:3', 'Glory Tapsell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-11-01', 4.01, 'G2 Esports', '5:4', 'Amy Offener');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-07-19', 2.36, 'Dplus', '0:3', 'Tasha Girhard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-06-21', 3.95, 'M80', '2:4', 'Conchita Maggiori');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-04-01', 0.0, 'Los + oNe', '4:5', 'Whitaker Ayerst');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-12-29', 1.27, 'MNM Gaming', '4:2', 'Olympie Hindenberger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-02-28', 3.21, 'Spacestation Gaming (SSG)', '5:3', 'Isac Meaden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-12-09', 2.79, 'Oxygen Esports', '5:3', 'Tracey Wattins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-06-26', 4.76, 'Natus Vincere (NAVI)', '3:0', 'Gordy Harbinson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-03-29', 1.25, 'w7m esports', '3:0', 'Virgilio Stebbings');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-03-23', 3.03, 'w7m esports', '0:3', 'Dur Parradice');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-04-01', 4.16, 'Oxygen Esports', '4:2', 'Teddie Pipes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-07-14', 2.46, 'MNM Gaming', '0:3', 'Devlin Procter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-06-13', 1.38, 'SCARZ', '3:0', 'Cello Moulder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-07-31', 4.93, 'w7m esports', '4:2', 'Garfield Gricks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-07-13', 0.81, 'Elevate', '2:4', 'Clemmy Retallick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-09-11', 0.84, 'Virtus.pro', '4:2', 'Andris Thowless');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2025-02-22', 1.62, 'Natus Vincere (NAVI)', '4:5', 'Cyrill Deaton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-05-01', 2.93, 'Soniqs', '2:4', 'Valenka Kaygill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-05-21', 0.59, 'w7m esports', '5:3', 'Cindra Farrants');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-08-01', 0.15, 'Los + oNe', '2:4', 'Morgana Bertolaccini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-11-23', 2.93, 'M80', '4:5', 'Rod Raspison');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-02-02', 1.75, 'FaZe Clan', '3:0', 'Linn Wotton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-05-03', 4.44, 'Team Liquid', '4:5', 'Svend Piner');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-12-03', 3.94, 'MNM Gaming', '2:4', 'Marni Rosetti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-11-12', 1.51, 'Dplus', '3:0', 'Ferrel Conahy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-12-03', 2.71, 'w7m esports', '5:4', 'Sianna Shortall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-12-02', 4.14, 'Dplus', '5:3', 'Sutherlan Hannibal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-12-23', 2.93, 'FURY', '3:0', 'Janka Chatband');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-08-30', 3.12, 'Elevate', '4:5', 'Enid Redbourn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-08-17', 4.14, 'Los + oNe', '0:3', 'Grady Cornier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-11-28', 1.58, 'Team BDS', '2:4', 'Nanci Ioan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-02-01', 0.43, 'FaZe Clan', '5:4', 'Lucian Hinkes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-02-17', 2.33, 'G2 Esports', '5:4', 'Allan Angrove');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-04-06', 1.08, 'FURY', '5:4', 'Randolph Loadwick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-10-17', 4.14, 'Elevate', '4:5', 'Grethel Crosier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-03-14', 1.2, 'FaZe Clan', '2:4', 'Foss Kopfer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-10-26', 4.31, 'FURIA Esports', '0:3', 'Ferdinand Ogers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-11-27', 3.0, 'FURY', '3:5', 'Petronille Foster-Smith');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-30', 0.19, 'FaZe Clan', '0:3', 'Rosa Idney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-11-12', 0.3, 'Natus Vincere (NAVI)', '4:2', 'Lorelle Hyland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-12-26', 3.59, 'Team Liquid', '5:4', 'Giusto Bonas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-02-25', 2.4, 'Los + oNe', '4:5', 'Valli Alessandrelli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-02-19', 1.52, 'Soniqs', '3:5', 'Brion Lanyon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-06-25', 3.65, 'M80', '3:5', 'Meade Belliard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-01-18', 1.59, 'SCARZ', '4:2', 'Arthur Kleinlerer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-07-11', 4.79, 'Virtus.pro', '3:5', 'Octavia Kupper');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-09-22', 1.93, 'Los + oNe', '3:0', 'Emalee Menego');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-08-04', 2.6, 'Wolves Esports', '5:4', 'Harlen Eicke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-01-14', 2.16, 'KOI', '3:5', 'Tedd Laverenz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-05-04', 4.56, 'Natus Vincere (NAVI)', '3:0', 'Hermy Pestricke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-30', 2.98, 'w7m esports', '4:5', 'Raquela Cadle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-05-24', 2.04, 'Wolves Esports', '3:0', 'Caresa St Leger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-09-11', 4.78, 'Team Liquid', '4:5', 'Tammy Keedwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-11-02', 1.73, 'Spacestation Gaming (SSG)', '0:3', 'Gillian Manhare');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-02-03', 1.68, 'Team Liquid', '0:3', 'Sunshine Petrolli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-08-21', 2.38, 'Team BDS', '0:3', 'Vina Brydell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-01-02', 1.11, 'Virtus.pro', '0:3', 'Antonietta Hapgood');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-01-05', 3.8, 'Los + oNe', '5:4', 'Loutitia Preto');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-01-30', 3.02, 'Wolves Esports', '3:0', 'Madison Sheaf');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-01-31', 4.57, 'Soniqs', '5:3', 'Aurore Swede');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-09-01', 4.44, 'G2 Esports', '4:2', 'Sabra Child');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-10-03', 3.71, 'Virtus.pro', '5:4', 'Marietta Magner');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-08-19', 4.93, 'Virtus.pro', '3:5', 'Tracie Dragonette');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-11-03', 0.17, 'w7m esports', '4:5', 'Sarita Sea');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-03-19', 4.76, 'w7m esports', '3:5', 'Sorcha Duny');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-05-08', 2.1, 'Virtus.pro', '5:4', 'Randell Cockren');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-05-11', 0.43, 'G2 Esports', '4:5', 'Elsey Folkard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-01-30', 2.15, 'Los + oNe', '3:5', 'Arri Ratchford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-03-11', 2.04, 'FURY', '5:4', 'Rianon Fyldes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-08-27', 2.78, 'FURIA Esports', '4:5', 'Wanids Hillhouse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-08-18', 1.51, 'Soniqs', '4:5', 'Carmelle Madeley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-10-01', 0.15, 'Elevate', '3:5', 'Derrik Petche');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-08-07', 2.8, 'Oxygen Esports', '4:2', 'Bennie Grishelyov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-08-01', 1.95, 'Los + oNe', '3:0', 'Karel Beak');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-07-21', 4.73, 'Wolves Esports', '3:0', 'Norbert Stuther');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-04-19', 3.6, 'FURY', '4:2', 'Cart Sperling');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-02-11', 4.22, 'DarkZero Esports (DZ)', '2:4', 'Yoshiko Mityakov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-08-24', 1.68, 'G2 Esports', '4:5', 'Kalila Favel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-11-23', 1.28, 'Team Liquid', '0:3', 'Florrie Halegarth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-09-23', 4.77, 'Spacestation Gaming (SSG)', '2:4', 'Courtnay Ionesco');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-05-03', 4.04, 'Spacestation Gaming (SSG)', '4:5', 'Datha Moine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-06-18', 2.25, 'Elevate', '2:4', 'Martino De Vaar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-07-17', 3.95, 'SCARZ', '3:0', 'Avictor Mandeville');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-03-09', 4.36, 'KOI', '5:4', 'Ingeborg Ayliffe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-05-26', 1.32, 'KOI', '3:5', 'Yvor Mundie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-10-21', 0.05, 'Soniqs', '0:3', 'Briny Whiteway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-04-24', 1.7, 'w7m esports', '4:2', 'Geri Pietasch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-08-11', 2.84, 'Team Liquid', '5:4', 'Garvin Klazenga');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-04-26', 2.67, 'Dplus', '5:3', 'Kermit Trayhorn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-02-14', 2.58, 'Natus Vincere (NAVI)', '5:4', 'Albie MacCook');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-01-05', 3.85, 'Team BDS', '5:3', 'Lilian Lodge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-03-03', 4.32, 'SCARZ', '3:5', 'Maynard Elloit');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-12-02', 0.04, 'MNM Gaming', '3:0', 'Alejandrina Jiggens');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-12-07', 4.29, 'Wolves Esports', '5:3', 'Coleen McCarle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-11-26', 2.33, 'Oxygen Esports', '4:2', 'Maurita Garm');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-10-10', 3.9, 'KOI', '2:4', 'Gaultiero Eates');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-04-16', 2.03, 'KOI', '4:2', 'Winnie Fincke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-09-15', 1.36, 'w7m esports', '5:4', 'Brian Gianolo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-09-09', 4.72, 'G2 Esports', '3:5', 'Hillary Rocks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-07-17', 2.37, 'Natus Vincere (NAVI)', '5:4', 'Alyson Cunnell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-01-22', 0.58, 'Elevate', '5:3', 'Tobin Bartholomieu');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-03-09', 3.68, 'Soniqs', '4:5', 'Claudius Pena');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-05-05', 3.78, 'FURY', '4:5', 'Davon Purchon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-04-12', 4.14, 'FURY', '2:4', 'Carr Berrill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-04-18', 2.25, 'Oxygen Esports', '2:4', 'Jay Elder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-04-11', 3.75, 'Team BDS', '2:4', 'Tammi Avey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-11-20', 4.73, 'FaZe Clan', '0:3', 'Blake Braine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-04-11', 1.45, 'M80', '5:4', 'Shanan Southgate');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-07-21', 3.18, 'Natus Vincere (NAVI)', '4:5', 'Marilyn Semkins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-08-07', 4.28, 'Spacestation Gaming (SSG)', '5:3', 'Delainey Magister');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-01-14', 4.46, 'FURIA Esports', '3:0', 'Sean Robel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-11-20', 3.76, 'MNM Gaming', '0:3', 'Ettore Di Maria');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-07-03', 2.99, 'Oxygen Esports', '5:3', 'Kile Covelle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-06-04', 1.35, 'Soniqs', '4:5', 'Ilka Husbands');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-09-01', 2.86, 'Wolves Esports', '2:4', 'Sher Hulles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-11-05', 2.54, 'MNM Gaming', '4:2', 'Robby Thorrold');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-05-07', 3.57, 'KOI', '3:0', 'Jammal Rubinsztein');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-10-08', 1.83, 'Team Liquid', '4:5', 'Ruperto Gascone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-07-15', 4.31, 'FURY', '4:5', 'Rebe Rosthorn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-10-16', 1.56, 'Natus Vincere (NAVI)', '4:2', 'Netti Vasyutochkin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-05-16', 1.07, 'Spacestation Gaming (SSG)', '2:4', 'Gordan Mutton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-11-12', 3.77, 'Elevate', '3:0', 'Kinna Chidlow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-04-11', 0.81, 'Wolves Esports', '0:3', 'Riobard Roskrug');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-08-07', 2.79, 'G2 Esports', '4:2', 'Clayborne Lawry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-02-25', 1.22, 'Virtus.pro', '2:4', 'Aeriel Bilsford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-10-15', 3.15, 'FURY', '5:3', 'Trina Sarjant');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-09-19', 4.77, 'MNM Gaming', '4:5', 'Amanda Shulver');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-02-06', 4.75, 'Team BDS', '0:3', 'Bord Hawk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-09', 1.15, 'M80', '5:4', 'Karry Geffinger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-08-12', 2.31, 'Oxygen Esports', '2:4', 'Thatcher Crumly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-01-05', 0.27, 'Elevate', '4:5', 'Sebastian Cluff');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-02-05', 0.68, 'Team Liquid', '3:0', 'Amil Morrall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-08-04', 2.76, 'KOI', '2:4', 'Udall Helmke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-09-03', 1.0, 'FaZe Clan', '3:5', 'Clint Kears');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-04-17', 0.65, 'Team Liquid', '0:3', 'Stern Formoy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-11-24', 3.39, 'Virtus.pro', '4:2', 'Deni Spire');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-05-21', 1.37, 'w7m esports', '0:3', 'Brynn Smittoune');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-03-30', 3.5, 'Natus Vincere (NAVI)', '3:0', 'Tina Yansons');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-12-24', 0.73, 'SCARZ', '2:4', 'Gordy Quilkin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-12-17', 0.28, 'KOI', '2:4', 'Holmes Maltster');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-05-02', 0.95, 'Dplus', '4:2', 'Nanon Maddrah');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-02-19', 2.12, 'MNM Gaming', '5:4', 'Mimi Vanetti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-11-23', 4.18, 'Dplus', '2:4', 'Rriocard Wildsmith');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-07-17', 3.75, 'Spacestation Gaming (SSG)', '4:2', 'Colas Zimmer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-04-23', 3.52, 'Wolves Esports', '0:3', 'Elwin Anlay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-10-19', 1.73, 'Wolves Esports', '2:4', 'Gordon Hinckesman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-07-23', 4.83, 'Natus Vincere (NAVI)', '0:3', 'Udale Walthall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-12-31', 3.52, 'Team BDS', '4:5', 'Zia Trickett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-07-26', 3.01, 'G2 Esports', '2:4', 'Bette-ann Monckman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-04-11', 3.56, 'Dplus', '3:0', 'Mac Urlich');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-02-12', 2.83, 'G2 Esports', '5:4', 'Zaneta Sprowell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-09-06', 0.65, 'Oxygen Esports', '2:4', 'Corly Twelves');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-05-05', 2.47, 'Team Liquid', '4:5', 'Bonny Penrith');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-09-16', 1.42, 'Oxygen Esports', '3:0', 'Mindy Symmers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-02-15', 3.96, 'Team BDS', '5:4', 'Ingar Longworthy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-11-14', 1.24, 'M80', '3:5', 'Purcell Lenahan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-08-04', 4.36, 'DarkZero Esports (DZ)', '5:3', 'Kennie Colson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-10-04', 0.93, 'Team BDS', '3:5', 'Caterina Milksop');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-04-19', 4.42, 'MNM Gaming', '0:3', 'Markus Wailes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-11-13', 3.56, 'FaZe Clan', '4:2', 'Sullivan Ganders');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-01-08', 1.92, 'Natus Vincere (NAVI)', '3:5', 'Joanie Carruth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-07-11', 3.77, 'KOI', '4:2', 'Clarissa Corish');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-02-13', 2.05, 'FaZe Clan', '2:4', 'Vittorio Lampl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-06-09', 0.61, 'FURY', '4:5', 'Codie Whight');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-11-25', 4.1, 'FURY', '2:4', 'Garland Goundrill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-08-27', 4.83, 'Los + oNe', '5:4', 'Kelwin O''Garmen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-10-03', 0.8, 'Team BDS', '5:4', 'Jessy Riply');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-08-04', 0.37, 'Team Liquid', '0:3', 'Lev Kilner');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-10-28', 4.7, 'MNM Gaming', '3:5', 'Bertrand Busch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-09', 3.26, 'FaZe Clan', '5:3', 'Binny Merriman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-01-20', 4.61, 'Soniqs', '5:3', 'Diena Paunton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-12-26', 0.66, 'G2 Esports', '4:5', 'Penelopa Marquot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-12-29', 2.76, 'MNM Gaming', '5:3', 'Ely O''Lochan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-10-06', 2.12, 'Los + oNe', '3:0', 'Tanya Lyall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-09-11', 2.68, 'FURY', '0:3', 'Clifford Bumpas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-03-11', 3.06, 'Oxygen Esports', '3:5', 'Gearard Borless');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-06-18', 0.53, 'Team BDS', '5:4', 'Jaymie Amort');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-06-18', 2.44, 'FaZe Clan', '5:4', 'Anni Lindborg');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-04-30', 1.44, 'SCARZ', '5:4', 'Svend Colquitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-10-24', 2.98, 'MNM Gaming', '5:3', 'Archibold Gianulli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-02-16', 4.62, 'FURY', '3:5', 'Christen McNeigh');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-03-28', 1.66, 'Wolves Esports', '5:4', 'Rene Perrett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-08-14', 1.63, 'FURY', '4:5', 'Leann Torra');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-06-20', 4.67, 'Soniqs', '3:5', 'Nanon Echlin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-07-14', 1.41, 'KOI', '5:4', 'Germain Eberts');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-08-28', 0.49, 'MNM Gaming', '3:5', 'Lenard Cowle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-02-13', 2.27, 'Virtus.pro', '4:5', 'Tammi Marney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-08-21', 1.46, 'Natus Vincere (NAVI)', '5:4', 'Aurelie Mapis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-01-06', 4.83, 'Dplus', '5:4', 'Murielle Schultz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-07-05', 3.92, 'Virtus.pro', '3:5', 'Bail Smithers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-09-22', 4.55, 'w7m esports', '4:5', 'Hendrik Rottger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-04-04', 4.65, 'Virtus.pro', '0:3', 'Mona Broader');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-09-20', 4.49, 'FURY', '4:2', 'Elnore Schurig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-04-20', 1.22, 'KOI', '3:5', 'Ninetta Dewane');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-01-23', 2.57, 'Team Liquid', '3:5', 'Guinna Mingardo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-04-18', 4.67, 'Team BDS', '3:0', 'Michal Hollidge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-10-19', 1.02, 'w7m esports', '5:4', 'Tabbie Duggary');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-07-18', 2.8, 'Virtus.pro', '3:0', 'Cacilia Swin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-05-24', 2.85, 'G2 Esports', '3:5', 'Kennith Bellow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-06-12', 1.58, 'Elevate', '4:5', 'Bendite Clynter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-03-28', 0.45, 'G2 Esports', '2:4', 'Josefa Gooderridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-01-30', 1.1, 'Team Liquid', '4:5', 'Barret Kohtler');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-01-16', 1.17, 'SCARZ', '5:3', 'Cyrill Allsobrook');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-04-30', 3.78, 'Spacestation Gaming (SSG)', '3:0', 'Leia Carratt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-07-23', 2.74, 'Dplus', '5:3', 'Mallorie Van Hault');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-06-08', 2.83, 'DarkZero Esports (DZ)', '3:5', 'Barbara Karadzas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-09-13', 1.64, 'Virtus.pro', '2:4', 'Forster Tunnadine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-01-21', 3.63, 'DarkZero Esports (DZ)', '3:0', 'Gerek Goodlake');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-08-04', 2.49, 'Soniqs', '0:3', 'Barnaby Linthead');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-01-01', 0.4, 'Wolves Esports', '5:4', 'Carine Brandone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-02-04', 4.68, 'Spacestation Gaming (SSG)', '2:4', 'Simonne Odby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-31', 0.34, 'Team Liquid', '0:3', 'Mattie MacMakin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-08-04', 3.91, 'Soniqs', '4:2', 'Ragnar Amberg');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-10-10', 1.41, 'Virtus.pro', '5:3', 'Patricio Sloat');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-03-28', 4.63, 'Team Liquid', '3:5', 'Nanni Spolton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-05-26', 1.86, 'FURY', '3:0', 'Rudyard Riddock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-05-29', 4.58, 'Natus Vincere (NAVI)', '4:2', 'Moore Comoletti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-10-04', 2.79, 'Dplus', '5:3', 'Lucais Olligan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-06-29', 0.8, 'G2 Esports', '4:5', 'Dag Martinello');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-04-05', 4.49, 'w7m esports', '5:3', 'Emmeline Stainson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-07-24', 3.63, 'Dplus', '5:3', 'Duncan Jessard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-08-21', 3.81, 'FaZe Clan', '4:5', 'Terri-jo Alishoner');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-02-11', 3.18, 'Los + oNe', '5:3', 'Teodoor Stener');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-07-15', 3.6, 'Team BDS', '0:3', 'Torrin Chidlow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-09-10', 2.54, 'Soniqs', '5:3', 'Kathe Chadbourne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-12-04', 3.29, 'Natus Vincere (NAVI)', '5:3', 'Kev McCutcheon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-02-23', 3.3, 'Los + oNe', '4:5', 'Abrahan Frederick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-08-05', 1.86, 'SCARZ', '0:3', 'Farlie Polye');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-07-12', 1.61, 'Soniqs', '5:4', 'Caesar Boxall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-09-27', 4.91, 'Dplus', '4:2', 'Nil Plaskitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-09-11', 1.46, 'FaZe Clan', '5:4', 'Benedikt MacKaig');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-04-05', 4.91, 'FURIA Esports', '4:5', 'Rowe Jaulmes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-01-03', 3.04, 'Oxygen Esports', '4:5', 'Earle Lippett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-05-28', 3.99, 'Los + oNe', '3:0', 'Astra Huyhton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-11-30', 1.29, 'FaZe Clan', '3:0', 'Karita Scarlan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-07-11', 3.48, 'Team BDS', '5:3', 'Jobi Bondesen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-02-25', 4.59, 'Los + oNe', '4:5', 'Erich Roston');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-03-08', 3.06, 'DarkZero Esports (DZ)', '3:5', 'Kirby Guntrip');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-02-15', 2.36, 'Los + oNe', '2:4', 'Robby Firman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-12', 3.75, 'FaZe Clan', '5:3', 'Benedick Cuxon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-06-05', 1.24, 'FURIA Esports', '3:5', 'Ilaire Kerans');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-12-20', 0.21, 'Wolves Esports', '3:0', 'Ernaline Crampsey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-09-26', 1.53, 'M80', '2:4', 'Bastian Kinghorne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-02-28', 0.86, 'Spacestation Gaming (SSG)', '0:3', 'Godfree Farrall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-07-18', 2.09, 'Elevate', '3:0', 'Krishna Jennick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-11-09', 4.1, 'SCARZ', '4:2', 'Tania MacNeilly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-11-18', 2.59, 'Team Liquid', '3:0', 'Denis Marginson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-07-07', 1.24, 'Team Liquid', '2:4', 'Bruce Bransden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-05-31', 1.04, 'MNM Gaming', '2:4', 'Sarita Minger');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-27', 0.6, 'DarkZero Esports (DZ)', '4:2', 'Yvon Lumb');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-10-03', 1.11, 'DarkZero Esports (DZ)', '3:0', 'Kat Decreuze');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-11-24', 0.46, 'Oxygen Esports', '4:2', 'Cazzie Scurlock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-04-05', 1.21, 'Team BDS', '0:3', 'Susanne Lewsy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-07-03', 2.11, 'Team Liquid', '0:3', 'Morna Benham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-01-09', 2.1, 'Spacestation Gaming (SSG)', '4:5', 'Hestia Ennor');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-12-16', 3.12, 'Spacestation Gaming (SSG)', '4:2', 'Ham Durno');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-05-18', 3.04, 'M80', '0:3', 'Bil Sharratt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-09-08', 1.09, 'FURY', '3:5', 'Lucais Slucock');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-04-19', 0.98, 'Team Liquid', '5:4', 'Vincenz Eccleston');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-09-20', 2.8, 'DarkZero Esports (DZ)', '3:5', 'Martino Ilyinykh');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-06-08', 0.37, 'G2 Esports', '5:3', 'Merrily Prestney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-09-14', 0.74, 'MNM Gaming', '0:3', 'Ezmeralda Matuszyk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-03-18', 1.98, 'Oxygen Esports', '5:3', 'Phoebe Amorts');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-01-13', 4.98, 'FURY', '5:3', 'Wren Noseworthy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-06-05', 0.56, 'G2 Esports', '5:4', 'Harriet Sayward');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-03-31', 0.07, 'Team BDS', '2:4', 'Aurea Pheasant');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-08-30', 3.57, 'DarkZero Esports (DZ)', '4:2', 'Debbie Dodd');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-11-08', 4.14, 'KOI', '3:0', 'Ilse Vlasin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-07-02', 0.06, 'FURIA Esports', '4:5', 'Morry Karmel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-04-29', 4.05, 'FURIA Esports', '4:5', 'Alric Scherer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-09-07', 2.52, 'w7m esports', '2:4', 'Conan Poad');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-10-17', 1.6, 'Dplus', '3:0', 'Josephina Quincey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-03-13', 3.86, 'FURY', '2:4', 'Dasie Norheny');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-10-09', 0.98, 'FaZe Clan', '5:3', 'Dorian Galliver');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-03-26', 2.11, 'SCARZ', '4:5', 'Barbara McGriele');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-05-18', 0.6, 'SCARZ', '3:0', 'Rivalee Kedwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-01-03', 3.52, 'FURY', '4:2', 'Virginie Arnot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-10-21', 3.87, 'Soniqs', '4:2', 'Faith Brahmer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-05-03', 3.05, 'G2 Esports', '5:3', 'Allie Giller');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-03-22', 2.65, 'MNM Gaming', '4:2', 'Loydie Petrishchev');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-01-29', 0.7, 'w7m esports', '2:4', 'Antonio Harsnep');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-08-01', 3.93, 'Elevate', '4:2', 'Augustine Count');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-06-23', 3.73, 'Los + oNe', '3:0', 'Weber Goss');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-05-07', 0.8, 'SCARZ', '0:3', 'Meridel Prettyman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-12-30', 3.08, 'Natus Vincere (NAVI)', '4:5', 'Renaldo Abthorpe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-11-09', 0.42, 'FURIA Esports', '5:3', 'Mercedes Noweak');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-03-29', 3.88, 'DarkZero Esports (DZ)', '3:5', 'Korney Onslow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-07-31', 1.4, 'FaZe Clan', '4:5', 'Pail McGenn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-05-05', 4.36, 'Dplus', '0:3', 'Fey Buckerfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2019-10-19', 4.95, 'Spacestation Gaming (SSG)', '5:3', 'Barbaraanne Brolan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-05-18', 2.11, 'KOI', '0:3', 'Haily Lilliman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-05-13', 2.25, 'FURY', '4:2', 'Antony Lugden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-11-19', 2.47, 'w7m esports', '3:5', 'Bartholomeus Copnall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-07-07', 2.34, 'Soniqs', '3:5', 'Cyril Marran');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-10-28', 3.7, 'SCARZ', '0:3', 'Nicholle Sibbe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-10-14', 2.28, 'M80', '2:4', 'Isobel Kovalski');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-08-29', 0.57, 'Wolves Esports', '5:4', 'Nettle Laroux');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-04-19', 4.71, 'w7m esports', '3:0', 'Georgianna Orleton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-01-03', 0.95, 'Dplus', '2:4', 'Andrea Gauson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-06-29', 4.49, 'Virtus.pro', '0:3', 'Nert Eronie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-04-13', 3.25, 'KOI', '5:3', 'Kalie Jaffray');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-02-19', 3.23, 'w7m esports', '4:2', 'Bee Cornau');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-12-08', 2.07, 'FURY', '0:3', 'Ammamaria Hutchinson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-19', 3.76, 'M80', '4:2', 'Janie Barthot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-03-28', 3.94, 'Dplus', '4:5', 'Amity Meece');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-03-19', 1.46, 'Team Liquid', '5:4', 'Milo Mussen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-12-17', 2.9, 'Oxygen Esports', '5:3', 'Robinia Tarry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-04-10', 1.23, 'KOI', '4:2', 'Kellsie Deakes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-10-02', 0.08, 'DarkZero Esports (DZ)', '5:3', 'Morgun Crowhurst');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-11-07', 4.07, 'Natus Vincere (NAVI)', '4:5', 'Alexio Levene');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-02-01', 1.42, 'Team Liquid', '2:4', 'Rozelle Tidder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-01-09', 3.16, 'Natus Vincere (NAVI)', '5:3', 'Esdras Pimblotte');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-11-13', 4.16, 'MNM Gaming', '2:4', 'Kahaleel Meneur');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-11-15', 4.46, 'Natus Vincere (NAVI)', '3:5', 'Eddie O''Quin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-11', 0.64, 'SCARZ', '5:4', 'Druci Fechnie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-06-23', 4.75, 'M80', '5:3', 'Claudio Estick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-04-07', 2.97, 'Los + oNe', '5:3', 'Martin Inkster');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-03-25', 0.38, 'FaZe Clan', '5:3', 'Butch Grazier');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-09-17', 1.98, 'KOI', '5:4', 'Ag Cockitt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-02-07', 2.56, 'M80', '5:4', 'Fraze Bowness');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-02-20', 3.66, 'DarkZero Esports (DZ)', '5:4', 'Kamila Bellee');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-07-26', 1.84, 'KOI', '4:5', 'Kinny Carlisso');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-04-23', 2.82, 'SCARZ', '5:4', 'Erda Sansam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-07-24', 1.73, 'M80', '5:3', 'Christos Pennick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-05-13', 0.22, 'FURIA Esports', '2:4', 'Solomon Blayd');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-04-29', 2.8, 'DarkZero Esports (DZ)', '3:0', 'Shaun Avraam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-06-25', 1.89, 'Soniqs', '0:3', 'Dare Wortley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-01-23', 1.64, 'w7m esports', '3:5', 'Kamillah Bagehot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-03-19', 2.07, 'FURIA Esports', '4:5', 'Aleda Constantine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-15', 0.44, 'Wolves Esports', '5:4', 'Derron Dufty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-02', 0.86, 'DarkZero Esports (DZ)', '3:5', 'Rubin Picton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-12-27', 1.68, 'Oxygen Esports', '0:3', 'Andris Hessentaler');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-01-15', 1.87, 'w7m esports', '5:4', 'Jodie Kirstein');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-02-04', 2.8, 'Los + oNe', '4:2', 'Edita Mellodey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-03-16', 3.26, 'Team Liquid', '0:3', 'Clarisse Quin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-06-11', 4.74, 'w7m esports', '3:0', 'Curry Heintsch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-08-07', 1.04, 'MNM Gaming', '2:4', 'Mariam Westby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-10-12', 4.62, 'FaZe Clan', '5:4', 'Tommie Denniss');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-12-18', 0.87, 'Dplus', '3:5', 'Kalina Marle');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-02-02', 1.37, 'w7m esports', '2:4', 'Carita Fedder');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2025-01-15', 1.17, 'w7m esports', '0:3', 'Cahra Finnie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-01-09', 2.04, 'Dplus', '3:0', 'Ingrim Hukins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-10-09', 3.38, 'Los + oNe', '0:3', 'Leupold Lowfill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-11-01', 4.39, 'Los + oNe', '0:3', 'Nissie Brisker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-05-19', 0.94, 'Oxygen Esports', '0:3', 'Toni Fursey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-10-12', 3.2, 'Natus Vincere (NAVI)', '3:0', 'Gypsy Saltern');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-01-04', 0.38, 'w7m esports', '3:0', 'Alastair Ladel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-12-12', 3.13, 'Virtus.pro', '5:4', 'Sinclair Dibben');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-01-21', 3.12, 'KOI', '5:3', 'Jermaine Pietzker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-05-09', 4.09, 'Natus Vincere (NAVI)', '3:0', 'Darn Weth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-10-13', 3.93, 'Spacestation Gaming (SSG)', '0:3', 'Ruth Sterland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-04-16', 3.49, 'Elevate', '2:4', 'Ainsley Tabourel');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-06-01', 4.0, 'FaZe Clan', '0:3', 'Bernardina Fitzsymonds');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-10-22', 1.19, 'SCARZ', '5:4', 'Marlow Temlett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-11-07', 0.21, 'Oxygen Esports', '4:2', 'Yardley Moden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-02-17', 3.1, 'DarkZero Esports (DZ)', '5:3', 'Darcee Webster');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-01-03', 0.94, 'M80', '0:3', 'Susanetta Brewse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-12-27', 0.12, 'DarkZero Esports (DZ)', '5:4', 'Merry Fowden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-09-09', 3.24, 'Oxygen Esports', '3:0', 'Theo Woodhams');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-02-12', 4.77, 'KOI', '3:0', 'Maighdiln Lethcoe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-10-26', 1.92, 'FURY', '4:2', 'Tommy Breeze');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-05-11', 4.92, 'FURIA Esports', '5:3', 'Garreth Furby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-01-02', 3.91, 'DarkZero Esports (DZ)', '4:5', 'Zora MacKenney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-10-24', 3.22, 'SCARZ', '5:3', 'Perri Robker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-04-14', 0.81, 'FURIA Esports', '2:4', 'Keith O''Hegertie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-06-04', 4.0, 'Team Liquid', '5:4', 'Cornie Lorenzo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-06-16', 4.65, 'Soniqs', '5:3', 'Gerri Measures');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-01-02', 0.01, 'FURY', '5:4', 'Bernardo Lorraway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-10-29', 3.25, 'Wolves Esports', '0:3', 'Haslett Jean');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-05-08', 3.51, 'Natus Vincere (NAVI)', '3:5', 'Gris Shankster');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-07-07', 2.43, 'M80', '5:4', 'Norris Chamberlaine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-06-06', 3.29, 'FaZe Clan', '4:5', 'Nolana Durrell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-10-30', 3.52, 'Dplus', '2:4', 'Eleanore Lewtey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-10-03', 2.59, 'Oxygen Esports', '5:4', 'Wylma Becaris');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-10-03', 1.78, 'Dplus', '5:4', 'Ricardo Bruffell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-07-05', 1.89, 'w7m esports', '5:4', 'Giusto Van Dijk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-04-29', 4.11, 'Virtus.pro', '3:5', 'Krista Prujean');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-06-30', 0.49, 'DarkZero Esports (DZ)', '3:5', 'Madge Dennington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-11-07', 4.6, 'Oxygen Esports', '4:5', 'Clayton Claffey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-07-10', 0.85, 'MNM Gaming', '5:3', 'Gunar Vedntyev');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-08-01', 3.95, 'Wolves Esports', '4:5', 'Dominic Drioli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-05-26', 1.0, 'Dplus', '5:3', 'Concordia Straker');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-27', 0.15, 'Soniqs', '3:0', 'Mathias Dodridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-12-05', 2.52, 'Soniqs', '4:5', 'Becca Lauritsen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-14', 3.46, 'DarkZero Esports (DZ)', '5:3', 'Welby Hitzke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-07-27', 4.04, 'Soniqs', '5:3', 'Raimund Wank');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-04-26', 2.82, 'Wolves Esports', '5:4', 'Barret Rumbold');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-03-02', 4.78, 'Wolves Esports', '3:5', 'Aldwin Stratton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-11', 1.26, 'MNM Gaming', '4:2', 'Gard Mullis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-11-26', 4.67, 'Elevate', '3:5', 'Jenda Ffrench');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-04-24', 1.27, 'KOI', '5:3', 'Georgeanne Brighty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-05-16', 0.59, 'Wolves Esports', '4:5', 'Daisy Joutapaitis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-01-24', 1.67, 'Dplus', '4:5', 'Inger Schiell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-05-23', 0.52, 'Virtus.pro', '3:0', 'Joan Pervoe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-10-18', 4.42, 'FURY', '4:2', 'Janifer Coneron');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-01-30', 1.13, 'Team Liquid', '5:4', 'Grover Gowan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-04-07', 4.7, 'Los + oNe', '5:3', 'Rowen Ber');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-08-18', 4.76, 'SCARZ', '5:3', 'Kelvin Tretter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-31', 2.62, 'G2 Esports', '5:3', 'Shelba Shardlow');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-06-13', 0.98, 'FURIA Esports', '2:4', 'Koenraad Sandwith');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-09-13', 3.34, 'SCARZ', '4:5', 'Eddy Worsalls');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-10-07', 1.94, 'Natus Vincere (NAVI)', '5:4', 'Ginny Nieass');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-10-03', 1.65, 'Team BDS', '5:3', 'Briggs Bertouloume');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-08-19', 3.47, 'SCARZ', '3:0', 'Rufus Studders');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-08-19', 1.53, 'KOI', '5:3', 'Kamilah Ickovicz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-01-12', 2.42, 'w7m esports', '4:5', 'Donia Burlay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-10-19', 3.56, 'Soniqs', '3:0', 'Jeanie O''Henecan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-08-15', 1.65, 'Oxygen Esports', '4:2', 'Irina Cannam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-12-08', 0.05, 'Wolves Esports', '4:2', 'Jecho Francecione');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-06-06', 0.09, 'Los + oNe', '0:3', 'Ivor Tunnoch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-10-03', 2.89, 'FURIA Esports', '5:4', 'Sharai Vials');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-02-18', 0.73, 'Natus Vincere (NAVI)', '5:4', 'John Seine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-10-15', 3.71, 'Los + oNe', '2:4', 'Francois Follet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-09-07', 0.23, 'M80', '4:5', 'Marita Blucher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-08-11', 0.89, 'MNM Gaming', '5:4', 'Zorana D''Antonio');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-09-04', 1.57, 'Elevate', '5:4', 'Farlee Yurov');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-04-23', 4.57, 'Team BDS', '4:2', 'Casper Junes');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-01-10', 3.82, 'FURY', '3:5', 'Roze Veelers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-03-01', 3.23, 'FaZe Clan', '0:3', 'Kayne Lindenbaum');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-04-15', 1.59, 'SCARZ', '3:0', 'Lindsy Gwin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-08-29', 0.91, 'Soniqs', '5:3', 'Taite Paliser');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-01-04', 2.64, 'FaZe Clan', '3:5', 'Danny Sollime');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-06-17', 4.4, 'Virtus.pro', '3:5', 'Kenon Whapples');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-03-25', 4.39, 'Team BDS', '4:2', 'Towney Duckerin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-12-09', 3.53, 'Wolves Esports', '5:3', 'Bordy Tarrant');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-02-04', 4.2, 'KOI', '5:3', 'Frans Draysey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-09-21', 2.99, 'w7m esports', '5:3', 'Rafferty Waistell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-09-10', 0.95, 'FURIA Esports', '0:3', 'Frasco Christauffour');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-10-17', 4.82, 'Team Liquid', '0:3', 'Georgeanne McShirrie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-06-20', 2.47, 'Wolves Esports', '4:5', 'Aloin Godbehere');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-05', 1.03, 'Oxygen Esports', '4:5', 'Aurore Masters');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-11-30', 2.82, 'Team BDS', '4:5', 'Hendrik Whitebread');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-07-01', 0.46, 'w7m esports', '3:0', 'Adrian Toderini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-12-19', 1.07, 'SCARZ', '3:5', 'Massimiliano Dawks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-05-03', 0.65, 'Team Liquid', '3:5', 'Michel Utley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-11-16', 2.85, 'FaZe Clan', '4:2', 'Stefano Woller');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-03-12', 3.64, 'Dplus', '4:5', 'Kaycee Avesque');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-03-16', 2.93, 'DarkZero Esports (DZ)', '0:3', 'Shayla Faircliff');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-07-31', 3.82, 'FURIA Esports', '4:2', 'Winifield Click');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-05-01', 1.51, 'Team BDS', '3:0', 'Harold O''Curran');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-03-03', 2.16, 'Elevate', '4:5', 'Darla Dilrew');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-08-02', 4.08, 'Spacestation Gaming (SSG)', '3:0', 'Kellsie MacAlpin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-11-17', 2.08, 'FaZe Clan', '5:3', 'Dorrie Gockelen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-02-25', 3.63, 'Wolves Esports', '5:4', 'Hyacinth Drinan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-03-29', 2.21, 'Dplus', '5:4', 'Claresta Conway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-10-30', 3.03, 'w7m esports', '2:4', 'Griselda Maharey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-05-06', 1.46, 'M80', '5:4', 'Huberto Sarfas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-10-13', 0.09, 'Soniqs', '2:4', 'Malchy Mowen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-04-01', 2.57, 'Team BDS', '2:4', 'Corney Swatten');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-10-27', 0.02, 'Los + oNe', '5:3', 'Dugald Everiss');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-02-23', 4.09, 'Natus Vincere (NAVI)', '2:4', 'Heindrick Pervew');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-02-07', 3.83, 'G2 Esports', '5:4', 'Adria Gatheral');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-02-20', 3.23, 'DarkZero Esports (DZ)', '5:4', 'Thurstan Moran');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-08-17', 2.02, 'G2 Esports', '3:0', 'Wren Trimmill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-03-23', 1.24, 'Oxygen Esports', '4:2', 'Heidie Phlipon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-09-26', 3.82, 'Soniqs', '5:3', 'Claudina Nornasell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-04-06', 1.16, 'FURY', '4:2', 'Shannon Biskup');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-03-03', 3.4, 'Los + oNe', '3:5', 'Ginny Hapke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-02-14', 0.58, 'G2 Esports', '5:4', 'Fons Scallan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-03-04', 3.19, 'Team BDS', '5:4', 'Catlaina Howford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-12-24', 3.54, 'Wolves Esports', '3:5', 'Sheffie Stryde');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-10-31', 1.28, 'DarkZero Esports (DZ)', '5:4', 'Miguel Nichol');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-04-06', 3.85, 'Natus Vincere (NAVI)', '5:4', 'Evelina Spikins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-11-20', 4.95, 'MNM Gaming', '3:0', 'Gibbie Di Boldi');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-03-27', 4.79, 'FURIA Esports', '0:3', 'Desi Olman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-09-20', 4.45, 'FURY', '5:4', 'Joanie Caroll');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-06-03', 1.82, 'M80', '3:5', 'Clareta Ilden');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-08-01', 2.19, 'DarkZero Esports (DZ)', '4:5', 'Heloise Doers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-12-14', 2.31, 'Natus Vincere (NAVI)', '2:4', 'Jerad Murdy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-10-22', 1.35, 'Natus Vincere (NAVI)', '4:5', 'Timotheus Phillipp');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-09-23', 3.88, 'w7m esports', '5:3', 'Margarete Gascoigne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-01-19', 0.45, 'Spacestation Gaming (SSG)', '3:5', 'Lane Bebbell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-07-02', 4.68, 'KOI', '2:4', 'Gavra Wackley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-12-30', 4.46, 'Elevate', '5:3', 'Jimmie Wallace');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-02-13', 4.06, 'Natus Vincere (NAVI)', '0:3', 'Janet Bowley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-08-17', 0.85, 'MNM Gaming', '4:2', 'Marylynne Hutchin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-04-04', 3.19, 'M80', '2:4', 'Dimitri Turland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-10-17', 4.3, 'DarkZero Esports (DZ)', '4:5', 'Catha Rabat');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-12-27', 1.18, 'Natus Vincere (NAVI)', '0:3', 'Karole Yannoni');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-11-16', 3.2, 'Wolves Esports', '5:3', 'Brent Skelly');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-08-29', 0.44, 'G2 Esports', '5:3', 'Gretna Juorio');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-03-05', 0.59, 'Oxygen Esports', '3:5', 'Van Bellworthy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-06-01', 1.76, 'Virtus.pro', '0:3', 'Hoebart Musla');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-10-14', 4.6, 'FURIA Esports', '3:0', 'Tiffany Dabourne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-09-24', 2.32, 'M80', '5:3', 'Jarrad Fuzzard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-11-12', 2.91, 'FURIA Esports', '4:2', 'Judie Vowles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-07-09', 4.78, 'Wolves Esports', '3:5', 'Parnell Hilhouse');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-08-30', 3.06, 'FURY', '4:5', 'Jesselyn McMurraya');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-12-28', 0.39, 'Los + oNe', '3:5', 'Duke Tattersall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-08-27', 1.43, 'SCARZ', '3:0', 'Bianka Blasl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-11-09', 0.4, 'Oxygen Esports', '4:2', 'Maurits Keyson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-03-12', 2.95, 'Team Liquid', '2:4', 'Candie Ahmad');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-08-08', 0.14, 'M80', '3:5', 'Bab Fobidge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-10-18', 4.47, 'FaZe Clan', '4:5', 'Erwin Snowsill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-07-26', 4.06, 'Oxygen Esports', '5:3', 'Camella Trahair');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-07-22', 2.61, 'FURIA Esports', '4:2', 'Melantha Murrison');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-03-04', 1.82, 'Team BDS', '0:3', 'Sutherlan Wharin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-06-25', 1.68, 'Oxygen Esports', '3:0', 'Leia McBay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-07-12', 2.92, 'Team BDS', '4:5', 'Noel Nutbrown');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-02-05', 4.08, 'Soniqs', '2:4', 'Kayle Iban');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-21', 0.61, 'Los + oNe', '4:5', 'Farra Gudd');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-05-03', 1.55, 'Virtus.pro', '3:5', 'Gun Whitfield');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-06-09', 2.64, 'Elevate', '3:0', 'Tabbie Goldspink');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-10-18', 4.18, 'Wolves Esports', '5:4', 'Glyn Daughtry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-08-19', 1.31, 'Team BDS', '4:2', 'Delora Olivari');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-10-02', 0.64, 'Oxygen Esports', '3:5', 'Kristoforo Petrello');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-03-01', 3.89, 'FaZe Clan', '2:4', 'Ruperto Manus');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-02-05', 2.3, 'M80', '3:0', 'Rozanne Martinets');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-12-16', 3.08, 'Spacestation Gaming (SSG)', '3:0', 'Johnette Dimeloe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-11-22', 0.3, 'Wolves Esports', '5:4', 'Milo Lawton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-04-18', 0.23, 'DarkZero Esports (DZ)', '5:3', 'Cosette Folke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-02-27', 3.16, 'Spacestation Gaming (SSG)', '4:2', 'Kippie Shute');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-10-27', 4.76, 'w7m esports', '3:5', 'Loralyn MacAllister');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-10-17', 4.64, 'M80', '5:3', 'Bern Listone');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2019-11-02', 4.52, 'KOI', '0:3', 'Sharia Cochran');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-07-01', 2.77, 'w7m esports', '4:5', 'Milena Dumbelton');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-02-15', 0.66, 'Soniqs', '3:0', 'Doris Donisthorpe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-07-22', 1.66, 'Natus Vincere (NAVI)', '5:4', 'Normie Domeney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-07-30', 4.41, 'M80', '4:5', 'Valli Padwick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-12-04', 4.56, 'Elevate', '5:3', 'Ervin Christoffe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-05', 2.39, 'Elevate', '3:5', 'Yancy Mathelin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-07-21', 0.57, 'G2 Esports', '5:3', 'Vernice Shervington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-01-13', 4.8, 'SCARZ', '2:4', 'Winifred Peltzer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-04-22', 0.13, 'w7m esports', '0:3', 'Leslie Mabbett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2022-05-18', 1.55, 'Virtus.pro', '5:4', 'Arman Buttrey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-09-10', 3.79, 'Spacestation Gaming (SSG)', '4:5', 'Keeley Burgwyn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-02-07', 2.34, 'DarkZero Esports (DZ)', '5:3', 'Lanae Marryatt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-03-21', 3.91, 'M80', '4:5', 'Cammy Wicher');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-02-06', 0.11, 'DarkZero Esports (DZ)', '3:5', 'Corrinne Wasling');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-08-15', 2.49, 'Wolves Esports', '3:5', 'Janeczka Chittleburgh');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-11-02', 4.43, 'Team Liquid', '5:4', 'Reginauld Buyers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-12-05', 1.69, 'w7m esports', '3:0', 'Georgette Trosdall');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-02-18', 3.0, 'Soniqs', '4:2', 'Cindee Harry');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-01-17', 2.41, 'Soniqs', '2:4', 'Clementine Raisbeck');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-08-29', 3.42, 'FaZe Clan', '4:5', 'Creigh Chislett');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-11-12', 3.06, 'MNM Gaming', '2:4', 'Ian Blundon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-03-20', 4.75, 'Virtus.pro', '4:2', 'Rozalin Dibsdale');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-02-19', 0.96, 'FURIA Esports', '4:5', 'Robby Bolens');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-02-23', 0.96, 'KOI', '2:4', 'Naoma Ross');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-10-29', 0.26, 'Los + oNe', '5:4', 'Niel Wainman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-06-16', 3.43, 'KOI', '0:3', 'Waverly Wontner');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-01-27', 2.41, 'w7m esports', '4:2', 'Lurette Archell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-23', 1.08, 'w7m esports', '4:2', 'Martino Hazelgrove');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-03-08', 4.62, 'KOI', '5:4', 'Manolo Jannasch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-07-21', 4.53, 'Natus Vincere (NAVI)', '4:2', 'Zacharias Derrington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-08-24', 2.78, 'DarkZero Esports (DZ)', '4:2', 'Elspeth Bread');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-09-17', 4.0, 'FURIA Esports', '3:5', 'Terrill Polglaze');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-07-03', 0.88, 'M80', '4:5', 'Berget Betteridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-02-22', 2.86, 'Team BDS', '2:4', 'Reinwald Pennington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-08-12', 4.11, 'G2 Esports', '4:5', 'Emeline Boultwood');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-12-11', 2.5, 'Virtus.pro', '2:4', 'Fedora Edrich');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-02-28', 4.46, 'FaZe Clan', '5:4', 'Crystal Beevis');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-04-14', 3.55, 'G2 Esports', '4:5', 'Geneva Baggalley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-10-22', 4.35, 'Natus Vincere (NAVI)', '3:0', 'Alvin Barnwille');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-02-26', 4.93, 'SCARZ', '0:3', 'Cecilia Clelland');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2023-04-22', 0.74, 'Team BDS', '5:4', 'Averell Oloman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-06-21', 2.18, 'G2 Esports', '0:3', 'Ruby Dyne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-12-08', 3.71, 'KOI', '5:3', 'Nevile Parmiter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-12-05', 1.75, 'Soniqs', '3:5', 'Brenden Spivey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2021-10-24', 2.87, 'FURY', '4:2', 'Melamie Havile');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-08-08', 3.13, 'Team BDS', '0:3', 'Balduin De Laci');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-07-07', 1.04, 'KOI', '4:2', 'Candice Hendrick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-09-29', 0.99, 'Virtus.pro', '3:0', 'Ronica Hudspeth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-05-21', 4.6, 'KOI', '5:3', 'Latia Gilmour');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-02-11', 4.55, 'FURIA Esports', '4:2', 'Boyce Conn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-08-06', 3.32, 'FURIA Esports', '2:4', 'Salomon Skrines');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-02-20', 1.69, 'Virtus.pro', '4:2', 'Davie Berthelmot');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-03-02', 0.25, 'Spacestation Gaming (SSG)', '3:5', 'Ursala Roscam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-07-15', 2.72, 'Team BDS', '3:5', 'Miles Grass');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-09-19', 1.66, 'G2 Esports', '2:4', 'Tori Pottell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2020-07-30', 4.1, 'G2 Esports', '3:5', 'Dianna Gueny');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-10-17', 2.86, 'DarkZero Esports (DZ)', '3:0', 'Dania Dearlove');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-11-25', 0.67, 'Oxygen Esports', '5:3', 'Hildagarde Tyne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2021-11-22', 2.99, 'Dplus', '2:4', 'Renee De Freyne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-02-29', 0.12, 'Team Liquid', '3:5', 'Felicio Smyth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-10-13', 1.06, 'MNM Gaming', '5:4', 'Sebastiano Gidman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-02-11', 1.54, 'Virtus.pro', '4:5', 'Fredek Hoyles');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2025-04-18', 1.51, 'Natus Vincere (NAVI)', '0:3', 'Eziechiele Oswell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-06-05', 0.61, 'Los + oNe', '3:0', 'Masha Gostling');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-03-21', 2.33, 'Oxygen Esports', '3:5', 'Lara Androsik');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-10-18', 1.93, 'Wolves Esports', '4:5', 'Wayne McPhillips');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-10-29', 3.71, 'Spacestation Gaming (SSG)', '5:3', 'Anastasie Jowsey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-04-23', 2.49, 'Dplus', '2:4', 'Merrilee Gillbey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-06-22', 1.53, 'FaZe Clan', '2:4', 'Sibeal Seignior');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-10-12', 3.56, 'Natus Vincere (NAVI)', '5:4', 'Sonni Sarver');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-04-01', 0.75, 'Team Liquid', '5:3', 'Leonhard Banyard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-05-12', 4.56, 'G2 Esports', '2:4', 'Carly Caddick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-07-07', 2.42, 'FURIA Esports', '5:4', 'Cornelle Airy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-08-21', 3.34, 'Spacestation Gaming (SSG)', '3:0', 'Clevey Soames');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-08-27', 2.89, 'M80', '5:4', 'Leila Rimour');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-11-30', 0.35, 'FURIA Esports', '3:0', 'Caprice MacKay');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-06-18', 0.76, 'Dplus', '2:4', 'Judas Oakeshott');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-05-15', 2.2, 'Spacestation Gaming (SSG)', '4:2', 'Blanche Cuttelar');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-02-17', 3.36, 'Natus Vincere (NAVI)', '3:5', 'Ignace Beet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-09-27', 3.8, 'SCARZ', '4:5', 'Cyndy Wellington');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-11-11', 4.37, 'MNM Gaming', '5:4', 'Tillie Stelli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-04-28', 4.02, 'Soniqs', '4:5', 'Kessia Raithbie');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-02-03', 1.27, 'Spacestation Gaming (SSG)', '5:4', 'Fowler Brunskill');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-05-08', 0.49, 'Natus Vincere (NAVI)', '4:2', 'Dosi Sargent');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2020-12-09', 0.19, 'MNM Gaming', '4:2', 'Brittani Counter');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-02-20', 0.49, 'Los + oNe', '3:5', 'Julie Loding');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2019-10-05', 2.26, 'Team Liquid', '2:4', 'Berky Kimmince');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-09-25', 2.64, 'Natus Vincere (NAVI)', '3:0', 'West Ogilvy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-10-08', 2.85, 'M80', '4:5', 'Dode Eburne');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-03-12', 1.42, 'w7m esports', '3:5', 'Ellerey Barz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-05-26', 0.29, 'SCARZ', '4:5', 'Ardenia Elecum');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-09-09', 3.89, 'Oxygen Esports', '0:3', 'Humbert Caple');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-09-24', 2.61, 'Team Liquid', '5:4', 'Waneta Crus');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-08-26', 1.95, 'DarkZero Esports (DZ)', '2:4', 'Karee Thirlwell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-05-09', 4.16, 'M80', '0:3', 'Falkner Laraway');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-05-09', 4.47, 'FURY', '0:3', 'Diannne Slater');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-02-01', 0.81, 'KOI', '3:0', 'Susie Harnott');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-09-07', 4.55, 'SCARZ', '2:4', 'Devinne Caller');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-10-15', 0.24, 'Virtus.pro', '4:2', 'Odey Yurkevich');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-07-17', 0.19, 'FURY', '2:4', 'Pippy Boorman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-10-07', 3.84, 'MNM Gaming', '3:5', 'Marsh MacAnulty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-06-23', 3.33, 'Los + oNe', '4:2', 'Gino Bonanno');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2025-02-19', 2.73, 'Dplus', '3:5', 'Ryley Kneal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2020-08-01', 3.41, 'Dplus', '4:2', 'Ailis Sanford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-09-02', 1.16, 'Natus Vincere (NAVI)', '2:4', 'Nicky Patriskson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-12-13', 0.03, 'Virtus.pro', '4:2', 'Andree Stopford');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2025-02-07', 1.56, 'FaZe Clan', '3:0', 'Paul Linwood');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2020-10-16', 4.9, 'SCARZ', '3:0', 'Cleve Wickins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-07-31', 4.64, 'DarkZero Esports (DZ)', '0:3', 'Cullin Cain');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-08-07', 4.75, 'Team Liquid', '3:5', 'Winfred Virgin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-09-07', 3.41, 'M80', '3:0', 'Kikelia Quenell');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-08-15', 0.27, 'FURY', '0:3', 'Trenton Porcas');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-09-23', 0.11, 'Soniqs', '4:2', 'Zara Yakobovitz');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-10-08', 3.61, 'Dplus', '3:0', 'Elita Chene');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-03-11', 3.45, 'Los + oNe', '4:2', 'Piper Antoinet');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-18', 1.46, 'DarkZero Esports (DZ)', '4:2', 'Levon Raraty');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-10-31', 0.78, 'KOI', '5:3', 'Klara Toopin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2024-04-01', 0.17, 'MNM Gaming', '2:4', 'Erinn Pridgeon');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2022-12-02', 0.09, 'Natus Vincere (NAVI)', '3:5', 'Chrystel Amy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-05-22', 4.22, 'KOI', '3:0', 'Georgia Chiplin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-07-30', 0.58, 'FURIA Esports', '3:5', 'Anissa Bouzek');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-12-07', 1.27, 'KOI', '5:4', 'Revkah Blowen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-02-21', 3.81, 'G2 Esports', '4:5', 'Cinderella Crabbe');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-01-26', 0.57, 'Los + oNe', '2:4', 'Rod Povlsen');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-01-24', 2.58, 'KOI', '5:3', 'Brynn Jumont');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-07-25', 4.36, 'FaZe Clan', '0:3', 'Sauncho Yven');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-07-31', 2.86, 'w7m esports', '2:4', 'Bari Fairham');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2024-02-27', 1.74, 'Spacestation Gaming (SSG)', '5:4', 'Lambert Duckit');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2022-05-28', 1.4, 'G2 Esports', '4:2', 'Daloris Ritch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-10-09', 0.88, 'Dplus', '5:3', 'Blake Torfin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2025-02-25', 4.03, 'DarkZero Esports (DZ)', '3:5', 'Harrietta Cominetti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-01-23', 3.94, 'Wolves Esports', '4:2', 'Sydney Hassard');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-07-11', 1.16, 'M80', '5:3', 'Marie-jeanne Wrigglesworth');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-05-09', 4.67, 'KOI', '3:5', 'Clovis Buglass');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2023-06-15', 4.39, 'Los + oNe', '3:5', 'Devina Bromige');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2021-03-04', 3.02, 'Los + oNe', '2:4', 'Bernadine Gwilym');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2023-01-04', 1.21, 'Natus Vincere (NAVI)', '3:5', 'Carver Pilsbury');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-12-30', 2.33, 'Spacestation Gaming (SSG)', '4:5', 'Bertram Lakin');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-07-17', 4.05, 'Team BDS', '3:0', 'Grantham Sayers');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-06-20', 2.03, 'M80', '4:5', 'Russell Mattiacci');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2019-08-06', 0.31, 'Elevate', '3:5', 'Elia Jurczyk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2024-10-29', 0.39, 'Team Liquid', '5:4', 'Ashby Ricardo');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2024-12-02', 0.47, 'M80', '4:5', 'Giovanni Norley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-04-12', 3.1, 'MNM Gaming', '3:0', 'Andee Allan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-07-19', 3.4, 'FURY', '2:4', 'Miquela Higginbottam');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-09-14', 3.53, 'FaZe Clan', '4:2', 'Wolfgang Dedrick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2020-02-28', 4.85, 'FaZe Clan', '2:4', 'Arline Silversmidt');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-01-29', 1.71, 'Los + oNe', '5:4', 'Bern Blasli');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2025-03-19', 4.29, 'Soniqs', '3:0', 'Alisun Denley');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-02-27', 1.02, 'Soniqs', '0:3', 'Lira Stealey');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2021-12-06', 2.73, 'FURY', '5:3', 'Elicia Blasl');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-09-19', 0.93, 'Dplus', '4:5', 'Dorey Fiddeman');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-06-25', 3.5, 'Virtus.pro', '4:2', 'May Harlick');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-01-12', 0.65, 'Spacestation Gaming (SSG)', '0:3', 'Sunny Farnish');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2020-08-26', 3.76, 'FaZe Clan', '0:3', 'Alyson Cicetti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-10-11', 0.88, 'G2 Esports', '3:0', 'Alphard O''Doohaine');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-02-26', 0.33, 'Dplus', '4:2', 'Hort Nielson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2019-08-31', 2.6, 'w7m esports', '0:3', 'Aile Congreave');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-09-03', 0.33, 'Wolves Esports', '5:4', 'Chandler Braunlein');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-08-12', 3.66, 'G2 Esports', '5:4', 'Lucky Smallridge');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2020-11-30', 4.55, 'FaZe Clan', '3:0', 'Georgiana Palke');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2024-03-01', 0.57, 'MNM Gaming', '5:3', 'Lethia Jost');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-06-09', 2.12, 'FURIA Esports', '5:4', 'Pamela McHan');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-06-09', 0.02, 'Oxygen Esports', '2:4', 'Estrellita Zouch');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2024-04-16', 1.13, 'KOI', '2:4', 'Mallorie Bruins');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Coastline', '2022-09-08', 4.89, 'Team Liquid', '5:4', 'Martita Parks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-08-03', 0.91, 'Elevate', '0:3', 'Rodge Misk');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2021-09-25', 3.21, 'Los + oNe', '0:3', 'Aileen Watson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2019-12-09', 4.53, 'w7m esports', '3:5', 'Marlon Lyal');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2023-01-25', 4.49, 'FURY', '0:3', 'Alphonse Aleevy');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2022-06-26', 4.35, 'Wolves Esports', '4:5', 'Judas Cheater');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2024-08-28', 1.12, 'DarkZero Esports (DZ)', '5:3', 'Bliss Ferney');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2022-02-19', 1.5, 'FURIA Esports', '3:0', 'Ruthie Ransom');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Kanal', '2021-08-25', 3.54, 'FURIA Esports', '3:0', 'Izabel Cathee');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2024-04-10', 2.77, 'Virtus.pro', '4:2', 'Sissy Pinks');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2025-01-22', 3.32, 'Elevate', '4:2', 'Ashely Glayzer');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('ThemePark', '2023-04-03', 0.05, 'Soniqs', '4:2', 'Mack Giacomini');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2023-10-27', 0.41, 'DarkZero Esports (DZ)', '3:0', 'Harmon Depper');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2019-11-20', 3.42, 'w7m esports', '5:3', 'Alyssa Roscamps');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2022-12-29', 4.13, 'Virtus.pro', '5:4', 'Abelard Mackieson');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2022-04-23', 2.6, 'Spacestation Gaming (SSG)', '3:0', 'Clerkclaude Thynn');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Oregon', '2021-09-26', 3.07, 'Natus Vincere (NAVI)', '0:3', 'Kippy Fiddyment');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2023-02-01', 2.84, 'DarkZero Esports (DZ)', '0:3', 'Ethelred Wildgoose');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Bank', '2021-08-19', 3.6, 'Virtus.pro', '5:3', 'Grethel Roxby');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Outback', '2019-08-28', 3.44, 'Virtus.pro', '5:3', 'Ali Corser');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Border', '2020-10-13', 4.14, 'Soniqs', '2:4', 'Harmony Alfonsetti');
-insert into r6_match (map, match_date, match_duration, winning_team, final_result, mvp) values ('Clubhouse', '2023-06-17', 0.08, 'Natus Vincere (NAVI)', '5:3', 'Annabella Pettisall');
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Databáze: `webr6`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `r6_match`
+--
+
+CREATE TABLE `r6_match` (
+  `id` int NOT NULL,
+  `map` varchar(100) DEFAULT NULL,
+  `match_date` date DEFAULT NULL,
+  `match_duration` float DEFAULT NULL,
+  `winning_team` varchar(100) DEFAULT NULL,
+  `final_result` varchar(10) DEFAULT NULL,
+  `mvp` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Vypisuji data pro tabulku `r6_match`
+--
+
+INSERT INTO `r6_match` (`id`, `map`, `match_date`, `match_duration`, `winning_team`, `final_result`, `mvp`) VALUES
+(1, 'Border', '2019-09-27', 0.55, 'DarkZero Esports (DZ)', '4:5', 'Cletis Arnoldi'),
+(2, 'Border', '2022-07-19', 1.39, 'KOI', '2:4', 'Tony Gummer'),
+(3, 'Outback', '2021-08-04', 2.72, 'Virtus.pro', '5:4', 'Kaela Cumbes'),
+(4, 'ThemePark', '2022-01-01', 1.25, 'FaZe Clan', '4:5', 'Wadsworth Soitoux'),
+(5, 'Clubhouse', '2021-10-20', 1.47, 'Elevate', '0:3', 'Arty Englishby'),
+(6, 'ThemePark', '2023-08-03', 2.01, 'Team Liquid', '4:5', 'Scotti Rawson'),
+(7, 'Outback', '2024-05-09', 2.77, 'KOI', '5:4', 'Leonhard Haker'),
+(8, 'Border', '2025-02-08', 1.97, 'w7m esports', '3:0', 'Amberly Huntar'),
+(9, 'Border', '2021-04-25', 2.16, 'G2 Esports', '4:5', 'Kenn Bedingfield'),
+(10, 'Border', '2023-01-06', 2.6, 'Oxygen Esports', '0:3', 'Dorrie Foxwell'),
+(11, 'Outback', '2022-07-02', 1.59, 'Soniqs', '4:2', 'Cory Mcettrick'),
+(12, 'Bank', '2022-07-09', 2.11, 'Wolves Esports', '5:3', 'Ravi Eronie'),
+(13, 'ThemePark', '2023-12-15', 3.6, 'M80', '4:2', 'Micah Mitkov'),
+(14, 'Clubhouse', '2021-06-15', 2.35, 'Soniqs', '5:4', 'Nannette Kingescot'),
+(15, 'Clubhouse', '2022-01-18', 2.77, 'Team Liquid', '5:4', 'Ki Vince'),
+(16, 'Kanal', '2023-03-18', 4.95, 'Team BDS', '3:5', 'Ginger Walker'),
+(17, 'Bank', '2020-09-02', 1.61, 'Spacestation Gaming (SSG)', '2:4', 'Lauritz Eivers'),
+(18, 'Bank', '2021-03-09', 4, 'Los + oNe', '4:2', 'Tonia M\'Chirrie'),
+(19, 'Kanal', '2021-05-02', 1.2, 'MNM Gaming', '3:5', 'Lombard Durning'),
+(20, 'Border', '2020-09-11', 0.52, 'KOI', '4:2', 'Dredi Monni'),
+(21, 'Border', '2019-11-13', 4.88, 'Dplus', '4:2', 'Gaile Vakhlov'),
+(22, 'ThemePark', '2020-07-01', 3.05, 'FURY', '5:3', 'Madelena Tosspell'),
+(23, 'Bank', '2022-12-18', 4.24, 'FaZe Clan', '3:5', 'Stanfield Unwin'),
+(24, 'ThemePark', '2019-08-20', 0.43, 'FURIA Esports', '3:0', 'Kean Obal'),
+(25, 'Coastline', '2019-11-26', 2.85, 'Dplus', '0:3', 'Heriberto Nudds'),
+(26, 'Bank', '2023-04-05', 0.53, 'Dplus', '5:4', 'Nikkie Delacroux'),
+(27, 'Bank', '2019-08-25', 2.09, 'DarkZero Esports (DZ)', '4:2', 'Rhys Farry'),
+(28, 'ThemePark', '2025-02-02', 1.03, 'Natus Vincere (NAVI)', '5:3', 'Maximilianus Elijahu'),
+(29, 'Border', '2022-04-17', 1.84, 'w7m esports', '4:5', 'Padraic Daintith'),
+(30, 'Kanal', '2022-03-19', 3.45, 'Team BDS', '4:5', 'Pam Cowx'),
+(31, 'ThemePark', '2025-04-13', 0.45, 'Natus Vincere (NAVI)', '4:5', 'Perren Pound'),
+(32, 'ThemePark', '2024-02-23', 0.29, 'Natus Vincere (NAVI)', '3:0', 'Anna-diane Tash'),
+(33, 'Border', '2019-06-01', 1.19, 'Dplus', '5:3', 'Alexia Top'),
+(34, 'Clubhouse', '2021-03-24', 4.82, 'FURY', '4:2', 'Artemus Stapells'),
+(35, 'Kanal', '2021-09-05', 4.39, 'DarkZero Esports (DZ)', '5:4', 'Gigi Ivatts'),
+(36, 'Coastline', '2021-04-18', 3.72, 'KOI', '4:5', 'Nevins Stanesby'),
+(37, 'Clubhouse', '2023-07-19', 2.59, 'Team BDS', '4:2', 'Freida Vasyunkin'),
+(38, 'Outback', '2023-04-27', 4.54, 'Los + oNe', '4:2', 'Cord Hacquel'),
+(39, 'Clubhouse', '2025-01-03', 0.21, 'DarkZero Esports (DZ)', '3:0', 'Beckie Robinet'),
+(40, 'Clubhouse', '2022-04-21', 1.69, 'Virtus.pro', '5:4', 'Katrine Ridsdole'),
+(41, 'Bank', '2020-03-02', 4.89, 'Soniqs', '5:3', 'Morgan Dunk'),
+(42, 'Oregon', '2025-03-28', 3.38, 'MNM Gaming', '3:0', 'Klarika Puddin'),
+(43, 'Coastline', '2023-12-01', 0.94, 'DarkZero Esports (DZ)', '3:5', 'Celia Harman'),
+(44, 'Kanal', '2022-05-24', 3.8, 'Soniqs', '5:3', 'Andros Tschiersch'),
+(45, 'Border', '2021-04-21', 0.38, 'Natus Vincere (NAVI)', '4:5', 'Andreana Brentnall'),
+(46, 'Border', '2021-01-17', 2.91, 'SCARZ', '5:3', 'Urbanus Theriot'),
+(47, 'Outback', '2024-03-18', 1.74, 'Soniqs', '0:3', 'Chris Bilton'),
+(48, 'Kanal', '2020-02-13', 1.38, 'Virtus.pro', '4:5', 'Filip Bundock'),
+(49, 'ThemePark', '2019-12-06', 4.66, 'Virtus.pro', '0:3', 'Gnni Tankus'),
+(50, 'Bank', '2025-03-21', 2.04, 'KOI', '4:2', 'Cherin Le Noire'),
+(51, 'Clubhouse', '2022-04-08', 3.27, 'KOI', '2:4', 'Kevyn Cuss'),
+(52, 'Oregon', '2024-11-05', 2.2, 'MNM Gaming', '4:2', 'Alexandra Salasar'),
+(53, 'ThemePark', '2022-02-26', 2.59, 'w7m esports', '3:5', 'Alanson Stidston'),
+(54, 'Clubhouse', '2023-01-11', 0.01, 'Soniqs', '5:3', 'Chrissy Dudenie'),
+(55, 'Coastline', '2023-02-26', 0.75, 'Oxygen Esports', '4:5', 'Eugenio Mackilpatrick'),
+(56, 'Outback', '2023-10-12', 0.53, 'w7m esports', '4:5', 'Emmalynn Gatchel'),
+(57, 'Bank', '2024-05-20', 4.25, 'Los + oNe', '4:2', 'Ilka Blundel'),
+(58, 'Border', '2022-12-01', 4.92, 'w7m esports', '5:3', 'Marilin Gomersal'),
+(59, 'Kanal', '2020-12-05', 3.21, 'Team BDS', '2:4', 'Thedrick Fedynski'),
+(60, 'Border', '2024-07-17', 4.31, 'KOI', '0:3', 'Simmonds Dulany'),
+(61, 'ThemePark', '2021-03-12', 4.25, 'MNM Gaming', '5:3', 'Boony Brimley'),
+(62, 'Kanal', '2020-09-13', 4.94, 'G2 Esports', '4:2', 'Darrelle Hartigan'),
+(63, 'Clubhouse', '2025-03-29', 1.28, 'G2 Esports', '4:2', 'Ingar Pickwell'),
+(64, 'Bank', '2020-11-12', 0.41, 'Team Liquid', '3:5', 'Alon Whiston'),
+(65, 'Clubhouse', '2022-11-12', 0.4, 'M80', '4:5', 'Virgie Eastham'),
+(66, 'Border', '2020-01-10', 4.16, 'M80', '4:2', 'Steve Clews'),
+(67, 'Bank', '2021-01-16', 1.31, 'Soniqs', '3:0', 'Frazier Tattersall'),
+(68, 'ThemePark', '2023-03-29', 2.09, 'Oxygen Esports', '5:4', 'Cordey Gwilliams'),
+(69, 'Kanal', '2023-06-15', 2.74, 'Los + oNe', '5:4', 'Naoma Birdwistle'),
+(70, 'Outback', '2020-04-15', 1.1, 'SCARZ', '0:3', 'Gino Vittery'),
+(71, 'Coastline', '2021-07-22', 4.4, 'FURY', '5:4', 'Donall Reckus'),
+(72, 'Bank', '2019-12-06', 4.31, 'Soniqs', '3:5', 'Spence Trulock'),
+(73, 'Clubhouse', '2021-05-08', 3.98, 'Team BDS', '3:0', 'Tanney Restieaux'),
+(74, 'Bank', '2024-03-16', 0.54, 'FaZe Clan', '2:4', 'Keary Meech'),
+(75, 'Bank', '2021-01-11', 3.68, 'FaZe Clan', '5:4', 'Alida Colleck'),
+(76, 'Outback', '2024-11-22', 4.87, 'Team Liquid', '0:3', 'Nial Hance'),
+(77, 'Border', '2022-04-16', 0.6, 'FURIA Esports', '5:4', 'Sharity Edington'),
+(78, 'Bank', '2024-08-23', 4.57, 'w7m esports', '2:4', 'Marga Miche'),
+(79, 'Clubhouse', '2022-10-08', 2.63, 'Wolves Esports', '5:3', 'Riane Abrahmovici'),
+(80, 'ThemePark', '2024-08-27', 3.01, 'FaZe Clan', '4:5', 'Friedrich Ciobutaro'),
+(81, 'Outback', '2021-07-23', 0.23, 'Virtus.pro', '2:4', 'Anstice Mc Andrew'),
+(82, 'Clubhouse', '2022-12-20', 1.9, 'DarkZero Esports (DZ)', '5:4', 'Wendie Cartmer'),
+(83, 'Kanal', '2020-04-22', 0.94, 'Dplus', '0:3', 'Sacha Bales'),
+(84, 'Bank', '2020-08-26', 4.12, 'Elevate', '4:2', 'Kristo Cawt'),
+(85, 'Bank', '2023-04-28', 4.51, 'w7m esports', '3:5', 'Louisa Vacher'),
+(86, 'Clubhouse', '2020-03-05', 2.56, 'FaZe Clan', '3:5', 'Iormina Cornelleau'),
+(87, 'Outback', '2021-09-27', 4.69, 'G2 Esports', '4:2', 'Galina Shippam'),
+(88, 'Oregon', '2024-04-18', 3.4, 'w7m esports', '5:4', 'Marthena McCardle'),
+(89, 'Kanal', '2021-12-28', 3.16, 'w7m esports', '5:4', 'Kort Sinott'),
+(90, 'Clubhouse', '2021-12-10', 0.22, 'Team Liquid', '5:4', 'Arvin Ranby'),
+(91, 'Kanal', '2024-01-06', 3.83, 'SCARZ', '3:5', 'Jonell Ferrotti'),
+(92, 'Outback', '2022-06-19', 4.4, 'M80', '3:5', 'Jerrine Van Arsdale'),
+(93, 'Kanal', '2025-04-22', 3.54, 'MNM Gaming', '3:5', 'Roseanna Deviney'),
+(94, 'Outback', '2024-02-12', 4.91, 'Oxygen Esports', '4:2', 'Brynne Franzelini'),
+(95, 'ThemePark', '2021-01-03', 3.55, 'Virtus.pro', '2:4', 'Petra Levis'),
+(96, 'Oregon', '2019-08-31', 0.13, 'M80', '2:4', 'Karlen O\'Hern'),
+(97, 'Outback', '2022-07-04', 4.58, 'Soniqs', '3:0', 'Kalie Summerlad'),
+(98, 'Kanal', '2024-01-02', 2.82, 'Elevate', '4:2', 'Silva Bates'),
+(99, 'Clubhouse', '2025-03-06', 1.41, 'G2 Esports', '5:3', 'Casey Mathiasen'),
+(100, 'Oregon', '2024-03-21', 4.77, 'FURY', '4:2', 'Ephraim Ettles'),
+(101, 'Clubhouse', '2022-05-13', 4.31, 'Oxygen Esports', '4:5', 'Kelli Lomaz'),
+(102, 'Bank', '2019-10-11', 0.12, 'Virtus.pro', '3:5', 'Deanna Eastment'),
+(103, 'Bank', '2020-10-01', 4.57, 'KOI', '5:4', 'Odelia Matei'),
+(104, 'ThemePark', '2024-11-06', 0.02, 'Natus Vincere (NAVI)', '4:5', 'Jaime Bannister'),
+(105, 'Oregon', '2021-05-10', 2.34, 'FURY', '5:4', 'Silvio Whyffen'),
+(106, 'Bank', '2024-09-01', 3.57, 'FURIA Esports', '4:5', 'Seana Botcherby'),
+(107, 'Coastline', '2024-03-11', 4.5, 'SCARZ', '4:2', 'Anstice Tillman'),
+(108, 'Outback', '2023-11-04', 2.38, 'Team Liquid', '2:4', 'Winfield Plewes'),
+(109, 'Clubhouse', '2021-06-12', 0.82, 'Team Liquid', '3:5', 'Micheil Allan'),
+(110, 'Coastline', '2020-02-02', 2.68, 'MNM Gaming', '4:2', 'Cassie Faustin'),
+(111, 'Coastline', '2019-07-04', 4.44, 'M80', '0:3', 'Jennette Canizares'),
+(112, 'Bank', '2023-03-31', 2.73, 'G2 Esports', '4:2', 'Avictor Houlison'),
+(113, 'ThemePark', '2023-10-23', 4.67, 'Elevate', '5:3', 'Avram Pic'),
+(114, 'ThemePark', '2020-08-27', 2.61, 'Virtus.pro', '4:5', 'Boigie Lowe'),
+(115, 'Coastline', '2021-10-31', 0.21, 'Team Liquid', '3:5', 'Micki Gaskins'),
+(116, 'Outback', '2023-05-04', 0.64, 'Oxygen Esports', '3:5', 'Jermaine Parfett'),
+(117, 'Clubhouse', '2025-02-22', 4.13, 'Oxygen Esports', '3:5', 'Pammie Scowcraft'),
+(118, 'ThemePark', '2020-05-26', 2.8, 'DarkZero Esports (DZ)', '3:0', 'Hillyer Duly'),
+(119, 'Outback', '2023-11-14', 2.69, 'MNM Gaming', '2:4', 'Maxine Pasterfield'),
+(120, 'Border', '2024-06-09', 0.33, 'Soniqs', '3:0', 'Ramona Hallward'),
+(121, 'ThemePark', '2022-09-25', 4.44, 'Team Liquid', '3:0', 'Griswold Thurlborn'),
+(122, 'Bank', '2021-07-24', 4.46, 'Wolves Esports', '4:5', 'Marya Brennon'),
+(123, 'Clubhouse', '2020-11-09', 2.03, 'FURY', '3:0', 'Andriette Radke'),
+(124, 'Clubhouse', '2023-01-03', 2.99, 'FaZe Clan', '5:4', 'Clevey Dalli'),
+(125, 'Oregon', '2022-02-27', 0.12, 'FaZe Clan', '0:3', 'Antonino Wraith'),
+(126, 'Oregon', '2024-03-30', 3.52, 'Wolves Esports', '3:0', 'Gayel Plackstone'),
+(127, 'Border', '2020-10-18', 2.59, 'Spacestation Gaming (SSG)', '3:5', 'Sibilla Packwood'),
+(128, 'Border', '2019-07-27', 2.74, 'Team BDS', '4:5', 'Wolfie Tunnah'),
+(129, 'Coastline', '2024-02-03', 1.3, 'Virtus.pro', '3:5', 'Annmarie Bleacher'),
+(130, 'Oregon', '2019-09-24', 4.99, 'Elevate', '4:2', 'Lauri Ruperti'),
+(131, 'Kanal', '2021-01-20', 1.2, 'Los + oNe', '5:3', 'Christal Grievson'),
+(132, 'Coastline', '2020-07-09', 1.69, 'Elevate', '5:4', 'Arden Chastney'),
+(133, 'ThemePark', '2020-09-02', 3.41, 'Spacestation Gaming (SSG)', '5:4', 'Brander Sheilds'),
+(134, 'Border', '2024-05-21', 1.44, 'Team Liquid', '4:5', 'Sterne Desforges'),
+(135, 'Oregon', '2020-03-19', 0.59, 'Team Liquid', '3:0', 'Read Trayton'),
+(136, 'Outback', '2024-06-01', 4.45, 'G2 Esports', '5:3', 'Nadia Frier'),
+(137, 'Bank', '2021-12-12', 1.45, 'Virtus.pro', '4:2', 'Mandel Plimmer'),
+(138, 'Oregon', '2024-08-25', 2.61, 'Virtus.pro', '3:5', 'Hollie Jefferd'),
+(139, 'Kanal', '2024-05-06', 2.31, 'FURIA Esports', '3:5', 'Gelya Jimpson'),
+(140, 'Coastline', '2021-03-17', 4.5, 'Spacestation Gaming (SSG)', '3:0', 'Gunther Zanini'),
+(141, 'Bank', '2022-09-03', 3.22, 'Natus Vincere (NAVI)', '3:0', 'Johnny Goodread'),
+(142, 'Outback', '2023-10-23', 2.09, 'FURY', '5:3', 'Eve Alentyev'),
+(143, 'Border', '2019-09-21', 1.85, 'Elevate', '4:5', 'Myrlene Belsham'),
+(144, 'Outback', '2023-01-05', 4.07, 'Spacestation Gaming (SSG)', '3:0', 'Deirdre Brigham'),
+(145, 'Kanal', '2025-01-04', 2.03, 'Soniqs', '4:2', 'Egbert Freeburn'),
+(146, 'Kanal', '2022-10-02', 4.65, 'FURY', '4:5', 'Allen Bristo'),
+(147, 'Kanal', '2024-04-05', 4.61, 'MNM Gaming', '4:5', 'Walt Wolters'),
+(148, 'ThemePark', '2024-10-08', 4.31, 'FaZe Clan', '2:4', 'Jonie Danielsen'),
+(149, 'ThemePark', '2022-09-21', 3.47, 'KOI', '5:3', 'Felita Angear'),
+(150, 'Oregon', '2024-01-21', 1.1, 'M80', '3:5', 'Cecilio Wards'),
+(151, 'Bank', '2021-07-31', 3.92, 'Virtus.pro', '3:0', 'Alvis Rosander'),
+(152, 'Coastline', '2021-01-12', 0.54, 'DarkZero Esports (DZ)', '5:4', 'Carmela Dilland'),
+(153, 'ThemePark', '2023-06-03', 1.14, 'Natus Vincere (NAVI)', '2:4', 'Gradeigh Kelway'),
+(154, 'Border', '2024-01-14', 4.95, 'Natus Vincere (NAVI)', '4:5', 'Thatcher Yeoman'),
+(155, 'Bank', '2022-12-18', 2.37, 'DarkZero Esports (DZ)', '4:5', 'Lenard Hachette'),
+(156, 'Border', '2025-01-12', 0.4, 'Wolves Esports', '5:4', 'Averyl MacKeig'),
+(157, 'Kanal', '2022-12-28', 0.35, 'Dplus', '3:5', 'Algernon Brunton'),
+(158, 'Outback', '2023-11-21', 1.43, 'Dplus', '4:2', 'Lonnie Higgonet'),
+(159, 'ThemePark', '2023-09-09', 0.86, 'Soniqs', '3:5', 'Chucho Sydney'),
+(160, 'Outback', '2022-07-03', 3.53, 'Los + oNe', '3:0', 'Emmery Cerie'),
+(161, 'Oregon', '2019-07-08', 1.54, 'FURIA Esports', '4:2', 'Kelly Frankema'),
+(162, 'Outback', '2021-07-27', 0.51, 'MNM Gaming', '5:3', 'Clyve Gyles'),
+(163, 'Outback', '2024-06-29', 0.71, 'Oxygen Esports', '3:5', 'Madelyn Duhig'),
+(164, 'Bank', '2023-11-07', 4.53, 'DarkZero Esports (DZ)', '2:4', 'Lonna Christon'),
+(165, 'ThemePark', '2022-07-02', 2.13, 'Virtus.pro', '4:5', 'Jorgan Ponter'),
+(166, 'ThemePark', '2023-06-12', 2.82, 'Spacestation Gaming (SSG)', '5:3', 'Charlena Czaja'),
+(167, 'ThemePark', '2023-09-24', 1.42, 'Team Liquid', '3:0', 'Carmencita Humpherson'),
+(168, 'Outback', '2021-05-23', 1.71, 'Virtus.pro', '3:0', 'Isac McAloren'),
+(169, 'Outback', '2023-10-30', 4.57, 'Soniqs', '5:3', 'Jeana Crowley'),
+(170, 'Bank', '2024-09-07', 3.5, 'FURY', '4:5', 'Kristo Celloni'),
+(171, 'Oregon', '2024-09-25', 2.42, 'SCARZ', '3:5', 'Anders Halse'),
+(172, 'Bank', '2021-04-12', 1.59, 'w7m esports', '4:5', 'Donall Mattia'),
+(173, 'Bank', '2025-01-24', 0.49, 'Wolves Esports', '5:4', 'Burtie Annwyl'),
+(174, 'Clubhouse', '2020-01-04', 2.94, 'Wolves Esports', '5:4', 'Tam Wagnerin'),
+(175, 'Coastline', '2022-05-23', 2.88, 'FURIA Esports', '2:4', 'Inglis Sivier'),
+(176, 'Clubhouse', '2021-08-24', 0.77, 'w7m esports', '4:2', 'Curt Brunon'),
+(177, 'ThemePark', '2019-06-11', 0.99, 'SCARZ', '4:5', 'Stanfield Addenbrooke'),
+(178, 'Clubhouse', '2019-09-25', 2.03, 'FURY', '4:5', 'Chuck Domnick'),
+(179, 'ThemePark', '2023-12-04', 0.7, 'Wolves Esports', '5:4', 'Ulrick Coopland'),
+(180, 'Clubhouse', '2022-12-13', 2.43, 'FURIA Esports', '0:3', 'Wilhelm Brislawn'),
+(181, 'Coastline', '2024-09-17', 2.04, 'FURY', '4:5', 'Aloise Mushart'),
+(182, 'Border', '2024-02-13', 1.68, 'KOI', '0:3', 'Carie Ortes'),
+(183, 'ThemePark', '2021-02-23', 4.14, 'Natus Vincere (NAVI)', '3:0', 'Petey Veart'),
+(184, 'Kanal', '2024-07-10', 1.01, 'FaZe Clan', '5:4', 'Simeon Hoggan'),
+(185, 'Oregon', '2021-09-14', 1.03, 'SCARZ', '4:2', 'Riobard Walter'),
+(186, 'Kanal', '2022-07-21', 2.55, 'Spacestation Gaming (SSG)', '5:4', 'Georgina Poetz'),
+(187, 'Clubhouse', '2022-03-03', 4.01, 'SCARZ', '5:3', 'Elvis Milington'),
+(188, 'Clubhouse', '2025-03-29', 0, 'FURIA Esports', '0:3', 'Amalee Tutton'),
+(189, 'Bank', '2021-03-13', 1.92, 'w7m esports', '3:5', 'Bobbie Goshawk'),
+(190, 'Kanal', '2021-09-30', 1.81, 'KOI', '3:0', 'Carin Ebden'),
+(191, 'Clubhouse', '2024-03-25', 0.82, 'Wolves Esports', '3:0', 'Bliss Oldale'),
+(192, 'ThemePark', '2021-04-03', 4.86, 'DarkZero Esports (DZ)', '5:3', 'Fee Emlin'),
+(193, 'Clubhouse', '2024-02-08', 0.6, 'MNM Gaming', '2:4', 'Mordy Benbough'),
+(194, 'Bank', '2020-02-28', 4.09, 'Team BDS', '3:0', 'Mervin Lody'),
+(195, 'Oregon', '2023-12-30', 4.02, 'FaZe Clan', '3:0', 'Lauren Hindge'),
+(196, 'Clubhouse', '2022-12-27', 1.75, 'Elevate', '4:2', 'Kerri Zahor'),
+(197, 'Kanal', '2022-05-18', 0.26, 'DarkZero Esports (DZ)', '4:5', 'Felike Ilyushkin'),
+(198, 'Kanal', '2022-08-04', 0.11, 'FaZe Clan', '4:2', 'Ramonda Olechnowicz'),
+(199, 'Bank', '2024-01-17', 2.44, 'Soniqs', '5:3', 'Kermie O\'Beirne'),
+(200, 'Clubhouse', '2023-09-20', 4.47, 'Virtus.pro', '5:4', 'Tiena Ratchford'),
+(201, 'ThemePark', '2020-11-04', 0.21, 'Los + oNe', '5:4', 'Bekki Arbuckle'),
+(202, 'Outback', '2024-02-08', 2.95, 'Virtus.pro', '3:5', 'Annmaria Summerson'),
+(203, 'Oregon', '2022-02-16', 3.29, 'Dplus', '3:5', 'Colly Atmore'),
+(204, 'Oregon', '2021-10-28', 2.3, 'DarkZero Esports (DZ)', '3:0', 'Collie Andrieu'),
+(205, 'Oregon', '2024-12-24', 3.39, 'MNM Gaming', '3:0', 'Libbie Deluca'),
+(206, 'Bank', '2021-08-31', 3.19, 'Dplus', '4:2', 'Hillyer Newitt'),
+(207, 'Clubhouse', '2021-02-10', 2, 'KOI', '2:4', 'Nico Greatham'),
+(208, 'ThemePark', '2023-12-25', 4.7, 'M80', '4:5', 'Quintus Franzewitch'),
+(209, 'Bank', '2020-11-06', 2.76, 'FaZe Clan', '2:4', 'Con Kohrding'),
+(210, 'Clubhouse', '2022-12-08', 1.53, 'w7m esports', '3:5', 'Dorree Maxsted'),
+(211, 'Bank', '2019-07-20', 2.74, 'Natus Vincere (NAVI)', '4:5', 'Raff Emeney'),
+(212, 'Oregon', '2019-09-22', 2.09, 'Virtus.pro', '3:5', 'Haily Remirez'),
+(213, 'Bank', '2023-08-10', 2.92, 'FaZe Clan', '3:0', 'Tildie Skillern'),
+(214, 'Clubhouse', '2024-11-15', 2.2, 'w7m esports', '2:4', 'Aldin Berthon'),
+(215, 'Coastline', '2019-09-08', 4.64, 'FURY', '2:4', 'Pernell Iron'),
+(216, 'Kanal', '2019-09-18', 2.53, 'Elevate', '4:5', 'Eloisa Lincoln'),
+(217, 'Border', '2022-12-20', 0.83, 'Oxygen Esports', '5:4', 'Verne Perryn'),
+(218, 'Bank', '2022-02-28', 4.06, 'Los + oNe', '5:4', 'Kylie Lodge'),
+(219, 'Outback', '2023-03-05', 0.9, 'Oxygen Esports', '4:2', 'Aurelea Geator'),
+(220, 'Kanal', '2023-12-10', 3.77, 'M80', '4:2', 'Bordie Gribbell'),
+(221, 'Coastline', '2021-03-18', 0.32, 'Team Liquid', '0:3', 'Merrill Landrieu'),
+(222, 'Outback', '2020-09-20', 2.77, 'Spacestation Gaming (SSG)', '4:2', 'Basilio Francke'),
+(223, 'Oregon', '2024-01-08', 0.29, 'Soniqs', '4:5', 'Everett Abells'),
+(224, 'Outback', '2022-01-13', 2.64, 'Virtus.pro', '4:5', 'Tamera Husthwaite'),
+(225, 'Outback', '2023-11-09', 3.69, 'M80', '0:3', 'Meridel Lavin'),
+(226, 'Border', '2022-04-14', 0.19, 'Los + oNe', '3:5', 'Benoit Bockin'),
+(227, 'Oregon', '2020-11-13', 2.91, 'Natus Vincere (NAVI)', '5:3', 'Tildi Brand-Hardy'),
+(228, 'Bank', '2020-03-27', 2.78, 'Soniqs', '4:5', 'Daren Melledy'),
+(229, 'Bank', '2019-05-12', 2.36, 'Team Liquid', '5:3', 'Jolene Gimbart'),
+(230, 'Border', '2022-04-01', 1.05, 'KOI', '4:2', 'Isaac Ondrak'),
+(231, 'Oregon', '2023-08-11', 4.67, 'Virtus.pro', '0:3', 'Morgen Dauber'),
+(232, 'Border', '2022-01-24', 3.12, 'SCARZ', '5:3', 'Ode Matyushenko'),
+(233, 'Border', '2023-03-10', 3.7, 'Team BDS', '3:0', 'Che Culvey'),
+(234, 'Kanal', '2023-05-24', 3.85, 'Los + oNe', '3:5', 'Bobbe Lapham'),
+(235, 'Oregon', '2020-10-31', 0.89, 'Elevate', '2:4', 'Nata Carstairs'),
+(236, 'Outback', '2023-11-29', 4.75, 'M80', '3:0', 'Mirabella Willshere'),
+(237, 'Outback', '2019-06-09', 2.67, 'DarkZero Esports (DZ)', '3:5', 'Hugo Smither'),
+(238, 'Bank', '2020-09-28', 2.97, 'MNM Gaming', '5:3', 'Angelita Smeall'),
+(239, 'Oregon', '2024-12-01', 0.11, 'Team Liquid', '0:3', 'Leora Waples'),
+(240, 'ThemePark', '2023-08-31', 2.85, 'Natus Vincere (NAVI)', '5:4', 'Kristien Stiven'),
+(241, 'Kanal', '2024-02-10', 3.33, 'Team BDS', '3:0', 'Hill Twigley'),
+(242, 'Bank', '2020-02-12', 3.14, 'w7m esports', '4:5', 'Vaclav Hornig'),
+(243, 'Oregon', '2023-04-14', 2.98, 'Team Liquid', '0:3', 'Tommy Leadston'),
+(244, 'Bank', '2024-09-11', 1.42, 'G2 Esports', '2:4', 'Maxie Northall'),
+(245, 'Oregon', '2023-09-15', 4.63, 'Elevate', '2:4', 'Garwin Presnail'),
+(246, 'Oregon', '2024-05-28', 3.04, 'Los + oNe', '5:4', 'Ardeen MacVicar'),
+(247, 'Border', '2023-02-02', 3.7, 'Spacestation Gaming (SSG)', '3:5', 'Loralyn Sanzio'),
+(248, 'Coastline', '2020-09-03', 4.66, 'Spacestation Gaming (SSG)', '4:2', 'Claudianus Murt'),
+(249, 'ThemePark', '2020-05-18', 4.42, 'MNM Gaming', '3:0', 'Eugenius Matthessen'),
+(250, 'Outback', '2019-11-15', 0.48, 'Los + oNe', '4:5', 'Nevil Kadd'),
+(251, 'Kanal', '2022-12-18', 1.29, 'Spacestation Gaming (SSG)', '2:4', 'Boot Albro'),
+(252, 'Bank', '2020-09-19', 3.68, 'DarkZero Esports (DZ)', '5:4', 'Gayla Lithcow'),
+(253, 'Kanal', '2022-06-23', 4.87, 'DarkZero Esports (DZ)', '3:0', 'Hogan Grissett'),
+(254, 'ThemePark', '2019-06-15', 0.77, 'Soniqs', '3:0', 'Mic Craggs'),
+(255, 'Clubhouse', '2022-07-01', 3.81, 'KOI', '5:4', 'Daffy Girton'),
+(256, 'Coastline', '2024-04-17', 1.18, 'Spacestation Gaming (SSG)', '5:3', 'Maureene Spargo'),
+(257, 'Bank', '2023-05-07', 2.17, 'Team Liquid', '5:3', 'Gayle Athey'),
+(258, 'Outback', '2021-11-04', 0.6, 'Team Liquid', '5:3', 'Bertram Leamy'),
+(259, 'Kanal', '2022-12-28', 4.22, 'SCARZ', '0:3', 'Ginelle Twede'),
+(260, 'Kanal', '2024-02-25', 1.76, 'FaZe Clan', '3:5', 'Chloette Foyston'),
+(261, 'Border', '2025-02-06', 0.51, 'Dplus', '0:3', 'Pia Bibby'),
+(262, 'Coastline', '2022-06-27', 0.77, 'Wolves Esports', '5:4', 'Haley Baglan'),
+(263, 'Kanal', '2024-01-31', 2.46, 'Spacestation Gaming (SSG)', '5:4', 'Barnaby Kellogg'),
+(264, 'ThemePark', '2023-02-05', 4.48, 'Elevate', '5:4', 'Stillmann Hands'),
+(265, 'Bank', '2020-08-22', 3.31, 'M80', '5:4', 'Darda Hendrik'),
+(266, 'Oregon', '2022-11-12', 4.98, 'Elevate', '3:0', 'Dana Mayfield'),
+(267, 'Border', '2019-10-16', 4.06, 'Oxygen Esports', '5:4', 'Verne Malkinson'),
+(268, 'Oregon', '2019-12-16', 4.43, 'Team Liquid', '2:4', 'Zebedee MacGillacolm'),
+(269, 'Oregon', '2019-10-05', 0.83, 'M80', '3:0', 'Maddie Blewmen'),
+(270, 'Kanal', '2021-07-17', 1.83, 'Spacestation Gaming (SSG)', '3:0', 'Laura Soggee'),
+(271, 'Bank', '2023-09-20', 4.13, 'DarkZero Esports (DZ)', '0:3', 'Hortense Kincaid'),
+(272, 'Kanal', '2020-05-02', 1.8, 'MNM Gaming', '3:5', 'Jesse O\'Gavin'),
+(273, 'Outback', '2020-04-11', 1.43, 'Virtus.pro', '4:5', 'Irvin Treneer'),
+(274, 'Clubhouse', '2024-06-10', 0.55, 'SCARZ', '3:5', 'Amble Tailby'),
+(275, 'Bank', '2025-04-05', 1.84, 'Dplus', '5:3', 'Phaedra Chable'),
+(276, 'Border', '2022-03-15', 4.93, 'Oxygen Esports', '2:4', 'Steffie Ianne'),
+(277, 'ThemePark', '2020-04-12', 3.34, 'KOI', '0:3', 'Gussi Stiegar'),
+(278, 'Bank', '2020-03-18', 2.6, 'M80', '5:3', 'Nonnah Flewin'),
+(279, 'Bank', '2020-11-07', 3.74, 'Spacestation Gaming (SSG)', '0:3', 'Alain Gilmour'),
+(280, 'Bank', '2024-08-18', 2.01, 'Wolves Esports', '5:4', 'Winnie Zottoli'),
+(281, 'Clubhouse', '2020-07-02', 3.91, 'MNM Gaming', '4:5', 'Sax Flaonier'),
+(282, 'Outback', '2020-03-28', 1.11, 'Team Liquid', '4:2', 'Maiga Wynrahame'),
+(283, 'ThemePark', '2021-06-18', 0.2, 'MNM Gaming', '2:4', 'Dorry Dusey'),
+(284, 'Clubhouse', '2025-02-02', 0.2, 'Virtus.pro', '5:4', 'Yankee Stoffers'),
+(285, 'Outback', '2024-12-12', 2.32, 'Spacestation Gaming (SSG)', '3:0', 'Dugald Lawley'),
+(286, 'Coastline', '2024-03-26', 4.45, 'Virtus.pro', '3:0', 'Gannon Shakelade'),
+(287, 'Oregon', '2019-07-21', 3.36, 'Natus Vincere (NAVI)', '2:4', 'Monte Veljes'),
+(288, 'Kanal', '2021-11-09', 2.51, 'Virtus.pro', '5:3', 'Kareem Darmody'),
+(289, 'Outback', '2020-07-24', 0.17, 'MNM Gaming', '0:3', 'Bennie Perigeaux'),
+(290, 'Kanal', '2024-08-24', 0.7, 'MNM Gaming', '4:5', 'Rochette Sesons'),
+(291, 'ThemePark', '2022-04-17', 3.57, 'DarkZero Esports (DZ)', '5:3', 'Scarface Combe'),
+(292, 'Coastline', '2021-07-09', 3.96, 'Natus Vincere (NAVI)', '0:3', 'Layla Gatenby'),
+(293, 'ThemePark', '2024-07-10', 1.79, 'M80', '3:5', 'Corrinne Devall'),
+(294, 'Bank', '2022-05-18', 0.22, 'FURIA Esports', '3:0', 'Molly Paulazzi'),
+(295, 'Border', '2021-06-24', 2.14, 'Wolves Esports', '3:0', 'Sindee Caudrelier'),
+(296, 'Kanal', '2025-01-03', 2.36, 'SCARZ', '0:3', 'Saloma Scandroot'),
+(297, 'Kanal', '2022-01-24', 4.09, 'Spacestation Gaming (SSG)', '0:3', 'Collen Bladon'),
+(298, 'Outback', '2019-09-29', 0.04, 'M80', '0:3', 'Ariel Greader'),
+(299, 'ThemePark', '2022-09-08', 1.12, 'M80', '3:5', 'Gregorio Mc Grath'),
+(300, 'Bank', '2024-01-21', 4.64, 'FURIA Esports', '3:5', 'Aurea Kerfod'),
+(301, 'Oregon', '2019-05-29', 3.16, 'Wolves Esports', '4:5', 'Christoper Lazenby'),
+(302, 'Bank', '2019-06-11', 2.19, 'Natus Vincere (NAVI)', '0:3', 'Rutter Coady'),
+(303, 'Border', '2025-01-15', 4.99, 'FaZe Clan', '4:5', 'Des Langeley'),
+(304, 'Clubhouse', '2020-06-19', 0.37, 'Los + oNe', '4:2', 'Cathryn Crookshanks'),
+(305, 'Kanal', '2020-09-29', 2.06, 'Oxygen Esports', '4:5', 'Pennie Ivanusyev'),
+(306, 'ThemePark', '2022-05-30', 3.36, 'KOI', '0:3', 'Catlee Scare'),
+(307, 'Kanal', '2021-10-25', 0.9, 'Natus Vincere (NAVI)', '5:3', 'Shane Beadon'),
+(308, 'Kanal', '2020-10-28', 0.19, 'DarkZero Esports (DZ)', '3:5', 'Beale Wemes'),
+(309, 'Border', '2023-01-18', 4.64, 'DarkZero Esports (DZ)', '4:5', 'Clara Talby'),
+(310, 'Oregon', '2020-11-26', 4.82, 'Natus Vincere (NAVI)', '4:2', 'Beverley Trowill'),
+(311, 'Coastline', '2019-08-21', 4.68, 'Team Liquid', '4:2', 'Mimi Pergens'),
+(312, 'Bank', '2023-04-02', 4.84, 'Team BDS', '2:4', 'Eddie Sapena'),
+(313, 'Coastline', '2019-11-18', 2.62, 'SCARZ', '3:5', 'Lezlie Dreossi'),
+(314, 'ThemePark', '2019-05-22', 3.92, 'Natus Vincere (NAVI)', '0:3', 'Bale Hugin'),
+(315, 'Bank', '2021-10-10', 4.57, 'DarkZero Esports (DZ)', '4:5', 'Fleur Baudassi'),
+(316, 'Clubhouse', '2022-05-09', 0.86, 'Elevate', '5:4', 'Justinn Robardet'),
+(317, 'Border', '2023-12-06', 4.03, 'Dplus', '5:3', 'Bentley Meaker'),
+(318, 'Bank', '2023-04-27', 1.74, 'Team Liquid', '3:5', 'Christye Weiner'),
+(319, 'Kanal', '2024-04-15', 4.11, 'Los + oNe', '4:5', 'Neile Di Dello'),
+(320, 'Outback', '2024-01-11', 4.64, 'Soniqs', '3:5', 'Linell Keatch'),
+(321, 'Bank', '2022-02-11', 2.9, 'FURIA Esports', '4:2', 'Madalyn Ionesco'),
+(322, 'Outback', '2021-10-06', 1.52, 'Dplus', '4:5', 'Barbette Rogier'),
+(323, 'Clubhouse', '2020-08-13', 4.56, 'SCARZ', '2:4', 'Margarethe Clarycott'),
+(324, 'Border', '2022-06-29', 0.51, 'w7m esports', '4:5', 'Lowe Duer'),
+(325, 'Outback', '2020-02-24', 4.13, 'G2 Esports', '4:2', 'Darice Ousbie'),
+(326, 'Clubhouse', '2019-07-06', 1.89, 'FURIA Esports', '0:3', 'Kamilah Stuart'),
+(327, 'Bank', '2021-04-28', 2.7, 'Oxygen Esports', '3:0', 'Shena Everard'),
+(328, 'Kanal', '2020-10-30', 0.24, 'KOI', '5:4', 'Shelia Sclanders'),
+(329, 'Bank', '2020-06-30', 3.73, 'MNM Gaming', '4:5', 'Georgeanna Bertenshaw'),
+(330, 'Kanal', '2019-06-14', 2.96, 'Team Liquid', '4:5', 'Atalanta Relph'),
+(331, 'ThemePark', '2022-06-28', 0.97, 'Team BDS', '4:2', 'Collete McInally'),
+(332, 'Bank', '2022-08-06', 3.34, 'KOI', '4:5', 'Quintilla Bukowski'),
+(333, 'Border', '2023-05-21', 4.78, 'Dplus', '0:3', 'Alford Lusher'),
+(334, 'Clubhouse', '2019-05-11', 3.84, 'KOI', '3:5', 'Hebert Spofford'),
+(335, 'ThemePark', '2021-08-10', 0.2, 'Oxygen Esports', '4:5', 'Sonia Milsap'),
+(336, 'Outback', '2023-08-31', 2.36, 'w7m esports', '5:4', 'Trumann Teodori'),
+(337, 'Outback', '2021-07-08', 2.43, 'Los + oNe', '3:0', 'Jacynth Poyle'),
+(338, 'Clubhouse', '2024-09-24', 2.85, 'KOI', '3:5', 'Benedict Matthai'),
+(339, 'Coastline', '2022-04-26', 2.91, 'Virtus.pro', '0:3', 'Turner Mundy'),
+(340, 'Bank', '2019-07-15', 2.6, 'MNM Gaming', '5:4', 'Grannie Matthiae'),
+(341, 'Clubhouse', '2021-05-31', 3.81, 'Spacestation Gaming (SSG)', '3:5', 'Nicky Hourstan'),
+(342, 'Oregon', '2023-02-13', 3.72, 'Dplus', '0:3', 'Wileen Cunnow'),
+(343, 'Kanal', '2025-01-04', 2.66, 'Soniqs', '5:4', 'Kristi Dinis'),
+(344, 'Clubhouse', '2022-08-18', 2.35, 'KOI', '5:3', 'Anny Thickin'),
+(345, 'Oregon', '2022-08-26', 2.18, 'Dplus', '4:2', 'Tani Welton'),
+(346, 'Outback', '2024-08-27', 1.87, 'MNM Gaming', '0:3', 'Evan Johl'),
+(347, 'Oregon', '2022-06-10', 1.35, 'Soniqs', '4:5', 'Emera Merida'),
+(348, 'Clubhouse', '2023-12-17', 1.13, 'w7m esports', '3:0', 'Leora Mc Grath'),
+(349, 'Border', '2019-07-18', 3.62, 'Virtus.pro', '5:3', 'Taffy Dyke'),
+(350, 'Border', '2024-01-09', 0.42, 'DarkZero Esports (DZ)', '5:3', 'Shaughn Hernik'),
+(351, 'Border', '2021-08-14', 4.6, 'FURIA Esports', '4:2', 'Cristian Fruser'),
+(352, 'Clubhouse', '2022-03-18', 2.66, 'Team BDS', '2:4', 'Alica Goring'),
+(353, 'Oregon', '2021-04-28', 4.32, 'KOI', '5:4', 'Deirdre Bonallack'),
+(354, 'Kanal', '2022-02-22', 4.76, 'MNM Gaming', '4:2', 'Bondie Smalles'),
+(355, 'Outback', '2022-04-06', 3.07, 'M80', '3:0', 'Nichols Eskriet'),
+(356, 'Clubhouse', '2020-07-30', 3.08, 'G2 Esports', '5:3', 'Mischa Strafford'),
+(357, 'Bank', '2023-06-05', 3.61, 'G2 Esports', '3:0', 'Kaiser Selman'),
+(358, 'Outback', '2024-01-20', 3.03, 'Dplus', '5:3', 'Justinn Thurby'),
+(359, 'Coastline', '2023-05-06', 3.95, 'FURY', '3:0', 'Reena Harpham'),
+(360, 'ThemePark', '2019-06-21', 2.62, 'w7m esports', '3:5', 'Bengt Bowra'),
+(361, 'Oregon', '2020-04-09', 0.47, 'Soniqs', '5:3', 'Pieter Toun'),
+(362, 'ThemePark', '2021-05-16', 3.3, 'FaZe Clan', '5:4', 'Stafani Mines'),
+(363, 'ThemePark', '2024-07-17', 3.51, 'Virtus.pro', '2:4', 'Cointon Chantillon'),
+(364, 'Outback', '2021-06-02', 2.91, 'Los + oNe', '2:4', 'Ronda Iskov'),
+(365, 'ThemePark', '2020-05-14', 4.46, 'Spacestation Gaming (SSG)', '4:2', 'Kayne Decourt'),
+(366, 'Coastline', '2024-02-25', 3.88, 'Virtus.pro', '0:3', 'Candie Curnok'),
+(367, 'Kanal', '2024-04-14', 1.57, 'Wolves Esports', '4:2', 'Rudolph Colquitt'),
+(368, 'Border', '2019-08-18', 4.26, 'SCARZ', '5:4', 'Serena Wolffers'),
+(369, 'Oregon', '2022-03-17', 3.57, 'FURIA Esports', '5:4', 'Aliza Lardeur'),
+(370, 'Oregon', '2024-10-17', 0.8, 'KOI', '4:5', 'Shelden Ciardo'),
+(371, 'Coastline', '2023-12-03', 1.43, 'Wolves Esports', '0:3', 'Jermayne Rodmell'),
+(372, 'Bank', '2021-05-10', 2.38, 'Team Liquid', '0:3', 'Candi Hext'),
+(373, 'Outback', '2020-10-12', 2.46, 'Oxygen Esports', '3:0', 'Hal Shaves'),
+(374, 'Coastline', '2021-10-01', 1.52, 'G2 Esports', '4:2', 'Sabrina Tremmil'),
+(375, 'Clubhouse', '2024-07-21', 2.68, 'Dplus', '5:3', 'Peterus Chapier'),
+(376, 'Coastline', '2025-04-23', 1.13, 'Los + oNe', '2:4', 'Adelaida Matei'),
+(377, 'ThemePark', '2023-05-25', 2.54, 'Spacestation Gaming (SSG)', '3:5', 'Rodge Gladwell'),
+(378, 'Oregon', '2020-10-22', 0.44, 'FaZe Clan', '3:0', 'Brynn Grieves'),
+(379, 'Outback', '2019-07-27', 4.36, 'Oxygen Esports', '3:5', 'Maddi Bellenger'),
+(380, 'ThemePark', '2023-08-31', 2.74, 'Oxygen Esports', '3:5', 'Jere Muris'),
+(381, 'Coastline', '2022-09-06', 3.03, 'Spacestation Gaming (SSG)', '5:4', 'Lilian Fenna'),
+(382, 'Outback', '2020-05-09', 3.12, 'MNM Gaming', '5:3', 'Maribel Cammock'),
+(383, 'Coastline', '2024-03-22', 1.59, 'Wolves Esports', '5:3', 'Enoch Colborn'),
+(384, 'Bank', '2022-01-30', 1.19, 'Team BDS', '5:4', 'Walther Tzar'),
+(385, 'Outback', '2020-05-08', 2.16, 'SCARZ', '0:3', 'Adolpho Howship'),
+(386, 'Clubhouse', '2021-10-03', 4.14, 'Elevate', '3:0', 'Osmund Deabill'),
+(387, 'ThemePark', '2024-08-26', 3.88, 'M80', '2:4', 'Glynda Roobottom'),
+(388, 'Bank', '2022-11-04', 1.72, 'FURIA Esports', '4:5', 'Adamo Nuth'),
+(389, 'Oregon', '2019-11-27', 3.56, 'Wolves Esports', '5:3', 'Ilene Muston'),
+(390, 'Oregon', '2025-01-15', 0.33, 'Wolves Esports', '2:4', 'Ollie Aleveque'),
+(391, 'Coastline', '2019-07-16', 1.91, 'Soniqs', '3:0', 'Erin Chazier'),
+(392, 'Oregon', '2022-06-14', 2.97, 'Elevate', '2:4', 'Dawn Laffan'),
+(393, 'Clubhouse', '2020-07-27', 3.26, 'KOI', '4:2', 'Karin Giffon'),
+(394, 'Kanal', '2024-01-04', 1.69, 'Dplus', '5:3', 'Teodora Wyles'),
+(395, 'Border', '2021-12-28', 0.59, 'MNM Gaming', '2:4', 'Nikolaos Ugoletti'),
+(396, 'Bank', '2022-10-12', 1.21, 'Team Liquid', '4:2', 'Pip Patek'),
+(397, 'Clubhouse', '2021-07-12', 3.82, 'Oxygen Esports', '4:5', 'Gussie Pulteneye'),
+(398, 'Coastline', '2022-08-30', 3.35, 'Elevate', '5:3', 'Karry Barge'),
+(399, 'ThemePark', '2024-06-05', 1.5, 'Wolves Esports', '3:5', 'Tiebout Astin'),
+(400, 'Outback', '2023-02-17', 1.14, 'FURIA Esports', '0:3', 'Celestyna Golsby'),
+(401, 'Bank', '2020-05-25', 1.92, 'M80', '3:5', 'Wilfred Braybrook'),
+(402, 'Oregon', '2023-11-26', 0.32, 'SCARZ', '4:5', 'Latia Jaffa'),
+(403, 'Coastline', '2024-06-24', 4.36, 'DarkZero Esports (DZ)', '3:5', 'Stacy Clorley'),
+(404, 'Oregon', '2021-06-17', 0.18, 'Soniqs', '2:4', 'Hillie Gabbat'),
+(405, 'Kanal', '2020-02-12', 4.75, 'SCARZ', '4:2', 'Alexandr Emburey'),
+(406, 'Outback', '2020-07-01', 3.14, 'w7m esports', '3:0', 'Druci Ponder'),
+(407, 'ThemePark', '2022-01-10', 4.06, 'Oxygen Esports', '4:5', 'Keelby Wilmut'),
+(408, 'Oregon', '2019-06-07', 3.62, 'Team BDS', '5:3', 'Delcina Jewiss'),
+(409, 'Kanal', '2020-08-18', 1.17, 'Virtus.pro', '2:4', 'Cherri Goscomb'),
+(410, 'Kanal', '2023-12-11', 2.15, 'FURIA Esports', '3:5', 'Catha Parradye'),
+(411, 'Clubhouse', '2019-08-26', 0.64, 'Soniqs', '5:3', 'Zenia Kurton'),
+(412, 'Kanal', '2023-04-13', 1.81, 'FURIA Esports', '4:2', 'Delainey Tulloch'),
+(413, 'Kanal', '2023-02-17', 3.84, 'Team BDS', '2:4', 'Winthrop Titterton'),
+(414, 'Bank', '2024-02-24', 4.23, 'Los + oNe', '5:4', 'Byron Benjefield'),
+(415, 'Kanal', '2023-08-15', 3.61, 'Team BDS', '4:2', 'Livvyy Nornable'),
+(416, 'Clubhouse', '2020-09-13', 1.47, 'MNM Gaming', '4:2', 'Base Piatti'),
+(417, 'Clubhouse', '2021-11-23', 2.57, 'Virtus.pro', '3:0', 'Galen Woolway'),
+(418, 'Kanal', '2020-06-14', 2.95, 'FURIA Esports', '4:2', 'Faith Mackie'),
+(419, 'Outback', '2024-12-01', 4.25, 'FURIA Esports', '3:0', 'Marleen Outibridge'),
+(420, 'Outback', '2023-06-03', 0.16, 'M80', '2:4', 'Donnie Redhouse'),
+(421, 'ThemePark', '2020-01-01', 3.38, 'Natus Vincere (NAVI)', '2:4', 'Maisie Beddin'),
+(422, 'Clubhouse', '2022-12-22', 0.84, 'FURY', '4:2', 'Milena Olek'),
+(423, 'Outback', '2023-07-27', 0.91, 'Dplus', '3:5', 'Jeth Randall'),
+(424, 'Kanal', '2023-02-22', 2.03, 'Soniqs', '5:3', 'Frederich Rimell'),
+(425, 'Clubhouse', '2019-08-16', 0.95, 'MNM Gaming', '0:3', 'Mattie Kuschke'),
+(426, 'Clubhouse', '2021-04-26', 3.37, 'Wolves Esports', '4:2', 'Kelsy Mayne'),
+(427, 'Bank', '2024-01-19', 3.13, 'FURIA Esports', '4:5', 'Chucho Iacavone'),
+(428, 'Outback', '2019-09-28', 2.46, 'SCARZ', '2:4', 'Lian Strutton'),
+(429, 'ThemePark', '2019-10-20', 2.39, 'DarkZero Esports (DZ)', '5:3', 'Val Studdert'),
+(430, 'Outback', '2022-03-20', 3.06, 'Elevate', '5:4', 'Luz Sheran'),
+(431, 'Clubhouse', '2023-01-13', 2.82, 'Dplus', '2:4', 'Shawn Weild'),
+(432, 'Kanal', '2021-04-07', 1.34, 'Soniqs', '4:2', 'Webb Marlen'),
+(433, 'Oregon', '2023-04-20', 3.48, 'Virtus.pro', '3:0', 'Gwenny Merrin'),
+(434, 'Border', '2024-02-04', 2.06, 'SCARZ', '3:0', 'Trudie Sasser'),
+(435, 'Oregon', '2024-10-04', 0.96, 'FURY', '5:3', 'Gene Ladewig'),
+(436, 'Clubhouse', '2024-03-15', 3.56, 'w7m esports', '0:3', 'Dottie Matz'),
+(437, 'Outback', '2023-09-06', 4.61, 'FURIA Esports', '5:3', 'Nelson Sudron'),
+(438, 'ThemePark', '2022-02-26', 2.41, 'Virtus.pro', '3:5', 'Giffie Gerhardt'),
+(439, 'Bank', '2022-06-21', 0.35, 'Elevate', '5:4', 'Clarisse Bucke'),
+(440, 'Clubhouse', '2022-07-23', 0.81, 'KOI', '0:3', 'Chrissie Flatley'),
+(441, 'ThemePark', '2022-11-21', 2, 'Team BDS', '2:4', 'Gifford Girvin'),
+(442, 'Bank', '2022-05-21', 1.33, 'Wolves Esports', '5:3', 'Janessa Blacklock'),
+(443, 'ThemePark', '2019-07-19', 0.47, 'M80', '3:0', 'Rhys Essel'),
+(444, 'Oregon', '2019-05-04', 3.95, 'Elevate', '3:5', 'Tadeas Petracco'),
+(445, 'Clubhouse', '2023-09-19', 0.13, 'Oxygen Esports', '3:0', 'Dennis Durnill'),
+(446, 'Oregon', '2025-04-19', 4.04, 'MNM Gaming', '5:4', 'Linell Jervois'),
+(447, 'Oregon', '2024-09-20', 4.23, 'FaZe Clan', '5:4', 'Thaxter Cherry'),
+(448, 'Clubhouse', '2023-11-29', 4.84, 'G2 Esports', '3:5', 'Denys Zoppie'),
+(449, 'ThemePark', '2022-02-01', 4.59, 'Natus Vincere (NAVI)', '5:4', 'Virge Leebeter'),
+(450, 'Border', '2022-01-29', 0.27, 'Spacestation Gaming (SSG)', '3:5', 'Trina Burgan'),
+(451, 'Bank', '2024-01-28', 0.18, 'MNM Gaming', '0:3', 'Kiri Lethibridge'),
+(452, 'Clubhouse', '2019-05-08', 0.53, 'Los + oNe', '2:4', 'Guillaume Faltin'),
+(453, 'Coastline', '2019-10-23', 3.31, 'Virtus.pro', '0:3', 'Jolyn Pearcehouse'),
+(454, 'Clubhouse', '2020-08-05', 4.67, 'Wolves Esports', '4:2', 'Othelia Pringell'),
+(455, 'Clubhouse', '2022-09-20', 4.74, 'Natus Vincere (NAVI)', '3:0', 'Ginevra Leebeter'),
+(456, 'Kanal', '2021-09-28', 0.17, 'Virtus.pro', '5:3', 'Tiler Slyne'),
+(457, 'Coastline', '2022-08-20', 2.43, 'Virtus.pro', '5:3', 'Alonzo Pickrell'),
+(458, 'Outback', '2020-10-01', 1.85, 'Spacestation Gaming (SSG)', '2:4', 'Karoly Gurton'),
+(459, 'ThemePark', '2021-01-20', 3.35, 'Dplus', '2:4', 'Daria Weatherall'),
+(460, 'Coastline', '2024-01-22', 3.75, 'Oxygen Esports', '5:4', 'Mabelle Christley'),
+(461, 'Outback', '2021-07-16', 0.2, 'Natus Vincere (NAVI)', '3:5', 'Martie Stanhope'),
+(462, 'ThemePark', '2019-06-12', 2.05, 'Dplus', '4:5', 'Rayshell Dillon'),
+(463, 'Coastline', '2020-09-14', 2.79, 'Team BDS', '5:3', 'Mateo Dallison'),
+(464, 'Outback', '2021-03-23', 2.36, 'FURIA Esports', '5:3', 'Marcia Gerber'),
+(465, 'Oregon', '2023-04-10', 0.38, 'Team BDS', '4:2', 'Kent Cathie'),
+(466, 'ThemePark', '2024-12-15', 4.25, 'Elevate', '5:3', 'Rodge Jakeway'),
+(467, 'Coastline', '2021-08-08', 2.62, 'MNM Gaming', '3:5', 'Forbes Furse'),
+(468, 'Bank', '2022-05-30', 0.88, 'MNM Gaming', '0:3', 'Gwendolyn Klima'),
+(469, 'ThemePark', '2024-01-11', 2.86, 'MNM Gaming', '3:5', 'Marlena Delafont'),
+(470, 'Kanal', '2020-11-26', 1.02, 'Wolves Esports', '5:3', 'Tina Langeley'),
+(471, 'ThemePark', '2020-01-08', 0.04, 'DarkZero Esports (DZ)', '0:3', 'Broderick Wauchope'),
+(472, 'Border', '2021-08-22', 3.58, 'G2 Esports', '5:3', 'Celle Hupe'),
+(473, 'Outback', '2021-10-15', 3.05, 'Natus Vincere (NAVI)', '5:3', 'Brear Hambric'),
+(474, 'Bank', '2021-05-30', 1.65, 'G2 Esports', '4:5', 'Tyson Musso'),
+(475, 'Border', '2021-02-12', 1.58, 'FaZe Clan', '0:3', 'Jessika Webland'),
+(476, 'Kanal', '2024-05-08', 1.7, 'M80', '4:2', 'Adriana Wardle'),
+(477, 'Coastline', '2024-04-26', 2.1, 'SCARZ', '3:0', 'Analiese Hayen'),
+(478, 'Bank', '2020-04-23', 4.45, 'G2 Esports', '5:3', 'Genia Lendon'),
+(479, 'Coastline', '2021-04-25', 3.13, 'DarkZero Esports (DZ)', '3:0', 'Joly Fane'),
+(480, 'Kanal', '2020-10-20', 1.42, 'FURY', '2:4', 'Ferdinand Tudball'),
+(481, 'Bank', '2022-06-21', 3.92, 'Team BDS', '3:5', 'Charmian Goulding'),
+(482, 'Border', '2022-12-30', 2.49, 'Soniqs', '3:0', 'Georgianne Duddridge'),
+(483, 'Coastline', '2024-04-25', 0.53, 'Dplus', '5:4', 'Lutero Strand'),
+(484, 'Bank', '2023-09-22', 0.46, 'G2 Esports', '3:5', 'Gerhard Vallerine'),
+(485, 'Border', '2023-10-26', 3.45, 'FaZe Clan', '3:0', 'Teddie Waker'),
+(486, 'Coastline', '2022-01-20', 0.56, 'Los + oNe', '5:3', 'Latisha Yeatman'),
+(487, 'Border', '2020-11-13', 2.35, 'Dplus', '3:5', 'Aguste Weippert'),
+(488, 'Border', '2019-09-15', 3.16, 'FURIA Esports', '4:2', 'Cesar Rawstorn'),
+(489, 'Clubhouse', '2020-12-22', 3.31, 'Virtus.pro', '2:4', 'Perri Maliphant'),
+(490, 'Bank', '2021-01-17', 4.31, 'Oxygen Esports', '3:5', 'Cassi Flude'),
+(491, 'Oregon', '2022-05-27', 4.6, 'Dplus', '3:0', 'Steffi Benitti'),
+(492, 'Coastline', '2020-05-15', 1.29, 'M80', '5:4', 'Kassandra Fairlam'),
+(493, 'Coastline', '2022-06-11', 0.96, 'Virtus.pro', '5:3', 'Gerianne Cawdron'),
+(494, 'Bank', '2022-07-08', 1.44, 'Spacestation Gaming (SSG)', '0:3', 'Leroi Stockwell'),
+(495, 'Clubhouse', '2025-01-08', 4.3, 'Virtus.pro', '4:5', 'Andreana Bartolini'),
+(496, 'Oregon', '2024-03-08', 3.95, 'Soniqs', '4:5', 'Appolonia Postians'),
+(497, 'Border', '2024-12-11', 2.01, 'MNM Gaming', '4:5', 'Had Bardwell'),
+(498, 'Bank', '2023-03-06', 0.31, 'KOI', '3:5', 'Nevil Brellin'),
+(499, 'Coastline', '2023-02-05', 0.65, 'DarkZero Esports (DZ)', '5:4', 'Becca Stanier'),
+(500, 'Border', '2023-12-06', 3.05, 'Natus Vincere (NAVI)', '2:4', 'Kleon Wilber'),
+(501, 'Oregon', '2022-11-02', 2.1, 'KOI', '4:2', 'Oberon Ornils'),
+(502, 'Kanal', '2022-11-21', 0.58, 'Oxygen Esports', '3:5', 'Emlynne Brine'),
+(503, 'Kanal', '2022-11-06', 3.74, 'FaZe Clan', '5:4', 'Harriot Shama'),
+(504, 'Coastline', '2021-08-24', 3.77, 'MNM Gaming', '5:4', 'Aveline Philipsen'),
+(505, 'Border', '2021-01-05', 2.28, 'Spacestation Gaming (SSG)', '0:3', 'Phillis Menel'),
+(506, 'Oregon', '2023-05-01', 0.51, 'Soniqs', '3:0', 'Christel Edworthye'),
+(507, 'Clubhouse', '2019-12-06', 3.33, 'Soniqs', '5:3', 'Nani Sinyard'),
+(508, 'Border', '2024-03-03', 1.45, 'Soniqs', '2:4', 'Tiertza Milbank'),
+(509, 'Coastline', '2020-10-06', 4.83, 'Dplus', '5:4', 'Prince Irnys'),
+(510, 'ThemePark', '2019-09-28', 0.51, 'Team BDS', '5:4', 'Tailor Clarycott'),
+(511, 'ThemePark', '2023-10-17', 4.07, 'FURY', '3:0', 'Gusti Hussey'),
+(512, 'ThemePark', '2021-01-12', 1.42, 'Team Liquid', '4:5', 'Scot Scholig'),
+(513, 'Kanal', '2022-03-01', 2.45, 'MNM Gaming', '3:5', 'Estel Younie'),
+(514, 'Clubhouse', '2022-05-05', 4.79, 'FURIA Esports', '0:3', 'Kanya Cloney'),
+(515, 'Border', '2021-04-13', 1.58, 'Wolves Esports', '3:5', 'Harriette McCullagh'),
+(516, 'Clubhouse', '2022-11-19', 2.61, 'SCARZ', '5:3', 'Alister Prodrick'),
+(517, 'Coastline', '2024-09-28', 4.02, 'w7m esports', '3:0', 'Selina Dickey'),
+(518, 'ThemePark', '2023-02-04', 4.54, 'Oxygen Esports', '5:4', 'Abbey Mayze'),
+(519, 'Outback', '2019-05-17', 0.49, 'Oxygen Esports', '4:5', 'Jocko Cleverly'),
+(520, 'Border', '2024-08-02', 4.92, 'Dplus', '0:3', 'Leese Pinch'),
+(521, 'Oregon', '2024-07-05', 1.84, 'Spacestation Gaming (SSG)', '3:5', 'Lizzie Springham'),
+(522, 'Clubhouse', '2024-11-04', 1.51, 'G2 Esports', '4:2', 'Eric Badrock'),
+(523, 'Clubhouse', '2021-05-30', 3.11, 'DarkZero Esports (DZ)', '4:2', 'Liane Stables'),
+(524, 'ThemePark', '2022-04-04', 4.84, 'FURIA Esports', '4:5', 'Damiano Lannen'),
+(525, 'Border', '2022-08-31', 3.33, 'FaZe Clan', '4:2', 'Leyla Dickerline'),
+(526, 'Bank', '2023-11-17', 4.2, 'Team BDS', '4:2', 'Jay MacGlory'),
+(527, 'Coastline', '2020-11-11', 2.24, 'SCARZ', '5:3', 'Letty Bromley'),
+(528, 'Oregon', '2021-03-19', 4.14, 'Wolves Esports', '4:5', 'Jo Salleir'),
+(529, 'Kanal', '2020-08-05', 1.15, 'Virtus.pro', '2:4', 'Ham Manginot'),
+(530, 'Coastline', '2022-06-26', 4.71, 'Soniqs', '5:3', 'Leta Brunsdon'),
+(531, 'Kanal', '2019-11-17', 2.5, 'G2 Esports', '3:5', 'Phylys Wheelband'),
+(532, 'Clubhouse', '2023-11-14', 2.79, 'G2 Esports', '5:4', 'Olive Di Boldi'),
+(533, 'Bank', '2020-01-29', 1.1, 'FURIA Esports', '4:5', 'Inglis Ludwig'),
+(534, 'Coastline', '2023-12-07', 1.11, 'Los + oNe', '3:0', 'Brigid Iwanicki'),
+(535, 'Coastline', '2024-07-13', 0.39, 'M80', '3:0', 'Sidnee Sloey'),
+(536, 'Coastline', '2019-07-03', 4.99, 'KOI', '5:3', 'Victoir Latus'),
+(537, 'Oregon', '2022-05-19', 0.1, 'G2 Esports', '5:3', 'Gradeigh Brennon'),
+(538, 'Clubhouse', '2022-07-04', 2.11, 'Team BDS', '2:4', 'Maren Neathway'),
+(539, 'Border', '2020-06-25', 2.8, 'Los + oNe', '0:3', 'Babbie Lapidus'),
+(540, 'Oregon', '2024-07-08', 0.84, 'SCARZ', '3:5', 'Adrian Turbitt'),
+(541, 'Bank', '2025-04-20', 4.93, 'Team Liquid', '2:4', 'Monroe Guyonnet'),
+(542, 'Coastline', '2019-05-07', 4.14, 'Virtus.pro', '3:0', 'Moishe Ughi'),
+(543, 'Clubhouse', '2022-12-22', 0.27, 'M80', '5:3', 'Mannie D\'Alwis'),
+(544, 'Coastline', '2023-04-24', 3.08, 'MNM Gaming', '4:2', 'Walliw Paeckmeyer'),
+(545, 'Coastline', '2024-07-04', 2.89, 'MNM Gaming', '5:3', 'Allin Landon'),
+(546, 'Outback', '2023-10-30', 1.2, 'Los + oNe', '0:3', 'Hewe Sharply'),
+(547, 'Coastline', '2022-02-17', 3.78, 'Team BDS', '3:5', 'Devin Chadband'),
+(548, 'Kanal', '2020-05-13', 2.85, 'MNM Gaming', '5:3', 'Eugen Plose'),
+(549, 'Border', '2023-06-03', 1.2, 'Elevate', '3:5', 'Gleda Caughan'),
+(550, 'Kanal', '2022-11-14', 2.7, 'Elevate', '0:3', 'Aldrich Oddy'),
+(551, 'Bank', '2020-08-21', 0.54, 'FURY', '3:5', 'Darby Loins'),
+(552, 'Bank', '2021-01-15', 1.96, 'Virtus.pro', '2:4', 'Loralyn Fucher'),
+(553, 'Bank', '2025-02-02', 3.98, 'FURIA Esports', '5:4', 'Ax Portt'),
+(554, 'Oregon', '2022-04-10', 1.69, 'Soniqs', '4:2', 'Hobey MacGrath'),
+(555, 'Outback', '2022-04-02', 1.16, 'Elevate', '3:5', 'Seana Trinder'),
+(556, 'Outback', '2022-09-10', 2.92, 'DarkZero Esports (DZ)', '3:0', 'Adriane Greensted'),
+(557, 'Kanal', '2022-11-20', 4.53, 'w7m esports', '4:2', 'Darb Durman'),
+(558, 'Bank', '2024-09-24', 3.15, 'FURY', '5:3', 'Karyn Thornally'),
+(559, 'Border', '2020-10-07', 0.77, 'FURIA Esports', '3:5', 'Daria Skelington'),
+(560, 'Clubhouse', '2021-04-12', 0.44, 'FaZe Clan', '0:3', 'Wenonah Peskett'),
+(561, 'Oregon', '2024-09-05', 2.79, 'Spacestation Gaming (SSG)', '3:5', 'Casandra Eloy'),
+(562, 'Clubhouse', '2022-07-14', 1.05, 'FURY', '3:5', 'Alanson Grubb'),
+(563, 'Clubhouse', '2024-07-22', 2.27, 'SCARZ', '4:5', 'Donia Zanassi'),
+(564, 'Bank', '2023-03-18', 4.8, 'Natus Vincere (NAVI)', '3:0', 'Vassili Lacotte'),
+(565, 'Coastline', '2024-02-03', 4.51, 'Natus Vincere (NAVI)', '4:5', 'Berta Bertl'),
+(566, 'Bank', '2021-08-20', 2.54, 'Spacestation Gaming (SSG)', '4:2', 'Amanda Hunnisett'),
+(567, 'ThemePark', '2023-07-23', 3.89, 'FURIA Esports', '4:5', 'Udale Cuesta'),
+(568, 'Coastline', '2023-02-22', 0.29, 'FURIA Esports', '5:3', 'Elinore Maclean'),
+(569, 'Clubhouse', '2022-04-25', 0.75, 'Virtus.pro', '5:4', 'Davine Hardage'),
+(570, 'Oregon', '2024-11-13', 4.81, 'Team BDS', '4:2', 'Bartel Lambertz'),
+(571, 'Border', '2023-02-26', 1.27, 'Team BDS', '2:4', 'Massimiliano Wadie'),
+(572, 'Outback', '2024-05-16', 0.12, 'Team BDS', '3:0', 'Kessiah Busk'),
+(573, 'Border', '2021-05-02', 3.51, 'SCARZ', '0:3', 'Johnna Aldrick'),
+(574, 'Bank', '2022-09-27', 0.42, 'w7m esports', '0:3', 'Tersina Adamovitch'),
+(575, 'Bank', '2020-07-10', 4.42, 'Team Liquid', '4:2', 'Danni Bencher'),
+(576, 'Kanal', '2019-11-20', 4.91, 'MNM Gaming', '0:3', 'Tiff Dulake'),
+(577, 'Bank', '2021-11-05', 4.88, 'FaZe Clan', '4:5', 'Gertrud Snipe'),
+(578, 'Kanal', '2021-07-08', 2.87, 'FURIA Esports', '3:5', 'Barny Challiss'),
+(579, 'Clubhouse', '2023-07-17', 1.98, 'FURY', '4:2', 'Jaquelyn Chaudron'),
+(580, 'Kanal', '2019-09-15', 4.9, 'FURY', '2:4', 'Arvie Dysart'),
+(581, 'Bank', '2024-07-21', 1.79, 'Spacestation Gaming (SSG)', '5:4', 'Kevin Howler'),
+(582, 'Oregon', '2020-04-01', 4.64, 'M80', '5:3', 'Pier Macias'),
+(583, 'Border', '2022-10-08', 3.9, 'MNM Gaming', '5:4', 'Lenette Sinkins'),
+(584, 'Clubhouse', '2023-06-17', 2.54, 'w7m esports', '3:5', 'Massimiliano Osgar'),
+(585, 'Border', '2019-12-20', 0.25, 'w7m esports', '3:0', 'Cobbie Vasilevich'),
+(586, 'Bank', '2024-12-13', 2.45, 'Natus Vincere (NAVI)', '0:3', 'Fraze Renne'),
+(587, 'Coastline', '2019-11-15', 3.69, 'KOI', '4:5', 'Peyton Lanchester'),
+(588, 'Outback', '2020-12-30', 2.35, 'G2 Esports', '5:3', 'Dulsea Tideswell'),
+(589, 'Coastline', '2022-01-06', 0.94, 'Los + oNe', '5:3', 'Bendite Starmore'),
+(590, 'ThemePark', '2019-09-14', 0.4, 'SCARZ', '2:4', 'Felizio Ourry'),
+(591, 'Oregon', '2020-07-12', 2.53, 'Wolves Esports', '3:0', 'Chrissie Eouzan'),
+(592, 'Clubhouse', '2020-09-23', 4.17, 'G2 Esports', '5:4', 'Towny Cozens'),
+(593, 'Clubhouse', '2019-09-19', 0.19, 'Los + oNe', '5:3', 'Killy Jamme'),
+(594, 'Clubhouse', '2021-07-14', 1.19, 'M80', '4:2', 'Conni Mullane'),
+(595, 'Bank', '2020-03-03', 3.89, 'Team BDS', '2:4', 'Vassili Losebie'),
+(596, 'Coastline', '2025-01-03', 0.52, 'Soniqs', '4:5', 'Kathryne Meadley'),
+(597, 'ThemePark', '2021-01-04', 2.5, 'Spacestation Gaming (SSG)', '4:2', 'Marybeth Salliere'),
+(598, 'Kanal', '2021-04-19', 2.72, 'Elevate', '5:4', 'Derry Gillbanks'),
+(599, 'Coastline', '2019-05-01', 0.12, 'Oxygen Esports', '0:3', 'Babara Sacchetti'),
+(600, 'Kanal', '2024-08-23', 3.89, 'SCARZ', '5:4', 'Catherin Klageman'),
+(601, 'Coastline', '2025-01-21', 3.02, 'G2 Esports', '3:0', 'Brandea Wadeson'),
+(602, 'Bank', '2022-11-30', 0.85, 'Team BDS', '3:5', 'Karim Debney'),
+(603, 'Outback', '2019-07-27', 0.81, 'MNM Gaming', '4:2', 'Martie Deehan'),
+(604, 'Border', '2020-04-14', 1.2, 'Team BDS', '3:0', 'Merilee Schwieso'),
+(605, 'Kanal', '2020-12-12', 4.32, 'KOI', '4:5', 'Annalee Bettison'),
+(606, 'Border', '2020-05-17', 0.13, 'Virtus.pro', '3:0', 'Gaile McGinnis'),
+(607, 'Border', '2019-10-27', 0.92, 'MNM Gaming', '5:4', 'Malorie Overington'),
+(608, 'Clubhouse', '2020-02-07', 2.05, 'M80', '5:3', 'Alexandre Cornfield'),
+(609, 'Coastline', '2024-01-30', 1.65, 'FURIA Esports', '4:5', 'Caldwell Slide'),
+(610, 'ThemePark', '2021-01-24', 3.34, 'w7m esports', '0:3', 'Mart Cocklie'),
+(611, 'Kanal', '2022-01-26', 0.53, 'Los + oNe', '2:4', 'Brigitta McCumskay'),
+(612, 'Kanal', '2020-09-18', 0.41, 'Oxygen Esports', '3:0', 'Linoel Thrussell'),
+(613, 'Kanal', '2023-02-10', 0.59, 'Spacestation Gaming (SSG)', '5:4', 'Erma Werrit'),
+(614, 'Border', '2021-03-15', 0.74, 'Natus Vincere (NAVI)', '0:3', 'Aurelia Bonwick'),
+(615, 'Bank', '2023-06-26', 3.02, 'MNM Gaming', '4:5', 'Phylys Fursse'),
+(616, 'Border', '2022-03-11', 1.63, 'MNM Gaming', '3:0', 'Susann Deinhardt'),
+(617, 'ThemePark', '2024-11-02', 3.48, 'MNM Gaming', '5:4', 'Johnna Beenham'),
+(618, 'Bank', '2021-05-07', 2.2, 'FURY', '4:2', 'Slade Cayley'),
+(619, 'Oregon', '2025-03-26', 1.13, 'Virtus.pro', '4:2', 'Neda Barthot'),
+(620, 'Bank', '2022-11-17', 1.34, 'Team BDS', '4:5', 'Kizzie Denyer'),
+(621, 'Kanal', '2023-12-15', 4.95, 'Soniqs', '3:5', 'Jere Ronca'),
+(622, 'ThemePark', '2022-02-02', 2.44, 'Oxygen Esports', '3:0', 'Yance Smales'),
+(623, 'Kanal', '2021-02-22', 2.28, 'w7m esports', '4:2', 'Lynnell Sloper'),
+(624, 'Bank', '2022-01-07', 2.86, 'FaZe Clan', '3:0', 'Lyda Badini'),
+(625, 'Oregon', '2022-05-09', 3.61, 'SCARZ', '2:4', 'Carley Garland'),
+(626, 'Kanal', '2022-06-19', 1.28, 'Team BDS', '0:3', 'Ailsun Fearon'),
+(627, 'Outback', '2021-07-27', 3.34, 'SCARZ', '4:5', 'Alma Rush'),
+(628, 'Clubhouse', '2020-11-07', 1.32, 'FaZe Clan', '5:3', 'Dionne Karel'),
+(629, 'Border', '2020-05-14', 0.67, 'M80', '5:4', 'Gun Hillock'),
+(630, 'Bank', '2024-07-04', 2.34, 'Team BDS', '4:5', 'Valeria Gellibrand'),
+(631, 'Oregon', '2019-10-02', 3.88, 'Virtus.pro', '5:4', 'Ludovika Guirardin'),
+(632, 'Coastline', '2020-03-26', 3.19, 'Soniqs', '3:0', 'Aimee Chantler'),
+(633, 'ThemePark', '2022-01-17', 2.95, 'G2 Esports', '5:3', 'Emelda Simonsen'),
+(634, 'Oregon', '2022-05-20', 1.58, 'Spacestation Gaming (SSG)', '3:5', 'Gualterio Natt'),
+(635, 'Oregon', '2021-03-19', 1.65, 'Natus Vincere (NAVI)', '4:2', 'Chucho Itzkovici'),
+(636, 'Bank', '2021-06-05', 0.28, 'FURIA Esports', '2:4', 'Scarface Oscroft'),
+(637, 'Kanal', '2024-05-07', 2.2, 'Los + oNe', '3:0', 'Torrence Stringman'),
+(638, 'Kanal', '2021-08-10', 1.33, 'Team BDS', '5:3', 'Jerrold Pistol'),
+(639, 'Kanal', '2023-04-17', 2.73, 'SCARZ', '3:0', 'Meredithe Huleatt'),
+(640, 'Coastline', '2023-12-06', 2.04, 'Los + oNe', '0:3', 'Portia Farriar'),
+(641, 'Kanal', '2022-01-30', 1.02, 'Elevate', '5:4', 'Kizzie Barthorpe'),
+(642, 'Outback', '2022-08-06', 4.67, 'Dplus', '5:4', 'Nan Keslake'),
+(643, 'Border', '2020-12-16', 2.12, 'Oxygen Esports', '4:2', 'Dewain Maynell'),
+(644, 'Clubhouse', '2021-04-22', 3.22, 'DarkZero Esports (DZ)', '2:4', 'Inglis Arniz'),
+(645, 'ThemePark', '2022-04-23', 3.66, 'Spacestation Gaming (SSG)', '5:3', 'Horst Hollyland'),
+(646, 'Coastline', '2022-07-14', 1.07, 'Oxygen Esports', '4:2', 'Nickolaus Duce'),
+(647, 'Clubhouse', '2024-12-04', 0.52, 'KOI', '3:5', 'Phebe Grimestone'),
+(648, 'Clubhouse', '2022-06-05', 3.82, 'Wolves Esports', '5:4', 'Tobye Densey'),
+(649, 'Clubhouse', '2022-05-20', 2.43, 'KOI', '4:2', 'Ophelie Antonazzi'),
+(650, 'Clubhouse', '2023-10-05', 3.79, 'FURIA Esports', '2:4', 'Marinna Szach'),
+(651, 'Clubhouse', '2021-01-22', 4.61, 'M80', '4:2', 'Dukie Greatreax'),
+(652, 'Clubhouse', '2024-07-31', 0.36, 'Soniqs', '0:3', 'Ryley Sherville'),
+(653, 'Border', '2024-04-07', 0.98, 'FURY', '0:3', 'Bel Critch'),
+(654, 'Clubhouse', '2023-12-11', 4.56, 'Wolves Esports', '5:3', 'Bastian Marie'),
+(655, 'Kanal', '2023-05-04', 1.59, 'Spacestation Gaming (SSG)', '4:2', 'Malena Weld'),
+(656, 'Oregon', '2019-10-19', 2.86, 'FURIA Esports', '5:3', 'Clair Danihel'),
+(657, 'ThemePark', '2022-10-11', 0.67, 'FURIA Esports', '5:3', 'Clim Margetts'),
+(658, 'Border', '2023-03-13', 0.84, 'KOI', '4:2', 'Edgardo Wrotham'),
+(659, 'Coastline', '2022-11-10', 2.67, 'G2 Esports', '5:4', 'Ab Thornley'),
+(660, 'ThemePark', '2019-12-08', 1.82, 'Wolves Esports', '4:2', 'Yovonnda Luparto'),
+(661, 'Oregon', '2022-05-05', 4.78, 'FURIA Esports', '3:5', 'Ilse Heymann'),
+(662, 'ThemePark', '2022-02-24', 2.54, 'G2 Esports', '4:5', 'Chris Saladin'),
+(663, 'Kanal', '2023-02-01', 2.33, 'SCARZ', '3:0', 'Anica Grix'),
+(664, 'Outback', '2020-11-01', 1.91, 'Spacestation Gaming (SSG)', '4:5', 'Domenico Peterson'),
+(665, 'Bank', '2022-09-28', 2.38, 'M80', '2:4', 'Ania Vidgeon'),
+(666, 'Oregon', '2019-11-08', 3.93, 'SCARZ', '3:5', 'Wynnie Cairns');
+INSERT INTO `r6_match` (`id`, `map`, `match_date`, `match_duration`, `winning_team`, `final_result`, `mvp`) VALUES
+(667, 'Coastline', '2022-09-09', 2.57, 'Elevate', '3:0', 'Jessalyn Deroche'),
+(668, 'Bank', '2022-03-12', 2.61, 'Natus Vincere (NAVI)', '3:5', 'Phillipp Gobel'),
+(669, 'Border', '2023-01-31', 5, 'Wolves Esports', '2:4', 'Toddy Stebles'),
+(670, 'Bank', '2021-07-05', 4.5, 'w7m esports', '3:0', 'Caitrin Rabl'),
+(671, 'Bank', '2023-08-29', 3.68, 'KOI', '5:4', 'Percival Counter'),
+(672, 'Clubhouse', '2023-08-25', 2.44, 'M80', '4:5', 'Sonja Wycliffe'),
+(673, 'Oregon', '2023-12-06', 3.06, 'Dplus', '4:2', 'Aryn Whiteside'),
+(674, 'Oregon', '2024-07-24', 3.46, 'Soniqs', '4:2', 'Annie Dyne'),
+(675, 'Coastline', '2020-05-30', 0.6, 'SCARZ', '4:2', 'Graham Feacham'),
+(676, 'Border', '2021-01-08', 2.7, 'KOI', '3:5', 'Sibel Mackro'),
+(677, 'ThemePark', '2023-12-16', 1.71, 'Soniqs', '3:0', 'Mignonne Twell'),
+(678, 'Outback', '2024-09-13', 4.83, 'w7m esports', '5:3', 'Lucky Fritzer'),
+(679, 'Outback', '2022-01-29', 2.63, 'Virtus.pro', '4:2', 'Thornton Barriball'),
+(680, 'Kanal', '2021-08-29', 4.09, 'FURY', '3:5', 'Andrej Bayman'),
+(681, 'Oregon', '2023-08-07', 4.07, 'Soniqs', '0:3', 'Brittni La Padula'),
+(682, 'Bank', '2023-12-29', 4.67, 'Soniqs', '2:4', 'Aldwin Eckly'),
+(683, 'Coastline', '2024-07-20', 2.56, 'SCARZ', '0:3', 'Abrahan Durran'),
+(684, 'ThemePark', '2024-01-19', 4.23, 'Spacestation Gaming (SSG)', '2:4', 'Haywood Sey'),
+(685, 'Oregon', '2024-04-22', 3.17, 'G2 Esports', '3:0', 'Allegra Shelmerdine'),
+(686, 'Outback', '2022-05-15', 3.2, 'Oxygen Esports', '4:5', 'Hillary Inkle'),
+(687, 'Border', '2020-09-20', 4.35, 'Dplus', '0:3', 'Barret Boodell'),
+(688, 'Coastline', '2023-10-05', 3.49, 'FaZe Clan', '3:5', 'Marlon Eland'),
+(689, 'Border', '2022-02-15', 0.35, 'Virtus.pro', '4:2', 'Anne-corinne Brick'),
+(690, 'ThemePark', '2023-03-06', 4.02, 'SCARZ', '3:0', 'Cherida Measen'),
+(691, 'Coastline', '2019-06-03', 4.55, 'DarkZero Esports (DZ)', '3:0', 'Eudora Fairn'),
+(692, 'Bank', '2022-04-15', 3.19, 'Wolves Esports', '5:4', 'Allis Ratlee'),
+(693, 'Kanal', '2020-08-27', 4.72, 'Spacestation Gaming (SSG)', '0:3', 'Carena Darton'),
+(694, 'Outback', '2023-11-14', 1.54, 'Spacestation Gaming (SSG)', '4:5', 'Wes Renon'),
+(695, 'Outback', '2022-10-25', 2.99, 'M80', '5:3', 'Antons Twyning'),
+(696, 'Oregon', '2022-12-28', 4.74, 'Dplus', '2:4', 'Chariot Ambroise'),
+(697, 'Clubhouse', '2024-10-15', 1.08, 'Spacestation Gaming (SSG)', '3:0', 'Lesly Gander'),
+(698, 'Oregon', '2024-12-04', 2.07, 'Dplus', '3:5', 'Melisse Wehner'),
+(699, 'Border', '2024-03-30', 0.84, 'Spacestation Gaming (SSG)', '3:5', 'Barnabas Wells'),
+(700, 'ThemePark', '2024-04-10', 4.72, 'G2 Esports', '4:5', 'Noella Tillard'),
+(701, 'Clubhouse', '2019-08-07', 1.13, 'M80', '4:2', 'Webster Lavell'),
+(702, 'Oregon', '2020-03-06', 4.2, 'Wolves Esports', '0:3', 'Etti Ellsworthe'),
+(703, 'Coastline', '2019-06-06', 3.62, 'M80', '3:0', 'Ragnar Stonhouse'),
+(704, 'Oregon', '2024-10-07', 2.06, 'Team BDS', '2:4', 'Dolf Edlyne'),
+(705, 'Clubhouse', '2020-02-11', 1.85, 'SCARZ', '5:3', 'Delmor Losemann'),
+(706, 'Oregon', '2019-09-18', 1.38, 'DarkZero Esports (DZ)', '3:0', 'Luce Nary'),
+(707, 'ThemePark', '2019-06-04', 2.56, 'Elevate', '4:5', 'Vivyan Husk'),
+(708, 'Clubhouse', '2025-02-18', 2.04, 'Natus Vincere (NAVI)', '4:2', 'Auroora Dunne'),
+(709, 'Oregon', '2023-10-25', 1.52, 'w7m esports', '5:4', 'Demetris Sorbie'),
+(710, 'ThemePark', '2024-04-06', 4.36, 'Los + oNe', '4:5', 'Myra Gonnin'),
+(711, 'ThemePark', '2021-04-10', 3.45, 'w7m esports', '3:0', 'Rozina O\' Quirk'),
+(712, 'Clubhouse', '2023-10-05', 4.62, 'Elevate', '0:3', 'Giff Stainbridge'),
+(713, 'Coastline', '2023-09-23', 2.5, 'Spacestation Gaming (SSG)', '5:3', 'Roselin Engall'),
+(714, 'Border', '2023-04-26', 3.31, 'Soniqs', '5:3', 'Sully McBoyle'),
+(715, 'Oregon', '2024-09-26', 2.86, 'Oxygen Esports', '4:5', 'Jerome Gorden'),
+(716, 'Clubhouse', '2024-09-02', 3.58, 'FURY', '5:3', 'Lexy Dressel'),
+(717, 'Clubhouse', '2024-08-29', 2.47, 'Virtus.pro', '3:0', 'Gretel Dalgarnowch'),
+(718, 'Border', '2021-10-11', 1.4, 'Natus Vincere (NAVI)', '0:3', 'Susy Cours'),
+(719, 'Outback', '2024-07-05', 3.31, 'MNM Gaming', '2:4', 'Isidor Ayto'),
+(720, 'Kanal', '2023-11-06', 1.47, 'Elevate', '4:2', 'Ibrahim Gosney'),
+(721, 'Oregon', '2020-03-25', 2.62, 'Wolves Esports', '5:4', 'Liva Pregal'),
+(722, 'Clubhouse', '2021-12-27', 1.99, 'Virtus.pro', '3:0', 'Bambie Lambdon'),
+(723, 'Border', '2023-09-10', 1.81, 'Elevate', '2:4', 'Juliet Robinett'),
+(724, 'ThemePark', '2022-08-29', 2.91, 'w7m esports', '4:5', 'Sascha Maw'),
+(725, 'Coastline', '2021-04-10', 0.63, 'w7m esports', '2:4', 'Ettie Bristo'),
+(726, 'Oregon', '2021-01-11', 3.79, 'Team Liquid', '0:3', 'Laetitia Stuehmeyer'),
+(727, 'Border', '2024-02-22', 2.32, 'DarkZero Esports (DZ)', '3:0', 'Thebault Patient'),
+(728, 'Oregon', '2020-11-30', 4.02, 'Team Liquid', '3:5', 'Patti Gauson'),
+(729, 'Kanal', '2022-04-29', 0.57, 'G2 Esports', '0:3', 'Tobye Asbrey'),
+(730, 'Border', '2021-01-17', 1.53, 'Wolves Esports', '2:4', 'Pip Points'),
+(731, 'Outback', '2023-05-28', 0.97, 'Natus Vincere (NAVI)', '3:5', 'Nollie Lippard'),
+(732, 'ThemePark', '2019-11-21', 1.92, 'FURY', '5:3', 'Kimberli Thal'),
+(733, 'Coastline', '2024-03-26', 0.41, 'DarkZero Esports (DZ)', '5:3', 'Lise Clayden'),
+(734, 'Bank', '2021-04-11', 2.96, 'Spacestation Gaming (SSG)', '4:5', 'Shea Androlli'),
+(735, 'Kanal', '2022-08-07', 1.83, 'Virtus.pro', '2:4', 'My Orrey'),
+(736, 'Border', '2020-01-08', 4.5, 'FURY', '3:0', 'Carol-jean Kalkofer'),
+(737, 'Kanal', '2021-03-16', 0.26, 'FaZe Clan', '4:5', 'Dagny Fredi'),
+(738, 'ThemePark', '2020-08-11', 4.71, 'Natus Vincere (NAVI)', '3:0', 'Jayme Cleverley'),
+(739, 'ThemePark', '2023-10-29', 0.06, 'FURIA Esports', '5:4', 'Bonnibelle Landal'),
+(740, 'Bank', '2025-03-03', 4.52, 'w7m esports', '3:0', 'Daryl Magor'),
+(741, 'Bank', '2020-03-31', 4.88, 'w7m esports', '0:3', 'Tessi Gossage'),
+(742, 'Kanal', '2020-05-16', 4.59, 'Soniqs', '0:3', 'Staford Klawi'),
+(743, 'Clubhouse', '2024-04-29', 0.53, 'Oxygen Esports', '5:3', 'Rosemaria Rogers'),
+(744, 'Kanal', '2021-02-12', 0.2, 'Natus Vincere (NAVI)', '5:3', 'Melony Densumbe'),
+(745, 'Border', '2024-07-14', 1.55, 'Wolves Esports', '5:4', 'Florenza Turbern'),
+(746, 'Outback', '2024-03-16', 1.57, 'Dplus', '4:5', 'Meade Wybourne'),
+(747, 'Clubhouse', '2022-08-11', 2.72, 'Team Liquid', '4:2', 'Ezechiel Bowkley'),
+(748, 'Oregon', '2022-10-08', 2.23, 'Los + oNe', '3:5', 'Jarib Goss'),
+(749, 'Bank', '2024-04-10', 0.45, 'Spacestation Gaming (SSG)', '5:4', 'Deeanne Flindall'),
+(750, 'Kanal', '2022-08-30', 0.98, 'DarkZero Esports (DZ)', '0:3', 'Dominique Seeman'),
+(751, 'Coastline', '2020-12-04', 4.01, 'Wolves Esports', '4:2', 'Kellsie Holborn'),
+(752, 'Coastline', '2024-06-05', 1.95, 'KOI', '3:0', 'Cordelia Struthers'),
+(753, 'ThemePark', '2020-11-29', 1.94, 'SCARZ', '4:5', 'Adah Varsey'),
+(754, 'Clubhouse', '2021-01-04', 1.9, 'Team BDS', '0:3', 'Franny Nare'),
+(755, 'Coastline', '2021-12-04', 3.97, 'Los + oNe', '4:2', 'Yehudi Pughsley'),
+(756, 'Oregon', '2021-04-04', 0.34, 'Elevate', '5:4', 'Yancy Werny'),
+(757, 'Kanal', '2025-03-07', 0.88, 'Elevate', '4:2', 'Winonah Ganter'),
+(758, 'ThemePark', '2021-04-05', 3.21, 'FURIA Esports', '4:2', 'Anastasia Loadsman'),
+(759, 'Coastline', '2019-11-15', 2.29, 'DarkZero Esports (DZ)', '3:5', 'Cyndy Feehely'),
+(760, 'Kanal', '2024-08-24', 4.05, 'Los + oNe', '2:4', 'Claudianus Bussons'),
+(761, 'Clubhouse', '2019-10-02', 4.86, 'Spacestation Gaming (SSG)', '5:3', 'Miran Mouncher'),
+(762, 'Outback', '2021-02-02', 0.07, 'FaZe Clan', '4:2', 'Vanya Konzel'),
+(763, 'Clubhouse', '2021-06-01', 0.98, 'Wolves Esports', '0:3', 'Winnie Loomes'),
+(764, 'Clubhouse', '2025-01-14', 2.86, 'DarkZero Esports (DZ)', '4:5', 'Carlos Brinsford'),
+(765, 'ThemePark', '2019-09-09', 4.07, 'Team Liquid', '2:4', 'Maisie Cristea'),
+(766, 'Coastline', '2019-05-08', 0.31, 'Soniqs', '4:5', 'Bertina Tice'),
+(767, 'Bank', '2022-10-24', 3.71, 'Los + oNe', '2:4', 'Saul Poskitt'),
+(768, 'Kanal', '2024-08-27', 1.62, 'KOI', '5:3', 'Maura Mainds'),
+(769, 'Bank', '2024-07-10', 1.65, 'Elevate', '4:5', 'Joya Simonyi'),
+(770, 'ThemePark', '2020-03-11', 0, 'Natus Vincere (NAVI)', '4:5', 'Say Danielut'),
+(771, 'ThemePark', '2021-06-06', 3.33, 'SCARZ', '2:4', 'Lissie Mendonca'),
+(772, 'Coastline', '2021-02-09', 4.75, 'DarkZero Esports (DZ)', '5:3', 'Raffaello Riolfi'),
+(773, 'Oregon', '2021-07-20', 3.26, 'FaZe Clan', '3:0', 'Corny Mobley'),
+(774, 'Coastline', '2021-04-08', 4.35, 'Natus Vincere (NAVI)', '2:4', 'Krisha Carlisle'),
+(775, 'Bank', '2019-05-04', 3.48, 'Virtus.pro', '2:4', 'Teirtza Coetzee'),
+(776, 'ThemePark', '2022-08-13', 4.69, 'Soniqs', '0:3', 'Imogen Fricke'),
+(777, 'Bank', '2025-02-25', 2.85, 'Team BDS', '4:2', 'Kally Mourge'),
+(778, 'Bank', '2022-02-03', 3.4, 'SCARZ', '3:5', 'Kristofer Willingam'),
+(779, 'Bank', '2023-06-01', 2.81, 'Dplus', '4:5', 'Patrizia Ghioni'),
+(780, 'Oregon', '2024-12-27', 3.38, 'Natus Vincere (NAVI)', '5:3', 'Candace Battleson'),
+(781, 'Clubhouse', '2019-10-25', 0.89, 'KOI', '4:2', 'Sutherlan Rozycki'),
+(782, 'Bank', '2020-02-17', 4.32, 'FURY', '4:2', 'Jacqui Chesnay'),
+(783, 'Outback', '2023-01-10', 0.11, 'MNM Gaming', '4:2', 'Rena MacKeller'),
+(784, 'Clubhouse', '2019-12-23', 4.99, 'Spacestation Gaming (SSG)', '3:0', 'Garrek Fallawe'),
+(785, 'ThemePark', '2024-03-19', 1.96, 'Virtus.pro', '3:0', 'Meyer Hickeringill'),
+(786, 'Coastline', '2025-01-09', 2.8, 'w7m esports', '4:5', 'Raviv Crispin'),
+(787, 'Oregon', '2022-02-02', 3.81, 'M80', '4:5', 'Tiffi Vassbender'),
+(788, 'Coastline', '2021-07-10', 1.3, 'M80', '3:0', 'Skippy Ure'),
+(789, 'Kanal', '2023-09-07', 4.33, 'Team BDS', '4:2', 'Angil Stihl'),
+(790, 'Kanal', '2021-01-17', 1.98, 'Wolves Esports', '5:3', 'Pauline Gonzalvo'),
+(791, 'Kanal', '2021-05-29', 2.66, 'FURIA Esports', '4:5', 'Mellisent Vamplew'),
+(792, 'Kanal', '2020-03-17', 3.56, 'Team Liquid', '4:2', 'Bertine Jikylls'),
+(793, 'Clubhouse', '2019-11-20', 1.8, 'MNM Gaming', '4:5', 'Shepperd Fredi'),
+(794, 'Oregon', '2021-11-16', 3.93, 'FURIA Esports', '4:5', 'Rudiger Debrett'),
+(795, 'Coastline', '2024-06-11', 4.73, 'Elevate', '5:4', 'Herc Sabattier'),
+(796, 'Coastline', '2021-07-30', 1.64, 'Team BDS', '3:5', 'Lou Corroyer'),
+(797, 'Border', '2021-08-06', 3.94, 'SCARZ', '4:2', 'Marice Hulburd'),
+(798, 'Clubhouse', '2021-06-19', 3.72, 'Wolves Esports', '3:0', 'Korry Dosedale'),
+(799, 'Coastline', '2023-11-21', 4.34, 'MNM Gaming', '5:3', 'Garvey Gilmour'),
+(800, 'Kanal', '2023-07-04', 1.06, 'Team Liquid', '2:4', 'Nona Benn'),
+(801, 'Border', '2021-10-13', 0.5, 'Oxygen Esports', '3:5', 'Cornelle Silvermann'),
+(802, 'ThemePark', '2020-01-13', 2.98, 'SCARZ', '0:3', 'Jania MacGeffen'),
+(803, 'Outback', '2025-01-23', 4.95, 'G2 Esports', '5:3', 'Dan Greenway'),
+(804, 'Coastline', '2022-08-25', 2.25, 'Spacestation Gaming (SSG)', '4:2', 'Tiffanie Swinbourne'),
+(805, 'Bank', '2022-04-18', 4.1, 'G2 Esports', '5:3', 'Homer Millwater'),
+(806, 'Bank', '2019-07-17', 2.25, 'FURIA Esports', '5:4', 'Hestia Weavill'),
+(807, 'Outback', '2021-02-04', 3.18, 'Wolves Esports', '5:4', 'Claudius Sine'),
+(808, 'Clubhouse', '2022-05-23', 3.34, 'FaZe Clan', '0:3', 'Rowe Hurdman'),
+(809, 'Border', '2020-07-06', 1.51, 'FaZe Clan', '5:4', 'Cammy Chree'),
+(810, 'Outback', '2020-12-18', 2.78, 'Wolves Esports', '0:3', 'Alisha Baudin'),
+(811, 'Bank', '2023-10-29', 3.93, 'Virtus.pro', '5:4', 'Lena Priddis'),
+(812, 'Clubhouse', '2019-10-13', 1.01, 'Natus Vincere (NAVI)', '5:4', 'Brendis Dundendale'),
+(813, 'Oregon', '2021-09-27', 1.56, 'MNM Gaming', '5:4', 'Eveline Opie'),
+(814, 'Bank', '2023-04-04', 2.99, 'MNM Gaming', '5:3', 'Britt Bentzen'),
+(815, 'ThemePark', '2025-02-02', 2.22, 'SCARZ', '4:5', 'Cindelyn Imorts'),
+(816, 'Oregon', '2020-04-23', 3.16, 'SCARZ', '4:2', 'Linette Feldmesser'),
+(817, 'Clubhouse', '2022-02-15', 3.85, 'Oxygen Esports', '0:3', 'Mitch Ledington'),
+(818, 'ThemePark', '2022-10-19', 0.97, 'FURIA Esports', '5:3', 'Giffy Besson'),
+(819, 'Bank', '2022-01-28', 4.42, 'M80', '2:4', 'Marin Fosdick'),
+(820, 'Coastline', '2021-03-15', 1.56, 'FURY', '3:5', 'Iggy Batecok'),
+(821, 'Bank', '2022-12-04', 0.14, 'Virtus.pro', '2:4', 'Carri Ricks'),
+(822, 'Clubhouse', '2023-03-26', 3.24, 'Natus Vincere (NAVI)', '5:4', 'Margo Bullcock'),
+(823, 'Oregon', '2020-08-20', 1.93, 'MNM Gaming', '5:3', 'Felicity Lorriman'),
+(824, 'Kanal', '2024-07-18', 3.74, 'Spacestation Gaming (SSG)', '2:4', 'Shamus Andrys'),
+(825, 'ThemePark', '2020-09-28', 0.32, 'Team BDS', '5:3', 'Gary Skiplorne'),
+(826, 'Outback', '2023-03-25', 4.6, 'DarkZero Esports (DZ)', '0:3', 'Emmaline Martino'),
+(827, 'Kanal', '2024-08-27', 3.95, 'FURIA Esports', '5:3', 'Vikky Dugan'),
+(828, 'Outback', '2021-11-25', 4.93, 'Virtus.pro', '5:3', 'Annelise Hopfer'),
+(829, 'Oregon', '2020-08-05', 2.31, 'KOI', '2:4', 'Ferd Mayzes'),
+(830, 'Coastline', '2022-11-03', 1.19, 'G2 Esports', '3:5', 'Lemmie Alejandre'),
+(831, 'Clubhouse', '2019-08-02', 3.46, 'Wolves Esports', '0:3', 'Sherie Feldharker'),
+(832, 'Coastline', '2024-08-01', 2.1, 'Oxygen Esports', '4:2', 'Rowena Crawley'),
+(833, 'Coastline', '2020-03-28', 1.37, 'MNM Gaming', '3:5', 'Seth Terzza'),
+(834, 'Border', '2022-12-14', 0.6, 'Los + oNe', '5:4', 'Marina O\'Finan'),
+(835, 'ThemePark', '2021-06-20', 4.04, 'Team BDS', '0:3', 'Anett Tripp'),
+(836, 'ThemePark', '2024-09-06', 3.71, 'Wolves Esports', '0:3', 'Charlean Kall'),
+(837, 'Oregon', '2023-05-22', 0.75, 'G2 Esports', '3:0', 'Domenic Duckers'),
+(838, 'Clubhouse', '2024-07-17', 1.58, 'DarkZero Esports (DZ)', '3:0', 'Shayna Lemasney'),
+(839, 'ThemePark', '2024-09-04', 1.37, 'Los + oNe', '5:4', 'Humbert McGrah'),
+(840, 'Bank', '2021-12-30', 2.59, 'Team Liquid', '3:0', 'Amye Raffeorty'),
+(841, 'Coastline', '2022-04-22', 1.01, 'Elevate', '3:0', 'Ardra Dilleway'),
+(842, 'Border', '2022-03-07', 0.38, 'KOI', '4:5', 'Noami Coorington'),
+(843, 'Oregon', '2023-02-17', 3.2, 'Team BDS', '3:0', 'Atalanta Rocca'),
+(844, 'Coastline', '2019-05-15', 0.91, 'Spacestation Gaming (SSG)', '3:0', 'Meaghan Fick'),
+(845, 'Oregon', '2021-08-16', 2.18, 'MNM Gaming', '5:3', 'Kimbell Durdle'),
+(846, 'ThemePark', '2022-05-08', 0.51, 'FaZe Clan', '3:5', 'Sherlock Langstone'),
+(847, 'ThemePark', '2025-02-03', 2.29, 'FaZe Clan', '2:4', 'Lorne Boles'),
+(848, 'Oregon', '2022-06-28', 0.21, 'Team Liquid', '0:3', 'Roselle Estcot'),
+(849, 'Outback', '2023-08-14', 3.15, 'FURY', '5:4', 'Ephrayim Sclanders'),
+(850, 'Kanal', '2019-11-07', 0.45, 'Soniqs', '4:2', 'Tootsie Skough'),
+(851, 'ThemePark', '2021-01-23', 3.36, 'Elevate', '3:0', 'Fredrick Roggers'),
+(852, 'Kanal', '2021-04-18', 1.49, 'FURY', '0:3', 'Egbert Blagden'),
+(853, 'Clubhouse', '2023-08-27', 2.44, 'M80', '4:5', 'Hall Dederich'),
+(854, 'Kanal', '2022-10-31', 1.45, 'M80', '0:3', 'Sharline Ryle'),
+(855, 'Oregon', '2019-06-19', 0.26, 'FURY', '4:2', 'Almeda Jossum'),
+(856, 'ThemePark', '2023-12-24', 1.86, 'Spacestation Gaming (SSG)', '4:2', 'Justen Martinet'),
+(857, 'Bank', '2019-05-08', 2.41, 'KOI', '4:2', 'Kerby Rickis'),
+(858, 'Clubhouse', '2019-12-08', 2.75, 'KOI', '5:4', 'Theodora Meltetal'),
+(859, 'Bank', '2024-12-18', 3.64, 'KOI', '5:3', 'Emerson Rosbrough'),
+(860, 'Coastline', '2023-09-27', 4.37, 'FaZe Clan', '3:5', 'Roth Birth'),
+(861, 'Clubhouse', '2022-11-28', 2.5, 'Team BDS', '5:4', 'Jodee Romain'),
+(862, 'Oregon', '2023-12-21', 0.01, 'Virtus.pro', '4:2', 'Sol Barg'),
+(863, 'ThemePark', '2024-06-03', 4.52, 'Spacestation Gaming (SSG)', '4:2', 'Easter Scarff'),
+(864, 'Coastline', '2024-03-21', 1.36, 'w7m esports', '4:5', 'Diandra Neale'),
+(865, 'Outback', '2024-03-16', 1.82, 'KOI', '3:0', 'Eleonora McGahey'),
+(866, 'Outback', '2024-06-10', 0.25, 'Spacestation Gaming (SSG)', '3:0', 'Guntar Southard'),
+(867, 'Border', '2024-02-22', 1.62, 'Los + oNe', '5:3', 'Baryram McGettigan'),
+(868, 'Border', '2019-10-04', 1.79, 'MNM Gaming', '3:5', 'Alena Kertess'),
+(869, 'Kanal', '2023-11-14', 4.8, 'Natus Vincere (NAVI)', '5:4', 'Pavel Scay'),
+(870, 'Bank', '2024-01-19', 1.68, 'Los + oNe', '3:5', 'Filip Thame'),
+(871, 'Oregon', '2024-10-07', 2.11, 'Wolves Esports', '4:2', 'Rosco Aldwick'),
+(872, 'Oregon', '2025-04-11', 0.99, 'Natus Vincere (NAVI)', '3:0', 'Franz Vido'),
+(873, 'Outback', '2022-05-30', 3.43, 'Los + oNe', '5:3', 'Arleyne Olivari'),
+(874, 'Kanal', '2020-11-19', 1.43, 'Los + oNe', '0:3', 'Samantha Kebbell'),
+(875, 'Oregon', '2025-01-05', 1.23, 'Oxygen Esports', '4:5', 'Mickey Geeves'),
+(876, 'Outback', '2023-05-11', 2.41, 'Spacestation Gaming (SSG)', '4:2', 'Mattie Aphale'),
+(877, 'Border', '2022-03-17', 3.97, 'Spacestation Gaming (SSG)', '4:5', 'Fabe Daber'),
+(878, 'Clubhouse', '2022-11-16', 3.75, 'KOI', '5:4', 'Ezmeralda Smetoun'),
+(879, 'Outback', '2022-06-27', 1.58, 'M80', '2:4', 'Silvester Pero'),
+(880, 'Clubhouse', '2024-01-25', 0.85, 'w7m esports', '5:3', 'Packston Molnar'),
+(881, 'Kanal', '2019-05-13', 0.96, 'Wolves Esports', '4:5', 'Carlynne Dmiterko'),
+(882, 'Oregon', '2019-12-12', 3.95, 'Natus Vincere (NAVI)', '4:2', 'Thalia Plumtree'),
+(883, 'ThemePark', '2019-09-19', 0.49, 'FURY', '4:5', 'Rayner Chimes'),
+(884, 'Coastline', '2020-02-19', 3.2, 'FURY', '5:4', 'Margarete Server'),
+(885, 'Bank', '2021-10-15', 4.69, 'G2 Esports', '0:3', 'Franky Minett'),
+(886, 'Oregon', '2024-06-23', 2.2, 'Spacestation Gaming (SSG)', '0:3', 'Dorisa Paulley'),
+(887, 'Oregon', '2021-01-01', 2.27, 'KOI', '2:4', 'Nita Crawforth'),
+(888, 'ThemePark', '2023-10-14', 0.3, 'MNM Gaming', '0:3', 'Barbabas Fitzgerald'),
+(889, 'Coastline', '2020-06-04', 3.27, 'FaZe Clan', '5:3', 'Viv Rummins'),
+(890, 'Kanal', '2023-10-28', 3.37, 'G2 Esports', '5:4', 'Lucho Klazenga'),
+(891, 'Clubhouse', '2019-08-09', 4.48, 'Spacestation Gaming (SSG)', '3:0', 'Cherie Kender'),
+(892, 'Bank', '2023-06-07', 0.51, 'Elevate', '4:5', 'Babette O\'Regan'),
+(893, 'ThemePark', '2022-12-10', 2.41, 'KOI', '4:5', 'Peder Lowfill'),
+(894, 'Oregon', '2022-12-09', 2.76, 'FaZe Clan', '3:0', 'Adolph Brotherick'),
+(895, 'Bank', '2024-09-25', 1.34, 'Natus Vincere (NAVI)', '2:4', 'Anne-corinne Donaghy'),
+(896, 'ThemePark', '2021-03-01', 1.02, 'Wolves Esports', '3:0', 'Frannie Withams'),
+(897, 'Outback', '2020-11-18', 3.09, 'KOI', '3:0', 'Bethena Selman'),
+(898, 'Border', '2019-06-19', 4.15, 'Natus Vincere (NAVI)', '5:4', 'Klarrisa Shrawley'),
+(899, 'Outback', '2020-07-26', 3.57, 'Team Liquid', '5:4', 'Avril Paulino'),
+(900, 'Clubhouse', '2023-09-11', 3.34, 'FURY', '5:3', 'Leigh Delacote'),
+(901, 'Bank', '2019-06-14', 3.79, 'Los + oNe', '5:3', 'Rorie Message'),
+(902, 'Bank', '2021-06-15', 4.13, 'Team BDS', '5:4', 'Inge Bazoche'),
+(903, 'Coastline', '2020-10-08', 0.49, 'Natus Vincere (NAVI)', '3:0', 'Gard Hook'),
+(904, 'Clubhouse', '2025-03-15', 3.13, 'w7m esports', '4:5', 'Clayson Hollyar'),
+(905, 'Oregon', '2023-08-29', 2.11, 'Oxygen Esports', '0:3', 'Hans Denziloe'),
+(906, 'Outback', '2021-10-22', 1.97, 'Soniqs', '4:2', 'Natalya Giggs'),
+(907, 'Bank', '2020-11-06', 1.1, 'G2 Esports', '4:2', 'Ursuline Bleazard'),
+(908, 'Clubhouse', '2020-12-16', 2.19, 'Oxygen Esports', '4:2', 'Hastie Langdridge'),
+(909, 'Coastline', '2020-07-30', 3.08, 'Elevate', '0:3', 'Stephannie Veryan'),
+(910, 'Kanal', '2019-07-25', 0.67, 'Spacestation Gaming (SSG)', '0:3', 'Sinclair Bossons'),
+(911, 'Border', '2022-07-21', 0.34, 'Oxygen Esports', '4:2', 'Kendricks Burnside'),
+(912, 'ThemePark', '2024-09-19', 4.56, 'KOI', '5:3', 'Melodee Roadknight'),
+(913, 'ThemePark', '2024-06-07', 0.67, 'FURIA Esports', '3:5', 'Val Furman'),
+(914, 'Border', '2024-05-25', 2.95, 'Elevate', '3:0', 'Kelila Eubank'),
+(915, 'ThemePark', '2021-01-21', 0.38, 'Spacestation Gaming (SSG)', '4:5', 'Vania Antao'),
+(916, 'Bank', '2019-08-09', 0.82, 'Soniqs', '4:2', 'Francine Claybourne'),
+(917, 'Bank', '2019-05-26', 4.37, 'w7m esports', '3:0', 'Loren MacShirie'),
+(918, 'Bank', '2020-01-23', 4.89, 'DarkZero Esports (DZ)', '5:3', 'Cammy Goly'),
+(919, 'Outback', '2023-06-17', 2.77, 'G2 Esports', '2:4', 'Haleigh Merrill'),
+(920, 'Clubhouse', '2021-11-04', 0.01, 'Los + oNe', '3:0', 'Ardath Kenrack'),
+(921, 'ThemePark', '2024-06-22', 0.64, 'SCARZ', '2:4', 'Ermin Keilty'),
+(922, 'Border', '2023-12-29', 2.87, 'G2 Esports', '3:0', 'Marje Pittwood'),
+(923, 'ThemePark', '2022-08-18', 0.32, 'Los + oNe', '3:5', 'Rudolf Quinnelly'),
+(924, 'Outback', '2023-11-11', 4.73, 'Soniqs', '3:5', 'Arie Cartmill'),
+(925, 'Border', '2025-02-16', 2.4, 'Dplus', '2:4', 'Ginny Wisedale'),
+(926, 'Clubhouse', '2021-02-08', 3.18, 'MNM Gaming', '2:4', 'Ynes Vedenisov'),
+(927, 'Kanal', '2022-02-25', 1.19, 'FURIA Esports', '3:0', 'Madalena Brace'),
+(928, 'Border', '2024-09-23', 2.22, 'Virtus.pro', '4:2', 'Maryanne Rochester'),
+(929, 'Border', '2023-01-20', 4.53, 'Team Liquid', '2:4', 'Booth Devinn'),
+(930, 'Oregon', '2021-06-02', 1.39, 'Team BDS', '2:4', 'Richard Tubridy'),
+(931, 'ThemePark', '2025-03-16', 0.55, 'Oxygen Esports', '3:0', 'Tobi Oliphand'),
+(932, 'Coastline', '2020-06-11', 4.92, 'w7m esports', '3:5', 'Cornela Aleksahkin'),
+(933, 'Coastline', '2024-05-26', 1.4, 'w7m esports', '4:2', 'Bald O\' Brian'),
+(934, 'ThemePark', '2020-08-29', 3.32, 'DarkZero Esports (DZ)', '5:3', 'Amby Corby'),
+(935, 'Clubhouse', '2019-07-22', 3.4, 'Virtus.pro', '4:5', 'Sander Richardon'),
+(936, 'Oregon', '2023-06-20', 0.23, 'MNM Gaming', '3:0', 'Becka Hammell'),
+(937, 'ThemePark', '2021-08-27', 2.06, 'FURY', '3:0', 'Melvin Tranfield'),
+(938, 'Border', '2022-06-05', 2.75, 'Wolves Esports', '5:4', 'Danice Kubis'),
+(939, 'Oregon', '2023-03-08', 0.74, 'Elevate', '3:5', 'Ingunna Drinkel'),
+(940, 'Oregon', '2023-06-16', 1.98, 'Soniqs', '4:2', 'Algernon Witton'),
+(941, 'Kanal', '2020-09-21', 3.59, 'M80', '4:2', 'Poppy Quickenden'),
+(942, 'Kanal', '2025-02-19', 3.78, 'KOI', '4:5', 'Angil Boog'),
+(943, 'Bank', '2020-11-25', 1.58, 'Virtus.pro', '3:5', 'Jeannie Clausen'),
+(944, 'Coastline', '2021-12-23', 4.56, 'Wolves Esports', '0:3', 'Beatrix Dunn'),
+(945, 'Oregon', '2024-11-05', 3.7, 'MNM Gaming', '5:4', 'Constantin Haxby'),
+(946, 'Border', '2019-08-10', 3.44, 'Natus Vincere (NAVI)', '3:0', 'Tobit Greenmon'),
+(947, 'Outback', '2020-08-18', 2.06, 'Team Liquid', '2:4', 'Fremont Paquet'),
+(948, 'Clubhouse', '2022-07-02', 1.03, 'Team BDS', '5:4', 'Sigfried Cogley'),
+(949, 'Coastline', '2024-07-13', 2.47, 'Dplus', '5:3', 'Hugues Emms'),
+(950, 'Coastline', '2020-03-22', 0.58, 'Dplus', '5:3', 'Kele Slimming'),
+(951, 'Clubhouse', '2024-06-09', 1.72, 'Spacestation Gaming (SSG)', '3:5', 'Maribeth Eckersley'),
+(952, 'Coastline', '2021-06-11', 3.86, 'FURY', '2:4', 'Morty Jacobsz'),
+(953, 'Coastline', '2024-09-15', 0.57, 'MNM Gaming', '4:2', 'Cathy Comettoi'),
+(954, 'Outback', '2019-12-31', 1.83, 'Natus Vincere (NAVI)', '4:2', 'Kevina Klimek'),
+(955, 'Border', '2022-11-06', 1.23, 'Natus Vincere (NAVI)', '4:2', 'Aidan Weaver'),
+(956, 'ThemePark', '2019-09-16', 1.49, 'Soniqs', '0:3', 'Paton Pabst'),
+(957, 'Bank', '2019-05-03', 4.99, 'DarkZero Esports (DZ)', '4:2', 'Karel Allibon'),
+(958, 'Coastline', '2021-08-30', 3.2, 'FaZe Clan', '3:5', 'Judon Szymanzyk'),
+(959, 'Kanal', '2019-08-07', 2.58, 'Wolves Esports', '4:5', 'Austina Evershed'),
+(960, 'Oregon', '2022-10-24', 0.12, 'MNM Gaming', '5:3', 'Xenia Chasle'),
+(961, 'Kanal', '2020-11-30', 4.07, 'Soniqs', '3:5', 'Lydia Roch'),
+(962, 'ThemePark', '2025-02-28', 1.9, 'Natus Vincere (NAVI)', '2:4', 'Rosabelle Talby'),
+(963, 'Oregon', '2022-06-25', 1.67, 'w7m esports', '2:4', 'Shaylynn Vickery'),
+(964, 'ThemePark', '2022-05-14', 0.03, 'Team BDS', '3:5', 'Kevyn Peedell'),
+(965, 'Border', '2021-06-07', 3.94, 'G2 Esports', '5:4', 'Archy Pauls'),
+(966, 'Outback', '2024-07-07', 1.58, 'DarkZero Esports (DZ)', '3:0', 'Cecil Pearmain'),
+(967, 'Clubhouse', '2023-03-08', 2.74, 'Elevate', '4:5', 'Amelia Iacapucci'),
+(968, 'Clubhouse', '2023-02-10', 3.53, 'Dplus', '3:0', 'Cherye Crickmoor'),
+(969, 'Border', '2020-12-04', 1.45, 'Oxygen Esports', '0:3', 'Ianthe Crone'),
+(970, 'ThemePark', '2024-09-16', 1.08, 'Natus Vincere (NAVI)', '5:3', 'Matty Stock'),
+(971, 'Coastline', '2023-09-25', 4.51, 'M80', '5:4', 'Sibley Killcross'),
+(972, 'Clubhouse', '2024-07-19', 0.93, 'w7m esports', '5:3', 'Chev Canto'),
+(973, 'Bank', '2022-07-14', 0.14, 'G2 Esports', '3:5', 'Mattie Hanster'),
+(974, 'Bank', '2020-01-02', 3.78, 'FURY', '3:5', 'Viv Harteley'),
+(975, 'ThemePark', '2024-08-06', 3.38, 'DarkZero Esports (DZ)', '5:4', 'Samuele Paladino'),
+(976, 'Outback', '2020-10-17', 2.37, 'SCARZ', '4:5', 'Warde Geale'),
+(977, 'Coastline', '2024-11-09', 3.25, 'FURIA Esports', '5:4', 'Ravi MacGorman'),
+(978, 'ThemePark', '2022-01-19', 3.31, 'FURIA Esports', '4:5', 'Shannon Greedier'),
+(979, 'Oregon', '2024-08-06', 3.9, 'Oxygen Esports', '5:4', 'Jean McGiveen'),
+(980, 'ThemePark', '2024-04-09', 3.88, 'Team Liquid', '5:4', 'Allen Richarson'),
+(981, 'Border', '2021-07-22', 2, 'M80', '4:5', 'Richy Diable'),
+(982, 'Coastline', '2024-08-31', 1.5, 'MNM Gaming', '4:2', 'Wayland Brobyn'),
+(983, 'Oregon', '2023-08-08', 2.68, 'Oxygen Esports', '2:4', 'Nial Wingeat'),
+(984, 'Border', '2021-01-04', 2.87, 'w7m esports', '3:0', 'Elyse Haggarth'),
+(985, 'Border', '2023-10-08', 0.11, 'FURIA Esports', '0:3', 'Bronson Krikorian'),
+(986, 'Oregon', '2020-05-23', 2.9, 'Spacestation Gaming (SSG)', '4:2', 'Auberon Hanes'),
+(987, 'Coastline', '2021-04-29', 4.08, 'Soniqs', '0:3', 'Sibilla Puttrell'),
+(988, 'Bank', '2023-11-16', 1.29, 'FURY', '4:5', 'Moses Elijahu'),
+(989, 'Bank', '2020-10-14', 0.54, 'FURIA Esports', '4:5', 'Markos Gilbert'),
+(990, 'Coastline', '2021-04-27', 0.34, 'MNM Gaming', '3:0', 'Bibi Charlwood'),
+(991, 'Coastline', '2024-05-12', 2.44, 'Dplus', '0:3', 'Jeff Vasilmanov'),
+(992, 'Bank', '2020-03-27', 2.75, 'Team Liquid', '2:4', 'Anestassia Ballingal'),
+(993, 'Oregon', '2019-10-13', 1.27, 'FURY', '0:3', 'Renato Wimes'),
+(994, 'Kanal', '2021-12-09', 3.8, 'Soniqs', '2:4', 'Bunnie Pavluk'),
+(995, 'Coastline', '2023-01-21', 0.78, 'KOI', '5:4', 'Paddie McDonand'),
+(996, 'Coastline', '2022-06-29', 3.15, 'SCARZ', '5:4', 'Alida Roux'),
+(997, 'Oregon', '2022-08-17', 2.22, 'Spacestation Gaming (SSG)', '2:4', 'Katya Greenig'),
+(998, 'Outback', '2020-04-09', 3.55, 'MNM Gaming', '0:3', 'Johnny Wadie'),
+(999, 'ThemePark', '2021-09-01', 3.52, 'w7m esports', '5:3', 'Ellsworth Walton'),
+(1000, 'Outback', '2020-06-12', 1.55, 'Team Liquid', '4:5', 'Alva MacGeffen'),
+(1001, 'Oregon', '2020-09-05', 2.66, 'Oxygen Esports', '3:0', 'Che Halvorsen'),
+(1002, 'Oregon', '2025-03-08', 1.93, 'Team Liquid', '4:5', 'Sheena Vidyapin'),
+(1003, 'Outback', '2023-11-19', 0.53, 'KOI', '4:5', 'Laurena Pierri'),
+(1004, 'Border', '2022-02-20', 0.08, 'G2 Esports', '2:4', 'Katerina Troup'),
+(1005, 'Oregon', '2020-08-06', 3.35, 'Los + oNe', '4:5', 'Wesley MacPake'),
+(1006, 'Kanal', '2021-07-20', 1.59, 'Team BDS', '3:5', 'Dulcea Haxbie'),
+(1007, 'Border', '2021-11-01', 0.19, 'Soniqs', '5:3', 'Minetta Rohlfing'),
+(1008, 'Clubhouse', '2025-04-13', 2.97, 'Elevate', '3:5', 'Golda Stainton - Skinn'),
+(1009, 'Border', '2023-03-21', 0.94, 'Team BDS', '5:3', 'Nikki Puddephatt'),
+(1010, 'Clubhouse', '2022-07-24', 0.93, 'Los + oNe', '5:4', 'Coleen Gutowska'),
+(1011, 'Bank', '2021-05-14', 2.61, 'Wolves Esports', '4:5', 'Vidovik Petrovykh'),
+(1012, 'Clubhouse', '2024-08-04', 3.66, 'G2 Esports', '3:5', 'Verena Rogeon'),
+(1013, 'Clubhouse', '2024-06-10', 0.57, 'M80', '4:5', 'Adolphus Noads'),
+(1014, 'Clubhouse', '2024-04-14', 0.66, 'DarkZero Esports (DZ)', '3:5', 'Asa Harower'),
+(1015, 'Bank', '2020-11-18', 0.28, 'FURIA Esports', '4:5', 'Fionna Hundey'),
+(1016, 'Kanal', '2025-03-08', 1.06, 'KOI', '5:3', 'Penelopa Iori'),
+(1017, 'Kanal', '2023-03-06', 0.08, 'Natus Vincere (NAVI)', '4:5', 'Adel Crosskill'),
+(1018, 'Clubhouse', '2024-10-13', 3.17, 'Los + oNe', '0:3', 'Daven Whitmore'),
+(1019, 'Oregon', '2022-03-22', 3, 'Dplus', '2:4', 'Myrilla Tumayan'),
+(1020, 'Oregon', '2019-07-26', 0.02, 'FaZe Clan', '3:5', 'Alisha Norster'),
+(1021, 'Oregon', '2023-09-21', 2.75, 'Elevate', '5:3', 'Clarine Frondt'),
+(1022, 'Border', '2021-10-12', 2.78, 'Team BDS', '2:4', 'Ciel Scipsey'),
+(1023, 'Clubhouse', '2021-06-06', 2.23, 'MNM Gaming', '3:5', 'Vinny Antham'),
+(1024, 'Outback', '2024-03-10', 4.8, 'Natus Vincere (NAVI)', '5:3', 'Gabey Kaveney'),
+(1025, 'Kanal', '2024-07-26', 0.39, 'Natus Vincere (NAVI)', '5:3', 'Neil Chezier'),
+(1026, 'Coastline', '2021-05-29', 4.5, 'Wolves Esports', '2:4', 'Vivianne Bridat'),
+(1027, 'Outback', '2023-09-25', 0.32, 'M80', '5:3', 'Ruggiero Von Der Empten'),
+(1028, 'Kanal', '2025-03-29', 3.32, 'FaZe Clan', '4:2', 'Wiatt Viel'),
+(1029, 'Outback', '2021-05-24', 1.13, 'FaZe Clan', '3:0', 'Chandra Matsell'),
+(1030, 'Clubhouse', '2019-10-16', 0.87, 'KOI', '4:5', 'Yovonnda Blackley'),
+(1031, 'Clubhouse', '2022-02-10', 2.66, 'DarkZero Esports (DZ)', '5:3', 'Winnie Bannell'),
+(1032, 'Oregon', '2023-11-29', 0.46, 'Virtus.pro', '4:5', 'Jaclyn Cohen'),
+(1033, 'Oregon', '2023-03-11', 4.33, 'FURIA Esports', '3:0', 'Edeline Fairnie'),
+(1034, 'Bank', '2019-05-22', 4.72, 'SCARZ', '2:4', 'Baxter Lelievre'),
+(1035, 'Outback', '2020-11-25', 4.21, 'Virtus.pro', '5:4', 'Shaughn Maurice'),
+(1036, 'Oregon', '2020-01-02', 3.66, 'Soniqs', '0:3', 'Ozzy Bamfield'),
+(1037, 'Oregon', '2020-11-21', 0.58, 'Natus Vincere (NAVI)', '4:2', 'Ari Rosin'),
+(1038, 'ThemePark', '2020-09-17', 3.67, 'Team Liquid', '3:0', 'Roxy Chittim'),
+(1039, 'Kanal', '2022-06-11', 2.46, 'w7m esports', '3:0', 'Joanna Bayley'),
+(1040, 'Bank', '2019-11-24', 2.81, 'FURIA Esports', '5:3', 'Nobe Selborne'),
+(1041, 'Clubhouse', '2024-05-18', 4.9, 'Team BDS', '3:0', 'Jimmy Paaso'),
+(1042, 'ThemePark', '2025-04-06', 4.3, 'G2 Esports', '2:4', 'Lilyan Dixcee'),
+(1043, 'Coastline', '2021-01-05', 2.74, 'MNM Gaming', '5:3', 'Ameline Jehan'),
+(1044, 'ThemePark', '2020-10-29', 4.98, 'Team Liquid', '4:2', 'Jasmina Haburne'),
+(1045, 'Outback', '2019-08-11', 4.23, 'G2 Esports', '5:3', 'Darleen Girton'),
+(1046, 'Outback', '2022-02-05', 0.83, 'Elevate', '2:4', 'Howie Hicks'),
+(1047, 'Border', '2020-11-16', 2.42, 'Team Liquid', '2:4', 'Daveta Lissandrini'),
+(1048, 'Border', '2020-04-21', 3.63, 'DarkZero Esports (DZ)', '3:5', 'Galina Hubble'),
+(1049, 'Clubhouse', '2023-01-30', 4.74, 'Team BDS', '2:4', 'Sophie Nind'),
+(1050, 'Oregon', '2021-01-02', 1.37, 'FURIA Esports', '0:3', 'Hope Bartosch'),
+(1051, 'Clubhouse', '2023-06-25', 2.72, 'Natus Vincere (NAVI)', '2:4', 'Beverie Ackery'),
+(1052, 'Outback', '2022-11-22', 2.06, 'FaZe Clan', '4:5', 'Barnabe Droogan'),
+(1053, 'Outback', '2021-03-28', 3.16, 'Soniqs', '4:2', 'Karlotte Degue'),
+(1054, 'Bank', '2019-05-14', 1.51, 'w7m esports', '4:5', 'Rasla Smeaton'),
+(1055, 'Clubhouse', '2024-09-08', 3.21, 'G2 Esports', '4:5', 'Leopold Dunkley'),
+(1056, 'Kanal', '2024-12-09', 2.16, 'Dplus', '0:3', 'Violet Milligan'),
+(1057, 'Border', '2020-03-08', 1.43, 'SCARZ', '4:2', 'Mikey Grass'),
+(1058, 'Border', '2023-01-14', 0.79, 'SCARZ', '3:5', 'Jobey Cicerone'),
+(1059, 'Bank', '2021-12-21', 0.25, 'G2 Esports', '5:3', 'Thaxter Whetnall'),
+(1060, 'Oregon', '2023-06-05', 2.18, 'SCARZ', '4:2', 'Nert Fasson'),
+(1061, 'Coastline', '2024-08-02', 1.77, 'FURY', '5:4', 'Ignatius Stodart'),
+(1062, 'Clubhouse', '2019-09-01', 4.6, 'Elevate', '4:5', 'Chiquia Bowerman'),
+(1063, 'ThemePark', '2022-02-15', 1.42, 'FaZe Clan', '5:4', 'Elvin Freshwater'),
+(1064, 'Kanal', '2020-12-12', 2.38, 'G2 Esports', '4:2', 'Olivier Mattaus'),
+(1065, 'ThemePark', '2025-03-08', 1.65, 'DarkZero Esports (DZ)', '5:3', 'Corissa Ahearne'),
+(1066, 'Clubhouse', '2022-04-09', 0.3, 'Team Liquid', '5:4', 'Laughton Katt'),
+(1067, 'Outback', '2024-12-15', 0.03, 'Los + oNe', '2:4', 'Binni Kollas'),
+(1068, 'Oregon', '2025-03-23', 3.97, 'FURIA Esports', '3:0', 'Franklyn Rylett'),
+(1069, 'ThemePark', '2023-04-29', 1.9, 'FURIA Esports', '5:4', 'Trumann Carder'),
+(1070, 'Clubhouse', '2019-12-28', 2.75, 'Elevate', '4:2', 'Chrissie Shooter'),
+(1071, 'Clubhouse', '2024-11-26', 2.57, 'Oxygen Esports', '3:0', 'Ileane Penkethman'),
+(1072, 'Coastline', '2022-01-30', 4.95, 'Los + oNe', '3:0', 'Winne Lanphere'),
+(1073, 'Bank', '2022-08-14', 3.8, 'Elevate', '0:3', 'Katharina Corby'),
+(1074, 'Clubhouse', '2022-04-06', 0.17, 'DarkZero Esports (DZ)', '3:0', 'Molly Appleford'),
+(1075, 'Coastline', '2022-04-20', 3.7, 'MNM Gaming', '5:4', 'Gillian Jarratt'),
+(1076, 'Oregon', '2023-10-30', 4.56, 'FURY', '4:5', 'Son Swancock'),
+(1077, 'Clubhouse', '2023-01-07', 4.8, 'KOI', '2:4', 'Meyer Normanvill'),
+(1078, 'Coastline', '2022-11-12', 3.24, 'Wolves Esports', '4:2', 'Karole Owers'),
+(1079, 'Bank', '2024-05-18', 3.23, 'Team BDS', '2:4', 'Esta Arsmith'),
+(1080, 'Oregon', '2024-03-07', 2.11, 'Natus Vincere (NAVI)', '0:3', 'Katina Troughton'),
+(1081, 'Coastline', '2025-03-23', 1.3, 'w7m esports', '3:0', 'Dulci Tewes'),
+(1082, 'Border', '2019-08-01', 4.59, 'SCARZ', '2:4', 'Nickolaus Hadeke'),
+(1083, 'Coastline', '2019-10-07', 0.55, 'SCARZ', '4:2', 'Jaquelyn Sergent'),
+(1084, 'Coastline', '2024-05-21', 2.8, 'Soniqs', '3:0', 'Gilemette Ambrozik'),
+(1085, 'Kanal', '2024-06-26', 4.53, 'Team BDS', '0:3', 'Karla Camel'),
+(1086, 'Coastline', '2024-11-05', 0.71, 'Wolves Esports', '0:3', 'Adelina Rollitt'),
+(1087, 'Coastline', '2020-08-07', 0.11, 'Team Liquid', '5:3', 'Shir Odda'),
+(1088, 'Clubhouse', '2020-06-28', 3.21, 'Spacestation Gaming (SSG)', '0:3', 'Elvis Phoenix'),
+(1089, 'Outback', '2022-03-31', 1.1, 'DarkZero Esports (DZ)', '5:3', 'Hernando Maybury'),
+(1090, 'ThemePark', '2022-11-21', 1.49, 'FaZe Clan', '4:5', 'Fee Castrillo'),
+(1091, 'ThemePark', '2023-06-20', 3.97, 'Oxygen Esports', '3:0', 'Annabella Boik'),
+(1092, 'Bank', '2021-03-24', 2.17, 'M80', '5:3', 'Ethelyn Halling'),
+(1093, 'Clubhouse', '2023-07-10', 1.47, 'w7m esports', '5:3', 'Rea Tutsell'),
+(1094, 'ThemePark', '2020-04-13', 4.52, 'Los + oNe', '3:5', 'Katuscha Brugmann'),
+(1095, 'Border', '2023-07-12', 1.97, 'Oxygen Esports', '4:5', 'Pedro Gillespey'),
+(1096, 'Oregon', '2019-12-07', 2.85, 'MNM Gaming', '0:3', 'Rowen Blagbrough'),
+(1097, 'ThemePark', '2023-01-15', 2.61, 'SCARZ', '3:0', 'Janos Kollatsch'),
+(1098, 'Kanal', '2024-09-20', 4.82, 'FURIA Esports', '2:4', 'Gratiana Gulvin'),
+(1099, 'Clubhouse', '2021-07-08', 2.26, 'FURIA Esports', '4:2', 'Iorgos Ferie'),
+(1100, 'Border', '2025-01-08', 4.44, 'FURY', '5:4', 'Althea Hardy'),
+(1101, 'Coastline', '2024-08-24', 0.26, 'Oxygen Esports', '0:3', 'Melody Bernon'),
+(1102, 'ThemePark', '2024-06-23', 2.75, 'Team Liquid', '5:4', 'Shani Brookes'),
+(1103, 'Border', '2021-04-27', 1.11, 'SCARZ', '0:3', 'Kial Gocher'),
+(1104, 'Clubhouse', '2024-05-14', 4.21, 'M80', '5:4', 'Hildagarde Greathead'),
+(1105, 'Oregon', '2022-11-07', 4.22, 'Dplus', '4:5', 'Mala Dallosso'),
+(1106, 'Clubhouse', '2019-11-22', 4.33, 'Wolves Esports', '4:2', 'Barbi Storks'),
+(1107, 'Oregon', '2025-02-01', 2.33, 'FURY', '3:0', 'Kerwin Nourse'),
+(1108, 'Coastline', '2024-08-12', 2.82, 'DarkZero Esports (DZ)', '4:2', 'Cazzie Martinuzzi'),
+(1109, 'Outback', '2025-02-22', 1.38, 'Natus Vincere (NAVI)', '3:5', 'Merell Verrechia'),
+(1110, 'Kanal', '2019-08-02', 0.24, 'Dplus', '4:5', 'Elsbeth Massinger'),
+(1111, 'Outback', '2020-08-05', 3.75, 'FaZe Clan', '3:5', 'Farleigh Troyes'),
+(1112, 'Kanal', '2019-10-11', 2.17, 'Wolves Esports', '4:5', 'Everett Andor'),
+(1113, 'Outback', '2024-01-21', 3.61, 'DarkZero Esports (DZ)', '3:0', 'Abagael Frew'),
+(1114, 'Coastline', '2024-09-28', 3, 'DarkZero Esports (DZ)', '4:2', 'Elliot Lillow'),
+(1115, 'Bank', '2020-01-17', 4.42, 'MNM Gaming', '3:5', 'Chalmers MacAulay'),
+(1116, 'Border', '2022-04-02', 0.48, 'Team Liquid', '2:4', 'Peadar Moore'),
+(1117, 'Outback', '2024-10-14', 1.71, 'FURY', '3:0', 'Gerrie Tettersell'),
+(1118, 'Oregon', '2024-12-26', 0.62, 'Team Liquid', '3:5', 'Olivier Layhe'),
+(1119, 'Oregon', '2023-09-02', 2.66, 'G2 Esports', '3:0', 'Florencia Hearse'),
+(1120, 'Kanal', '2023-04-14', 2.35, 'Virtus.pro', '5:4', 'Connor Pierton'),
+(1121, 'Coastline', '2021-10-03', 2.8, 'Soniqs', '2:4', 'Arly Beagen'),
+(1122, 'Clubhouse', '2022-11-25', 3.85, 'Spacestation Gaming (SSG)', '5:4', 'Jodie Chagg'),
+(1123, 'Outback', '2024-01-15', 3.28, 'Soniqs', '5:4', 'Nolie Ruff'),
+(1124, 'Border', '2025-03-26', 4.86, 'DarkZero Esports (DZ)', '5:4', 'Ellwood Marthen'),
+(1125, 'Clubhouse', '2022-04-07', 3.4, 'Wolves Esports', '0:3', 'Elayne Ironmonger'),
+(1126, 'ThemePark', '2022-09-04', 4.07, 'Spacestation Gaming (SSG)', '3:0', 'Marlow Jarrette'),
+(1127, 'Bank', '2020-08-27', 1.51, 'M80', '0:3', 'Seana Blabber'),
+(1128, 'ThemePark', '2020-11-09', 3.07, 'Spacestation Gaming (SSG)', '3:0', 'Bailie Adamiec'),
+(1129, 'Coastline', '2021-01-03', 2.2, 'Virtus.pro', '3:5', 'Sophey Cristofolini'),
+(1130, 'ThemePark', '2021-01-05', 2.14, 'Oxygen Esports', '0:3', 'Liana O\'Logan'),
+(1131, 'Outback', '2025-03-18', 3.19, 'Virtus.pro', '2:4', 'Camilla Stratz'),
+(1132, 'Clubhouse', '2021-01-24', 2.95, 'FaZe Clan', '5:3', 'Stirling Chance'),
+(1133, 'ThemePark', '2020-08-16', 1.16, 'G2 Esports', '4:5', 'Heidie Teesdale'),
+(1134, 'Outback', '2020-07-19', 0.86, 'Spacestation Gaming (SSG)', '5:3', 'Malorie Doust'),
+(1135, 'Oregon', '2023-10-23', 3.43, 'w7m esports', '3:5', 'Rosco Franzini'),
+(1136, 'Clubhouse', '2022-08-20', 4.55, 'Oxygen Esports', '4:2', 'Jacintha Spollen'),
+(1137, 'Coastline', '2022-12-05', 2.06, 'Dplus', '0:3', 'Austin Dilleway'),
+(1138, 'Border', '2024-03-16', 3.21, 'w7m esports', '0:3', 'Silvia Rosenfelder'),
+(1139, 'Kanal', '2021-03-21', 0.78, 'FURY', '4:2', 'Charlie Lasty'),
+(1140, 'Border', '2020-12-26', 0.6, 'FaZe Clan', '4:5', 'Dylan Beevors'),
+(1141, 'Kanal', '2025-02-16', 4.11, 'Soniqs', '3:0', 'Salome Leebeter'),
+(1142, 'Oregon', '2023-07-21', 0.41, 'Dplus', '4:2', 'Emiline Degli Abbati'),
+(1143, 'Bank', '2022-11-16', 1, 'KOI', '3:5', 'Dulcia Leggett'),
+(1144, 'Oregon', '2022-10-18', 0.13, 'FURIA Esports', '5:3', 'Debora Caunter'),
+(1145, 'Border', '2022-12-02', 1.83, 'FURIA Esports', '2:4', 'Bonnibelle Yurin'),
+(1146, 'Bank', '2023-01-13', 1.56, 'Team BDS', '5:4', 'Wini Roantree'),
+(1147, 'Bank', '2025-04-10', 2.78, 'Dplus', '4:5', 'Max Bellie'),
+(1148, 'ThemePark', '2023-12-16', 4.9, 'SCARZ', '4:5', 'Kym Sorel'),
+(1149, 'Border', '2022-11-18', 3.26, 'Oxygen Esports', '3:0', 'Carl Thomkins'),
+(1150, 'Border', '2020-12-27', 2.25, 'Elevate', '0:3', 'Nina Lorkings'),
+(1151, 'Bank', '2022-07-15', 1.49, 'DarkZero Esports (DZ)', '3:0', 'Dalston Lilley'),
+(1152, 'Bank', '2019-08-17', 1.78, 'Spacestation Gaming (SSG)', '5:3', 'Darrell Oles'),
+(1153, 'Outback', '2022-11-03', 0.67, 'DarkZero Esports (DZ)', '5:4', 'Darlleen Wallicker'),
+(1154, 'Oregon', '2024-08-12', 2.26, 'Wolves Esports', '2:4', 'Gusty Flageul'),
+(1155, 'Coastline', '2021-08-14', 4.13, 'Oxygen Esports', '3:5', 'Madonna Bunning'),
+(1156, 'Kanal', '2021-12-11', 2.39, 'M80', '3:5', 'Carlie Shew'),
+(1157, 'Border', '2020-09-28', 1.53, 'Natus Vincere (NAVI)', '2:4', 'Lulita Kirsop'),
+(1158, 'Kanal', '2021-04-22', 3.62, 'Oxygen Esports', '4:2', 'Timmy Gurko'),
+(1159, 'Bank', '2021-07-21', 1.06, 'Virtus.pro', '5:3', 'Thayne Matyukon'),
+(1160, 'Clubhouse', '2022-08-06', 2.14, 'DarkZero Esports (DZ)', '0:3', 'Grady Garbutt'),
+(1161, 'Clubhouse', '2019-12-25', 0.29, 'M80', '4:5', 'Davie Orbine'),
+(1162, 'ThemePark', '2020-10-26', 1.7, 'Natus Vincere (NAVI)', '2:4', 'Lynett Render'),
+(1163, 'Border', '2023-05-26', 1.74, 'Virtus.pro', '0:3', 'Heather Ades'),
+(1164, 'Border', '2019-05-09', 2.04, 'FURIA Esports', '3:5', 'Lloyd Dallin'),
+(1165, 'Oregon', '2023-09-12', 4.98, 'M80', '5:4', 'Katti Cankett'),
+(1166, 'Coastline', '2022-06-19', 2.97, 'FURY', '2:4', 'Ingaborg Geering'),
+(1167, 'ThemePark', '2021-01-26', 0.19, 'Wolves Esports', '4:5', 'Fredi Bryer'),
+(1168, 'Border', '2021-08-10', 1.42, 'DarkZero Esports (DZ)', '3:5', 'Anet Castillou'),
+(1169, 'ThemePark', '2024-06-04', 3.06, 'G2 Esports', '4:5', 'Coleen Filipyev'),
+(1170, 'Border', '2020-11-17', 3.64, 'Wolves Esports', '2:4', 'Shayne Minet'),
+(1171, 'Kanal', '2024-02-16', 3.28, 'MNM Gaming', '3:5', 'Penni Coxen'),
+(1172, 'Clubhouse', '2024-02-05', 0.97, 'FaZe Clan', '5:4', 'Alastair McCadden'),
+(1173, 'Outback', '2024-07-03', 1.54, 'Natus Vincere (NAVI)', '2:4', 'Shandeigh Guswell'),
+(1174, 'Kanal', '2023-11-18', 4.24, 'Team Liquid', '3:5', 'Lek Sattin'),
+(1175, 'Bank', '2023-12-23', 4.39, 'G2 Esports', '2:4', 'Celinka Trustey'),
+(1176, 'Oregon', '2024-02-09', 1.08, 'Dplus', '2:4', 'Ede Blagburn'),
+(1177, 'Oregon', '2024-03-30', 1.38, 'Spacestation Gaming (SSG)', '5:3', 'Vale Sheirlaw'),
+(1178, 'Outback', '2024-06-28', 2.82, 'Wolves Esports', '4:2', 'Berti Sorsby'),
+(1179, 'Border', '2023-11-08', 1.28, 'Team BDS', '5:4', 'Skipper Kilroy'),
+(1180, 'Clubhouse', '2023-05-03', 1.23, 'Team BDS', '3:0', 'Kimble Cunney'),
+(1181, 'Coastline', '2022-11-18', 3.76, 'Natus Vincere (NAVI)', '5:4', 'Veronique Tatem'),
+(1182, 'ThemePark', '2021-08-20', 4.79, 'Team Liquid', '3:0', 'Caril Meeks'),
+(1183, 'ThemePark', '2020-12-04', 1.39, 'G2 Esports', '4:5', 'Devonna Barstock'),
+(1184, 'Oregon', '2024-04-01', 0.07, 'Spacestation Gaming (SSG)', '2:4', 'Hatty Mioni'),
+(1185, 'ThemePark', '2023-05-07', 0.37, 'Virtus.pro', '4:2', 'Layla McParland'),
+(1186, 'Oregon', '2019-07-13', 0.76, 'Wolves Esports', '0:3', 'Aldridge Glasser'),
+(1187, 'Bank', '2024-11-23', 3.97, 'FaZe Clan', '3:5', 'Katy Yeude'),
+(1188, 'ThemePark', '2025-01-10', 4.57, 'MNM Gaming', '3:5', 'Callie Eltune'),
+(1189, 'Border', '2021-10-18', 3.29, 'G2 Esports', '3:5', 'Kellby Skeel'),
+(1190, 'ThemePark', '2019-08-23', 2.22, 'FURIA Esports', '0:3', 'Hyacinth McAne'),
+(1191, 'Coastline', '2022-11-12', 2.92, 'FURY', '2:4', 'Margo Cardenas'),
+(1192, 'Kanal', '2020-07-26', 2.09, 'Natus Vincere (NAVI)', '4:5', 'Berti Tunsley'),
+(1193, 'Outback', '2021-05-16', 0.64, 'Virtus.pro', '5:4', 'Cassandra Choudhury'),
+(1194, 'Coastline', '2021-12-09', 3.41, 'MNM Gaming', '4:5', 'Moyna Isenor'),
+(1195, 'Bank', '2020-05-02', 0.97, 'Spacestation Gaming (SSG)', '4:5', 'Francine Blades'),
+(1196, 'Bank', '2020-06-08', 3.36, 'Natus Vincere (NAVI)', '3:0', 'Nikolas Howitt'),
+(1197, 'Border', '2021-07-03', 4.86, 'SCARZ', '3:5', 'Vallie Blampey'),
+(1198, 'Border', '2021-07-11', 3.29, 'w7m esports', '3:0', 'Jacqui Simmons'),
+(1199, 'Coastline', '2021-08-11', 1.91, 'Wolves Esports', '0:3', 'Arlana Vooght'),
+(1200, 'Border', '2021-08-24', 1.39, 'Wolves Esports', '5:3', 'Dorey McKernan'),
+(1201, 'Border', '2025-03-20', 1.13, 'Spacestation Gaming (SSG)', '3:5', 'Gris Scatchard'),
+(1202, 'Bank', '2024-12-10', 1, 'Team BDS', '5:3', 'Cornelia Dogg'),
+(1203, 'Clubhouse', '2025-02-25', 1.13, 'Los + oNe', '4:2', 'Brewster Sertin'),
+(1204, 'Kanal', '2021-05-02', 3.91, 'KOI', '5:4', 'Titos Arnoud'),
+(1205, 'Clubhouse', '2023-04-19', 3.61, 'FURIA Esports', '0:3', 'Drucie Statefield'),
+(1206, 'Coastline', '2019-11-09', 1.91, 'DarkZero Esports (DZ)', '5:3', 'Teri Leathers'),
+(1207, 'ThemePark', '2021-12-05', 1.18, 'Natus Vincere (NAVI)', '4:2', 'Penni Perri'),
+(1208, 'Clubhouse', '2019-10-06', 4.25, 'Wolves Esports', '3:5', 'Skye Nassie'),
+(1209, 'Oregon', '2024-08-10', 0.04, 'DarkZero Esports (DZ)', '3:0', 'Kipp Ullock'),
+(1210, 'Coastline', '2022-12-23', 4.78, 'Natus Vincere (NAVI)', '4:5', 'Cordell Holworth'),
+(1211, 'Coastline', '2020-06-28', 3.25, 'SCARZ', '2:4', 'Genna Gadsden'),
+(1212, 'ThemePark', '2023-04-30', 1.41, 'w7m esports', '5:4', 'Thacher Ruhben'),
+(1213, 'Border', '2021-09-17', 3.28, 'SCARZ', '3:5', 'Moise Pickworth'),
+(1214, 'Coastline', '2021-03-13', 4.57, 'Dplus', '0:3', 'Othella McNirlin'),
+(1215, 'ThemePark', '2020-04-19', 4.17, 'G2 Esports', '2:4', 'Kori Windeatt'),
+(1216, 'Oregon', '2022-02-07', 1.84, 'FURIA Esports', '5:3', 'Patricio Gammons'),
+(1217, 'Clubhouse', '2023-05-05', 1.62, 'Spacestation Gaming (SSG)', '3:5', 'Cassie Thame'),
+(1218, 'Bank', '2020-04-28', 0.17, 'Los + oNe', '5:3', 'Dianemarie Prine'),
+(1219, 'ThemePark', '2019-08-22', 1.31, 'Team BDS', '4:2', 'Christiane Lamas'),
+(1220, 'Border', '2022-12-29', 1.96, 'Team BDS', '4:5', 'Sile Sleaford'),
+(1221, 'Coastline', '2020-07-03', 4.03, 'Team Liquid', '5:3', 'Loydie Novak'),
+(1222, 'Border', '2021-07-05', 4.57, 'DarkZero Esports (DZ)', '5:4', 'Barbee Murch'),
+(1223, 'ThemePark', '2020-05-10', 1.68, 'SCARZ', '4:5', 'Berthe Pearne'),
+(1224, 'Clubhouse', '2022-02-05', 2.25, 'Elevate', '2:4', 'Mordy Weedon'),
+(1225, 'Oregon', '2021-11-29', 3.2, 'FURIA Esports', '0:3', 'Richmond Aronovich'),
+(1226, 'Kanal', '2021-04-12', 2.58, 'DarkZero Esports (DZ)', '5:4', 'Dena Betser'),
+(1227, 'Coastline', '2019-05-30', 4.28, 'M80', '5:4', 'Dmitri Scotney'),
+(1228, 'Kanal', '2022-07-14', 2.18, 'Soniqs', '3:0', 'Cele Venning'),
+(1229, 'Oregon', '2024-12-04', 3.85, 'Spacestation Gaming (SSG)', '0:3', 'Efrem Bursnell'),
+(1230, 'Bank', '2021-03-10', 0.91, 'G2 Esports', '0:3', 'Adelaida Potteridge'),
+(1231, 'ThemePark', '2019-11-23', 2.86, 'Wolves Esports', '2:4', 'Godfry Pidgeley'),
+(1232, 'Kanal', '2020-07-18', 0.18, 'M80', '3:5', 'Maury Blunderfield'),
+(1233, 'ThemePark', '2023-02-14', 0.89, 'Team Liquid', '0:3', 'Blakeley Mucklow'),
+(1234, 'Bank', '2023-08-25', 4.18, 'Team BDS', '3:0', 'Willis Gwatkin'),
+(1235, 'Oregon', '2022-11-21', 3.84, 'G2 Esports', '4:5', 'Yancey Sparwell'),
+(1236, 'Kanal', '2021-07-08', 1.2, 'FaZe Clan', '5:3', 'Beverlie Roots'),
+(1237, 'Bank', '2020-01-26', 2.75, 'Soniqs', '2:4', 'Janella Kleen'),
+(1238, 'Outback', '2019-06-23', 1.72, 'Natus Vincere (NAVI)', '5:3', 'Zedekiah Perrins'),
+(1239, 'Coastline', '2023-11-18', 2.43, 'Wolves Esports', '3:0', 'Broderick Revie'),
+(1240, 'Bank', '2020-02-28', 2.79, 'FaZe Clan', '3:5', 'Omar Lethebridge'),
+(1241, 'Kanal', '2022-11-25', 4.37, 'FaZe Clan', '3:5', 'Phil McKeveney'),
+(1242, 'Oregon', '2022-07-17', 3.78, 'Oxygen Esports', '4:5', 'Jemie Gammel'),
+(1243, 'Outback', '2022-01-22', 1.98, 'w7m esports', '3:5', 'Wilie Corp'),
+(1244, 'Clubhouse', '2020-07-04', 1.51, 'Soniqs', '3:0', 'Monah Hilland'),
+(1245, 'ThemePark', '2022-03-27', 2.12, 'FaZe Clan', '4:2', 'Arlan Folds'),
+(1246, 'Outback', '2025-02-28', 2.22, 'Soniqs', '3:5', 'Minda Garratty'),
+(1247, 'Clubhouse', '2022-02-18', 4.51, 'Wolves Esports', '3:0', 'Warde Confait'),
+(1248, 'Coastline', '2024-11-22', 4.98, 'KOI', '4:2', 'Gradeigh Maginn'),
+(1249, 'Oregon', '2019-08-17', 0.73, 'SCARZ', '3:5', 'Nellie Chastagnier'),
+(1250, 'Oregon', '2021-08-08', 4.24, 'Soniqs', '0:3', 'Friedrich Stroyan'),
+(1251, 'Outback', '2022-12-21', 0.58, 'FaZe Clan', '4:5', 'Nikola Rakestraw'),
+(1252, 'Coastline', '2020-04-25', 1.74, 'Team Liquid', '5:4', 'Miles Fitzharris'),
+(1253, 'Coastline', '2021-03-20', 4.56, 'Los + oNe', '5:3', 'Winifred Ivanyushkin'),
+(1254, 'Coastline', '2021-04-18', 0.03, 'w7m esports', '3:0', 'Dyane Dincke'),
+(1255, 'Outback', '2022-05-07', 4.09, 'Los + oNe', '3:5', 'Drake Lammertz'),
+(1256, 'Border', '2024-11-28', 0.23, 'FURY', '5:4', 'Royce Scapelhorn'),
+(1257, 'Border', '2023-05-22', 2.01, 'Natus Vincere (NAVI)', '0:3', 'Paule Littrick'),
+(1258, 'Kanal', '2020-05-29', 0.77, 'FaZe Clan', '3:5', 'Caroline Jearum'),
+(1259, 'ThemePark', '2020-08-12', 1.1, 'Los + oNe', '4:5', 'Karlee Mackie'),
+(1260, 'Border', '2024-02-02', 2.21, 'w7m esports', '2:4', 'Phyllys Dell Casa'),
+(1261, 'Outback', '2022-02-23', 1.62, 'DarkZero Esports (DZ)', '2:4', 'Zebedee Cormack'),
+(1262, 'Oregon', '2023-02-11', 0.01, 'DarkZero Esports (DZ)', '5:3', 'Dulcinea Amott'),
+(1263, 'Bank', '2021-04-18', 3.49, 'Los + oNe', '4:2', 'Berkley Kaman'),
+(1264, 'Coastline', '2022-07-27', 3.7, 'M80', '3:0', 'Pet Lambourne'),
+(1265, 'Oregon', '2021-03-14', 0.37, 'Team Liquid', '5:4', 'Carola Minchenton'),
+(1266, 'Oregon', '2022-10-25', 3.22, 'Los + oNe', '5:3', 'Wiley Autry'),
+(1267, 'Coastline', '2022-06-26', 3.14, 'w7m esports', '3:0', 'Dulcy Armfield'),
+(1268, 'Clubhouse', '2022-08-01', 3.07, 'Team BDS', '4:5', 'Yasmeen Brame'),
+(1269, 'Clubhouse', '2022-12-11', 1.88, 'Natus Vincere (NAVI)', '3:5', 'Fae Kennsley'),
+(1270, 'Border', '2019-06-08', 2.43, 'Wolves Esports', '3:5', 'Devina O\'Hartnedy'),
+(1271, 'Bank', '2020-04-28', 3.58, 'DarkZero Esports (DZ)', '4:5', 'Sofie Shimmin'),
+(1272, 'Clubhouse', '2024-11-01', 0.31, 'DarkZero Esports (DZ)', '5:3', 'Emlynne Milson'),
+(1273, 'Outback', '2020-03-06', 1.26, 'Dplus', '0:3', 'Alley Jeske'),
+(1274, 'Outback', '2020-12-30', 2.1, 'Wolves Esports', '2:4', 'Sofia Petchey'),
+(1275, 'Bank', '2022-02-06', 1.95, 'FaZe Clan', '4:5', 'Hasty Pinch'),
+(1276, 'Bank', '2024-10-15', 4.87, 'DarkZero Esports (DZ)', '5:4', 'Marena Malafe'),
+(1277, 'Outback', '2020-05-16', 2.34, 'Wolves Esports', '4:2', 'Christalle Kenny'),
+(1278, 'Kanal', '2022-11-18', 1.25, 'FURY', '4:2', 'Cello Moultrie'),
+(1279, 'Oregon', '2022-10-02', 4.89, 'Team Liquid', '3:5', 'Yule Westwick'),
+(1280, 'Coastline', '2020-08-15', 1.93, 'w7m esports', '3:5', 'Reena Petrolli'),
+(1281, 'Outback', '2023-08-04', 2.81, 'Los + oNe', '5:4', 'Cos Killingbeck'),
+(1282, 'Outback', '2020-06-22', 2.73, 'DarkZero Esports (DZ)', '2:4', 'Gardner Cullimore'),
+(1283, 'Oregon', '2022-09-17', 4.06, 'FURIA Esports', '4:5', 'Marni Chedzoy'),
+(1284, 'Bank', '2022-10-07', 3.89, 'Dplus', '3:5', 'Court O\'Dempsey'),
+(1285, 'Bank', '2023-11-15', 2.84, 'Soniqs', '4:5', 'Ash Foxton'),
+(1286, 'Oregon', '2021-05-27', 2.14, 'Oxygen Esports', '3:0', 'Templeton Soro'),
+(1287, 'Coastline', '2022-08-03', 4.31, 'DarkZero Esports (DZ)', '4:5', 'Janela Mossom'),
+(1288, 'Border', '2024-10-02', 0.59, 'Soniqs', '0:3', 'Hart Suart'),
+(1289, 'Border', '2025-01-10', 4.01, 'G2 Esports', '4:5', 'Alverta Klamp'),
+(1290, 'Coastline', '2024-01-24', 3.59, 'M80', '4:2', 'Pasquale O\'Dulchonta'),
+(1291, 'Border', '2020-11-18', 2.66, 'Dplus', '4:5', 'Liva Bowhay'),
+(1292, 'Oregon', '2020-07-11', 2.2, 'Natus Vincere (NAVI)', '4:5', 'Genvieve Higgoe'),
+(1293, 'Border', '2022-03-26', 3.49, 'Elevate', '0:3', 'Rosanne Apfler'),
+(1294, 'Border', '2024-01-16', 2.04, 'FaZe Clan', '4:2', 'Langsdon Ovenden'),
+(1295, 'Outback', '2024-09-24', 2.62, 'Soniqs', '0:3', 'Carlo Blamires'),
+(1296, 'Bank', '2020-09-01', 4.21, 'Oxygen Esports', '3:5', 'Alva McMullen'),
+(1297, 'Border', '2020-03-25', 3.79, 'FURIA Esports', '4:5', 'Tessi Shorte'),
+(1298, 'Coastline', '2019-05-04', 3.91, 'Wolves Esports', '5:3', 'Glory Tapsell'),
+(1299, 'ThemePark', '2023-11-01', 4.01, 'G2 Esports', '5:4', 'Amy Offener'),
+(1300, 'Clubhouse', '2019-07-19', 2.36, 'Dplus', '0:3', 'Tasha Girhard'),
+(1301, 'Oregon', '2020-06-21', 3.95, 'M80', '2:4', 'Conchita Maggiori'),
+(1302, 'Coastline', '2023-04-01', 0, 'Los + oNe', '4:5', 'Whitaker Ayerst'),
+(1303, 'Bank', '2021-12-29', 1.27, 'MNM Gaming', '4:2', 'Olympie Hindenberger'),
+(1304, 'ThemePark', '2023-02-28', 3.21, 'Spacestation Gaming (SSG)', '5:3', 'Isac Meaden'),
+(1305, 'Coastline', '2022-12-09', 2.79, 'Oxygen Esports', '5:3', 'Tracey Wattins'),
+(1306, 'Bank', '2024-06-26', 4.76, 'Natus Vincere (NAVI)', '3:0', 'Gordy Harbinson'),
+(1307, 'Border', '2021-03-29', 1.25, 'w7m esports', '3:0', 'Virgilio Stebbings'),
+(1308, 'Kanal', '2020-03-23', 3.03, 'w7m esports', '0:3', 'Dur Parradice'),
+(1309, 'Coastline', '2023-04-01', 4.16, 'Oxygen Esports', '4:2', 'Teddie Pipes'),
+(1310, 'Coastline', '2021-07-14', 2.46, 'MNM Gaming', '0:3', 'Devlin Procter'),
+(1311, 'Coastline', '2020-06-13', 1.38, 'SCARZ', '3:0', 'Cello Moulder'),
+(1312, 'Clubhouse', '2019-07-31', 4.93, 'w7m esports', '4:2', 'Garfield Gricks'),
+(1313, 'Border', '2020-07-13', 0.81, 'Elevate', '2:4', 'Clemmy Retallick'),
+(1314, 'Kanal', '2022-09-11', 0.84, 'Virtus.pro', '4:2', 'Andris Thowless'),
+(1315, 'ThemePark', '2025-02-22', 1.62, 'Natus Vincere (NAVI)', '4:5', 'Cyrill Deaton'),
+(1316, 'Oregon', '2022-05-01', 2.93, 'Soniqs', '2:4', 'Valenka Kaygill'),
+(1317, 'Clubhouse', '2021-05-21', 0.59, 'w7m esports', '5:3', 'Cindra Farrants'),
+(1318, 'Bank', '2023-08-01', 0.15, 'Los + oNe', '2:4', 'Morgana Bertolaccini');
+INSERT INTO `r6_match` (`id`, `map`, `match_date`, `match_duration`, `winning_team`, `final_result`, `mvp`) VALUES
+(1319, 'Bank', '2022-11-23', 2.93, 'M80', '4:5', 'Rod Raspison'),
+(1320, 'Coastline', '2025-02-02', 1.75, 'FaZe Clan', '3:0', 'Linn Wotton'),
+(1321, 'Outback', '2020-05-03', 4.44, 'Team Liquid', '4:5', 'Svend Piner'),
+(1322, 'Bank', '2024-12-03', 3.94, 'MNM Gaming', '2:4', 'Marni Rosetti'),
+(1323, 'Border', '2023-11-12', 1.51, 'Dplus', '3:0', 'Ferrel Conahy'),
+(1324, 'Outback', '2023-12-03', 2.71, 'w7m esports', '5:4', 'Sianna Shortall'),
+(1325, 'Clubhouse', '2020-12-02', 4.14, 'Dplus', '5:3', 'Sutherlan Hannibal'),
+(1326, 'ThemePark', '2021-12-23', 2.93, 'FURY', '3:0', 'Janka Chatband'),
+(1327, 'Bank', '2020-08-30', 3.12, 'Elevate', '4:5', 'Enid Redbourn'),
+(1328, 'Oregon', '2020-08-17', 4.14, 'Los + oNe', '0:3', 'Grady Cornier'),
+(1329, 'ThemePark', '2019-11-28', 1.58, 'Team BDS', '2:4', 'Nanci Ioan'),
+(1330, 'Coastline', '2021-02-01', 0.43, 'FaZe Clan', '5:4', 'Lucian Hinkes'),
+(1331, 'Kanal', '2022-02-17', 2.33, 'G2 Esports', '5:4', 'Allan Angrove'),
+(1332, 'Border', '2024-04-06', 1.08, 'FURY', '5:4', 'Randolph Loadwick'),
+(1333, 'Coastline', '2023-10-17', 4.14, 'Elevate', '4:5', 'Grethel Crosier'),
+(1334, 'Outback', '2024-03-14', 1.2, 'FaZe Clan', '2:4', 'Foss Kopfer'),
+(1335, 'Outback', '2023-10-26', 4.31, 'FURIA Esports', '0:3', 'Ferdinand Ogers'),
+(1336, 'Clubhouse', '2022-11-27', 3, 'FURY', '3:5', 'Petronille Foster-Smith'),
+(1337, 'Border', '2022-03-30', 0.19, 'FaZe Clan', '0:3', 'Rosa Idney'),
+(1338, 'Bank', '2021-11-12', 0.3, 'Natus Vincere (NAVI)', '4:2', 'Lorelle Hyland'),
+(1339, 'Border', '2023-12-26', 3.59, 'Team Liquid', '5:4', 'Giusto Bonas'),
+(1340, 'Bank', '2023-02-25', 2.4, 'Los + oNe', '4:5', 'Valli Alessandrelli'),
+(1341, 'Bank', '2023-02-19', 1.52, 'Soniqs', '3:5', 'Brion Lanyon'),
+(1342, 'Bank', '2022-06-25', 3.65, 'M80', '3:5', 'Meade Belliard'),
+(1343, 'Oregon', '2023-01-18', 1.59, 'SCARZ', '4:2', 'Arthur Kleinlerer'),
+(1344, 'Kanal', '2019-07-11', 4.79, 'Virtus.pro', '3:5', 'Octavia Kupper'),
+(1345, 'Coastline', '2020-09-22', 1.93, 'Los + oNe', '3:0', 'Emalee Menego'),
+(1346, 'Border', '2020-08-04', 2.6, 'Wolves Esports', '5:4', 'Harlen Eicke'),
+(1347, 'Coastline', '2023-01-14', 2.16, 'KOI', '3:5', 'Tedd Laverenz'),
+(1348, 'Kanal', '2019-05-04', 4.56, 'Natus Vincere (NAVI)', '3:0', 'Hermy Pestricke'),
+(1349, 'Border', '2022-03-30', 2.98, 'w7m esports', '4:5', 'Raquela Cadle'),
+(1350, 'Border', '2022-05-24', 2.04, 'Wolves Esports', '3:0', 'Caresa St Leger'),
+(1351, 'Bank', '2019-09-11', 4.78, 'Team Liquid', '4:5', 'Tammy Keedwell'),
+(1352, 'Coastline', '2022-11-02', 1.73, 'Spacestation Gaming (SSG)', '0:3', 'Gillian Manhare'),
+(1353, 'ThemePark', '2020-02-03', 1.68, 'Team Liquid', '0:3', 'Sunshine Petrolli'),
+(1354, 'Clubhouse', '2023-08-21', 2.38, 'Team BDS', '0:3', 'Vina Brydell'),
+(1355, 'Border', '2023-01-02', 1.11, 'Virtus.pro', '0:3', 'Antonietta Hapgood'),
+(1356, 'Coastline', '2021-01-05', 3.8, 'Los + oNe', '5:4', 'Loutitia Preto'),
+(1357, 'Kanal', '2022-01-30', 3.02, 'Wolves Esports', '3:0', 'Madison Sheaf'),
+(1358, 'Kanal', '2020-01-31', 4.57, 'Soniqs', '5:3', 'Aurore Swede'),
+(1359, 'Coastline', '2020-09-01', 4.44, 'G2 Esports', '4:2', 'Sabra Child'),
+(1360, 'Border', '2021-10-03', 3.71, 'Virtus.pro', '5:4', 'Marietta Magner'),
+(1361, 'Border', '2023-08-19', 4.93, 'Virtus.pro', '3:5', 'Tracie Dragonette'),
+(1362, 'Oregon', '2019-11-03', 0.17, 'w7m esports', '4:5', 'Sarita Sea'),
+(1363, 'Bank', '2021-03-19', 4.76, 'w7m esports', '3:5', 'Sorcha Duny'),
+(1364, 'Coastline', '2021-05-08', 2.1, 'Virtus.pro', '5:4', 'Randell Cockren'),
+(1365, 'Outback', '2020-05-11', 0.43, 'G2 Esports', '4:5', 'Elsey Folkard'),
+(1366, 'Clubhouse', '2024-01-30', 2.15, 'Los + oNe', '3:5', 'Arri Ratchford'),
+(1367, 'Outback', '2023-03-11', 2.04, 'FURY', '5:4', 'Rianon Fyldes'),
+(1368, 'Oregon', '2023-08-27', 2.78, 'FURIA Esports', '4:5', 'Wanids Hillhouse'),
+(1369, 'Clubhouse', '2021-08-18', 1.51, 'Soniqs', '4:5', 'Carmelle Madeley'),
+(1370, 'Outback', '2023-10-01', 0.15, 'Elevate', '3:5', 'Derrik Petche'),
+(1371, 'Kanal', '2022-08-07', 2.8, 'Oxygen Esports', '4:2', 'Bennie Grishelyov'),
+(1372, 'Border', '2020-08-01', 1.95, 'Los + oNe', '3:0', 'Karel Beak'),
+(1373, 'Oregon', '2021-07-21', 4.73, 'Wolves Esports', '3:0', 'Norbert Stuther'),
+(1374, 'Bank', '2020-04-19', 3.6, 'FURY', '4:2', 'Cart Sperling'),
+(1375, 'Border', '2023-02-11', 4.22, 'DarkZero Esports (DZ)', '2:4', 'Yoshiko Mityakov'),
+(1376, 'Outback', '2019-08-24', 1.68, 'G2 Esports', '4:5', 'Kalila Favel'),
+(1377, 'Kanal', '2024-11-23', 1.28, 'Team Liquid', '0:3', 'Florrie Halegarth'),
+(1378, 'Outback', '2021-09-23', 4.77, 'Spacestation Gaming (SSG)', '2:4', 'Courtnay Ionesco'),
+(1379, 'Clubhouse', '2022-05-03', 4.04, 'Spacestation Gaming (SSG)', '4:5', 'Datha Moine'),
+(1380, 'ThemePark', '2021-06-18', 2.25, 'Elevate', '2:4', 'Martino De Vaar'),
+(1381, 'Kanal', '2021-07-17', 3.95, 'SCARZ', '3:0', 'Avictor Mandeville'),
+(1382, 'Clubhouse', '2024-03-09', 4.36, 'KOI', '5:4', 'Ingeborg Ayliffe'),
+(1383, 'Kanal', '2019-05-26', 1.32, 'KOI', '3:5', 'Yvor Mundie'),
+(1384, 'Coastline', '2023-10-21', 0.05, 'Soniqs', '0:3', 'Briny Whiteway'),
+(1385, 'Clubhouse', '2021-04-24', 1.7, 'w7m esports', '4:2', 'Geri Pietasch'),
+(1386, 'Bank', '2021-08-11', 2.84, 'Team Liquid', '5:4', 'Garvin Klazenga'),
+(1387, 'Border', '2022-04-26', 2.67, 'Dplus', '5:3', 'Kermit Trayhorn'),
+(1388, 'Oregon', '2023-02-14', 2.58, 'Natus Vincere (NAVI)', '5:4', 'Albie MacCook'),
+(1389, 'Bank', '2022-01-05', 3.85, 'Team BDS', '5:3', 'Lilian Lodge'),
+(1390, 'Outback', '2021-03-03', 4.32, 'SCARZ', '3:5', 'Maynard Elloit'),
+(1391, 'Kanal', '2019-12-02', 0.04, 'MNM Gaming', '3:0', 'Alejandrina Jiggens'),
+(1392, 'Oregon', '2021-12-07', 4.29, 'Wolves Esports', '5:3', 'Coleen McCarle'),
+(1393, 'Border', '2024-11-26', 2.33, 'Oxygen Esports', '4:2', 'Maurita Garm'),
+(1394, 'Coastline', '2024-10-10', 3.9, 'KOI', '2:4', 'Gaultiero Eates'),
+(1395, 'Bank', '2024-04-16', 2.03, 'KOI', '4:2', 'Winnie Fincke'),
+(1396, 'Coastline', '2020-09-15', 1.36, 'w7m esports', '5:4', 'Brian Gianolo'),
+(1397, 'Bank', '2020-09-09', 4.72, 'G2 Esports', '3:5', 'Hillary Rocks'),
+(1398, 'Outback', '2022-07-17', 2.37, 'Natus Vincere (NAVI)', '5:4', 'Alyson Cunnell'),
+(1399, 'Oregon', '2025-01-22', 0.58, 'Elevate', '5:3', 'Tobin Bartholomieu'),
+(1400, 'Kanal', '2024-03-09', 3.68, 'Soniqs', '4:5', 'Claudius Pena'),
+(1401, 'Clubhouse', '2020-05-05', 3.78, 'FURY', '4:5', 'Davon Purchon'),
+(1402, 'Bank', '2023-04-12', 4.14, 'FURY', '2:4', 'Carr Berrill'),
+(1403, 'Bank', '2022-04-18', 2.25, 'Oxygen Esports', '2:4', 'Jay Elder'),
+(1404, 'Border', '2024-04-11', 3.75, 'Team BDS', '2:4', 'Tammi Avey'),
+(1405, 'Coastline', '2024-11-20', 4.73, 'FaZe Clan', '0:3', 'Blake Braine'),
+(1406, 'Border', '2020-04-11', 1.45, 'M80', '5:4', 'Shanan Southgate'),
+(1407, 'Kanal', '2024-07-21', 3.18, 'Natus Vincere (NAVI)', '4:5', 'Marilyn Semkins'),
+(1408, 'Coastline', '2022-08-07', 4.28, 'Spacestation Gaming (SSG)', '5:3', 'Delainey Magister'),
+(1409, 'Outback', '2024-01-14', 4.46, 'FURIA Esports', '3:0', 'Sean Robel'),
+(1410, 'Coastline', '2024-11-20', 3.76, 'MNM Gaming', '0:3', 'Ettore Di Maria'),
+(1411, 'Kanal', '2022-07-03', 2.99, 'Oxygen Esports', '5:3', 'Kile Covelle'),
+(1412, 'Clubhouse', '2021-06-04', 1.35, 'Soniqs', '4:5', 'Ilka Husbands'),
+(1413, 'Outback', '2022-09-01', 2.86, 'Wolves Esports', '2:4', 'Sher Hulles'),
+(1414, 'Oregon', '2021-11-05', 2.54, 'MNM Gaming', '4:2', 'Robby Thorrold'),
+(1415, 'Border', '2021-05-07', 3.57, 'KOI', '3:0', 'Jammal Rubinsztein'),
+(1416, 'Bank', '2023-10-08', 1.83, 'Team Liquid', '4:5', 'Ruperto Gascone'),
+(1417, 'Border', '2023-07-15', 4.31, 'FURY', '4:5', 'Rebe Rosthorn'),
+(1418, 'Clubhouse', '2019-10-16', 1.56, 'Natus Vincere (NAVI)', '4:2', 'Netti Vasyutochkin'),
+(1419, 'Border', '2024-05-16', 1.07, 'Spacestation Gaming (SSG)', '2:4', 'Gordan Mutton'),
+(1420, 'Coastline', '2021-11-12', 3.77, 'Elevate', '3:0', 'Kinna Chidlow'),
+(1421, 'Outback', '2023-04-11', 0.81, 'Wolves Esports', '0:3', 'Riobard Roskrug'),
+(1422, 'Kanal', '2020-08-07', 2.79, 'G2 Esports', '4:2', 'Clayborne Lawry'),
+(1423, 'Outback', '2024-02-25', 1.22, 'Virtus.pro', '2:4', 'Aeriel Bilsford'),
+(1424, 'Border', '2024-10-15', 3.15, 'FURY', '5:3', 'Trina Sarjant'),
+(1425, 'Kanal', '2019-09-19', 4.77, 'MNM Gaming', '4:5', 'Amanda Shulver'),
+(1426, 'Outback', '2023-02-06', 4.75, 'Team BDS', '0:3', 'Bord Hawk'),
+(1427, 'Oregon', '2024-03-09', 1.15, 'M80', '5:4', 'Karry Geffinger'),
+(1428, 'Oregon', '2023-08-12', 2.31, 'Oxygen Esports', '2:4', 'Thatcher Crumly'),
+(1429, 'Border', '2023-01-05', 0.27, 'Elevate', '4:5', 'Sebastian Cluff'),
+(1430, 'Coastline', '2022-02-05', 0.68, 'Team Liquid', '3:0', 'Amil Morrall'),
+(1431, 'Outback', '2023-08-04', 2.76, 'KOI', '2:4', 'Udall Helmke'),
+(1432, 'Oregon', '2020-09-03', 1, 'FaZe Clan', '3:5', 'Clint Kears'),
+(1433, 'Oregon', '2024-04-17', 0.65, 'Team Liquid', '0:3', 'Stern Formoy'),
+(1434, 'Outback', '2021-11-24', 3.39, 'Virtus.pro', '4:2', 'Deni Spire'),
+(1435, 'Oregon', '2019-05-21', 1.37, 'w7m esports', '0:3', 'Brynn Smittoune'),
+(1436, 'Outback', '2022-03-30', 3.5, 'Natus Vincere (NAVI)', '3:0', 'Tina Yansons'),
+(1437, 'Oregon', '2023-12-24', 0.73, 'SCARZ', '2:4', 'Gordy Quilkin'),
+(1438, 'Oregon', '2019-12-17', 0.28, 'KOI', '2:4', 'Holmes Maltster'),
+(1439, 'Outback', '2024-05-02', 0.95, 'Dplus', '4:2', 'Nanon Maddrah'),
+(1440, 'Oregon', '2025-02-19', 2.12, 'MNM Gaming', '5:4', 'Mimi Vanetti'),
+(1441, 'Outback', '2020-11-23', 4.18, 'Dplus', '2:4', 'Rriocard Wildsmith'),
+(1442, 'Outback', '2019-07-17', 3.75, 'Spacestation Gaming (SSG)', '4:2', 'Colas Zimmer'),
+(1443, 'Coastline', '2025-04-23', 3.52, 'Wolves Esports', '0:3', 'Elwin Anlay'),
+(1444, 'Border', '2022-10-19', 1.73, 'Wolves Esports', '2:4', 'Gordon Hinckesman'),
+(1445, 'Border', '2020-07-23', 4.83, 'Natus Vincere (NAVI)', '0:3', 'Udale Walthall'),
+(1446, 'Kanal', '2019-12-31', 3.52, 'Team BDS', '4:5', 'Zia Trickett'),
+(1447, 'Bank', '2023-07-26', 3.01, 'G2 Esports', '2:4', 'Bette-ann Monckman'),
+(1448, 'Border', '2023-04-11', 3.56, 'Dplus', '3:0', 'Mac Urlich'),
+(1449, 'Kanal', '2024-02-12', 2.83, 'G2 Esports', '5:4', 'Zaneta Sprowell'),
+(1450, 'Bank', '2021-09-06', 0.65, 'Oxygen Esports', '2:4', 'Corly Twelves'),
+(1451, 'Border', '2021-05-05', 2.47, 'Team Liquid', '4:5', 'Bonny Penrith'),
+(1452, 'Coastline', '2024-09-16', 1.42, 'Oxygen Esports', '3:0', 'Mindy Symmers'),
+(1453, 'Oregon', '2022-02-15', 3.96, 'Team BDS', '5:4', 'Ingar Longworthy'),
+(1454, 'Border', '2021-11-14', 1.24, 'M80', '3:5', 'Purcell Lenahan'),
+(1455, 'Clubhouse', '2020-08-04', 4.36, 'DarkZero Esports (DZ)', '5:3', 'Kennie Colson'),
+(1456, 'Oregon', '2019-10-04', 0.93, 'Team BDS', '3:5', 'Caterina Milksop'),
+(1457, 'Coastline', '2021-04-19', 4.42, 'MNM Gaming', '0:3', 'Markus Wailes'),
+(1458, 'Oregon', '2024-11-13', 3.56, 'FaZe Clan', '4:2', 'Sullivan Ganders'),
+(1459, 'Bank', '2022-01-08', 1.92, 'Natus Vincere (NAVI)', '3:5', 'Joanie Carruth'),
+(1460, 'Kanal', '2021-07-11', 3.77, 'KOI', '4:2', 'Clarissa Corish'),
+(1461, 'Border', '2024-02-13', 2.05, 'FaZe Clan', '2:4', 'Vittorio Lampl'),
+(1462, 'Oregon', '2022-06-09', 0.61, 'FURY', '4:5', 'Codie Whight'),
+(1463, 'Oregon', '2023-11-25', 4.1, 'FURY', '2:4', 'Garland Goundrill'),
+(1464, 'Kanal', '2021-08-27', 4.83, 'Los + oNe', '5:4', 'Kelwin O\'Garmen'),
+(1465, 'Bank', '2022-10-03', 0.8, 'Team BDS', '5:4', 'Jessy Riply'),
+(1466, 'Bank', '2024-08-04', 0.37, 'Team Liquid', '0:3', 'Lev Kilner'),
+(1467, 'ThemePark', '2023-10-28', 4.7, 'MNM Gaming', '3:5', 'Bertrand Busch'),
+(1468, 'Border', '2021-07-09', 3.26, 'FaZe Clan', '5:3', 'Binny Merriman'),
+(1469, 'Clubhouse', '2021-01-20', 4.61, 'Soniqs', '5:3', 'Diena Paunton'),
+(1470, 'Border', '2023-12-26', 0.66, 'G2 Esports', '4:5', 'Penelopa Marquot'),
+(1471, 'Outback', '2024-12-29', 2.76, 'MNM Gaming', '5:3', 'Ely O\'Lochan'),
+(1472, 'Kanal', '2022-10-06', 2.12, 'Los + oNe', '3:0', 'Tanya Lyall'),
+(1473, 'Border', '2020-09-11', 2.68, 'FURY', '0:3', 'Clifford Bumpas'),
+(1474, 'Clubhouse', '2022-03-11', 3.06, 'Oxygen Esports', '3:5', 'Gearard Borless'),
+(1475, 'Coastline', '2020-06-18', 0.53, 'Team BDS', '5:4', 'Jaymie Amort'),
+(1476, 'Coastline', '2024-06-18', 2.44, 'FaZe Clan', '5:4', 'Anni Lindborg'),
+(1477, 'Oregon', '2024-04-30', 1.44, 'SCARZ', '5:4', 'Svend Colquitt'),
+(1478, 'Kanal', '2023-10-24', 2.98, 'MNM Gaming', '5:3', 'Archibold Gianulli'),
+(1479, 'Kanal', '2024-02-16', 4.62, 'FURY', '3:5', 'Christen McNeigh'),
+(1480, 'Outback', '2023-03-28', 1.66, 'Wolves Esports', '5:4', 'Rene Perrett'),
+(1481, 'Border', '2024-08-14', 1.63, 'FURY', '4:5', 'Leann Torra'),
+(1482, 'Coastline', '2019-06-20', 4.67, 'Soniqs', '3:5', 'Nanon Echlin'),
+(1483, 'Kanal', '2023-07-14', 1.41, 'KOI', '5:4', 'Germain Eberts'),
+(1484, 'ThemePark', '2019-08-28', 0.49, 'MNM Gaming', '3:5', 'Lenard Cowle'),
+(1485, 'Oregon', '2023-02-13', 2.27, 'Virtus.pro', '4:5', 'Tammi Marney'),
+(1486, 'Bank', '2021-08-21', 1.46, 'Natus Vincere (NAVI)', '5:4', 'Aurelie Mapis'),
+(1487, 'Coastline', '2020-01-06', 4.83, 'Dplus', '5:4', 'Murielle Schultz'),
+(1488, 'Clubhouse', '2020-07-05', 3.92, 'Virtus.pro', '3:5', 'Bail Smithers'),
+(1489, 'Border', '2021-09-22', 4.55, 'w7m esports', '4:5', 'Hendrik Rottger'),
+(1490, 'Oregon', '2022-04-04', 4.65, 'Virtus.pro', '0:3', 'Mona Broader'),
+(1491, 'ThemePark', '2020-09-20', 4.49, 'FURY', '4:2', 'Elnore Schurig'),
+(1492, 'Outback', '2021-04-20', 1.22, 'KOI', '3:5', 'Ninetta Dewane'),
+(1493, 'Bank', '2021-01-23', 2.57, 'Team Liquid', '3:5', 'Guinna Mingardo'),
+(1494, 'Border', '2023-04-18', 4.67, 'Team BDS', '3:0', 'Michal Hollidge'),
+(1495, 'Clubhouse', '2020-10-19', 1.02, 'w7m esports', '5:4', 'Tabbie Duggary'),
+(1496, 'Border', '2019-07-18', 2.8, 'Virtus.pro', '3:0', 'Cacilia Swin'),
+(1497, 'Border', '2024-05-24', 2.85, 'G2 Esports', '3:5', 'Kennith Bellow'),
+(1498, 'ThemePark', '2020-06-12', 1.58, 'Elevate', '4:5', 'Bendite Clynter'),
+(1499, 'Outback', '2024-03-28', 0.45, 'G2 Esports', '2:4', 'Josefa Gooderridge'),
+(1500, 'Coastline', '2025-01-30', 1.1, 'Team Liquid', '4:5', 'Barret Kohtler'),
+(1501, 'Oregon', '2025-01-16', 1.17, 'SCARZ', '5:3', 'Cyrill Allsobrook'),
+(1502, 'ThemePark', '2020-04-30', 3.78, 'Spacestation Gaming (SSG)', '3:0', 'Leia Carratt'),
+(1503, 'Border', '2019-07-23', 2.74, 'Dplus', '5:3', 'Mallorie Van Hault'),
+(1504, 'ThemePark', '2020-06-08', 2.83, 'DarkZero Esports (DZ)', '3:5', 'Barbara Karadzas'),
+(1505, 'Coastline', '2022-09-13', 1.64, 'Virtus.pro', '2:4', 'Forster Tunnadine'),
+(1506, 'Oregon', '2022-01-21', 3.63, 'DarkZero Esports (DZ)', '3:0', 'Gerek Goodlake'),
+(1507, 'Kanal', '2020-08-04', 2.49, 'Soniqs', '0:3', 'Barnaby Linthead'),
+(1508, 'Clubhouse', '2020-01-01', 0.4, 'Wolves Esports', '5:4', 'Carine Brandone'),
+(1509, 'Bank', '2022-02-04', 4.68, 'Spacestation Gaming (SSG)', '2:4', 'Simonne Odby'),
+(1510, 'Oregon', '2024-03-31', 0.34, 'Team Liquid', '0:3', 'Mattie MacMakin'),
+(1511, 'Kanal', '2022-08-04', 3.91, 'Soniqs', '4:2', 'Ragnar Amberg'),
+(1512, 'Outback', '2024-10-10', 1.41, 'Virtus.pro', '5:3', 'Patricio Sloat'),
+(1513, 'Bank', '2023-03-28', 4.63, 'Team Liquid', '3:5', 'Nanni Spolton'),
+(1514, 'Clubhouse', '2022-05-26', 1.86, 'FURY', '3:0', 'Rudyard Riddock'),
+(1515, 'Bank', '2023-05-29', 4.58, 'Natus Vincere (NAVI)', '4:2', 'Moore Comoletti'),
+(1516, 'ThemePark', '2022-10-04', 2.79, 'Dplus', '5:3', 'Lucais Olligan'),
+(1517, 'ThemePark', '2019-06-29', 0.8, 'G2 Esports', '4:5', 'Dag Martinello'),
+(1518, 'ThemePark', '2022-04-05', 4.49, 'w7m esports', '5:3', 'Emmeline Stainson'),
+(1519, 'ThemePark', '2024-07-24', 3.63, 'Dplus', '5:3', 'Duncan Jessard'),
+(1520, 'Coastline', '2023-08-21', 3.81, 'FaZe Clan', '4:5', 'Terri-jo Alishoner'),
+(1521, 'Bank', '2024-02-11', 3.18, 'Los + oNe', '5:3', 'Teodoor Stener'),
+(1522, 'Border', '2022-07-15', 3.6, 'Team BDS', '0:3', 'Torrin Chidlow'),
+(1523, 'Oregon', '2020-09-10', 2.54, 'Soniqs', '5:3', 'Kathe Chadbourne'),
+(1524, 'Clubhouse', '2021-12-04', 3.29, 'Natus Vincere (NAVI)', '5:3', 'Kev McCutcheon'),
+(1525, 'Bank', '2025-02-23', 3.3, 'Los + oNe', '4:5', 'Abrahan Frederick'),
+(1526, 'Oregon', '2020-08-05', 1.86, 'SCARZ', '0:3', 'Farlie Polye'),
+(1527, 'Outback', '2020-07-12', 1.61, 'Soniqs', '5:4', 'Caesar Boxall'),
+(1528, 'Border', '2024-09-27', 4.91, 'Dplus', '4:2', 'Nil Plaskitt'),
+(1529, 'Kanal', '2023-09-11', 1.46, 'FaZe Clan', '5:4', 'Benedikt MacKaig'),
+(1530, 'Border', '2024-04-05', 4.91, 'FURIA Esports', '4:5', 'Rowe Jaulmes'),
+(1531, 'Kanal', '2022-01-03', 3.04, 'Oxygen Esports', '4:5', 'Earle Lippett'),
+(1532, 'Coastline', '2022-05-28', 3.99, 'Los + oNe', '3:0', 'Astra Huyhton'),
+(1533, 'Coastline', '2024-11-30', 1.29, 'FaZe Clan', '3:0', 'Karita Scarlan'),
+(1534, 'Border', '2020-07-11', 3.48, 'Team BDS', '5:3', 'Jobi Bondesen'),
+(1535, 'Coastline', '2020-02-25', 4.59, 'Los + oNe', '4:5', 'Erich Roston'),
+(1536, 'Outback', '2025-03-08', 3.06, 'DarkZero Esports (DZ)', '3:5', 'Kirby Guntrip'),
+(1537, 'Oregon', '2022-02-15', 2.36, 'Los + oNe', '2:4', 'Robby Firman'),
+(1538, 'Border', '2022-03-12', 3.75, 'FaZe Clan', '5:3', 'Benedick Cuxon'),
+(1539, 'Bank', '2022-06-05', 1.24, 'FURIA Esports', '3:5', 'Ilaire Kerans'),
+(1540, 'Bank', '2023-12-20', 0.21, 'Wolves Esports', '3:0', 'Ernaline Crampsey'),
+(1541, 'Bank', '2019-09-26', 1.53, 'M80', '2:4', 'Bastian Kinghorne'),
+(1542, 'Clubhouse', '2022-02-28', 0.86, 'Spacestation Gaming (SSG)', '0:3', 'Godfree Farrall'),
+(1543, 'Clubhouse', '2021-07-18', 2.09, 'Elevate', '3:0', 'Krishna Jennick'),
+(1544, 'Border', '2021-11-09', 4.1, 'SCARZ', '4:2', 'Tania MacNeilly'),
+(1545, 'Bank', '2021-11-18', 2.59, 'Team Liquid', '3:0', 'Denis Marginson'),
+(1546, 'Oregon', '2024-07-07', 1.24, 'Team Liquid', '2:4', 'Bruce Bransden'),
+(1547, 'Kanal', '2022-05-31', 1.04, 'MNM Gaming', '2:4', 'Sarita Minger'),
+(1548, 'Clubhouse', '2022-04-27', 0.6, 'DarkZero Esports (DZ)', '4:2', 'Yvon Lumb'),
+(1549, 'Kanal', '2023-10-03', 1.11, 'DarkZero Esports (DZ)', '3:0', 'Kat Decreuze'),
+(1550, 'Oregon', '2022-11-24', 0.46, 'Oxygen Esports', '4:2', 'Cazzie Scurlock'),
+(1551, 'Kanal', '2024-04-05', 1.21, 'Team BDS', '0:3', 'Susanne Lewsy'),
+(1552, 'ThemePark', '2022-07-03', 2.11, 'Team Liquid', '0:3', 'Morna Benham'),
+(1553, 'ThemePark', '2024-01-09', 2.1, 'Spacestation Gaming (SSG)', '4:5', 'Hestia Ennor'),
+(1554, 'Border', '2021-12-16', 3.12, 'Spacestation Gaming (SSG)', '4:2', 'Ham Durno'),
+(1555, 'ThemePark', '2021-05-18', 3.04, 'M80', '0:3', 'Bil Sharratt'),
+(1556, 'ThemePark', '2020-09-08', 1.09, 'FURY', '3:5', 'Lucais Slucock'),
+(1557, 'Bank', '2023-04-19', 0.98, 'Team Liquid', '5:4', 'Vincenz Eccleston'),
+(1558, 'Bank', '2023-09-20', 2.8, 'DarkZero Esports (DZ)', '3:5', 'Martino Ilyinykh'),
+(1559, 'Oregon', '2023-06-08', 0.37, 'G2 Esports', '5:3', 'Merrily Prestney'),
+(1560, 'ThemePark', '2023-09-14', 0.74, 'MNM Gaming', '0:3', 'Ezmeralda Matuszyk'),
+(1561, 'Coastline', '2022-03-18', 1.98, 'Oxygen Esports', '5:3', 'Phoebe Amorts'),
+(1562, 'Bank', '2023-01-13', 4.98, 'FURY', '5:3', 'Wren Noseworthy'),
+(1563, 'ThemePark', '2021-06-05', 0.56, 'G2 Esports', '5:4', 'Harriet Sayward'),
+(1564, 'ThemePark', '2022-03-31', 0.07, 'Team BDS', '2:4', 'Aurea Pheasant'),
+(1565, 'Kanal', '2019-08-30', 3.57, 'DarkZero Esports (DZ)', '4:2', 'Debbie Dodd'),
+(1566, 'Outback', '2022-11-08', 4.14, 'KOI', '3:0', 'Ilse Vlasin'),
+(1567, 'Clubhouse', '2021-07-02', 0.06, 'FURIA Esports', '4:5', 'Morry Karmel'),
+(1568, 'Oregon', '2020-04-29', 4.05, 'FURIA Esports', '4:5', 'Alric Scherer'),
+(1569, 'Oregon', '2022-09-07', 2.52, 'w7m esports', '2:4', 'Conan Poad'),
+(1570, 'Clubhouse', '2019-10-17', 1.6, 'Dplus', '3:0', 'Josephina Quincey'),
+(1571, 'Bank', '2020-03-13', 3.86, 'FURY', '2:4', 'Dasie Norheny'),
+(1572, 'ThemePark', '2024-10-09', 0.98, 'FaZe Clan', '5:3', 'Dorian Galliver'),
+(1573, 'Oregon', '2021-03-26', 2.11, 'SCARZ', '4:5', 'Barbara McGriele'),
+(1574, 'Border', '2021-05-18', 0.6, 'SCARZ', '3:0', 'Rivalee Kedwell'),
+(1575, 'Bank', '2023-01-03', 3.52, 'FURY', '4:2', 'Virginie Arnot'),
+(1576, 'Clubhouse', '2022-10-21', 3.87, 'Soniqs', '4:2', 'Faith Brahmer'),
+(1577, 'Outback', '2020-05-03', 3.05, 'G2 Esports', '5:3', 'Allie Giller'),
+(1578, 'Clubhouse', '2022-03-22', 2.65, 'MNM Gaming', '4:2', 'Loydie Petrishchev'),
+(1579, 'Border', '2022-01-29', 0.7, 'w7m esports', '2:4', 'Antonio Harsnep'),
+(1580, 'Coastline', '2020-08-01', 3.93, 'Elevate', '4:2', 'Augustine Count'),
+(1581, 'Bank', '2022-06-23', 3.73, 'Los + oNe', '3:0', 'Weber Goss'),
+(1582, 'Outback', '2022-05-07', 0.8, 'SCARZ', '0:3', 'Meridel Prettyman'),
+(1583, 'Clubhouse', '2020-12-30', 3.08, 'Natus Vincere (NAVI)', '4:5', 'Renaldo Abthorpe'),
+(1584, 'Oregon', '2021-11-09', 0.42, 'FURIA Esports', '5:3', 'Mercedes Noweak'),
+(1585, 'Kanal', '2022-03-29', 3.88, 'DarkZero Esports (DZ)', '3:5', 'Korney Onslow'),
+(1586, 'Bank', '2022-07-31', 1.4, 'FaZe Clan', '4:5', 'Pail McGenn'),
+(1587, 'Coastline', '2022-05-05', 4.36, 'Dplus', '0:3', 'Fey Buckerfield'),
+(1588, 'Oregon', '2019-10-19', 4.95, 'Spacestation Gaming (SSG)', '5:3', 'Barbaraanne Brolan'),
+(1589, 'Bank', '2020-05-18', 2.11, 'KOI', '0:3', 'Haily Lilliman'),
+(1590, 'Kanal', '2023-05-13', 2.25, 'FURY', '4:2', 'Antony Lugden'),
+(1591, 'Oregon', '2022-11-19', 2.47, 'w7m esports', '3:5', 'Bartholomeus Copnall'),
+(1592, 'Clubhouse', '2023-07-07', 2.34, 'Soniqs', '3:5', 'Cyril Marran'),
+(1593, 'Clubhouse', '2022-10-28', 3.7, 'SCARZ', '0:3', 'Nicholle Sibbe'),
+(1594, 'Border', '2024-10-14', 2.28, 'M80', '2:4', 'Isobel Kovalski'),
+(1595, 'Kanal', '2019-08-29', 0.57, 'Wolves Esports', '5:4', 'Nettle Laroux'),
+(1596, 'Outback', '2023-04-19', 4.71, 'w7m esports', '3:0', 'Georgianna Orleton'),
+(1597, 'Clubhouse', '2025-01-03', 0.95, 'Dplus', '2:4', 'Andrea Gauson'),
+(1598, 'Coastline', '2020-06-29', 4.49, 'Virtus.pro', '0:3', 'Nert Eronie'),
+(1599, 'Clubhouse', '2024-04-13', 3.25, 'KOI', '5:3', 'Kalie Jaffray'),
+(1600, 'Clubhouse', '2020-02-19', 3.23, 'w7m esports', '4:2', 'Bee Cornau'),
+(1601, 'ThemePark', '2024-12-08', 2.07, 'FURY', '0:3', 'Ammamaria Hutchinson'),
+(1602, 'ThemePark', '2024-06-19', 3.76, 'M80', '4:2', 'Janie Barthot'),
+(1603, 'Bank', '2021-03-28', 3.94, 'Dplus', '4:5', 'Amity Meece'),
+(1604, 'Border', '2021-03-19', 1.46, 'Team Liquid', '5:4', 'Milo Mussen'),
+(1605, 'Bank', '2023-12-17', 2.9, 'Oxygen Esports', '5:3', 'Robinia Tarry'),
+(1606, 'ThemePark', '2024-04-10', 1.23, 'KOI', '4:2', 'Kellsie Deakes'),
+(1607, 'Kanal', '2023-10-02', 0.08, 'DarkZero Esports (DZ)', '5:3', 'Morgun Crowhurst'),
+(1608, 'Kanal', '2023-11-07', 4.07, 'Natus Vincere (NAVI)', '4:5', 'Alexio Levene'),
+(1609, 'Kanal', '2023-02-01', 1.42, 'Team Liquid', '2:4', 'Rozelle Tidder'),
+(1610, 'Coastline', '2022-01-09', 3.16, 'Natus Vincere (NAVI)', '5:3', 'Esdras Pimblotte'),
+(1611, 'ThemePark', '2022-11-13', 4.16, 'MNM Gaming', '2:4', 'Kahaleel Meneur'),
+(1612, 'ThemePark', '2022-11-15', 4.46, 'Natus Vincere (NAVI)', '3:5', 'Eddie O\'Quin'),
+(1613, 'ThemePark', '2020-08-11', 0.64, 'SCARZ', '5:4', 'Druci Fechnie'),
+(1614, 'Outback', '2019-06-23', 4.75, 'M80', '5:3', 'Claudio Estick'),
+(1615, 'Coastline', '2023-04-07', 2.97, 'Los + oNe', '5:3', 'Martin Inkster'),
+(1616, 'Kanal', '2023-03-25', 0.38, 'FaZe Clan', '5:3', 'Butch Grazier'),
+(1617, 'Clubhouse', '2020-09-17', 1.98, 'KOI', '5:4', 'Ag Cockitt'),
+(1618, 'Border', '2022-02-07', 2.56, 'M80', '5:4', 'Fraze Bowness'),
+(1619, 'Bank', '2024-02-20', 3.66, 'DarkZero Esports (DZ)', '5:4', 'Kamila Bellee'),
+(1620, 'Outback', '2019-07-26', 1.84, 'KOI', '4:5', 'Kinny Carlisso'),
+(1621, 'Bank', '2024-04-23', 2.82, 'SCARZ', '5:4', 'Erda Sansam'),
+(1622, 'Border', '2019-07-24', 1.73, 'M80', '5:3', 'Christos Pennick'),
+(1623, 'Bank', '2022-05-13', 0.22, 'FURIA Esports', '2:4', 'Solomon Blayd'),
+(1624, 'Border', '2021-04-29', 2.8, 'DarkZero Esports (DZ)', '3:0', 'Shaun Avraam'),
+(1625, 'Oregon', '2024-06-25', 1.89, 'Soniqs', '0:3', 'Dare Wortley'),
+(1626, 'Coastline', '2025-01-23', 1.64, 'w7m esports', '3:5', 'Kamillah Bagehot'),
+(1627, 'Clubhouse', '2021-03-19', 2.07, 'FURIA Esports', '4:5', 'Aleda Constantine'),
+(1628, 'Clubhouse', '2022-08-15', 0.44, 'Wolves Esports', '5:4', 'Derron Dufty'),
+(1629, 'Bank', '2019-05-02', 0.86, 'DarkZero Esports (DZ)', '3:5', 'Rubin Picton'),
+(1630, 'Border', '2019-12-27', 1.68, 'Oxygen Esports', '0:3', 'Andris Hessentaler'),
+(1631, 'Outback', '2021-01-15', 1.87, 'w7m esports', '5:4', 'Jodie Kirstein'),
+(1632, 'Outback', '2024-02-04', 2.8, 'Los + oNe', '4:2', 'Edita Mellodey'),
+(1633, 'Kanal', '2023-03-16', 3.26, 'Team Liquid', '0:3', 'Clarisse Quin'),
+(1634, 'ThemePark', '2022-06-11', 4.74, 'w7m esports', '3:0', 'Curry Heintsch'),
+(1635, 'Coastline', '2020-08-07', 1.04, 'MNM Gaming', '2:4', 'Mariam Westby'),
+(1636, 'ThemePark', '2022-10-12', 4.62, 'FaZe Clan', '5:4', 'Tommie Denniss'),
+(1637, 'Border', '2024-12-18', 0.87, 'Dplus', '3:5', 'Kalina Marle'),
+(1638, 'Border', '2021-02-02', 1.37, 'w7m esports', '2:4', 'Carita Fedder'),
+(1639, 'Clubhouse', '2025-01-15', 1.17, 'w7m esports', '0:3', 'Cahra Finnie'),
+(1640, 'Kanal', '2021-01-09', 2.04, 'Dplus', '3:0', 'Ingrim Hukins'),
+(1641, 'Outback', '2022-10-09', 3.38, 'Los + oNe', '0:3', 'Leupold Lowfill'),
+(1642, 'Clubhouse', '2024-11-01', 4.39, 'Los + oNe', '0:3', 'Nissie Brisker'),
+(1643, 'Coastline', '2020-05-19', 0.94, 'Oxygen Esports', '0:3', 'Toni Fursey'),
+(1644, 'Oregon', '2020-10-12', 3.2, 'Natus Vincere (NAVI)', '3:0', 'Gypsy Saltern'),
+(1645, 'Kanal', '2024-01-04', 0.38, 'w7m esports', '3:0', 'Alastair Ladel'),
+(1646, 'Kanal', '2023-12-12', 3.13, 'Virtus.pro', '5:4', 'Sinclair Dibben'),
+(1647, 'Coastline', '2024-01-21', 3.12, 'KOI', '5:3', 'Jermaine Pietzker'),
+(1648, 'Oregon', '2023-05-09', 4.09, 'Natus Vincere (NAVI)', '3:0', 'Darn Weth'),
+(1649, 'Kanal', '2024-10-13', 3.93, 'Spacestation Gaming (SSG)', '0:3', 'Ruth Sterland'),
+(1650, 'Clubhouse', '2021-04-16', 3.49, 'Elevate', '2:4', 'Ainsley Tabourel'),
+(1651, 'Clubhouse', '2022-06-01', 4, 'FaZe Clan', '0:3', 'Bernardina Fitzsymonds'),
+(1652, 'Outback', '2021-10-22', 1.19, 'SCARZ', '5:4', 'Marlow Temlett'),
+(1653, 'Oregon', '2024-11-07', 0.21, 'Oxygen Esports', '4:2', 'Yardley Moden'),
+(1654, 'Oregon', '2020-02-17', 3.1, 'DarkZero Esports (DZ)', '5:3', 'Darcee Webster'),
+(1655, 'Outback', '2025-01-03', 0.94, 'M80', '0:3', 'Susanetta Brewse'),
+(1656, 'Outback', '2020-12-27', 0.12, 'DarkZero Esports (DZ)', '5:4', 'Merry Fowden'),
+(1657, 'Clubhouse', '2023-09-09', 3.24, 'Oxygen Esports', '3:0', 'Theo Woodhams'),
+(1658, 'ThemePark', '2021-02-12', 4.77, 'KOI', '3:0', 'Maighdiln Lethcoe'),
+(1659, 'Outback', '2021-10-26', 1.92, 'FURY', '4:2', 'Tommy Breeze'),
+(1660, 'Oregon', '2020-05-11', 4.92, 'FURIA Esports', '5:3', 'Garreth Furby'),
+(1661, 'ThemePark', '2023-01-02', 3.91, 'DarkZero Esports (DZ)', '4:5', 'Zora MacKenney'),
+(1662, 'Clubhouse', '2020-10-24', 3.22, 'SCARZ', '5:3', 'Perri Robker'),
+(1663, 'Kanal', '2023-04-14', 0.81, 'FURIA Esports', '2:4', 'Keith O\'Hegertie'),
+(1664, 'Outback', '2019-06-04', 4, 'Team Liquid', '5:4', 'Cornie Lorenzo'),
+(1665, 'Bank', '2020-06-16', 4.65, 'Soniqs', '5:3', 'Gerri Measures'),
+(1666, 'Border', '2025-01-02', 0.01, 'FURY', '5:4', 'Bernardo Lorraway'),
+(1667, 'Border', '2023-10-29', 3.25, 'Wolves Esports', '0:3', 'Haslett Jean'),
+(1668, 'Coastline', '2022-05-08', 3.51, 'Natus Vincere (NAVI)', '3:5', 'Gris Shankster'),
+(1669, 'Kanal', '2022-07-07', 2.43, 'M80', '5:4', 'Norris Chamberlaine'),
+(1670, 'Outback', '2021-06-06', 3.29, 'FaZe Clan', '4:5', 'Nolana Durrell'),
+(1671, 'Border', '2020-10-30', 3.52, 'Dplus', '2:4', 'Eleanore Lewtey'),
+(1672, 'Bank', '2024-10-03', 2.59, 'Oxygen Esports', '5:4', 'Wylma Becaris'),
+(1673, 'Coastline', '2022-10-03', 1.78, 'Dplus', '5:4', 'Ricardo Bruffell'),
+(1674, 'Border', '2024-07-05', 1.89, 'w7m esports', '5:4', 'Giusto Van Dijk'),
+(1675, 'ThemePark', '2021-04-29', 4.11, 'Virtus.pro', '3:5', 'Krista Prujean'),
+(1676, 'Clubhouse', '2024-06-30', 0.49, 'DarkZero Esports (DZ)', '3:5', 'Madge Dennington'),
+(1677, 'Kanal', '2023-11-07', 4.6, 'Oxygen Esports', '4:5', 'Clayton Claffey'),
+(1678, 'ThemePark', '2020-07-10', 0.85, 'MNM Gaming', '5:3', 'Gunar Vedntyev'),
+(1679, 'Kanal', '2021-08-01', 3.95, 'Wolves Esports', '4:5', 'Dominic Drioli'),
+(1680, 'Bank', '2019-05-26', 1, 'Dplus', '5:3', 'Concordia Straker'),
+(1681, 'ThemePark', '2020-08-27', 0.15, 'Soniqs', '3:0', 'Mathias Dodridge'),
+(1682, 'Kanal', '2024-12-05', 2.52, 'Soniqs', '4:5', 'Becca Lauritsen'),
+(1683, 'Border', '2021-07-14', 3.46, 'DarkZero Esports (DZ)', '5:3', 'Welby Hitzke'),
+(1684, 'Border', '2020-07-27', 4.04, 'Soniqs', '5:3', 'Raimund Wank'),
+(1685, 'Coastline', '2022-04-26', 2.82, 'Wolves Esports', '5:4', 'Barret Rumbold'),
+(1686, 'Kanal', '2020-03-02', 4.78, 'Wolves Esports', '3:5', 'Aldwin Stratton'),
+(1687, 'Border', '2021-07-11', 1.26, 'MNM Gaming', '4:2', 'Gard Mullis'),
+(1688, 'Coastline', '2020-11-26', 4.67, 'Elevate', '3:5', 'Jenda Ffrench'),
+(1689, 'Outback', '2025-04-24', 1.27, 'KOI', '5:3', 'Georgeanne Brighty'),
+(1690, 'Coastline', '2024-05-16', 0.59, 'Wolves Esports', '4:5', 'Daisy Joutapaitis'),
+(1691, 'Bank', '2023-01-24', 1.67, 'Dplus', '4:5', 'Inger Schiell'),
+(1692, 'Coastline', '2024-05-23', 0.52, 'Virtus.pro', '3:0', 'Joan Pervoe'),
+(1693, 'Coastline', '2021-10-18', 4.42, 'FURY', '4:2', 'Janifer Coneron'),
+(1694, 'Outback', '2025-01-30', 1.13, 'Team Liquid', '5:4', 'Grover Gowan'),
+(1695, 'Kanal', '2022-04-07', 4.7, 'Los + oNe', '5:3', 'Rowen Ber'),
+(1696, 'Coastline', '2021-08-18', 4.76, 'SCARZ', '5:3', 'Kelvin Tretter'),
+(1697, 'Oregon', '2024-03-31', 2.62, 'G2 Esports', '5:3', 'Shelba Shardlow'),
+(1698, 'ThemePark', '2024-06-13', 0.98, 'FURIA Esports', '2:4', 'Koenraad Sandwith'),
+(1699, 'Coastline', '2019-09-13', 3.34, 'SCARZ', '4:5', 'Eddy Worsalls'),
+(1700, 'Outback', '2021-10-07', 1.94, 'Natus Vincere (NAVI)', '5:4', 'Ginny Nieass'),
+(1701, 'Border', '2024-10-03', 1.65, 'Team BDS', '5:3', 'Briggs Bertouloume'),
+(1702, 'Border', '2022-08-19', 3.47, 'SCARZ', '3:0', 'Rufus Studders'),
+(1703, 'Oregon', '2023-08-19', 1.53, 'KOI', '5:3', 'Kamilah Ickovicz'),
+(1704, 'Oregon', '2021-01-12', 2.42, 'w7m esports', '4:5', 'Donia Burlay'),
+(1705, 'Bank', '2022-10-19', 3.56, 'Soniqs', '3:0', 'Jeanie O\'Henecan'),
+(1706, 'Outback', '2021-08-15', 1.65, 'Oxygen Esports', '4:2', 'Irina Cannam'),
+(1707, 'Kanal', '2024-12-08', 0.05, 'Wolves Esports', '4:2', 'Jecho Francecione'),
+(1708, 'Outback', '2024-06-06', 0.09, 'Los + oNe', '0:3', 'Ivor Tunnoch'),
+(1709, 'Kanal', '2024-10-03', 2.89, 'FURIA Esports', '5:4', 'Sharai Vials'),
+(1710, 'Coastline', '2024-02-18', 0.73, 'Natus Vincere (NAVI)', '5:4', 'John Seine'),
+(1711, 'Clubhouse', '2023-10-15', 3.71, 'Los + oNe', '2:4', 'Francois Follet'),
+(1712, 'Outback', '2022-09-07', 0.23, 'M80', '4:5', 'Marita Blucher'),
+(1713, 'Border', '2019-08-11', 0.89, 'MNM Gaming', '5:4', 'Zorana D\'Antonio'),
+(1714, 'Coastline', '2022-09-04', 1.57, 'Elevate', '5:4', 'Farlee Yurov'),
+(1715, 'Outback', '2022-04-23', 4.57, 'Team BDS', '4:2', 'Casper Junes'),
+(1716, 'Coastline', '2021-01-10', 3.82, 'FURY', '3:5', 'Roze Veelers'),
+(1717, 'Border', '2022-03-01', 3.23, 'FaZe Clan', '0:3', 'Kayne Lindenbaum'),
+(1718, 'Outback', '2025-04-15', 1.59, 'SCARZ', '3:0', 'Lindsy Gwin'),
+(1719, 'Coastline', '2023-08-29', 0.91, 'Soniqs', '5:3', 'Taite Paliser'),
+(1720, 'Border', '2022-01-04', 2.64, 'FaZe Clan', '3:5', 'Danny Sollime'),
+(1721, 'Kanal', '2021-06-17', 4.4, 'Virtus.pro', '3:5', 'Kenon Whapples'),
+(1722, 'Coastline', '2022-03-25', 4.39, 'Team BDS', '4:2', 'Towney Duckerin'),
+(1723, 'Kanal', '2019-12-09', 3.53, 'Wolves Esports', '5:3', 'Bordy Tarrant'),
+(1724, 'ThemePark', '2021-02-04', 4.2, 'KOI', '5:3', 'Frans Draysey'),
+(1725, 'Coastline', '2024-09-21', 2.99, 'w7m esports', '5:3', 'Rafferty Waistell'),
+(1726, 'Outback', '2023-09-10', 0.95, 'FURIA Esports', '0:3', 'Frasco Christauffour'),
+(1727, 'Oregon', '2020-10-17', 4.82, 'Team Liquid', '0:3', 'Georgeanne McShirrie'),
+(1728, 'Kanal', '2023-06-20', 2.47, 'Wolves Esports', '4:5', 'Aloin Godbehere'),
+(1729, 'Oregon', '2024-03-05', 1.03, 'Oxygen Esports', '4:5', 'Aurore Masters'),
+(1730, 'ThemePark', '2021-11-30', 2.82, 'Team BDS', '4:5', 'Hendrik Whitebread'),
+(1731, 'Outback', '2023-07-01', 0.46, 'w7m esports', '3:0', 'Adrian Toderini'),
+(1732, 'Coastline', '2019-12-19', 1.07, 'SCARZ', '3:5', 'Massimiliano Dawks'),
+(1733, 'Kanal', '2019-05-03', 0.65, 'Team Liquid', '3:5', 'Michel Utley'),
+(1734, 'Bank', '2022-11-16', 2.85, 'FaZe Clan', '4:2', 'Stefano Woller'),
+(1735, 'ThemePark', '2021-03-12', 3.64, 'Dplus', '4:5', 'Kaycee Avesque'),
+(1736, 'Bank', '2023-03-16', 2.93, 'DarkZero Esports (DZ)', '0:3', 'Shayla Faircliff'),
+(1737, 'Outback', '2022-07-31', 3.82, 'FURIA Esports', '4:2', 'Winifield Click'),
+(1738, 'Clubhouse', '2024-05-01', 1.51, 'Team BDS', '3:0', 'Harold O\'Curran'),
+(1739, 'Clubhouse', '2021-03-03', 2.16, 'Elevate', '4:5', 'Darla Dilrew'),
+(1740, 'Coastline', '2019-08-02', 4.08, 'Spacestation Gaming (SSG)', '3:0', 'Kellsie MacAlpin'),
+(1741, 'Oregon', '2022-11-17', 2.08, 'FaZe Clan', '5:3', 'Dorrie Gockelen'),
+(1742, 'Clubhouse', '2021-02-25', 3.63, 'Wolves Esports', '5:4', 'Hyacinth Drinan'),
+(1743, 'Coastline', '2023-03-29', 2.21, 'Dplus', '5:4', 'Claresta Conway'),
+(1744, 'Coastline', '2021-10-30', 3.03, 'w7m esports', '2:4', 'Griselda Maharey'),
+(1745, 'Outback', '2020-05-06', 1.46, 'M80', '5:4', 'Huberto Sarfas'),
+(1746, 'ThemePark', '2020-10-13', 0.09, 'Soniqs', '2:4', 'Malchy Mowen'),
+(1747, 'Coastline', '2020-04-01', 2.57, 'Team BDS', '2:4', 'Corney Swatten'),
+(1748, 'Clubhouse', '2022-10-27', 0.02, 'Los + oNe', '5:3', 'Dugald Everiss'),
+(1749, 'ThemePark', '2024-02-23', 4.09, 'Natus Vincere (NAVI)', '2:4', 'Heindrick Pervew'),
+(1750, 'Kanal', '2020-02-07', 3.83, 'G2 Esports', '5:4', 'Adria Gatheral'),
+(1751, 'Oregon', '2024-02-20', 3.23, 'DarkZero Esports (DZ)', '5:4', 'Thurstan Moran'),
+(1752, 'Border', '2020-08-17', 2.02, 'G2 Esports', '3:0', 'Wren Trimmill'),
+(1753, 'Kanal', '2020-03-23', 1.24, 'Oxygen Esports', '4:2', 'Heidie Phlipon'),
+(1754, 'Outback', '2023-09-26', 3.82, 'Soniqs', '5:3', 'Claudina Nornasell'),
+(1755, 'Oregon', '2022-04-06', 1.16, 'FURY', '4:2', 'Shannon Biskup'),
+(1756, 'Bank', '2024-03-03', 3.4, 'Los + oNe', '3:5', 'Ginny Hapke'),
+(1757, 'Coastline', '2020-02-14', 0.58, 'G2 Esports', '5:4', 'Fons Scallan'),
+(1758, 'Oregon', '2024-03-04', 3.19, 'Team BDS', '5:4', 'Catlaina Howford'),
+(1759, 'ThemePark', '2021-12-24', 3.54, 'Wolves Esports', '3:5', 'Sheffie Stryde'),
+(1760, 'Bank', '2023-10-31', 1.28, 'DarkZero Esports (DZ)', '5:4', 'Miguel Nichol'),
+(1761, 'Kanal', '2020-04-06', 3.85, 'Natus Vincere (NAVI)', '5:4', 'Evelina Spikins'),
+(1762, 'Kanal', '2024-11-20', 4.95, 'MNM Gaming', '3:0', 'Gibbie Di Boldi'),
+(1763, 'Clubhouse', '2022-03-27', 4.79, 'FURIA Esports', '0:3', 'Desi Olman'),
+(1764, 'Border', '2024-09-20', 4.45, 'FURY', '5:4', 'Joanie Caroll'),
+(1765, 'Bank', '2023-06-03', 1.82, 'M80', '3:5', 'Clareta Ilden'),
+(1766, 'Clubhouse', '2023-08-01', 2.19, 'DarkZero Esports (DZ)', '4:5', 'Heloise Doers'),
+(1767, 'Bank', '2020-12-14', 2.31, 'Natus Vincere (NAVI)', '2:4', 'Jerad Murdy'),
+(1768, 'Border', '2021-10-22', 1.35, 'Natus Vincere (NAVI)', '4:5', 'Timotheus Phillipp'),
+(1769, 'Kanal', '2023-09-23', 3.88, 'w7m esports', '5:3', 'Margarete Gascoigne'),
+(1770, 'Outback', '2022-01-19', 0.45, 'Spacestation Gaming (SSG)', '3:5', 'Lane Bebbell'),
+(1771, 'Outback', '2022-07-02', 4.68, 'KOI', '2:4', 'Gavra Wackley'),
+(1772, 'Clubhouse', '2021-12-30', 4.46, 'Elevate', '5:3', 'Jimmie Wallace'),
+(1773, 'Bank', '2023-02-13', 4.06, 'Natus Vincere (NAVI)', '0:3', 'Janet Bowley'),
+(1774, 'Oregon', '2020-08-17', 0.85, 'MNM Gaming', '4:2', 'Marylynne Hutchin'),
+(1775, 'Clubhouse', '2020-04-04', 3.19, 'M80', '2:4', 'Dimitri Turland'),
+(1776, 'ThemePark', '2024-10-17', 4.3, 'DarkZero Esports (DZ)', '4:5', 'Catha Rabat'),
+(1777, 'Coastline', '2022-12-27', 1.18, 'Natus Vincere (NAVI)', '0:3', 'Karole Yannoni'),
+(1778, 'Bank', '2024-11-16', 3.2, 'Wolves Esports', '5:3', 'Brent Skelly'),
+(1779, 'Coastline', '2020-08-29', 0.44, 'G2 Esports', '5:3', 'Gretna Juorio'),
+(1780, 'Border', '2025-03-05', 0.59, 'Oxygen Esports', '3:5', 'Van Bellworthy'),
+(1781, 'Bank', '2020-06-01', 1.76, 'Virtus.pro', '0:3', 'Hoebart Musla'),
+(1782, 'Kanal', '2024-10-14', 4.6, 'FURIA Esports', '3:0', 'Tiffany Dabourne'),
+(1783, 'ThemePark', '2024-09-24', 2.32, 'M80', '5:3', 'Jarrad Fuzzard'),
+(1784, 'Coastline', '2024-11-12', 2.91, 'FURIA Esports', '4:2', 'Judie Vowles'),
+(1785, 'Clubhouse', '2021-07-09', 4.78, 'Wolves Esports', '3:5', 'Parnell Hilhouse'),
+(1786, 'Coastline', '2021-08-30', 3.06, 'FURY', '4:5', 'Jesselyn McMurraya'),
+(1787, 'ThemePark', '2020-12-28', 0.39, 'Los + oNe', '3:5', 'Duke Tattersall'),
+(1788, 'Oregon', '2020-08-27', 1.43, 'SCARZ', '3:0', 'Bianka Blasl'),
+(1789, 'Bank', '2019-11-09', 0.4, 'Oxygen Esports', '4:2', 'Maurits Keyson'),
+(1790, 'Border', '2025-03-12', 2.95, 'Team Liquid', '2:4', 'Candie Ahmad'),
+(1791, 'Outback', '2021-08-08', 0.14, 'M80', '3:5', 'Bab Fobidge'),
+(1792, 'Outback', '2019-10-18', 4.47, 'FaZe Clan', '4:5', 'Erwin Snowsill'),
+(1793, 'Outback', '2024-07-26', 4.06, 'Oxygen Esports', '5:3', 'Camella Trahair'),
+(1794, 'ThemePark', '2023-07-22', 2.61, 'FURIA Esports', '4:2', 'Melantha Murrison'),
+(1795, 'Kanal', '2020-03-04', 1.82, 'Team BDS', '0:3', 'Sutherlan Wharin'),
+(1796, 'Bank', '2022-06-25', 1.68, 'Oxygen Esports', '3:0', 'Leia McBay'),
+(1797, 'Kanal', '2021-07-12', 2.92, 'Team BDS', '4:5', 'Noel Nutbrown'),
+(1798, 'Clubhouse', '2021-02-05', 4.08, 'Soniqs', '2:4', 'Kayle Iban'),
+(1799, 'Border', '2021-07-21', 0.61, 'Los + oNe', '4:5', 'Farra Gudd'),
+(1800, 'Coastline', '2021-05-03', 1.55, 'Virtus.pro', '3:5', 'Gun Whitfield'),
+(1801, 'Border', '2023-06-09', 2.64, 'Elevate', '3:0', 'Tabbie Goldspink'),
+(1802, 'Coastline', '2021-10-18', 4.18, 'Wolves Esports', '5:4', 'Glyn Daughtry'),
+(1803, 'ThemePark', '2021-08-19', 1.31, 'Team BDS', '4:2', 'Delora Olivari'),
+(1804, 'Border', '2024-10-02', 0.64, 'Oxygen Esports', '3:5', 'Kristoforo Petrello'),
+(1805, 'Kanal', '2023-03-01', 3.89, 'FaZe Clan', '2:4', 'Ruperto Manus'),
+(1806, 'Bank', '2023-02-05', 2.3, 'M80', '3:0', 'Rozanne Martinets'),
+(1807, 'Kanal', '2021-12-16', 3.08, 'Spacestation Gaming (SSG)', '3:0', 'Johnette Dimeloe'),
+(1808, 'ThemePark', '2023-11-22', 0.3, 'Wolves Esports', '5:4', 'Milo Lawton'),
+(1809, 'Kanal', '2021-04-18', 0.23, 'DarkZero Esports (DZ)', '5:3', 'Cosette Folke'),
+(1810, 'Kanal', '2021-02-27', 3.16, 'Spacestation Gaming (SSG)', '4:2', 'Kippie Shute'),
+(1811, 'Bank', '2023-10-27', 4.76, 'w7m esports', '3:5', 'Loralyn MacAllister'),
+(1812, 'Outback', '2022-10-17', 4.64, 'M80', '5:3', 'Bern Listone'),
+(1813, 'Kanal', '2019-11-02', 4.52, 'KOI', '0:3', 'Sharia Cochran'),
+(1814, 'Border', '2024-07-01', 2.77, 'w7m esports', '4:5', 'Milena Dumbelton'),
+(1815, 'Clubhouse', '2020-02-15', 0.66, 'Soniqs', '3:0', 'Doris Donisthorpe'),
+(1816, 'Border', '2023-07-22', 1.66, 'Natus Vincere (NAVI)', '5:4', 'Normie Domeney'),
+(1817, 'Border', '2021-07-30', 4.41, 'M80', '4:5', 'Valli Padwick'),
+(1818, 'Kanal', '2021-12-04', 4.56, 'Elevate', '5:3', 'Ervin Christoffe'),
+(1819, 'Border', '2022-12-05', 2.39, 'Elevate', '3:5', 'Yancy Mathelin'),
+(1820, 'Outback', '2023-07-21', 0.57, 'G2 Esports', '5:3', 'Vernice Shervington'),
+(1821, 'Outback', '2022-01-13', 4.8, 'SCARZ', '2:4', 'Winifred Peltzer'),
+(1822, 'ThemePark', '2021-04-22', 0.13, 'w7m esports', '0:3', 'Leslie Mabbett'),
+(1823, 'Outback', '2022-05-18', 1.55, 'Virtus.pro', '5:4', 'Arman Buttrey'),
+(1824, 'Coastline', '2019-09-10', 3.79, 'Spacestation Gaming (SSG)', '4:5', 'Keeley Burgwyn'),
+(1825, 'Oregon', '2022-02-07', 2.34, 'DarkZero Esports (DZ)', '5:3', 'Lanae Marryatt'),
+(1826, 'ThemePark', '2020-03-21', 3.91, 'M80', '4:5', 'Cammy Wicher'),
+(1827, 'Border', '2024-02-06', 0.11, 'DarkZero Esports (DZ)', '3:5', 'Corrinne Wasling'),
+(1828, 'ThemePark', '2021-08-15', 2.49, 'Wolves Esports', '3:5', 'Janeczka Chittleburgh'),
+(1829, 'ThemePark', '2020-11-02', 4.43, 'Team Liquid', '5:4', 'Reginauld Buyers'),
+(1830, 'Clubhouse', '2020-12-05', 1.69, 'w7m esports', '3:0', 'Georgette Trosdall'),
+(1831, 'Oregon', '2025-02-18', 3, 'Soniqs', '4:2', 'Cindee Harry'),
+(1832, 'Oregon', '2021-01-17', 2.41, 'Soniqs', '2:4', 'Clementine Raisbeck'),
+(1833, 'ThemePark', '2021-08-29', 3.42, 'FaZe Clan', '4:5', 'Creigh Chislett'),
+(1834, 'Outback', '2019-11-12', 3.06, 'MNM Gaming', '2:4', 'Ian Blundon'),
+(1835, 'Coastline', '2021-03-20', 4.75, 'Virtus.pro', '4:2', 'Rozalin Dibsdale'),
+(1836, 'Clubhouse', '2023-02-19', 0.96, 'FURIA Esports', '4:5', 'Robby Bolens'),
+(1837, 'Clubhouse', '2020-02-23', 0.96, 'KOI', '2:4', 'Naoma Ross'),
+(1838, 'Outback', '2020-10-29', 0.26, 'Los + oNe', '5:4', 'Niel Wainman'),
+(1839, 'Coastline', '2021-06-16', 3.43, 'KOI', '0:3', 'Waverly Wontner'),
+(1840, 'Border', '2020-01-27', 2.41, 'w7m esports', '4:2', 'Lurette Archell'),
+(1841, 'ThemePark', '2020-08-23', 1.08, 'w7m esports', '4:2', 'Martino Hazelgrove'),
+(1842, 'Oregon', '2025-03-08', 4.62, 'KOI', '5:4', 'Manolo Jannasch'),
+(1843, 'Clubhouse', '2022-07-21', 4.53, 'Natus Vincere (NAVI)', '4:2', 'Zacharias Derrington'),
+(1844, 'Coastline', '2024-08-24', 2.78, 'DarkZero Esports (DZ)', '4:2', 'Elspeth Bread'),
+(1845, 'Bank', '2022-09-17', 4, 'FURIA Esports', '3:5', 'Terrill Polglaze'),
+(1846, 'Bank', '2020-07-03', 0.88, 'M80', '4:5', 'Berget Betteridge'),
+(1847, 'Bank', '2021-02-22', 2.86, 'Team BDS', '2:4', 'Reinwald Pennington'),
+(1848, 'Outback', '2021-08-12', 4.11, 'G2 Esports', '4:5', 'Emeline Boultwood'),
+(1849, 'ThemePark', '2020-12-11', 2.5, 'Virtus.pro', '2:4', 'Fedora Edrich'),
+(1850, 'Kanal', '2021-02-28', 4.46, 'FaZe Clan', '5:4', 'Crystal Beevis'),
+(1851, 'Border', '2025-04-14', 3.55, 'G2 Esports', '4:5', 'Geneva Baggalley'),
+(1852, 'Border', '2022-10-22', 4.35, 'Natus Vincere (NAVI)', '3:0', 'Alvin Barnwille'),
+(1853, 'Coastline', '2024-02-26', 4.93, 'SCARZ', '0:3', 'Cecilia Clelland'),
+(1854, 'Outback', '2023-04-22', 0.74, 'Team BDS', '5:4', 'Averell Oloman'),
+(1855, 'Border', '2022-06-21', 2.18, 'G2 Esports', '0:3', 'Ruby Dyne'),
+(1856, 'Oregon', '2022-12-08', 3.71, 'KOI', '5:3', 'Nevile Parmiter'),
+(1857, 'Coastline', '2022-12-05', 1.75, 'Soniqs', '3:5', 'Brenden Spivey'),
+(1858, 'Clubhouse', '2021-10-24', 2.87, 'FURY', '4:2', 'Melamie Havile'),
+(1859, 'ThemePark', '2021-08-08', 3.13, 'Team BDS', '0:3', 'Balduin De Laci'),
+(1860, 'Outback', '2019-07-07', 1.04, 'KOI', '4:2', 'Candice Hendrick'),
+(1861, 'Bank', '2022-09-29', 0.99, 'Virtus.pro', '3:0', 'Ronica Hudspeth'),
+(1862, 'Kanal', '2024-05-21', 4.6, 'KOI', '5:3', 'Latia Gilmour'),
+(1863, 'Bank', '2021-02-11', 4.55, 'FURIA Esports', '4:2', 'Boyce Conn'),
+(1864, 'Border', '2022-08-06', 3.32, 'FURIA Esports', '2:4', 'Salomon Skrines'),
+(1865, 'Kanal', '2023-02-20', 1.69, 'Virtus.pro', '4:2', 'Davie Berthelmot'),
+(1866, 'Coastline', '2022-03-02', 0.25, 'Spacestation Gaming (SSG)', '3:5', 'Ursala Roscam'),
+(1867, 'Outback', '2019-07-15', 2.72, 'Team BDS', '3:5', 'Miles Grass'),
+(1868, 'Oregon', '2020-09-19', 1.66, 'G2 Esports', '2:4', 'Tori Pottell'),
+(1869, 'Coastline', '2020-07-30', 4.1, 'G2 Esports', '3:5', 'Dianna Gueny'),
+(1870, 'ThemePark', '2019-10-17', 2.86, 'DarkZero Esports (DZ)', '3:0', 'Dania Dearlove'),
+(1871, 'Clubhouse', '2024-11-25', 0.67, 'Oxygen Esports', '5:3', 'Hildagarde Tyne'),
+(1872, 'Coastline', '2021-11-22', 2.99, 'Dplus', '2:4', 'Renee De Freyne'),
+(1873, 'ThemePark', '2020-02-29', 0.12, 'Team Liquid', '3:5', 'Felicio Smyth'),
+(1874, 'Coastline', '2023-10-13', 1.06, 'MNM Gaming', '5:4', 'Sebastiano Gidman'),
+(1875, 'Border', '2023-02-11', 1.54, 'Virtus.pro', '4:5', 'Fredek Hoyles'),
+(1876, 'Oregon', '2025-04-18', 1.51, 'Natus Vincere (NAVI)', '0:3', 'Eziechiele Oswell'),
+(1877, 'Clubhouse', '2022-06-05', 0.61, 'Los + oNe', '3:0', 'Masha Gostling'),
+(1878, 'Coastline', '2024-03-21', 2.33, 'Oxygen Esports', '3:5', 'Lara Androsik'),
+(1879, 'Clubhouse', '2023-10-18', 1.93, 'Wolves Esports', '4:5', 'Wayne McPhillips'),
+(1880, 'Kanal', '2021-10-29', 3.71, 'Spacestation Gaming (SSG)', '5:3', 'Anastasie Jowsey'),
+(1881, 'Border', '2024-04-23', 2.49, 'Dplus', '2:4', 'Merrilee Gillbey'),
+(1882, 'Border', '2024-06-22', 1.53, 'FaZe Clan', '2:4', 'Sibeal Seignior'),
+(1883, 'ThemePark', '2024-10-12', 3.56, 'Natus Vincere (NAVI)', '5:4', 'Sonni Sarver'),
+(1884, 'Kanal', '2024-04-01', 0.75, 'Team Liquid', '5:3', 'Leonhard Banyard'),
+(1885, 'Coastline', '2019-05-12', 4.56, 'G2 Esports', '2:4', 'Carly Caddick'),
+(1886, 'Coastline', '2022-07-07', 2.42, 'FURIA Esports', '5:4', 'Cornelle Airy'),
+(1887, 'ThemePark', '2019-08-21', 3.34, 'Spacestation Gaming (SSG)', '3:0', 'Clevey Soames'),
+(1888, 'ThemePark', '2020-08-27', 2.89, 'M80', '5:4', 'Leila Rimour'),
+(1889, 'Clubhouse', '2023-11-30', 0.35, 'FURIA Esports', '3:0', 'Caprice MacKay'),
+(1890, 'Outback', '2019-06-18', 0.76, 'Dplus', '2:4', 'Judas Oakeshott'),
+(1891, 'Coastline', '2024-05-15', 2.2, 'Spacestation Gaming (SSG)', '4:2', 'Blanche Cuttelar'),
+(1892, 'ThemePark', '2021-02-17', 3.36, 'Natus Vincere (NAVI)', '3:5', 'Ignace Beet'),
+(1893, 'Coastline', '2023-09-27', 3.8, 'SCARZ', '4:5', 'Cyndy Wellington'),
+(1894, 'Outback', '2024-11-11', 4.37, 'MNM Gaming', '5:4', 'Tillie Stelli'),
+(1895, 'Coastline', '2024-04-28', 4.02, 'Soniqs', '4:5', 'Kessia Raithbie'),
+(1896, 'Clubhouse', '2023-02-03', 1.27, 'Spacestation Gaming (SSG)', '5:4', 'Fowler Brunskill'),
+(1897, 'ThemePark', '2019-05-08', 0.49, 'Natus Vincere (NAVI)', '4:2', 'Dosi Sargent'),
+(1898, 'Kanal', '2020-12-09', 0.19, 'MNM Gaming', '4:2', 'Brittani Counter'),
+(1899, 'Clubhouse', '2020-02-20', 0.49, 'Los + oNe', '3:5', 'Julie Loding'),
+(1900, 'Border', '2019-10-05', 2.26, 'Team Liquid', '2:4', 'Berky Kimmince'),
+(1901, 'Outback', '2024-09-25', 2.64, 'Natus Vincere (NAVI)', '3:0', 'West Ogilvy'),
+(1902, 'Kanal', '2023-10-08', 2.85, 'M80', '4:5', 'Dode Eburne'),
+(1903, 'Clubhouse', '2023-03-12', 1.42, 'w7m esports', '3:5', 'Ellerey Barz'),
+(1904, 'Bank', '2020-05-26', 0.29, 'SCARZ', '4:5', 'Ardenia Elecum'),
+(1905, 'Kanal', '2023-09-09', 3.89, 'Oxygen Esports', '0:3', 'Humbert Caple'),
+(1906, 'Outback', '2019-09-24', 2.61, 'Team Liquid', '5:4', 'Waneta Crus'),
+(1907, 'Outback', '2021-08-26', 1.95, 'DarkZero Esports (DZ)', '2:4', 'Karee Thirlwell'),
+(1908, 'Outback', '2021-05-09', 4.16, 'M80', '0:3', 'Falkner Laraway'),
+(1909, 'Oregon', '2023-05-09', 4.47, 'FURY', '0:3', 'Diannne Slater'),
+(1910, 'Bank', '2023-02-01', 0.81, 'KOI', '3:0', 'Susie Harnott'),
+(1911, 'Outback', '2019-09-07', 4.55, 'SCARZ', '2:4', 'Devinne Caller'),
+(1912, 'Clubhouse', '2023-10-15', 0.24, 'Virtus.pro', '4:2', 'Odey Yurkevich'),
+(1913, 'Border', '2023-07-17', 0.19, 'FURY', '2:4', 'Pippy Boorman'),
+(1914, 'ThemePark', '2019-10-07', 3.84, 'MNM Gaming', '3:5', 'Marsh MacAnulty'),
+(1915, 'Border', '2020-06-23', 3.33, 'Los + oNe', '4:2', 'Gino Bonanno'),
+(1916, 'Border', '2025-02-19', 2.73, 'Dplus', '3:5', 'Ryley Kneal'),
+(1917, 'Clubhouse', '2020-08-01', 3.41, 'Dplus', '4:2', 'Ailis Sanford'),
+(1918, 'Border', '2024-09-02', 1.16, 'Natus Vincere (NAVI)', '2:4', 'Nicky Patriskson'),
+(1919, 'ThemePark', '2024-12-13', 0.03, 'Virtus.pro', '4:2', 'Andree Stopford'),
+(1920, 'Bank', '2025-02-07', 1.56, 'FaZe Clan', '3:0', 'Paul Linwood'),
+(1921, 'Oregon', '2020-10-16', 4.9, 'SCARZ', '3:0', 'Cleve Wickins'),
+(1922, 'Coastline', '2024-07-31', 4.64, 'DarkZero Esports (DZ)', '0:3', 'Cullin Cain'),
+(1923, 'Clubhouse', '2019-08-07', 4.75, 'Team Liquid', '3:5', 'Winfred Virgin'),
+(1924, 'Clubhouse', '2019-09-07', 3.41, 'M80', '3:0', 'Kikelia Quenell'),
+(1925, 'Coastline', '2022-08-15', 0.27, 'FURY', '0:3', 'Trenton Porcas'),
+(1926, 'Coastline', '2019-09-23', 0.11, 'Soniqs', '4:2', 'Zara Yakobovitz'),
+(1927, 'Border', '2024-10-08', 3.61, 'Dplus', '3:0', 'Elita Chene'),
+(1928, 'ThemePark', '2024-03-11', 3.45, 'Los + oNe', '4:2', 'Piper Antoinet'),
+(1929, 'Clubhouse', '2022-08-18', 1.46, 'DarkZero Esports (DZ)', '4:2', 'Levon Raraty'),
+(1930, 'Border', '2023-10-31', 0.78, 'KOI', '5:3', 'Klara Toopin'),
+(1931, 'ThemePark', '2024-04-01', 0.17, 'MNM Gaming', '2:4', 'Erinn Pridgeon'),
+(1932, 'Bank', '2022-12-02', 0.09, 'Natus Vincere (NAVI)', '3:5', 'Chrystel Amy'),
+(1933, 'Coastline', '2023-05-22', 4.22, 'KOI', '3:0', 'Georgia Chiplin'),
+(1934, 'ThemePark', '2022-07-30', 0.58, 'FURIA Esports', '3:5', 'Anissa Bouzek'),
+(1935, 'Outback', '2021-12-07', 1.27, 'KOI', '5:4', 'Revkah Blowen'),
+(1936, 'Kanal', '2021-02-21', 3.81, 'G2 Esports', '4:5', 'Cinderella Crabbe'),
+(1937, 'Oregon', '2024-01-26', 0.57, 'Los + oNe', '2:4', 'Rod Povlsen'),
+(1938, 'Border', '2024-01-24', 2.58, 'KOI', '5:3', 'Brynn Jumont'),
+(1939, 'ThemePark', '2022-07-25', 4.36, 'FaZe Clan', '0:3', 'Sauncho Yven'),
+(1940, 'Kanal', '2023-07-31', 2.86, 'w7m esports', '2:4', 'Bari Fairham'),
+(1941, 'Kanal', '2024-02-27', 1.74, 'Spacestation Gaming (SSG)', '5:4', 'Lambert Duckit'),
+(1942, 'Oregon', '2022-05-28', 1.4, 'G2 Esports', '4:2', 'Daloris Ritch'),
+(1943, 'Coastline', '2022-10-09', 0.88, 'Dplus', '5:3', 'Blake Torfin'),
+(1944, 'Coastline', '2025-02-25', 4.03, 'DarkZero Esports (DZ)', '3:5', 'Harrietta Cominetti'),
+(1945, 'ThemePark', '2023-01-23', 3.94, 'Wolves Esports', '4:2', 'Sydney Hassard'),
+(1946, 'Oregon', '2023-07-11', 1.16, 'M80', '5:3', 'Marie-jeanne Wrigglesworth'),
+(1947, 'ThemePark', '2020-05-09', 4.67, 'KOI', '3:5', 'Clovis Buglass'),
+(1948, 'Coastline', '2023-06-15', 4.39, 'Los + oNe', '3:5', 'Devina Bromige'),
+(1949, 'Border', '2021-03-04', 3.02, 'Los + oNe', '2:4', 'Bernadine Gwilym'),
+(1950, 'Kanal', '2023-01-04', 1.21, 'Natus Vincere (NAVI)', '3:5', 'Carver Pilsbury'),
+(1951, 'Outback', '2019-12-30', 2.33, 'Spacestation Gaming (SSG)', '4:5', 'Bertram Lakin'),
+(1952, 'Outback', '2021-07-17', 4.05, 'Team BDS', '3:0', 'Grantham Sayers'),
+(1953, 'Kanal', '2021-06-20', 2.03, 'M80', '4:5', 'Russell Mattiacci'),
+(1954, 'ThemePark', '2019-08-06', 0.31, 'Elevate', '3:5', 'Elia Jurczyk'),
+(1955, 'Clubhouse', '2024-10-29', 0.39, 'Team Liquid', '5:4', 'Ashby Ricardo'),
+(1956, 'Border', '2024-12-02', 0.47, 'M80', '4:5', 'Giovanni Norley'),
+(1957, 'Clubhouse', '2023-04-12', 3.1, 'MNM Gaming', '3:0', 'Andee Allan'),
+(1958, 'Bank', '2019-07-19', 3.4, 'FURY', '2:4', 'Miquela Higginbottam'),
+(1959, 'ThemePark', '2021-09-14', 3.53, 'FaZe Clan', '4:2', 'Wolfgang Dedrick'),
+(1960, 'ThemePark', '2020-02-28', 4.85, 'FaZe Clan', '2:4', 'Arline Silversmidt'),
+(1961, 'Bank', '2023-01-29', 1.71, 'Los + oNe', '5:4', 'Bern Blasli'),
+(1962, 'Kanal', '2025-03-19', 4.29, 'Soniqs', '3:0', 'Alisun Denley'),
+(1963, 'Bank', '2021-02-27', 1.02, 'Soniqs', '0:3', 'Lira Stealey'),
+(1964, 'Outback', '2021-12-06', 2.73, 'FURY', '5:3', 'Elicia Blasl'),
+(1965, 'Outback', '2019-09-19', 0.93, 'Dplus', '4:5', 'Dorey Fiddeman'),
+(1966, 'Bank', '2020-06-25', 3.5, 'Virtus.pro', '4:2', 'May Harlick'),
+(1967, 'Kanal', '2021-01-12', 0.65, 'Spacestation Gaming (SSG)', '0:3', 'Sunny Farnish'),
+(1968, 'Bank', '2020-08-26', 3.76, 'FaZe Clan', '0:3', 'Alyson Cicetti'),
+(1969, 'Outback', '2024-10-11', 0.88, 'G2 Esports', '3:0', 'Alphard O\'Doohaine'),
+(1970, 'Border', '2023-02-26', 0.33, 'Dplus', '4:2', 'Hort Nielson'),
+(1971, 'Coastline', '2019-08-31', 2.6, 'w7m esports', '0:3', 'Aile Congreave'),
+(1972, 'Border', '2023-09-03', 0.33, 'Wolves Esports', '5:4', 'Chandler Braunlein'),
+(1973, 'Clubhouse', '2022-08-12', 3.66, 'G2 Esports', '5:4', 'Lucky Smallridge');
+INSERT INTO `r6_match` (`id`, `map`, `match_date`, `match_duration`, `winning_team`, `final_result`, `mvp`) VALUES
+(1974, 'Outback', '2020-11-30', 4.55, 'FaZe Clan', '3:0', 'Georgiana Palke'),
+(1975, 'Coastline', '2024-03-01', 0.57, 'MNM Gaming', '5:3', 'Lethia Jost'),
+(1976, 'ThemePark', '2022-06-09', 2.12, 'FURIA Esports', '5:4', 'Pamela McHan'),
+(1977, 'Border', '2023-06-09', 0.02, 'Oxygen Esports', '2:4', 'Estrellita Zouch'),
+(1978, 'Outback', '2024-04-16', 1.13, 'KOI', '2:4', 'Mallorie Bruins'),
+(1979, 'Coastline', '2022-09-08', 4.89, 'Team Liquid', '5:4', 'Martita Parks'),
+(1980, 'Outback', '2019-08-03', 0.91, 'Elevate', '0:3', 'Rodge Misk'),
+(1981, 'ThemePark', '2021-09-25', 3.21, 'Los + oNe', '0:3', 'Aileen Watson'),
+(1982, 'Clubhouse', '2019-12-09', 4.53, 'w7m esports', '3:5', 'Marlon Lyal'),
+(1983, 'Bank', '2023-01-25', 4.49, 'FURY', '0:3', 'Alphonse Aleevy'),
+(1984, 'ThemePark', '2022-06-26', 4.35, 'Wolves Esports', '4:5', 'Judas Cheater'),
+(1985, 'Bank', '2024-08-28', 1.12, 'DarkZero Esports (DZ)', '5:3', 'Bliss Ferney'),
+(1986, 'Kanal', '2022-02-19', 1.5, 'FURIA Esports', '3:0', 'Ruthie Ransom'),
+(1987, 'Kanal', '2021-08-25', 3.54, 'FURIA Esports', '3:0', 'Izabel Cathee'),
+(1988, 'Oregon', '2024-04-10', 2.77, 'Virtus.pro', '4:2', 'Sissy Pinks'),
+(1989, 'Outback', '2025-01-22', 3.32, 'Elevate', '4:2', 'Ashely Glayzer'),
+(1990, 'ThemePark', '2023-04-03', 0.05, 'Soniqs', '4:2', 'Mack Giacomini'),
+(1991, 'Oregon', '2023-10-27', 0.41, 'DarkZero Esports (DZ)', '3:0', 'Harmon Depper'),
+(1992, 'Bank', '2019-11-20', 3.42, 'w7m esports', '5:3', 'Alyssa Roscamps'),
+(1993, 'Border', '2022-12-29', 4.13, 'Virtus.pro', '5:4', 'Abelard Mackieson'),
+(1994, 'Clubhouse', '2022-04-23', 2.6, 'Spacestation Gaming (SSG)', '3:0', 'Clerkclaude Thynn'),
+(1995, 'Oregon', '2021-09-26', 3.07, 'Natus Vincere (NAVI)', '0:3', 'Kippy Fiddyment'),
+(1996, 'Border', '2023-02-01', 2.84, 'DarkZero Esports (DZ)', '0:3', 'Ethelred Wildgoose'),
+(1997, 'Bank', '2021-08-19', 3.6, 'Virtus.pro', '5:3', 'Grethel Roxby'),
+(1998, 'Outback', '2019-08-28', 3.44, 'Virtus.pro', '5:3', 'Ali Corser'),
+(1999, 'Border', '2020-10-13', 4.14, 'Soniqs', '2:4', 'Harmony Alfonsetti'),
+(2000, 'Clubhouse', '2023-06-17', 0.08, 'Natus Vincere (NAVI)', '5:3', 'Annabella Pettisall');
+
+--
+-- Indexy pro exportované tabulky
+--
+
+--
+-- Indexy pro tabulku `r6_match`
+--
+ALTER TABLE `r6_match`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pro tabulky
+--
+
+--
+-- AUTO_INCREMENT pro tabulku `r6_match`
+--
+ALTER TABLE `r6_match`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2001;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -29,9 +29,13 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
 });
 
 // Detail hráče (veřejně přístupný)
-$routes->get('players/detail/(:num)/(:any)', 'PlayerController::detail/$1/$2');
+$routes->get('players/detail/(:num)', 'PlayerController::detail/$1');
+$routes->get('players/detail/(:num)/(:any)', 'PlayerController::detail/$1');
 
 // Přihlášení a odhlášení
 $routes->get('login', 'AuthController::login');
 $routes->post('login', 'AuthController::doLogin');
 $routes->get('logout', 'AuthController::logout');
+$routes->get('register', 'AuthController::register');
+$routes->post('register', 'AuthController::doRegister');
+$routes->get('matches', 'MatchController::index');

@@ -24,6 +24,7 @@ class Pager extends BaseConfig
         'default_full'   => 'CodeIgniter\Pager\Views\default_full',
         'default_simple' => 'CodeIgniter\Pager\Views\default_simple',
         'default_head'   => 'CodeIgniter\Pager\Views\default_head',
+        'bootstrap5'     => 'Pager/bootstrap',
     ];
 
     /**
@@ -34,4 +35,15 @@ class Pager extends BaseConfig
      * The default number of results shown in a single page.
      */
     public int $perPage = 9;
+
+    /**
+     * --------------------------------------------------------------------------
+     * Surround Count
+     * --------------------------------------------------------------------------
+     *
+     * The number of pages to show around the current page in the pagination
+     * links. This helps in providing context to the user about their
+     * current position in the list of results.
+     */
+    public int $surroundCount = 4;
 }

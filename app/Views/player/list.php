@@ -1,7 +1,6 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<!-- Breadcrumbs -->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Domů</a></li>
@@ -9,11 +8,20 @@
   </ol>
 </nav>
 
+<div class="d-flex justify-content-end mb-3">
+    <a href="<?= site_url('players/create') ?>" class="btn btn-success">+ Přidat hráče</a>
+</div>
+
 <div class="row row-cols-1 row-cols-md-4 g-4">
     <?php foreach ($players as $player): ?>
     <div class="col">
         <div class="card h-100">
             <div class="card-body text-center">
+                <!-- Obrázek hráče -->
+                <img src="<?= base_url('images/' . ($player['image'] ?? 'blank-pfp.jpg')) ?>"
+                     alt="Profil hráče"
+                     class="img-fluid rounded-circle mb-2"
+                     style="width: 100px; height: 100px; object-fit: cover;">
                 <h5 class="card-title"><?= esc($player['player_name']) ?></h5>
                 <p class="card-text">
                     <?php if (isset($player['team_name'])): ?>
@@ -32,13 +40,11 @@
     <?php endforeach; ?>
 </div>
 
-<!-- Stránkování dole pod kartami jako tlačítka -->
 <div class="mt-4 d-flex justify-content-center">
-    <?= $pager->links('default', 'default_full') ?>
+    <?= $pager->links('default', 'bootstrap5') ?>
 </div>
 
 <?php foreach ($players as $player): ?>
-<!-- Modal pro každého hráče -->
 <div class="modal fade" id="deleteModal<?= $player['id'] ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?= $player['id'] ?>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

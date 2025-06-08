@@ -16,7 +16,7 @@
         <select name="team_id" id="team_id" class="form-select" required>
             <option value="" disabled selected hidden>-- Vyberte tým --</option>
             <?php foreach ($teams as $team): ?>
-                <option value="<?= esc($team['id']) ?>" <?= (old('team_id', $player['team_id'] ?? '') == $team['id']) ? 'selected' : '' ?>>
+                <option value="<?= esc($team['team_id']) ?>" <?= (old('team_id', $player['team_id'] ?? '') == $team['team_id']) ? 'selected' : '' ?>>
                     <?= esc($team['team_name']) ?>
                 </option>
             <?php endforeach; ?>
@@ -39,11 +39,10 @@
         <label for="role_id" class="form-label">Role</label>
         <select name="role_id" id="role_id" class="form-select" required>
             <option value="" disabled selected>-- Vyberte roli --</option>
-            <?php foreach ($roles as $role): ?>
-                <option value="<?= $role['id'] ?>" <?= old('role_id') == $role['id'] ? 'selected' : '' ?>>
-                    <?= esc($role['role_name']) ?>
-                </option>
-            <?php endforeach ?>
+            <option value="Support" <?= old('role_id') == 'Support' ? 'selected' : '' ?>>Support</option>
+            <option value="Leader" <?= old('role_id') == 'Leader' ? 'selected' : '' ?>>Leader</option>
+            <option value="Flex" <?= old('role_id') == 'Flex' ? 'selected' : '' ?>>Flex</option>
+            <option value="Entry Fragger" <?= old('role_id') == 'Entry Fragger' ? 'selected' : '' ?>>Entry Fragger</option>
         </select>
     </div>
 
@@ -66,7 +65,7 @@
     <a href="<?= site_url('players') ?>" class="btn btn-secondary">Zpět</a>
 </form>
 
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/c9lecrcrlps92cnr4k5dmb54bhn6a9xkmq5ovcc6w3aczrif/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector: '#description',

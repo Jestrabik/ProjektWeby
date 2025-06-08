@@ -1,2980 +1,3045 @@
-CREATE TABLE r6_player (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    player_name VARCHAR(100),
-    team_id INT,
-    nationality VARCHAR(100),
-    age INT,
-    role VARCHAR(100),
-    headshot_percentage DECIMAL(5,2),
-    total_games INT,
-    total_deaths INT,
-    kd_ratio DECIMAL(5,2)
+-- phpMyAdmin SQL Dump
+-- version 5.2.2
+-- https://www.phpmyadmin.net/
+--
+-- Počítač: localhost
+-- Vytvořeno: Ned 08. čen 2025, 07:17
+-- Verze serveru: 8.4.3
+-- Verze PHP: 8.3.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Databáze: `webr6`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `r6_player`
+--
+
+CREATE TABLE `r6_player` (
+  `id` int NOT NULL,
+  `player_name` varchar(100) DEFAULT NULL,
+  `team_id` int DEFAULT NULL,
+  `nationality` varchar(100) DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  `role` varchar(100) DEFAULT NULL,
+  `headshot_percentage` decimal(5,2) DEFAULT NULL,
+  `total_games` int DEFAULT NULL,
+  `total_deaths` int DEFAULT NULL,
+  `kd_ratio` decimal(5,2) DEFAULT NULL,
+  `created_at` int NOT NULL,
+  `updated_at` int NOT NULL,
+  `deleted_at` int DEFAULT NULL,
+  `description` varchar(1000) NULL,
+  `image` varchar(255) DEFAULT 'blank-pfp.jpg'
 );
 
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aeriell Hylton', 15, 'China', 40, 'Support', 2.37, 157, 957, 1.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kris Dwire', 3, 'Vietnam', 31, 'Leader', 29.55, 407, 2461, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sybille Skerratt', 16, 'Kyrgyzstan', 21, 'Support', 88.0, 410, 1627, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cody Westmore', 9, 'Philippines', 28, 'Support', 90.05, 298, 958, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Othilie Hildred', 12, 'China', 28, 'Flex', 77.57, 136, 1789, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabbatha Farnworth', 12, 'Ukraine', 35, 'Leader', 46.3, 233, 1571, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Desmond Coniff', 1, 'Thailand', 41, 'Leader', 6.32, 132, 328, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arlena Lambarton', 11, 'Indonesia', 21, 'Leader', 35.89, 354, 621, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Horacio Beardsley', 3, 'Spain', 34, 'Support', 16.82, 40, 2661, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tyrone Filasov', 6, 'China', 38, 'Entry Fragger', 73.16, 59, 1081, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marchall Conibear', 2, 'Bangladesh', 18, 'Entry Fragger', 68.43, 404, 460, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gregg Cozens', 8, 'Indonesia', 39, 'Flex', 17.1, 389, 2151, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claiborne Senten', 8, 'Portugal', 23, 'Support', 40.41, 343, 1769, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zachariah Redhouse', 11, 'Russia', 22, 'Support', 57.99, 114, 2436, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lenora Guitton', 15, 'China', 18, 'Flex', 36.13, 15, 1513, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emanuele de Quesne', 21, 'Yemen', 23, 'Entry Fragger', 33.39, 332, 306, 0.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernetta Phinnessy', 14, 'Peru', 33, 'Entry Fragger', 63.77, 347, 2076, 2.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barclay Filoniere', 13, 'Portugal', 36, 'Support', 64.21, 166, 2057, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bobbe McKeney', 11, 'Japan', 18, 'Support', 27.89, 266, 2434, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cloris Fellenor', 10, 'United States', 31, 'Flex', 45.28, 276, 2819, 0.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shermie Schroter', 20, 'Russia', 22, 'Leader', 27.17, 20, 2458, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ertha Kmicicki', 21, 'China', 41, 'Support', 38.9, 439, 2103, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clarence Olivazzi', 12, 'Albania', 19, 'Flex', 80.4, 371, 1651, 1.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Skylar Barby', 13, 'China', 25, 'Flex', 15.56, 128, 2924, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dory Dufour', 3, 'Philippines', 37, 'Flex', 38.71, 265, 2938, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agretha Ascroft', 11, 'Norway', 36, 'Flex', 54.5, 363, 2390, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giulia Gilhooley', 21, 'Indonesia', 32, 'Entry Fragger', 13.68, 185, 1432, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edouard Lusher', 5, 'China', 27, 'Entry Fragger', 41.16, 467, 153, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Viki Teaze', 1, 'Nigeria', 23, 'Flex', 55.27, 438, 2338, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abbie Saph', 3, 'Russia', 20, 'Flex', 33.6, 260, 211, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carline Wixey', 6, 'Philippines', 26, 'Entry Fragger', 48.6, 108, 1951, 2.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garner Tuite', 20, 'Malawi', 21, 'Support', 83.64, 127, 1282, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Godfry Malim', 2, 'Russia', 41, 'Leader', 17.2, 176, 1773, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garrot Cordobes', 18, 'China', 29, 'Entry Fragger', 67.27, 268, 421, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('My Hyland', 7, 'Japan', 22, 'Support', 36.24, 422, 2596, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leoine Ilyasov', 10, 'Philippines', 23, 'Leader', 22.36, 323, 932, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Craggy Ware', 4, 'Brazil', 33, 'Leader', 86.57, 386, 2161, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cyb Chrisp', 12, 'China', 42, 'Support', 78.99, 348, 1045, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dick Knocker', 7, 'Greece', 36, 'Support', 88.91, 19, 1012, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Monica Hedges', 11, 'Pakistan', 32, 'Entry Fragger', 71.13, 405, 377, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Norma Burchard', 14, 'China', 38, 'Entry Fragger', 27.47, 123, 752, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allister Clifft', 11, 'Ukraine', 20, 'Support', 58.17, 115, 1507, 2.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tallou Monini', 18, 'Sweden', 27, 'Entry Fragger', 98.5, 253, 2415, 1.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isobel Mynett', 13, 'Japan', 33, 'Leader', 18.5, 121, 301, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabatha Aronstam', 11, 'Nigeria', 37, 'Flex', 75.55, 416, 2229, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabina Bau', 4, 'China', 19, 'Entry Fragger', 62.03, 302, 54, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dicky McMillam', 9, 'China', 27, 'Leader', 43.23, 73, 1864, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Paddie Cruces', 3, 'Eritrea', 42, 'Leader', 11.75, 356, 2275, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stephanus Petruskevich', 2, 'Brazil', 28, 'Flex', 87.97, 471, 1869, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dannie Bester', 4, 'China', 37, 'Entry Fragger', 45.42, 39, 597, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Herbie Wyllcocks', 3, 'France', 29, 'Flex', 75.39, 72, 2457, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wang Awton', 2, 'Indonesia', 21, 'Flex', 76.2, 17, 711, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Malva Mitchener', 16, 'China', 35, 'Leader', 93.53, 277, 313, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Solly Mence', 18, 'Cuba', 18, 'Flex', 49.39, 499, 2105, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ezechiel Northall', 1, 'France', 42, 'Entry Fragger', 50.43, 1, 1156, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elfie Vernay', 15, 'Honduras', 40, 'Flex', 42.46, 319, 37, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chris Ivanyukov', 20, 'United States', 36, 'Support', 26.21, 360, 2448, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosana Tomasoni', 11, 'China', 40, 'Support', 3.41, 500, 2332, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kippar Hessay', 19, 'China', 33, 'Flex', 64.91, 307, 1144, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Georgianna Strickett', 14, 'Russia', 20, 'Flex', 17.72, 70, 1135, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carilyn Kitchener', 21, 'Indonesia', 26, 'Support', 12.51, 467, 1555, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fransisco Darridon', 11, 'Sweden', 28, 'Support', 67.38, 491, 659, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Doralin Yakushkin', 19, 'Malaysia', 24, 'Flex', 4.78, 378, 1189, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merrill Drawmer', 10, 'France', 39, 'Entry Fragger', 35.38, 195, 214, 0.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agatha Jozefiak', 5, 'Indonesia', 32, 'Leader', 46.21, 272, 1634, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gerhardine De la Yglesia', 9, 'Ukraine', 32, 'Leader', 33.66, 357, 1561, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bethena Brayfield', 9, 'Kazakhstan', 38, 'Flex', 32.27, 130, 119, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lethia Pettendrich', 10, 'Thailand', 24, 'Flex', 17.66, 97, 1637, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roselle Deary', 19, 'United States', 33, 'Leader', 9.8, 426, 1728, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fannie Addicote', 4, 'Poland', 19, 'Support', 16.56, 269, 2835, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shel Pydcock', 1, 'Chile', 32, 'Flex', 13.82, 181, 2198, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ogdan Rutherfoord', 6, 'Poland', 37, 'Entry Fragger', 72.37, 356, 768, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arielle Aubri', 17, 'China', 19, 'Entry Fragger', 67.72, 492, 732, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hanny Threadgold', 17, 'Philippines', 37, 'Leader', 60.43, 338, 2102, 0.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Idette Rushbrooke', 14, 'China', 36, 'Leader', 30.84, 411, 1900, 2.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kordula Pellington', 16, 'Canada', 37, 'Leader', 9.49, 50, 794, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ingram Malpas', 16, 'Greece', 24, 'Leader', 74.78, 211, 866, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eden Pelman', 16, 'Chad', 25, 'Entry Fragger', 72.12, 326, 1012, 1.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laurent Teml', 18, 'Brazil', 29, 'Entry Fragger', 96.69, 335, 2458, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jerad Verlinden', 9, 'China', 20, 'Support', 46.69, 273, 2940, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ingaberg Wetherill', 8, 'Greece', 19, 'Flex', 49.8, 211, 2796, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garfield Leathard', 21, 'Sweden', 38, 'Support', 0.46, 415, 786, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joycelin Roden', 4, 'China', 31, 'Leader', 69.56, 317, 1422, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isidora Threadgill', 8, 'East Timor', 36, 'Flex', 66.48, 241, 1416, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Avis Quibell', 11, 'Czech Republic', 38, 'Entry Fragger', 58.96, 156, 532, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melissa Sawdy', 21, 'Morocco', 26, 'Support', 56.26, 307, 710, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brianna Joire', 20, 'Philippines', 31, 'Flex', 98.0, 174, 1849, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Care Kesley', 11, 'Portugal', 31, 'Support', 1.61, 451, 934, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shana Eaddy', 13, 'France', 22, 'Leader', 33.82, 121, 1838, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Milka Brislane', 10, 'China', 35, 'Entry Fragger', 69.33, 7, 2913, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kennith Gagie', 16, 'China', 19, 'Leader', 30.51, 478, 1794, 0.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myles Riepl', 8, 'Philippines', 28, 'Flex', 68.8, 268, 2888, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Izaak Bottomer', 10, 'Guatemala', 35, 'Entry Fragger', 59.78, 0, 376, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ringo Pagden', 20, 'China', 22, 'Support', 6.17, 159, 1620, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nappy Giacovelli', 16, 'France', 29, 'Leader', 58.78, 344, 559, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bidget Daulby', 17, 'Japan', 32, 'Entry Fragger', 69.28, 435, 2103, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Phip Batson', 5, 'Pakistan', 30, 'Support', 42.1, 282, 1443, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Courtney Pauel', 16, 'China', 20, 'Entry Fragger', 97.85, 8, 794, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aland Kalinke', 3, 'Portugal', 33, 'Support', 28.03, 282, 2036, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elianore Jump', 7, 'Croatia', 18, 'Entry Fragger', 92.68, 162, 2855, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ericka Lifsey', 4, 'China', 27, 'Leader', 27.63, 253, 2221, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Inna Pude', 9, 'Czech Republic', 35, 'Leader', 3.76, 422, 1459, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garnet Martinho', 1, 'Malaysia', 42, 'Entry Fragger', 81.13, 421, 1340, 0.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ulrike Rishman', 2, 'Ivory Coast', 18, 'Leader', 69.52, 451, 864, 1.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shaina Gradley', 10, 'Iran', 36, 'Leader', 59.93, 69, 2770, 0.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Noel Benardet', 21, 'Ivory Coast', 41, 'Entry Fragger', 36.39, 109, 1217, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Madelene Featherstonhaugh', 10, 'China', 24, 'Flex', 9.41, 148, 1740, 2.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caleb Grisley', 9, 'Indonesia', 22, 'Flex', 79.03, 320, 1719, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berta Patrick', 15, 'Philippines', 28, 'Flex', 9.89, 120, 2567, 0.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eldon Scawton', 5, 'Sierra Leone', 21, 'Entry Fragger', 3.84, 237, 53, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Starr Soutar', 1, 'Dominican Republic', 27, 'Support', 39.71, 400, 1474, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shantee Gouldsmith', 7, 'United States', 42, 'Support', 3.84, 122, 2795, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fae Hanbridge', 8, 'Libya', 21, 'Entry Fragger', 11.9, 112, 812, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oralee Uden', 5, 'Central African Republic', 32, 'Flex', 70.95, 296, 1099, 0.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mitch Cumbers', 16, 'China', 22, 'Flex', 65.73, 113, 2040, 0.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Misti Burley', 7, 'Russia', 25, 'Leader', 90.16, 60, 833, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melly Hummerston', 6, 'Samoa', 37, 'Flex', 89.7, 105, 466, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elwood Penlington', 17, 'Russia', 19, 'Leader', 99.02, 292, 1478, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kylila Gerbl', 11, 'China', 25, 'Flex', 43.19, 405, 2477, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hammad Wainscot', 17, 'Russia', 40, 'Support', 46.49, 390, 524, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bambie Sothcott', 1, 'Sweden', 29, 'Leader', 67.63, 94, 829, 2.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ddene Makin', 18, 'China', 36, 'Entry Fragger', 24.72, 191, 2604, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angel Dieton', 13, 'Brazil', 20, 'Flex', 19.53, 464, 1993, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Patsy Rozzier', 11, 'Thailand', 32, 'Support', 18.95, 191, 410, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ellyn Wigsell', 13, 'Madagascar', 41, 'Flex', 37.36, 461, 1172, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marga Scalia', 17, 'France', 33, 'Entry Fragger', 23.36, 422, 906, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Editha Node', 4, 'Sweden', 28, 'Leader', 67.67, 177, 1649, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Johnnie Keri', 15, 'Norway', 28, 'Support', 80.41, 448, 357, 0.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zacharie Knightsbridge', 6, 'Taiwan', 42, 'Support', 4.69, 167, 1234, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Silvie Guiu', 5, 'Colombia', 21, 'Support', 9.7, 201, 1012, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laney Dullaghan', 20, 'Poland', 39, 'Flex', 54.01, 314, 18, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sapphire Coldman', 1, 'Indonesia', 40, 'Entry Fragger', 75.78, 474, 677, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Molli Tarte', 8, 'Paraguay', 40, 'Flex', 52.57, 409, 803, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mella Lethley', 13, 'Indonesia', 18, 'Support', 77.08, 233, 2802, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jade Silbersak', 14, 'Brazil', 31, 'Leader', 29.87, 195, 421, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jayson Morville', 7, 'China', 42, 'Entry Fragger', 68.31, 114, 1026, 2.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berni McCahey', 6, 'North Korea', 41, 'Leader', 4.32, 178, 384, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cletis Pierrepont', 21, 'Argentina', 27, 'Entry Fragger', 97.36, 429, 1295, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laurice Saldler', 17, 'South Africa', 26, 'Flex', 55.25, 177, 1536, 1.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christoffer Valsler', 5, 'Gambia', 24, 'Entry Fragger', 88.76, 316, 1443, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barnabe Kiss', 14, 'Iceland', 38, 'Entry Fragger', 89.09, 0, 850, 2.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Iain Swepson', 11, 'Greece', 18, 'Support', 88.14, 366, 763, 1.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nate Woodyatt', 10, 'Brazil', 41, 'Support', 2.46, 229, 644, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Loria Capron', 17, 'Thailand', 36, 'Flex', 25.21, 454, 694, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Massimiliano Caslane', 4, 'Philippines', 21, 'Support', 1.93, 34, 986, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danna Yakhin', 6, 'Peru', 29, 'Leader', 15.59, 431, 1474, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kirby Decroix', 15, 'Portugal', 39, 'Leader', 18.04, 258, 2325, 2.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leta Chilcott', 4, 'China', 34, 'Support', 58.56, 217, 592, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('James Lyard', 6, 'Iran', 22, 'Leader', 28.59, 106, 1480, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charlton Olensby', 10, 'Greece', 41, 'Entry Fragger', 61.13, 443, 177, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brianna Penas', 18, 'Costa Rica', 37, 'Leader', 14.37, 248, 2035, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edsel Churchard', 17, 'Czech Republic', 35, 'Flex', 23.41, 429, 1945, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rancell Rapinett', 16, 'Kazakhstan', 34, 'Support', 61.81, 417, 1539, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Renie Beddie', 10, 'Latvia', 33, 'Flex', 63.61, 11, 2571, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Waylen Gittis', 8, 'Brazil', 30, 'Entry Fragger', 86.07, 267, 151, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lari Lawee', 15, 'Brazil', 32, 'Leader', 27.14, 224, 862, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janetta Batchelar', 3, 'Australia', 38, 'Leader', 83.46, 489, 2007, 0.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aigneis Essame', 3, 'Brazil', 33, 'Support', 35.72, 337, 2705, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wait Rafferty', 4, 'Turkmenistan', 40, 'Support', 71.68, 244, 1578, 0.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kathlin Otterwell', 6, 'Malaysia', 30, 'Entry Fragger', 8.69, 337, 2503, 2.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dulcine Orht', 3, 'Nepal', 34, 'Leader', 75.37, 343, 1848, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Monty McGaughie', 14, 'Belarus', 35, 'Flex', 4.66, 86, 2893, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claudius Becks', 6, 'Sweden', 30, 'Leader', 39.86, 67, 956, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mayne Sutterby', 7, 'Sri Lanka', 31, 'Support', 21.17, 404, 2636, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ricky McCaughran', 13, 'United States', 20, 'Leader', 48.52, 286, 912, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karla Knagges', 15, 'Indonesia', 29, 'Support', 92.54, 324, 2334, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Colleen Ride', 10, 'Russia', 22, 'Leader', 45.68, 179, 1919, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roderic Metcalf', 17, 'Philippines', 27, 'Leader', 53.28, 17, 2286, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lilas Oakhill', 3, 'Pakistan', 23, 'Flex', 44.61, 62, 985, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Imogen Lawford', 12, 'Mongolia', 37, 'Leader', 84.94, 45, 579, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ado Choupin', 3, 'Morocco', 24, 'Leader', 40.2, 374, 2403, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meryl Pfiffer', 9, 'China', 42, 'Flex', 69.01, 327, 2447, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cornelle Gallety', 3, 'China', 36, 'Leader', 57.68, 360, 416, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julietta Sussans', 17, 'France', 19, 'Support', 51.02, 320, 1895, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deanna Baiden', 21, 'Japan', 41, 'Entry Fragger', 60.79, 464, 1818, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nan Lush', 16, 'China', 40, 'Support', 38.47, 170, 1868, 1.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Trace Dudek', 5, 'Portugal', 24, 'Flex', 27.47, 172, 1884, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pet Darlison', 15, 'Poland', 32, 'Entry Fragger', 53.01, 10, 2337, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mellisent Twort', 9, 'Chile', 40, 'Support', 62.52, 185, 1719, 1.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Collen Joutapavicius', 1, 'Botswana', 39, 'Leader', 35.13, 452, 945, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frayda Pine', 4, 'Guinea-Bissau', 25, 'Support', 26.41, 52, 1111, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ignaz McCartan', 6, 'Philippines', 26, 'Flex', 57.0, 256, 570, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Madelaine Nuttall', 12, 'Canada', 29, 'Leader', 59.94, 34, 1516, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thaddus Yendall', 8, 'South Korea', 25, 'Support', 87.91, 261, 2742, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mannie Padden', 1, 'Philippines', 27, 'Support', 68.62, 417, 2010, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hanny Balentyne', 19, 'Chile', 35, 'Support', 14.42, 218, 2540, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cahra Holdin', 21, 'Vietnam', 25, 'Support', 8.29, 43, 1576, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hubie Trenouth', 17, 'Argentina', 18, 'Support', 39.36, 402, 1559, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Breena Fullstone', 10, 'China', 20, 'Leader', 32.96, 8, 2124, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christoper Muscat', 16, 'Belarus', 23, 'Leader', 18.19, 494, 354, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dalila Etridge', 17, 'Indonesia', 31, 'Leader', 65.32, 78, 352, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gregorius Leere', 7, 'Zimbabwe', 37, 'Entry Fragger', 63.43, 180, 2152, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cinda Spellicy', 4, 'Indonesia', 36, 'Support', 43.93, 20, 2628, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Latashia Bruniges', 1, 'Japan', 30, 'Leader', 36.38, 67, 1044, 1.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Romain Paulin', 17, 'Vietnam', 29, 'Leader', 14.32, 369, 1679, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabbie Ellard', 3, 'Brazil', 41, 'Flex', 20.53, 121, 2264, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janenna Bartosiak', 10, 'Moldova', 21, 'Leader', 22.62, 86, 1303, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barris Valente', 21, 'Dominican Republic', 33, 'Entry Fragger', 55.72, 100, 2578, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kay Gibbetts', 5, 'Nigeria', 37, 'Flex', 45.85, 220, 1649, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kory Copozio', 1, 'Indonesia', 36, 'Support', 73.63, 295, 784, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eryn Elwin', 8, 'Ecuador', 31, 'Leader', 78.14, 212, 62, 0.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jehanna Danell', 9, 'Thailand', 37, 'Entry Fragger', 95.19, 207, 1301, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaitlyn Heinritz', 7, 'Cuba', 33, 'Leader', 55.98, 497, 2857, 2.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Madalyn Misk', 15, 'Indonesia', 41, 'Entry Fragger', 84.09, 463, 761, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Saul Varty', 9, 'Greece', 36, 'Entry Fragger', 3.98, 66, 2183, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deena Biaggiotti', 21, 'China', 29, 'Leader', 94.74, 52, 2406, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harmonie Seczyk', 7, 'Greece', 18, 'Leader', 6.95, 480, 269, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maggi Marnane', 1, 'Japan', 35, 'Entry Fragger', 12.01, 250, 337, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stearne Seedman', 6, 'Brazil', 40, 'Support', 47.03, 328, 1702, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rickey Derisley', 4, 'Portugal', 20, 'Flex', 80.17, 459, 1186, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adamo Sacchetti', 10, 'China', 31, 'Flex', 0.82, 25, 229, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Feodor McFarlane', 20, 'Philippines', 38, 'Support', 57.18, 174, 150, 1.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gennifer Serchwell', 2, 'Sweden', 32, 'Entry Fragger', 15.74, 78, 2295, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Latrina Matten', 7, 'Argentina', 24, 'Support', 52.86, 173, 1088, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jourdan Lycett', 17, 'Portugal', 31, 'Support', 80.97, 222, 2909, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Monika Huttley', 11, 'Portugal', 26, 'Entry Fragger', 64.48, 272, 2492, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jeramie Evequot', 10, 'United States', 35, 'Entry Fragger', 42.65, 448, 912, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isidro Dillingston', 17, 'Czech Republic', 39, 'Flex', 87.04, 230, 2322, 2.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pollyanna Whitcher', 1, 'Thailand', 31, 'Flex', 5.62, 93, 1824, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nils Steers', 4, 'Ecuador', 23, 'Entry Fragger', 4.29, 492, 2726, 0.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anderea Delucia', 3, 'China', 42, 'Support', 0.08, 484, 2626, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaynor Perigoe', 21, 'Brazil', 39, 'Entry Fragger', 71.32, 365, 2679, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pepillo Durn', 2, 'Portugal', 34, 'Support', 60.55, 95, 859, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quinlan Riste', 7, 'Philippines', 35, 'Support', 16.74, 49, 1177, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Phoebe Matveyev', 19, 'Indonesia', 35, 'Leader', 51.8, 204, 924, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maddi Newcom', 3, 'Mexico', 24, 'Leader', 66.69, 348, 1973, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edwina Pape', 14, 'Czech Republic', 30, 'Leader', 92.11, 281, 230, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dolly Tearny', 20, 'United States', 30, 'Entry Fragger', 26.98, 136, 401, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabi Ogden', 16, 'Philippines', 32, 'Entry Fragger', 35.61, 359, 1078, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adelheid Foad', 1, 'Netherlands', 20, 'Support', 37.91, 400, 2972, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gerrard MacAnespie', 2, 'China', 23, 'Flex', 42.69, 361, 1801, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gertrud Talman', 16, 'Philippines', 21, 'Flex', 86.71, 433, 398, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabbatha Vedenisov', 10, 'Macedonia', 21, 'Entry Fragger', 67.24, 204, 2714, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hermione Headford', 14, 'China', 22, 'Leader', 55.14, 201, 691, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Culley Armes', 20, 'Russia', 39, 'Leader', 5.44, 83, 1584, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nissy Durak', 8, 'Canada', 24, 'Flex', 94.71, 148, 1158, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chelsea Lavelle', 10, 'Russia', 32, 'Flex', 57.04, 177, 2831, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lyndsie Yeardley', 13, 'Norway', 20, 'Entry Fragger', 16.51, 112, 1582, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nolana Tuddall', 6, 'China', 39, 'Flex', 84.05, 79, 370, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Miner Irvin', 4, 'Indonesia', 18, 'Entry Fragger', 94.49, 85, 2349, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hayyim Gimblett', 10, 'South Korea', 29, 'Leader', 79.34, 37, 2613, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mickie Diboll', 8, 'Indonesia', 36, 'Leader', 16.15, 493, 2776, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melinde Grono', 9, 'Iran', 28, 'Flex', 26.24, 275, 1998, 0.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cob Edison', 21, 'China', 26, 'Flex', 67.07, 95, 2360, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Diannne Lorenz', 5, 'China', 38, 'Leader', 39.1, 258, 1130, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eolanda Coye', 11, 'Ireland', 30, 'Flex', 23.32, 184, 2337, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morse Ducham', 21, 'Russia', 18, 'Flex', 76.98, 430, 752, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fionnula Faldoe', 18, 'Syria', 25, 'Entry Fragger', 19.51, 147, 2552, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Monah Sorton', 5, 'China', 35, 'Entry Fragger', 23.09, 153, 2259, 1.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mavis Umfrey', 10, 'South Africa', 18, 'Entry Fragger', 56.1, 121, 1027, 0.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Terrie Trevance', 11, 'Croatia', 33, 'Support', 18.29, 94, 2071, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gardy Kestle', 18, 'Palestinian Territory', 37, 'Flex', 54.66, 95, 944, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaynor Brosini', 7, 'China', 19, 'Entry Fragger', 9.04, 370, 1997, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Larry Fireman', 18, 'Thailand', 37, 'Support', 54.89, 174, 1578, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucie Moorwood', 3, 'Greece', 22, 'Flex', 1.82, 185, 359, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gregoor Sharpless', 3, 'Guatemala', 31, 'Entry Fragger', 13.06, 7, 52, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tommy Peach', 8, 'Canada', 27, 'Flex', 46.53, 186, 1560, 2.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felice Grinvalds', 1, 'China', 25, 'Flex', 7.91, 240, 390, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gussy Winning', 12, 'China', 38, 'Entry Fragger', 33.79, 424, 1398, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kevina Woolam', 15, 'Finland', 31, 'Flex', 98.68, 264, 2985, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ewell Clemendot', 4, 'Poland', 34, 'Flex', 42.91, 277, 939, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emily Devonport', 9, 'China', 20, 'Support', 55.25, 187, 802, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Iolanthe Steels', 6, 'Malaysia', 28, 'Entry Fragger', 77.91, 280, 1318, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lura Clemencon', 16, 'China', 34, 'Leader', 47.28, 115, 2566, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Levey Wittke', 21, 'Ukraine', 19, 'Flex', 98.12, 186, 2966, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Colby Teal', 17, 'Peru', 24, 'Flex', 69.65, 488, 260, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charlena Powys', 15, 'Indonesia', 35, 'Entry Fragger', 90.01, 132, 1612, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Calley Brislan', 19, 'Denmark', 40, 'Support', 28.2, 217, 2164, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Titos Kimmel', 21, 'Ireland', 29, 'Leader', 52.73, 74, 1286, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Herby Jesteco', 19, 'Pakistan', 22, 'Entry Fragger', 29.75, 8, 2656, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emelina Petticrow', 7, 'Ukraine', 20, 'Leader', 3.15, 56, 80, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melvin Geffe', 1, 'Brazil', 32, 'Flex', 80.18, 274, 257, 1.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cecelia Wythill', 5, 'Finland', 18, 'Flex', 96.66, 100, 1783, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pauli Witherby', 12, 'Indonesia', 20, 'Flex', 38.8, 28, 1739, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ilene Hansom', 20, 'Iran', 42, 'Entry Fragger', 79.49, 118, 1551, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aluino Laugharne', 1, 'China', 39, 'Support', 46.5, 393, 1252, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ellerey Oakwell', 18, 'Syria', 23, 'Leader', 5.44, 432, 2548, 2.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tomasine Peschke', 13, 'Kazakhstan', 27, 'Flex', 3.37, 413, 2853, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charyl St Leger', 1, 'Sweden', 20, 'Support', 22.93, 431, 107, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marillin Andrin', 5, 'China', 27, 'Leader', 63.35, 78, 957, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicko Kivelhan', 17, 'Peru', 40, 'Flex', 77.37, 17, 447, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Glynda Breed', 2, 'Afghanistan', 24, 'Support', 28.86, 79, 290, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dela Phebee', 12, 'Japan', 32, 'Leader', 13.61, 332, 1244, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kathryne McGilvary', 19, 'Armenia', 23, 'Entry Fragger', 68.17, 285, 856, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maurise Craig', 12, 'Greece', 30, 'Leader', 24.82, 318, 1204, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kayley Flett', 6, 'France', 20, 'Entry Fragger', 59.07, 268, 568, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elias Pethrick', 5, 'Indonesia', 41, 'Leader', 38.58, 381, 1134, 0.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fernandina Swyndley', 14, 'Sweden', 39, 'Entry Fragger', 7.44, 255, 1392, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheffie Claridge', 10, 'Japan', 38, 'Leader', 75.43, 287, 2592, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garwin Yeoman', 12, 'Portugal', 40, 'Support', 97.72, 244, 831, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angelique Kitson', 2, 'Philippines', 18, 'Support', 78.15, 227, 1488, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Paulette Chazotte', 20, 'Mexico', 38, 'Entry Fragger', 4.2, 384, 1766, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gwenore Yarr', 6, 'Thailand', 18, 'Leader', 36.37, 456, 1604, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kelsi Gamblin', 15, 'Czech Republic', 33, 'Leader', 71.63, 93, 873, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kendell Banbury', 5, 'Indonesia', 26, 'Flex', 46.65, 413, 1160, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Klemens Culbard', 9, 'Turkmenistan', 28, 'Flex', 76.67, 137, 414, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edie Gurnee', 19, 'Japan', 28, 'Support', 24.08, 222, 1040, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorens Carlow', 4, 'China', 19, 'Leader', 38.14, 452, 471, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hedy Marriott', 18, 'Portugal', 23, 'Entry Fragger', 8.75, 307, 1480, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucretia Minors', 11, 'Portugal', 30, 'Leader', 29.15, 412, 1037, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charline Grammer', 20, 'France', 31, 'Flex', 27.73, 371, 629, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edyth Ingleston', 5, 'Georgia', 33, 'Flex', 42.19, 95, 2428, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Una Beckworth', 4, 'France', 18, 'Flex', 0.2, 21, 621, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dionne Tideswell', 10, 'France', 32, 'Flex', 9.22, 25, 470, 0.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Larry Fretter', 3, 'Libya', 19, 'Entry Fragger', 97.49, 118, 1655, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Candice Elderbrant', 8, 'Papua New Guinea', 34, 'Flex', 68.93, 400, 2883, 1.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rainer Quadling', 10, 'Finland', 24, 'Flex', 77.37, 185, 1176, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abagail Smoughton', 20, 'France', 18, 'Leader', 91.2, 438, 1075, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Salvador Staunton', 19, 'China', 31, 'Leader', 37.74, 464, 1903, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mia Christoffels', 1, 'Brazil', 20, 'Leader', 64.35, 269, 1299, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Philip Beininck', 9, 'Kyrgyzstan', 30, 'Flex', 37.66, 19, 366, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sawyer Sartin', 3, 'Thailand', 27, 'Flex', 16.1, 55, 68, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zebadiah Stothert', 5, 'United States', 31, 'Entry Fragger', 42.6, 11, 821, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ramonda Mollindinia', 19, 'Indonesia', 42, 'Leader', 2.94, 166, 2684, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorrie Knowlden', 21, 'Malaysia', 39, 'Leader', 50.39, 297, 1742, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Win Konert', 3, 'Turkmenistan', 25, 'Entry Fragger', 3.42, 184, 1382, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alexine Parradye', 19, 'New Zealand', 36, 'Flex', 69.14, 251, 1466, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rooney Dutteridge', 18, 'Nigeria', 38, 'Leader', 92.16, 105, 1954, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Curcio Lamkin', 9, 'Philippines', 19, 'Leader', 62.56, 251, 2518, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Klarrisa Noor', 12, 'Ukraine', 41, 'Support', 55.43, 293, 1865, 0.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jordan Fortune', 15, 'Nigeria', 29, 'Flex', 89.05, 101, 2650, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darci Lalley', 1, 'Comoros', 20, 'Entry Fragger', 20.3, 466, 98, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('George Itzkovsky', 16, 'Egypt', 41, 'Entry Fragger', 82.43, 78, 2768, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angele Normansell', 9, 'Azerbaijan', 27, 'Flex', 94.99, 453, 175, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claretta Bellwood', 2, 'Thailand', 24, 'Support', 38.94, 377, 455, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Granny Wichard', 10, 'Cyprus', 23, 'Leader', 34.88, 293, 941, 1.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Creigh Wonfar', 2, 'United States', 40, 'Support', 86.37, 176, 306, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carline Gilleson', 17, 'South Africa', 42, 'Leader', 64.34, 149, 298, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dixie Kiehne', 17, 'United States', 32, 'Support', 84.38, 11, 1213, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Connie Roblin', 6, 'Indonesia', 18, 'Flex', 35.98, 357, 2656, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arlena Rotge', 13, 'Sweden', 33, 'Support', 93.45, 318, 1127, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jecho Waistell', 9, 'Philippines', 23, 'Leader', 45.95, 109, 1677, 2.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Conney Longmore', 6, 'Croatia', 28, 'Entry Fragger', 1.99, 18, 1946, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ulrich Halgarth', 13, 'Russia', 18, 'Flex', 21.17, 98, 2981, 1.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darcie Dowdney', 2, 'Russia', 35, 'Flex', 28.92, 128, 2081, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nikita Hazelby', 19, 'Russia', 27, 'Leader', 54.39, 376, 2637, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nataline Bouch', 4, 'Indonesia', 29, 'Support', 97.81, 195, 1459, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stormi Castanho', 15, 'Mauritius', 20, 'Entry Fragger', 14.8, 478, 736, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bendick Hirschmann', 14, 'Sudan', 36, 'Flex', 81.38, 190, 213, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucien Campbell', 3, 'China', 33, 'Entry Fragger', 31.3, 153, 12, 2.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Augy Brecken', 21, 'Argentina', 29, 'Leader', 64.78, 392, 1052, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marissa Jeenes', 16, 'Slovenia', 41, 'Leader', 11.49, 470, 1590, 2.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shalna Ruttgers', 2, 'Democratic Republic of the Congo', 39, 'Flex', 28.08, 401, 2328, 2.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jude Aysh', 12, 'China', 22, 'Support', 73.25, 250, 1438, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Matty Hurtic', 17, 'China', 26, 'Support', 58.26, 375, 1145, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tiler Curme', 18, 'Russia', 31, 'Leader', 73.22, 238, 1168, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kim Bramelt', 9, 'China', 39, 'Flex', 52.64, 168, 2441, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roxane Stoffers', 11, 'Indonesia', 36, 'Leader', 31.44, 149, 2709, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meryl Rathmell', 4, 'Russia', 23, 'Leader', 40.85, 176, 2820, 2.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Francene Palek', 3, 'France', 23, 'Leader', 59.78, 4, 1886, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morry Murrison', 12, 'China', 30, 'Support', 8.73, 407, 2003, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rachele Bunhill', 2, 'China', 34, 'Flex', 20.43, 387, 1688, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hermia Wickie', 17, 'Iran', 18, 'Entry Fragger', 49.41, 64, 2082, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joete Bullimore', 1, 'China', 25, 'Support', 0.14, 172, 1202, 1.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elbertine Sictornes', 2, 'China', 20, 'Leader', 94.54, 171, 2948, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Randene Gater', 3, 'Czech Republic', 42, 'Entry Fragger', 51.93, 195, 2394, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ulrick Parkyns', 21, 'Brazil', 27, 'Entry Fragger', 98.67, 446, 2729, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mirella Truscott', 3, 'Indonesia', 24, 'Flex', 20.49, 207, 2669, 2.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Grover Bruntje', 21, 'China', 33, 'Flex', 10.94, 281, 439, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Constantine Drei', 4, 'France', 36, 'Entry Fragger', 84.78, 383, 84, 0.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bess Geggus', 13, 'China', 33, 'Entry Fragger', 36.31, 465, 1180, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morna Almack', 13, 'Nigeria', 35, 'Entry Fragger', 92.51, 92, 2028, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jerome Wingeat', 6, 'Afghanistan', 27, 'Entry Fragger', 68.63, 114, 1804, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daniela Parres', 18, 'Mongolia', 36, 'Entry Fragger', 87.2, 281, 236, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blithe Gooch', 20, 'Mali', 22, 'Support', 64.98, 354, 2365, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marge Giacomucci', 15, 'China', 37, 'Leader', 6.53, 335, 2824, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emmanuel Hobell', 13, 'Colombia', 30, 'Support', 28.07, 411, 2503, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gretal Shackle', 10, 'Norway', 32, 'Support', 98.33, 244, 2270, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garek Meyrick', 13, 'China', 41, 'Support', 32.85, 300, 1584, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Grethel Muddle', 19, 'Canada', 30, 'Leader', 93.44, 217, 1254, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cary Stinton', 3, 'Myanmar', 18, 'Leader', 9.64, 22, 767, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Forrest Benardeau', 2, 'China', 30, 'Entry Fragger', 83.35, 500, 2817, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tommi Wellstead', 13, 'Morocco', 37, 'Leader', 50.25, 304, 1350, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicolis Banister', 10, 'Czech Republic', 28, 'Support', 18.66, 418, 293, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hulda Sinclair', 20, 'China', 36, 'Support', 92.78, 183, 2046, 2.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thaxter Diess', 18, 'Portugal', 19, 'Support', 35.55, 390, 1889, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cammie Rudloff', 4, 'China', 34, 'Support', 20.63, 235, 2107, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Prudi Stuther', 18, 'Czech Republic', 33, 'Support', 68.67, 168, 436, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ric Puckham', 9, 'China', 31, 'Entry Fragger', 82.99, 478, 604, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Glen Erbe', 15, 'Syria', 41, 'Leader', 20.64, 290, 2283, 0.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Michaeline Shepherdson', 7, 'Afghanistan', 36, 'Leader', 9.9, 126, 2971, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nadine Millichap', 6, 'Russia', 42, 'Support', 6.25, 310, 839, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arman Filippucci', 2, 'Macedonia', 36, 'Support', 97.9, 355, 1901, 0.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hy Font', 2, 'Indonesia', 28, 'Entry Fragger', 99.65, 272, 1487, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Enos Antal', 14, 'Morocco', 33, 'Support', 15.71, 20, 1168, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rainer Shackel', 13, 'Philippines', 30, 'Leader', 85.25, 333, 472, 2.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sharity Annetts', 9, 'Philippines', 42, 'Entry Fragger', 8.03, 77, 859, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aube Bakey', 1, 'Indonesia', 37, 'Leader', 22.78, 352, 2297, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lurette Cappel', 16, 'Mongolia', 33, 'Support', 76.53, 267, 678, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kristel Fonso', 5, 'Vietnam', 31, 'Entry Fragger', 31.75, 78, 2825, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hurley Noods', 19, 'Spain', 28, 'Support', 88.21, 87, 523, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alena Barnewell', 19, 'China', 28, 'Entry Fragger', 72.46, 69, 2804, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danya Goldin', 8, 'Peru', 26, 'Support', 5.54, 345, 1601, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gleda Degg', 2, 'Angola', 35, 'Leader', 92.6, 239, 2591, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julienne Connick', 2, 'China', 39, 'Flex', 93.36, 42, 1709, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Izak Rowan', 6, 'Philippines', 19, 'Support', 77.97, 246, 2557, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nathaniel Cullnean', 19, 'Armenia', 20, 'Entry Fragger', 26.89, 220, 1073, 1.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Foss Broderick', 8, 'Russia', 21, 'Support', 59.44, 424, 949, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vlad Bernardotte', 13, 'Philippines', 42, 'Leader', 64.5, 384, 2533, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ramona Smissen', 17, 'Sweden', 33, 'Leader', 98.11, 15, 2830, 2.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Richard Carstairs', 15, 'China', 18, 'Leader', 10.47, 105, 1680, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lily Peddowe', 12, 'China', 23, 'Leader', 89.86, 461, 1939, 0.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacquelynn Brownsell', 4, 'Morocco', 18, 'Flex', 15.33, 116, 2854, 1.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabina MacConneely', 3, 'Indonesia', 30, 'Support', 72.65, 400, 1118, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delly Vasiliev', 11, 'Indonesia', 39, 'Entry Fragger', 92.61, 212, 895, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allen Fluin', 8, 'Philippines', 28, 'Support', 15.41, 424, 158, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aleta Osmund', 14, 'Russia', 29, 'Entry Fragger', 57.51, 103, 2182, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filip Lambillion', 19, 'Finland', 19, 'Support', 94.37, 375, 184, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edmund Sorrie', 19, 'Uganda', 20, 'Flex', 41.9, 292, 249, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Molli Swabey', 14, 'Sweden', 31, 'Entry Fragger', 52.59, 385, 301, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christoffer Rolland', 2, 'Russia', 32, 'Support', 38.38, 228, 2801, 0.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Casie Stirtle', 18, 'China', 39, 'Leader', 66.16, 131, 2100, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sayre Macallam', 15, 'Brazil', 31, 'Entry Fragger', 3.54, 469, 1766, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barron Candlin', 9, 'United States', 25, 'Entry Fragger', 56.87, 353, 572, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cleopatra Plumbridge', 12, 'Philippines', 28, 'Leader', 4.69, 45, 2359, 1.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dom Biskup', 19, 'Japan', 18, 'Flex', 71.18, 334, 1746, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maryellen Gowrie', 20, 'Thailand', 24, 'Entry Fragger', 28.65, 160, 2501, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jillane Garfit', 2, 'Sweden', 26, 'Leader', 11.46, 474, 1414, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dani Munday', 6, 'Albania', 19, 'Entry Fragger', 98.14, 489, 2809, 2.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Siana De Bruin', 4, 'Benin', 29, 'Entry Fragger', 33.46, 113, 2477, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leandra Brabbs', 21, 'Zimbabwe', 24, 'Support', 75.29, 414, 2460, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sander Sillito', 21, 'Indonesia', 39, 'Flex', 29.01, 325, 2912, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isaiah Heather', 7, 'China', 25, 'Leader', 0.77, 258, 484, 0.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chrissie Erskine Sandys', 4, 'Indonesia', 29, 'Flex', 24.99, 5, 1854, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wendel Johanssen', 3, 'China', 38, 'Leader', 29.71, 84, 2640, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Courtney Smoote', 18, 'Russia', 41, 'Entry Fragger', 2.71, 28, 467, 2.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ora Cowdrey', 18, 'France', 34, 'Flex', 45.76, 338, 167, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gae Impett', 20, 'Philippines', 42, 'Entry Fragger', 71.4, 435, 1664, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lusa Allwood', 10, 'Sri Lanka', 22, 'Flex', 48.58, 351, 2138, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernelle Bunney', 15, 'China', 25, 'Support', 59.52, 396, 1907, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meredith Paler', 12, 'Russia', 37, 'Leader', 12.0, 74, 2545, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Othella Kirkwood', 16, 'Mongolia', 33, 'Leader', 82.36, 219, 1567, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Malissia Coventon', 6, 'Panama', 40, 'Entry Fragger', 82.98, 295, 2834, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deerdre Manoelli', 6, 'Mexico', 22, 'Leader', 40.46, 265, 588, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lib Titcomb', 16, 'Russia', 25, 'Entry Fragger', 0.56, 300, 1742, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beale Casaletto', 11, 'Portugal', 31, 'Support', 66.45, 196, 989, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Luciano Scotchbrook', 12, 'Vietnam', 41, 'Support', 40.93, 39, 1951, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arabella Nice', 17, 'Estonia', 25, 'Leader', 30.52, 393, 1943, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Domingo Harrap', 20, 'Thailand', 34, 'Entry Fragger', 48.41, 59, 556, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Renado St Ange', 15, 'Colombia', 21, 'Support', 70.27, 268, 2808, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cherrita Lyptratt', 8, 'France', 39, 'Support', 46.86, 453, 2704, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Standford Pettko', 13, 'China', 22, 'Flex', 48.17, 40, 1458, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elia Flescher', 2, 'Portugal', 24, 'Leader', 43.41, 481, 2518, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Heinrik Cherry Holme', 19, 'Mongolia', 29, 'Leader', 47.54, 265, 249, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheryl Benedetti', 19, 'Brazil', 33, 'Entry Fragger', 57.13, 123, 2051, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilow Ilyin', 17, 'Philippines', 28, 'Support', 15.95, 266, 8, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elie Spalding', 21, 'Indonesia', 25, 'Leader', 0.31, 222, 672, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gene Scopyn', 12, 'Indonesia', 32, 'Leader', 84.62, 338, 1900, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jenilee Leathwood', 11, 'France', 27, 'Flex', 62.72, 261, 2414, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anette Dawks', 18, 'Japan', 39, 'Leader', 85.69, 306, 615, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adolphus Trippitt', 2, 'Thailand', 18, 'Flex', 12.0, 480, 2364, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hetti Shorrock', 8, 'Indonesia', 28, 'Support', 52.78, 169, 928, 0.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maryrose Smallcombe', 11, 'Portugal', 41, 'Leader', 94.25, 202, 2458, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jard Isherwood', 12, 'China', 32, 'Entry Fragger', 23.38, 199, 380, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Niel Aizikov', 20, 'China', 28, 'Flex', 6.49, 250, 1237, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adore Gowland', 3, 'Indonesia', 26, 'Support', 19.27, 357, 496, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Grace Semper', 13, 'Indonesia', 20, 'Entry Fragger', 76.99, 133, 1240, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zackariah Manilow', 16, 'China', 25, 'Support', 39.34, 310, 1288, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laurence Rixon', 9, 'Germany', 36, 'Entry Fragger', 47.3, 357, 2702, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deirdre Bennoe', 20, 'Canada', 29, 'Support', 25.11, 435, 891, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ruth Cammis', 1, 'Philippines', 38, 'Entry Fragger', 62.43, 116, 721, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fae Grishkov', 1, 'Portugal', 21, 'Leader', 88.11, 74, 985, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Conrado Tofful', 12, 'China', 28, 'Flex', 51.51, 158, 19, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dodi Winckworth', 9, 'Russia', 28, 'Flex', 84.34, 41, 574, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carl Cartmer', 20, 'Nigeria', 36, 'Entry Fragger', 61.85, 210, 1494, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jaye Birchenhead', 13, 'Uzbekistan', 22, 'Flex', 29.12, 188, 1124, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ava Letch', 2, 'Croatia', 36, 'Leader', 51.89, 426, 1407, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fayina Millhouse', 1, 'Thailand', 23, 'Leader', 82.29, 475, 98, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Misty Currey', 5, 'China', 24, 'Entry Fragger', 89.32, 252, 2464, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karyl Jubert', 2, 'Argentina', 19, 'Support', 73.97, 261, 1132, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isidore Purdie', 5, 'China', 31, 'Leader', 10.66, 95, 2541, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kalinda Emilien', 17, 'Syria', 34, 'Entry Fragger', 1.87, 195, 2985, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tobie Prewer', 7, 'France', 37, 'Leader', 37.18, 279, 2308, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leontine Ragles', 9, 'China', 35, 'Leader', 81.28, 232, 1937, 2.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarrod Kearford', 11, 'Philippines', 31, 'Flex', 71.73, 380, 1426, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merill Wardhough', 11, 'China', 38, 'Flex', 25.13, 174, 923, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fayre Breakwell', 20, 'Sweden', 21, 'Support', 63.5, 12, 2372, 2.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thibaut Haylands', 6, 'Indonesia', 18, 'Support', 37.21, 378, 2647, 2.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Moira Oene', 4, 'Albania', 42, 'Entry Fragger', 33.37, 19, 1165, 1.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Michaella Lightowlers', 18, 'Philippines', 23, 'Entry Fragger', 82.09, 363, 173, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kippie Guidini', 16, 'Nigeria', 27, 'Support', 54.32, 215, 1823, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laetitia Patey', 4, 'Georgia', 26, 'Entry Fragger', 14.36, 390, 2523, 1.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jean Canner', 5, 'China', 19, 'Flex', 23.49, 113, 1592, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Madlin Dimitriev', 13, 'Mexico', 41, 'Leader', 77.99, 86, 2482, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Philippine Madill', 2, 'Thailand', 31, 'Leader', 0.72, 303, 1008, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harrietta Dean', 13, 'Russia', 29, 'Entry Fragger', 29.36, 439, 1235, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fernande Naton', 21, 'Haiti', 25, 'Entry Fragger', 39.21, 401, 1854, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giraud Goom', 19, 'United States', 18, 'Leader', 67.47, 51, 1860, 0.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Goddard Cookley', 11, 'China', 32, 'Flex', 63.68, 74, 707, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tome Frobisher', 20, 'Ukraine', 34, 'Support', 36.82, 466, 2861, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chastity Sigars', 11, 'Portugal', 28, 'Leader', 56.46, 57, 344, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cyril Benton', 21, 'Indonesia', 38, 'Leader', 7.02, 478, 679, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ravi Miner', 11, 'Brazil', 41, 'Entry Fragger', 10.27, 205, 100, 2.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christyna Russam', 4, 'Russia', 35, 'Entry Fragger', 8.16, 341, 1912, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bobbie Bidder', 14, 'Bulgaria', 35, 'Support', 21.56, 244, 2775, 0.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Symon Edess', 11, 'Portugal', 39, 'Flex', 27.18, 214, 2805, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('De Toth', 13, 'El Salvador', 38, 'Leader', 36.93, 25, 1113, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devi Jeroch', 12, 'Brazil', 37, 'Flex', 39.52, 383, 1605, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fritz Ditts', 12, 'Japan', 28, 'Leader', 94.45, 160, 190, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Otho Neild', 1, 'Lithuania', 38, 'Leader', 22.55, 229, 244, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Siouxie Rubberts', 3, 'Morocco', 36, 'Flex', 61.13, 443, 447, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaila Barajaz', 19, 'Bolivia', 28, 'Entry Fragger', 89.99, 35, 796, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dionis Titterrell', 6, 'Pakistan', 38, 'Entry Fragger', 53.5, 376, 2224, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Menard Wretham', 3, 'Estonia', 28, 'Support', 61.51, 436, 2377, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adolf Jayne', 21, 'Peru', 34, 'Flex', 23.69, 257, 1646, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evelyn holmes', 14, 'Indonesia', 37, 'Flex', 73.48, 402, 2617, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arturo Tuckey', 19, 'Indonesia', 38, 'Entry Fragger', 52.36, 174, 332, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Burg Harburtson', 5, 'United States', 22, 'Support', 46.51, 298, 57, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cooper Beining', 15, 'Zambia', 33, 'Entry Fragger', 68.97, 70, 2251, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stern Hills', 7, 'Russia', 25, 'Flex', 39.64, 458, 2147, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alphard Ferrie', 17, 'Sudan', 24, 'Support', 54.45, 284, 655, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosco Blazic', 17, 'Portugal', 41, 'Flex', 48.6, 255, 1096, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tamera Teasell', 20, 'China', 41, 'Leader', 80.57, 286, 2206, 2.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aurie Bisatt', 9, 'Indonesia', 20, 'Flex', 22.65, 264, 818, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anatole Giacubbo', 16, 'Argentina', 41, 'Entry Fragger', 76.3, 194, 293, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mellie Pimerick', 2, 'United States', 40, 'Support', 44.13, 128, 2090, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mylo McLennan', 19, 'France', 26, 'Flex', 68.27, 170, 24, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Davin Toope', 17, 'Russia', 30, 'Flex', 16.25, 82, 656, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Therese Ponde', 11, 'Venezuela', 19, 'Support', 41.4, 59, 2652, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucias Dunwoody', 19, 'China', 41, 'Leader', 10.73, 97, 1076, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lib Blinman', 21, 'Russia', 23, 'Support', 71.34, 225, 1475, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gussi Aulton', 14, 'Luxembourg', 38, 'Flex', 24.88, 155, 866, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Larisa MacCrachen', 10, 'South Africa', 30, 'Flex', 15.37, 94, 214, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nessi Bootherstone', 8, 'Indonesia', 32, 'Flex', 59.45, 339, 1104, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pattin Lewry', 8, 'Peru', 23, 'Leader', 85.5, 193, 2130, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Enrika Sketchley', 3, 'Philippines', 38, 'Support', 75.96, 448, 1740, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myles Alger', 12, 'Indonesia', 26, 'Support', 68.39, 364, 2755, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clywd Sigert', 6, 'United States', 32, 'Entry Fragger', 28.78, 81, 2853, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Babbette Killen', 19, 'Bolivia', 29, 'Support', 4.51, 19, 1392, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Milena Lydster', 11, 'Sweden', 32, 'Leader', 83.05, 134, 2414, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dare Bernetti', 8, 'Netherlands', 30, 'Entry Fragger', 41.43, 364, 1793, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anderea Crowder', 2, 'Latvia', 35, 'Flex', 58.21, 464, 28, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daloris Risbridger', 17, 'Morocco', 22, 'Flex', 24.53, 221, 83, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pearl Lancley', 4, 'Indonesia', 27, 'Leader', 81.1, 169, 716, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harvey Sillwood', 18, 'Chile', 18, 'Entry Fragger', 92.39, 119, 56, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deana Stanworth', 10, 'Hungary', 21, 'Support', 18.86, 249, 1128, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dell Hamp', 1, 'Brazil', 38, 'Leader', 95.35, 106, 976, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aileen Chidgey', 15, 'Indonesia', 19, 'Support', 14.24, 354, 547, 0.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Norma Isaacson', 7, 'China', 39, 'Leader', 39.17, 159, 1218, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reinaldo Wallice', 6, 'Indonesia', 39, 'Entry Fragger', 91.68, 330, 758, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Damara Padbery', 17, 'Chile', 24, 'Entry Fragger', 26.29, 306, 1327, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marnie Aymes', 14, 'China', 26, 'Support', 42.92, 12, 586, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Francklyn Hambridge', 3, 'Poland', 20, 'Flex', 83.71, 412, 2322, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vanya Booeln', 21, 'Argentina', 40, 'Entry Fragger', 85.61, 17, 681, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Odelle Woonton', 11, 'Russia', 36, 'Flex', 2.27, 342, 1851, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Miranda Mannooch', 4, 'Indonesia', 20, 'Flex', 2.57, 210, 91, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernhard Callinan', 12, 'Czech Republic', 25, 'Support', 86.73, 239, 2055, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pepi Skae', 14, 'Bermuda', 18, 'Support', 72.5, 289, 1029, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bevvy Hamber', 7, 'China', 26, 'Flex', 46.57, 340, 2944, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Farrand Suttie', 3, 'Thailand', 22, 'Support', 70.25, 250, 226, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dalt Croose', 5, 'Japan', 39, 'Flex', 85.58, 381, 780, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Terrell Fahey', 7, 'Sierra Leone', 29, 'Leader', 32.09, 485, 2790, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aleksandr Burndred', 17, 'China', 39, 'Support', 55.23, 113, 2539, 1.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorita Le Batteur', 13, 'Canada', 33, 'Entry Fragger', 53.4, 291, 1327, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gilberto Grafton-Herbert', 4, 'Brazil', 25, 'Support', 89.78, 88, 2953, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabriela Cossell', 15, 'Finland', 22, 'Flex', 14.56, 119, 351, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hilarius Burchatt', 13, 'Philippines', 20, 'Flex', 62.59, 347, 1887, 2.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dermot Wathen', 2, 'Gambia', 39, 'Leader', 19.64, 366, 1383, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elsi Spriggs', 16, 'Armenia', 34, 'Support', 6.54, 269, 1582, 2.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kristen Sholem', 12, 'Indonesia', 23, 'Entry Fragger', 12.75, 114, 2904, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jocelin Escolme', 17, 'Philippines', 30, 'Support', 44.19, 484, 2320, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jackqueline Tremmil', 7, 'Armenia', 24, 'Leader', 83.32, 434, 1509, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rocky McLaughlan', 21, 'Russia', 27, 'Support', 85.87, 248, 1661, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joycelin Lukacs', 16, 'Portugal', 38, 'Support', 24.65, 410, 103, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Salmon Geraldo', 11, 'Indonesia', 35, 'Entry Fragger', 7.86, 289, 742, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stephanie Chisholm', 10, 'Finland', 32, 'Flex', 72.85, 236, 2963, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Derek Euesden', 10, 'Cuba', 39, 'Flex', 19.56, 86, 2334, 2.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beverly Blewis', 4, 'Indonesia', 21, 'Entry Fragger', 20.75, 18, 163, 1.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Orelle Guyot', 9, 'Philippines', 35, 'Entry Fragger', 11.02, 72, 2179, 0.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Josephine Mayler', 20, 'Indonesia', 42, 'Support', 5.78, 491, 2216, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Martie Petroff', 13, 'Indonesia', 25, 'Leader', 71.81, 35, 152, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kathi Flanner', 9, 'Thailand', 36, 'Flex', 21.8, 305, 893, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lila Overland', 17, 'Italy', 39, 'Entry Fragger', 80.91, 325, 1838, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fredrick Gearing', 12, 'China', 35, 'Leader', 12.83, 292, 789, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filip Massingberd', 18, 'Indonesia', 24, 'Support', 56.91, 363, 2380, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delcina Duchant', 14, 'France', 25, 'Entry Fragger', 9.16, 458, 1778, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elinore Eglin', 12, 'Japan', 32, 'Flex', 48.63, 499, 9, 1.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berny Bittany', 18, 'Indonesia', 30, 'Leader', 98.16, 13, 2477, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devon Evemy', 17, 'Russia', 25, 'Support', 89.15, 445, 1044, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kass Dearle-Palser', 1, 'China', 24, 'Support', 23.66, 8, 1602, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charis Grundle', 17, 'France', 28, 'Leader', 67.88, 393, 894, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devy Huddleston', 18, 'Tajikistan', 36, 'Leader', 26.26, 40, 1620, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Andres Sigert', 14, 'China', 33, 'Flex', 87.44, 142, 455, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oswald McCleverty', 17, 'China', 40, 'Flex', 67.73, 489, 2376, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ransell Kopf', 13, 'Indonesia', 33, 'Support', 99.1, 47, 2187, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yettie Crisford', 20, 'Russia', 27, 'Flex', 38.99, 474, 2521, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kitti Schuck', 3, 'Democratic Republic of the Congo', 38, 'Leader', 32.36, 29, 1675, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Orel Giffaut', 20, 'Russia', 36, 'Flex', 0.14, 455, 1972, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alfreda Cassel', 6, 'France', 21, 'Support', 2.8, 358, 2400, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lou Sudron', 20, 'Portugal', 24, 'Leader', 33.75, 240, 2190, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lisetta Charkham', 4, 'Brazil', 20, 'Flex', 48.06, 145, 938, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vin Heselwood', 6, 'Honduras', 37, 'Support', 48.92, 5, 572, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felicia Gullis', 7, 'Iran', 37, 'Entry Fragger', 96.6, 0, 2798, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reagen Marl', 15, 'China', 23, 'Support', 3.64, 450, 472, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cassie Lead', 5, 'Russia', 29, 'Leader', 22.6, 321, 1358, 2.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Twyla McMillam', 8, 'Zambia', 41, 'Entry Fragger', 39.49, 439, 736, 1.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corliss Squires', 2, 'Mongolia', 19, 'Support', 13.08, 99, 2241, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Francisco Cothey', 2, 'Indonesia', 33, 'Flex', 98.87, 347, 2757, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sunshine Scorah', 16, 'France', 25, 'Entry Fragger', 67.36, 120, 293, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucian Halward', 14, 'Malaysia', 19, 'Support', 73.47, 397, 409, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bartolomeo Dorset', 15, 'China', 27, 'Flex', 95.38, 121, 1376, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shelli Syres', 3, 'Colombia', 26, 'Support', 63.22, 389, 765, 0.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Neall Beardon', 10, 'Russia', 21, 'Entry Fragger', 51.58, 109, 719, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jennee Stayte', 5, 'Ukraine', 41, 'Flex', 43.85, 242, 1312, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charita Gruczka', 18, 'Czech Republic', 24, 'Flex', 4.42, 272, 1747, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reiko Bowes', 15, 'Portugal', 26, 'Leader', 99.5, 45, 1197, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Klarika Hannibal', 17, 'Indonesia', 29, 'Leader', 26.61, 268, 2116, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yalonda McAlees', 20, 'Philippines', 35, 'Support', 16.52, 193, 2134, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eadmund Spence', 18, 'China', 28, 'Entry Fragger', 60.56, 10, 954, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pierrette Heimann', 1, 'China', 32, 'Leader', 30.14, 458, 2159, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gussy Raymond', 5, 'Croatia', 35, 'Entry Fragger', 93.18, 363, 1894, 0.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amata Palumbo', 18, 'Russia', 42, 'Leader', 8.23, 315, 2539, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christiana Jeanel', 18, 'China', 27, 'Entry Fragger', 66.88, 268, 833, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hewett Hrynczyk', 15, 'Brazil', 39, 'Entry Fragger', 75.17, 67, 2978, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Guillermo Pickersail', 16, 'Brazil', 22, 'Leader', 95.23, 200, 2024, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Etienne Yonge', 13, 'Czech Republic', 24, 'Leader', 22.56, 279, 2660, 1.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melita Maykin', 21, 'Indonesia', 18, 'Flex', 20.61, 354, 719, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Flore Garoghan', 12, 'China', 36, 'Support', 62.55, 0, 1518, 2.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amata McKimmie', 2, 'Indonesia', 34, 'Flex', 16.75, 38, 1063, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beth Gomar', 10, 'Ukraine', 29, 'Entry Fragger', 43.78, 56, 2043, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ilsa MacGillespie', 18, 'China', 30, 'Support', 0.49, 300, 342, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morty Banbrick', 14, 'Peru', 21, 'Flex', 27.02, 65, 1041, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mirabella Cauthra', 3, 'Indonesia', 34, 'Entry Fragger', 84.74, 70, 1472, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Curcio Delleschi', 5, 'Czech Republic', 41, 'Support', 39.9, 83, 2636, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ellissa Skilbeck', 19, 'China', 21, 'Leader', 92.62, 487, 1957, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Modestine Sharland', 15, 'Russia', 30, 'Support', 7.66, 261, 2241, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carmine Jerschke', 7, 'China', 40, 'Entry Fragger', 63.78, 34, 2391, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kayley Nugent', 2, 'Ukraine', 35, 'Support', 75.0, 493, 2640, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pate Fratson', 17, 'Peru', 18, 'Support', 62.16, 461, 2589, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nataline Goold', 21, 'Poland', 41, 'Support', 31.59, 49, 135, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Addie Giffon', 15, 'China', 20, 'Support', 65.83, 411, 846, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernardina Hows', 6, 'China', 21, 'Support', 85.38, 13, 1397, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaila Tattersall', 4, 'Indonesia', 38, 'Flex', 53.65, 301, 401, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Scotti Barstow', 13, 'Argentina', 20, 'Entry Fragger', 90.37, 259, 11, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alard Crush', 21, 'Indonesia', 37, 'Flex', 31.48, 373, 759, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Menard Clendinning', 19, 'Russia', 41, 'Entry Fragger', 74.76, 223, 353, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lindy Baugh', 8, 'Armenia', 42, 'Leader', 60.36, 156, 1405, 2.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Montgomery Mullineux', 9, 'Palestinian Territory', 38, 'Leader', 36.03, 238, 686, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicol Karpinski', 15, 'Greece', 40, 'Flex', 66.15, 129, 2336, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Katina MacTerlagh', 9, 'China', 21, 'Entry Fragger', 40.15, 114, 900, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Flo Simko', 16, 'Philippines', 22, 'Leader', 15.97, 122, 2028, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dietrich Grogono', 5, 'Panama', 42, 'Leader', 36.16, 456, 2427, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tate Reisen', 4, 'Indonesia', 29, 'Leader', 90.22, 435, 1583, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kristi Bellee', 19, 'Indonesia', 28, 'Flex', 91.79, 22, 939, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynde Kurth', 20, 'Philippines', 30, 'Flex', 4.48, 45, 1888, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corene Napleton', 9, 'Philippines', 38, 'Flex', 73.8, 399, 1830, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hartley Drewe', 5, 'Russia', 32, 'Leader', 60.87, 163, 2206, 0.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meggy Giorgioni', 8, 'Indonesia', 37, 'Leader', 4.72, 167, 255, 2.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Saree Maccrie', 5, 'Portugal', 30, 'Leader', 13.81, 78, 1317, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Perice Ovenell', 4, 'China', 40, 'Entry Fragger', 60.54, 206, 850, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Renelle Ughi', 4, 'United Kingdom', 18, 'Support', 97.36, 256, 481, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hamish Gemlbett', 6, 'Cuba', 41, 'Entry Fragger', 16.14, 146, 2104, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bertram Sefton', 1, 'Poland', 27, 'Entry Fragger', 11.73, 323, 1091, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Peri Lindenfeld', 8, 'China', 24, 'Entry Fragger', 67.59, 103, 445, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maximo Dorracott', 2, 'Thailand', 21, 'Flex', 71.06, 171, 942, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Penni Christaeas', 6, 'Peru', 22, 'Entry Fragger', 8.28, 71, 1554, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Malanie Kynforth', 3, 'France', 36, 'Support', 51.58, 451, 1887, 2.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annissa Woollends', 19, 'Czech Republic', 26, 'Entry Fragger', 19.12, 429, 2261, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jane Keenlyside', 1, 'Japan', 38, 'Support', 58.78, 202, 1670, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hernando Tapply', 9, 'Indonesia', 40, 'Support', 28.36, 206, 2466, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Armstrong Illes', 7, 'Argentina', 24, 'Leader', 65.4, 276, 2839, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kerry McGrey', 19, 'Ukraine', 37, 'Support', 48.87, 414, 1236, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morgan Habergham', 6, 'El Salvador', 32, 'Leader', 68.47, 82, 2737, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Killian Vedenichev', 8, 'Ethiopia', 29, 'Leader', 52.71, 36, 2393, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stanwood Slorance', 15, 'Ireland', 18, 'Support', 54.84, 191, 2282, 2.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marline Coward', 18, 'Indonesia', 19, 'Leader', 5.03, 393, 2991, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dreddy Eton', 6, 'Ukraine', 39, 'Flex', 39.13, 183, 835, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Callida Leacy', 4, 'United States', 42, 'Flex', 99.03, 28, 2539, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raina Ochiltree', 4, 'France', 29, 'Leader', 6.24, 107, 1352, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Antonius Arundel', 17, 'Burkina Faso', 19, 'Flex', 36.01, 482, 1390, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laurel Melloi', 1, 'Indonesia', 34, 'Entry Fragger', 71.14, 122, 1723, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cathlene Fitzjohn', 2, 'Thailand', 42, 'Support', 52.85, 261, 964, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nert Charlin', 20, 'United States', 29, 'Flex', 38.24, 395, 1890, 0.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tish Coucha', 17, 'China', 26, 'Leader', 29.45, 123, 1718, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marianne Chezelle', 2, 'Bangladesh', 34, 'Support', 95.66, 169, 2101, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Celinda Archley', 12, 'Greece', 31, 'Entry Fragger', 1.35, 12, 1062, 0.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ferrel Oliver-Paull', 20, 'China', 26, 'Flex', 8.07, 233, 130, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elia Wightman', 20, 'Indonesia', 39, 'Flex', 23.88, 187, 321, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claudian Newey', 13, 'Cuba', 36, 'Support', 49.22, 150, 368, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mace Bestall', 2, 'Malaysia', 24, 'Flex', 99.36, 213, 1086, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cortie Labon', 20, 'Thailand', 34, 'Support', 23.19, 251, 2658, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marika Stoffer', 15, 'Colombia', 42, 'Entry Fragger', 83.68, 40, 448, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caria Tuddenham', 2, 'Philippines', 34, 'Entry Fragger', 79.19, 179, 1165, 1.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brok Lukock', 20, 'China', 32, 'Support', 42.25, 48, 1250, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lilian Gerren', 14, 'Indonesia', 22, 'Leader', 25.62, 161, 2665, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tremayne Taffe', 21, 'Japan', 35, 'Flex', 11.35, 39, 543, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Trace Titta', 1, 'New Zealand', 21, 'Entry Fragger', 79.46, 287, 1330, 1.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Callida Lohoar', 16, 'Indonesia', 39, 'Flex', 22.68, 205, 2769, 2.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cazzie Rameau', 17, 'Russia', 37, 'Support', 52.88, 304, 2938, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dominique Bradburn', 9, 'Brazil', 23, 'Leader', 78.03, 31, 1660, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarred Hasard', 18, 'China', 36, 'Entry Fragger', 65.62, 289, 1588, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gunther Jerosch', 2, 'China', 31, 'Entry Fragger', 98.41, 319, 2266, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ilse Portman', 13, 'United States', 18, 'Entry Fragger', 74.12, 477, 886, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brnaba Fleet', 13, 'Portugal', 28, 'Entry Fragger', 59.95, 285, 728, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Parnell Aloshechkin', 14, 'France', 33, 'Support', 13.75, 292, 2171, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ulysses Imlin', 5, 'Honduras', 38, 'Entry Fragger', 2.52, 145, 1926, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorry Quarless', 12, 'China', 28, 'Flex', 99.87, 473, 2565, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chryste Oldknow', 5, 'France', 33, 'Leader', 55.29, 129, 1962, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mayor Perrelle', 2, 'Jordan', 38, 'Support', 93.06, 11, 45, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kerrin Roblou', 8, 'Poland', 30, 'Flex', 70.77, 131, 1944, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheilah Kelson', 16, 'Bosnia and Herzegovina', 28, 'Entry Fragger', 66.08, 364, 2011, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brit Murrow', 6, 'Portugal', 34, 'Support', 11.34, 249, 551, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charis Mulqueeny', 9, 'France', 23, 'Support', 68.08, 388, 2477, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Andonis Middlemass', 17, 'Poland', 34, 'Support', 28.06, 29, 1851, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bathsheba Uff', 20, 'Poland', 36, 'Flex', 24.02, 479, 557, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mordecai Soggee', 16, 'China', 21, 'Leader', 71.92, 208, 230, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elia Levick', 13, 'Russia', 33, 'Entry Fragger', 26.32, 308, 2182, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Linn Breinl', 16, 'Croatia', 36, 'Leader', 55.47, 189, 1880, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margarette Kearton', 12, 'Uzbekistan', 34, 'Flex', 71.62, 62, 1285, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Inga Aubray', 15, 'Czech Republic', 30, 'Entry Fragger', 60.3, 464, 516, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stanley Earl', 13, 'Czech Republic', 18, 'Leader', 19.29, 446, 2233, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vi Kevis', 2, 'Russia', 19, 'Support', 67.32, 114, 2455, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melantha Velez', 17, 'France', 39, 'Entry Fragger', 82.35, 244, 2736, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dannie Immins', 7, 'Nigeria', 30, 'Leader', 34.09, 352, 1589, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mendy Cogman', 8, 'Latvia', 33, 'Flex', 23.75, 283, 1901, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Auria Humphrey', 20, 'Philippines', 24, 'Support', 98.56, 211, 1020, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gil Traut', 20, 'Poland', 41, 'Flex', 99.01, 24, 2692, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Genni Hutcheon', 8, 'Greece', 21, 'Support', 15.26, 113, 777, 0.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Katinka Lodwig', 15, 'Russia', 25, 'Leader', 70.89, 75, 31, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tamra Poundford', 8, 'Paraguay', 18, 'Flex', 29.38, 187, 628, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosalind Higgoe', 4, 'Ecuador', 34, 'Support', 10.17, 167, 472, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christoffer Ambroisin', 2, 'Indonesia', 41, 'Leader', 71.82, 73, 2507, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Briny Ducket', 8, 'Colombia', 37, 'Leader', 79.44, 359, 570, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheri Machel', 6, 'Pakistan', 32, 'Support', 97.97, 262, 776, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Scarlett Monkeman', 20, 'Serbia', 20, 'Flex', 75.49, 452, 2676, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nanine Doogood', 2, 'China', 30, 'Flex', 96.38, 118, 2469, 0.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hobart Beaves', 20, 'Philippines', 29, 'Support', 76.73, 329, 582, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agretha Abrahmer', 3, 'Jamaica', 39, 'Leader', 61.42, 70, 53, 0.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ruby Luchelli', 14, 'Philippines', 40, 'Leader', 84.53, 365, 1251, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jerrilee McCook', 12, 'Honduras', 34, 'Support', 31.41, 353, 1236, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chuck Irce', 10, 'Russia', 25, 'Leader', 24.71, 384, 1542, 1.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Krysta Danilchenko', 5, 'Honduras', 24, 'Support', 32.63, 158, 760, 0.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carling Spurier', 21, 'Nigeria', 24, 'Entry Fragger', 66.0, 68, 34, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Faber Maciak', 14, 'Iran', 32, 'Flex', 47.8, 494, 2992, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabriellia Rivalland', 4, 'Ukraine', 39, 'Leader', 61.89, 305, 1668, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aretha Allom', 1, 'Indonesia', 29, 'Support', 73.04, 142, 138, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Peterus Huggard', 8, 'Ukraine', 22, 'Flex', 37.66, 188, 356, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Issi Iseton', 6, 'Paraguay', 29, 'Entry Fragger', 54.29, 251, 904, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stanwood Garroway', 14, 'Indonesia', 22, 'Flex', 8.65, 211, 2014, 2.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blake Clench', 20, 'Ukraine', 23, 'Flex', 37.27, 68, 2534, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Guss Coonan', 4, 'United States', 34, 'Support', 24.89, 115, 153, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alys McGarrie', 15, 'Russia', 32, 'Entry Fragger', 54.1, 210, 2027, 2.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chelsey Reveland', 7, 'United States', 29, 'Leader', 23.09, 105, 431, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margy Ilyenko', 18, 'Sweden', 23, 'Entry Fragger', 58.66, 99, 2900, 2.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shepard Brydie', 20, 'France', 41, 'Flex', 47.88, 328, 1962, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sollie Martinuzzi', 15, 'United States', 42, 'Support', 62.91, 189, 362, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Osborne Kefford', 12, 'Sweden', 19, 'Entry Fragger', 13.43, 313, 278, 2.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Philippa Canacott', 11, 'China', 21, 'Flex', 51.62, 351, 2941, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabina Carvell', 12, 'China', 25, 'Flex', 7.02, 500, 1875, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ellwood Potkins', 19, 'Portugal', 27, 'Support', 18.54, 51, 2189, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mord Jankowski', 3, 'China', 23, 'Leader', 44.25, 427, 2793, 0.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marna Van Velde', 21, 'Kyrgyzstan', 31, 'Entry Fragger', 92.55, 344, 2388, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rickie Glasson', 8, 'Vietnam', 37, 'Support', 60.7, 16, 422, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Randall Waber', 12, 'Japan', 36, 'Entry Fragger', 2.35, 405, 673, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Doralynne De Giorgio', 11, 'Poland', 32, 'Entry Fragger', 53.71, 58, 2208, 0.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Opalina Bonhill', 10, 'China', 25, 'Flex', 64.89, 359, 2008, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rey Shortland', 18, 'China', 23, 'Flex', 59.21, 215, 1053, 1.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bridie Croome', 3, 'Sweden', 23, 'Entry Fragger', 10.66, 264, 393, 0.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bobbette Yacobsohn', 3, 'Philippines', 23, 'Support', 12.23, 130, 779, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Betteann Cosyns', 2, 'China', 34, 'Support', 57.25, 87, 457, 2.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Muffin Klimontovich', 15, 'Russia', 37, 'Support', 11.83, 447, 1002, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mariya Lewins', 2, 'Indonesia', 21, 'Entry Fragger', 58.46, 257, 332, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berthe Ellyatt', 12, 'France', 25, 'Leader', 12.55, 462, 1038, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jandy Yukhnini', 12, 'Russia', 39, 'Entry Fragger', 89.93, 19, 904, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Natka Winsiowiecki', 9, 'China', 34, 'Leader', 71.0, 449, 894, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Minny Gabrieli', 17, 'China', 28, 'Support', 36.66, 227, 185, 2.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evangelina Parrott', 1, 'Peru', 31, 'Entry Fragger', 10.08, 314, 1080, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tristan Lowre', 9, 'Russia', 21, 'Support', 60.29, 22, 1547, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anetta Patty', 4, 'Paraguay', 20, 'Leader', 73.66, 114, 504, 2.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vallie Bartleet', 18, 'Brazil', 41, 'Support', 37.13, 353, 956, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacenta Valde', 21, 'United Arab Emirates', 39, 'Entry Fragger', 82.73, 79, 2080, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jerry Pothecary', 1, 'Indonesia', 20, 'Leader', 94.81, 186, 912, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Belle Strute', 8, 'China', 37, 'Support', 57.74, 428, 2858, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lilah Gain', 9, 'Philippines', 38, 'Flex', 38.65, 328, 2180, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gerianna Tichelaar', 1, 'China', 38, 'Entry Fragger', 43.36, 85, 2558, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dianna Jarnell', 18, 'Afghanistan', 36, 'Entry Fragger', 28.64, 472, 456, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Terra Paskell', 13, 'China', 20, 'Support', 76.55, 127, 2503, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tami Fishpond', 20, 'Nigeria', 42, 'Entry Fragger', 31.79, 419, 1458, 0.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Conrad Paynes', 7, 'France', 30, 'Entry Fragger', 2.39, 326, 1982, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hammad Knowlson', 11, 'Marshall Islands', 32, 'Entry Fragger', 63.92, 275, 2623, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jae Ragsdale', 17, 'Indonesia', 22, 'Flex', 72.76, 369, 650, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willamina Cusiter', 5, 'Indonesia', 32, 'Entry Fragger', 91.84, 198, 1379, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vinny Morsey', 14, 'Serbia', 22, 'Support', 36.67, 71, 1554, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Viv Niezen', 19, 'China', 37, 'Support', 86.41, 126, 1938, 2.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Othella Staley', 20, 'United States', 26, 'Leader', 18.68, 409, 1903, 2.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oby Inott', 3, 'Portugal', 24, 'Entry Fragger', 56.86, 330, 1489, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arthur Scurr', 5, 'Comoros', 28, 'Support', 73.68, 473, 1168, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eugene Jordi', 13, 'South Africa', 38, 'Flex', 13.3, 63, 1102, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gus Hanse', 13, 'Guatemala', 19, 'Leader', 98.47, 356, 2551, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marchall Hawke', 14, 'Zambia', 42, 'Support', 24.06, 254, 1986, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Katusha Patient', 6, 'Zambia', 31, 'Support', 93.64, 461, 1870, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gibby Jennrich', 11, 'Czech Republic', 30, 'Leader', 5.48, 435, 2474, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Niki Lorenz', 19, 'Portugal', 28, 'Entry Fragger', 84.44, 143, 828, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ricki Smartman', 19, 'South Africa', 36, 'Support', 12.13, 493, 2667, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Albina Boyat', 17, 'Hungary', 27, 'Leader', 76.67, 12, 788, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bruis Waddilove', 10, 'China', 36, 'Support', 2.36, 99, 117, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ilysa Foulks', 2, 'Costa Rica', 41, 'Entry Fragger', 16.64, 270, 2405, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bentley Wix', 4, 'Indonesia', 24, 'Support', 35.81, 161, 620, 2.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hyman Babon', 18, 'China', 25, 'Leader', 48.0, 188, 2229, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karil Drage', 7, 'China', 34, 'Flex', 44.75, 325, 1905, 2.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pattie Berthel', 4, 'Indonesia', 23, 'Entry Fragger', 2.88, 455, 1272, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Verna Izod', 3, 'Brazil', 27, 'Flex', 53.6, 34, 2256, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emmet Wolpert', 17, 'Indonesia', 26, 'Support', 9.59, 218, 115, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Weidar Ceccoli', 17, 'China', 20, 'Entry Fragger', 48.41, 282, 768, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alyssa Silbersak', 15, 'Poland', 26, 'Leader', 44.99, 56, 12, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lonny Inggall', 10, 'Indonesia', 26, 'Flex', 46.54, 205, 487, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emelita Cutajar', 20, 'Canada', 35, 'Leader', 51.64, 291, 2798, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felita Howes', 21, 'Czech Republic', 30, 'Support', 16.35, 261, 2829, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaston Langstone', 6, 'Mongolia', 24, 'Entry Fragger', 57.73, 12, 2946, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Northrup Offield', 15, 'China', 37, 'Entry Fragger', 52.49, 430, 460, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abigale Feldbau', 14, 'Russia', 35, 'Flex', 93.48, 70, 2984, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carlee Polsin', 11, 'Nigeria', 22, 'Support', 40.41, 473, 395, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amie Charlon', 5, 'China', 18, 'Leader', 51.08, 444, 324, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chas Scholefield', 12, 'Mexico', 19, 'Entry Fragger', 32.37, 38, 1108, 2.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hermon Unworth', 7, 'Ireland', 19, 'Leader', 27.7, 96, 2898, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dianemarie Gaize', 2, 'Czech Republic', 39, 'Leader', 53.27, 413, 2739, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bennett Howship', 14, 'Azerbaijan', 26, 'Support', 62.42, 162, 2587, 1.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bevvy Muddicliffe', 18, 'Peru', 37, 'Entry Fragger', 24.17, 344, 1647, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaylene Offner', 11, 'China', 38, 'Support', 42.46, 317, 1645, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sammy Hoy', 8, 'Russia', 41, 'Leader', 24.93, 447, 448, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ameline Rate', 20, 'United States', 31, 'Flex', 8.49, 452, 58, 2.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tootsie McEntagart', 19, 'Brazil', 31, 'Entry Fragger', 26.86, 197, 468, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ezra Wreakes', 18, 'Portugal', 26, 'Flex', 41.29, 454, 2513, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dion Strephan', 19, 'China', 21, 'Flex', 8.85, 222, 2431, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Justin Faldo', 12, 'Peru', 34, 'Support', 39.16, 154, 1515, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Veradis Macbane', 3, 'Sweden', 20, 'Leader', 30.74, 320, 526, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alma Oxborrow', 5, 'Russia', 35, 'Flex', 80.37, 362, 1402, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Upton Mechi', 18, 'Philippines', 22, 'Leader', 84.37, 482, 864, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Linoel Danne', 20, 'China', 18, 'Flex', 93.38, 11, 696, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Terza Gellier', 4, 'China', 22, 'Entry Fragger', 79.52, 77, 2933, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jobey Beagles', 4, 'Palestinian Territory', 36, 'Leader', 43.28, 301, 1882, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ezri Hawkes', 8, 'Indonesia', 36, 'Leader', 95.32, 94, 448, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vivien Munnion', 3, 'Estonia', 21, 'Leader', 82.67, 256, 2453, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reggi Kennermann', 13, 'Sweden', 27, 'Entry Fragger', 23.73, 295, 2457, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Manny Ludewig', 10, 'Botswana', 26, 'Leader', 50.3, 490, 2749, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Teodor Cake', 8, 'Russia', 31, 'Leader', 39.64, 88, 1144, 2.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Noell Kington', 8, 'France', 40, 'Leader', 43.69, 164, 2360, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Herc Berre', 3, 'Philippines', 24, 'Entry Fragger', 94.75, 269, 766, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ninetta MacDirmid', 14, 'China', 19, 'Entry Fragger', 86.12, 196, 2669, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kizzee Carroll', 9, 'Canada', 35, 'Entry Fragger', 14.39, 470, 1072, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ralph Coleson', 15, 'Poland', 42, 'Support', 87.82, 421, 2525, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ingar Stopps', 19, 'France', 27, 'Entry Fragger', 86.21, 51, 86, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ivor Andrusov', 6, 'China', 29, 'Leader', 41.5, 407, 787, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Florance Fawley', 10, 'Peru', 32, 'Support', 92.08, 322, 2583, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rocky Chantrell', 7, 'China', 29, 'Support', 6.46, 399, 1730, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cris Sorey', 16, 'Ireland', 36, 'Flex', 56.92, 431, 294, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Torey Fridlington', 6, 'Vietnam', 39, 'Flex', 63.9, 246, 2178, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carma Ketteridge', 12, 'China', 33, 'Leader', 93.36, 6, 2058, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Noak Boothebie', 20, 'Belarus', 23, 'Flex', 20.62, 337, 2612, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shaine Goater', 19, 'Japan', 27, 'Support', 52.49, 183, 1379, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kip Graddon', 18, 'Brazil', 33, 'Leader', 26.73, 379, 2343, 1.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lauretta Trustie', 3, 'Jordan', 41, 'Support', 95.31, 67, 1142, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hazlett Chritchlow', 17, 'Russia', 21, 'Entry Fragger', 12.15, 409, 2771, 1.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raine Wetheril', 8, 'Iraq', 28, 'Support', 25.83, 179, 128, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giselbert Barnet', 13, 'China', 42, 'Entry Fragger', 81.3, 30, 1235, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Korry Greenalf', 10, 'Burundi', 19, 'Flex', 60.6, 91, 2383, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Costanza Enrrico', 8, 'Mongolia', 22, 'Leader', 43.58, 278, 2970, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Godfree Maghull', 3, 'China', 25, 'Support', 62.1, 260, 946, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tadd Dufaire', 20, 'Kenya', 23, 'Support', 50.49, 244, 2920, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marnia Drake', 9, 'China', 35, 'Flex', 5.62, 59, 321, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sean Paradin', 5, 'Russia', 38, 'Flex', 16.91, 209, 532, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roobbie Grzegorecki', 18, 'Brazil', 18, 'Entry Fragger', 69.32, 479, 1712, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annissa Grieve', 21, 'Colombia', 21, 'Flex', 93.12, 5, 880, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Solomon Ingraham', 14, 'Portugal', 38, 'Entry Fragger', 18.42, 496, 1204, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rayshell Latus', 10, 'Poland', 28, 'Flex', 42.94, 333, 1870, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shaun Muscroft', 16, 'Vietnam', 28, 'Flex', 33.09, 227, 2323, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darice Moseley', 21, 'Spain', 33, 'Support', 82.91, 462, 1400, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margalit Sauter', 21, 'China', 18, 'Flex', 23.69, 204, 1340, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Genny Alway', 4, 'China', 41, 'Support', 9.73, 301, 2196, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hamlen Burhouse', 15, 'Canada', 28, 'Leader', 17.67, 11, 310, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brandais Martinyuk', 4, 'Indonesia', 41, 'Flex', 77.49, 48, 2376, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tatiana Hargreves', 3, 'China', 26, 'Flex', 87.88, 48, 530, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Iggie Tizard', 10, 'China', 34, 'Support', 46.58, 188, 1267, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willdon Matyushonok', 7, 'China', 37, 'Support', 89.21, 327, 2750, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Talya Howkins', 4, 'China', 31, 'Leader', 28.11, 170, 1863, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Finlay Champagne', 7, 'China', 31, 'Entry Fragger', 81.67, 13, 19, 1.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Creigh Fautly', 1, 'Poland', 40, 'Support', 70.82, 178, 846, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margette Able', 15, 'China', 19, 'Support', 38.41, 446, 2177, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marsiella Satterthwaite', 11, 'Czech Republic', 28, 'Flex', 17.51, 495, 1122, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicolea Wadeson', 19, 'United States', 25, 'Support', 30.83, 188, 2166, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Regina Philippeaux', 12, 'China', 38, 'Leader', 44.78, 279, 2717, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jeannette Baulcombe', 13, 'Poland', 38, 'Leader', 90.1, 190, 168, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarad Irvine', 8, 'Philippines', 29, 'Flex', 72.47, 302, 2015, 1.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chane Brocks', 8, 'Croatia', 24, 'Leader', 42.57, 481, 1097, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brucie Ravenscraft', 5, 'Indonesia', 32, 'Flex', 31.98, 263, 2390, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jude Divine', 12, 'China', 32, 'Flex', 1.11, 178, 2560, 2.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernadine Caunce', 7, 'Colombia', 31, 'Leader', 70.34, 181, 2495, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tony Van Der Hoog', 11, 'Indonesia', 23, 'Support', 83.25, 157, 1776, 2.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blythe Tirte', 1, 'Syria', 24, 'Support', 14.49, 443, 2466, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Orsa Sausman', 6, 'Indonesia', 28, 'Entry Fragger', 20.86, 174, 2287, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agnesse Dorgon', 16, 'Georgia', 24, 'Flex', 70.49, 201, 14, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cesaro Hulbert', 12, 'Czech Republic', 35, 'Flex', 58.81, 382, 1770, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pearline Beneix', 5, 'Colombia', 34, 'Support', 22.2, 326, 668, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christyna Scurrer', 14, 'Ukraine', 23, 'Support', 59.88, 422, 597, 0.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Matilda Lawfull', 19, 'China', 35, 'Leader', 10.45, 76, 2143, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adelind Gunbie', 18, 'Sri Lanka', 41, 'Support', 72.46, 197, 988, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carr Axworthy', 4, 'United States', 29, 'Flex', 9.5, 142, 445, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Paxon Adenet', 16, 'Mongolia', 31, 'Flex', 2.47, 168, 356, 1.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ola Painswick', 16, 'China', 22, 'Flex', 47.79, 383, 2957, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edgar Bellingham', 4, 'Albania', 23, 'Support', 44.8, 364, 2809, 0.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annaliese Breeze', 10, 'Philippines', 39, 'Leader', 26.78, 434, 2858, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rorke Cocklie', 15, 'Mongolia', 27, 'Entry Fragger', 89.44, 495, 732, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marietta Grumley', 8, 'Canada', 26, 'Flex', 37.39, 215, 2297, 2.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lurline Micka', 6, 'France', 38, 'Flex', 6.78, 380, 2129, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harmon Scrimgeour', 12, 'China', 37, 'Entry Fragger', 31.21, 52, 1933, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gayla Joris', 20, 'Poland', 38, 'Entry Fragger', 77.31, 376, 270, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dierdre Drinkel', 4, 'Philippines', 18, 'Leader', 31.35, 325, 724, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ericha Gribbin', 19, 'China', 26, 'Support', 68.22, 476, 190, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Phillipe Roddy', 19, 'Indonesia', 37, 'Support', 82.6, 100, 357, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Helge Bridgewood', 9, 'Vietnam', 27, 'Flex', 41.82, 458, 1839, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chase Gyppes', 19, 'Angola', 29, 'Leader', 71.0, 311, 89, 1.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charin Headings', 5, 'Ukraine', 39, 'Entry Fragger', 69.94, 10, 2495, 1.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nonnah MacAlpyne', 6, 'China', 38, 'Entry Fragger', 21.45, 434, 2136, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cullin Chaffyn', 19, 'Ukraine', 35, 'Support', 41.05, 88, 1349, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eadith Medler', 21, 'China', 39, 'Support', 4.27, 10, 360, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pancho Rase', 19, 'Japan', 22, 'Entry Fragger', 42.74, 142, 1058, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rhianna Tommis', 13, 'China', 20, 'Entry Fragger', 93.69, 32, 2553, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joby Arthan', 10, 'China', 38, 'Entry Fragger', 10.36, 255, 123, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Honey Sharper', 17, 'Brazil', 26, 'Support', 54.81, 489, 1530, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hyman Brimfield', 21, 'Colombia', 35, 'Flex', 88.28, 482, 2263, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Magdaia Whight', 17, 'Japan', 28, 'Entry Fragger', 49.81, 72, 1974, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fabio Lofthouse', 9, 'Greece', 23, 'Leader', 10.13, 247, 410, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sharity August', 20, 'Russia', 20, 'Entry Fragger', 46.62, 326, 597, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willi Kenson', 11, 'Uganda', 22, 'Entry Fragger', 12.17, 103, 2821, 2.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leela Cawsy', 12, 'Portugal', 40, 'Entry Fragger', 55.08, 167, 2230, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tanner Chamberlaine', 15, 'Somalia', 28, 'Support', 1.02, 275, 2888, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yurik Cosbey', 17, 'Indonesia', 25, 'Support', 92.94, 127, 2615, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giuditta Marusik', 1, 'United States', 18, 'Entry Fragger', 56.97, 128, 2581, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Terry Rumney', 19, 'China', 25, 'Support', 66.36, 256, 1273, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nonah Snelgrove', 16, 'United States', 24, 'Leader', 38.39, 489, 799, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melanie Lonsdale', 11, 'France', 20, 'Flex', 32.48, 422, 436, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Guglielma Cockson', 12, 'Philippines', 23, 'Entry Fragger', 71.44, 140, 2379, 1.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shalna Ryman', 6, 'Philippines', 37, 'Entry Fragger', 46.96, 188, 782, 0.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stormy Jamblin', 8, 'Canada', 36, 'Flex', 10.93, 113, 1920, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Winifield Boucher', 11, 'Chile', 35, 'Flex', 83.88, 428, 1871, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Petey McAne', 20, 'China', 19, 'Entry Fragger', 37.46, 441, 1211, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lazare Curness', 1, 'Thailand', 29, 'Support', 34.3, 302, 103, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Egon Greetham', 20, 'Portugal', 42, 'Leader', 4.0, 432, 1798, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pepe Sibbering', 18, 'Afghanistan', 20, 'Support', 5.8, 492, 1168, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Denney Dalyiel', 15, 'Greece', 40, 'Flex', 48.29, 175, 967, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adams Yakovliv', 4, 'Ethiopia', 32, 'Flex', 59.6, 63, 1995, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pinchas Isitt', 17, 'Ethiopia', 18, 'Entry Fragger', 14.8, 240, 179, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Waldon Rolph', 13, 'United States', 18, 'Support', 33.9, 174, 1278, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dallis Billany', 21, 'Brazil', 40, 'Entry Fragger', 71.16, 35, 1733, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erv Salvadori', 3, 'China', 20, 'Support', 88.29, 400, 2668, 2.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Susannah Peizer', 20, 'France', 40, 'Entry Fragger', 22.88, 267, 2517, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaitlynn Domico', 9, 'Argentina', 32, 'Flex', 78.17, 147, 2544, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kiah Cooksley', 18, 'Panama', 26, 'Leader', 73.68, 51, 493, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Krystle Mingauld', 17, 'Botswana', 35, 'Leader', 54.44, 373, 2264, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Susannah Shakeshaft', 18, 'Western Sahara', 34, 'Flex', 59.97, 476, 1997, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isabelita Pettet', 9, 'China', 42, 'Support', 23.62, 190, 518, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anett Sumption', 12, 'Indonesia', 40, 'Entry Fragger', 30.67, 359, 2331, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carolan Crum', 10, 'Finland', 30, 'Entry Fragger', 65.72, 191, 637, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jess Gisby', 14, 'Madagascar', 35, 'Support', 95.55, 127, 2528, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alfonso Blue', 17, 'Philippines', 35, 'Leader', 34.47, 183, 2448, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gauthier Egleton', 18, 'France', 25, 'Flex', 98.08, 388, 710, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Martica Utting', 1, 'Mexico', 19, 'Leader', 47.24, 55, 198, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cordi Gascar', 18, 'China', 21, 'Support', 88.99, 242, 2200, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaultiero Baudou', 2, 'Canada', 40, 'Support', 97.06, 272, 2666, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robenia Stone Fewings', 19, 'Czech Republic', 21, 'Support', 25.16, 202, 2947, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cointon Moylan', 6, 'Indonesia', 36, 'Leader', 4.07, 301, 165, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daryl Bogey', 11, 'Canada', 42, 'Leader', 93.67, 321, 880, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nelson Robins', 17, 'Hungary', 37, 'Flex', 93.26, 435, 369, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kirk Vader', 20, 'Costa Rica', 19, 'Flex', 16.09, 420, 159, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Torre Moyse', 17, 'Denmark', 32, 'Entry Fragger', 38.17, 404, 2982, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alfonso Nairy', 20, 'Brazil', 30, 'Flex', 84.12, 178, 2178, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Niki Kerrigan', 14, 'Sweden', 27, 'Support', 12.58, 294, 1282, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ahmed Lambol', 11, 'Indonesia', 38, 'Flex', 70.55, 118, 1893, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Irwin Eccott', 12, 'China', 29, 'Entry Fragger', 50.06, 80, 1837, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Moishe Ranvoise', 14, 'Philippines', 38, 'Support', 32.99, 200, 2966, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gerti Stancer', 18, 'Honduras', 29, 'Leader', 81.34, 84, 2947, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maddalena Emptage', 6, 'United States', 42, 'Leader', 37.7, 372, 1757, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erroll Harbron', 17, 'South Africa', 41, 'Leader', 5.96, 443, 2331, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darice Retallick', 3, 'Croatia', 21, 'Support', 45.08, 68, 2206, 2.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gena Garric', 7, 'Indonesia', 40, 'Entry Fragger', 3.55, 136, 1437, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Scot Rugiero', 13, 'Indonesia', 37, 'Support', 88.67, 431, 196, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eda Barnard', 1, 'Yemen', 33, 'Flex', 89.7, 131, 2144, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dev Dabner', 6, 'United States', 32, 'Entry Fragger', 81.79, 104, 1722, 0.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucas Butrimovich', 3, 'Philippines', 22, 'Leader', 4.72, 24, 1716, 1.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shena Airth', 1, 'Greece', 21, 'Leader', 35.58, 214, 1636, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willow Been', 14, 'Hungary', 38, 'Flex', 88.38, 404, 2871, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kirstin Wipper', 6, 'United States', 30, 'Support', 38.42, 327, 2261, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Colver Diament', 14, 'Indonesia', 41, 'Support', 53.64, 88, 960, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quintin Wisham', 11, 'Indonesia', 21, 'Support', 56.07, 489, 1929, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alisander Burtwell', 1, 'China', 36, 'Entry Fragger', 25.65, 454, 2175, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Debby Garralts', 5, 'Djibouti', 41, 'Leader', 82.77, 416, 1809, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dotti Testin', 8, 'Philippines', 19, 'Entry Fragger', 93.58, 480, 406, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Martita Dongall', 18, 'Burkina Faso', 36, 'Support', 25.61, 354, 141, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Parke Sallan', 4, 'Portugal', 35, 'Flex', 53.8, 444, 1716, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rafaela Clausius', 4, 'Czech Republic', 35, 'Flex', 19.37, 330, 1744, 0.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janaya Budding', 17, 'Germany', 31, 'Flex', 27.49, 463, 1093, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bryce Gladtbach', 16, 'Czech Republic', 18, 'Entry Fragger', 60.04, 318, 2590, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alix Hubbins', 5, 'Russia', 39, 'Entry Fragger', 76.86, 308, 2719, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merrill Annesley', 15, 'Philippines', 42, 'Entry Fragger', 84.78, 281, 2904, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Perri Leggatt', 7, 'Dominican Republic', 35, 'Support', 89.98, 86, 67, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dorella Fominov', 16, 'China', 23, 'Leader', 77.57, 372, 879, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adela Metheringham', 17, 'Philippines', 19, 'Flex', 59.2, 459, 1215, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carter Pervoe', 18, 'Indonesia', 39, 'Leader', 76.98, 180, 1852, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marjorie Shellard', 10, 'Japan', 30, 'Entry Fragger', 59.7, 59, 2636, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Madalyn Minerdo', 16, 'Indonesia', 29, 'Flex', 63.26, 124, 1795, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheelah Houlden', 15, 'Vietnam', 21, 'Support', 85.74, 50, 1318, 1.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dotty Stanway', 19, 'Uruguay', 19, 'Entry Fragger', 74.28, 355, 808, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynett Hinstridge', 1, 'Vietnam', 37, 'Flex', 22.23, 151, 218, 0.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bobbee Mockes', 18, 'Poland', 35, 'Flex', 23.54, 81, 1062, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tilly Eastup', 2, 'Bosnia and Herzegovina', 23, 'Leader', 73.1, 23, 24, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shaine Abbes', 18, 'Syria', 19, 'Flex', 47.05, 487, 892, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leontine Edgecombe', 19, 'France', 34, 'Leader', 41.52, 88, 1250, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delmore De la Yglesias', 21, 'Yemen', 42, 'Support', 58.83, 329, 2009, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carlynne Tustin', 11, 'France', 18, 'Entry Fragger', 47.98, 286, 1117, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edgard Malyon', 19, 'China', 33, 'Leader', 90.44, 380, 721, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Consuelo Hardwick', 5, 'Indonesia', 32, 'Flex', 54.65, 451, 1406, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tamas Bangs', 7, 'South Africa', 30, 'Support', 68.52, 408, 2232, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kit Latliff', 18, 'United States', 39, 'Flex', 40.03, 349, 2265, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reeba Tezure', 15, 'Egypt', 38, 'Entry Fragger', 59.77, 417, 875, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meryl Chittim', 15, 'Czech Republic', 31, 'Flex', 41.76, 161, 243, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jackqueline Scouse', 2, 'Brazil', 30, 'Support', 21.48, 295, 792, 1.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Catarina Burkart', 11, 'Brazil', 19, 'Entry Fragger', 72.79, 215, 2630, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kirstin Tiptaft', 10, 'Japan', 23, 'Entry Fragger', 72.76, 409, 1099, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wendeline Willgrass', 11, 'Afghanistan', 33, 'Entry Fragger', 11.56, 382, 139, 1.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Issi Ciardo', 1, 'Russia', 29, 'Flex', 94.32, 423, 1748, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Llewellyn Murkitt', 5, 'United States', 24, 'Leader', 12.25, 135, 2173, 2.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Waldemar Julien', 20, 'Colombia', 29, 'Support', 53.32, 59, 2045, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kimberli Macveigh', 2, 'China', 19, 'Entry Fragger', 68.81, 86, 1490, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Galvin Ridgedell', 9, 'Kazakhstan', 42, 'Leader', 61.01, 299, 251, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meaghan Bugden', 18, 'Greece', 18, 'Support', 22.61, 178, 303, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clotilda Wharby', 17, 'France', 29, 'Flex', 14.04, 319, 2068, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rockie Proughten', 15, 'Brazil', 25, 'Leader', 17.63, 187, 204, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kienan Howsam', 15, 'China', 25, 'Flex', 32.35, 420, 807, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacqueline Bellam', 17, 'Indonesia', 28, 'Entry Fragger', 47.49, 459, 1091, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tristam Dupoy', 2, 'Poland', 33, 'Entry Fragger', 95.11, 485, 1895, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barbette Radish', 5, 'Zimbabwe', 26, 'Flex', 87.58, 420, 1428, 1.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Far Rubinsky', 1, 'Honduras', 27, 'Entry Fragger', 64.66, 494, 2385, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barbette Biasio', 14, 'Poland', 29, 'Entry Fragger', 76.71, 170, 1615, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tate Suddards', 4, 'Azerbaijan', 23, 'Support', 2.71, 215, 532, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Milicent Coade', 6, 'Madagascar', 21, 'Flex', 29.55, 292, 1376, 1.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Valentino Boughen', 1, 'Greece', 24, 'Flex', 87.63, 384, 119, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emylee Pirson', 15, 'Peru', 22, 'Leader', 4.6, 334, 497, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karry Greenlies', 15, 'Portugal', 26, 'Entry Fragger', 44.18, 73, 2178, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stanleigh Rottenbury', 1, 'Poland', 35, 'Flex', 50.92, 480, 2584, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Keith Branton', 12, 'United States', 32, 'Flex', 40.93, 470, 2509, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joyous Cobbald', 14, 'Gambia', 24, 'Entry Fragger', 62.45, 60, 902, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thomasine Proschek', 4, 'Bolivia', 35, 'Entry Fragger', 65.59, 92, 2373, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kele Havik', 4, 'Brazil', 22, 'Flex', 34.9, 131, 1151, 2.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gussie Turfin', 4, 'Armenia', 23, 'Support', 13.06, 161, 1544, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Saraann Hanstock', 9, 'France', 41, 'Entry Fragger', 83.26, 136, 1176, 1.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Latrena McCurdy', 1, 'Thailand', 42, 'Support', 70.44, 57, 1161, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Payton Vasechkin', 16, 'Brazil', 34, 'Flex', 65.6, 216, 501, 1.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Starlene Hedworth', 15, 'China', 25, 'Support', 0.13, 248, 2141, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Torr Ahern', 9, 'China', 19, 'Flex', 63.42, 100, 1698, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adriane Cassius', 12, 'Philippines', 41, 'Leader', 79.18, 67, 811, 0.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boigie Buff', 20, 'China', 20, 'Entry Fragger', 73.16, 194, 150, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rois Crofts', 4, 'New Zealand', 40, 'Leader', 60.26, 254, 146, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vikky Ruzicka', 14, 'Poland', 29, 'Leader', 1.28, 492, 973, 2.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Catharina Jedrychowski', 1, 'Serbia', 37, 'Entry Fragger', 48.93, 149, 2291, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shurlocke Douglas', 15, 'China', 26, 'Entry Fragger', 54.75, 452, 1038, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lena Pactat', 12, 'Colombia', 31, 'Entry Fragger', 73.5, 161, 880, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margaretha Shugg', 18, 'Guatemala', 28, 'Support', 61.09, 253, 1830, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gloriane Blanshard', 16, 'Indonesia', 24, 'Support', 1.62, 41, 1416, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marie-ann Atger', 21, 'Peru', 34, 'Support', 35.23, 482, 1688, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sig Buckeridge', 14, 'Sweden', 33, 'Support', 11.52, 76, 1533, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devonne Rouge', 1, 'Portugal', 34, 'Entry Fragger', 51.96, 199, 2531, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gertrude Lightwood', 14, 'Afghanistan', 22, 'Entry Fragger', 98.93, 493, 1083, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Greg Radki', 1, 'Tajikistan', 30, 'Entry Fragger', 86.25, 313, 754, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Easter Jaslem', 14, 'Czech Republic', 38, 'Entry Fragger', 5.19, 484, 2920, 2.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacobo Heaney`', 1, 'Indonesia', 24, 'Entry Fragger', 8.77, 452, 1695, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alvin Coldman', 1, 'Slovenia', 24, 'Flex', 88.15, 3, 2039, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Teena Blinde', 12, 'China', 27, 'Leader', 97.59, 445, 841, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gerty Kubala', 16, 'Netherlands', 23, 'Entry Fragger', 70.52, 473, 1754, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Heriberto Lally', 1, 'Greece', 24, 'Support', 96.19, 194, 522, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raymond Deas', 15, 'China', 42, 'Flex', 49.72, 421, 1514, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Egan Haxell', 2, 'Mexico', 26, 'Entry Fragger', 42.32, 267, 2904, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Georgine Edmund', 2, 'Ecuador', 23, 'Entry Fragger', 43.83, 54, 2623, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darlene Tofano', 8, 'Japan', 27, 'Leader', 12.23, 302, 1897, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joan Walsh', 10, 'Spain', 23, 'Support', 59.1, 337, 2634, 0.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boonie Kinneally', 8, 'Yemen', 36, 'Support', 88.17, 8, 137, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felice Burbury', 11, 'Poland', 34, 'Flex', 72.6, 358, 100, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacinda McGeachey', 20, 'Indonesia', 36, 'Leader', 15.71, 378, 1871, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Guenna Mollene', 20, 'United States', 25, 'Leader', 91.89, 332, 1192, 0.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Franz Newart', 12, 'France', 20, 'Leader', 72.09, 281, 2255, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cecilia Ruscoe', 2, 'Colombia', 30, 'Leader', 77.22, 370, 1262, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abby Dinley', 17, 'Serbia', 34, 'Support', 75.31, 464, 154, 1.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Forrest Forster', 2, 'China', 31, 'Entry Fragger', 61.93, 19, 1977, 1.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sol Ricciardo', 8, 'Japan', 27, 'Support', 70.9, 340, 1988, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bradley Voelker', 10, 'Philippines', 35, 'Leader', 58.28, 142, 1704, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chelsey Brinsford', 2, 'Bosnia and Herzegovina', 30, 'Flex', 91.66, 25, 1835, 0.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stevena Gianelli', 21, 'Russia', 38, 'Support', 27.46, 3, 957, 2.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fara Carletti', 3, 'China', 41, 'Entry Fragger', 32.09, 185, 2268, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jase Olfert', 14, 'China', 23, 'Support', 61.68, 339, 2900, 1.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Issie Astridge', 17, 'Indonesia', 22, 'Support', 88.52, 433, 2330, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mendy Lovett', 4, 'Brazil', 41, 'Leader', 73.84, 406, 1165, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meagan Wonham', 8, 'Ecuador', 22, 'Flex', 13.9, 260, 881, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karlie Mercy', 1, 'China', 33, 'Support', 65.37, 336, 167, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Manny Cattenach', 13, 'Brazil', 24, 'Entry Fragger', 1.97, 334, 2454, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cy Schmuhl', 20, 'Philippines', 26, 'Entry Fragger', 16.08, 175, 2677, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bald Annear', 10, 'United Arab Emirates', 33, 'Entry Fragger', 31.89, 261, 570, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caro Borge', 11, 'Ukraine', 33, 'Entry Fragger', 45.9, 320, 426, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anabel Winnard', 11, 'Russia', 22, 'Support', 35.76, 472, 407, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robin Treen', 1, 'Mexico', 27, 'Support', 2.04, 195, 502, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cirillo Domleo', 20, 'Mali', 28, 'Flex', 81.09, 70, 2578, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erminie Friel', 7, 'Brazil', 35, 'Support', 86.39, 164, 2721, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilton Rorke', 14, 'China', 33, 'Support', 44.75, 25, 2364, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anita Lorkings', 20, 'China', 30, 'Leader', 22.82, 367, 1338, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rowney Oxenbury', 14, 'Egypt', 35, 'Entry Fragger', 50.46, 444, 2297, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fredra Oneal', 17, 'China', 38, 'Leader', 91.92, 91, 1030, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clarinda Keal', 6, 'Egypt', 26, 'Leader', 19.79, 339, 1957, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sutton Londors', 16, 'Greece', 39, 'Flex', 79.06, 69, 1563, 1.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daron Delaney', 21, 'Japan', 18, 'Support', 0.5, 365, 1962, 2.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Antony Elacoate', 7, 'Indonesia', 31, 'Entry Fragger', 66.42, 231, 953, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rickey Lansberry', 19, 'Ukraine', 22, 'Flex', 96.97, 227, 2631, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fairlie Heersma', 4, 'Portugal', 42, 'Leader', 60.24, 103, 2653, 1.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devina Deviney', 15, 'South Korea', 21, 'Flex', 1.28, 326, 1152, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sorcha Caddy', 11, 'Philippines', 37, 'Entry Fragger', 84.62, 327, 1864, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cesaro Vallender', 3, 'China', 26, 'Leader', 69.84, 326, 1067, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yorke Gantz', 14, 'China', 39, 'Flex', 78.47, 88, 2195, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kenon MacCartney', 5, 'France', 26, 'Flex', 33.64, 406, 754, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kania Giovannilli', 19, 'Brazil', 34, 'Entry Fragger', 65.64, 104, 1563, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wanda Danne', 19, 'Indonesia', 32, 'Leader', 78.05, 18, 541, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mei Clemence', 15, 'Indonesia', 33, 'Leader', 20.08, 39, 1960, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berk Goulborne', 6, 'Czech Republic', 26, 'Leader', 32.37, 93, 2539, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vachel Sherborn', 16, 'Nigeria', 29, 'Flex', 25.35, 305, 2495, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janice Toby', 10, 'Tanzania', 27, 'Support', 50.24, 27, 1555, 1.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Flinn Lampel', 4, 'Russia', 18, 'Entry Fragger', 83.19, 63, 2825, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Levy Blethin', 13, 'Russia', 25, 'Entry Fragger', 49.21, 459, 1804, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zaccaria Bielfeld', 3, 'China', 42, 'Flex', 71.16, 262, 1822, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gene Gooly', 1, 'Bulgaria', 38, 'Flex', 60.82, 207, 1518, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brianna Sewall', 4, 'Indonesia', 38, 'Entry Fragger', 16.88, 279, 1507, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arleta Mewrcik', 21, 'Czech Republic', 27, 'Support', 11.95, 324, 1122, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ines Hattoe', 8, 'Ukraine', 19, 'Flex', 20.58, 149, 2910, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kincaid MacCrackan', 10, 'Brazil', 32, 'Leader', 64.93, 397, 516, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kira Goldes', 21, 'Poland', 42, 'Leader', 23.62, 62, 168, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('De Philpot', 16, 'Greece', 21, 'Flex', 38.8, 365, 2939, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Riley De Mitri', 14, 'Iraq', 21, 'Flex', 3.11, 62, 2358, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meredithe Delos', 18, 'Nigeria', 26, 'Flex', 96.68, 217, 2416, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rudy Teather', 4, 'Ukraine', 35, 'Leader', 45.32, 358, 884, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elyse Colt', 16, 'Poland', 41, 'Support', 72.73, 120, 1770, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Colver Neill', 9, 'Indonesia', 33, 'Entry Fragger', 37.25, 353, 955, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Noby Duffill', 13, 'China', 37, 'Flex', 76.91, 281, 2044, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Durante Aizikov', 3, 'China', 42, 'Flex', 36.6, 138, 712, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allayne Mapplebeck', 11, 'China', 40, 'Entry Fragger', 26.12, 425, 678, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filia Leppingwell', 17, 'Sweden', 22, 'Leader', 55.73, 424, 515, 1.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hank Hanbury', 5, 'Philippines', 39, 'Entry Fragger', 39.31, 468, 2185, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kiah Comettoi', 5, 'Colombia', 28, 'Support', 44.09, 144, 2071, 0.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mycah Ruddom', 18, 'China', 18, 'Entry Fragger', 93.25, 293, 727, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Burch Luby', 2, 'Kuwait', 30, 'Support', 10.67, 374, 1655, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chase Howen', 11, 'Malaysia', 31, 'Flex', 11.29, 12, 909, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wynnie Kunat', 20, 'Argentina', 29, 'Entry Fragger', 80.58, 289, 2060, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ingrim Elks', 4, 'China', 36, 'Entry Fragger', 87.58, 280, 105, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sella Adnam', 13, 'Uganda', 31, 'Support', 79.28, 53, 152, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melanie Deeny', 10, 'Philippines', 21, 'Entry Fragger', 40.3, 6, 1713, 2.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Neely Woolmer', 1, 'Afghanistan', 39, 'Entry Fragger', 99.34, 490, 2798, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosalia Streetfield', 20, 'Bulgaria', 27, 'Leader', 49.01, 465, 1419, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cordula Beattie', 9, 'China', 18, 'Flex', 39.53, 169, 2324, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jolene Clarkin', 20, 'Philippines', 19, 'Support', 17.3, 111, 1782, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amalia Blumsom', 9, 'Poland', 25, 'Leader', 34.52, 254, 2813, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carter Arter', 3, 'Italy', 36, 'Flex', 52.74, 387, 2445, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Inga Oxborrow', 19, 'Sweden', 21, 'Entry Fragger', 75.85, 295, 2943, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sanford Lush', 11, 'Philippines', 27, 'Leader', 60.47, 57, 778, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leia Wannop', 8, 'China', 19, 'Leader', 44.98, 470, 1081, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agneta Featherston', 3, 'Thailand', 28, 'Flex', 81.7, 192, 1990, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lewiss Revett', 7, 'United States', 42, 'Entry Fragger', 6.83, 212, 633, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amie Buard', 15, 'South Korea', 37, 'Leader', 81.23, 447, 491, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barclay Toffolo', 16, 'China', 21, 'Leader', 90.12, 129, 553, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hayward Maunton', 19, 'Indonesia', 22, 'Entry Fragger', 91.63, 337, 878, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Valentin Vasile', 16, 'Poland', 30, 'Flex', 29.29, 460, 1940, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danya Mounter', 20, 'Uganda', 20, 'Entry Fragger', 90.76, 430, 2195, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leeanne Townley', 7, 'Poland', 29, 'Flex', 49.13, 462, 1160, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lindsey Akehurst', 19, 'Portugal', 37, 'Leader', 14.52, 164, 1517, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kimberley Keppe', 6, 'China', 18, 'Leader', 95.06, 53, 166, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Horatio Guitonneau', 8, 'France', 35, 'Entry Fragger', 50.06, 109, 621, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joana Rowly', 12, 'Nigeria', 19, 'Flex', 63.87, 16, 1987, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quint Collingwood', 8, 'Colombia', 18, 'Entry Fragger', 65.05, 260, 1993, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rhodia Niesegen', 21, 'Russia', 37, 'Entry Fragger', 68.43, 103, 81, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chris Nelthorpe', 18, 'Kazakhstan', 22, 'Entry Fragger', 3.57, 316, 795, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bennie Pymer', 3, 'China', 30, 'Leader', 39.12, 469, 1450, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Magdalen Covil', 9, 'Angola', 39, 'Leader', 7.33, 421, 2037, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Locke Doreward', 21, 'China', 19, 'Flex', 10.67, 177, 2966, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ardella Alliston', 18, 'Indonesia', 37, 'Flex', 88.87, 463, 2991, 2.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tammy Mardlin', 9, 'Czech Republic', 18, 'Leader', 25.0, 28, 624, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cloris Sharer', 20, 'Czech Republic', 21, 'Flex', 45.55, 222, 879, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bee Heers', 1, 'Latvia', 25, 'Flex', 25.41, 3, 617, 2.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roxanna Hanlon', 17, 'Brazil', 22, 'Flex', 8.87, 98, 838, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vally Pawellek', 1, 'Indonesia', 37, 'Leader', 73.65, 103, 671, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anna-maria Ferran', 10, 'China', 39, 'Leader', 46.6, 426, 918, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rochester McCumskay', 1, 'Indonesia', 35, 'Support', 32.44, 247, 2192, 1.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lyssa Shrubshall', 16, 'Sweden', 20, 'Support', 62.56, 451, 2546, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amalita Dales', 8, 'Colombia', 28, 'Leader', 56.71, 105, 1020, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Esma Kinny', 19, 'Guatemala', 24, 'Leader', 82.38, 459, 2770, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pandora Lamkin', 9, 'China', 42, 'Leader', 52.74, 184, 164, 0.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roanna Garken', 15, 'Peru', 21, 'Entry Fragger', 76.75, 385, 1874, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maurice Legrice', 6, 'Norway', 27, 'Flex', 86.24, 19, 1220, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joleen Flory', 9, 'Mexico', 22, 'Flex', 28.25, 266, 393, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angelita Stedall', 7, 'Italy', 19, 'Flex', 53.09, 132, 1438, 0.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roddy Dingate', 19, 'China', 28, 'Support', 10.37, 468, 94, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Katee Maffione', 15, 'China', 40, 'Entry Fragger', 83.6, 105, 203, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amelia Casillas', 12, 'Malaysia', 25, 'Flex', 21.73, 187, 902, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tallou Buscher', 1, 'Mexico', 28, 'Entry Fragger', 1.27, 469, 1599, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Levy Stiger', 13, 'Indonesia', 24, 'Leader', 10.5, 99, 1326, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chase Etock', 18, 'China', 38, 'Entry Fragger', 71.76, 145, 1807, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gwennie Gherarducci', 7, 'Sweden', 25, 'Support', 50.65, 348, 1068, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delphine Tweedie', 2, 'Russia', 26, 'Leader', 39.06, 29, 2859, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Burg Bewshire', 18, 'Tanzania', 21, 'Entry Fragger', 72.71, 294, 1092, 1.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charity MacConchie', 7, 'Kyrgyzstan', 28, 'Flex', 83.3, 173, 2288, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thadeus Carley', 4, 'China', 40, 'Flex', 52.75, 154, 2904, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sean Locksley', 17, 'China', 41, 'Support', 61.94, 195, 998, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Franky Rawsthorne', 15, 'France', 21, 'Entry Fragger', 19.43, 138, 2383, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nonah Loudon', 7, 'China', 35, 'Leader', 90.32, 20, 451, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Everard Sandal', 17, 'Sudan', 22, 'Leader', 35.04, 431, 1770, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Faith Ryott', 17, 'China', 34, 'Flex', 28.93, 276, 2299, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gladys Sandy', 6, 'Russia', 28, 'Flex', 23.19, 16, 1598, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karim Skelhorne', 12, 'Nigeria', 27, 'Leader', 55.06, 500, 2870, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pryce Janosevic', 6, 'Russia', 31, 'Support', 55.59, 348, 2601, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernelle Bruckner', 21, 'Madagascar', 23, 'Support', 68.63, 445, 1270, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Livvie McOrkil', 11, 'Canada', 22, 'Leader', 57.07, 174, 2335, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sabine Hasson', 11, 'Sweden', 35, 'Flex', 52.22, 310, 2252, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merrielle Trenfield', 2, 'Sweden', 39, 'Support', 96.78, 49, 945, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marin Cahillane', 18, 'Guatemala', 26, 'Flex', 99.82, 418, 2087, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pattie Gresham', 18, 'France', 41, 'Support', 44.88, 193, 328, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emerson Kenefick', 20, 'Brazil', 37, 'Entry Fragger', 6.03, 1, 1316, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chariot Bows', 7, 'China', 31, 'Entry Fragger', 18.55, 417, 1876, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Neel Kardos', 10, 'China', 19, 'Leader', 35.82, 346, 2582, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ardra Powlesland', 6, 'Indonesia', 28, 'Entry Fragger', 42.0, 35, 1618, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lanna Isacq', 8, 'Indonesia', 41, 'Flex', 88.29, 46, 734, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Norrie Linzey', 20, 'Sweden', 27, 'Entry Fragger', 99.52, 372, 1896, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Genovera Hambers', 16, 'Sweden', 34, 'Support', 90.91, 47, 2927, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julina Fosse', 6, 'France', 41, 'Entry Fragger', 15.65, 227, 2536, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alvy Wickes', 4, 'China', 27, 'Flex', 63.4, 256, 970, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Antin Beaney', 20, 'Poland', 34, 'Entry Fragger', 57.56, 393, 1449, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mayer Weatherburn', 7, 'Russia', 29, 'Support', 9.84, 249, 2396, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hollyanne Wicklen', 15, 'Indonesia', 41, 'Leader', 92.47, 404, 1148, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dana Gawne', 8, 'Palestinian Territory', 32, 'Entry Fragger', 59.57, 88, 1227, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Saba Emlyn', 10, 'Indonesia', 37, 'Flex', 58.47, 412, 2807, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clotilda Itzkovsky', 12, 'Ukraine', 22, 'Entry Fragger', 13.44, 225, 1469, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ferrel Goodbourn', 8, 'China', 23, 'Flex', 98.93, 5, 584, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Randolf Meletti', 7, 'Indonesia', 41, 'Flex', 42.78, 384, 2474, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felic Garnsworth', 9, 'China', 38, 'Support', 74.28, 377, 2134, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Renee Skyme', 1, 'Russia', 34, 'Entry Fragger', 51.3, 236, 1683, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janeta Dobkin', 11, 'Brazil', 26, 'Entry Fragger', 54.44, 195, 2496, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Haydon Ovens', 11, 'China', 21, 'Flex', 95.42, 375, 1512, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julienne Okeshott', 8, 'Nigeria', 25, 'Support', 52.22, 315, 1871, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filip Cronkshaw', 13, 'China', 20, 'Flex', 4.61, 444, 949, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harald Drinkeld', 1, 'Philippines', 23, 'Support', 23.2, 301, 1790, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erny Cruise', 20, 'China', 37, 'Flex', 45.64, 297, 2847, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wolf Deetlof', 18, 'Thailand', 29, 'Entry Fragger', 50.5, 398, 2080, 2.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kelcie Felce', 2, 'Morocco', 41, 'Support', 55.94, 73, 567, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Svend Elener', 9, 'Japan', 30, 'Entry Fragger', 66.4, 116, 364, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucille Whettleton', 19, 'Japan', 18, 'Leader', 47.88, 242, 1555, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Correy Cunniff', 7, 'China', 41, 'Support', 25.43, 247, 2442, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nalani Larsen', 9, 'Poland', 37, 'Leader', 47.74, 83, 2942, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Regan Dresser', 14, 'Canada', 37, 'Entry Fragger', 66.67, 188, 1013, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thurston Boal', 11, 'France', 36, 'Entry Fragger', 91.3, 313, 1680, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Britni Devitt', 7, 'Ivory Coast', 41, 'Flex', 60.28, 12, 2482, 0.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arch Abelson', 10, 'France', 25, 'Leader', 72.49, 465, 859, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ossie Breckwell', 18, 'Brazil', 20, 'Leader', 13.14, 418, 451, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evyn Collerd', 18, 'Sweden', 35, 'Leader', 37.59, 67, 105, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elroy Treweke', 2, 'France', 30, 'Entry Fragger', 41.38, 461, 593, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Luisa Radnage', 19, 'Iran', 23, 'Support', 15.59, 52, 866, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Prudy Surgener', 15, 'Poland', 20, 'Support', 81.29, 200, 936, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erek Licciardello', 6, 'Nepal', 20, 'Leader', 63.05, 158, 1511, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rockey Delaney', 17, 'Brazil', 25, 'Leader', 91.25, 18, 674, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rolland Vedikhov', 14, 'Afghanistan', 42, 'Entry Fragger', 1.32, 259, 799, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hedwiga Manhood', 18, 'China', 21, 'Entry Fragger', 40.19, 450, 1590, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julia Verdey', 1, 'Canada', 22, 'Leader', 24.48, 28, 2760, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dari Brogiotti', 11, 'Poland', 26, 'Flex', 88.3, 364, 747, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Scarface Gathercoal', 9, 'Mexico', 27, 'Flex', 67.73, 416, 2041, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Briney McPike', 5, 'Bosnia and Herzegovina', 28, 'Flex', 9.57, 444, 1409, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucky Bellenger', 10, 'Poland', 30, 'Support', 23.7, 119, 811, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roscoe Falla', 1, 'France', 36, 'Leader', 60.15, 62, 1746, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorens Rounsefull', 4, 'Indonesia', 23, 'Leader', 42.72, 444, 136, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lazare Beccero', 2, 'Brazil', 25, 'Flex', 51.06, 268, 42, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lexy Drillingcourt', 16, 'China', 21, 'Support', 54.0, 30, 313, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pooh Scorthorne', 9, 'Australia', 27, 'Flex', 30.06, 117, 435, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jerri Upwood', 11, 'United Arab Emirates', 29, 'Flex', 30.88, 208, 1698, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dania Kerswell', 3, 'Peru', 41, 'Entry Fragger', 36.35, 55, 1653, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darla Cagan', 15, 'Croatia', 41, 'Support', 58.33, 491, 662, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maddi Duggan', 4, 'Mongolia', 36, 'Leader', 78.8, 58, 619, 0.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allissa Mouatt', 20, 'Cambodia', 30, 'Flex', 31.54, 240, 1238, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Doug Eilhertsen', 16, 'Indonesia', 38, 'Entry Fragger', 92.81, 103, 1456, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicholas Savil', 18, 'Poland', 36, 'Entry Fragger', 16.46, 253, 82, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eben Breitler', 3, 'Russia', 33, 'Leader', 1.85, 284, 213, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arabele Triggel', 12, 'Brazil', 23, 'Entry Fragger', 66.26, 174, 1348, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rici Petrozzi', 15, 'Japan', 37, 'Entry Fragger', 75.29, 399, 2783, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karlie Mellmer', 11, 'Indonesia', 35, 'Leader', 9.68, 451, 64, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carena Reap', 1, 'Russia', 33, 'Entry Fragger', 69.61, 92, 1326, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bel Demke', 11, 'Russia', 28, 'Entry Fragger', 2.17, 443, 1412, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sophey Dublin', 11, 'Russia', 42, 'Entry Fragger', 69.95, 398, 1593, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bren Issac', 4, 'Philippines', 40, 'Leader', 74.68, 347, 1121, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abigail Pollen', 19, 'Thailand', 35, 'Support', 48.98, 411, 320, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blisse Yurukhin', 9, 'Indonesia', 33, 'Support', 69.87, 55, 1861, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alexander MacKim', 10, 'Sweden', 35, 'Entry Fragger', 96.09, 171, 190, 2.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Osbourn Hardingham', 8, 'Croatia', 40, 'Entry Fragger', 73.12, 69, 2847, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosaline Ridger', 19, 'Israel', 28, 'Support', 50.23, 454, 2463, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kikelia Cockshutt', 10, 'Philippines', 28, 'Leader', 32.85, 187, 2362, 1.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Guthrie Turban', 18, 'Zimbabwe', 34, 'Flex', 18.18, 429, 2427, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Paulita Garretson', 21, 'Portugal', 39, 'Flex', 40.32, 26, 565, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evy Bench', 15, 'Poland', 31, 'Support', 30.85, 5, 2549, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gardie Cattow', 5, 'Poland', 28, 'Flex', 72.51, 371, 109, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Krystalle Walrond', 11, 'Indonesia', 25, 'Flex', 74.98, 302, 202, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jilly Grotty', 11, 'Denmark', 30, 'Flex', 57.4, 75, 2304, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Demeter Quantrell', 3, 'Philippines', 23, 'Entry Fragger', 35.06, 26, 227, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ranique Woodley', 16, 'China', 24, 'Entry Fragger', 10.51, 67, 2117, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Holli Dicte', 11, 'Poland', 18, 'Support', 72.09, 285, 1427, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alejoa Greatbatch', 6, 'China', 35, 'Entry Fragger', 87.36, 415, 247, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arie Kave', 12, 'Croatia', 37, 'Entry Fragger', 32.96, 352, 1164, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raychel Lumbley', 2, 'Kenya', 20, 'Entry Fragger', 10.48, 43, 2607, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carmelina Arch', 13, 'Ivory Coast', 27, 'Support', 41.87, 351, 938, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Britteny Kuschek', 5, 'Poland', 41, 'Entry Fragger', 10.81, 458, 2877, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Euphemia Primmer', 9, 'China', 26, 'Support', 82.46, 271, 1637, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ave Brandone', 1, 'Iran', 38, 'Entry Fragger', 28.22, 163, 2703, 0.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Saxon Severy', 20, 'China', 27, 'Leader', 15.37, 292, 1689, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Licha McAreavey', 9, 'Mexico', 32, 'Entry Fragger', 55.93, 225, 2781, 1.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dillon Paradis', 3, 'Kenya', 35, 'Flex', 3.2, 290, 2535, 0.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dorotea Markovich', 15, 'Russia', 18, 'Flex', 72.77, 281, 148, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bird Josse', 17, 'Poland', 40, 'Flex', 81.33, 374, 2907, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chantalle Seville', 10, 'China', 40, 'Leader', 65.57, 276, 1090, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deanna Santer', 20, 'Ukraine', 31, 'Entry Fragger', 31.62, 230, 672, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raleigh Placidi', 16, 'Peru', 36, 'Entry Fragger', 24.47, 42, 1833, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nollie Fitzharris', 15, 'Czech Republic', 41, 'Flex', 98.27, 188, 1614, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('August Yeandel', 20, 'Indonesia', 20, 'Flex', 43.59, 270, 1607, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annora McGauhy', 7, 'France', 31, 'Leader', 53.17, 208, 551, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rubetta Cominello', 16, 'Japan', 40, 'Support', 22.94, 273, 1359, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mollee Siseland', 20, 'Vanuatu', 25, 'Leader', 78.68, 415, 1485, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charlotta Bomfield', 5, 'Philippines', 32, 'Flex', 48.74, 278, 494, 2.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gypsy Keming', 11, 'United Arab Emirates', 40, 'Flex', 14.45, 343, 784, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Doyle De Cruce', 20, 'Guadeloupe', 25, 'Flex', 99.45, 240, 2960, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eunice Buttner', 2, 'France', 20, 'Support', 62.9, 246, 398, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ramsay Mompesson', 21, 'Russia', 36, 'Support', 84.35, 107, 699, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Georgeanne Chifney', 13, 'Nigeria', 28, 'Support', 74.67, 106, 157, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Huntlee Lisciardelli', 4, 'Japan', 27, 'Entry Fragger', 62.76, 156, 245, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Imojean Sallans', 9, 'Indonesia', 28, 'Leader', 63.75, 215, 1147, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lindy Benning', 19, 'Indonesia', 29, 'Leader', 51.09, 191, 2100, 1.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Archaimbaud Kendrick', 8, 'Honduras', 22, 'Support', 10.44, 363, 1468, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacquette Crutchley', 8, 'Oman', 28, 'Leader', 92.81, 128, 2679, 2.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Trude Children', 11, 'Bosnia and Herzegovina', 18, 'Entry Fragger', 45.11, 279, 484, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corabelle Cribbin', 20, 'Russia', 27, 'Flex', 13.53, 215, 2538, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carolus Saladine', 17, 'Tunisia', 33, 'Flex', 69.69, 458, 1731, 1.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dominick Belin', 5, 'Armenia', 37, 'Entry Fragger', 23.29, 54, 2804, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaia Do', 9, 'Sweden', 36, 'Flex', 48.87, 371, 2315, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chuck MacTrustrie', 10, 'Saudi Arabia', 24, 'Leader', 47.89, 449, 425, 0.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Florence Ovill', 2, 'Zimbabwe', 19, 'Support', 10.57, 193, 2126, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alexis Odgaard', 20, 'Indonesia', 42, 'Support', 74.78, 384, 997, 2.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wolf Nesbeth', 1, 'Poland', 26, 'Flex', 86.14, 415, 1294, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frannie Deaville', 9, 'United States', 19, 'Leader', 32.06, 139, 1737, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alix Illston', 8, 'Indonesia', 31, 'Flex', 82.24, 435, 2666, 0.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carmel McLagain', 14, 'Guatemala', 28, 'Leader', 32.46, 91, 1406, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Byrom Yashanov', 3, 'China', 30, 'Support', 48.09, 93, 481, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Link Pigny', 11, 'Mexico', 41, 'Support', 26.25, 138, 1486, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Donella Peploe', 16, 'China', 18, 'Support', 95.06, 220, 1674, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karita Unthank', 11, 'Brazil', 19, 'Flex', 69.18, 208, 844, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carrol Matzen', 19, 'China', 40, 'Flex', 67.53, 64, 2230, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ursa Chew', 8, 'Philippines', 28, 'Entry Fragger', 64.64, 440, 65, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kerwinn Garrat', 12, 'China', 34, 'Flex', 53.64, 427, 2076, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hildy Toothill', 13, 'Indonesia', 18, 'Entry Fragger', 72.26, 407, 886, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stanfield Eul', 21, 'Philippines', 32, 'Leader', 48.17, 30, 1154, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quent Gwioneth', 3, 'Brazil', 38, 'Flex', 25.56, 347, 2198, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilma Bragge', 7, 'Morocco', 24, 'Flex', 9.81, 369, 1181, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gretta Gathwaite', 6, 'Vietnam', 40, 'Leader', 25.83, 381, 934, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sully Bridgstock', 17, 'Egypt', 23, 'Leader', 83.49, 364, 1369, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Johnathan Coite', 2, 'Russia', 26, 'Leader', 43.15, 162, 283, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gunar Bernholt', 4, 'France', 30, 'Support', 42.57, 354, 2515, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frannie Standing', 14, 'China', 38, 'Support', 21.65, 377, 2951, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brooks Leall', 7, 'Macedonia', 27, 'Support', 20.24, 388, 2208, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evanne Witherbed', 6, 'Ukraine', 40, 'Support', 48.36, 406, 1442, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shurlocke Kittoe', 21, 'Iran', 39, 'Flex', 84.99, 368, 1141, 0.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alric Catchpole', 2, 'United States', 33, 'Flex', 21.85, 16, 800, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hilton Chennells', 1, 'China', 22, 'Leader', 81.76, 201, 2938, 2.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tiertza Chmarny', 15, 'Sweden', 18, 'Leader', 79.46, 111, 2610, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Waverley Hudspeth', 1, 'Marshall Islands', 32, 'Support', 5.78, 79, 2999, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bertram Coomer', 4, 'Ukraine', 20, 'Entry Fragger', 4.6, 285, 2328, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nani Merkle', 11, 'Thailand', 26, 'Leader', 39.18, 165, 2076, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zora Marcinkowski', 18, 'Canada', 27, 'Support', 66.72, 33, 957, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sib Bootman', 11, 'Portugal', 23, 'Entry Fragger', 61.25, 136, 1381, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wiley Culbard', 10, 'Honduras', 20, 'Entry Fragger', 77.54, 479, 1338, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Inge Yesenev', 13, 'Thailand', 20, 'Entry Fragger', 66.95, 219, 2524, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ami Capaldi', 21, 'Yemen', 31, 'Flex', 8.26, 323, 1968, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Audrye Shear', 10, 'China', 34, 'Entry Fragger', 43.94, 138, 365, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Muriel Ackenson', 21, 'United States', 37, 'Entry Fragger', 8.58, 421, 1713, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Calida Ferrieroi', 13, 'China', 41, 'Flex', 17.72, 267, 2250, 2.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dyan Corona', 10, 'Indonesia', 30, 'Flex', 35.26, 284, 905, 2.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robers Philbrick', 8, 'China', 30, 'Flex', 89.76, 6, 2832, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Baily Crew', 15, 'Indonesia', 41, 'Support', 91.18, 382, 40, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oliy Sherlock', 4, 'Canada', 27, 'Leader', 96.71, 495, 2449, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynde Lisciardelli', 14, 'China', 25, 'Flex', 47.13, 347, 119, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Steven Solley', 9, 'Ukraine', 27, 'Support', 82.54, 421, 801, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Seumas Corney', 17, 'Indonesia', 31, 'Entry Fragger', 53.14, 462, 227, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clementine Diggar', 3, 'Brazil', 24, 'Leader', 35.37, 417, 1096, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ermin Madle', 9, 'Portugal', 36, 'Entry Fragger', 55.38, 98, 1477, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jonell Coneau', 5, 'France', 23, 'Entry Fragger', 12.5, 88, 1323, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bronson Kiellor', 14, 'China', 41, 'Support', 48.97, 450, 13, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sherlock Roubay', 19, 'China', 35, 'Flex', 48.29, 249, 2113, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fern Seeman', 16, 'Sweden', 34, 'Entry Fragger', 55.41, 262, 1685, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nerta Cantwell', 12, 'Philippines', 26, 'Flex', 75.41, 229, 706, 2.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danice Tregenza', 7, 'United States', 32, 'Entry Fragger', 95.87, 27, 1486, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tades Fairebrother', 17, 'Czech Republic', 34, 'Leader', 75.91, 352, 496, 2.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacki Gerred', 21, 'Czech Republic', 37, 'Flex', 91.42, 298, 2777, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fons Helleckas', 7, 'China', 31, 'Entry Fragger', 25.44, 310, 1204, 2.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darelle Beggio', 20, 'Nigeria', 19, 'Entry Fragger', 16.1, 488, 1437, 2.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Minnie Scobbie', 3, 'China', 26, 'Entry Fragger', 25.83, 462, 2315, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nyssa Zaple', 6, 'Brazil', 40, 'Entry Fragger', 83.38, 483, 582, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frayda Hark', 4, 'Germany', 41, 'Flex', 56.55, 113, 1171, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brooke Theze', 14, 'Montenegro', 27, 'Support', 70.37, 353, 1945, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rafaelita Tatham', 10, 'Cameroon', 23, 'Flex', 69.78, 253, 2830, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adrian Gavrielly', 6, 'Russia', 41, 'Flex', 81.49, 68, 2111, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Xenos Wethey', 5, 'France', 37, 'Flex', 91.6, 130, 907, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gustavo Solano', 8, 'Colombia', 29, 'Entry Fragger', 58.86, 206, 1230, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vicky Cook', 9, 'Peru', 23, 'Flex', 52.67, 404, 1899, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dillie Matkovic', 10, 'China', 26, 'Entry Fragger', 91.44, 302, 375, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Flint Prosch', 2, 'United States', 21, 'Support', 25.76, 125, 2941, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danni Rabjohns', 2, 'Ukraine', 39, 'Support', 8.14, 353, 1204, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ottilie Benoy', 2, 'Russia', 28, 'Entry Fragger', 3.07, 498, 1318, 2.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Netty Seine', 3, 'Philippines', 34, 'Support', 60.42, 485, 2038, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Philomena McCloid', 15, 'Zimbabwe', 20, 'Support', 86.94, 374, 1599, 1.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lainey Stroobant', 3, 'Ukraine', 21, 'Leader', 21.72, 44, 2319, 1.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rita Kelk', 10, 'Poland', 21, 'Support', 76.42, 63, 1519, 0.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Haskell Morcomb', 8, 'Philippines', 19, 'Entry Fragger', 83.95, 431, 1004, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilbert Fearby', 20, 'United States', 29, 'Entry Fragger', 37.4, 433, 252, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sutherlan Lomath', 15, 'Japan', 26, 'Leader', 97.06, 481, 2459, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Peggy Jenicek', 5, 'Poland', 38, 'Entry Fragger', 69.61, 4, 2662, 1.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sholom Flement', 15, 'China', 25, 'Entry Fragger', 61.21, 255, 2091, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kynthia Bissill', 4, 'Philippines', 20, 'Flex', 50.12, 409, 393, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rance Inglish', 21, 'China', 31, 'Support', 62.09, 179, 281, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ceil Eilhart', 6, 'Brazil', 31, 'Flex', 70.58, 428, 2440, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Earl Labin', 13, 'Russia', 22, 'Leader', 22.17, 150, 2112, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gardiner Wickrath', 9, 'Kyrgyzstan', 24, 'Entry Fragger', 22.51, 82, 2779, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oneida Kinchin', 19, 'Indonesia', 40, 'Leader', 52.7, 401, 735, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giacopo Tatnell', 1, 'Armenia', 28, 'Entry Fragger', 86.61, 358, 2749, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emalia Greensall', 20, 'Philippines', 41, 'Flex', 40.44, 454, 2117, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marji Germann', 21, 'Indonesia', 18, 'Flex', 27.62, 223, 2141, 0.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Monti Spenley', 12, 'Slovenia', 22, 'Support', 49.8, 410, 2913, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tobiah Hayley', 17, 'Samoa', 21, 'Flex', 29.55, 485, 1376, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Callie Lansbury', 19, 'Portugal', 38, 'Leader', 4.13, 215, 172, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robina Ricardou', 12, 'Brazil', 24, 'Leader', 35.84, 477, 452, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leonid Mansbridge', 17, 'China', 22, 'Entry Fragger', 94.01, 121, 32, 1.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Genevra Burnand', 10, 'Croatia', 22, 'Leader', 45.75, 130, 2150, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shayna Amy', 17, 'Germany', 18, 'Leader', 77.38, 149, 875, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Germaine Sandes', 7, 'Colombia', 33, 'Flex', 19.3, 181, 1125, 2.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Betsey Janicki', 20, 'Indonesia', 29, 'Leader', 14.42, 394, 1184, 2.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nelle Puttan', 6, 'Colombia', 40, 'Support', 68.85, 272, 81, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ardath Littlekit', 9, 'Canada', 37, 'Flex', 64.49, 494, 1835, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ted Ladley', 1, 'Sweden', 35, 'Support', 65.26, 76, 663, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hunt Igonet', 5, 'Argentina', 32, 'Flex', 80.15, 277, 2682, 1.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jayme Boyington', 18, 'China', 33, 'Leader', 95.42, 24, 2778, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Murray Pregel', 7, 'China', 23, 'Leader', 90.08, 15, 1188, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karmen Girone', 7, 'Russia', 42, 'Entry Fragger', 59.01, 180, 2360, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joleen Lorenzo', 15, 'China', 24, 'Flex', 11.78, 410, 1115, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clary Moreman', 21, 'United States', 23, 'Flex', 96.94, 290, 2846, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabbie Smillie', 11, 'Lesotho', 34, 'Support', 89.65, 445, 2303, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hashim Nellis', 6, 'Peru', 22, 'Flex', 45.15, 312, 2587, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aguie Pockey', 16, 'United States', 23, 'Entry Fragger', 92.76, 24, 638, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laughton Marvin', 11, 'Portugal', 19, 'Leader', 77.65, 187, 1337, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chantalle Ledwidge', 5, 'China', 39, 'Leader', 12.02, 472, 686, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marleen Shilito', 21, 'Indonesia', 22, 'Flex', 39.85, 82, 2743, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Antonetta Clowsley', 18, 'China', 24, 'Flex', 39.97, 405, 152, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bendick Wollard', 6, 'Russia', 32, 'Flex', 93.98, 244, 1077, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nada Slaten', 9, 'Sweden', 33, 'Flex', 79.61, 31, 2385, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Irina Corneil', 14, 'Colombia', 29, 'Flex', 78.98, 470, 1349, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Valdemar McCoish', 9, 'Indonesia', 23, 'Leader', 37.11, 34, 528, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cristie Ghiotto', 1, 'Belarus', 37, 'Flex', 67.72, 20, 134, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Natty Attersoll', 20, 'China', 39, 'Leader', 87.57, 339, 1909, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ellette Crimp', 14, 'Brazil', 26, 'Leader', 74.96, 393, 2290, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aloise Caesar', 14, 'Portugal', 34, 'Entry Fragger', 80.06, 222, 2019, 0.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amara Djuricic', 11, 'Indonesia', 29, 'Support', 14.16, 296, 335, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rennie Medlar', 15, 'Philippines', 35, 'Flex', 46.87, 371, 527, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ivory Walter', 7, 'China', 32, 'Support', 27.05, 129, 2763, 1.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Suzanne Edgson', 2, 'China', 33, 'Flex', 77.12, 416, 1825, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giorgi Tosney', 13, 'China', 33, 'Leader', 41.56, 64, 2145, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mikey Wilkennson', 9, 'Poland', 25, 'Flex', 33.68, 492, 993, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chevalier Basford', 4, 'Philippines', 41, 'Flex', 7.11, 283, 1376, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mario Madsen', 12, 'Hungary', 39, 'Flex', 80.7, 249, 2635, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tobi Vel', 21, 'Philippines', 41, 'Entry Fragger', 22.53, 133, 2087, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nisse Guys', 15, 'China', 24, 'Entry Fragger', 30.68, 136, 780, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delcine Odegaard', 14, 'China', 26, 'Entry Fragger', 76.84, 43, 764, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Weston Muat', 21, 'Latvia', 40, 'Leader', 20.88, 282, 2003, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bengt Dayley', 13, 'Iran', 26, 'Leader', 55.99, 235, 2689, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alexandra Chesnay', 7, 'Azerbaijan', 26, 'Support', 95.0, 131, 1304, 0.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorie Bruneau', 15, 'Thailand', 37, 'Support', 2.72, 409, 1749, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tilly Alenin', 4, 'Philippines', 25, 'Support', 50.3, 34, 1502, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ambrosio Sara', 11, 'Tunisia', 31, 'Leader', 36.13, 160, 1425, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jimmy Odam', 4, 'Netherlands', 28, 'Flex', 53.54, 67, 236, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Olav Chidler', 10, 'France', 27, 'Entry Fragger', 72.25, 116, 2747, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rafa Reolfo', 16, 'Russia', 40, 'Entry Fragger', 13.27, 322, 495, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eugenius Fishlee', 4, 'Czech Republic', 41, 'Flex', 0.14, 318, 147, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dosi Dell Casa', 7, 'Indonesia', 28, 'Leader', 27.8, 60, 508, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tymothy Mollett', 9, 'Brazil', 21, 'Flex', 23.95, 478, 1442, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sib Wetwood', 1, 'Czech Republic', 25, 'Leader', 46.0, 133, 1170, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hannah McCready', 12, 'Indonesia', 41, 'Leader', 71.12, 257, 1345, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Simeon Chrippes', 14, 'Russia', 21, 'Support', 15.49, 294, 2326, 0.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Britni Shirtliff', 8, 'Estonia', 33, 'Flex', 92.3, 61, 936, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dorie Rozea', 5, 'Czech Republic', 29, 'Flex', 98.32, 80, 1891, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ettore McKeeman', 19, 'Brazil', 29, 'Flex', 11.39, 345, 1232, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carlos Strelitz', 10, 'Portugal', 28, 'Entry Fragger', 20.2, 338, 2358, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lyda Ashbee', 9, 'Palestinian Territory', 24, 'Entry Fragger', 27.28, 498, 928, 0.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evita Prys', 13, 'Poland', 29, 'Support', 76.49, 308, 1309, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Benedetta Coupar', 2, 'Sweden', 34, 'Support', 64.02, 319, 192, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bettine Quinn', 18, 'Russia', 21, 'Support', 88.2, 207, 2252, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Goldie Douberday', 13, 'Ireland', 42, 'Support', 16.74, 78, 2280, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allianora Bortoli', 15, 'Indonesia', 33, 'Flex', 10.41, 82, 1530, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zachery Fuentez', 17, 'Indonesia', 35, 'Leader', 74.49, 260, 775, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Judas Winfield', 14, 'China', 20, 'Support', 44.02, 269, 2123, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Farly Kender', 8, 'Poland', 28, 'Support', 37.71, 275, 1275, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margaret Jzhakov', 21, 'United States', 41, 'Support', 86.38, 337, 2977, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Flin Crebbin', 2, 'Thailand', 26, 'Support', 62.47, 376, 2772, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angy Ashfold', 2, 'United States', 21, 'Support', 44.26, 426, 2434, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Francyne Malthus', 12, 'Japan', 33, 'Flex', 76.25, 32, 1947, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tad Stopper', 14, 'China', 33, 'Leader', 4.06, 336, 1971, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Coralie Gravell', 4, 'Russia', 34, 'Leader', 27.49, 281, 2977, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Faustina Cometti', 10, 'Greece', 18, 'Entry Fragger', 13.56, 88, 1019, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dory Fredi', 6, 'Russia', 32, 'Support', 27.14, 44, 341, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ferrel Lande', 13, 'China', 42, 'Leader', 48.46, 428, 2756, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cliff Hounsome', 20, 'Sweden', 26, 'Flex', 23.31, 473, 2172, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tomas Willimont', 8, 'Indonesia', 26, 'Leader', 61.03, 10, 248, 1.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gwendolin Rainforth', 2, 'China', 35, 'Entry Fragger', 66.34, 37, 1168, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Antoine Woodruffe', 2, 'Lithuania', 41, 'Leader', 97.52, 497, 2224, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bar Jodlkowski', 1, 'Colombia', 42, 'Flex', 10.7, 450, 2711, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Udell Eastope', 11, 'Kazakhstan', 35, 'Flex', 3.48, 136, 2634, 0.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cecilia Ajsik', 10, 'China', 31, 'Flex', 27.77, 310, 413, 1.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Greta Burnsyde', 11, 'Ecuador', 27, 'Support', 90.38, 398, 540, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Franciska Colebourn', 18, 'Mongolia', 36, 'Leader', 83.85, 364, 263, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kara-lynn Spragge', 20, 'Venezuela', 40, 'Entry Fragger', 31.52, 153, 2359, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clywd Featherston', 18, 'Portugal', 38, 'Entry Fragger', 30.53, 259, 1109, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cletis Hodgins', 12, 'France', 21, 'Entry Fragger', 72.01, 158, 1885, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bunnie Gorstidge', 12, 'Thailand', 20, 'Entry Fragger', 29.51, 276, 2449, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Orazio Arman', 9, 'Russia', 36, 'Support', 53.13, 351, 940, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gilbertina Heining', 5, 'Democratic Republic of the Congo', 38, 'Support', 41.16, 221, 693, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vincent Berney', 16, 'Morocco', 23, 'Leader', 32.37, 110, 2552, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janeen Aldritt', 9, 'Panama', 22, 'Support', 65.39, 291, 1670, 1.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jewelle Morey', 4, 'Slovenia', 18, 'Support', 1.18, 62, 2371, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alis Pawling', 21, 'Indonesia', 19, 'Leader', 53.81, 219, 935, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quintana Boole', 10, 'Peru', 38, 'Entry Fragger', 46.1, 92, 1704, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meade Toghill', 11, 'Portugal', 30, 'Leader', 46.1, 333, 71, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Collin Dupre', 18, 'China', 23, 'Entry Fragger', 61.86, 468, 898, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ingaborg Sloper', 3, 'Russia', 37, 'Entry Fragger', 22.83, 476, 846, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Killy Huxtable', 8, 'Indonesia', 32, 'Flex', 36.07, 47, 2707, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ailbert Biswell', 20, 'Greece', 22, 'Support', 70.41, 118, 1612, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Therine McLeoid', 18, 'Brazil', 21, 'Flex', 30.02, 330, 2961, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Florencia Lindsell', 16, 'Poland', 40, 'Support', 67.6, 260, 593, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sauveur Kobu', 17, 'Cameroon', 32, 'Entry Fragger', 20.27, 203, 534, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sander De Dantesie', 17, 'Japan', 40, 'Flex', 13.48, 307, 1414, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marlene Zukerman', 19, 'Nigeria', 20, 'Leader', 13.14, 15, 1378, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hal Kensy', 2, 'Russia', 23, 'Leader', 16.16, 388, 1889, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deena Warlawe', 21, 'Indonesia', 40, 'Leader', 41.41, 166, 2092, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roxy Margery', 3, 'Pakistan', 32, 'Flex', 75.22, 432, 717, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kendra Tomaselli', 19, 'China', 34, 'Leader', 63.14, 425, 1276, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cristal Edmund', 19, 'China', 24, 'Entry Fragger', 16.34, 203, 1280, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hedi Fife', 5, 'China', 24, 'Entry Fragger', 79.03, 401, 1848, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arron Perfitt', 9, 'Sweden', 27, 'Entry Fragger', 75.18, 78, 1428, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corrianne Kondratyuk', 1, 'Indonesia', 24, 'Leader', 24.05, 453, 1979, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Camellia Goard', 2, 'South Africa', 34, 'Flex', 85.83, 454, 1220, 0.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tiphani Kareman', 9, 'Philippines', 33, 'Leader', 1.49, 247, 1989, 1.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lotti Bayfield', 11, 'Philippines', 40, 'Flex', 74.08, 322, 1795, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dexter Klishin', 7, 'China', 21, 'Flex', 1.68, 104, 6, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hanna Braganca', 8, 'Sweden', 38, 'Flex', 36.72, 396, 2671, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Timmie Liddiard', 16, 'Morocco', 19, 'Entry Fragger', 80.44, 476, 122, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barret Hartfleet', 19, 'France', 31, 'Entry Fragger', 49.37, 353, 2914, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cthrine Bust', 5, 'Israel', 27, 'Entry Fragger', 46.58, 310, 1802, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emlyn Wood', 9, 'South Korea', 37, 'Support', 21.59, 283, 1674, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lewes Balentyne', 19, 'Indonesia', 30, 'Entry Fragger', 16.22, 90, 135, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roldan Grantham', 12, 'Russia', 22, 'Flex', 7.24, 301, 1871, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Teador Woolward', 9, 'Poland', 20, 'Leader', 97.36, 244, 713, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yolanthe Maliphant', 18, 'China', 32, 'Leader', 5.06, 339, 184, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bobbye Mordanti', 20, 'Japan', 34, 'Flex', 56.5, 218, 2429, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Coriss Fandrich', 12, 'Albania', 40, 'Support', 23.41, 338, 2172, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gracie Robbert', 9, 'Morocco', 24, 'Flex', 90.79, 400, 1114, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daphna Ranklin', 15, 'Ghana', 30, 'Flex', 55.96, 390, 2114, 0.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ikey Berndt', 8, 'Slovenia', 28, 'Support', 12.69, 300, 1845, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Prudy Gonoude', 10, 'China', 30, 'Flex', 59.37, 466, 1853, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mable Scoterbosh', 17, 'China', 21, 'Leader', 63.43, 438, 1042, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sophia Sage', 18, 'China', 41, 'Flex', 64.35, 136, 2578, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nehemiah Bisset', 9, 'Armenia', 21, 'Leader', 24.31, 491, 424, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gayel Castellan', 16, 'Cuba', 34, 'Flex', 35.81, 439, 1435, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fionnula McFade', 10, 'China', 31, 'Support', 77.87, 165, 761, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Augustine Pethrick', 4, 'Sweden', 34, 'Flex', 59.08, 497, 1314, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daile Pryn', 19, 'China', 29, 'Support', 41.5, 350, 932, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pauly Claus', 2, 'Iran', 19, 'Support', 9.94, 166, 2329, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Denys Petford', 2, 'Brazil', 42, 'Leader', 73.09, 283, 1102, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gram Kender', 11, 'Russia', 36, 'Flex', 49.46, 97, 1107, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Trisha Lanigan', 18, 'Ukraine', 42, 'Entry Fragger', 48.44, 490, 923, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Teodora Vaune', 14, 'Argentina', 20, 'Leader', 46.24, 376, 222, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harlene Toll', 4, 'Macedonia', 20, 'Flex', 70.81, 457, 965, 0.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caressa Breslin', 18, 'Yemen', 34, 'Flex', 10.07, 112, 1109, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cam Lautie', 1, 'Ukraine', 27, 'Entry Fragger', 56.52, 499, 138, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pavia Westwater', 20, 'Russia', 32, 'Leader', 27.04, 410, 207, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yoshi Figgures', 2, 'Burundi', 19, 'Support', 42.57, 220, 143, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roddie Hawthorn', 19, 'Indonesia', 39, 'Support', 30.88, 326, 1007, 1.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lyn Perham', 15, 'Sweden', 29, 'Entry Fragger', 72.04, 266, 1785, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caye Nend', 3, 'Switzerland', 19, 'Entry Fragger', 13.07, 277, 63, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filberto Wardroper', 2, 'China', 24, 'Leader', 73.76, 77, 330, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Witty Dutteridge', 2, 'Portugal', 21, 'Support', 44.62, 388, 696, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meggie McKeran', 15, 'Indonesia', 41, 'Support', 12.21, 352, 2639, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shirley Antao', 12, 'Czech Republic', 18, 'Leader', 23.61, 68, 819, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hoebart Clissett', 15, 'China', 35, 'Leader', 0.34, 325, 2759, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kelley Harber', 17, 'Latvia', 39, 'Flex', 65.57, 247, 614, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('North Childs', 17, 'Indonesia', 30, 'Leader', 34.26, 462, 1909, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chiquia Robjant', 4, 'Portugal', 36, 'Support', 10.2, 186, 2303, 1.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hilarius Farnon', 18, 'South Korea', 21, 'Leader', 6.82, 251, 1269, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dorena Lockney', 8, 'Belarus', 34, 'Support', 81.57, 250, 1520, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nariko Chatto', 4, 'Bosnia and Herzegovina', 24, 'Entry Fragger', 11.96, 484, 2883, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sammy Maynell', 8, 'United States', 29, 'Entry Fragger', 47.16, 23, 745, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fidelia Molan', 14, 'Brazil', 19, 'Entry Fragger', 54.19, 472, 1184, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bev Kerner', 10, 'Thailand', 26, 'Flex', 79.59, 39, 871, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dagmar Claiden', 5, 'Poland', 33, 'Flex', 89.93, 137, 2837, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Glori Ikins', 3, 'Russia', 36, 'Leader', 80.85, 427, 309, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cullan Jailler', 11, 'Argentina', 39, 'Leader', 54.58, 229, 41, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Peterus Wipper', 11, 'Spain', 23, 'Flex', 46.27, 384, 1285, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Augustin Lissett', 18, 'Paraguay', 26, 'Support', 42.47, 158, 929, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dinnie Joselevitch', 14, 'China', 21, 'Flex', 57.52, 138, 2508, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isobel Touret', 2, 'China', 24, 'Leader', 5.39, 145, 2716, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Debor Maddrell', 10, 'China', 31, 'Flex', 3.67, 232, 2492, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jillian Cathrall', 19, 'Iran', 25, 'Leader', 54.35, 336, 1719, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maegan Bogays', 14, 'Croatia', 27, 'Leader', 6.01, 463, 464, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mellisa Issacov', 15, 'Japan', 31, 'Support', 94.98, 124, 1323, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garreth Henkmann', 9, 'France', 40, 'Leader', 13.5, 209, 1960, 2.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Codi Camelin', 17, 'Brazil', 30, 'Flex', 14.03, 101, 939, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Megan Ennals', 7, 'China', 42, 'Leader', 88.69, 409, 714, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oswell Gigg', 21, 'Cameroon', 33, 'Support', 5.03, 474, 2920, 1.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilburt McCambrois', 4, 'Sweden', 31, 'Leader', 98.9, 36, 1187, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ive Giscken', 2, 'Colombia', 25, 'Leader', 19.1, 408, 1813, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Consuela Pavlov', 3, 'Sudan', 26, 'Flex', 66.3, 273, 2574, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Micky Attridge', 18, 'China', 32, 'Flex', 61.03, 211, 2120, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kenneth Utting', 18, 'Papua New Guinea', 32, 'Leader', 44.85, 465, 505, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myrtle Huygens', 14, 'Canada', 42, 'Entry Fragger', 25.5, 86, 1083, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilfred Speller', 15, 'Indonesia', 40, 'Support', 60.9, 176, 2964, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giacobo Lunn', 5, 'France', 30, 'Leader', 34.77, 465, 835, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margette Gifkins', 18, 'Bolivia', 40, 'Flex', 72.19, 214, 2354, 0.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meryl Feifer', 9, 'Mongolia', 25, 'Entry Fragger', 62.23, 419, 383, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thoma Hamberston', 6, 'Philippines', 26, 'Flex', 52.06, 385, 920, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ardisj Barnes', 16, 'Kazakhstan', 18, 'Flex', 55.36, 14, 373, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ingrid Swanborrow', 20, 'Portugal', 22, 'Entry Fragger', 4.82, 434, 999, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sonnie Cutford', 18, 'Greece', 31, 'Support', 17.87, 173, 663, 1.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eada Dornin', 11, 'France', 38, 'Leader', 97.88, 182, 2185, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carey Indge', 17, 'China', 37, 'Flex', 24.81, 424, 660, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alwyn Aldhouse', 21, 'Sweden', 39, 'Flex', 50.04, 191, 2631, 2.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fraser Cawthra', 19, 'United States', 33, 'Leader', 74.87, 467, 1052, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Franz Dysert', 20, 'Peru', 31, 'Flex', 66.73, 322, 348, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pierette Beardsell', 12, 'Portugal', 29, 'Leader', 47.77, 325, 273, 0.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brigida Ainsworth', 10, 'El Salvador', 23, 'Support', 31.43, 37, 1876, 1.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joshia Habron', 11, 'Brazil', 20, 'Flex', 43.26, 408, 963, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dru Sauven', 16, 'Poland', 33, 'Flex', 4.37, 60, 984, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jolynn Caurah', 11, 'Portugal', 40, 'Support', 66.86, 386, 2935, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ashley Munehay', 5, 'China', 34, 'Leader', 8.59, 474, 513, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sibilla Dain', 16, 'China', 42, 'Flex', 74.96, 252, 492, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clementina Dinan', 14, 'Venezuela', 37, 'Leader', 27.07, 159, 2973, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kirsteni Thibodeaux', 20, 'Portugal', 24, 'Flex', 71.01, 319, 1520, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raimundo Feltoe', 13, 'Pakistan', 31, 'Flex', 54.47, 489, 2318, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wash Ranahan', 3, 'China', 42, 'Entry Fragger', 78.13, 160, 2475, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charmain Redmire', 7, 'China', 34, 'Entry Fragger', 99.97, 428, 11, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Suellen Padell', 12, 'Sweden', 39, 'Leader', 97.69, 296, 1189, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jean Gamble', 2, 'Indonesia', 35, 'Flex', 21.31, 455, 1638, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marwin Fardo', 6, 'Egypt', 26, 'Flex', 49.8, 239, 2141, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilone Cape', 17, 'Serbia', 39, 'Entry Fragger', 65.16, 342, 2895, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Norman Crangle', 7, 'China', 36, 'Leader', 56.76, 308, 656, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myrilla Wibrow', 18, 'Brazil', 31, 'Flex', 48.7, 353, 1049, 2.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Derby Fratson', 14, 'Czech Republic', 30, 'Support', 71.97, 0, 2721, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mae Lope', 11, 'Sweden', 41, 'Flex', 96.1, 282, 2506, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Malvin Gorcke', 18, 'China', 39, 'Leader', 11.19, 399, 798, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Owen Lucey', 17, 'Argentina', 40, 'Support', 36.19, 301, 1171, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Camilla Lidgett', 16, 'Indonesia', 21, 'Support', 76.12, 122, 2021, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clemens Antonsson', 20, 'Nigeria', 22, 'Flex', 91.96, 315, 1093, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maurine Gerriessen', 3, 'Ukraine', 20, 'Support', 76.68, 7, 1700, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ari Bouttell', 18, 'Belarus', 41, 'Leader', 40.15, 440, 1083, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('L;urette Meneely', 10, 'China', 39, 'Support', 34.56, 7, 1660, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rockey Fincher', 2, 'China', 25, 'Leader', 52.68, 294, 2070, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dyana Lydster', 15, 'China', 37, 'Entry Fragger', 88.48, 407, 806, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Koral Weatherhogg', 19, 'Indonesia', 18, 'Flex', 88.15, 5, 2673, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corby Castell', 21, 'Indonesia', 30, 'Support', 23.84, 365, 2138, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Natividad Clout', 3, 'United States', 28, 'Flex', 45.91, 390, 403, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wiatt Edmonston', 8, 'China', 37, 'Flex', 56.15, 157, 237, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cathrin Dowyer', 12, 'Montenegro', 42, 'Flex', 80.62, 289, 2825, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kasper Pound', 3, 'Brazil', 33, 'Leader', 73.07, 153, 2448, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Patty Caspell', 11, 'Sweden', 20, 'Leader', 94.81, 127, 2382, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Scottie Cardwell', 11, 'Indonesia', 35, 'Entry Fragger', 18.02, 226, 575, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lana Brimilcombe', 12, 'China', 26, 'Entry Fragger', 19.59, 6, 2630, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darwin Abbiss', 14, 'Malta', 30, 'Entry Fragger', 10.46, 336, 1193, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joline Vibert', 2, 'China', 41, 'Entry Fragger', 27.65, 124, 747, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beale Elsdon', 3, 'Syria', 37, 'Support', 93.97, 415, 2382, 0.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barret Raddan', 17, 'China', 28, 'Leader', 55.68, 180, 1427, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynea Summersby', 14, 'Ireland', 42, 'Entry Fragger', 93.07, 150, 2173, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jonell Kelly', 9, 'China', 21, 'Flex', 51.51, 137, 1220, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karisa Poulsom', 15, 'Costa Rica', 21, 'Flex', 55.78, 412, 2953, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raychel Shwenn', 12, 'Russia', 19, 'Leader', 72.41, 34, 2091, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Franciskus Sallowaye', 13, 'China', 27, 'Support', 71.59, 301, 451, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aimee Atterley', 9, 'China', 38, 'Support', 89.17, 197, 99, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mile Madill', 19, 'Armenia', 30, 'Entry Fragger', 4.09, 34, 566, 0.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Winslow MacMearty', 1, 'Syria', 26, 'Leader', 21.74, 493, 379, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ange Gault', 13, 'Czech Republic', 35, 'Support', 74.61, 195, 2580, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Louie Tulleth', 21, 'Ethiopia', 38, 'Support', 15.26, 90, 1119, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Opal Shevlan', 1, 'China', 23, 'Flex', 63.17, 431, 724, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mile McNalley', 12, 'Japan', 35, 'Entry Fragger', 48.41, 265, 2042, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rod Hillaby', 19, 'Philippines', 25, 'Support', 45.22, 72, 342, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Izzy Bonnet', 19, 'Armenia', 21, 'Entry Fragger', 2.61, 69, 2832, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Korella Marty', 11, 'Russia', 39, 'Leader', 38.46, 246, 2629, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nissy Wolfe', 4, 'Malaysia', 26, 'Leader', 59.46, 112, 1947, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Curran Mikalski', 6, 'United States', 22, 'Entry Fragger', 9.41, 79, 1042, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ringo Tassell', 16, 'Brazil', 28, 'Entry Fragger', 28.16, 185, 1112, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dody Burkart', 17, 'Guam', 42, 'Support', 70.53, 31, 1814, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hogan Goucher', 15, 'China', 26, 'Flex', 49.06, 144, 1250, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boothe Islep', 19, 'Greece', 36, 'Leader', 67.74, 476, 28, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pattie Guiot', 20, 'Indonesia', 32, 'Leader', 20.23, 204, 105, 0.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaylee Rangell', 3, 'Albania', 29, 'Entry Fragger', 98.81, 250, 1608, 2.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Molly Farnaby', 19, 'Philippines', 29, 'Flex', 26.96, 342, 354, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Henrietta Logsdale', 2, 'Thailand', 26, 'Entry Fragger', 35.47, 475, 1605, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosmunda Garthshore', 15, 'Sweden', 31, 'Support', 78.3, 312, 1154, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sophi Brolan', 4, 'China', 38, 'Leader', 66.59, 272, 340, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zorana Ghidelli', 14, 'Indonesia', 30, 'Leader', 40.59, 13, 2296, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Babbie Jeays', 19, 'Indonesia', 29, 'Flex', 17.42, 431, 551, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chicky Crippill', 6, 'Ukraine', 22, 'Leader', 58.67, 184, 1239, 2.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Keriann Kingaby', 15, 'China', 34, 'Leader', 35.9, 472, 1681, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chaim Smitheman', 14, 'Greece', 22, 'Leader', 64.9, 342, 1945, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shena Waldron', 12, 'Ireland', 28, 'Flex', 75.61, 128, 2573, 1.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Griffie Yaus', 20, 'China', 20, 'Flex', 67.24, 286, 2928, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clo Haddick', 1, 'Kenya', 41, 'Entry Fragger', 85.59, 388, 1769, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ediva Abbott', 7, 'China', 28, 'Flex', 61.14, 376, 317, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frederigo Tuckey', 14, 'Kosovo', 28, 'Support', 98.26, 91, 689, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darnall Clooney', 12, 'Philippines', 22, 'Leader', 3.4, 50, 2399, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Catlee Gilder', 1, 'Colombia', 38, 'Leader', 82.66, 98, 2881, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zebulon Haye', 15, 'Iran', 39, 'Support', 37.17, 200, 2154, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christy Knapton', 14, 'Tajikistan', 28, 'Leader', 26.2, 236, 2752, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marissa Rucklidge', 18, 'Portugal', 31, 'Support', 52.68, 187, 1663, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jareb Petrolli', 13, 'Netherlands', 25, 'Leader', 94.12, 410, 2094, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Olwen Feilden', 19, 'Russia', 24, 'Flex', 47.68, 163, 2859, 2.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dunstan Werrilow', 10, 'Argentina', 25, 'Leader', 82.19, 37, 2447, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erika McCreery', 17, 'China', 40, 'Leader', 68.3, 337, 2719, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Waneta Flinn', 9, 'China', 19, 'Flex', 96.93, 52, 2954, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Klaus Footer', 8, 'Sweden', 24, 'Support', 53.7, 120, 2486, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dimitry Becerra', 13, 'Philippines', 23, 'Support', 23.75, 19, 95, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Toni Ritchings', 17, 'China', 41, 'Flex', 15.37, 310, 2657, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carmel Balstone', 12, 'Mexico', 38, 'Support', 0.19, 32, 1089, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hilde Itzkovich', 16, 'Brazil', 40, 'Support', 36.88, 58, 1265, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emlyn Dalliwater', 6, 'Georgia', 36, 'Entry Fragger', 0.71, 413, 207, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Miltie Blaxland', 1, 'Latvia', 37, 'Leader', 73.6, 22, 2341, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gray Furmedge', 11, 'China', 20, 'Flex', 89.46, 126, 234, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alfie Duggleby', 10, 'Japan', 23, 'Flex', 0.8, 200, 2291, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zuzana MacGarvey', 13, 'Argentina', 25, 'Flex', 6.12, 363, 1864, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corina Simao', 20, 'Saint Lucia', 25, 'Support', 66.17, 120, 949, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filia Hizir', 2, 'Poland', 39, 'Support', 4.3, 281, 1835, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sibley Dudderidge', 7, 'Greece', 37, 'Entry Fragger', 1.28, 118, 2638, 1.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arte Lawry', 5, 'France', 39, 'Support', 35.07, 444, 368, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karlotte Conrard', 13, 'Indonesia', 33, 'Leader', 93.84, 118, 2998, 2.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Davida Andrick', 14, 'China', 24, 'Entry Fragger', 30.14, 152, 1622, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gayle Aindriu', 4, 'China', 42, 'Entry Fragger', 24.09, 322, 182, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rolando Lantuff', 17, 'Poland', 38, 'Leader', 9.72, 392, 2267, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leland Barendtsen', 5, 'China', 34, 'Leader', 25.28, 295, 925, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ivor Hainning', 20, 'Portugal', 37, 'Entry Fragger', 41.61, 246, 876, 2.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Porty Sandever', 4, 'Serbia', 39, 'Entry Fragger', 5.57, 40, 2498, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Neely Doull', 8, 'Cuba', 34, 'Entry Fragger', 3.21, 52, 2025, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaela Bowick', 10, 'Taiwan', 31, 'Support', 25.38, 463, 1808, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annadiane Peck', 17, 'Ukraine', 25, 'Support', 63.74, 379, 264, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arman Ashfull', 13, 'China', 31, 'Entry Fragger', 29.04, 15, 1491, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabatha Musico', 9, 'Slovenia', 40, 'Support', 16.49, 451, 2878, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alec Tuttle', 10, 'France', 22, 'Flex', 16.68, 421, 1473, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angelico Formby', 6, 'Mexico', 36, 'Entry Fragger', 48.34, 456, 799, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clementius Woehler', 16, 'Japan', 38, 'Leader', 40.5, 396, 2086, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abeu Rayson', 6, 'China', 19, 'Leader', 9.45, 407, 281, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oralie Orniz', 13, 'Indonesia', 23, 'Flex', 71.32, 302, 2526, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wain Bentjens', 1, 'China', 24, 'Support', 41.43, 399, 1352, 1.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wendall Bontine', 10, 'Macedonia', 37, 'Entry Fragger', 0.13, 364, 2846, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rora Reubel', 10, 'Zimbabwe', 40, 'Entry Fragger', 7.92, 426, 369, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vanna Rolinson', 21, 'China', 23, 'Support', 56.42, 25, 1124, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stefanie Lghan', 21, 'Indonesia', 33, 'Support', 0.74, 220, 2882, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Crosby Filipic', 1, 'Vietnam', 24, 'Flex', 29.49, 8, 2542, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sallie Ortega', 10, 'Poland', 35, 'Flex', 98.8, 452, 484, 2.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jabez Harms', 6, 'Indonesia', 25, 'Entry Fragger', 74.52, 495, 175, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Faith Shambrooke', 16, 'Thailand', 35, 'Leader', 79.36, 193, 2176, 2.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Franz Pevreal', 4, 'Egypt', 41, 'Leader', 4.72, 324, 2750, 0.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fern Gadesby', 10, 'France', 31, 'Flex', 12.81, 245, 454, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robbie Oglethorpe', 20, 'Russia', 23, 'Support', 20.2, 430, 2570, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marshal Sellens', 21, 'Czech Republic', 23, 'Leader', 4.18, 275, 164, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shanie Keetch', 18, 'Colombia', 30, 'Support', 72.01, 104, 1855, 2.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alikee Szymanowicz', 11, 'Croatia', 37, 'Support', 72.15, 400, 1390, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kassie Skentelbury', 2, 'Czech Republic', 32, 'Flex', 98.95, 262, 47, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tymothy Simonazzi', 7, 'Portugal', 41, 'Flex', 91.41, 368, 890, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gilberta Stapleford', 21, 'China', 23, 'Leader', 54.02, 481, 1862, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cyrus Clulee', 9, 'China', 21, 'Flex', 81.67, 56, 2477, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hailey Garfirth', 4, 'Yemen', 19, 'Entry Fragger', 45.45, 421, 1179, 1.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gwenore Woodroffe', 3, 'Argentina', 26, 'Entry Fragger', 18.73, 221, 1374, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emerson Clyburn', 16, 'Guatemala', 39, 'Support', 1.48, 285, 1832, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jason Wayt', 15, 'Tanzania', 18, 'Entry Fragger', 51.55, 60, 1851, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laurice Pegg', 10, 'Poland', 35, 'Flex', 78.66, 260, 823, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beret Larret', 8, 'Russia', 22, 'Entry Fragger', 92.51, 279, 2712, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ariel Waudby', 1, 'Brazil', 21, 'Support', 97.88, 217, 2886, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aurelea Folkard', 8, 'Poland', 41, 'Entry Fragger', 89.96, 104, 374, 0.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elissa Willock', 10, 'Czech Republic', 27, 'Entry Fragger', 35.11, 202, 1428, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stacee Brockwell', 18, 'Indonesia', 33, 'Support', 68.95, 346, 315, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Olga Ferreras', 2, 'Colombia', 28, 'Support', 68.92, 26, 2053, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Almira Balassi', 21, 'Poland', 20, 'Leader', 29.08, 481, 1380, 1.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Saleem Smitham', 14, 'Czech Republic', 28, 'Leader', 69.2, 314, 1262, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deva Karleman', 2, 'Nigeria', 28, 'Flex', 81.95, 408, 1002, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carroll Denge', 4, 'Nigeria', 32, 'Support', 46.15, 422, 659, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pietrek Souster', 20, 'Canada', 19, 'Flex', 17.38, 98, 187, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gisela Andersch', 6, 'Japan', 33, 'Flex', 23.53, 273, 1308, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gweneth Citrine', 19, 'Indonesia', 38, 'Entry Fragger', 25.42, 270, 170, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Johnnie Mathewson', 3, 'Brazil', 24, 'Flex', 71.03, 211, 1917, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dietrich Oger', 5, 'China', 25, 'Entry Fragger', 69.01, 492, 891, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sadye Van der Beek', 9, 'France', 36, 'Leader', 67.85, 314, 301, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shina Vankov', 8, 'Uganda', 41, 'Leader', 70.73, 443, 1682, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bertrand Somers', 19, 'Poland', 22, 'Flex', 34.52, 332, 1980, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chet Rollings', 5, 'Ireland', 24, 'Leader', 1.51, 217, 2527, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheilah Crookston', 13, 'Armenia', 32, 'Entry Fragger', 52.8, 144, 878, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thedrick Brockherst', 3, 'Portugal', 33, 'Support', 99.76, 185, 1372, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Auroora Draye', 13, 'Brazil', 37, 'Leader', 83.07, 358, 2633, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wendeline Brown', 5, 'Japan', 36, 'Support', 72.06, 138, 1129, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roxanne Leynton', 20, 'Philippines', 21, 'Entry Fragger', 8.58, 258, 1058, 0.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raymond Barabisch', 17, 'Tunisia', 39, 'Support', 21.74, 215, 1182, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pearle Corrett', 11, 'Philippines', 27, 'Entry Fragger', 11.35, 206, 2421, 2.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elicia Caesar', 4, 'China', 25, 'Entry Fragger', 2.37, 217, 1792, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fonz Castro', 2, 'Honduras', 33, 'Leader', 82.26, 378, 1211, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabbitha Zavattieri', 14, 'Colombia', 23, 'Flex', 71.85, 493, 80, 1.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mick Purkis', 18, 'Mexico', 42, 'Entry Fragger', 77.48, 57, 178, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frederik Whifen', 13, 'China', 33, 'Entry Fragger', 58.8, 98, 3, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mora Tyer', 17, 'Yemen', 27, 'Entry Fragger', 95.81, 261, 2142, 2.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Enrico Urion', 6, 'Ireland', 36, 'Entry Fragger', 43.0, 83, 2245, 0.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tonie Fidelus', 21, 'Peru', 32, 'Flex', 17.76, 481, 2015, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edie Eykelbosch', 6, 'Croatia', 29, 'Entry Fragger', 50.11, 367, 870, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kellia Bonn', 2, 'Georgia', 34, 'Support', 24.54, 371, 2309, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Judd Rubinsaft', 6, 'Macedonia', 33, 'Leader', 86.95, 471, 2069, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ynez McDonnell', 16, 'Namibia', 24, 'Leader', 97.67, 114, 1589, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Phaidra Slany', 1, 'Mexico', 24, 'Support', 41.67, 367, 739, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abe Alwen', 14, 'Slovenia', 33, 'Support', 94.07, 9, 878, 2.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marika Middup', 17, 'France', 34, 'Leader', 49.83, 375, 2313, 0.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bailey Curness', 14, 'China', 41, 'Flex', 43.14, 14, 614, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stafford Bellward', 13, 'Argentina', 24, 'Leader', 0.47, 325, 2972, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Niles Sweetenham', 3, 'China', 33, 'Support', 41.83, 356, 996, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dario Tomkowicz', 10, 'Bulgaria', 38, 'Entry Fragger', 38.68, 484, 2374, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aubry McElrea', 21, 'Venezuela', 38, 'Flex', 78.39, 414, 62, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tonnie Germann', 19, 'France', 38, 'Support', 61.63, 489, 2915, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maribeth Ivashintsov', 19, 'China', 30, 'Support', 90.88, 172, 2324, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gladys Pargetter', 21, 'Uganda', 24, 'Flex', 32.19, 301, 143, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jaymie Cumberbatch', 19, 'Russia', 42, 'Entry Fragger', 98.93, 341, 1221, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stinky Gervaise', 8, 'South Korea', 37, 'Leader', 84.73, 361, 782, 1.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Johnathon Varrow', 4, 'Czech Republic', 38, 'Flex', 43.45, 399, 2949, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meagan Magnay', 16, 'Canada', 28, 'Entry Fragger', 58.15, 285, 1769, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabriela de Quincey', 5, 'China', 22, 'Entry Fragger', 80.61, 128, 2238, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Britteny Matten', 8, 'New Caledonia', 32, 'Leader', 83.12, 116, 1520, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Katherina Cecchi', 15, 'Tanzania', 37, 'Entry Fragger', 90.77, 403, 1050, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kellyann McMillian', 6, 'China', 20, 'Entry Fragger', 45.89, 251, 22, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devina Cardoso', 15, 'India', 18, 'Flex', 72.7, 138, 2191, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deonne Grooby', 14, 'Philippines', 24, 'Entry Fragger', 23.99, 476, 181, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Drusi Fullman', 5, 'Indonesia', 27, 'Entry Fragger', 74.89, 102, 522, 1.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hollie Cheake', 12, 'Russia', 21, 'Entry Fragger', 63.09, 315, 1307, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dolly Ovington', 10, 'Ukraine', 31, 'Support', 18.79, 408, 1452, 0.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cordy Drinkwater', 21, 'Indonesia', 18, 'Flex', 63.66, 113, 2220, 2.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lesley Thrasher', 3, 'China', 33, 'Leader', 25.25, 46, 1871, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sara Braam', 7, 'Azerbaijan', 24, 'Support', 47.2, 310, 2647, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Augustus Haking', 11, 'Poland', 38, 'Leader', 33.25, 117, 1050, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Galina Threadgall', 1, 'Brazil', 27, 'Flex', 62.16, 153, 2051, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Malissia Nickoll', 7, 'American Samoa', 20, 'Leader', 65.44, 479, 2062, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Faustine Dowbiggin', 7, 'China', 31, 'Leader', 98.26, 357, 261, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dorelia Ewers', 18, 'Indonesia', 19, 'Flex', 55.62, 351, 833, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bliss Gaitone', 21, 'Argentina', 21, 'Leader', 95.92, 233, 253, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leonid Haton', 8, 'Macedonia', 31, 'Support', 97.87, 200, 465, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Romona Ault', 15, 'United States', 33, 'Flex', 54.6, 150, 1092, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hieronymus Dmitriev', 14, 'Kazakhstan', 38, 'Flex', 51.78, 40, 477, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tiebold Starsmeare', 1, 'China', 26, 'Support', 32.57, 114, 2689, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cyndie Claybourn', 8, 'China', 37, 'Leader', 99.72, 184, 931, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kippy Schwandt', 1, 'Indonesia', 35, 'Leader', 50.24, 338, 1689, 2.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cy Mearns', 6, 'Tunisia', 24, 'Support', 76.9, 29, 1372, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cordie Loweth', 18, 'Poland', 23, 'Entry Fragger', 66.57, 380, 948, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alma Asp', 7, 'Sweden', 35, 'Entry Fragger', 2.11, 480, 143, 0.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jamima Segge', 9, 'China', 40, 'Flex', 5.97, 49, 2994, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fabien Libreros', 13, 'Greece', 38, 'Flex', 85.56, 124, 2116, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jamaal Fancutt', 18, 'Serbia', 39, 'Support', 81.79, 80, 2663, 2.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rainer Yeoman', 21, 'China', 29, 'Leader', 94.18, 275, 2327, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bennie Hateley', 6, 'China', 35, 'Entry Fragger', 94.47, 423, 2535, 1.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucita Witherden', 6, 'Indonesia', 20, 'Entry Fragger', 99.78, 224, 164, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carlita Ephson', 14, 'Brazil', 41, 'Support', 7.32, 27, 471, 2.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shelli Dell Casa', 1, 'United States', 29, 'Entry Fragger', 78.58, 235, 1620, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shelby Harkins', 7, 'Tanzania', 39, 'Entry Fragger', 4.05, 392, 1056, 0.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosamond Regorz', 20, 'China', 23, 'Support', 20.26, 243, 2259, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sandi Kleehuhler', 14, 'Brazil', 35, 'Leader', 71.74, 223, 1267, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meridel Thorley', 1, 'China', 39, 'Entry Fragger', 6.51, 103, 2048, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Benito Luke', 12, 'Indonesia', 41, 'Leader', 25.98, 499, 304, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Grantham Colhoun', 4, 'Greece', 35, 'Leader', 17.64, 328, 361, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carolann Gifkins', 11, 'Indonesia', 34, 'Flex', 50.91, 14, 116, 2.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lemmy Seabrooke', 1, 'Brazil', 28, 'Entry Fragger', 28.71, 97, 455, 1.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cedric Moralas', 20, 'Indonesia', 28, 'Leader', 20.38, 147, 992, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Josiah Rielly', 11, 'France', 25, 'Flex', 63.02, 224, 680, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacquelynn Willatt', 20, 'France', 21, 'Support', 24.97, 19, 1147, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alica Snead', 11, 'Indonesia', 38, 'Support', 37.63, 480, 2644, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vitia Steagall', 11, 'Russia', 39, 'Support', 27.42, 390, 1365, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mala Unwin', 7, 'China', 36, 'Flex', 33.61, 358, 2152, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frans Lacky', 4, 'Poland', 38, 'Leader', 13.38, 103, 1033, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gale Wyleman', 10, 'Somalia', 34, 'Flex', 82.51, 429, 223, 1.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hillel Jobbins', 20, 'China', 31, 'Flex', 13.93, 263, 1885, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Steven Lyptrit', 4, 'China', 33, 'Leader', 41.42, 28, 2541, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lief Nealy', 6, 'United States', 22, 'Leader', 48.87, 460, 2948, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fawn Prest', 3, 'Iran', 24, 'Flex', 40.44, 346, 1568, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wayne Tapper', 15, 'China', 38, 'Flex', 23.82, 46, 1426, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Georgianne Denyukin', 2, 'Poland', 22, 'Flex', 50.38, 109, 2568, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erina Scurrey', 18, 'Azerbaijan', 31, 'Support', 10.55, 222, 184, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Teri Kadwallider', 16, 'Indonesia', 29, 'Leader', 53.66, 83, 276, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lou Crepel', 10, 'Brazil', 35, 'Entry Fragger', 78.26, 489, 2445, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Conrad Kepe', 15, 'China', 31, 'Support', 15.94, 97, 375, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rollie Mitton', 13, 'Philippines', 41, 'Entry Fragger', 64.07, 277, 916, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brandy Lysaght', 13, 'Peru', 39, 'Entry Fragger', 23.44, 463, 651, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zondra Helliwell', 13, 'Palestinian Territory', 30, 'Flex', 72.87, 294, 1300, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Seth Helling', 17, 'Poland', 37, 'Entry Fragger', 70.23, 404, 903, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erny Frith', 16, 'Indonesia', 18, 'Entry Fragger', 83.45, 346, 1240, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elsinore Symper', 19, 'Philippines', 25, 'Flex', 59.2, 10, 2995, 2.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adena Stanley', 4, 'Cuba', 40, 'Flex', 96.07, 12, 2313, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shem Petegre', 18, 'Cuba', 25, 'Leader', 63.32, 278, 637, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chevalier Vizard', 19, 'France', 25, 'Entry Fragger', 74.45, 315, 1996, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Linn Loch', 11, 'Argentina', 18, 'Leader', 90.56, 182, 1037, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarrid Tizard', 1, 'Mexico', 21, 'Entry Fragger', 26.27, 231, 2756, 0.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jed Vasyukov', 21, 'Sweden', 25, 'Leader', 90.4, 251, 2687, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willy Orpwood', 11, 'Sweden', 38, 'Leader', 52.01, 335, 2848, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gae Hatherell', 20, 'Ecuador', 25, 'Entry Fragger', 19.58, 89, 1098, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jordana Pinchback', 15, 'South Sudan', 33, 'Entry Fragger', 19.36, 288, 2243, 0.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Constantia Atto', 19, 'Brazil', 24, 'Support', 27.46, 400, 1369, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yevette Larvin', 12, 'Bulgaria', 37, 'Support', 40.62, 373, 2397, 1.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brade Nevin', 1, 'Argentina', 19, 'Support', 15.73, 235, 1098, 2.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raquela Crowson', 1, 'Portugal', 26, 'Flex', 70.81, 161, 1581, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Davin Le Estut', 20, 'China', 33, 'Flex', 40.41, 153, 220, 1.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gothart Sapsforde', 11, 'Indonesia', 22, 'Leader', 51.86, 289, 1896, 0.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evin Picopp', 18, 'Democratic Republic of the Congo', 41, 'Entry Fragger', 51.42, 376, 2660, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daphna Woakes', 6, 'Azerbaijan', 31, 'Support', 72.78, 121, 908, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jonathon Obeney', 19, 'Peru', 38, 'Leader', 74.0, 437, 1030, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarid Asaaf', 17, 'Cuba', 21, 'Leader', 91.0, 228, 1674, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hannie Park', 5, 'China', 32, 'Entry Fragger', 15.02, 93, 1301, 2.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annie Asquith', 13, 'Indonesia', 37, 'Leader', 73.0, 447, 1935, 1.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aubine Larimer', 18, 'Poland', 21, 'Flex', 11.45, 46, 706, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lezley Kenrick', 14, 'Italy', 29, 'Flex', 95.16, 457, 2290, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Minnie Rodolphe', 17, 'Czech Republic', 35, 'Support', 69.51, 458, 2903, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Welbie Gobolos', 13, 'Philippines', 34, 'Entry Fragger', 58.53, 294, 981, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Salome Mancer', 1, 'Chile', 18, 'Entry Fragger', 88.64, 380, 482, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Suki Asgodby', 4, 'Philippines', 24, 'Entry Fragger', 32.64, 461, 1857, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicolis Mc Ilwrick', 6, 'Peru', 20, 'Flex', 35.0, 277, 2673, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Franklyn Witherspoon', 18, 'Ukraine', 33, 'Flex', 60.65, 269, 2196, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Modesty Vaux', 3, 'Argentina', 42, 'Leader', 18.14, 16, 2833, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lula Fluger', 5, 'Indonesia', 23, 'Entry Fragger', 29.23, 434, 2532, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roddie Duberry', 12, 'Austria', 28, 'Support', 49.58, 483, 1821, 1.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tye Mertel', 21, 'Democratic Republic of the Congo', 21, 'Flex', 83.39, 146, 1557, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Britteny Tebbitt', 2, 'Armenia', 19, 'Support', 74.25, 232, 2535, 0.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabe Sendley', 8, 'China', 22, 'Support', 6.05, 368, 1973, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elmira Chataignier', 8, 'Slovenia', 20, 'Flex', 91.86, 282, 1027, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cassandre Johnstone', 12, 'China', 39, 'Leader', 28.8, 318, 15, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Donovan Grayshon', 9, 'Russia', 23, 'Leader', 59.49, 323, 1272, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tedra Andriss', 1, 'Indonesia', 26, 'Entry Fragger', 17.66, 245, 117, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cosme Adamiak', 1, 'France', 37, 'Entry Fragger', 86.11, 242, 1955, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Magdalen Rossant', 13, 'Netherlands', 29, 'Entry Fragger', 34.73, 363, 2378, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hernando Goodday', 6, 'Poland', 34, 'Flex', 77.94, 51, 2760, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clari Runciman', 12, 'Indonesia', 41, 'Support', 66.29, 208, 1601, 2.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Terrel Jadczak', 13, 'Serbia', 28, 'Flex', 43.18, 328, 1247, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allianora Studman', 2, 'Indonesia', 40, 'Support', 29.23, 92, 608, 0.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brennan Lombard', 17, 'Philippines', 22, 'Flex', 57.86, 229, 2143, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lotti Rubi', 13, 'Poland', 28, 'Support', 71.48, 99, 339, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myrtie Nary', 17, 'China', 29, 'Support', 76.69, 192, 2323, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Otis Gallager', 21, 'Argentina', 22, 'Entry Fragger', 84.15, 66, 2020, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eilis Witty', 2, 'Spain', 27, 'Support', 36.96, 454, 2520, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rania Vaines', 14, 'China', 22, 'Support', 15.77, 424, 204, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fraze Domingues', 20, 'Macedonia', 30, 'Flex', 73.11, 235, 834, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emlyn Tommen', 17, 'Indonesia', 21, 'Support', 83.21, 236, 1368, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kilian Zealey', 6, 'Mongolia', 32, 'Flex', 7.06, 42, 2957, 0.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carlina Eginton', 9, 'Philippines', 18, 'Leader', 69.47, 186, 2138, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Burty Huckster', 20, 'Indonesia', 32, 'Leader', 9.21, 379, 286, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabi Longhirst', 17, 'Russia', 34, 'Flex', 31.06, 385, 1210, 0.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annabel Bastow', 19, 'Brazil', 41, 'Flex', 56.5, 403, 2696, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clevey Thorneley', 6, 'Portugal', 37, 'Flex', 94.28, 361, 2069, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Durant Pardey', 10, 'Ukraine', 29, 'Support', 88.12, 267, 329, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erl Janik', 16, 'Czech Republic', 22, 'Support', 48.18, 420, 1875, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clarette Chamney', 13, 'Egypt', 30, 'Leader', 1.08, 19, 2955, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myron Coite', 19, 'Indonesia', 42, 'Leader', 96.7, 319, 2509, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Valentina Liversley', 17, 'Indonesia', 27, 'Support', 14.69, 410, 222, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Livia Gladwish', 14, 'Sweden', 25, 'Leader', 62.14, 136, 1039, 0.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gary Ende', 8, 'Spain', 19, 'Support', 82.36, 382, 1692, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brendan Lippitt', 13, 'Germany', 32, 'Leader', 39.9, 120, 2858, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willa De Zuani', 8, 'China', 36, 'Support', 39.24, 299, 423, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hildy Libreros', 11, 'North Korea', 31, 'Leader', 46.34, 29, 703, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gusella Walentynowicz', 9, 'Brazil', 32, 'Flex', 66.86, 100, 1927, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shalne Clayal', 8, 'Brazil', 22, 'Flex', 84.2, 463, 2358, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Horace Pessler', 10, 'Indonesia', 26, 'Support', 88.58, 428, 217, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vincenty Di Maria', 16, 'Poland', 40, 'Flex', 79.61, 92, 457, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Valentijn Rowlett', 10, 'Poland', 41, 'Support', 47.67, 131, 653, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arlen Fortnum', 14, 'Indonesia', 37, 'Flex', 76.19, 255, 1880, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myrlene Denness', 11, 'Colombia', 39, 'Entry Fragger', 55.94, 497, 326, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jeralee Donahue', 5, 'Indonesia', 39, 'Entry Fragger', 81.1, 259, 1440, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beatrisa Riglesford', 21, 'Sweden', 40, 'Support', 55.62, 419, 1890, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reggis Tattersill', 10, 'Serbia', 42, 'Entry Fragger', 41.57, 215, 1000, 2.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angie McIlherran', 11, 'Indonesia', 20, 'Leader', 86.97, 382, 2887, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Moira Cuxon', 1, 'France', 26, 'Leader', 22.81, 156, 1660, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Benton Featherstonhalgh', 1, 'Philippines', 37, 'Support', 87.0, 237, 2689, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kial Michelin', 5, 'Russia', 36, 'Flex', 11.53, 242, 104, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rubie Scotland', 20, 'Croatia', 18, 'Entry Fragger', 41.21, 96, 1905, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Susannah Colquhoun', 18, 'Indonesia', 34, 'Flex', 16.56, 288, 428, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dee dee Dabling', 16, 'Cambodia', 33, 'Flex', 36.78, 104, 892, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Theo Kleinplac', 14, 'France', 39, 'Leader', 91.16, 78, 1707, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arny Eagling', 4, 'Brazil', 42, 'Flex', 6.11, 205, 2608, 1.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Betty Ygoe', 5, 'China', 36, 'Entry Fragger', 47.19, 347, 2313, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charlton Woolam', 6, 'Philippines', 20, 'Entry Fragger', 51.03, 43, 1976, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vanya Riding', 15, 'Russia', 26, 'Support', 86.18, 48, 2042, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caresse Groneway', 7, 'Slovenia', 39, 'Entry Fragger', 61.76, 322, 155, 0.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosetta Poulsen', 10, 'Peru', 23, 'Flex', 11.31, 383, 163, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaylord Williamson', 11, 'Portugal', 42, 'Leader', 97.62, 79, 1637, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roland Stockall', 18, 'Iran', 24, 'Support', 36.5, 404, 1335, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Theodora Konzelmann', 12, 'Indonesia', 26, 'Leader', 11.0, 355, 50, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ailey Lanchbery', 8, 'Portugal', 20, 'Leader', 77.9, 138, 520, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ronnica Blakiston', 12, 'South Sudan', 32, 'Entry Fragger', 99.25, 173, 1906, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mimi Brownlie', 1, 'Paraguay', 30, 'Flex', 96.63, 466, 1453, 0.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fae McMyler', 13, 'France', 33, 'Entry Fragger', 38.97, 346, 2605, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Orlan Waylett', 6, 'Poland', 32, 'Support', 3.42, 93, 557, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Grady Le Claire', 14, 'Poland', 36, 'Support', 85.61, 390, 2300, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delaney McReath', 20, 'Sweden', 34, 'Flex', 13.44, 270, 1199, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cortie Gabby', 1, 'Indonesia', 42, 'Entry Fragger', 60.79, 193, 1390, 0.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reamonn Deetlefs', 8, 'Indonesia', 24, 'Flex', 75.34, 438, 2233, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stuart Eriksson', 21, 'China', 36, 'Entry Fragger', 78.48, 346, 2401, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cherrita Noller', 9, 'Indonesia', 40, 'Leader', 40.11, 486, 1648, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kain Dionis', 13, 'Indonesia', 27, 'Flex', 63.07, 302, 1008, 2.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karrie Ovize', 8, 'Indonesia', 24, 'Entry Fragger', 70.39, 428, 2530, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Addie McManus', 3, 'Greece', 21, 'Flex', 88.58, 263, 467, 0.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aliza Jerams', 1, 'Indonesia', 32, 'Flex', 91.0, 238, 491, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Addie Richmond', 2, 'Brazil', 34, 'Support', 56.9, 310, 2902, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Genevieve New', 2, 'Sweden', 39, 'Flex', 4.84, 247, 2959, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Renae Haliburton', 5, 'Indonesia', 34, 'Leader', 93.7, 393, 1642, 1.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tanney Dwane', 15, 'Poland', 23, 'Support', 16.22, 482, 1485, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lindsay Mullis', 3, 'Indonesia', 27, 'Leader', 0.21, 75, 2851, 0.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rabbi Adrain', 3, 'Sweden', 40, 'Entry Fragger', 19.98, 191, 2947, 1.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roscoe Darko', 10, 'Greece', 21, 'Flex', 29.27, 277, 1461, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Micah Pelcheur', 16, 'Jordan', 36, 'Flex', 40.64, 497, 741, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Warden Maginn', 16, 'Palestinian Territory', 19, 'Support', 69.74, 16, 1842, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kevyn Margeram', 8, 'Argentina', 38, 'Entry Fragger', 71.32, 339, 2811, 2.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Branden Maynell', 15, 'China', 31, 'Support', 33.31, 231, 1947, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felice Lorraine', 2, 'Mali', 18, 'Leader', 42.59, 105, 2222, 2.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hesther Armand', 20, 'Ukraine', 32, 'Flex', 13.61, 235, 80, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Honoria Sherburn', 6, 'Poland', 40, 'Entry Fragger', 96.31, 384, 290, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Federica Cattemull', 17, 'Afghanistan', 30, 'Entry Fragger', 16.91, 204, 2399, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Susana Eble', 13, 'Gambia', 18, 'Support', 45.33, 244, 2909, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dallas Orsman', 18, 'Russia', 34, 'Entry Fragger', 61.6, 332, 842, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kerry Cotterell', 21, 'Sweden', 24, 'Leader', 75.15, 235, 2664, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vivianne Rennock', 14, 'Mexico', 21, 'Entry Fragger', 92.23, 222, 785, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joachim Segeswoeth', 20, 'Cameroon', 29, 'Leader', 22.99, 242, 1320, 0.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frankie Baudon', 20, 'Argentina', 32, 'Support', 38.26, 61, 1980, 1.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Trace Schirach', 3, 'Serbia', 35, 'Flex', 9.48, 133, 2071, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicol Giacobazzi', 17, 'Senegal', 22, 'Leader', 53.24, 182, 644, 0.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Packston Ribou', 21, 'Russia', 31, 'Support', 36.87, 79, 2712, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bobby Stroyan', 16, 'Indonesia', 28, 'Entry Fragger', 62.3, 352, 1234, 0.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marja Eaden', 9, 'China', 28, 'Support', 45.91, 30, 2841, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Moll Cuming', 21, 'Peru', 42, 'Leader', 40.62, 307, 136, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Silas Barthelemy', 11, 'China', 35, 'Entry Fragger', 18.12, 62, 2757, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nickolai Girodias', 13, 'Italy', 36, 'Support', 87.41, 154, 2538, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Renata Leonida', 20, 'Japan', 41, 'Support', 61.43, 479, 2463, 0.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thorvald Morad', 7, 'China', 21, 'Support', 40.27, 289, 1206, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dollie Ogg', 2, 'China', 18, 'Leader', 29.87, 400, 647, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Woodrow Tewkesberry', 4, 'Croatia', 40, 'Entry Fragger', 11.4, 184, 2817, 0.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brenda Beaford', 20, 'South Africa', 42, 'Support', 32.79, 133, 1245, 1.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Netta Woosnam', 11, 'Central African Republic', 36, 'Support', 59.55, 449, 1467, 0.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emanuel Dewberry', 11, 'China', 38, 'Leader', 72.32, 215, 868, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kent Zamorano', 21, 'Brazil', 36, 'Leader', 45.33, 31, 230, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gertrude Wahner', 17, 'Serbia', 42, 'Support', 99.12, 318, 269, 0.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rois Skokoe', 6, 'Peru', 24, 'Entry Fragger', 83.8, 158, 713, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Heidie Road', 3, 'Thailand', 36, 'Leader', 14.82, 191, 2131, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shina Hurdidge', 19, 'China', 18, 'Entry Fragger', 42.88, 58, 2239, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tina Fetherston', 9, 'Ukraine', 32, 'Support', 78.07, 352, 1508, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aura Teather', 14, 'Madagascar', 36, 'Entry Fragger', 4.62, 219, 1601, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wallache Shiel', 3, 'Cameroon', 39, 'Entry Fragger', 94.89, 51, 357, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Waverly Edie', 21, 'China', 38, 'Support', 2.35, 382, 2910, 2.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alys Pauel', 12, 'Germany', 36, 'Support', 20.97, 456, 2927, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chris Gidman', 6, 'Indonesia', 42, 'Flex', 53.99, 425, 2405, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Guntar Ledbury', 11, 'Russia', 39, 'Leader', 96.59, 476, 9, 1.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Loralee Batrim', 15, 'France', 35, 'Support', 56.01, 435, 2519, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Klarrisa Marham', 5, 'China', 18, 'Support', 15.3, 414, 2886, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charita Warrack', 1, 'United States', 19, 'Leader', 65.76, 495, 862, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stanislaus Ridsdale', 8, 'Indonesia', 42, 'Entry Fragger', 54.69, 232, 1681, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Salmon Venners', 15, 'Indonesia', 25, 'Leader', 64.21, 103, 1712, 1.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lazaro Reynish', 9, 'Israel', 26, 'Flex', 0.15, 391, 2133, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Noelle Stitson', 6, 'Ivory Coast', 20, 'Support', 9.33, 301, 2080, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicko Danilovich', 15, 'China', 28, 'Support', 12.69, 109, 190, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fairlie Birkby', 14, 'China', 40, 'Support', 38.31, 417, 847, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rossy Doherty', 17, 'Slovenia', 27, 'Support', 55.85, 21, 1331, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berny Widdowfield', 12, 'Indonesia', 40, 'Leader', 89.45, 129, 225, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bryant Eskrigge', 3, 'Spain', 41, 'Leader', 94.89, 453, 1244, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giffie Wafer', 19, 'Portugal', 28, 'Entry Fragger', 90.86, 209, 408, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Liv Sayburn', 9, 'Indonesia', 41, 'Leader', 68.05, 466, 1663, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gigi Happel', 18, 'United States', 26, 'Leader', 31.15, 100, 2539, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sigismundo Amaya', 5, 'Canada', 34, 'Entry Fragger', 59.73, 35, 464, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gordy Swires', 20, 'Georgia', 39, 'Flex', 24.65, 214, 1818, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fern Keston', 21, 'Indonesia', 23, 'Entry Fragger', 1.46, 120, 1223, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harlen Aldrick', 4, 'Argentina', 36, 'Leader', 43.83, 173, 2748, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jillane Awcock', 1, 'Russia', 35, 'Support', 28.62, 403, 1776, 2.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Othilie Truss', 15, 'France', 34, 'Entry Fragger', 45.46, 177, 1884, 2.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Midge Geertje', 4, 'China', 26, 'Entry Fragger', 11.22, 287, 36, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ailis Daen', 16, 'Kazakhstan', 39, 'Support', 84.29, 365, 2348, 0.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wallache Pietersma', 7, 'Guatemala', 38, 'Support', 70.51, 398, 2322, 2.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mathew Mallinder', 1, 'Canada', 18, 'Flex', 51.65, 330, 2920, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lothaire Sopper', 7, 'Colombia', 18, 'Entry Fragger', 66.73, 446, 2223, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leo Clute', 3, 'Syria', 24, 'Leader', 41.25, 184, 2734, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Belvia Duckit', 16, 'Japan', 21, 'Entry Fragger', 60.88, 9, 2181, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Davita McRorie', 21, 'Vietnam', 40, 'Support', 82.22, 449, 881, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tailor Covell', 15, 'Uganda', 19, 'Support', 7.07, 182, 1039, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devlen Brunini', 20, 'Indonesia', 37, 'Leader', 75.28, 430, 1851, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Buddy Bambrough', 21, 'Madagascar', 27, 'Support', 87.14, 109, 1529, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claiborne Peto', 3, 'France', 41, 'Flex', 0.72, 4, 1502, 2.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Linn Makin', 14, 'Grenada', 38, 'Leader', 82.26, 193, 1434, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clementius Stovin', 13, 'Honduras', 32, 'Support', 64.49, 383, 2460, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hagan Klisch', 14, 'Luxembourg', 42, 'Support', 67.52, 450, 1155, 0.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Faye Jahan', 19, 'Zambia', 26, 'Leader', 71.61, 266, 2054, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shelbi McLanachan', 1, 'Guatemala', 42, 'Entry Fragger', 95.41, 146, 1006, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jesselyn Leverich', 11, 'Indonesia', 33, 'Leader', 26.34, 491, 1736, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lonni Melbury', 5, 'Indonesia', 27, 'Flex', 33.45, 371, 1748, 1.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tobey Seaking', 6, 'Pakistan', 37, 'Entry Fragger', 27.26, 176, 17, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cleveland Detloff', 11, 'Poland', 37, 'Entry Fragger', 54.53, 59, 1216, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ivy Warwick', 6, 'Poland', 23, 'Support', 53.86, 224, 2585, 2.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kellby Eastope', 4, 'Iceland', 19, 'Flex', 31.84, 380, 368, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Linc Orlton', 4, 'France', 36, 'Entry Fragger', 30.32, 316, 682, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emelyne Lacoste', 17, 'Colombia', 39, 'Flex', 68.62, 49, 638, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melany Ferrari', 4, 'China', 27, 'Support', 35.67, 205, 2439, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bertram Hartle', 6, 'Argentina', 33, 'Support', 82.06, 400, 599, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reiko Power', 21, 'Philippines', 34, 'Flex', 73.19, 486, 47, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sloan Orriss', 15, 'France', 35, 'Leader', 23.82, 382, 1034, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabbie Godwin', 19, 'China', 27, 'Leader', 80.68, 298, 2834, 2.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Coriss Adicot', 10, 'Poland', 27, 'Entry Fragger', 45.51, 251, 869, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Minni Glavin', 20, 'Ukraine', 31, 'Entry Fragger', 41.08, 350, 1118, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tobias Rizzone', 15, 'Russia', 40, 'Leader', 1.64, 110, 2279, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Magdalena Domenico', 8, 'Georgia', 23, 'Support', 46.0, 490, 2067, 1.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarad Tomowicz', 16, 'Nicaragua', 29, 'Flex', 9.32, 33, 797, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hasty Le Strange', 1, 'Sweden', 32, 'Flex', 16.62, 359, 891, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bond Philpott', 10, 'Indonesia', 38, 'Leader', 7.12, 109, 2373, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allene Cotton', 16, 'Indonesia', 42, 'Support', 24.05, 184, 649, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Deeann Thieme', 14, 'China', 42, 'Leader', 30.21, 13, 908, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilmar Banishevitz', 7, 'Ireland', 30, 'Leader', 25.16, 79, 284, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elita Aggett', 7, 'United States', 39, 'Entry Fragger', 24.8, 104, 1765, 1.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brion Lomath', 17, 'Indonesia', 27, 'Leader', 80.57, 360, 1267, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roxi Beaman', 13, 'New Zealand', 23, 'Entry Fragger', 76.1, 31, 2509, 0.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tibold Shalloe', 15, 'France', 19, 'Support', 71.99, 166, 2544, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Helen Whitebread', 3, 'Albania', 23, 'Entry Fragger', 73.99, 380, 1489, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lotte Trye', 12, 'Brazil', 39, 'Entry Fragger', 75.61, 482, 1168, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Farah Garretts', 12, 'China', 34, 'Support', 12.35, 464, 2527, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tony Tidball', 18, 'Malaysia', 21, 'Flex', 95.61, 32, 1703, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosita Cabral', 13, 'China', 25, 'Support', 28.93, 261, 958, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morty Pherps', 21, 'Indonesia', 19, 'Flex', 54.67, 201, 2518, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jdavie Sidebotton', 7, 'New Zealand', 34, 'Leader', 18.52, 249, 1339, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alejandro Sessions', 18, 'Philippines', 23, 'Support', 19.62, 137, 2713, 2.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kimmie Laimable', 17, 'China', 35, 'Support', 1.44, 240, 2400, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chelsy Saffin', 9, 'Philippines', 42, 'Support', 98.27, 68, 2028, 2.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daisie Gutcher', 15, 'Indonesia', 26, 'Entry Fragger', 56.52, 228, 2342, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabriell Spavon', 14, 'Indonesia', 32, 'Flex', 98.09, 255, 1246, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sherwood Leveret', 15, 'China', 22, 'Entry Fragger', 15.51, 438, 1670, 1.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blaire Tickle', 14, 'China', 24, 'Flex', 42.38, 214, 1726, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Titos Lockyear', 20, 'Indonesia', 32, 'Flex', 61.4, 447, 1587, 0.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Inness Jurek', 8, 'Indonesia', 25, 'Leader', 82.57, 60, 1305, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Whitby Dandy', 3, 'Indonesia', 32, 'Support', 19.94, 255, 760, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Allsun Gianasi', 4, 'Malta', 36, 'Leader', 87.69, 411, 1017, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Phillipp Castanaga', 8, 'Nicaragua', 26, 'Leader', 52.81, 222, 1699, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Verine Zorzenoni', 13, 'Thailand', 41, 'Leader', 80.23, 146, 1392, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ferdy Giorgiutti', 20, 'Peru', 38, 'Flex', 23.24, 150, 2216, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agnes Duce', 20, 'Russia', 41, 'Flex', 40.75, 471, 1215, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Trumaine Cano', 14, 'Indonesia', 26, 'Support', 63.82, 145, 2771, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Normie Cammish', 6, 'Kenya', 41, 'Support', 47.1, 497, 1295, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anica Ninnis', 7, 'Portugal', 32, 'Leader', 51.79, 83, 2108, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ertha Gallone', 15, 'Indonesia', 23, 'Support', 85.92, 166, 2355, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beatrice Bach', 18, 'France', 40, 'Flex', 75.76, 378, 489, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alexandros Springtorpe', 1, 'Croatia', 32, 'Flex', 69.83, 232, 2937, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zahara Greenin', 4, 'Lithuania', 32, 'Flex', 36.01, 267, 2401, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Urbain Crowhurst', 17, 'Brazil', 23, 'Leader', 77.63, 421, 378, 0.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annalee Crathorne', 11, 'China', 25, 'Support', 44.78, 370, 417, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Babbie Dodsley', 3, 'Russia', 18, 'Entry Fragger', 10.75, 4, 787, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Randi Rizzolo', 8, 'China', 38, 'Flex', 81.54, 306, 2531, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Angelle Spyby', 21, 'China', 31, 'Flex', 26.72, 263, 161, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Westbrooke Esslement', 10, 'Oman', 34, 'Leader', 52.93, 253, 1709, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joan Melesk', 5, 'Egypt', 42, 'Flex', 30.32, 80, 2795, 0.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lissie Duffit', 11, 'Canada', 25, 'Flex', 75.2, 407, 1539, 0.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filippo Troth', 15, 'China', 40, 'Flex', 77.21, 195, 782, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nari Swinfen', 12, 'Poland', 31, 'Flex', 14.47, 0, 2994, 2.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dalton Hawney', 8, 'Guadeloupe', 35, 'Support', 58.81, 461, 2945, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dianne Fandrich', 6, 'Sweden', 18, 'Support', 92.13, 411, 189, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dolph Bloys', 8, 'Macedonia', 25, 'Flex', 4.53, 426, 1972, 0.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roma Lax', 19, 'Thailand', 39, 'Support', 40.21, 76, 1838, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shantee Courcey', 18, 'Bhutan', 24, 'Leader', 5.15, 253, 450, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thedrick Gotcliffe', 20, 'China', 20, 'Leader', 65.07, 4, 2404, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julita Turpie', 16, 'Brazil', 24, 'Support', 20.23, 171, 624, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dalston Mertgen', 6, 'Ethiopia', 23, 'Leader', 96.63, 382, 1424, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gretna Backman', 2, 'China', 30, 'Leader', 14.92, 108, 394, 1.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corissa Hellyer', 10, 'Czech Republic', 39, 'Leader', 37.81, 86, 1988, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thane Immings', 9, 'Philippines', 41, 'Entry Fragger', 40.95, 301, 2890, 1.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aloise Treen', 10, 'Indonesia', 21, 'Leader', 26.8, 226, 2898, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Justine Exton', 16, 'Portugal', 30, 'Entry Fragger', 87.5, 73, 2632, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raven Guerra', 3, 'Philippines', 18, 'Leader', 49.36, 488, 369, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Washington Doveston', 12, 'Indonesia', 32, 'Entry Fragger', 22.45, 60, 747, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Walden Fike', 15, 'Vietnam', 23, 'Entry Fragger', 85.78, 462, 660, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garwin Delouch', 11, 'Brazil', 42, 'Leader', 82.71, 404, 941, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zora Guard', 18, 'Philippines', 33, 'Support', 20.07, 444, 1744, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jasun Arne', 9, 'Portugal', 19, 'Flex', 60.65, 334, 2371, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alonzo Loren', 13, 'Armenia', 38, 'Leader', 15.36, 302, 1305, 2.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danni Gheorghie', 21, 'Philippines', 18, 'Flex', 2.21, 104, 2654, 2.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shaine Floweth', 4, 'China', 26, 'Entry Fragger', 43.34, 233, 90, 2.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaylil Beddall', 7, 'Philippines', 27, 'Flex', 6.88, 324, 1975, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nelson Onele', 6, 'China', 39, 'Support', 13.76, 399, 1876, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danie Vittet', 10, 'Finland', 26, 'Support', 55.33, 182, 381, 2.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pate Baudasso', 21, 'Brazil', 39, 'Support', 69.3, 133, 95, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amerigo Jurgen', 11, 'China', 38, 'Flex', 44.64, 66, 84, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lauralee Lawty', 20, 'Brazil', 38, 'Support', 13.59, 235, 2120, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Monika Miko', 20, 'Panama', 18, 'Flex', 16.93, 223, 1630, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joete Floodgate', 8, 'Poland', 39, 'Flex', 90.3, 109, 1467, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ody Oxbrough', 15, 'China', 22, 'Support', 18.24, 83, 1942, 0.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dalston Pass', 17, 'Indonesia', 29, 'Support', 48.83, 419, 838, 2.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaleb Westman', 17, 'China', 38, 'Entry Fragger', 8.61, 213, 2424, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Juliann Tiebe', 9, 'China', 37, 'Entry Fragger', 85.3, 132, 386, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brade Lashley', 7, 'Namibia', 40, 'Support', 96.98, 492, 1441, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wit Puttnam', 19, 'China', 22, 'Flex', 74.07, 256, 948, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robbie Christopherson', 18, 'Russia', 28, 'Entry Fragger', 27.31, 167, 2708, 0.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claus Fussell', 20, 'United States', 18, 'Leader', 7.82, 279, 2064, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julina Jeffs', 4, 'Sweden', 38, 'Leader', 71.53, 354, 1652, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laurianne Willison', 16, 'Indonesia', 32, 'Leader', 92.57, 344, 2680, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daven Deathridge', 3, 'Indonesia', 22, 'Support', 78.42, 498, 1506, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lev Slyne', 21, 'Colombia', 27, 'Flex', 85.26, 328, 2079, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosana Levane', 16, 'South Africa', 27, 'Flex', 82.49, 30, 43, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gerrard Spalls', 9, 'Poland', 26, 'Support', 69.09, 205, 1216, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maddie Mellody', 19, 'Indonesia', 37, 'Flex', 52.78, 8, 1115, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gunner Lilford', 15, 'China', 37, 'Flex', 35.77, 19, 1617, 2.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kathie Scirman', 21, 'Czech Republic', 21, 'Support', 33.24, 159, 2292, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thorny Wickman', 6, 'Poland', 30, 'Support', 19.62, 455, 1177, 1.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pearla Brookesbie', 3, 'China', 42, 'Support', 84.05, 428, 939, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hester Itzkovsky', 5, 'Mali', 27, 'Leader', 25.25, 154, 1301, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pegeen Blew', 18, 'Indonesia', 19, 'Leader', 1.42, 174, 777, 0.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reeva Olney', 7, 'Mauritius', 35, 'Entry Fragger', 17.56, 143, 1076, 2.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Addie De Vuyst', 15, 'Democratic Republic of the Congo', 22, 'Support', 37.06, 183, 2889, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ronni Wheelan', 1, 'Mauritania', 32, 'Support', 35.36, 364, 1146, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Whitney Crew', 9, 'Indonesia', 22, 'Flex', 41.4, 281, 2061, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quinn Gaylord', 21, 'Brazil', 37, 'Leader', 45.55, 454, 2573, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julia Dudson', 9, 'Palestinian Territory', 23, 'Entry Fragger', 25.96, 145, 583, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rasia Vankeev', 2, 'Albania', 31, 'Support', 51.36, 464, 1894, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Newton Veschambes', 18, 'Trinidad and Tobago', 35, 'Flex', 91.82, 55, 775, 1.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Levi Lethbridge', 18, 'Finland', 35, 'Entry Fragger', 3.41, 312, 1901, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robert Mercik', 3, 'Honduras', 32, 'Leader', 40.57, 300, 1721, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kearney Torbard', 17, 'Indonesia', 26, 'Entry Fragger', 82.39, 117, 370, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aggi Spaight', 16, 'Poland', 38, 'Flex', 49.75, 261, 627, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cherri Youde', 5, 'Pakistan', 38, 'Entry Fragger', 54.52, 170, 2093, 1.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hildegarde Harrop', 21, 'Sweden', 35, 'Entry Fragger', 88.8, 424, 924, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rhoda Schultes', 7, 'Slovenia', 20, 'Support', 71.83, 249, 2883, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gisella Evered', 11, 'China', 23, 'Leader', 48.73, 64, 2002, 1.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Keely Radwell', 19, 'Russia', 38, 'Flex', 34.37, 85, 2876, 1.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lindy Yerill', 6, 'Poland', 24, 'Entry Fragger', 14.2, 44, 2656, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cynthie Blaszczak', 8, 'Croatia', 27, 'Support', 91.55, 158, 413, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eric Hubber', 16, 'Vietnam', 31, 'Entry Fragger', 71.03, 418, 560, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Steffane Mewes', 17, 'Portugal', 27, 'Support', 97.93, 34, 426, 2.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marsh Denge', 10, 'China', 39, 'Leader', 62.06, 228, 2458, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amil Renne', 18, 'China', 21, 'Entry Fragger', 31.17, 482, 2891, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janos Harkess', 13, 'Indonesia', 20, 'Support', 41.02, 35, 1195, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meredith Gallie', 1, 'Peru', 40, 'Support', 28.58, 55, 2118, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Latisha Djurdjevic', 4, 'Russia', 20, 'Leader', 72.79, 376, 1580, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marlin Ramey', 11, 'China', 32, 'Flex', 25.87, 69, 2483, 0.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alister Bly', 2, 'Russia', 38, 'Flex', 72.51, 253, 1174, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delainey Patriche', 8, 'Paraguay', 28, 'Flex', 76.44, 414, 2212, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dietrich Yankov', 3, 'Portugal', 34, 'Flex', 86.12, 341, 1061, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alli Andresen', 2, 'France', 33, 'Support', 0.18, 207, 1891, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarrad Jankiewicz', 9, 'Russia', 23, 'Leader', 79.34, 276, 1854, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Evangeline Belk', 8, 'Brazil', 33, 'Entry Fragger', 71.53, 84, 927, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Odelle Moye', 2, 'Madagascar', 26, 'Support', 91.19, 484, 520, 1.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Conney Maffia', 12, 'France', 22, 'Leader', 51.69, 95, 241, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Martina Falconar', 14, 'Mexico', 18, 'Flex', 15.02, 172, 1214, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Simonette Crosbie', 16, 'Indonesia', 36, 'Entry Fragger', 20.27, 71, 1076, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Josh Fuge', 5, 'China', 26, 'Leader', 20.87, 237, 2569, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jarid Dawes', 20, 'Yemen', 21, 'Entry Fragger', 55.97, 209, 557, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marcel Pelling', 2, 'Portugal', 21, 'Leader', 53.71, 393, 1468, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zsa zsa Petris', 18, 'Russia', 40, 'Leader', 54.08, 257, 621, 1.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Desi Stollhofer', 17, 'Poland', 34, 'Flex', 24.82, 96, 327, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Guthry Wallege', 21, 'Peru', 42, 'Support', 79.88, 382, 102, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nicolette Headington', 3, 'Ireland', 31, 'Support', 0.03, 94, 2422, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kathie Atchly', 10, 'Vietnam', 19, 'Leader', 66.31, 39, 336, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nora Volet', 10, 'China', 22, 'Support', 48.26, 29, 2000, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pippo Chess', 19, 'South Korea', 23, 'Flex', 50.52, 381, 1984, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Justin Mc Caughen', 18, 'France', 36, 'Leader', 34.57, 115, 706, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alexina Hargraves', 21, 'United Kingdom', 31, 'Entry Fragger', 64.33, 316, 2027, 2.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nadia Havvock', 3, 'China', 40, 'Support', 59.05, 305, 74, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ramonda Passey', 8, 'Indonesia', 25, 'Entry Fragger', 22.5, 153, 241, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maible MacBey', 18, 'Brazil', 18, 'Leader', 32.07, 73, 310, 0.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clo Wanne', 19, 'Indonesia', 19, 'Leader', 86.4, 95, 2728, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Petronille Devenport', 2, 'Russia', 37, 'Flex', 63.25, 418, 876, 0.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rickie McKeveney', 8, 'Ukraine', 41, 'Flex', 72.3, 44, 2333, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Noel Maffione', 20, 'Philippines', 19, 'Entry Fragger', 58.2, 413, 1564, 2.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claiborn Kindell', 9, 'United States', 30, 'Entry Fragger', 41.52, 131, 521, 0.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boyd Gooke', 19, 'Macedonia', 26, 'Flex', 61.32, 383, 838, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lavina Stuther', 9, 'Netherlands', 33, 'Entry Fragger', 87.43, 450, 506, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dorothea Mobius', 13, 'Panama', 25, 'Flex', 84.89, 179, 1802, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Connie Barley', 5, 'Poland', 37, 'Flex', 70.39, 7, 2320, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Siana Limbert', 11, 'Brazil', 26, 'Leader', 68.23, 344, 2983, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cristie Ivantyev', 2, 'Montenegro', 37, 'Leader', 43.49, 189, 2743, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alano Cornfoot', 14, 'China', 22, 'Flex', 5.21, 373, 2078, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Charo Rumford', 8, 'El Salvador', 32, 'Entry Fragger', 2.12, 270, 1320, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roth Escolme', 14, 'China', 31, 'Support', 25.08, 217, 1690, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Montgomery Halversen', 19, 'Nigeria', 21, 'Entry Fragger', 1.82, 28, 579, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Madella Goodwyn', 6, 'Georgia', 34, 'Flex', 88.5, 15, 2119, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Paquito Revel', 5, 'Paraguay', 38, 'Support', 88.22, 301, 1848, 1.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jeramey Fawlo', 16, 'Portugal', 21, 'Leader', 63.85, 194, 289, 2.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raimund Avent', 15, 'China', 35, 'Flex', 40.05, 329, 1419, 1.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lusa Brandoni', 6, 'Brazil', 19, 'Entry Fragger', 74.95, 152, 378, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cinda Wallworke', 6, 'Russia', 40, 'Entry Fragger', 98.52, 325, 358, 2.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynnell Kobpa', 5, 'Thailand', 30, 'Flex', 11.01, 11, 2144, 2.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynnelle Chadwin', 3, 'Indonesia', 35, 'Support', 2.98, 74, 561, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wyndham Dishman', 11, 'Brazil', 39, 'Leader', 21.81, 248, 1890, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Constantine Widdowfield', 4, 'China', 23, 'Flex', 89.38, 385, 2073, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lainey Schleswig-Holstein', 13, 'Brazil', 35, 'Leader', 1.24, 305, 2443, 0.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alard Mettrick', 11, 'Indonesia', 25, 'Flex', 82.65, 7, 2948, 1.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zabrina Whelan', 19, 'Sweden', 35, 'Support', 89.37, 107, 2372, 2.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meredith Triswell', 19, 'Indonesia', 24, 'Flex', 62.71, 278, 508, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Auberta Chetwin', 5, 'Egypt', 26, 'Entry Fragger', 94.99, 68, 2215, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chris Mountjoy', 1, 'China', 39, 'Support', 10.0, 350, 751, 0.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Haily Krzyzowski', 16, 'Yemen', 22, 'Flex', 77.51, 98, 2869, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Norry Benck', 2, 'China', 36, 'Flex', 53.94, 118, 2808, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tally Moakler', 1, 'China', 27, 'Leader', 63.31, 345, 1799, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nikolas Millsom', 10, 'Indonesia', 41, 'Support', 77.24, 346, 71, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lou Graham', 12, 'Ivory Coast', 31, 'Leader', 56.27, 456, 2491, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynnelle Paolino', 7, 'South Africa', 19, 'Leader', 52.34, 113, 2722, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucie Klosges', 2, 'Brazil', 26, 'Flex', 49.37, 316, 2045, 2.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Benoite Bellon', 11, 'China', 23, 'Flex', 6.6, 215, 1315, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anica Andree', 14, 'Brazil', 41, 'Support', 3.16, 88, 423, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kory Dunbleton', 19, 'China', 29, 'Leader', 46.6, 409, 1432, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myriam Ruusa', 10, 'China', 39, 'Flex', 78.0, 335, 2846, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jemima Pilger', 8, 'Japan', 41, 'Flex', 40.98, 157, 1697, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Renault Bonar', 18, 'South Korea', 30, 'Support', 81.6, 83, 2183, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorilyn Eveque', 10, 'Brazil', 26, 'Entry Fragger', 1.82, 184, 1959, 2.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alys Keely', 14, 'Indonesia', 42, 'Flex', 53.3, 267, 2968, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amalia Stoite', 4, 'Indonesia', 25, 'Entry Fragger', 18.52, 53, 605, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mirabel Hartzog', 15, 'Gambia', 31, 'Support', 51.08, 272, 1359, 1.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emelen Pignon', 20, 'Philippines', 24, 'Leader', 12.92, 441, 213, 1.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mace Hansell', 16, 'China', 42, 'Entry Fragger', 60.61, 248, 1709, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Webb Flahy', 13, 'China', 24, 'Support', 85.87, 288, 471, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fay Penhearow', 2, 'Brazil', 27, 'Flex', 27.85, 257, 2673, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Idette Bodimeade', 19, 'Peru', 38, 'Entry Fragger', 86.34, 44, 2431, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gwenette Mitchinson', 12, 'Indonesia', 37, 'Entry Fragger', 58.25, 444, 1381, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elfreda Cowle', 16, 'Indonesia', 36, 'Support', 73.89, 108, 106, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jesus Steventon', 15, 'Indonesia', 39, 'Flex', 67.98, 289, 679, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Celestia Bradberry', 17, 'Japan', 40, 'Flex', 99.04, 492, 598, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilhelmina Eckh', 1, 'China', 22, 'Leader', 88.33, 249, 123, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meris Tattersall', 20, 'China', 32, 'Entry Fragger', 2.34, 423, 2127, 1.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Matt Danson', 2, 'Portugal', 33, 'Support', 93.95, 128, 2152, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Donetta Schulze', 1, 'Philippines', 37, 'Flex', 79.98, 148, 808, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brok Shickle', 17, 'Mongolia', 32, 'Flex', 8.93, 273, 2410, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Myrah Pigney', 15, 'Brazil', 37, 'Flex', 25.85, 449, 1792, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carl Jirzik', 21, 'France', 32, 'Flex', 54.37, 54, 2859, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lexi Godsil', 14, 'Russia', 33, 'Entry Fragger', 27.18, 489, 2653, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sigvard Champain', 14, 'China', 20, 'Leader', 45.66, 131, 2962, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janetta Hassey', 10, 'China', 33, 'Flex', 62.35, 269, 71, 2.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Page Deverock', 9, 'China', 38, 'Entry Fragger', 41.31, 475, 210, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cheryl Maciocia', 18, 'Indonesia', 26, 'Leader', 69.26, 356, 2410, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alexine Pelosi', 11, 'Poland', 26, 'Flex', 80.91, 254, 997, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Colette Handscomb', 15, 'United States', 20, 'Entry Fragger', 11.5, 87, 1943, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cassius Jeandel', 13, 'China', 40, 'Leader', 84.7, 15, 863, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Darrin Acott', 9, 'China', 36, 'Support', 59.74, 268, 2355, 1.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Neddie Plaid', 17, 'Russia', 39, 'Leader', 69.73, 420, 1082, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ardelle Gaymar', 7, 'Indonesia', 24, 'Entry Fragger', 5.89, 276, 2180, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cristine Burdfield', 6, 'China', 33, 'Flex', 15.13, 166, 1914, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Welch Bennett', 17, 'Mexico', 29, 'Flex', 73.52, 302, 2506, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eliza Colpus', 17, 'Philippines', 19, 'Support', 65.5, 176, 1652, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daniela Scholard', 19, 'Indonesia', 29, 'Leader', 98.29, 350, 1773, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Silvanus Bierman', 17, 'China', 30, 'Entry Fragger', 97.7, 11, 513, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alyson Crunden', 13, 'Belarus', 30, 'Flex', 59.31, 285, 751, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blythe MacCafferty', 9, 'Canada', 39, 'Leader', 69.22, 470, 1877, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ceciley Ramard', 9, 'Egypt', 22, 'Entry Fragger', 55.44, 261, 262, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Desiri McKernon', 14, 'Serbia', 36, 'Support', 39.32, 458, 1507, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sophey Adam', 4, 'China', 32, 'Leader', 70.6, 407, 593, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arnoldo Lisett', 2, 'France', 40, 'Entry Fragger', 90.64, 355, 2571, 1.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marianne Casiroli', 8, 'China', 26, 'Flex', 56.26, 42, 1373, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Finley Deeks', 7, 'Thailand', 18, 'Flex', 92.0, 4, 144, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shelbi Backson', 18, 'China', 27, 'Leader', 94.56, 63, 849, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Flora Andell', 6, 'China', 25, 'Support', 88.45, 452, 1188, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rani Bernardt', 15, 'Dominican Republic', 25, 'Support', 81.74, 106, 117, 2.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tommy Carse', 19, 'Poland', 25, 'Support', 25.85, 214, 977, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daryle Erie', 3, 'China', 19, 'Flex', 71.14, 237, 1130, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Finn Dunan', 15, 'China', 23, 'Entry Fragger', 28.64, 413, 959, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Michale Robbel', 9, 'China', 18, 'Entry Fragger', 44.01, 305, 1403, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clarance Dodamead', 8, 'Poland', 38, 'Support', 38.42, 175, 825, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Prissie Semiras', 21, 'Thailand', 19, 'Leader', 23.11, 34, 2746, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agosto Semble', 18, 'Burkina Faso', 35, 'Support', 76.35, 330, 956, 0.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Veronike Giacobini', 17, 'United States', 26, 'Support', 4.49, 409, 2072, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leopold Moorey', 11, 'Russia', 33, 'Entry Fragger', 80.96, 120, 2232, 1.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Archibald Schneidau', 17, 'Indonesia', 21, 'Leader', 66.52, 413, 1808, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaelan Skrine', 6, 'Czech Republic', 32, 'Entry Fragger', 27.94, 135, 2996, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Neysa Balasini', 2, 'Indonesia', 42, 'Leader', 98.03, 170, 1759, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Latashia Glitherow', 3, 'Cameroon', 28, 'Entry Fragger', 87.94, 462, 1966, 2.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dolli Mills', 9, 'Palestinian Territory', 33, 'Flex', 88.56, 497, 2260, 0.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Findlay Daber', 12, 'Brazil', 38, 'Leader', 61.7, 286, 1984, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hector Eirwin', 10, 'China', 26, 'Leader', 22.33, 385, 2761, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shalne Leonarde', 6, 'Indonesia', 25, 'Support', 68.45, 233, 2556, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Helga Best', 15, 'Ukraine', 32, 'Flex', 93.53, 150, 1952, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melody Drummond', 13, 'Portugal', 26, 'Support', 41.33, 52, 1093, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Irena Hospital', 8, 'Brazil', 38, 'Flex', 77.13, 33, 1886, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nikolai Schiell', 6, 'Ethiopia', 25, 'Flex', 5.84, 71, 780, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Inger Fellgatt', 11, 'France', 35, 'Flex', 20.98, 130, 1913, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Masha Grieveson', 8, 'China', 22, 'Entry Fragger', 8.52, 99, 982, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nathanial Menichelli', 7, 'Japan', 34, 'Flex', 47.53, 37, 838, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dyan Bruin', 17, 'Russia', 42, 'Flex', 13.6, 30, 988, 2.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tait McFadin', 18, 'Philippines', 24, 'Leader', 69.51, 130, 2432, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ada McGarel', 2, 'Tunisia', 24, 'Support', 68.72, 178, 2672, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aldwin Overshott', 6, 'Armenia', 37, 'Support', 34.02, 450, 1331, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alec Townsend', 12, 'Indonesia', 24, 'Leader', 65.35, 238, 1859, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kristian Capozzi', 12, 'United States', 23, 'Entry Fragger', 75.77, 195, 1677, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jasmine Wybourne', 16, 'Macedonia', 29, 'Leader', 37.21, 28, 103, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clyve Gerring', 5, 'Poland', 35, 'Entry Fragger', 32.06, 375, 569, 0.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oby Rasor', 12, 'Canada', 41, 'Entry Fragger', 18.63, 27, 1191, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amelie Morrison', 8, 'Russia', 42, 'Support', 66.3, 128, 1594, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vivie St Louis', 12, 'China', 18, 'Entry Fragger', 71.05, 405, 1033, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jessa Hayes', 4, 'Philippines', 25, 'Leader', 58.7, 53, 1600, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bartolomeo Beernaert', 6, 'Vietnam', 27, 'Support', 42.68, 236, 629, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aigneis Bovis', 18, 'Czech Republic', 25, 'Support', 32.92, 252, 652, 3.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stanley Wilshere', 20, 'Sweden', 42, 'Flex', 2.19, 397, 1800, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isaak Rubery', 1, 'Czech Republic', 35, 'Flex', 88.49, 442, 2215, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Richart Fernie', 9, 'United States', 28, 'Flex', 25.94, 9, 1900, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eada Tireman', 4, 'Lithuania', 41, 'Entry Fragger', 14.75, 456, 2145, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Austina Joye', 20, 'Canada', 34, 'Flex', 87.61, 132, 1427, 0.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laure Lamblin', 3, 'China', 20, 'Leader', 20.34, 29, 443, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Perrine Shears', 20, 'Poland', 21, 'Leader', 83.55, 436, 2042, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosabel Pollastrino', 8, 'Philippines', 18, 'Flex', 28.86, 186, 1153, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Osborne Dearth', 5, 'French Polynesia', 23, 'Leader', 52.66, 347, 808, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sigismondo Proudlove', 1, 'Philippines', 20, 'Flex', 3.83, 36, 1777, 2.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ddene Tue', 19, 'Mexico', 23, 'Flex', 35.23, 44, 1077, 1.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brittani Shewan', 3, 'Ethiopia', 42, 'Flex', 7.82, 369, 1201, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vincent Pendle', 13, 'Ivory Coast', 22, 'Support', 69.12, 244, 1591, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Donn Perrottet', 19, 'China', 31, 'Leader', 23.02, 221, 2967, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Virgie Messenbird', 7, 'Japan', 42, 'Flex', 34.52, 181, 881, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shelley Dinsey', 16, 'Ecuador', 22, 'Entry Fragger', 70.01, 221, 214, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emmery Charnick', 6, 'Ireland', 23, 'Leader', 98.68, 25, 2363, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Adina Crews', 8, 'Portugal', 38, 'Entry Fragger', 34.7, 23, 2649, 2.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wat Lumsdale', 14, 'Ghana', 38, 'Entry Fragger', 78.96, 485, 593, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carolann Wemes', 19, 'Indonesia', 30, 'Entry Fragger', 39.28, 95, 649, 1.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Basil Lister', 2, 'China', 31, 'Flex', 46.36, 462, 1067, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mendel Crickett', 10, 'China', 37, 'Support', 65.61, 46, 2036, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zebulen Ranscome', 6, 'Nicaragua', 36, 'Leader', 25.41, 482, 571, 0.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Salomi McAllen', 12, 'Iran', 31, 'Support', 15.11, 299, 1729, 2.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bent Tallant', 4, 'Japan', 23, 'Support', 83.22, 274, 127, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alick Blackborn', 10, 'Thailand', 33, 'Leader', 48.01, 360, 1736, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ahmed Weir', 5, 'Sweden', 40, 'Flex', 57.15, 7, 1774, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cyrille Smouten', 16, 'China', 28, 'Support', 3.84, 357, 2144, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joshia Ebbetts', 13, 'Mexico', 25, 'Support', 80.29, 485, 2882, 0.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kasey Hazell', 2, 'Guinea', 40, 'Leader', 10.86, 311, 2520, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Edi Lebreton', 4, 'Mongolia', 23, 'Support', 13.35, 402, 557, 2.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacob Bobasch', 15, 'Japan', 35, 'Leader', 20.28, 14, 287, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Krysta Unthank', 16, 'United States', 38, 'Support', 59.55, 135, 1429, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leda Danbrook', 7, 'Canada', 39, 'Flex', 63.43, 110, 430, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Andy Copestick', 4, 'Finland', 27, 'Flex', 13.8, 87, 2736, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Manda McCarney', 8, 'Indonesia', 40, 'Support', 39.85, 156, 783, 0.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alonso Harget', 21, 'Indonesia', 25, 'Leader', 99.68, 349, 730, 1.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yulma Stacey', 10, 'China', 36, 'Leader', 20.7, 365, 116, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raleigh Warr', 20, 'China', 36, 'Support', 84.49, 474, 616, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morganica Shovell', 10, 'Honduras', 24, 'Flex', 45.69, 12, 344, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merla Cristofori', 20, 'Venezuela', 18, 'Entry Fragger', 30.38, 222, 622, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emmanuel Jess', 8, 'Indonesia', 37, 'Flex', 84.97, 258, 1152, 1.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carroll Turner', 1, 'China', 38, 'Leader', 35.25, 184, 2573, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Davida Foxten', 13, 'China', 18, 'Support', 75.27, 32, 2688, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sidonnie Payton', 16, 'Kenya', 42, 'Flex', 42.36, 322, 1237, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Janette Ashelford', 5, 'Japan', 40, 'Entry Fragger', 94.52, 426, 2470, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Phillip Lowell', 3, 'Russia', 29, 'Support', 27.55, 128, 209, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Krissie Riach', 4, 'Ukraine', 23, 'Support', 68.84, 181, 2762, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Prescott Reinhart', 21, 'Russia', 33, 'Support', 43.69, 439, 320, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yolande Conway', 19, 'Colombia', 27, 'Leader', 43.04, 115, 1030, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Damon Carslake', 6, 'Democratic Republic of the Congo', 39, 'Entry Fragger', 17.88, 58, 172, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kirsteni Spadotto', 16, 'Tanzania', 23, 'Flex', 54.91, 66, 1422, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dolly Aldwich', 1, 'Portugal', 28, 'Leader', 34.71, 31, 2779, 1.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ollie Rama', 19, 'Libya', 41, 'Entry Fragger', 91.19, 18, 472, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caye Beckers', 6, 'Indonesia', 36, 'Flex', 1.32, 8, 445, 0.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mindy Eisikowitz', 12, 'France', 36, 'Support', 87.19, 276, 1327, 0.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Neale Kadd', 5, 'Indonesia', 41, 'Flex', 14.28, 329, 633, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Patin Broadway', 12, 'Russia', 20, 'Leader', 67.3, 280, 835, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lancelot Di Filippo', 11, 'South Africa', 39, 'Flex', 72.99, 95, 2192, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Baron Thurbon', 18, 'Norway', 21, 'Entry Fragger', 85.97, 139, 822, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Petunia Germon', 20, 'Montenegro', 27, 'Entry Fragger', 14.92, 145, 243, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ellswerth Petrol', 1, 'Sweden', 18, 'Entry Fragger', 96.39, 445, 2617, 1.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ginni Goodisson', 15, 'Ireland', 35, 'Support', 94.44, 252, 1066, 2.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clayson Layburn', 8, 'Indonesia', 19, 'Support', 48.64, 442, 167, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mada Abelevitz', 1, 'Indonesia', 25, 'Support', 84.03, 406, 1597, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Douglass Tethcote', 8, 'Greece', 21, 'Support', 31.56, 160, 1738, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Spike Ivanilov', 6, 'United States', 38, 'Flex', 2.75, 459, 481, 2.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brianne Troman', 14, 'Bulgaria', 34, 'Support', 69.09, 170, 180, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Haskel Burlingham', 2, 'Philippines', 32, 'Flex', 12.51, 455, 729, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ira Bothbie', 19, 'Czech Republic', 19, 'Entry Fragger', 55.27, 16, 1816, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rog Toulamain', 3, 'Ukraine', 41, 'Entry Fragger', 33.04, 245, 2455, 1.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shellysheldon Feldheim', 12, 'Sweden', 32, 'Support', 47.64, 204, 1472, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Julius Boxe', 2, 'Brazil', 36, 'Leader', 16.86, 359, 1419, 1.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hannis Aburrow', 21, 'Japan', 31, 'Flex', 67.99, 433, 2436, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marti Donneely', 12, 'Ukraine', 38, 'Entry Fragger', 98.41, 190, 2316, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eddie Gainsboro', 20, 'China', 18, 'Leader', 68.24, 70, 2608, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clio Chavrin', 2, 'China', 23, 'Leader', 25.56, 445, 1839, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chrissy Arnold', 5, 'China', 31, 'Leader', 2.05, 423, 63, 0.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Constantina Pearsall', 9, 'Philippines', 21, 'Flex', 57.79, 137, 2325, 1.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Denny Seamans', 7, 'Brazil', 38, 'Support', 7.08, 422, 2248, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Romola Lissimore', 10, 'China', 18, 'Leader', 7.3, 345, 539, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Halimeda McLanaghan', 13, 'Philippines', 25, 'Leader', 48.64, 399, 1473, 2.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merv Stiff', 6, 'Russia', 27, 'Entry Fragger', 8.55, 444, 742, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Natasha Yakushkev', 21, 'Indonesia', 31, 'Leader', 20.5, 415, 2875, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Katey Railton', 20, 'Nigeria', 26, 'Flex', 93.25, 368, 455, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gwendolin Druhan', 13, 'Portugal', 34, 'Flex', 53.02, 2, 2065, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Margarethe Eydel', 10, 'China', 37, 'Support', 31.26, 243, 2280, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lynett Gimert', 7, 'Estonia', 36, 'Support', 7.03, 288, 2440, 1.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Travers Demkowicz', 12, 'China', 19, 'Support', 63.65, 437, 2459, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jeanette Brauns', 12, 'Czech Republic', 39, 'Entry Fragger', 11.77, 220, 95, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quincy Mogg', 13, 'Brazil', 39, 'Flex', 66.6, 369, 629, 1.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sherilyn Hub', 15, 'Czech Republic', 42, 'Entry Fragger', 54.26, 33, 1645, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sabra Guerrero', 13, 'Finland', 28, 'Flex', 53.03, 276, 2811, 1.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alfons Creak', 8, 'Argentina', 21, 'Entry Fragger', 42.81, 137, 1276, 2.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dennison Bickerstaffe', 4, 'Philippines', 18, 'Entry Fragger', 47.55, 497, 1659, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Forbes Sells', 8, 'Argentina', 29, 'Flex', 76.95, 338, 2423, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amalita Seamon', 9, 'Ukraine', 36, 'Flex', 90.34, 3, 21, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cosette Thurstan', 10, 'Brazil', 20, 'Support', 43.5, 296, 1981, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tandi Janton', 8, 'Peru', 39, 'Entry Fragger', 30.91, 104, 1906, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bonita Condict', 11, 'Uganda', 27, 'Support', 18.26, 308, 2775, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dody Barrat', 5, 'China', 32, 'Entry Fragger', 60.7, 329, 1921, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Liza De La Salle', 8, 'Luxembourg', 30, 'Leader', 53.54, 489, 1156, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nikolai Cardero', 7, 'China', 40, 'Entry Fragger', 63.28, 421, 2278, 1.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cloe Stefi', 1, 'Indonesia', 22, 'Support', 61.64, 21, 2932, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vidovic Cadamy', 5, 'Indonesia', 37, 'Support', 63.97, 388, 310, 0.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leonidas Jurzyk', 2, 'China', 30, 'Entry Fragger', 80.97, 178, 2274, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jennifer Dedden', 11, 'Sweden', 25, 'Support', 51.15, 42, 2266, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meryl Hallihane', 12, 'Moldova', 26, 'Entry Fragger', 73.26, 58, 2907, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Olivia Bryson', 10, 'China', 39, 'Entry Fragger', 26.29, 67, 836, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bonnibelle Cianni', 21, 'Poland', 36, 'Leader', 74.43, 288, 574, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amabel Saward', 17, 'Venezuela', 20, 'Leader', 36.36, 77, 903, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ermina McCathay', 4, 'Iran', 40, 'Support', 83.76, 47, 2759, 1.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Beltran Lowre', 17, 'Hungary', 20, 'Flex', 66.02, 226, 841, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Josi Seamer', 5, 'Macedonia', 38, 'Entry Fragger', 50.43, 293, 2608, 0.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Norris Learmount', 3, 'Thailand', 40, 'Flex', 57.81, 67, 1846, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marion Hoyle', 11, 'Finland', 29, 'Entry Fragger', 92.17, 383, 1867, 1.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carey Scotford', 2, 'Afghanistan', 31, 'Support', 65.27, 126, 1553, 1.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sansone Ferenczi', 18, 'Russia', 37, 'Entry Fragger', 77.04, 338, 2352, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laurie Covely', 7, 'Pakistan', 29, 'Entry Fragger', 40.05, 481, 2733, 0.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Muire Stiegers', 11, 'Mayotte', 20, 'Flex', 17.52, 167, 1709, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carmella Dadds', 15, 'Poland', 39, 'Support', 91.57, 64, 1236, 2.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Averill Ruoss', 16, 'United States', 37, 'Support', 42.31, 436, 2656, 0.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cynthie Dullard', 6, 'Indonesia', 40, 'Flex', 23.79, 187, 2196, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blane Orbine', 13, 'Poland', 35, 'Entry Fragger', 63.7, 99, 956, 1.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dasie Shilleto', 21, 'China', 32, 'Flex', 34.25, 210, 1947, 2.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Analise Domerc', 7, 'Azerbaijan', 28, 'Flex', 63.26, 250, 1258, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willette Moodie', 13, 'Azerbaijan', 38, 'Flex', 87.39, 359, 1423, 1.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dennet Featley', 13, 'Ethiopia', 37, 'Flex', 4.98, 395, 669, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jeramey Barrand', 4, 'Portugal', 29, 'Entry Fragger', 95.03, 107, 1810, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arne Selbie', 20, 'China', 24, 'Entry Fragger', 90.63, 65, 1191, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christophorus Drains', 4, 'Sweden', 37, 'Entry Fragger', 66.27, 234, 2237, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aura Usherwood', 4, 'Vietnam', 32, 'Entry Fragger', 19.59, 289, 1390, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corabella Brolly', 5, 'United States', 35, 'Support', 92.54, 33, 1919, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Micheline Guerrieri', 13, 'Philippines', 23, 'Entry Fragger', 41.01, 303, 2311, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Woodie Maunsell', 3, 'Sweden', 21, 'Entry Fragger', 92.15, 455, 2402, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ginger Hemeret', 5, 'Tanzania', 27, 'Entry Fragger', 23.06, 24, 1544, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Datha Murkus', 21, 'Yemen', 42, 'Entry Fragger', 26.4, 432, 2633, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kimmy Colclough', 11, 'Vietnam', 33, 'Leader', 41.83, 233, 426, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Baxie Scriviner', 14, 'China', 36, 'Flex', 37.94, 272, 990, 0.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Trevor Woolfenden', 19, 'Japan', 38, 'Support', 34.59, 428, 884, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brooke McEntagart', 13, 'Lebanon', 32, 'Entry Fragger', 82.86, 201, 2848, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giustino Tondeur', 9, 'Belarus', 37, 'Support', 76.36, 426, 736, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clim Onthank', 13, 'Peru', 27, 'Support', 16.88, 330, 1923, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cedric Fleckno', 1, 'Brazil', 26, 'Support', 2.94, 282, 2168, 2.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brod Clancy', 1, 'Brazil', 37, 'Entry Fragger', 92.35, 188, 1243, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hersh Scholl', 2, 'China', 19, 'Leader', 78.96, 384, 1973, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kathe Snalham', 6, 'Indonesia', 33, 'Entry Fragger', 95.06, 316, 1737, 0.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rozamond Knowlson', 9, 'China', 22, 'Leader', 24.74, 494, 2257, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ken Braunstein', 10, 'Peru', 35, 'Support', 5.42, 352, 2800, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Teddie Enrich', 17, 'China', 33, 'Leader', 59.8, 400, 325, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emilie Belly', 20, 'Mexico', 29, 'Support', 70.2, 279, 1341, 2.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eveleen Jerwood', 14, 'Thailand', 36, 'Support', 25.57, 15, 2327, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kylie Lanahan', 18, 'Russia', 19, 'Support', 23.4, 355, 2122, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amalia Frid', 5, 'Armenia', 24, 'Flex', 26.55, 290, 1283, 1.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nap Sapena', 17, 'Brazil', 40, 'Entry Fragger', 85.71, 354, 2057, 2.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Luigi Leat', 19, 'Mozambique', 20, 'Flex', 99.31, 221, 1913, 2.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chrotoem Bagster', 5, 'Yemen', 37, 'Support', 38.45, 469, 722, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tomasine Charity', 10, 'Greece', 25, 'Flex', 6.46, 136, 1347, 1.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Catherine Edgell', 12, 'Slovenia', 27, 'Flex', 8.92, 316, 2792, 2.29);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chicky Scotchmer', 18, 'Slovenia', 22, 'Leader', 25.01, 69, 2929, 1.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shawn Hookes', 11, 'China', 23, 'Entry Fragger', 64.35, 106, 1208, 0.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reeba Accombe', 3, 'South Sudan', 37, 'Support', 47.03, 298, 2803, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boony MacMenamin', 2, 'Ukraine', 37, 'Support', 15.07, 294, 2990, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wallace Salt', 20, 'Peru', 31, 'Support', 24.05, 252, 611, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bambi Duckwith', 3, 'China', 21, 'Entry Fragger', 40.56, 498, 2174, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carry Gniewosz', 10, 'China', 20, 'Entry Fragger', 89.53, 128, 505, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jillie Torbett', 21, 'Vietnam', 29, 'Leader', 80.42, 281, 311, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alex Lehrle', 7, 'China', 37, 'Support', 18.73, 374, 2652, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Amber Giller', 5, 'France', 36, 'Flex', 33.21, 139, 2535, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rollins Batte', 9, 'Northern Mariana Islands', 25, 'Support', 18.7, 269, 1324, 1.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jaime Seakes', 7, 'Vietnam', 42, 'Leader', 13.64, 267, 1682, 2.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Galina Riall', 1, 'Sweden', 29, 'Flex', 18.29, 70, 286, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sibley Hosburn', 7, 'Poland', 23, 'Support', 30.09, 56, 599, 1.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elladine Lindeboom', 4, 'United States', 39, 'Support', 78.48, 52, 622, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Artemis Fields', 2, 'Peru', 33, 'Flex', 1.99, 308, 2779, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tomi Dishmon', 8, 'China', 33, 'Support', 43.22, 284, 1612, 1.68);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sophie Born', 19, 'New Zealand', 34, 'Support', 83.98, 453, 398, 1.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boyce Ranvoise', 17, 'China', 33, 'Flex', 55.22, 260, 589, 2.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Devondra Amiranda', 11, 'Indonesia', 33, 'Leader', 48.75, 485, 1927, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leroi Ivers', 13, 'Ukraine', 35, 'Entry Fragger', 95.76, 324, 520, 2.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gottfried Rackley', 10, 'Morocco', 40, 'Entry Fragger', 87.17, 371, 300, 2.17);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hanson Nutten', 12, 'Philippines', 24, 'Flex', 21.62, 427, 842, 2.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garry Tunnick', 7, 'New Zealand', 28, 'Entry Fragger', 24.75, 373, 1453, 0.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Silvester Minico', 18, 'Finland', 23, 'Support', 12.4, 458, 757, 2.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tito Wallbutton', 3, 'Indonesia', 39, 'Entry Fragger', 22.79, 56, 988, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Florence Simeoli', 6, 'China', 39, 'Flex', 30.12, 422, 831, 2.94);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Keith Bertomier', 18, 'China', 35, 'Flex', 64.74, 211, 472, 0.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Inesita Moxon', 16, 'China', 22, 'Support', 8.21, 304, 894, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Saunderson Etheridge', 15, 'Yemen', 36, 'Flex', 2.21, 474, 2686, 0.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Magdaia Edsall', 4, 'Thailand', 28, 'Entry Fragger', 78.81, 318, 2911, 2.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Loydie Kern', 19, 'China', 24, 'Entry Fragger', 81.12, 153, 2737, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fredric Betjeman', 19, 'Canada', 41, 'Entry Fragger', 24.79, 81, 2386, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hewitt Nipper', 16, 'Sweden', 25, 'Flex', 76.88, 426, 1531, 0.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vale Duthie', 7, 'Indonesia', 26, 'Support', 0.08, 352, 2796, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Verne Clelle', 5, 'Indonesia', 24, 'Entry Fragger', 33.94, 46, 476, 1.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eva Govier', 13, 'Philippines', 18, 'Entry Fragger', 4.22, 283, 709, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ives Hearley', 3, 'Tunisia', 18, 'Leader', 74.99, 159, 475, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raynard Woehler', 5, 'Sweden', 24, 'Support', 37.67, 25, 1033, 1.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alberto Hebard', 3, 'Portugal', 24, 'Support', 69.48, 440, 1464, 2.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jorrie Baythrop', 19, 'Philippines', 23, 'Flex', 13.26, 411, 81, 1.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kareem Gobourn', 13, 'Indonesia', 39, 'Support', 93.73, 384, 2033, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tommi Shewery', 11, 'Indonesia', 22, 'Flex', 3.55, 459, 2419, 1.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Crawford Argile', 8, 'Japan', 19, 'Leader', 17.86, 232, 972, 0.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gearalt Vasiliu', 15, 'China', 25, 'Flex', 15.0, 106, 1634, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kennan Dandison', 7, 'Philippines', 29, 'Support', 34.97, 115, 2455, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lincoln Dawson', 20, 'Indonesia', 40, 'Leader', 36.99, 88, 1143, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Averell Ledbury', 11, 'China', 31, 'Flex', 95.92, 81, 114, 1.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maryann Eckhard', 20, 'Honduras', 21, 'Leader', 61.36, 53, 1424, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anna-diana Salling', 9, 'South Africa', 39, 'Entry Fragger', 86.85, 469, 1518, 0.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Birgitta Petroff', 18, 'Croatia', 22, 'Leader', 21.23, 445, 2149, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frannie Lambarton', 17, 'Peru', 32, 'Support', 45.83, 290, 186, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Avrom Cannavan', 1, 'Denmark', 26, 'Support', 72.82, 431, 490, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Payton Windsor', 3, 'Turkey', 29, 'Support', 16.49, 305, 233, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ron Keerl', 17, 'Albania', 30, 'Flex', 7.64, 465, 916, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caralie Sylett', 4, 'China', 38, 'Flex', 96.98, 248, 321, 1.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daphene Imlach', 19, 'France', 22, 'Leader', 35.44, 407, 1955, 2.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boy Varnham', 5, 'Germany', 29, 'Leader', 28.27, 337, 1323, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Georgianne Guislin', 7, 'Mongolia', 42, 'Leader', 38.34, 260, 2308, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Valerie Cherrington', 4, 'China', 34, 'Flex', 72.28, 112, 2327, 1.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Regine Iacobacci', 10, 'Brazil', 36, 'Flex', 80.15, 233, 584, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Phaedra Jersh', 11, 'Indonesia', 30, 'Leader', 45.86, 10, 589, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aimee Pershouse', 8, 'China', 29, 'Flex', 99.42, 23, 2487, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosana McGinnis', 6, 'Portugal', 31, 'Flex', 42.6, 107, 2745, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Johny Magrannell', 5, 'China', 41, 'Flex', 49.26, 351, 14, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Madlen Jehu', 5, 'Argentina', 33, 'Entry Fragger', 7.08, 254, 1947, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Filmer Haddeston', 21, 'China', 25, 'Leader', 6.18, 156, 1277, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Patti Raddenbury', 13, 'Philippines', 19, 'Leader', 91.63, 148, 119, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Law Grenshiels', 14, 'United States', 42, 'Leader', 29.37, 204, 630, 0.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hilary Thredder', 7, 'Indonesia', 30, 'Support', 22.12, 316, 1146, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zebedee Forlonge', 12, 'Senegal', 18, 'Leader', 31.07, 128, 2623, 2.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Starlin Gert', 10, 'Pakistan', 39, 'Support', 78.76, 443, 2433, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sandra Orrock', 17, 'Bulgaria', 36, 'Leader', 40.24, 500, 1071, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pepe Hazel', 8, 'China', 31, 'Flex', 82.5, 116, 999, 2.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Theresina Adamek', 21, 'Guatemala', 22, 'Entry Fragger', 76.33, 419, 2346, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nannette Davidwitz', 13, 'Nigeria', 27, 'Leader', 71.56, 253, 195, 2.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Husein Franceschielli', 6, 'Colombia', 28, 'Support', 61.46, 77, 1065, 0.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Donn Mahood', 18, 'Canada', 39, 'Flex', 18.16, 81, 214, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mylo Caller', 8, 'Sweden', 38, 'Flex', 68.38, 153, 466, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Page Braithwaite', 20, 'Norway', 22, 'Support', 36.22, 398, 1837, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corabel Spiteri', 2, 'Finland', 31, 'Support', 60.22, 291, 2121, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacqui Goodredge', 9, 'China', 22, 'Entry Fragger', 61.53, 476, 2268, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annalee Comelini', 10, 'Portugal', 31, 'Support', 59.07, 149, 1186, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Torrin Ponsford', 19, 'China', 34, 'Leader', 15.24, 299, 2570, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheela Cullum', 2, 'China', 34, 'Support', 79.02, 471, 234, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kippie Goundry', 10, 'Morocco', 41, 'Flex', 29.49, 498, 1964, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lem Caldwall', 20, 'Guatemala', 31, 'Leader', 53.59, 238, 1101, 0.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harlan Widmore', 14, 'China', 25, 'Support', 57.95, 204, 1941, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joby Ibarra', 1, 'Russia', 31, 'Support', 31.17, 226, 973, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sarina Klehyn', 6, 'United States', 31, 'Support', 79.59, 388, 2413, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raquela Lockhart', 4, 'Ukraine', 18, 'Support', 4.33, 139, 1560, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gonzales Garrard', 1, 'Japan', 19, 'Flex', 27.16, 341, 944, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eydie Dranfield', 11, 'Denmark', 37, 'Entry Fragger', 20.24, 179, 49, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Umberto Twatt', 8, 'China', 19, 'Flex', 35.46, 412, 880, 2.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rourke Lissandrini', 4, 'Armenia', 24, 'Flex', 32.92, 68, 1325, 2.8);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sherm Corington', 1, 'China', 37, 'Leader', 88.69, 173, 17, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Camile Pressman', 1, 'Kazakhstan', 32, 'Leader', 26.55, 463, 2959, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Samaria Sant', 21, 'China', 24, 'Entry Fragger', 7.59, 3, 797, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annissa Walmsley', 21, 'Myanmar', 19, 'Entry Fragger', 84.54, 112, 406, 0.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Omar Philps', 10, 'China', 36, 'Support', 43.16, 419, 1278, 2.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Randi Stannion', 19, 'China', 26, 'Entry Fragger', 64.59, 152, 1290, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elinore Gooder', 3, 'Nigeria', 29, 'Leader', 82.16, 150, 1066, 1.48);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Flemming Merriman', 10, 'Bangladesh', 26, 'Entry Fragger', 12.21, 286, 735, 1.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morlee Sterrie', 12, 'China', 34, 'Leader', 9.17, 459, 953, 0.61);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jerrie Moorrud', 6, 'Estonia', 24, 'Leader', 93.83, 25, 1402, 1.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mile Drews', 1, 'Peru', 30, 'Leader', 75.12, 279, 1408, 1.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Immanuel Swaile', 16, 'China', 21, 'Leader', 2.23, 171, 80, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robinetta Goodhall', 7, 'France', 32, 'Flex', 31.61, 422, 1991, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raphael Braiden', 3, 'Guatemala', 30, 'Support', 35.91, 293, 895, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Collette Lyvon', 11, 'Sweden', 37, 'Leader', 54.48, 114, 1522, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fran Winckle', 10, 'Portugal', 40, 'Flex', 24.1, 438, 2370, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Frans Hornig', 17, 'France', 20, 'Leader', 53.22, 204, 212, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kevyn Lynas', 10, 'Poland', 35, 'Flex', 40.11, 89, 1392, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joline Ilyas', 1, 'Belarus', 38, 'Entry Fragger', 11.22, 221, 559, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gabe Lermouth', 5, 'Russia', 26, 'Flex', 73.1, 324, 822, 2.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mab Balshen', 21, 'Philippines', 29, 'Entry Fragger', 1.88, 59, 51, 0.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marianne Allibon', 14, 'Argentina', 37, 'Flex', 1.78, 355, 2981, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Matias Chestnut', 8, 'Portugal', 28, 'Leader', 4.11, 327, 2351, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dulce Choak', 5, 'China', 20, 'Support', 81.72, 275, 1624, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rolf Brayn', 14, 'Northern Mariana Islands', 29, 'Entry Fragger', 94.27, 152, 1309, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilbert Askam', 11, 'Portugal', 27, 'Flex', 10.82, 333, 2116, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Corrie Ducarel', 2, 'China', 33, 'Flex', 75.0, 73, 2206, 1.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eal Pipes', 6, 'Russia', 27, 'Flex', 52.33, 467, 2364, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alon Sonner', 17, 'China', 40, 'Support', 77.35, 298, 2438, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pauline Flockhart', 5, 'Indonesia', 36, 'Support', 90.84, 455, 844, 1.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lowe Benedetti', 9, 'Russia', 42, 'Flex', 39.75, 500, 1261, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chloris De Brett', 9, 'Sweden', 29, 'Flex', 83.42, 237, 434, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stephannie McGrane', 3, 'China', 29, 'Flex', 85.73, 461, 1238, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brier Bilbee', 17, 'China', 18, 'Flex', 45.19, 268, 1691, 0.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Robinetta Hynam', 2, 'South Africa', 29, 'Leader', 74.83, 439, 1153, 0.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hana Tidball', 12, 'China', 41, 'Leader', 49.94, 64, 2501, 2.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cherri Mapston', 8, 'Russia', 24, 'Entry Fragger', 96.31, 257, 2318, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Israel Abbatini', 4, 'France', 39, 'Flex', 49.72, 421, 1430, 0.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Magdaia Saltwell', 13, 'Indonesia', 37, 'Entry Fragger', 25.97, 459, 2555, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melosa Duckham', 4, 'Colombia', 20, 'Leader', 80.75, 372, 289, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilek Milesop', 20, 'Colombia', 31, 'Entry Fragger', 0.04, 468, 339, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ahmed Dugan', 9, 'Indonesia', 31, 'Flex', 12.36, 42, 874, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Del Damp', 5, 'Indonesia', 28, 'Flex', 63.8, 133, 503, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nico Godon', 15, 'Honduras', 27, 'Support', 69.25, 242, 2808, 1.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Norry Mathissen', 12, 'Russia', 39, 'Flex', 99.63, 140, 790, 0.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reed Vanderson', 13, 'Nigeria', 26, 'Entry Fragger', 23.07, 312, 94, 0.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Giuditta Merrien', 19, 'Philippines', 40, 'Support', 5.64, 225, 2118, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rowland Smiths', 15, 'Portugal', 37, 'Entry Fragger', 40.21, 398, 2355, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Torrey Churchill', 12, 'France', 29, 'Flex', 90.9, 55, 1227, 1.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cherida Teanby', 10, 'Peru', 27, 'Flex', 25.5, 27, 2883, 2.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merrick Brosoli', 3, 'China', 42, 'Leader', 93.87, 123, 2937, 2.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annadiane Pidcock', 14, 'China', 19, 'Support', 85.52, 98, 1476, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Doloritas Stolberger', 21, 'Syria', 40, 'Leader', 28.59, 104, 2256, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Estella Surgenor', 19, 'Guatemala', 41, 'Leader', 76.92, 218, 797, 2.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Reina Antczak', 21, 'Libya', 24, 'Support', 56.59, 257, 2478, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Levin Bhatia', 10, 'Poland', 26, 'Flex', 13.67, 156, 279, 2.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arie Lumpkin', 19, 'Sweden', 31, 'Support', 94.14, 142, 1157, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Liam MacClenan', 5, 'China', 30, 'Flex', 77.15, 99, 2481, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pamella Clemes', 18, 'Latvia', 34, 'Support', 80.79, 54, 2520, 1.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Romola Cordle', 6, 'China', 35, 'Support', 1.27, 337, 1255, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joane McCloch', 21, 'China', 22, 'Flex', 34.81, 290, 2888, 0.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Roscoe Laverick', 17, 'Indonesia', 30, 'Support', 35.79, 456, 726, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Desmond Citrine', 13, 'Albania', 34, 'Leader', 93.01, 242, 1688, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pedro Leigh', 8, 'Madagascar', 35, 'Leader', 89.42, 477, 1312, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Clive Eaves', 5, 'China', 32, 'Support', 27.49, 66, 496, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quent Berzen', 20, 'Sweden', 32, 'Support', 99.27, 428, 1178, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Freeman Ambrodi', 6, 'Malaysia', 18, 'Leader', 69.45, 14, 2180, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danika Rodd', 17, 'Albania', 36, 'Flex', 5.92, 463, 752, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Heath Monk', 8, 'Philippines', 31, 'Leader', 0.05, 478, 1377, 2.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Crissy Hollow', 11, 'China', 26, 'Support', 99.28, 32, 322, 2.0);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Faye Wybern', 8, 'Indonesia', 40, 'Leader', 83.03, 206, 2944, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Web Fermor', 7, 'China', 32, 'Entry Fragger', 38.38, 18, 1805, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Minnaminnie Fearnley', 8, 'Ukraine', 23, 'Entry Fragger', 58.24, 361, 1608, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cal MacBrearty', 16, 'United States', 25, 'Entry Fragger', 87.71, 294, 1901, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mahalia Dawes', 16, 'Philippines', 33, 'Support', 37.7, 257, 1903, 0.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Earle Pingston', 9, 'Serbia', 33, 'Flex', 24.26, 134, 971, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chris Boays', 8, 'Pakistan', 27, 'Support', 98.26, 375, 360, 1.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felipe Prue', 19, 'Sweden', 34, 'Entry Fragger', 97.88, 307, 2167, 2.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosalie Fells', 11, 'Russia', 32, 'Flex', 90.71, 352, 1536, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lillian Codi', 8, 'Czech Republic', 30, 'Entry Fragger', 33.34, 456, 795, 1.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Farand Huddy', 5, 'Ecuador', 36, 'Support', 25.4, 485, 1668, 1.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gearalt Watling', 18, 'Indonesia', 22, 'Leader', 52.68, 269, 1952, 2.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tobe Pebworth', 10, 'Peru', 19, 'Entry Fragger', 57.88, 373, 1506, 0.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dulcy McCoughan', 14, 'Indonesia', 42, 'Flex', 48.29, 38, 160, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rancell Cottill', 15, 'United States', 42, 'Support', 93.94, 344, 140, 0.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hilary Dennistoun', 13, 'Nigeria', 28, 'Support', 94.39, 239, 2826, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hannah Duffill', 3, 'China', 36, 'Support', 77.52, 288, 2573, 1.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Haydon Dawley', 21, 'Thailand', 31, 'Entry Fragger', 63.55, 476, 2814, 2.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stavros Slatten', 4, 'Colombia', 31, 'Leader', 18.42, 67, 1230, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Belva Mogey', 6, 'South Africa', 38, 'Support', 37.92, 249, 947, 0.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vincent Gamble', 3, 'China', 38, 'Support', 21.32, 28, 68, 0.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berton Curle', 19, 'China', 38, 'Support', 60.77, 346, 2012, 2.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mirabella Bascombe', 5, 'China', 27, 'Entry Fragger', 93.84, 481, 1222, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Raphael Heinig', 17, 'Poland', 34, 'Flex', 94.08, 82, 1457, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Thorny Gyorffy', 11, 'Thailand', 42, 'Flex', 27.47, 288, 601, 0.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Berne Bangiard', 8, 'France', 23, 'Entry Fragger', 18.97, 181, 1325, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Arliene McMillian', 1, 'China', 33, 'Entry Fragger', 47.93, 228, 575, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Osgood Shenton', 3, 'Spain', 27, 'Leader', 29.92, 84, 2197, 1.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Luciano Edwick', 9, 'Philippines', 30, 'Leader', 76.3, 56, 2806, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Viola Eyers', 14, 'South Africa', 40, 'Flex', 84.77, 374, 2603, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yvor Rippingale', 14, 'Macedonia', 34, 'Entry Fragger', 37.98, 138, 697, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Boyd Biscomb', 11, 'China', 30, 'Leader', 2.75, 470, 1252, 0.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nancey Elldred', 19, 'Peru', 22, 'Flex', 90.47, 407, 806, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rosella Fradgley', 12, 'China', 35, 'Support', 24.07, 158, 1464, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lauralee Walhedd', 8, 'China', 37, 'Flex', 25.67, 496, 2882, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wain Collecott', 12, 'Albania', 29, 'Support', 44.03, 434, 1901, 2.05);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shell Tongs', 1, 'Ethiopia', 34, 'Support', 96.03, 193, 2191, 0.35);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Vivyanne Schwaiger', 15, 'Macedonia', 22, 'Entry Fragger', 30.0, 339, 480, 0.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Anissa Hagwood', 14, 'Philippines', 25, 'Leader', 74.01, 297, 1524, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garvey Dyter', 6, 'New Zealand', 33, 'Support', 37.35, 384, 46, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Taffy Axtonne', 21, 'Sweden', 34, 'Flex', 20.03, 132, 1957, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cam Elverstone', 6, 'China', 42, 'Entry Fragger', 29.57, 75, 2699, 0.26);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Judith Conniam', 15, 'France', 40, 'Flex', 52.59, 65, 2595, 0.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dewey Edlyne', 7, 'Indonesia', 31, 'Entry Fragger', 49.32, 321, 133, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('James McLukie', 15, 'Russia', 30, 'Support', 96.9, 499, 1705, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maude Roswarn', 7, 'Philippines', 25, 'Leader', 69.77, 441, 2970, 0.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ettore Thal', 6, 'China', 37, 'Support', 50.16, 422, 329, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lulu Bradfield', 5, 'Japan', 31, 'Flex', 83.84, 340, 962, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rickie Jose', 1, 'Indonesia', 40, 'Entry Fragger', 16.41, 9, 73, 2.09);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claus Benini', 1, 'China', 25, 'Support', 66.11, 461, 2386, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fleurette Reburn', 8, 'Indonesia', 23, 'Support', 37.78, 468, 2125, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Alla Abbys', 6, 'Poland', 38, 'Entry Fragger', 55.77, 197, 1668, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rollin Ingleby', 16, 'China', 26, 'Leader', 83.21, 287, 1875, 0.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Manuel Stimpson', 6, 'Portugal', 28, 'Support', 25.98, 50, 2845, 2.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Meredith Baxstare', 11, 'Brazil', 25, 'Flex', 17.59, 202, 2601, 0.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Henrietta Kynder', 8, 'Afghanistan', 29, 'Leader', 97.08, 394, 1020, 1.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zena Eastam', 18, 'Micronesia', 34, 'Leader', 78.77, 373, 381, 1.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernette Crickmer', 9, 'Indonesia', 18, 'Flex', 47.22, 436, 2836, 1.08);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Liza McNevin', 18, 'China', 33, 'Leader', 99.42, 189, 1155, 2.36);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Valera Todarello', 1, 'China', 24, 'Leader', 71.12, 370, 2665, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melisa Dubock', 6, 'Indonesia', 31, 'Leader', 31.54, 305, 2069, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lucretia Withey', 3, 'Indonesia', 33, 'Support', 25.42, 286, 909, 1.79);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carrissa Suttle', 19, 'Indonesia', 40, 'Leader', 0.06, 432, 1436, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nels Bradwell', 21, 'Belarus', 20, 'Flex', 32.3, 400, 480, 0.46);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nikolia Daws', 7, 'Sweden', 22, 'Support', 67.58, 426, 1487, 1.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bert Ousby', 9, 'Ireland', 37, 'Entry Fragger', 82.61, 442, 2201, 0.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ailey Haywood', 6, 'South Africa', 20, 'Entry Fragger', 71.29, 404, 2247, 1.97);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sean Galfour', 13, 'Venezuela', 18, 'Entry Fragger', 2.23, 415, 1901, 0.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Herculie Paireman', 12, 'China', 42, 'Support', 37.37, 96, 170, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Othella Walpole', 21, 'Ukraine', 40, 'Flex', 49.34, 282, 1816, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Felecia Crathern', 19, 'Indonesia', 25, 'Support', 21.0, 80, 945, 2.62);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garrek De Coursey', 4, 'China', 40, 'Entry Fragger', 82.97, 194, 601, 2.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jedidiah Ivory', 18, 'Germany', 20, 'Entry Fragger', 79.45, 498, 2036, 0.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Egon Lafford', 3, 'Egypt', 39, 'Leader', 2.8, 203, 836, 2.59);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Aurea Turvie', 13, 'China', 26, 'Flex', 90.07, 237, 892, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tine Denacamp', 12, 'Czech Republic', 34, 'Leader', 88.3, 272, 2410, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Benton Whittam', 21, 'Costa Rica', 34, 'Support', 6.02, 178, 689, 1.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ichabod Nannetti', 9, 'Kazakhstan', 19, 'Support', 13.23, 394, 2814, 0.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emilia Gregg', 5, 'China', 41, 'Flex', 17.12, 477, 2088, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Harrison Bevir', 2, 'Costa Rica', 41, 'Leader', 83.64, 220, 1506, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barbi Gammack', 6, 'Sweden', 32, 'Leader', 13.62, 93, 968, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nedi Godier', 4, 'Mexico', 33, 'Leader', 37.86, 81, 2916, 1.64);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dolli Shyres', 3, 'France', 32, 'Support', 39.61, 95, 1080, 1.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sigrid Patsall', 5, 'Bahamas', 39, 'Support', 96.98, 314, 655, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nanni Forgie', 4, 'Morocco', 41, 'Entry Fragger', 89.07, 469, 409, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gypsy Fydo', 8, 'China', 25, 'Entry Fragger', 68.14, 272, 314, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melinda Mobius', 14, 'Colombia', 23, 'Support', 17.93, 395, 1504, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sisile Merryfield', 10, 'Indonesia', 20, 'Support', 5.52, 27, 1325, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jasper Grahlman', 20, 'Brazil', 35, 'Entry Fragger', 12.72, 311, 494, 1.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Iosep Petts', 14, 'Peru', 31, 'Support', 32.29, 70, 276, 0.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jasen Harwick', 16, 'China', 28, 'Support', 0.12, 486, 2778, 1.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Eleen Flynn', 21, 'China', 31, 'Support', 23.79, 246, 310, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Yankee Varvara', 8, 'Dominican Republic', 39, 'Flex', 7.0, 30, 1409, 0.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Malina Tesyro', 12, 'Japan', 40, 'Leader', 2.17, 247, 1366, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Antonina Butcher', 12, 'China', 21, 'Flex', 69.26, 159, 1655, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garwood Doumerc', 21, 'France', 37, 'Support', 57.77, 355, 1751, 2.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Randell Sowman', 8, 'Indonesia', 30, 'Entry Fragger', 63.74, 347, 2925, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Van Daykin', 8, 'Lithuania', 38, 'Leader', 35.45, 122, 2131, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dov Knapman', 3, 'Indonesia', 39, 'Leader', 76.18, 44, 1998, 1.69);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gaven Gladbeck', 4, 'Vietnam', 26, 'Flex', 16.55, 440, 1672, 2.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Titus Gosneye', 18, 'Ivory Coast', 38, 'Entry Fragger', 27.84, 481, 2108, 0.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bernardina Rays', 18, 'China', 19, 'Entry Fragger', 56.14, 350, 2240, 2.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Letti Bunworth', 3, 'China', 34, 'Support', 16.65, 292, 1575, 0.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elva Josey', 19, 'Zambia', 39, 'Support', 8.04, 313, 2213, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Debee Gonet', 8, 'Belarus', 37, 'Support', 85.83, 29, 1478, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sibella Litchfield', 19, 'China', 37, 'Flex', 83.37, 172, 347, 1.83);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nessa Reubbens', 21, 'Bulgaria', 18, 'Support', 21.87, 58, 1426, 0.44);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rodrick Renackowna', 9, 'Nigeria', 37, 'Support', 24.11, 278, 485, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Celene Treppas', 7, 'Poland', 28, 'Leader', 33.63, 166, 1617, 0.73);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dasya Stitcher', 3, 'Ukraine', 42, 'Support', 84.4, 437, 1210, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rutger Peace', 2, 'South Africa', 26, 'Entry Fragger', 90.98, 297, 98, 1.89);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Emeline Lemary', 15, 'Russia', 28, 'Flex', 22.18, 24, 1386, 0.42);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Louisette Camoys', 15, 'Indonesia', 25, 'Entry Fragger', 0.53, 394, 2750, 0.81);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Palmer Cuckoo', 6, 'Bangladesh', 30, 'Support', 61.26, 167, 2763, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maryanna Camacke', 12, 'Afghanistan', 36, 'Flex', 30.63, 130, 235, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merv Guerner', 13, 'Russia', 28, 'Flex', 70.58, 298, 2291, 2.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Barth Asgodby', 10, 'Sweden', 22, 'Flex', 73.93, 178, 2587, 1.4);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Stacy Tratton', 12, 'Indonesia', 42, 'Entry Fragger', 88.15, 436, 454, 2.76);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ira Baumler', 13, 'Russia', 22, 'Entry Fragger', 62.24, 430, 1858, 2.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Louisette Hadgraft', 7, 'China', 18, 'Leader', 24.2, 62, 2312, 2.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Herman Skates', 10, 'China', 35, 'Entry Fragger', 43.49, 130, 2838, 2.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Budd Bahike', 18, 'Russia', 39, 'Support', 21.93, 385, 2203, 1.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lorilee Breeton', 17, 'Indonesia', 28, 'Entry Fragger', 22.95, 281, 2837, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Laina Emmines', 14, 'Philippines', 20, 'Flex', 17.8, 294, 1677, 0.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gilbertine Spikins', 6, 'United States', 24, 'Leader', 3.52, 78, 1210, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Annadiana Roby', 2, 'Kazakhstan', 24, 'Leader', 66.89, 266, 1504, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Karyl Trundle', 1, 'Dominica', 25, 'Flex', 1.61, 99, 2259, 0.11);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Morie Jerrard', 15, 'Ukraine', 26, 'Flex', 27.17, 62, 1270, 1.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blondie Brenard', 7, 'Brazil', 21, 'Support', 42.92, 167, 2987, 0.96);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Olive Blanning', 21, 'East Timor', 38, 'Entry Fragger', 61.67, 42, 337, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Fidela Retallack', 5, 'Argentina', 33, 'Entry Fragger', 59.2, 325, 2299, 2.74);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bobbee Melan', 11, 'China', 28, 'Leader', 36.09, 194, 39, 1.25);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dallas Dowyer', 15, 'India', 20, 'Support', 28.33, 137, 2420, 2.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Isabelita Duns', 4, 'China', 35, 'Support', 86.26, 450, 2963, 1.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Antonietta Falco', 21, 'Malta', 32, 'Entry Fragger', 9.38, 430, 965, 0.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elizabet Hatherell', 10, 'China', 39, 'Flex', 41.73, 380, 550, 2.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dieter Mallia', 14, 'Russia', 28, 'Flex', 80.16, 159, 1551, 2.75);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Genevra Godley', 20, 'Indonesia', 26, 'Support', 32.74, 110, 1127, 1.41);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Melesa Recher', 1, 'Indonesia', 33, 'Support', 47.86, 261, 2147, 1.12);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jeri Croucher', 14, 'Nigeria', 39, 'Entry Fragger', 7.37, 365, 2519, 1.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaiser Sime', 16, 'China', 23, 'Flex', 77.4, 243, 1103, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Zita Lionel', 12, 'China', 19, 'Leader', 31.08, 79, 980, 2.49);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Quintana Baskwell', 21, 'Russia', 28, 'Support', 97.34, 236, 692, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ara Tolossi', 12, 'Indonesia', 42, 'Support', 78.13, 123, 574, 0.71);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Agace Manske', 11, 'Thailand', 32, 'Leader', 60.2, 234, 2289, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Caitlin Flockhart', 14, 'China', 24, 'Support', 51.69, 311, 186, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lyssa Bradick', 12, 'Philippines', 20, 'Entry Fragger', 74.93, 133, 1469, 2.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lanni Greatreax', 11, 'Russia', 23, 'Entry Fragger', 40.12, 132, 37, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Samson Dyster', 5, 'Indonesia', 31, 'Flex', 59.81, 49, 2793, 0.82);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Gratiana Stoter', 12, 'Poland', 41, 'Flex', 98.4, 49, 1968, 1.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cherie Sissel', 3, 'China', 31, 'Entry Fragger', 15.67, 301, 1617, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sterling Killingworth', 17, 'Brazil', 30, 'Leader', 42.42, 84, 2505, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Maje Errol', 1, 'Bahamas', 21, 'Entry Fragger', 55.75, 177, 1035, 0.03);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Odele Almeida', 5, 'United States', 25, 'Leader', 43.38, 367, 1871, 2.14);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cari Jacob', 21, 'Kazakhstan', 39, 'Flex', 12.46, 244, 1084, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elka Snipe', 17, 'China', 29, 'Support', 29.91, 14, 2667, 2.91);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Lotta Hendriksen', 19, 'Portugal', 38, 'Support', 16.61, 202, 1248, 2.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merle Itzhak', 18, 'Brazil', 34, 'Flex', 17.01, 302, 1514, 2.07);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Calli Utteridge', 15, 'Russia', 40, 'Support', 62.28, 254, 1327, 0.28);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christa Seage', 12, 'Vietnam', 21, 'Entry Fragger', 8.04, 261, 365, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tierney Byers', 16, 'Russia', 38, 'Support', 13.57, 366, 2266, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ingeborg Paulsen', 8, 'Indonesia', 28, 'Leader', 96.03, 90, 1470, 2.27);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Constantin Gorrissen', 12, 'France', 29, 'Entry Fragger', 86.91, 75, 659, 1.19);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cristabel Forbes', 18, 'Greece', 35, 'Entry Fragger', 85.42, 101, 1538, 0.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilone Sorrill', 11, 'Mongolia', 39, 'Entry Fragger', 23.5, 403, 2978, 2.45);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Larisa Massei', 11, 'Denmark', 22, 'Leader', 29.22, 396, 1255, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marco Piddick', 4, 'China', 37, 'Support', 58.25, 435, 654, 0.37);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nonnah Bachs', 18, 'Kazakhstan', 29, 'Entry Fragger', 58.61, 243, 2931, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Erna Phalp', 20, 'France', 28, 'Entry Fragger', 28.15, 107, 72, 2.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cathi Mattea', 5, 'China', 23, 'Leader', 93.23, 267, 2679, 0.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Delmar Lightbown', 17, 'China', 42, 'Leader', 22.54, 196, 1759, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wilhelmine English', 5, 'Brazil', 20, 'Leader', 79.32, 303, 2505, 2.2);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Joice Lehrian', 18, 'China', 33, 'Support', 23.13, 356, 612, 0.24);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Papagena McKain', 2, 'Russia', 33, 'Leader', 37.28, 315, 2530, 0.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pooh Lesmonde', 20, 'Poland', 25, 'Leader', 93.61, 315, 826, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bert Carress', 14, 'Indonesia', 19, 'Support', 55.43, 342, 2810, 2.39);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jacklin Leverette', 17, 'Tajikistan', 31, 'Flex', 72.48, 161, 41, 2.16);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Leonelle Shorthouse', 6, 'Slovenia', 28, 'Leader', 53.59, 237, 2550, 2.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('York Mileham', 19, 'Russia', 31, 'Leader', 85.1, 178, 1950, 1.66);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tabbatha Ipgrave', 12, 'Brazil', 34, 'Entry Fragger', 12.78, 149, 1150, 0.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nanon Pochet', 3, 'Brazil', 26, 'Flex', 32.59, 195, 898, 0.52);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Archy Boys', 16, 'Tanzania', 27, 'Support', 1.67, 64, 1329, 2.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elysha Willets', 16, 'United States', 18, 'Support', 19.29, 176, 2263, 1.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pablo Beach', 5, 'Sri Lanka', 36, 'Support', 11.84, 43, 1753, 1.21);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claudell Leechman', 21, 'Poland', 28, 'Entry Fragger', 61.45, 198, 821, 2.06);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cyrus Kohring', 14, 'Indonesia', 26, 'Entry Fragger', 56.52, 166, 1471, 2.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Selle Prewer', 21, 'Greece', 37, 'Flex', 55.91, 324, 1820, 1.77);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rahal Pach', 18, 'China', 23, 'Flex', 40.9, 144, 2853, 0.13);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Catarina Eicheler', 17, 'Argentina', 32, 'Support', 41.86, 360, 1808, 2.34);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Riki Revens', 11, 'Netherlands', 30, 'Support', 0.88, 246, 1305, 1.04);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carleton Larret', 11, 'China', 35, 'Leader', 48.53, 239, 2150, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Danyelle McWhannel', 15, 'Brazil', 38, 'Entry Fragger', 55.3, 264, 1748, 2.54);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Brittany Hawgood', 15, 'Poland', 19, 'Flex', 0.85, 147, 2222, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Broderick Priditt', 15, 'Indonesia', 40, 'Entry Fragger', 98.6, 279, 1931, 2.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Silvie Digwood', 9, 'Sweden', 20, 'Entry Fragger', 47.68, 322, 594, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nappie Pinkie', 12, 'Kosovo', 23, 'Leader', 47.83, 402, 2602, 1.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Oneida Eyckelberg', 2, 'Philippines', 28, 'Entry Fragger', 2.81, 267, 196, 1.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jordana Gartan', 19, 'Turkmenistan', 19, 'Support', 42.69, 202, 994, 0.51);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sayer Shwalbe', 11, 'Armenia', 37, 'Support', 6.38, 136, 1417, 0.47);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mercedes Mullineux', 13, 'Indonesia', 29, 'Entry Fragger', 22.49, 181, 2395, 1.72);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jasun Torr', 19, 'United States', 20, 'Flex', 42.61, 454, 630, 0.1);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tandy Meanwell', 12, 'Peru', 28, 'Leader', 27.04, 20, 2653, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Elroy Balmann', 7, 'Thailand', 28, 'Flex', 1.17, 438, 377, 2.84);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sheila Cullen', 7, 'China', 18, 'Support', 71.98, 20, 512, 2.67);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dalli Landsbury', 4, 'Indonesia', 39, 'Entry Fragger', 70.85, 111, 2005, 2.85);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Abbe Scholey', 9, 'Russia', 29, 'Support', 17.22, 259, 1740, 0.32);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Chauncey Pawson', 3, 'Palestinian Territory', 39, 'Flex', 33.9, 182, 736, 0.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ancell Timblett', 5, 'China', 35, 'Leader', 54.53, 423, 1840, 2.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marti Effnert', 12, 'China', 36, 'Entry Fragger', 9.7, 138, 1762, 2.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Claudelle Reolfo', 1, 'Argentina', 36, 'Entry Fragger', 71.54, 242, 506, 1.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Correy Wight', 6, 'Portugal', 34, 'Leader', 25.51, 469, 1210, 1.53);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Con Glenton', 2, 'Brazil', 35, 'Flex', 66.43, 100, 505, 2.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carroll Groom', 1, 'Uzbekistan', 27, 'Flex', 62.02, 278, 481, 1.9);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bennie Reskelly', 3, 'China', 24, 'Leader', 33.78, 10, 103, 0.56);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Daune Basant', 5, 'Ukraine', 42, 'Leader', 4.97, 386, 1647, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Kaja Grinvalds', 17, 'Uzbekistan', 20, 'Leader', 77.6, 211, 595, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hetty Beaconsall', 12, 'China', 41, 'Entry Fragger', 8.31, 145, 1792, 1.57);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Mandy Widdall', 17, 'United States', 27, 'Support', 56.95, 470, 1995, 2.78);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Austina Swate', 2, 'Poland', 37, 'Entry Fragger', 93.07, 190, 1274, 2.95);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Wendel Ahlin', 9, 'France', 41, 'Entry Fragger', 18.51, 2, 1743, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Shir Wileman', 3, 'Philippines', 30, 'Support', 9.95, 312, 1641, 0.92);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Grace Mintrim', 9, 'China', 42, 'Support', 46.34, 433, 536, 0.99);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Carolee Code', 15, 'China', 36, 'Entry Fragger', 4.34, 269, 881, 1.87);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cecile Romanetti', 1, 'China', 37, 'Flex', 28.9, 446, 1856, 0.22);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Willie Cavolini', 16, 'Philippines', 18, 'Flex', 18.99, 391, 1890, 1.02);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bastian Bothie', 13, 'Indonesia', 34, 'Flex', 84.89, 403, 2446, 1.93);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nollie Straker', 19, 'Bulgaria', 36, 'Support', 18.31, 26, 2977, 0.3);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Buck Rutland', 13, 'Philippines', 33, 'Support', 81.18, 130, 2526, 0.18);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Marie-ann Spriggen', 21, 'Indonesia', 31, 'Support', 83.73, 365, 483, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jan Crummy', 9, 'Russia', 42, 'Leader', 98.51, 462, 468, 0.86);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Blair Benesevich', 21, 'Philippines', 25, 'Leader', 74.79, 448, 1678, 0.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ulrike Kermath', 5, 'Czech Republic', 36, 'Support', 43.04, 497, 1784, 1.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jessika Kunze', 3, 'Peru', 18, 'Entry Fragger', 54.21, 60, 1715, 1.58);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Ramon Berendsen', 15, 'Philippines', 39, 'Entry Fragger', 82.54, 149, 254, 0.88);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Sherill Jaffra', 17, 'Uzbekistan', 42, 'Support', 13.44, 484, 2744, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Christabella Lamswood', 4, 'Russia', 30, 'Leader', 82.76, 92, 1931, 1.63);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Hilliary Couvet', 9, 'Peru', 39, 'Entry Fragger', 38.56, 281, 2813, 1.38);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Bunnie Abbe', 9, 'China', 33, 'Flex', 89.52, 47, 2264, 1.31);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Doll Tripp', 16, 'Portugal', 34, 'Support', 55.18, 127, 1493, 1.33);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Garth Rossetti', 3, 'Indonesia', 23, 'Support', 41.86, 40, 1157, 0.23);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rudie Bowskill', 3, 'Sweden', 29, 'Leader', 53.01, 36, 1883, 1.5);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Tuck Vine', 6, 'Mauritania', 34, 'Support', 63.62, 389, 889, 0.98);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Dylan Giacovetti', 2, 'Peru', 25, 'Flex', 17.9, 455, 2884, 1.43);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Micah Kidgell', 11, 'Indonesia', 21, 'Flex', 15.7, 39, 1483, 0.65);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Rudyard Peschet', 21, 'China', 34, 'Support', 47.24, 176, 2791, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Merrili Westgarth', 17, 'Brazil', 39, 'Flex', 14.65, 401, 2748, 2.55);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Pattie Brittoner', 17, 'Russia', 20, 'Support', 59.76, 324, 181, 1.15);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Jessey Ridewood', 11, 'Philippines', 41, 'Leader', 49.98, 268, 1610, 1.6);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Nannie Espinel', 19, 'China', 40, 'Leader', 48.58, 387, 277, 2.01);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Cris Clinkard', 16, 'Indonesia', 18, 'Entry Fragger', 80.99, 206, 1943, 2.7);
-INSERT INTO r6_player (player_name, team_id, nationality, age, role, headshot_percentage, total_games, total_deaths, kd_ratio) VALUES ('Catrina Webster', 11, 'China', 32, 'Flex', 69.82, 49, 214, 0.91);
+--
+-- Vypisuji data pro tabulku `r6_player`
+--
+
+INSERT INTO `r6_player` (`id`, `player_name`, `team_id`, `nationality`, `age`, `role`, `headshot_percentage`, `total_games`, `total_deaths`, `kd_ratio`, `created_at`, `updated_at`, `deleted_at`, `description`, `image`) VALUES
+(1, 'Aeriell Hylton', 15, 'China', 40, 'Support', 2.37, 157, 957, 1.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2, 'Kris Dwire', 3, 'Vietnam', 31, 'Leader', 29.55, 407, 2461, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(3, 'Sybille Skerratt', 12, 'Kyrgyzstan', 21, 'Support', 88.00, 410, 1627, 1.62, 0, 2025, NULL, '', 'blank-pfp.jpg'),
+(4, 'Cody Westmore', 9, 'Philippines', 28, 'Support', 90.05, 298, 958, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(5, 'Othilie Hildred', 12, 'China', 28, 'Flex', 77.57, 136, 1789, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(6, 'Tabbatha Farnworth', 12, 'Ukraine', 35, 'Leader', 46.30, 233, 1571, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(7, 'Desmond Coniff', 1, 'Thailand', 41, 'Leader', 6.32, 132, 328, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(8, 'Arlena Lambarton', 11, 'Indonesia', 21, 'Leader', 35.89, 354, 621, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(9, 'Horacio Beardsley', 3, 'Spain', 34, 'Support', 16.82, 40, 2661, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(10, 'Tyrone Filasov', 6, 'China', 38, 'Entry Fragger', 73.16, 59, 1081, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(11, 'Marchall Conibear', 2, 'Bangladesh', 18, 'Entry Fragger', 68.43, 404, 460, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(12, 'Gregg Cozens', 8, 'Indonesia', 39, 'Flex', 17.10, 389, 2151, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(13, 'Claiborne Senten', 8, 'Portugal', 23, 'Support', 40.41, 343, 1769, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(14, 'Zachariah Redhouse', 11, 'Russia', 22, 'Support', 57.99, 114, 2436, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(15, 'Lenora Guitton', 15, 'China', 18, 'Flex', 36.13, 15, 1513, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(16, 'Emanuele de Quesne', 21, 'Yemen', 23, 'Entry Fragger', 33.39, 332, 306, 0.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(17, 'Bernetta Phinnessy', 14, 'Peru', 33, 'Entry Fragger', 63.77, 347, 2076, 2.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(18, 'Barclay Filoniere', 13, 'Portugal', 36, 'Support', 64.21, 166, 2057, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(19, 'Bobbe McKeney', 11, 'Japan', 18, 'Support', 27.89, 266, 2434, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(20, 'Cloris Fellenor', 10, 'United States', 31, 'Flex', 45.28, 276, 2819, 0.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(21, 'Shermie Schroter', 20, 'Russia', 22, 'Leader', 27.17, 20, 2458, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(22, 'Ertha Kmicicki', 21, 'China', 41, 'Support', 38.90, 439, 2103, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(23, 'Clarence Olivazzi', 12, 'Albania', 19, 'Flex', 80.40, 371, 1651, 1.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(24, 'Skylar Barby', 13, 'China', 25, 'Flex', 15.56, 128, 2924, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(25, 'Dory Dufour', 3, 'Philippines', 37, 'Flex', 38.71, 265, 2938, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(26, 'Agretha Ascroft', 11, 'Norway', 36, 'Flex', 54.50, 363, 2390, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(27, 'Giulia Gilhooley', 21, 'Indonesia', 32, 'Entry Fragger', 13.68, 185, 1432, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(28, 'Edouard Lusher', 5, 'China', 27, 'Entry Fragger', 41.16, 467, 153, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(29, 'Viki Teaze', 1, 'Nigeria', 23, 'Flex', 55.27, 438, 2338, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(30, 'Abbie Saph', 3, 'Russia', 20, 'Flex', 33.60, 260, 211, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(31, 'Carline Wixey', 6, 'Philippines', 26, 'Entry Fragger', 48.60, 108, 1951, 2.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(32, 'Garner Tuite', 20, 'Malawi', 21, 'Support', 83.64, 127, 1282, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(33, 'Godfry Malim', 2, 'Russia', 41, 'Leader', 17.20, 176, 1773, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(34, 'Garrot Cordobes', 18, 'China', 29, 'Entry Fragger', 67.27, 268, 421, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(35, 'My Hyland', 7, 'Japan', 22, 'Support', 36.24, 422, 2596, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(36, 'Leoine Ilyasov', 10, 'Philippines', 23, 'Leader', 22.36, 323, 932, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(37, 'Craggy Ware', 4, 'Brazil', 33, 'Leader', 86.57, 386, 2161, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(38, 'Cyb Chrisp', 12, 'China', 42, 'Support', 78.99, 348, 1045, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(39, 'Dick Knocker', 7, 'Greece', 36, 'Support', 88.91, 19, 1012, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(40, 'Monica Hedges', 11, 'Pakistan', 32, 'Entry Fragger', 71.13, 405, 377, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(41, 'Norma Burchard', 14, 'China', 38, 'Entry Fragger', 27.47, 123, 752, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(42, 'Allister Clifft', 11, 'Ukraine', 20, 'Support', 58.17, 115, 1507, 2.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(43, 'Tallou Monini', 18, 'Sweden', 27, 'Entry Fragger', 98.50, 253, 2415, 1.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(44, 'Isobel Mynett', 13, 'Japan', 33, 'Leader', 18.50, 121, 301, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(45, 'Tabatha Aronstam', 11, 'Nigeria', 37, 'Flex', 75.55, 416, 2229, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(46, 'Tabina Bau', 4, 'China', 19, 'Entry Fragger', 62.03, 302, 54, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(47, 'Dicky McMillam', 9, 'China', 27, 'Leader', 43.23, 73, 1864, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(48, 'Paddie Cruces', 3, 'Eritrea', 42, 'Leader', 11.75, 356, 2275, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(49, 'Stephanus Petruskevich', 2, 'Brazil', 28, 'Flex', 87.97, 471, 1869, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(50, 'Dannie Bester', 4, 'China', 37, 'Entry Fragger', 45.42, 39, 597, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(51, 'Herbie Wyllcocks', 3, 'France', 29, 'Flex', 75.39, 72, 2457, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(52, 'Wang Awton', 2, 'Indonesia', 21, 'Flex', 76.20, 17, 711, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(53, 'Malva Mitchener', 16, 'China', 35, 'Leader', 93.53, 277, 313, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(54, 'Solly Mence', 18, 'Cuba', 18, 'Flex', 49.39, 499, 2105, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(55, 'Ezechiel Northall', 1, 'France', 42, 'Entry Fragger', 50.43, 1, 1156, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(56, 'Elfie Vernay', 15, 'Honduras', 40, 'Flex', 42.46, 319, 37, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(57, 'Chris Ivanyukov', 20, 'United States', 36, 'Support', 26.21, 360, 2448, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(58, 'Rosana Tomasoni', 11, 'China', 40, 'Support', 3.41, 500, 2332, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(59, 'Kippar Hessay', 19, 'China', 33, 'Flex', 64.91, 307, 1144, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(60, 'Georgianna Strickett', 14, 'Russia', 20, 'Flex', 17.72, 70, 1135, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(61, 'Carilyn Kitchener', 21, 'Indonesia', 26, 'Support', 12.51, 467, 1555, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(62, 'Fransisco Darridon', 11, 'Sweden', 28, 'Support', 67.38, 491, 659, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(63, 'Doralin Yakushkin', 19, 'Malaysia', 24, 'Flex', 4.78, 378, 1189, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(64, 'Merrill Drawmer', 10, 'France', 39, 'Entry Fragger', 35.38, 195, 214, 0.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(65, 'Agatha Jozefiak', 5, 'Indonesia', 32, 'Leader', 46.21, 272, 1634, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(66, 'Gerhardine De la Yglesia', 9, 'Ukraine', 32, 'Leader', 33.66, 357, 1561, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(67, 'Bethena Brayfield', 9, 'Kazakhstan', 38, 'Flex', 32.27, 130, 119, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(68, 'Lethia Pettendrich', 10, 'Thailand', 24, 'Flex', 17.66, 97, 1637, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(69, 'Roselle Deary', 19, 'United States', 33, 'Leader', 9.80, 426, 1728, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(70, 'Fannie Addicote', 4, 'Poland', 19, 'Support', 16.56, 269, 2835, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(71, 'Shel Pydcock', 1, 'Chile', 32, 'Flex', 13.82, 181, 2198, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(72, 'Ogdan Rutherfoord', 6, 'Poland', 37, 'Entry Fragger', 72.37, 356, 768, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(73, 'Arielle Aubri', 17, 'China', 19, 'Entry Fragger', 67.72, 492, 732, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(74, 'Hanny Threadgold', 17, 'Philippines', 37, 'Leader', 60.43, 338, 2102, 0.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(75, 'Idette Rushbrooke', 14, 'China', 36, 'Leader', 30.84, 411, 1900, 2.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(76, 'Kordula Pellington', 16, 'Canada', 37, 'Leader', 9.49, 50, 794, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(77, 'Ingram Malpas', 16, 'Greece', 24, 'Leader', 74.78, 211, 866, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(78, 'Eden Pelman', 16, 'Chad', 25, 'Entry Fragger', 72.12, 326, 1012, 1.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(79, 'Laurent Teml', 18, 'Brazil', 29, 'Entry Fragger', 96.69, 335, 2458, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(80, 'Jerad Verlinden', 9, 'China', 20, 'Support', 46.69, 273, 2940, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(81, 'Ingaberg Wetherill', 8, 'Greece', 19, 'Flex', 49.80, 211, 2796, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(82, 'Garfield Leathard', 21, 'Sweden', 38, 'Support', 0.46, 415, 786, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(83, 'Joycelin Roden', 4, 'China', 31, 'Leader', 69.56, 317, 1422, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(84, 'Isidora Threadgill', 8, 'East Timor', 36, 'Flex', 66.48, 241, 1416, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(85, 'Avis Quibell', 11, 'Czech Republic', 38, 'Entry Fragger', 58.96, 156, 532, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(86, 'Melissa Sawdy', 21, 'Morocco', 26, 'Support', 56.26, 307, 710, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(87, 'Brianna Joire', 20, 'Philippines', 31, 'Flex', 98.00, 174, 1849, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(88, 'Care Kesley', 11, 'Portugal', 31, 'Support', 1.61, 451, 934, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(89, 'Shana Eaddy', 13, 'France', 22, 'Leader', 33.82, 121, 1838, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(90, 'Milka Brislane', 10, 'China', 35, 'Entry Fragger', 69.33, 7, 2913, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(91, 'Kennith Gagie', 16, 'China', 19, 'Leader', 30.51, 478, 1794, 0.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(92, 'Myles Riepl', 8, 'Philippines', 28, 'Flex', 68.80, 268, 2888, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(93, 'Izaak Bottomer', 10, 'Guatemala', 35, 'Entry Fragger', 59.78, 0, 376, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(94, 'Ringo Pagden', 20, 'China', 22, 'Support', 6.17, 159, 1620, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(95, 'Nappy Giacovelli', 16, 'France', 29, 'Leader', 58.78, 344, 559, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(96, 'Bidget Daulby', 17, 'Japan', 32, 'Entry Fragger', 69.28, 435, 2103, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(97, 'Phip Batson', 5, 'Pakistan', 30, 'Support', 42.10, 282, 1443, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(98, 'Courtney Pauel', 16, 'China', 20, 'Entry Fragger', 97.85, 8, 794, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(99, 'Aland Kalinke', 3, 'Portugal', 33, 'Support', 28.03, 282, 2036, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(100, 'Elianore Jump', 7, 'Croatia', 18, 'Entry Fragger', 92.68, 162, 2855, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(101, 'Ericka Lifsey', 4, 'China', 27, 'Leader', 27.63, 253, 2221, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(102, 'Inna Pude', 9, 'Czech Republic', 35, 'Leader', 3.76, 422, 1459, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(103, 'Garnet Martinho', 1, 'Malaysia', 42, 'Entry Fragger', 81.13, 421, 1340, 0.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(104, 'Ulrike Rishman', 2, 'Ivory Coast', 18, 'Leader', 69.52, 451, 864, 1.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(105, 'Shaina Gradley', 10, 'Iran', 36, 'Leader', 59.93, 69, 2770, 0.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(106, 'Noel Benardet', 21, 'Ivory Coast', 41, 'Entry Fragger', 36.39, 109, 1217, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(107, 'Madelene Featherstonhaugh', 10, 'China', 24, 'Flex', 9.41, 148, 1740, 2.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(108, 'Caleb Grisley', 9, 'Indonesia', 22, 'Flex', 79.03, 320, 1719, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(109, 'Berta Patrick', 15, 'Philippines', 28, 'Flex', 9.89, 120, 2567, 0.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(110, 'Eldon Scawton', 5, 'Sierra Leone', 21, 'Entry Fragger', 3.84, 237, 53, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(111, 'Starr Soutar', 1, 'Dominican Republic', 27, 'Support', 39.71, 400, 1474, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(112, 'Shantee Gouldsmith', 7, 'United States', 42, 'Support', 3.84, 122, 2795, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(113, 'Fae Hanbridge', 8, 'Libya', 21, 'Entry Fragger', 11.90, 112, 812, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(114, 'Oralee Uden', 5, 'Central African Republic', 32, 'Flex', 70.95, 296, 1099, 0.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(115, 'Mitch Cumbers', 16, 'China', 22, 'Flex', 65.73, 113, 2040, 0.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(116, 'Misti Burley', 7, 'Russia', 25, 'Leader', 90.16, 60, 833, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(117, 'Melly Hummerston', 6, 'Samoa', 37, 'Flex', 89.70, 105, 466, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(118, 'Elwood Penlington', 17, 'Russia', 19, 'Leader', 99.02, 292, 1478, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(119, 'Kylila Gerbl', 11, 'China', 25, 'Flex', 43.19, 405, 2477, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(120, 'Hammad Wainscot', 17, 'Russia', 40, 'Support', 46.49, 390, 524, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(121, 'Bambie Sothcott', 1, 'Sweden', 29, 'Leader', 67.63, 94, 829, 2.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(122, 'Ddene Makin', 18, 'China', 36, 'Entry Fragger', 24.72, 191, 2604, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(123, 'Angel Dieton', 13, 'Brazil', 20, 'Flex', 19.53, 464, 1993, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(124, 'Patsy Rozzier', 11, 'Thailand', 32, 'Support', 18.95, 191, 410, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(125, 'Ellyn Wigsell', 13, 'Madagascar', 41, 'Flex', 37.36, 461, 1172, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(126, 'Marga Scalia', 17, 'France', 33, 'Entry Fragger', 23.36, 422, 906, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(127, 'Editha Node', 4, 'Sweden', 28, 'Leader', 67.67, 177, 1649, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(128, 'Johnnie Keri', 15, 'Norway', 28, 'Support', 80.41, 448, 357, 0.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(129, 'Zacharie Knightsbridge', 6, 'Taiwan', 42, 'Support', 4.69, 167, 1234, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(130, 'Silvie Guiu', 5, 'Colombia', 21, 'Support', 9.70, 201, 1012, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(131, 'Laney Dullaghan', 20, 'Poland', 39, 'Flex', 54.01, 314, 18, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(132, 'Sapphire Coldman', 1, 'Indonesia', 40, 'Entry Fragger', 75.78, 474, 677, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(133, 'Molli Tarte', 8, 'Paraguay', 40, 'Flex', 52.57, 409, 803, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(134, 'Mella Lethley', 13, 'Indonesia', 18, 'Support', 77.08, 233, 2802, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(135, 'Jade Silbersak', 14, 'Brazil', 31, 'Leader', 29.87, 195, 421, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(136, 'Jayson Morville', 7, 'China', 42, 'Entry Fragger', 68.31, 114, 1026, 2.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(137, 'Berni McCahey', 6, 'North Korea', 41, 'Leader', 4.32, 178, 384, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(138, 'Cletis Pierrepont', 21, 'Argentina', 27, 'Entry Fragger', 97.36, 429, 1295, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(139, 'Laurice Saldler', 17, 'South Africa', 26, 'Flex', 55.25, 177, 1536, 1.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(140, 'Christoffer Valsler', 5, 'Gambia', 24, 'Entry Fragger', 88.76, 316, 1443, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(141, 'Barnabe Kiss', 14, 'Iceland', 38, 'Entry Fragger', 89.09, 0, 850, 2.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(142, 'Iain Swepson', 11, 'Greece', 18, 'Support', 88.14, 366, 763, 1.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(143, 'Nate Woodyatt', 10, 'Brazil', 41, 'Support', 2.46, 229, 644, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(144, 'Loria Capron', 17, 'Thailand', 36, 'Flex', 25.21, 454, 694, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(145, 'Massimiliano Caslane', 4, 'Philippines', 21, 'Support', 1.93, 34, 986, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(146, 'Danna Yakhin', 6, 'Peru', 29, 'Leader', 15.59, 431, 1474, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(147, 'Kirby Decroix', 15, 'Portugal', 39, 'Leader', 18.04, 258, 2325, 2.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(148, 'Leta Chilcott', 4, 'China', 34, 'Support', 58.56, 217, 592, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(149, 'James Lyard', 6, 'Iran', 22, 'Leader', 28.59, 106, 1480, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(150, 'Charlton Olensby', 10, 'Greece', 41, 'Entry Fragger', 61.13, 443, 177, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(151, 'Brianna Penas', 18, 'Costa Rica', 37, 'Leader', 14.37, 248, 2035, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(152, 'Edsel Churchard', 17, 'Czech Republic', 35, 'Flex', 23.41, 429, 1945, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(153, 'Rancell Rapinett', 16, 'Kazakhstan', 34, 'Support', 61.81, 417, 1539, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(154, 'Renie Beddie', 10, 'Latvia', 33, 'Flex', 63.61, 11, 2571, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(155, 'Waylen Gittis', 8, 'Brazil', 30, 'Entry Fragger', 86.07, 267, 151, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(156, 'Lari Lawee', 15, 'Brazil', 32, 'Leader', 27.14, 224, 862, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(157, 'Janetta Batchelar', 3, 'Australia', 38, 'Leader', 83.46, 489, 2007, 0.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(158, 'Aigneis Essame', 3, 'Brazil', 33, 'Support', 35.72, 337, 2705, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(159, 'Wait Rafferty', 4, 'Turkmenistan', 40, 'Support', 71.68, 244, 1578, 0.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(160, 'Kathlin Otterwell', 6, 'Malaysia', 30, 'Entry Fragger', 8.69, 337, 2503, 2.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(161, 'Dulcine Orht', 3, 'Nepal', 34, 'Leader', 75.37, 343, 1848, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(162, 'Monty McGaughie', 14, 'Belarus', 35, 'Flex', 4.66, 86, 2893, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(163, 'Claudius Becks', 6, 'Sweden', 30, 'Leader', 39.86, 67, 956, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(164, 'Mayne Sutterby', 7, 'Sri Lanka', 31, 'Support', 21.17, 404, 2636, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(165, 'Ricky McCaughran', 13, 'United States', 20, 'Leader', 48.52, 286, 912, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(166, 'Karla Knagges', 15, 'Indonesia', 29, 'Support', 92.54, 324, 2334, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(167, 'Colleen Ride', 10, 'Russia', 22, 'Leader', 45.68, 179, 1919, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(168, 'Roderic Metcalf', 17, 'Philippines', 27, 'Leader', 53.28, 17, 2286, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(169, 'Lilas Oakhill', 3, 'Pakistan', 23, 'Flex', 44.61, 62, 985, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(170, 'Imogen Lawford', 12, 'Mongolia', 37, 'Leader', 84.94, 45, 579, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(171, 'Ado Choupin', 3, 'Morocco', 24, 'Leader', 40.20, 374, 2403, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(172, 'Meryl Pfiffer', 9, 'China', 42, 'Flex', 69.01, 327, 2447, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(173, 'Cornelle Gallety', 3, 'China', 36, 'Leader', 57.68, 360, 416, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(174, 'Julietta Sussans', 17, 'France', 19, 'Support', 51.02, 320, 1895, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(175, 'Deanna Baiden', 21, 'Japan', 41, 'Entry Fragger', 60.79, 464, 1818, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(176, 'Nan Lush', 16, 'China', 40, 'Support', 38.47, 170, 1868, 1.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(177, 'Trace Dudek', 5, 'Portugal', 24, 'Flex', 27.47, 172, 1884, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(178, 'Pet Darlison', 15, 'Poland', 32, 'Entry Fragger', 53.01, 10, 2337, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(179, 'Mellisent Twort', 9, 'Chile', 40, 'Support', 62.52, 185, 1719, 1.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(180, 'Collen Joutapavicius', 1, 'Botswana', 39, 'Leader', 35.13, 452, 945, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(181, 'Frayda Pine', 4, 'Guinea-Bissau', 25, 'Support', 26.41, 52, 1111, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(182, 'Ignaz McCartan', 6, 'Philippines', 26, 'Flex', 57.00, 256, 570, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(183, 'Madelaine Nuttall', 12, 'Canada', 29, 'Leader', 59.94, 34, 1516, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(184, 'Thaddus Yendall', 8, 'South Korea', 25, 'Support', 87.91, 261, 2742, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(185, 'Mannie Padden', 1, 'Philippines', 27, 'Support', 68.62, 417, 2010, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(186, 'Hanny Balentyne', 19, 'Chile', 35, 'Support', 14.42, 218, 2540, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(187, 'Cahra Holdin', 21, 'Vietnam', 25, 'Support', 8.29, 43, 1576, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(188, 'Hubie Trenouth', 17, 'Argentina', 18, 'Support', 39.36, 402, 1559, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(189, 'Breena Fullstone', 10, 'China', 20, 'Leader', 32.96, 8, 2124, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(190, 'Christoper Muscat', 16, 'Belarus', 23, 'Leader', 18.19, 494, 354, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(191, 'Dalila Etridge', 17, 'Indonesia', 31, 'Leader', 65.32, 78, 352, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(192, 'Gregorius Leere', 7, 'Zimbabwe', 37, 'Entry Fragger', 63.43, 180, 2152, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(193, 'Cinda Spellicy', 4, 'Indonesia', 36, 'Support', 43.93, 20, 2628, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(194, 'Latashia Bruniges', 1, 'Japan', 30, 'Leader', 36.38, 67, 1044, 1.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(195, 'Romain Paulin', 17, 'Vietnam', 29, 'Leader', 14.32, 369, 1679, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(196, 'Tabbie Ellard', 3, 'Brazil', 41, 'Flex', 20.53, 121, 2264, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(197, 'Janenna Bartosiak', 10, 'Moldova', 21, 'Leader', 22.62, 86, 1303, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(198, 'Barris Valente', 21, 'Dominican Republic', 33, 'Entry Fragger', 55.72, 100, 2578, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(199, 'Kay Gibbetts', 5, 'Nigeria', 37, 'Flex', 45.85, 220, 1649, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(200, 'Kory Copozio', 1, 'Indonesia', 36, 'Support', 73.63, 295, 784, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(201, 'Eryn Elwin', 8, 'Ecuador', 31, 'Leader', 78.14, 212, 62, 0.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(202, 'Jehanna Danell', 9, 'Thailand', 37, 'Entry Fragger', 95.19, 207, 1301, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(203, 'Kaitlyn Heinritz', 7, 'Cuba', 33, 'Leader', 55.98, 497, 2857, 2.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(204, 'Madalyn Misk', 15, 'Indonesia', 41, 'Entry Fragger', 84.09, 463, 761, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(205, 'Saul Varty', 9, 'Greece', 36, 'Entry Fragger', 3.98, 66, 2183, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(206, 'Deena Biaggiotti', 21, 'China', 29, 'Leader', 94.74, 52, 2406, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(207, 'Harmonie Seczyk', 7, 'Greece', 18, 'Leader', 6.95, 480, 269, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(208, 'Maggi Marnane', 1, 'Japan', 35, 'Entry Fragger', 12.01, 250, 337, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(209, 'Stearne Seedman', 6, 'Brazil', 40, 'Support', 47.03, 328, 1702, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(210, 'Rickey Derisley', 4, 'Portugal', 20, 'Flex', 80.17, 459, 1186, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(211, 'Adamo Sacchetti', 10, 'China', 31, 'Flex', 0.82, 25, 229, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(212, 'Feodor McFarlane', 20, 'Philippines', 38, 'Support', 57.18, 174, 150, 1.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(213, 'Gennifer Serchwell', 2, 'Sweden', 32, 'Entry Fragger', 15.74, 78, 2295, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(214, 'Latrina Matten', 7, 'Argentina', 24, 'Support', 52.86, 173, 1088, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(215, 'Jourdan Lycett', 17, 'Portugal', 31, 'Support', 80.97, 222, 2909, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(216, 'Monika Huttley', 11, 'Portugal', 26, 'Entry Fragger', 64.48, 272, 2492, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(217, 'Jeramie Evequot', 10, 'United States', 35, 'Entry Fragger', 42.65, 448, 912, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(218, 'Isidro Dillingston', 17, 'Czech Republic', 39, 'Flex', 87.04, 230, 2322, 2.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(219, 'Pollyanna Whitcher', 1, 'Thailand', 31, 'Flex', 5.62, 93, 1824, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(220, 'Nils Steers', 4, 'Ecuador', 23, 'Entry Fragger', 4.29, 492, 2726, 0.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(221, 'Anderea Delucia', 3, 'China', 42, 'Support', 0.08, 484, 2626, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(222, 'Gaynor Perigoe', 21, 'Brazil', 39, 'Entry Fragger', 71.32, 365, 2679, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(223, 'Pepillo Durn', 2, 'Portugal', 34, 'Support', 60.55, 95, 859, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(224, 'Quinlan Riste', 7, 'Philippines', 35, 'Support', 16.74, 49, 1177, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(225, 'Phoebe Matveyev', 19, 'Indonesia', 35, 'Leader', 51.80, 204, 924, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(226, 'Maddi Newcom', 3, 'Mexico', 24, 'Leader', 66.69, 348, 1973, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(227, 'Edwina Pape', 14, 'Czech Republic', 30, 'Leader', 92.11, 281, 230, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(228, 'Dolly Tearny', 20, 'United States', 30, 'Entry Fragger', 26.98, 136, 401, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(229, 'Gabi Ogden', 16, 'Philippines', 32, 'Entry Fragger', 35.61, 359, 1078, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(230, 'Adelheid Foad', 1, 'Netherlands', 20, 'Support', 37.91, 400, 2972, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(231, 'Gerrard MacAnespie', 2, 'China', 23, 'Flex', 42.69, 361, 1801, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(232, 'Gertrud Talman', 16, 'Philippines', 21, 'Flex', 86.71, 433, 398, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(233, 'Tabbatha Vedenisov', 10, 'Macedonia', 21, 'Entry Fragger', 67.24, 204, 2714, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(234, 'Hermione Headford', 14, 'China', 22, 'Leader', 55.14, 201, 691, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(235, 'Culley Armes', 20, 'Russia', 39, 'Leader', 5.44, 83, 1584, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(236, 'Nissy Durak', 8, 'Canada', 24, 'Flex', 94.71, 148, 1158, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(237, 'Chelsea Lavelle', 10, 'Russia', 32, 'Flex', 57.04, 177, 2831, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(238, 'Lyndsie Yeardley', 13, 'Norway', 20, 'Entry Fragger', 16.51, 112, 1582, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(239, 'Nolana Tuddall', 6, 'China', 39, 'Flex', 84.05, 79, 370, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(240, 'Miner Irvin', 4, 'Indonesia', 18, 'Entry Fragger', 94.49, 85, 2349, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(241, 'Hayyim Gimblett', 10, 'South Korea', 29, 'Leader', 79.34, 37, 2613, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(242, 'Mickie Diboll', 8, 'Indonesia', 36, 'Leader', 16.15, 493, 2776, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(243, 'Melinde Grono', 9, 'Iran', 28, 'Flex', 26.24, 275, 1998, 0.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(244, 'Cob Edison', 21, 'China', 26, 'Flex', 67.07, 95, 2360, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(245, 'Diannne Lorenz', 5, 'China', 38, 'Leader', 39.10, 258, 1130, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(246, 'Eolanda Coye', 11, 'Ireland', 30, 'Flex', 23.32, 184, 2337, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(247, 'Morse Ducham', 21, 'Russia', 18, 'Flex', 76.98, 430, 752, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(248, 'Fionnula Faldoe', 18, 'Syria', 25, 'Entry Fragger', 19.51, 147, 2552, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(249, 'Monah Sorton', 5, 'China', 35, 'Entry Fragger', 23.09, 153, 2259, 1.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(250, 'Mavis Umfrey', 10, 'South Africa', 18, 'Entry Fragger', 56.10, 121, 1027, 0.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(251, 'Terrie Trevance', 11, 'Croatia', 33, 'Support', 18.29, 94, 2071, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(252, 'Gardy Kestle', 18, 'Palestinian Territory', 37, 'Flex', 54.66, 95, 944, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(253, 'Gaynor Brosini', 7, 'China', 19, 'Entry Fragger', 9.04, 370, 1997, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(254, 'Larry Fireman', 18, 'Thailand', 37, 'Support', 54.89, 174, 1578, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(255, 'Lucie Moorwood', 3, 'Greece', 22, 'Flex', 1.82, 185, 359, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(256, 'Gregoor Sharpless', 3, 'Guatemala', 31, 'Entry Fragger', 13.06, 7, 52, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(257, 'Tommy Peach', 8, 'Canada', 27, 'Flex', 46.53, 186, 1560, 2.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(258, 'Felice Grinvalds', 1, 'China', 25, 'Flex', 7.91, 240, 390, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(259, 'Gussy Winning', 12, 'China', 38, 'Entry Fragger', 33.79, 424, 1398, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(260, 'Kevina Woolam', 15, 'Finland', 31, 'Flex', 98.68, 264, 2985, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(261, 'Ewell Clemendot', 4, 'Poland', 34, 'Flex', 42.91, 277, 939, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(262, 'Emily Devonport', 9, 'China', 20, 'Support', 55.25, 187, 802, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(263, 'Iolanthe Steels', 6, 'Malaysia', 28, 'Entry Fragger', 77.91, 280, 1318, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(264, 'Lura Clemencon', 16, 'China', 34, 'Leader', 47.28, 115, 2566, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(265, 'Levey Wittke', 21, 'Ukraine', 19, 'Flex', 98.12, 186, 2966, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(266, 'Colby Teal', 17, 'Peru', 24, 'Flex', 69.65, 488, 260, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(267, 'Charlena Powys', 15, 'Indonesia', 35, 'Entry Fragger', 90.01, 132, 1612, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(268, 'Calley Brislan', 19, 'Denmark', 40, 'Support', 28.20, 217, 2164, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(269, 'Titos Kimmel', 21, 'Ireland', 29, 'Leader', 52.73, 74, 1286, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(270, 'Herby Jesteco', 19, 'Pakistan', 22, 'Entry Fragger', 29.75, 8, 2656, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(271, 'Emelina Petticrow', 7, 'Ukraine', 20, 'Leader', 3.15, 56, 80, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(272, 'Melvin Geffe', 1, 'Brazil', 32, 'Flex', 80.18, 274, 257, 1.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(273, 'Cecelia Wythill', 5, 'Finland', 18, 'Flex', 96.66, 100, 1783, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(274, 'Pauli Witherby', 12, 'Indonesia', 20, 'Flex', 38.80, 28, 1739, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(275, 'Ilene Hansom', 20, 'Iran', 42, 'Entry Fragger', 79.49, 118, 1551, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(276, 'Aluino Laugharne', 1, 'China', 39, 'Support', 46.50, 393, 1252, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(277, 'Ellerey Oakwell', 18, 'Syria', 23, 'Leader', 5.44, 432, 2548, 2.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(278, 'Tomasine Peschke', 13, 'Kazakhstan', 27, 'Flex', 3.37, 413, 2853, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(279, 'Charyl St Leger', 1, 'Sweden', 20, 'Support', 22.93, 431, 107, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(280, 'Marillin Andrin', 5, 'China', 27, 'Leader', 63.35, 78, 957, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(281, 'Nicko Kivelhan', 17, 'Peru', 40, 'Flex', 77.37, 17, 447, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(282, 'Glynda Breed', 2, 'Afghanistan', 24, 'Support', 28.86, 79, 290, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(283, 'Dela Phebee', 12, 'Japan', 32, 'Leader', 13.61, 332, 1244, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(284, 'Kathryne McGilvary', 19, 'Armenia', 23, 'Entry Fragger', 68.17, 285, 856, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(285, 'Maurise Craig', 12, 'Greece', 30, 'Leader', 24.82, 318, 1204, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(286, 'Kayley Flett', 6, 'France', 20, 'Entry Fragger', 59.07, 268, 568, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(287, 'Elias Pethrick', 5, 'Indonesia', 41, 'Leader', 38.58, 381, 1134, 0.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(288, 'Fernandina Swyndley', 14, 'Sweden', 39, 'Entry Fragger', 7.44, 255, 1392, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(289, 'Sheffie Claridge', 10, 'Japan', 38, 'Leader', 75.43, 287, 2592, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(290, 'Garwin Yeoman', 12, 'Portugal', 40, 'Support', 97.72, 244, 831, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(291, 'Angelique Kitson', 2, 'Philippines', 18, 'Support', 78.15, 227, 1488, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(292, 'Paulette Chazotte', 20, 'Mexico', 38, 'Entry Fragger', 4.20, 384, 1766, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(293, 'Gwenore Yarr', 6, 'Thailand', 18, 'Leader', 36.37, 456, 1604, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(294, 'Kelsi Gamblin', 15, 'Czech Republic', 33, 'Leader', 71.63, 93, 873, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(295, 'Kendell Banbury', 5, 'Indonesia', 26, 'Flex', 46.65, 413, 1160, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(296, 'Klemens Culbard', 9, 'Turkmenistan', 28, 'Flex', 76.67, 137, 414, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(297, 'Edie Gurnee', 19, 'Japan', 28, 'Support', 24.08, 222, 1040, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(298, 'Lorens Carlow', 4, 'China', 19, 'Leader', 38.14, 452, 471, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(299, 'Hedy Marriott', 18, 'Portugal', 23, 'Entry Fragger', 8.75, 307, 1480, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(300, 'Lucretia Minors', 11, 'Portugal', 30, 'Leader', 29.15, 412, 1037, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(301, 'Charline Grammer', 20, 'France', 31, 'Flex', 27.73, 371, 629, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(302, 'Edyth Ingleston', 5, 'Georgia', 33, 'Flex', 42.19, 95, 2428, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(303, 'Una Beckworth', 4, 'France', 18, 'Flex', 0.20, 21, 621, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(304, 'Dionne Tideswell', 10, 'France', 32, 'Flex', 9.22, 25, 470, 0.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(305, 'Larry Fretter', 3, 'Libya', 19, 'Entry Fragger', 97.49, 118, 1655, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(306, 'Candice Elderbrant', 8, 'Papua New Guinea', 34, 'Flex', 68.93, 400, 2883, 1.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(307, 'Rainer Quadling', 10, 'Finland', 24, 'Flex', 77.37, 185, 1176, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(308, 'Abagail Smoughton', 20, 'France', 18, 'Leader', 91.20, 438, 1075, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(309, 'Salvador Staunton', 19, 'China', 31, 'Leader', 37.74, 464, 1903, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(310, 'Mia Christoffels', 1, 'Brazil', 20, 'Leader', 64.35, 269, 1299, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(311, 'Philip Beininck', 9, 'Kyrgyzstan', 30, 'Flex', 37.66, 19, 366, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(312, 'Sawyer Sartin', 3, 'Thailand', 27, 'Flex', 16.10, 55, 68, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(313, 'Zebadiah Stothert', 5, 'United States', 31, 'Entry Fragger', 42.60, 11, 821, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(314, 'Ramonda Mollindinia', 19, 'Indonesia', 42, 'Leader', 2.94, 166, 2684, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(315, 'Lorrie Knowlden', 21, 'Malaysia', 39, 'Leader', 50.39, 297, 1742, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(316, 'Win Konert', 3, 'Turkmenistan', 25, 'Entry Fragger', 3.42, 184, 1382, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(317, 'Alexine Parradye', 19, 'New Zealand', 36, 'Flex', 69.14, 251, 1466, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(318, 'Rooney Dutteridge', 18, 'Nigeria', 38, 'Leader', 92.16, 105, 1954, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(319, 'Curcio Lamkin', 9, 'Philippines', 19, 'Leader', 62.56, 251, 2518, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(320, 'Klarrisa Noor', 12, 'Ukraine', 41, 'Support', 55.43, 293, 1865, 0.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(321, 'Jordan Fortune', 15, 'Nigeria', 29, 'Flex', 89.05, 101, 2650, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(322, 'Darci Lalley', 1, 'Comoros', 20, 'Entry Fragger', 20.30, 466, 98, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(323, 'George Itzkovsky', 16, 'Egypt', 41, 'Entry Fragger', 82.43, 78, 2768, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(324, 'Angele Normansell', 9, 'Azerbaijan', 27, 'Flex', 94.99, 453, 175, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(325, 'Claretta Bellwood', 2, 'Thailand', 24, 'Support', 38.94, 377, 455, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(326, 'Granny Wichard', 10, 'Cyprus', 23, 'Leader', 34.88, 293, 941, 1.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(327, 'Creigh Wonfar', 2, 'United States', 40, 'Support', 86.37, 176, 306, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(328, 'Carline Gilleson', 17, 'South Africa', 42, 'Leader', 64.34, 149, 298, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(329, 'Dixie Kiehne', 17, 'United States', 32, 'Support', 84.38, 11, 1213, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(330, 'Connie Roblin', 6, 'Indonesia', 18, 'Flex', 35.98, 357, 2656, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(331, 'Arlena Rotge', 13, 'Sweden', 33, 'Support', 93.45, 318, 1127, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(332, 'Jecho Waistell', 9, 'Philippines', 23, 'Leader', 45.95, 109, 1677, 2.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(333, 'Conney Longmore', 6, 'Croatia', 28, 'Entry Fragger', 1.99, 18, 1946, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(334, 'Ulrich Halgarth', 13, 'Russia', 18, 'Flex', 21.17, 98, 2981, 1.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(335, 'Darcie Dowdney', 2, 'Russia', 35, 'Flex', 28.92, 128, 2081, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(336, 'Nikita Hazelby', 19, 'Russia', 27, 'Leader', 54.39, 376, 2637, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(337, 'Nataline Bouch', 4, 'Indonesia', 29, 'Support', 97.81, 195, 1459, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(338, 'Stormi Castanho', 15, 'Mauritius', 20, 'Entry Fragger', 14.80, 478, 736, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(339, 'Bendick Hirschmann', 14, 'Sudan', 36, 'Flex', 81.38, 190, 213, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(340, 'Lucien Campbell', 3, 'China', 33, 'Entry Fragger', 31.30, 153, 12, 2.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(341, 'Augy Brecken', 21, 'Argentina', 29, 'Leader', 64.78, 392, 1052, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(342, 'Marissa Jeenes', 16, 'Slovenia', 41, 'Leader', 11.49, 470, 1590, 2.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(343, 'Shalna Ruttgers', 2, 'Democratic Republic of the Congo', 39, 'Flex', 28.08, 401, 2328, 2.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(344, 'Jude Aysh', 12, 'China', 22, 'Support', 73.25, 250, 1438, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(345, 'Matty Hurtic', 17, 'China', 26, 'Support', 58.26, 375, 1145, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(346, 'Tiler Curme', 18, 'Russia', 31, 'Leader', 73.22, 238, 1168, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(347, 'Kim Bramelt', 9, 'China', 39, 'Flex', 52.64, 168, 2441, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(348, 'Roxane Stoffers', 11, 'Indonesia', 36, 'Leader', 31.44, 149, 2709, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(349, 'Meryl Rathmell', 4, 'Russia', 23, 'Leader', 40.85, 176, 2820, 2.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(350, 'Francene Palek', 3, 'France', 23, 'Leader', 59.78, 4, 1886, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(351, 'Morry Murrison', 12, 'China', 30, 'Support', 8.73, 407, 2003, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(352, 'Rachele Bunhill', 2, 'China', 34, 'Flex', 20.43, 387, 1688, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(353, 'Hermia Wickie', 17, 'Iran', 18, 'Entry Fragger', 49.41, 64, 2082, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(354, 'Joete Bullimore', 1, 'China', 25, 'Support', 0.14, 172, 1202, 1.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(355, 'Elbertine Sictornes', 2, 'China', 20, 'Leader', 94.54, 171, 2948, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(356, 'Randene Gater', 3, 'Czech Republic', 42, 'Entry Fragger', 51.93, 195, 2394, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(357, 'Ulrick Parkyns', 21, 'Brazil', 27, 'Entry Fragger', 98.67, 446, 2729, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(358, 'Mirella Truscott', 3, 'Indonesia', 24, 'Flex', 20.49, 207, 2669, 2.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(359, 'Grover Bruntje', 21, 'China', 33, 'Flex', 10.94, 281, 439, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(360, 'Constantine Drei', 4, 'France', 36, 'Entry Fragger', 84.78, 383, 84, 0.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(361, 'Bess Geggus', 13, 'China', 33, 'Entry Fragger', 36.31, 465, 1180, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(362, 'Morna Almack', 13, 'Nigeria', 35, 'Entry Fragger', 92.51, 92, 2028, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(363, 'Jerome Wingeat', 6, 'Afghanistan', 27, 'Entry Fragger', 68.63, 114, 1804, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(364, 'Daniela Parres', 18, 'Mongolia', 36, 'Entry Fragger', 87.20, 281, 236, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(365, 'Blithe Gooch', 20, 'Mali', 22, 'Support', 64.98, 354, 2365, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(366, 'Marge Giacomucci', 15, 'China', 37, 'Leader', 6.53, 335, 2824, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(367, 'Emmanuel Hobell', 13, 'Colombia', 30, 'Support', 28.07, 411, 2503, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(368, 'Gretal Shackle', 10, 'Norway', 32, 'Support', 98.33, 244, 2270, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(369, 'Garek Meyrick', 13, 'China', 41, 'Support', 32.85, 300, 1584, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(370, 'Grethel Muddle', 19, 'Canada', 30, 'Leader', 93.44, 217, 1254, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(371, 'Cary Stinton', 3, 'Myanmar', 18, 'Leader', 9.64, 22, 767, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(372, 'Forrest Benardeau', 2, 'China', 30, 'Entry Fragger', 83.35, 500, 2817, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(373, 'Tommi Wellstead', 13, 'Morocco', 37, 'Leader', 50.25, 304, 1350, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(374, 'Nicolis Banister', 10, 'Czech Republic', 28, 'Support', 18.66, 418, 293, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(375, 'Hulda Sinclair', 20, 'China', 36, 'Support', 92.78, 183, 2046, 2.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(376, 'Thaxter Diess', 18, 'Portugal', 19, 'Support', 35.55, 390, 1889, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(377, 'Cammie Rudloff', 4, 'China', 34, 'Support', 20.63, 235, 2107, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(378, 'Prudi Stuther', 18, 'Czech Republic', 33, 'Support', 68.67, 168, 436, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(379, 'Ric Puckham', 9, 'China', 31, 'Entry Fragger', 82.99, 478, 604, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(380, 'Glen Erbe', 15, 'Syria', 41, 'Leader', 20.64, 290, 2283, 0.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(381, 'Michaeline Shepherdson', 7, 'Afghanistan', 36, 'Leader', 9.90, 126, 2971, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(382, 'Nadine Millichap', 6, 'Russia', 42, 'Support', 6.25, 310, 839, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(383, 'Arman Filippucci', 2, 'Macedonia', 36, 'Support', 97.90, 355, 1901, 0.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(384, 'Hy Font', 2, 'Indonesia', 28, 'Entry Fragger', 99.65, 272, 1487, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(385, 'Enos Antal', 14, 'Morocco', 33, 'Support', 15.71, 20, 1168, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(386, 'Rainer Shackel', 13, 'Philippines', 30, 'Leader', 85.25, 333, 472, 2.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(387, 'Sharity Annetts', 9, 'Philippines', 42, 'Entry Fragger', 8.03, 77, 859, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(388, 'Aube Bakey', 1, 'Indonesia', 37, 'Leader', 22.78, 352, 2297, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(389, 'Lurette Cappel', 16, 'Mongolia', 33, 'Support', 76.53, 267, 678, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(390, 'Kristel Fonso', 5, 'Vietnam', 31, 'Entry Fragger', 31.75, 78, 2825, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(391, 'Hurley Noods', 19, 'Spain', 28, 'Support', 88.21, 87, 523, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(392, 'Alena Barnewell', 19, 'China', 28, 'Entry Fragger', 72.46, 69, 2804, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(393, 'Danya Goldin', 8, 'Peru', 26, 'Support', 5.54, 345, 1601, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(394, 'Gleda Degg', 2, 'Angola', 35, 'Leader', 92.60, 239, 2591, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(395, 'Julienne Connick', 2, 'China', 39, 'Flex', 93.36, 42, 1709, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(396, 'Izak Rowan', 6, 'Philippines', 19, 'Support', 77.97, 246, 2557, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(397, 'Nathaniel Cullnean', 19, 'Armenia', 20, 'Entry Fragger', 26.89, 220, 1073, 1.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(398, 'Foss Broderick', 8, 'Russia', 21, 'Support', 59.44, 424, 949, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(399, 'Vlad Bernardotte', 13, 'Philippines', 42, 'Leader', 64.50, 384, 2533, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(400, 'Ramona Smissen', 17, 'Sweden', 33, 'Leader', 98.11, 15, 2830, 2.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(401, 'Richard Carstairs', 15, 'China', 18, 'Leader', 10.47, 105, 1680, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(402, 'Lily Peddowe', 12, 'China', 23, 'Leader', 89.86, 461, 1939, 0.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(403, 'Jacquelynn Brownsell', 4, 'Morocco', 18, 'Flex', 15.33, 116, 2854, 1.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(404, 'Tabina MacConneely', 3, 'Indonesia', 30, 'Support', 72.65, 400, 1118, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(405, 'Delly Vasiliev', 11, 'Indonesia', 39, 'Entry Fragger', 92.61, 212, 895, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(406, 'Allen Fluin', 8, 'Philippines', 28, 'Support', 15.41, 424, 158, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(407, 'Aleta Osmund', 14, 'Russia', 29, 'Entry Fragger', 57.51, 103, 2182, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(408, 'Filip Lambillion', 19, 'Finland', 19, 'Support', 94.37, 375, 184, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(409, 'Edmund Sorrie', 19, 'Uganda', 20, 'Flex', 41.90, 292, 249, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(410, 'Molli Swabey', 14, 'Sweden', 31, 'Entry Fragger', 52.59, 385, 301, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(411, 'Christoffer Rolland', 2, 'Russia', 32, 'Support', 38.38, 228, 2801, 0.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(412, 'Casie Stirtle', 18, 'China', 39, 'Leader', 66.16, 131, 2100, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(413, 'Sayre Macallam', 15, 'Brazil', 31, 'Entry Fragger', 3.54, 469, 1766, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(414, 'Barron Candlin', 9, 'United States', 25, 'Entry Fragger', 56.87, 353, 572, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(415, 'Cleopatra Plumbridge', 12, 'Philippines', 28, 'Leader', 4.69, 45, 2359, 1.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(416, 'Dom Biskup', 19, 'Japan', 18, 'Flex', 71.18, 334, 1746, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(417, 'Maryellen Gowrie', 20, 'Thailand', 24, 'Entry Fragger', 28.65, 160, 2501, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(418, 'Jillane Garfit', 2, 'Sweden', 26, 'Leader', 11.46, 474, 1414, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(419, 'Dani Munday', 6, 'Albania', 19, 'Entry Fragger', 98.14, 489, 2809, 2.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(420, 'Siana De Bruin', 4, 'Benin', 29, 'Entry Fragger', 33.46, 113, 2477, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(421, 'Leandra Brabbs', 21, 'Zimbabwe', 24, 'Support', 75.29, 414, 2460, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(422, 'Sander Sillito', 21, 'Indonesia', 39, 'Flex', 29.01, 325, 2912, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(423, 'Isaiah Heather', 7, 'China', 25, 'Leader', 0.77, 258, 484, 0.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(424, 'Chrissie Erskine Sandys', 4, 'Indonesia', 29, 'Flex', 24.99, 5, 1854, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(425, 'Wendel Johanssen', 3, 'China', 38, 'Leader', 29.71, 84, 2640, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(426, 'Courtney Smoote', 18, 'Russia', 41, 'Entry Fragger', 2.71, 28, 467, 2.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(427, 'Ora Cowdrey', 18, 'France', 34, 'Flex', 45.76, 338, 167, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(428, 'Gae Impett', 20, 'Philippines', 42, 'Entry Fragger', 71.40, 435, 1664, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(429, 'Lusa Allwood', 10, 'Sri Lanka', 22, 'Flex', 48.58, 351, 2138, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(430, 'Bernelle Bunney', 15, 'China', 25, 'Support', 59.52, 396, 1907, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(431, 'Meredith Paler', 12, 'Russia', 37, 'Leader', 12.00, 74, 2545, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(432, 'Othella Kirkwood', 16, 'Mongolia', 33, 'Leader', 82.36, 219, 1567, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(433, 'Malissia Coventon', 6, 'Panama', 40, 'Entry Fragger', 82.98, 295, 2834, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(434, 'Deerdre Manoelli', 6, 'Mexico', 22, 'Leader', 40.46, 265, 588, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(435, 'Lib Titcomb', 16, 'Russia', 25, 'Entry Fragger', 0.56, 300, 1742, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(436, 'Beale Casaletto', 11, 'Portugal', 31, 'Support', 66.45, 196, 989, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(437, 'Luciano Scotchbrook', 12, 'Vietnam', 41, 'Support', 40.93, 39, 1951, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(438, 'Arabella Nice', 17, 'Estonia', 25, 'Leader', 30.52, 393, 1943, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(439, 'Domingo Harrap', 20, 'Thailand', 34, 'Entry Fragger', 48.41, 59, 556, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(440, 'Renado St Ange', 15, 'Colombia', 21, 'Support', 70.27, 268, 2808, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(441, 'Cherrita Lyptratt', 8, 'France', 39, 'Support', 46.86, 453, 2704, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(442, 'Standford Pettko', 13, 'China', 22, 'Flex', 48.17, 40, 1458, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(443, 'Elia Flescher', 2, 'Portugal', 24, 'Leader', 43.41, 481, 2518, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(444, 'Heinrik Cherry Holme', 19, 'Mongolia', 29, 'Leader', 47.54, 265, 249, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(445, 'Sheryl Benedetti', 19, 'Brazil', 33, 'Entry Fragger', 57.13, 123, 2051, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(446, 'Wilow Ilyin', 17, 'Philippines', 28, 'Support', 15.95, 266, 8, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(447, 'Elie Spalding', 21, 'Indonesia', 25, 'Leader', 0.31, 222, 672, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(448, 'Gene Scopyn', 12, 'Indonesia', 32, 'Leader', 84.62, 338, 1900, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(449, 'Jenilee Leathwood', 11, 'France', 27, 'Flex', 62.72, 261, 2414, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(450, 'Anette Dawks', 18, 'Japan', 39, 'Leader', 85.69, 306, 615, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(451, 'Adolphus Trippitt', 2, 'Thailand', 18, 'Flex', 12.00, 480, 2364, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(452, 'Hetti Shorrock', 8, 'Indonesia', 28, 'Support', 52.78, 169, 928, 0.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(453, 'Maryrose Smallcombe', 11, 'Portugal', 41, 'Leader', 94.25, 202, 2458, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(454, 'Jard Isherwood', 12, 'China', 32, 'Entry Fragger', 23.38, 199, 380, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(455, 'Niel Aizikov', 20, 'China', 28, 'Flex', 6.49, 250, 1237, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(456, 'Adore Gowland', 3, 'Indonesia', 26, 'Support', 19.27, 357, 496, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(457, 'Grace Semper', 13, 'Indonesia', 20, 'Entry Fragger', 76.99, 133, 1240, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(458, 'Zackariah Manilow', 16, 'China', 25, 'Support', 39.34, 310, 1288, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(459, 'Laurence Rixon', 9, 'Germany', 36, 'Entry Fragger', 47.30, 357, 2702, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(460, 'Deirdre Bennoe', 20, 'Canada', 29, 'Support', 25.11, 435, 891, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(461, 'Ruth Cammis', 1, 'Philippines', 38, 'Entry Fragger', 62.43, 116, 721, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(462, 'Fae Grishkov', 1, 'Portugal', 21, 'Leader', 88.11, 74, 985, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(463, 'Conrado Tofful', 12, 'China', 28, 'Flex', 51.51, 158, 19, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(464, 'Dodi Winckworth', 9, 'Russia', 28, 'Flex', 84.34, 41, 574, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(465, 'Carl Cartmer', 20, 'Nigeria', 36, 'Entry Fragger', 61.85, 210, 1494, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(466, 'Jaye Birchenhead', 13, 'Uzbekistan', 22, 'Flex', 29.12, 188, 1124, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(467, 'Ava Letch', 2, 'Croatia', 36, 'Leader', 51.89, 426, 1407, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(468, 'Fayina Millhouse', 1, 'Thailand', 23, 'Leader', 82.29, 475, 98, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(469, 'Misty Currey', 5, 'China', 24, 'Entry Fragger', 89.32, 252, 2464, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(470, 'Karyl Jubert', 2, 'Argentina', 19, 'Support', 73.97, 261, 1132, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(471, 'Isidore Purdie', 5, 'China', 31, 'Leader', 10.66, 95, 2541, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(472, 'Kalinda Emilien', 17, 'Syria', 34, 'Entry Fragger', 1.87, 195, 2985, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(473, 'Tobie Prewer', 7, 'France', 37, 'Leader', 37.18, 279, 2308, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(474, 'Leontine Ragles', 9, 'China', 35, 'Leader', 81.28, 232, 1937, 2.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(475, 'Jarrod Kearford', 11, 'Philippines', 31, 'Flex', 71.73, 380, 1426, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(476, 'Merill Wardhough', 11, 'China', 38, 'Flex', 25.13, 174, 923, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(477, 'Fayre Breakwell', 20, 'Sweden', 21, 'Support', 63.50, 12, 2372, 2.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(478, 'Thibaut Haylands', 6, 'Indonesia', 18, 'Support', 37.21, 378, 2647, 2.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(479, 'Moira Oene', 4, 'Albania', 42, 'Entry Fragger', 33.37, 19, 1165, 1.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(480, 'Michaella Lightowlers', 18, 'Philippines', 23, 'Entry Fragger', 82.09, 363, 173, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(481, 'Kippie Guidini', 16, 'Nigeria', 27, 'Support', 54.32, 215, 1823, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(482, 'Laetitia Patey', 4, 'Georgia', 26, 'Entry Fragger', 14.36, 390, 2523, 1.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(483, 'Jean Canner', 5, 'China', 19, 'Flex', 23.49, 113, 1592, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(484, 'Madlin Dimitriev', 13, 'Mexico', 41, 'Leader', 77.99, 86, 2482, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(485, 'Philippine Madill', 2, 'Thailand', 31, 'Leader', 0.72, 303, 1008, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(486, 'Harrietta Dean', 13, 'Russia', 29, 'Entry Fragger', 29.36, 439, 1235, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(487, 'Fernande Naton', 21, 'Haiti', 25, 'Entry Fragger', 39.21, 401, 1854, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(488, 'Giraud Goom', 19, 'United States', 18, 'Leader', 67.47, 51, 1860, 0.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(489, 'Goddard Cookley', 11, 'China', 32, 'Flex', 63.68, 74, 707, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(490, 'Tome Frobisher', 20, 'Ukraine', 34, 'Support', 36.82, 466, 2861, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(491, 'Chastity Sigars', 11, 'Portugal', 28, 'Leader', 56.46, 57, 344, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(492, 'Cyril Benton', 21, 'Indonesia', 38, 'Leader', 7.02, 478, 679, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(493, 'Ravi Miner', 11, 'Brazil', 41, 'Entry Fragger', 10.27, 205, 100, 2.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(494, 'Christyna Russam', 4, 'Russia', 35, 'Entry Fragger', 8.16, 341, 1912, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(495, 'Bobbie Bidder', 14, 'Bulgaria', 35, 'Support', 21.56, 244, 2775, 0.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(496, 'Symon Edess', 11, 'Portugal', 39, 'Flex', 27.18, 214, 2805, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(497, 'De Toth', 13, 'El Salvador', 38, 'Leader', 36.93, 25, 1113, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(498, 'Devi Jeroch', 12, 'Brazil', 37, 'Flex', 39.52, 383, 1605, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(499, 'Fritz Ditts', 12, 'Japan', 28, 'Leader', 94.45, 160, 190, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(500, 'Otho Neild', 1, 'Lithuania', 38, 'Leader', 22.55, 229, 244, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(501, 'Siouxie Rubberts', 3, 'Morocco', 36, 'Flex', 61.13, 443, 447, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(502, 'Kaila Barajaz', 19, 'Bolivia', 28, 'Entry Fragger', 89.99, 35, 796, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(503, 'Dionis Titterrell', 6, 'Pakistan', 38, 'Entry Fragger', 53.50, 376, 2224, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(504, 'Menard Wretham', 3, 'Estonia', 28, 'Support', 61.51, 436, 2377, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(505, 'Adolf Jayne', 21, 'Peru', 34, 'Flex', 23.69, 257, 1646, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(506, 'Evelyn holmes', 14, 'Indonesia', 37, 'Flex', 73.48, 402, 2617, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(507, 'Arturo Tuckey', 19, 'Indonesia', 38, 'Entry Fragger', 52.36, 174, 332, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(508, 'Burg Harburtson', 5, 'United States', 22, 'Support', 46.51, 298, 57, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(509, 'Cooper Beining', 15, 'Zambia', 33, 'Entry Fragger', 68.97, 70, 2251, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(510, 'Stern Hills', 7, 'Russia', 25, 'Flex', 39.64, 458, 2147, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(511, 'Alphard Ferrie', 17, 'Sudan', 24, 'Support', 54.45, 284, 655, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(512, 'Rosco Blazic', 17, 'Portugal', 41, 'Flex', 48.60, 255, 1096, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(513, 'Tamera Teasell', 20, 'China', 41, 'Leader', 80.57, 286, 2206, 2.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(514, 'Aurie Bisatt', 9, 'Indonesia', 20, 'Flex', 22.65, 264, 818, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(515, 'Anatole Giacubbo', 16, 'Argentina', 41, 'Entry Fragger', 76.30, 194, 293, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(516, 'Mellie Pimerick', 2, 'United States', 40, 'Support', 44.13, 128, 2090, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(517, 'Mylo McLennan', 19, 'France', 26, 'Flex', 68.27, 170, 24, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(518, 'Davin Toope', 17, 'Russia', 30, 'Flex', 16.25, 82, 656, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(519, 'Therese Ponde', 11, 'Venezuela', 19, 'Support', 41.40, 59, 2652, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(520, 'Lucias Dunwoody', 19, 'China', 41, 'Leader', 10.73, 97, 1076, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(521, 'Lib Blinman', 21, 'Russia', 23, 'Support', 71.34, 225, 1475, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(522, 'Gussi Aulton', 14, 'Luxembourg', 38, 'Flex', 24.88, 155, 866, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(523, 'Larisa MacCrachen', 10, 'South Africa', 30, 'Flex', 15.37, 94, 214, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(524, 'Nessi Bootherstone', 8, 'Indonesia', 32, 'Flex', 59.45, 339, 1104, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(525, 'Pattin Lewry', 8, 'Peru', 23, 'Leader', 85.50, 193, 2130, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg');
+INSERT INTO `r6_player` (`id`, `player_name`, `team_id`, `nationality`, `age`, `role`, `headshot_percentage`, `total_games`, `total_deaths`, `kd_ratio`, `created_at`, `updated_at`, `deleted_at`, `description`, `image`) VALUES
+(526, 'Enrika Sketchley', 3, 'Philippines', 38, 'Support', 75.96, 448, 1740, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(527, 'Myles Alger', 12, 'Indonesia', 26, 'Support', 68.39, 364, 2755, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(528, 'Clywd Sigert', 6, 'United States', 32, 'Entry Fragger', 28.78, 81, 2853, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(529, 'Babbette Killen', 19, 'Bolivia', 29, 'Support', 4.51, 19, 1392, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(530, 'Milena Lydster', 11, 'Sweden', 32, 'Leader', 83.05, 134, 2414, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(531, 'Dare Bernetti', 8, 'Netherlands', 30, 'Entry Fragger', 41.43, 364, 1793, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(532, 'Anderea Crowder', 2, 'Latvia', 35, 'Flex', 58.21, 464, 28, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(533, 'Daloris Risbridger', 17, 'Morocco', 22, 'Flex', 24.53, 221, 83, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(534, 'Pearl Lancley', 4, 'Indonesia', 27, 'Leader', 81.10, 169, 716, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(535, 'Harvey Sillwood', 18, 'Chile', 18, 'Entry Fragger', 92.39, 119, 56, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(536, 'Deana Stanworth', 10, 'Hungary', 21, 'Support', 18.86, 249, 1128, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(537, 'Dell Hamp', 1, 'Brazil', 38, 'Leader', 95.35, 106, 976, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(538, 'Aileen Chidgey', 15, 'Indonesia', 19, 'Support', 14.24, 354, 547, 0.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(539, 'Norma Isaacson', 7, 'China', 39, 'Leader', 39.17, 159, 1218, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(540, 'Reinaldo Wallice', 6, 'Indonesia', 39, 'Entry Fragger', 91.68, 330, 758, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(541, 'Damara Padbery', 17, 'Chile', 24, 'Entry Fragger', 26.29, 306, 1327, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(542, 'Marnie Aymes', 14, 'China', 26, 'Support', 42.92, 12, 586, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(543, 'Francklyn Hambridge', 3, 'Poland', 20, 'Flex', 83.71, 412, 2322, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(544, 'Vanya Booeln', 21, 'Argentina', 40, 'Entry Fragger', 85.61, 17, 681, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(545, 'Odelle Woonton', 11, 'Russia', 36, 'Flex', 2.27, 342, 1851, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(546, 'Miranda Mannooch', 4, 'Indonesia', 20, 'Flex', 2.57, 210, 91, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(547, 'Bernhard Callinan', 12, 'Czech Republic', 25, 'Support', 86.73, 239, 2055, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(548, 'Pepi Skae', 14, 'Bermuda', 18, 'Support', 72.50, 289, 1029, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(549, 'Bevvy Hamber', 7, 'China', 26, 'Flex', 46.57, 340, 2944, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(550, 'Farrand Suttie', 3, 'Thailand', 22, 'Support', 70.25, 250, 226, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(551, 'Dalt Croose', 5, 'Japan', 39, 'Flex', 85.58, 381, 780, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(552, 'Terrell Fahey', 7, 'Sierra Leone', 29, 'Leader', 32.09, 485, 2790, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(553, 'Aleksandr Burndred', 17, 'China', 39, 'Support', 55.23, 113, 2539, 1.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(554, 'Lorita Le Batteur', 13, 'Canada', 33, 'Entry Fragger', 53.40, 291, 1327, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(555, 'Gilberto Grafton-Herbert', 4, 'Brazil', 25, 'Support', 89.78, 88, 2953, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(556, 'Gabriela Cossell', 15, 'Finland', 22, 'Flex', 14.56, 119, 351, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(557, 'Hilarius Burchatt', 13, 'Philippines', 20, 'Flex', 62.59, 347, 1887, 2.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(558, 'Dermot Wathen', 2, 'Gambia', 39, 'Leader', 19.64, 366, 1383, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(559, 'Elsi Spriggs', 16, 'Armenia', 34, 'Support', 6.54, 269, 1582, 2.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(560, 'Kristen Sholem', 12, 'Indonesia', 23, 'Entry Fragger', 12.75, 114, 2904, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(561, 'Jocelin Escolme', 17, 'Philippines', 30, 'Support', 44.19, 484, 2320, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(562, 'Jackqueline Tremmil', 7, 'Armenia', 24, 'Leader', 83.32, 434, 1509, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(563, 'Rocky McLaughlan', 21, 'Russia', 27, 'Support', 85.87, 248, 1661, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(564, 'Joycelin Lukacs', 16, 'Portugal', 38, 'Support', 24.65, 410, 103, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(565, 'Salmon Geraldo', 11, 'Indonesia', 35, 'Entry Fragger', 7.86, 289, 742, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(566, 'Stephanie Chisholm', 10, 'Finland', 32, 'Flex', 72.85, 236, 2963, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(567, 'Derek Euesden', 10, 'Cuba', 39, 'Flex', 19.56, 86, 2334, 2.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(568, 'Beverly Blewis', 4, 'Indonesia', 21, 'Entry Fragger', 20.75, 18, 163, 1.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(569, 'Orelle Guyot', 9, 'Philippines', 35, 'Entry Fragger', 11.02, 72, 2179, 0.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(570, 'Josephine Mayler', 20, 'Indonesia', 42, 'Support', 5.78, 491, 2216, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(571, 'Martie Petroff', 13, 'Indonesia', 25, 'Leader', 71.81, 35, 152, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(572, 'Kathi Flanner', 9, 'Thailand', 36, 'Flex', 21.80, 305, 893, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(573, 'Lila Overland', 17, 'Italy', 39, 'Entry Fragger', 80.91, 325, 1838, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(574, 'Fredrick Gearing', 12, 'China', 35, 'Leader', 12.83, 292, 789, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(575, 'Filip Massingberd', 18, 'Indonesia', 24, 'Support', 56.91, 363, 2380, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(576, 'Delcina Duchant', 14, 'France', 25, 'Entry Fragger', 9.16, 458, 1778, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(577, 'Elinore Eglin', 12, 'Japan', 32, 'Flex', 48.63, 499, 9, 1.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(578, 'Berny Bittany', 18, 'Indonesia', 30, 'Leader', 98.16, 13, 2477, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(579, 'Devon Evemy', 17, 'Russia', 25, 'Support', 89.15, 445, 1044, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(580, 'Kass Dearle-Palser', 1, 'China', 24, 'Support', 23.66, 8, 1602, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(581, 'Charis Grundle', 17, 'France', 28, 'Leader', 67.88, 393, 894, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(582, 'Devy Huddleston', 18, 'Tajikistan', 36, 'Leader', 26.26, 40, 1620, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(583, 'Andres Sigert', 14, 'China', 33, 'Flex', 87.44, 142, 455, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(584, 'Oswald McCleverty', 17, 'China', 40, 'Flex', 67.73, 489, 2376, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(585, 'Ransell Kopf', 13, 'Indonesia', 33, 'Support', 99.10, 47, 2187, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(586, 'Yettie Crisford', 20, 'Russia', 27, 'Flex', 38.99, 474, 2521, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(587, 'Kitti Schuck', 3, 'Democratic Republic of the Congo', 38, 'Leader', 32.36, 29, 1675, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(588, 'Orel Giffaut', 20, 'Russia', 36, 'Flex', 0.14, 455, 1972, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(589, 'Alfreda Cassel', 6, 'France', 21, 'Support', 2.80, 358, 2400, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(590, 'Lou Sudron', 20, 'Portugal', 24, 'Leader', 33.75, 240, 2190, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(591, 'Lisetta Charkham', 4, 'Brazil', 20, 'Flex', 48.06, 145, 938, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(592, 'Vin Heselwood', 6, 'Honduras', 37, 'Support', 48.92, 5, 572, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(593, 'Felicia Gullis', 7, 'Iran', 37, 'Entry Fragger', 96.60, 0, 2798, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(594, 'Reagen Marl', 15, 'China', 23, 'Support', 3.64, 450, 472, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(595, 'Cassie Lead', 5, 'Russia', 29, 'Leader', 22.60, 321, 1358, 2.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(596, 'Twyla McMillam', 8, 'Zambia', 41, 'Entry Fragger', 39.49, 439, 736, 1.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(597, 'Corliss Squires', 2, 'Mongolia', 19, 'Support', 13.08, 99, 2241, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(598, 'Francisco Cothey', 2, 'Indonesia', 33, 'Flex', 98.87, 347, 2757, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(599, 'Sunshine Scorah', 16, 'France', 25, 'Entry Fragger', 67.36, 120, 293, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(600, 'Lucian Halward', 14, 'Malaysia', 19, 'Support', 73.47, 397, 409, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(601, 'Bartolomeo Dorset', 15, 'China', 27, 'Flex', 95.38, 121, 1376, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(602, 'Shelli Syres', 3, 'Colombia', 26, 'Support', 63.22, 389, 765, 0.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(603, 'Neall Beardon', 10, 'Russia', 21, 'Entry Fragger', 51.58, 109, 719, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(604, 'Jennee Stayte', 5, 'Ukraine', 41, 'Flex', 43.85, 242, 1312, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(605, 'Charita Gruczka', 18, 'Czech Republic', 24, 'Flex', 4.42, 272, 1747, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(606, 'Reiko Bowes', 15, 'Portugal', 26, 'Leader', 99.50, 45, 1197, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(607, 'Klarika Hannibal', 17, 'Indonesia', 29, 'Leader', 26.61, 268, 2116, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(608, 'Yalonda McAlees', 20, 'Philippines', 35, 'Support', 16.52, 193, 2134, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(609, 'Eadmund Spence', 18, 'China', 28, 'Entry Fragger', 60.56, 10, 954, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(610, 'Pierrette Heimann', 1, 'China', 32, 'Leader', 30.14, 458, 2159, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(611, 'Gussy Raymond', 5, 'Croatia', 35, 'Entry Fragger', 93.18, 363, 1894, 0.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(612, 'Amata Palumbo', 18, 'Russia', 42, 'Leader', 8.23, 315, 2539, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(613, 'Christiana Jeanel', 18, 'China', 27, 'Entry Fragger', 66.88, 268, 833, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(614, 'Hewett Hrynczyk', 15, 'Brazil', 39, 'Entry Fragger', 75.17, 67, 2978, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(615, 'Guillermo Pickersail', 16, 'Brazil', 22, 'Leader', 95.23, 200, 2024, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(616, 'Etienne Yonge', 13, 'Czech Republic', 24, 'Leader', 22.56, 279, 2660, 1.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(617, 'Melita Maykin', 21, 'Indonesia', 18, 'Flex', 20.61, 354, 719, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(618, 'Flore Garoghan', 12, 'China', 36, 'Support', 62.55, 0, 1518, 2.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(619, 'Amata McKimmie', 2, 'Indonesia', 34, 'Flex', 16.75, 38, 1063, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(620, 'Beth Gomar', 10, 'Ukraine', 29, 'Entry Fragger', 43.78, 56, 2043, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(621, 'Ilsa MacGillespie', 18, 'China', 30, 'Support', 0.49, 300, 342, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(622, 'Morty Banbrick', 14, 'Peru', 21, 'Flex', 27.02, 65, 1041, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(623, 'Mirabella Cauthra', 3, 'Indonesia', 34, 'Entry Fragger', 84.74, 70, 1472, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(624, 'Curcio Delleschi', 5, 'Czech Republic', 41, 'Support', 39.90, 83, 2636, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(625, 'Ellissa Skilbeck', 19, 'China', 21, 'Leader', 92.62, 487, 1957, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(626, 'Modestine Sharland', 15, 'Russia', 30, 'Support', 7.66, 261, 2241, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(627, 'Carmine Jerschke', 7, 'China', 40, 'Entry Fragger', 63.78, 34, 2391, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(628, 'Kayley Nugent', 2, 'Ukraine', 35, 'Support', 75.00, 493, 2640, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(629, 'Pate Fratson', 17, 'Peru', 18, 'Support', 62.16, 461, 2589, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(630, 'Nataline Goold', 21, 'Poland', 41, 'Support', 31.59, 49, 135, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(631, 'Addie Giffon', 15, 'China', 20, 'Support', 65.83, 411, 846, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(632, 'Bernardina Hows', 6, 'China', 21, 'Support', 85.38, 13, 1397, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(633, 'Kaila Tattersall', 4, 'Indonesia', 38, 'Flex', 53.65, 301, 401, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(634, 'Scotti Barstow', 13, 'Argentina', 20, 'Entry Fragger', 90.37, 259, 11, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(635, 'Alard Crush', 21, 'Indonesia', 37, 'Flex', 31.48, 373, 759, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(636, 'Menard Clendinning', 19, 'Russia', 41, 'Entry Fragger', 74.76, 223, 353, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(637, 'Lindy Baugh', 8, 'Armenia', 42, 'Leader', 60.36, 156, 1405, 2.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(638, 'Montgomery Mullineux', 9, 'Palestinian Territory', 38, 'Leader', 36.03, 238, 686, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(639, 'Nicol Karpinski', 15, 'Greece', 40, 'Flex', 66.15, 129, 2336, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(640, 'Katina MacTerlagh', 9, 'China', 21, 'Entry Fragger', 40.15, 114, 900, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(641, 'Flo Simko', 16, 'Philippines', 22, 'Leader', 15.97, 122, 2028, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(642, 'Dietrich Grogono', 5, 'Panama', 42, 'Leader', 36.16, 456, 2427, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(643, 'Tate Reisen', 4, 'Indonesia', 29, 'Leader', 90.22, 435, 1583, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(644, 'Kristi Bellee', 19, 'Indonesia', 28, 'Flex', 91.79, 22, 939, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(645, 'Lynde Kurth', 20, 'Philippines', 30, 'Flex', 4.48, 45, 1888, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(646, 'Corene Napleton', 9, 'Philippines', 38, 'Flex', 73.80, 399, 1830, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(647, 'Hartley Drewe', 5, 'Russia', 32, 'Leader', 60.87, 163, 2206, 0.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(648, 'Meggy Giorgioni', 8, 'Indonesia', 37, 'Leader', 4.72, 167, 255, 2.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(649, 'Saree Maccrie', 5, 'Portugal', 30, 'Leader', 13.81, 78, 1317, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(650, 'Perice Ovenell', 4, 'China', 40, 'Entry Fragger', 60.54, 206, 850, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(651, 'Renelle Ughi', 4, 'United Kingdom', 18, 'Support', 97.36, 256, 481, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(652, 'Hamish Gemlbett', 6, 'Cuba', 41, 'Entry Fragger', 16.14, 146, 2104, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(653, 'Bertram Sefton', 1, 'Poland', 27, 'Entry Fragger', 11.73, 323, 1091, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(654, 'Peri Lindenfeld', 8, 'China', 24, 'Entry Fragger', 67.59, 103, 445, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(655, 'Maximo Dorracott', 2, 'Thailand', 21, 'Flex', 71.06, 171, 942, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(656, 'Penni Christaeas', 6, 'Peru', 22, 'Entry Fragger', 8.28, 71, 1554, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(657, 'Malanie Kynforth', 3, 'France', 36, 'Support', 51.58, 451, 1887, 2.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(658, 'Annissa Woollends', 19, 'Czech Republic', 26, 'Entry Fragger', 19.12, 429, 2261, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(659, 'Jane Keenlyside', 1, 'Japan', 38, 'Support', 58.78, 202, 1670, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(660, 'Hernando Tapply', 9, 'Indonesia', 40, 'Support', 28.36, 206, 2466, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(661, 'Armstrong Illes', 7, 'Argentina', 24, 'Leader', 65.40, 276, 2839, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(662, 'Kerry McGrey', 19, 'Ukraine', 37, 'Support', 48.87, 414, 1236, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(663, 'Morgan Habergham', 6, 'El Salvador', 32, 'Leader', 68.47, 82, 2737, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(664, 'Killian Vedenichev', 8, 'Ethiopia', 29, 'Leader', 52.71, 36, 2393, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(665, 'Stanwood Slorance', 15, 'Ireland', 18, 'Support', 54.84, 191, 2282, 2.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(666, 'Marline Coward', 18, 'Indonesia', 19, 'Leader', 5.03, 393, 2991, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(667, 'Dreddy Eton', 6, 'Ukraine', 39, 'Flex', 39.13, 183, 835, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(668, 'Callida Leacy', 4, 'United States', 42, 'Flex', 99.03, 28, 2539, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(669, 'Raina Ochiltree', 4, 'France', 29, 'Leader', 6.24, 107, 1352, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(670, 'Antonius Arundel', 17, 'Burkina Faso', 19, 'Flex', 36.01, 482, 1390, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(671, 'Laurel Melloi', 1, 'Indonesia', 34, 'Entry Fragger', 71.14, 122, 1723, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(672, 'Cathlene Fitzjohn', 2, 'Thailand', 42, 'Support', 52.85, 261, 964, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(673, 'Nert Charlin', 20, 'United States', 29, 'Flex', 38.24, 395, 1890, 0.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(674, 'Tish Coucha', 17, 'China', 26, 'Leader', 29.45, 123, 1718, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(675, 'Marianne Chezelle', 2, 'Bangladesh', 34, 'Support', 95.66, 169, 2101, 1.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(676, 'Celinda Archley', 12, 'Greece', 31, 'Entry Fragger', 1.35, 12, 1062, 0.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(677, 'Ferrel Oliver-Paull', 20, 'China', 26, 'Flex', 8.07, 233, 130, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(678, 'Elia Wightman', 20, 'Indonesia', 39, 'Flex', 23.88, 187, 321, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(679, 'Claudian Newey', 13, 'Cuba', 36, 'Support', 49.22, 150, 368, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(680, 'Mace Bestall', 2, 'Malaysia', 24, 'Flex', 99.36, 213, 1086, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(681, 'Cortie Labon', 20, 'Thailand', 34, 'Support', 23.19, 251, 2658, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(682, 'Marika Stoffer', 15, 'Colombia', 42, 'Entry Fragger', 83.68, 40, 448, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(683, 'Caria Tuddenham', 2, 'Philippines', 34, 'Entry Fragger', 79.19, 179, 1165, 1.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(684, 'Brok Lukock', 20, 'China', 32, 'Support', 42.25, 48, 1250, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(685, 'Lilian Gerren', 14, 'Indonesia', 22, 'Leader', 25.62, 161, 2665, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(686, 'Tremayne Taffe', 21, 'Japan', 35, 'Flex', 11.35, 39, 543, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(687, 'Trace Titta', 1, 'New Zealand', 21, 'Entry Fragger', 79.46, 287, 1330, 1.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(688, 'Callida Lohoar', 16, 'Indonesia', 39, 'Flex', 22.68, 205, 2769, 2.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(689, 'Cazzie Rameau', 17, 'Russia', 37, 'Support', 52.88, 304, 2938, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(690, 'Dominique Bradburn', 9, 'Brazil', 23, 'Leader', 78.03, 31, 1660, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(691, 'Jarred Hasard', 18, 'China', 36, 'Entry Fragger', 65.62, 289, 1588, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(692, 'Gunther Jerosch', 2, 'China', 31, 'Entry Fragger', 98.41, 319, 2266, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(693, 'Ilse Portman', 13, 'United States', 18, 'Entry Fragger', 74.12, 477, 886, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(694, 'Brnaba Fleet', 13, 'Portugal', 28, 'Entry Fragger', 59.95, 285, 728, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(695, 'Parnell Aloshechkin', 14, 'France', 33, 'Support', 13.75, 292, 2171, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(696, 'Ulysses Imlin', 5, 'Honduras', 38, 'Entry Fragger', 2.52, 145, 1926, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(697, 'Lorry Quarless', 12, 'China', 28, 'Flex', 99.87, 473, 2565, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(698, 'Chryste Oldknow', 5, 'France', 33, 'Leader', 55.29, 129, 1962, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(699, 'Mayor Perrelle', 2, 'Jordan', 38, 'Support', 93.06, 11, 45, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(700, 'Kerrin Roblou', 8, 'Poland', 30, 'Flex', 70.77, 131, 1944, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(701, 'Sheilah Kelson', 16, 'Bosnia and Herzegovina', 28, 'Entry Fragger', 66.08, 364, 2011, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(702, 'Brit Murrow', 6, 'Portugal', 34, 'Support', 11.34, 249, 551, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(703, 'Charis Mulqueeny', 9, 'France', 23, 'Support', 68.08, 388, 2477, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(704, 'Andonis Middlemass', 17, 'Poland', 34, 'Support', 28.06, 29, 1851, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(705, 'Bathsheba Uff', 20, 'Poland', 36, 'Flex', 24.02, 479, 557, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(706, 'Mordecai Soggee', 16, 'China', 21, 'Leader', 71.92, 208, 230, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(707, 'Elia Levick', 13, 'Russia', 33, 'Entry Fragger', 26.32, 308, 2182, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(708, 'Linn Breinl', 16, 'Croatia', 36, 'Leader', 55.47, 189, 1880, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(709, 'Margarette Kearton', 12, 'Uzbekistan', 34, 'Flex', 71.62, 62, 1285, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(710, 'Inga Aubray', 15, 'Czech Republic', 30, 'Entry Fragger', 60.30, 464, 516, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(711, 'Stanley Earl', 13, 'Czech Republic', 18, 'Leader', 19.29, 446, 2233, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(712, 'Vi Kevis', 2, 'Russia', 19, 'Support', 67.32, 114, 2455, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(713, 'Melantha Velez', 17, 'France', 39, 'Entry Fragger', 82.35, 244, 2736, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(714, 'Dannie Immins', 7, 'Nigeria', 30, 'Leader', 34.09, 352, 1589, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(715, 'Mendy Cogman', 8, 'Latvia', 33, 'Flex', 23.75, 283, 1901, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(716, 'Auria Humphrey', 20, 'Philippines', 24, 'Support', 98.56, 211, 1020, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(717, 'Gil Traut', 20, 'Poland', 41, 'Flex', 99.01, 24, 2692, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(718, 'Genni Hutcheon', 8, 'Greece', 21, 'Support', 15.26, 113, 777, 0.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(719, 'Katinka Lodwig', 15, 'Russia', 25, 'Leader', 70.89, 75, 31, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(720, 'Tamra Poundford', 8, 'Paraguay', 18, 'Flex', 29.38, 187, 628, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(721, 'Rosalind Higgoe', 4, 'Ecuador', 34, 'Support', 10.17, 167, 472, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(722, 'Christoffer Ambroisin', 2, 'Indonesia', 41, 'Leader', 71.82, 73, 2507, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(723, 'Briny Ducket', 8, 'Colombia', 37, 'Leader', 79.44, 359, 570, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(724, 'Sheri Machel', 6, 'Pakistan', 32, 'Support', 97.97, 262, 776, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(725, 'Scarlett Monkeman', 20, 'Serbia', 20, 'Flex', 75.49, 452, 2676, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(726, 'Nanine Doogood', 2, 'China', 30, 'Flex', 96.38, 118, 2469, 0.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(727, 'Hobart Beaves', 20, 'Philippines', 29, 'Support', 76.73, 329, 582, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(728, 'Agretha Abrahmer', 3, 'Jamaica', 39, 'Leader', 61.42, 70, 53, 0.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(729, 'Ruby Luchelli', 14, 'Philippines', 40, 'Leader', 84.53, 365, 1251, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(730, 'Jerrilee McCook', 12, 'Honduras', 34, 'Support', 31.41, 353, 1236, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(731, 'Chuck Irce', 10, 'Russia', 25, 'Leader', 24.71, 384, 1542, 1.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(732, 'Krysta Danilchenko', 5, 'Honduras', 24, 'Support', 32.63, 158, 760, 0.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(733, 'Carling Spurier', 21, 'Nigeria', 24, 'Entry Fragger', 66.00, 68, 34, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(734, 'Faber Maciak', 14, 'Iran', 32, 'Flex', 47.80, 494, 2992, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(735, 'Gabriellia Rivalland', 4, 'Ukraine', 39, 'Leader', 61.89, 305, 1668, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(736, 'Aretha Allom', 1, 'Indonesia', 29, 'Support', 73.04, 142, 138, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(737, 'Peterus Huggard', 8, 'Ukraine', 22, 'Flex', 37.66, 188, 356, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(738, 'Issi Iseton', 6, 'Paraguay', 29, 'Entry Fragger', 54.29, 251, 904, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(739, 'Stanwood Garroway', 14, 'Indonesia', 22, 'Flex', 8.65, 211, 2014, 2.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(740, 'Blake Clench', 20, 'Ukraine', 23, 'Flex', 37.27, 68, 2534, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(741, 'Guss Coonan', 4, 'United States', 34, 'Support', 24.89, 115, 153, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(742, 'Alys McGarrie', 15, 'Russia', 32, 'Entry Fragger', 54.10, 210, 2027, 2.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(743, 'Chelsey Reveland', 7, 'United States', 29, 'Leader', 23.09, 105, 431, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(744, 'Margy Ilyenko', 18, 'Sweden', 23, 'Entry Fragger', 58.66, 99, 2900, 2.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(745, 'Shepard Brydie', 20, 'France', 41, 'Flex', 47.88, 328, 1962, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(746, 'Sollie Martinuzzi', 15, 'United States', 42, 'Support', 62.91, 189, 362, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(747, 'Osborne Kefford', 12, 'Sweden', 19, 'Entry Fragger', 13.43, 313, 278, 2.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(748, 'Philippa Canacott', 11, 'China', 21, 'Flex', 51.62, 351, 2941, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(749, 'Tabina Carvell', 12, 'China', 25, 'Flex', 7.02, 500, 1875, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(750, 'Ellwood Potkins', 19, 'Portugal', 27, 'Support', 18.54, 51, 2189, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(751, 'Mord Jankowski', 3, 'China', 23, 'Leader', 44.25, 427, 2793, 0.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(752, 'Marna Van Velde', 21, 'Kyrgyzstan', 31, 'Entry Fragger', 92.55, 344, 2388, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(753, 'Rickie Glasson', 8, 'Vietnam', 37, 'Support', 60.70, 16, 422, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(754, 'Randall Waber', 12, 'Japan', 36, 'Entry Fragger', 2.35, 405, 673, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(755, 'Doralynne De Giorgio', 11, 'Poland', 32, 'Entry Fragger', 53.71, 58, 2208, 0.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(756, 'Opalina Bonhill', 10, 'China', 25, 'Flex', 64.89, 359, 2008, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(757, 'Rey Shortland', 18, 'China', 23, 'Flex', 59.21, 215, 1053, 1.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(758, 'Bridie Croome', 3, 'Sweden', 23, 'Entry Fragger', 10.66, 264, 393, 0.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(759, 'Bobbette Yacobsohn', 3, 'Philippines', 23, 'Support', 12.23, 130, 779, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(760, 'Betteann Cosyns', 2, 'China', 34, 'Support', 57.25, 87, 457, 2.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(761, 'Muffin Klimontovich', 15, 'Russia', 37, 'Support', 11.83, 447, 1002, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(762, 'Mariya Lewins', 2, 'Indonesia', 21, 'Entry Fragger', 58.46, 257, 332, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(763, 'Berthe Ellyatt', 12, 'France', 25, 'Leader', 12.55, 462, 1038, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(764, 'Jandy Yukhnini', 12, 'Russia', 39, 'Entry Fragger', 89.93, 19, 904, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(765, 'Natka Winsiowiecki', 9, 'China', 34, 'Leader', 71.00, 449, 894, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(766, 'Minny Gabrieli', 17, 'China', 28, 'Support', 36.66, 227, 185, 2.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(767, 'Evangelina Parrott', 1, 'Peru', 31, 'Entry Fragger', 10.08, 314, 1080, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(768, 'Tristan Lowre', 9, 'Russia', 21, 'Support', 60.29, 22, 1547, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(769, 'Anetta Patty', 4, 'Paraguay', 20, 'Leader', 73.66, 114, 504, 2.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(770, 'Vallie Bartleet', 18, 'Brazil', 41, 'Support', 37.13, 353, 956, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(771, 'Jacenta Valde', 21, 'United Arab Emirates', 39, 'Entry Fragger', 82.73, 79, 2080, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(772, 'Jerry Pothecary', 1, 'Indonesia', 20, 'Leader', 94.81, 186, 912, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(773, 'Belle Strute', 8, 'China', 37, 'Support', 57.74, 428, 2858, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(774, 'Lilah Gain', 9, 'Philippines', 38, 'Flex', 38.65, 328, 2180, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(775, 'Gerianna Tichelaar', 1, 'China', 38, 'Entry Fragger', 43.36, 85, 2558, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(776, 'Dianna Jarnell', 18, 'Afghanistan', 36, 'Entry Fragger', 28.64, 472, 456, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(777, 'Terra Paskell', 13, 'China', 20, 'Support', 76.55, 127, 2503, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(778, 'Tami Fishpond', 20, 'Nigeria', 42, 'Entry Fragger', 31.79, 419, 1458, 0.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(779, 'Conrad Paynes', 7, 'France', 30, 'Entry Fragger', 2.39, 326, 1982, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(780, 'Hammad Knowlson', 11, 'Marshall Islands', 32, 'Entry Fragger', 63.92, 275, 2623, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(781, 'Jae Ragsdale', 17, 'Indonesia', 22, 'Flex', 72.76, 369, 650, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(782, 'Willamina Cusiter', 5, 'Indonesia', 32, 'Entry Fragger', 91.84, 198, 1379, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(783, 'Vinny Morsey', 14, 'Serbia', 22, 'Support', 36.67, 71, 1554, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(784, 'Viv Niezen', 19, 'China', 37, 'Support', 86.41, 126, 1938, 2.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(785, 'Othella Staley', 20, 'United States', 26, 'Leader', 18.68, 409, 1903, 2.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(786, 'Oby Inott', 3, 'Portugal', 24, 'Entry Fragger', 56.86, 330, 1489, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(787, 'Arthur Scurr', 5, 'Comoros', 28, 'Support', 73.68, 473, 1168, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(788, 'Eugene Jordi', 13, 'South Africa', 38, 'Flex', 13.30, 63, 1102, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(789, 'Gus Hanse', 13, 'Guatemala', 19, 'Leader', 98.47, 356, 2551, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(790, 'Marchall Hawke', 14, 'Zambia', 42, 'Support', 24.06, 254, 1986, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(791, 'Katusha Patient', 6, 'Zambia', 31, 'Support', 93.64, 461, 1870, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(792, 'Gibby Jennrich', 11, 'Czech Republic', 30, 'Leader', 5.48, 435, 2474, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(793, 'Niki Lorenz', 19, 'Portugal', 28, 'Entry Fragger', 84.44, 143, 828, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(794, 'Ricki Smartman', 19, 'South Africa', 36, 'Support', 12.13, 493, 2667, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(795, 'Albina Boyat', 17, 'Hungary', 27, 'Leader', 76.67, 12, 788, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(796, 'Bruis Waddilove', 10, 'China', 36, 'Support', 2.36, 99, 117, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(797, 'Ilysa Foulks', 2, 'Costa Rica', 41, 'Entry Fragger', 16.64, 270, 2405, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(798, 'Bentley Wix', 4, 'Indonesia', 24, 'Support', 35.81, 161, 620, 2.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(799, 'Hyman Babon', 18, 'China', 25, 'Leader', 48.00, 188, 2229, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(800, 'Karil Drage', 7, 'China', 34, 'Flex', 44.75, 325, 1905, 2.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(801, 'Pattie Berthel', 4, 'Indonesia', 23, 'Entry Fragger', 2.88, 455, 1272, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(802, 'Verna Izod', 3, 'Brazil', 27, 'Flex', 53.60, 34, 2256, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(803, 'Emmet Wolpert', 17, 'Indonesia', 26, 'Support', 9.59, 218, 115, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(804, 'Weidar Ceccoli', 17, 'China', 20, 'Entry Fragger', 48.41, 282, 768, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(805, 'Alyssa Silbersak', 15, 'Poland', 26, 'Leader', 44.99, 56, 12, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(806, 'Lonny Inggall', 10, 'Indonesia', 26, 'Flex', 46.54, 205, 487, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(807, 'Emelita Cutajar', 20, 'Canada', 35, 'Leader', 51.64, 291, 2798, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(808, 'Felita Howes', 21, 'Czech Republic', 30, 'Support', 16.35, 261, 2829, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(809, 'Gaston Langstone', 6, 'Mongolia', 24, 'Entry Fragger', 57.73, 12, 2946, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(810, 'Northrup Offield', 15, 'China', 37, 'Entry Fragger', 52.49, 430, 460, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(811, 'Abigale Feldbau', 14, 'Russia', 35, 'Flex', 93.48, 70, 2984, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(812, 'Carlee Polsin', 11, 'Nigeria', 22, 'Support', 40.41, 473, 395, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(813, 'Amie Charlon', 5, 'China', 18, 'Leader', 51.08, 444, 324, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(814, 'Chas Scholefield', 12, 'Mexico', 19, 'Entry Fragger', 32.37, 38, 1108, 2.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(815, 'Hermon Unworth', 7, 'Ireland', 19, 'Leader', 27.70, 96, 2898, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(816, 'Dianemarie Gaize', 2, 'Czech Republic', 39, 'Leader', 53.27, 413, 2739, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(817, 'Bennett Howship', 14, 'Azerbaijan', 26, 'Support', 62.42, 162, 2587, 1.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(818, 'Bevvy Muddicliffe', 18, 'Peru', 37, 'Entry Fragger', 24.17, 344, 1647, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(819, 'Gaylene Offner', 11, 'China', 38, 'Support', 42.46, 317, 1645, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(820, 'Sammy Hoy', 8, 'Russia', 41, 'Leader', 24.93, 447, 448, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(821, 'Ameline Rate', 20, 'United States', 31, 'Flex', 8.49, 452, 58, 2.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(822, 'Tootsie McEntagart', 19, 'Brazil', 31, 'Entry Fragger', 26.86, 197, 468, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(823, 'Ezra Wreakes', 18, 'Portugal', 26, 'Flex', 41.29, 454, 2513, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(824, 'Dion Strephan', 19, 'China', 21, 'Flex', 8.85, 222, 2431, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(825, 'Justin Faldo', 12, 'Peru', 34, 'Support', 39.16, 154, 1515, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(826, 'Veradis Macbane', 3, 'Sweden', 20, 'Leader', 30.74, 320, 526, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(827, 'Alma Oxborrow', 5, 'Russia', 35, 'Flex', 80.37, 362, 1402, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(828, 'Upton Mechi', 18, 'Philippines', 22, 'Leader', 84.37, 482, 864, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(829, 'Linoel Danne', 20, 'China', 18, 'Flex', 93.38, 11, 696, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(830, 'Terza Gellier', 4, 'China', 22, 'Entry Fragger', 79.52, 77, 2933, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(831, 'Jobey Beagles', 4, 'Palestinian Territory', 36, 'Leader', 43.28, 301, 1882, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(832, 'Ezri Hawkes', 8, 'Indonesia', 36, 'Leader', 95.32, 94, 448, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(833, 'Vivien Munnion', 3, 'Estonia', 21, 'Leader', 82.67, 256, 2453, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(834, 'Reggi Kennermann', 13, 'Sweden', 27, 'Entry Fragger', 23.73, 295, 2457, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(835, 'Manny Ludewig', 10, 'Botswana', 26, 'Leader', 50.30, 490, 2749, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(836, 'Teodor Cake', 8, 'Russia', 31, 'Leader', 39.64, 88, 1144, 2.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(837, 'Noell Kington', 8, 'France', 40, 'Leader', 43.69, 164, 2360, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(838, 'Herc Berre', 3, 'Philippines', 24, 'Entry Fragger', 94.75, 269, 766, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(839, 'Ninetta MacDirmid', 14, 'China', 19, 'Entry Fragger', 86.12, 196, 2669, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(840, 'Kizzee Carroll', 9, 'Canada', 35, 'Entry Fragger', 14.39, 470, 1072, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(841, 'Ralph Coleson', 15, 'Poland', 42, 'Support', 87.82, 421, 2525, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(842, 'Ingar Stopps', 19, 'France', 27, 'Entry Fragger', 86.21, 51, 86, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(843, 'Ivor Andrusov', 6, 'China', 29, 'Leader', 41.50, 407, 787, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(844, 'Florance Fawley', 10, 'Peru', 32, 'Support', 92.08, 322, 2583, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(845, 'Rocky Chantrell', 7, 'China', 29, 'Support', 6.46, 399, 1730, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(846, 'Cris Sorey', 16, 'Ireland', 36, 'Flex', 56.92, 431, 294, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(847, 'Torey Fridlington', 6, 'Vietnam', 39, 'Flex', 63.90, 246, 2178, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(848, 'Carma Ketteridge', 12, 'China', 33, 'Leader', 93.36, 6, 2058, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(849, 'Noak Boothebie', 20, 'Belarus', 23, 'Flex', 20.62, 337, 2612, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(850, 'Shaine Goater', 19, 'Japan', 27, 'Support', 52.49, 183, 1379, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(851, 'Kip Graddon', 18, 'Brazil', 33, 'Leader', 26.73, 379, 2343, 1.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(852, 'Lauretta Trustie', 3, 'Jordan', 41, 'Support', 95.31, 67, 1142, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(853, 'Hazlett Chritchlow', 17, 'Russia', 21, 'Entry Fragger', 12.15, 409, 2771, 1.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(854, 'Raine Wetheril', 8, 'Iraq', 28, 'Support', 25.83, 179, 128, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(855, 'Giselbert Barnet', 13, 'China', 42, 'Entry Fragger', 81.30, 30, 1235, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(856, 'Korry Greenalf', 10, 'Burundi', 19, 'Flex', 60.60, 91, 2383, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(857, 'Costanza Enrrico', 8, 'Mongolia', 22, 'Leader', 43.58, 278, 2970, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(858, 'Godfree Maghull', 3, 'China', 25, 'Support', 62.10, 260, 946, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(859, 'Tadd Dufaire', 20, 'Kenya', 23, 'Support', 50.49, 244, 2920, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(860, 'Marnia Drake', 9, 'China', 35, 'Flex', 5.62, 59, 321, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(861, 'Sean Paradin', 5, 'Russia', 38, 'Flex', 16.91, 209, 532, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(862, 'Roobbie Grzegorecki', 18, 'Brazil', 18, 'Entry Fragger', 69.32, 479, 1712, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(863, 'Annissa Grieve', 21, 'Colombia', 21, 'Flex', 93.12, 5, 880, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(864, 'Solomon Ingraham', 14, 'Portugal', 38, 'Entry Fragger', 18.42, 496, 1204, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(865, 'Rayshell Latus', 10, 'Poland', 28, 'Flex', 42.94, 333, 1870, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(866, 'Shaun Muscroft', 16, 'Vietnam', 28, 'Flex', 33.09, 227, 2323, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(867, 'Darice Moseley', 21, 'Spain', 33, 'Support', 82.91, 462, 1400, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(868, 'Margalit Sauter', 21, 'China', 18, 'Flex', 23.69, 204, 1340, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(869, 'Genny Alway', 4, 'China', 41, 'Support', 9.73, 301, 2196, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(870, 'Hamlen Burhouse', 15, 'Canada', 28, 'Leader', 17.67, 11, 310, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(871, 'Brandais Martinyuk', 4, 'Indonesia', 41, 'Flex', 77.49, 48, 2376, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(872, 'Tatiana Hargreves', 3, 'China', 26, 'Flex', 87.88, 48, 530, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(873, 'Iggie Tizard', 10, 'China', 34, 'Support', 46.58, 188, 1267, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(874, 'Willdon Matyushonok', 7, 'China', 37, 'Support', 89.21, 327, 2750, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(875, 'Talya Howkins', 4, 'China', 31, 'Leader', 28.11, 170, 1863, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(876, 'Finlay Champagne', 7, 'China', 31, 'Entry Fragger', 81.67, 13, 19, 1.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(877, 'Creigh Fautly', 1, 'Poland', 40, 'Support', 70.82, 178, 846, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(878, 'Margette Able', 15, 'China', 19, 'Support', 38.41, 446, 2177, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(879, 'Marsiella Satterthwaite', 11, 'Czech Republic', 28, 'Flex', 17.51, 495, 1122, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(880, 'Nicolea Wadeson', 19, 'United States', 25, 'Support', 30.83, 188, 2166, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(881, 'Regina Philippeaux', 12, 'China', 38, 'Leader', 44.78, 279, 2717, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(882, 'Jeannette Baulcombe', 13, 'Poland', 38, 'Leader', 90.10, 190, 168, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(883, 'Jarad Irvine', 8, 'Philippines', 29, 'Flex', 72.47, 302, 2015, 1.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(884, 'Chane Brocks', 8, 'Croatia', 24, 'Leader', 42.57, 481, 1097, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(885, 'Brucie Ravenscraft', 5, 'Indonesia', 32, 'Flex', 31.98, 263, 2390, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(886, 'Jude Divine', 12, 'China', 32, 'Flex', 1.11, 178, 2560, 2.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(887, 'Bernadine Caunce', 7, 'Colombia', 31, 'Leader', 70.34, 181, 2495, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(888, 'Tony Van Der Hoog', 11, 'Indonesia', 23, 'Support', 83.25, 157, 1776, 2.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(889, 'Blythe Tirte', 1, 'Syria', 24, 'Support', 14.49, 443, 2466, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(890, 'Orsa Sausman', 6, 'Indonesia', 28, 'Entry Fragger', 20.86, 174, 2287, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(891, 'Agnesse Dorgon', 16, 'Georgia', 24, 'Flex', 70.49, 201, 14, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(892, 'Cesaro Hulbert', 12, 'Czech Republic', 35, 'Flex', 58.81, 382, 1770, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(893, 'Pearline Beneix', 5, 'Colombia', 34, 'Support', 22.20, 326, 668, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(894, 'Christyna Scurrer', 14, 'Ukraine', 23, 'Support', 59.88, 422, 597, 0.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(895, 'Matilda Lawfull', 19, 'China', 35, 'Leader', 10.45, 76, 2143, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(896, 'Adelind Gunbie', 18, 'Sri Lanka', 41, 'Support', 72.46, 197, 988, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(897, 'Carr Axworthy', 4, 'United States', 29, 'Flex', 9.50, 142, 445, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(898, 'Paxon Adenet', 16, 'Mongolia', 31, 'Flex', 2.47, 168, 356, 1.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(899, 'Ola Painswick', 16, 'China', 22, 'Flex', 47.79, 383, 2957, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(900, 'Edgar Bellingham', 4, 'Albania', 23, 'Support', 44.80, 364, 2809, 0.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(901, 'Annaliese Breeze', 10, 'Philippines', 39, 'Leader', 26.78, 434, 2858, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(902, 'Rorke Cocklie', 15, 'Mongolia', 27, 'Entry Fragger', 89.44, 495, 732, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(903, 'Marietta Grumley', 8, 'Canada', 26, 'Flex', 37.39, 215, 2297, 2.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(904, 'Lurline Micka', 6, 'France', 38, 'Flex', 6.78, 380, 2129, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(905, 'Harmon Scrimgeour', 12, 'China', 37, 'Entry Fragger', 31.21, 52, 1933, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(906, 'Gayla Joris', 20, 'Poland', 38, 'Entry Fragger', 77.31, 376, 270, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(907, 'Dierdre Drinkel', 4, 'Philippines', 18, 'Leader', 31.35, 325, 724, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(908, 'Ericha Gribbin', 19, 'China', 26, 'Support', 68.22, 476, 190, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(909, 'Phillipe Roddy', 19, 'Indonesia', 37, 'Support', 82.60, 100, 357, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(910, 'Helge Bridgewood', 9, 'Vietnam', 27, 'Flex', 41.82, 458, 1839, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(911, 'Chase Gyppes', 19, 'Angola', 29, 'Leader', 71.00, 311, 89, 1.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(912, 'Charin Headings', 5, 'Ukraine', 39, 'Entry Fragger', 69.94, 10, 2495, 1.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(913, 'Nonnah MacAlpyne', 6, 'China', 38, 'Entry Fragger', 21.45, 434, 2136, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(914, 'Cullin Chaffyn', 19, 'Ukraine', 35, 'Support', 41.05, 88, 1349, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(915, 'Eadith Medler', 21, 'China', 39, 'Support', 4.27, 10, 360, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(916, 'Pancho Rase', 19, 'Japan', 22, 'Entry Fragger', 42.74, 142, 1058, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(917, 'Rhianna Tommis', 13, 'China', 20, 'Entry Fragger', 93.69, 32, 2553, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(918, 'Joby Arthan', 10, 'China', 38, 'Entry Fragger', 10.36, 255, 123, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(919, 'Honey Sharper', 17, 'Brazil', 26, 'Support', 54.81, 489, 1530, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(920, 'Hyman Brimfield', 21, 'Colombia', 35, 'Flex', 88.28, 482, 2263, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(921, 'Magdaia Whight', 17, 'Japan', 28, 'Entry Fragger', 49.81, 72, 1974, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(922, 'Fabio Lofthouse', 9, 'Greece', 23, 'Leader', 10.13, 247, 410, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(923, 'Sharity August', 20, 'Russia', 20, 'Entry Fragger', 46.62, 326, 597, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(924, 'Willi Kenson', 11, 'Uganda', 22, 'Entry Fragger', 12.17, 103, 2821, 2.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(925, 'Leela Cawsy', 12, 'Portugal', 40, 'Entry Fragger', 55.08, 167, 2230, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(926, 'Tanner Chamberlaine', 15, 'Somalia', 28, 'Support', 1.02, 275, 2888, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(927, 'Yurik Cosbey', 17, 'Indonesia', 25, 'Support', 92.94, 127, 2615, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(928, 'Giuditta Marusik', 1, 'United States', 18, 'Entry Fragger', 56.97, 128, 2581, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(929, 'Terry Rumney', 19, 'China', 25, 'Support', 66.36, 256, 1273, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(930, 'Nonah Snelgrove', 16, 'United States', 24, 'Leader', 38.39, 489, 799, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(931, 'Melanie Lonsdale', 11, 'France', 20, 'Flex', 32.48, 422, 436, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(932, 'Guglielma Cockson', 12, 'Philippines', 23, 'Entry Fragger', 71.44, 140, 2379, 1.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(933, 'Shalna Ryman', 6, 'Philippines', 37, 'Entry Fragger', 46.96, 188, 782, 0.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(934, 'Stormy Jamblin', 8, 'Canada', 36, 'Flex', 10.93, 113, 1920, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(935, 'Winifield Boucher', 11, 'Chile', 35, 'Flex', 83.88, 428, 1871, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(936, 'Petey McAne', 20, 'China', 19, 'Entry Fragger', 37.46, 441, 1211, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(937, 'Lazare Curness', 1, 'Thailand', 29, 'Support', 34.30, 302, 103, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(938, 'Egon Greetham', 20, 'Portugal', 42, 'Leader', 4.00, 432, 1798, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(939, 'Pepe Sibbering', 18, 'Afghanistan', 20, 'Support', 5.80, 492, 1168, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(940, 'Denney Dalyiel', 15, 'Greece', 40, 'Flex', 48.29, 175, 967, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(941, 'Adams Yakovliv', 4, 'Ethiopia', 32, 'Flex', 59.60, 63, 1995, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(942, 'Pinchas Isitt', 17, 'Ethiopia', 18, 'Entry Fragger', 14.80, 240, 179, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(943, 'Waldon Rolph', 13, 'United States', 18, 'Support', 33.90, 174, 1278, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(944, 'Dallis Billany', 21, 'Brazil', 40, 'Entry Fragger', 71.16, 35, 1733, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(945, 'Erv Salvadori', 3, 'China', 20, 'Support', 88.29, 400, 2668, 2.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(946, 'Susannah Peizer', 20, 'France', 40, 'Entry Fragger', 22.88, 267, 2517, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(947, 'Kaitlynn Domico', 9, 'Argentina', 32, 'Flex', 78.17, 147, 2544, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(948, 'Kiah Cooksley', 18, 'Panama', 26, 'Leader', 73.68, 51, 493, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(949, 'Krystle Mingauld', 17, 'Botswana', 35, 'Leader', 54.44, 373, 2264, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(950, 'Susannah Shakeshaft', 18, 'Western Sahara', 34, 'Flex', 59.97, 476, 1997, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(951, 'Isabelita Pettet', 9, 'China', 42, 'Support', 23.62, 190, 518, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(952, 'Anett Sumption', 12, 'Indonesia', 40, 'Entry Fragger', 30.67, 359, 2331, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(953, 'Carolan Crum', 10, 'Finland', 30, 'Entry Fragger', 65.72, 191, 637, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(954, 'Jess Gisby', 14, 'Madagascar', 35, 'Support', 95.55, 127, 2528, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(955, 'Alfonso Blue', 17, 'Philippines', 35, 'Leader', 34.47, 183, 2448, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(956, 'Gauthier Egleton', 18, 'France', 25, 'Flex', 98.08, 388, 710, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(957, 'Martica Utting', 1, 'Mexico', 19, 'Leader', 47.24, 55, 198, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(958, 'Cordi Gascar', 18, 'China', 21, 'Support', 88.99, 242, 2200, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(959, 'Gaultiero Baudou', 2, 'Canada', 40, 'Support', 97.06, 272, 2666, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(960, 'Robenia Stone Fewings', 19, 'Czech Republic', 21, 'Support', 25.16, 202, 2947, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(961, 'Cointon Moylan', 6, 'Indonesia', 36, 'Leader', 4.07, 301, 165, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(962, 'Daryl Bogey', 11, 'Canada', 42, 'Leader', 93.67, 321, 880, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(963, 'Nelson Robins', 17, 'Hungary', 37, 'Flex', 93.26, 435, 369, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(964, 'Kirk Vader', 20, 'Costa Rica', 19, 'Flex', 16.09, 420, 159, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(965, 'Torre Moyse', 17, 'Denmark', 32, 'Entry Fragger', 38.17, 404, 2982, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(966, 'Alfonso Nairy', 20, 'Brazil', 30, 'Flex', 84.12, 178, 2178, 1.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(967, 'Niki Kerrigan', 14, 'Sweden', 27, 'Support', 12.58, 294, 1282, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(968, 'Ahmed Lambol', 11, 'Indonesia', 38, 'Flex', 70.55, 118, 1893, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(969, 'Irwin Eccott', 12, 'China', 29, 'Entry Fragger', 50.06, 80, 1837, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(970, 'Moishe Ranvoise', 14, 'Philippines', 38, 'Support', 32.99, 200, 2966, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(971, 'Gerti Stancer', 18, 'Honduras', 29, 'Leader', 81.34, 84, 2947, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(972, 'Maddalena Emptage', 6, 'United States', 42, 'Leader', 37.70, 372, 1757, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(973, 'Erroll Harbron', 17, 'South Africa', 41, 'Leader', 5.96, 443, 2331, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(974, 'Darice Retallick', 3, 'Croatia', 21, 'Support', 45.08, 68, 2206, 2.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(975, 'Gena Garric', 7, 'Indonesia', 40, 'Entry Fragger', 3.55, 136, 1437, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(976, 'Scot Rugiero', 13, 'Indonesia', 37, 'Support', 88.67, 431, 196, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(977, 'Eda Barnard', 1, 'Yemen', 33, 'Flex', 89.70, 131, 2144, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(978, 'Dev Dabner', 6, 'United States', 32, 'Entry Fragger', 81.79, 104, 1722, 0.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(979, 'Lucas Butrimovich', 3, 'Philippines', 22, 'Leader', 4.72, 24, 1716, 1.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(980, 'Shena Airth', 1, 'Greece', 21, 'Leader', 35.58, 214, 1636, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(981, 'Willow Been', 14, 'Hungary', 38, 'Flex', 88.38, 404, 2871, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(982, 'Kirstin Wipper', 6, 'United States', 30, 'Support', 38.42, 327, 2261, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(983, 'Colver Diament', 14, 'Indonesia', 41, 'Support', 53.64, 88, 960, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(984, 'Quintin Wisham', 11, 'Indonesia', 21, 'Support', 56.07, 489, 1929, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(985, 'Alisander Burtwell', 1, 'China', 36, 'Entry Fragger', 25.65, 454, 2175, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(986, 'Debby Garralts', 5, 'Djibouti', 41, 'Leader', 82.77, 416, 1809, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(987, 'Dotti Testin', 8, 'Philippines', 19, 'Entry Fragger', 93.58, 480, 406, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(988, 'Martita Dongall', 18, 'Burkina Faso', 36, 'Support', 25.61, 354, 141, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(989, 'Parke Sallan', 4, 'Portugal', 35, 'Flex', 53.80, 444, 1716, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(990, 'Rafaela Clausius', 4, 'Czech Republic', 35, 'Flex', 19.37, 330, 1744, 0.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(991, 'Janaya Budding', 17, 'Germany', 31, 'Flex', 27.49, 463, 1093, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(992, 'Bryce Gladtbach', 16, 'Czech Republic', 18, 'Entry Fragger', 60.04, 318, 2590, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(993, 'Alix Hubbins', 5, 'Russia', 39, 'Entry Fragger', 76.86, 308, 2719, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(994, 'Merrill Annesley', 15, 'Philippines', 42, 'Entry Fragger', 84.78, 281, 2904, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(995, 'Perri Leggatt', 7, 'Dominican Republic', 35, 'Support', 89.98, 86, 67, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(996, 'Dorella Fominov', 16, 'China', 23, 'Leader', 77.57, 372, 879, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(997, 'Adela Metheringham', 17, 'Philippines', 19, 'Flex', 59.20, 459, 1215, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(998, 'Carter Pervoe', 18, 'Indonesia', 39, 'Leader', 76.98, 180, 1852, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(999, 'Marjorie Shellard', 10, 'Japan', 30, 'Entry Fragger', 59.70, 59, 2636, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1000, 'Madalyn Minerdo', 16, 'Indonesia', 29, 'Flex', 63.26, 124, 1795, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1001, 'Sheelah Houlden', 15, 'Vietnam', 21, 'Support', 85.74, 50, 1318, 1.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1002, 'Dotty Stanway', 19, 'Uruguay', 19, 'Entry Fragger', 74.28, 355, 808, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1003, 'Lynett Hinstridge', 1, 'Vietnam', 37, 'Flex', 22.23, 151, 218, 0.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1004, 'Bobbee Mockes', 18, 'Poland', 35, 'Flex', 23.54, 81, 1062, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1005, 'Tilly Eastup', 2, 'Bosnia and Herzegovina', 23, 'Leader', 73.10, 23, 24, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1006, 'Shaine Abbes', 18, 'Syria', 19, 'Flex', 47.05, 487, 892, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1007, 'Leontine Edgecombe', 19, 'France', 34, 'Leader', 41.52, 88, 1250, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1008, 'Delmore De la Yglesias', 21, 'Yemen', 42, 'Support', 58.83, 329, 2009, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1009, 'Carlynne Tustin', 11, 'France', 18, 'Entry Fragger', 47.98, 286, 1117, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1010, 'Edgard Malyon', 19, 'China', 33, 'Leader', 90.44, 380, 721, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1011, 'Consuelo Hardwick', 5, 'Indonesia', 32, 'Flex', 54.65, 451, 1406, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1012, 'Tamas Bangs', 7, 'South Africa', 30, 'Support', 68.52, 408, 2232, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1013, 'Kit Latliff', 18, 'United States', 39, 'Flex', 40.03, 349, 2265, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1014, 'Reeba Tezure', 15, 'Egypt', 38, 'Entry Fragger', 59.77, 417, 875, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1015, 'Meryl Chittim', 15, 'Czech Republic', 31, 'Flex', 41.76, 161, 243, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1016, 'Jackqueline Scouse', 2, 'Brazil', 30, 'Support', 21.48, 295, 792, 1.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1017, 'Catarina Burkart', 11, 'Brazil', 19, 'Entry Fragger', 72.79, 215, 2630, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1018, 'Kirstin Tiptaft', 10, 'Japan', 23, 'Entry Fragger', 72.76, 409, 1099, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1019, 'Wendeline Willgrass', 11, 'Afghanistan', 33, 'Entry Fragger', 11.56, 382, 139, 1.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1020, 'Issi Ciardo', 1, 'Russia', 29, 'Flex', 94.32, 423, 1748, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1021, 'Llewellyn Murkitt', 5, 'United States', 24, 'Leader', 12.25, 135, 2173, 2.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1022, 'Waldemar Julien', 20, 'Colombia', 29, 'Support', 53.32, 59, 2045, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1023, 'Kimberli Macveigh', 2, 'China', 19, 'Entry Fragger', 68.81, 86, 1490, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1024, 'Galvin Ridgedell', 9, 'Kazakhstan', 42, 'Leader', 61.01, 299, 251, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1025, 'Meaghan Bugden', 18, 'Greece', 18, 'Support', 22.61, 178, 303, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1026, 'Clotilda Wharby', 17, 'France', 29, 'Flex', 14.04, 319, 2068, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1027, 'Rockie Proughten', 15, 'Brazil', 25, 'Leader', 17.63, 187, 204, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1028, 'Kienan Howsam', 15, 'China', 25, 'Flex', 32.35, 420, 807, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1029, 'Jacqueline Bellam', 17, 'Indonesia', 28, 'Entry Fragger', 47.49, 459, 1091, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1030, 'Tristam Dupoy', 2, 'Poland', 33, 'Entry Fragger', 95.11, 485, 1895, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1031, 'Barbette Radish', 5, 'Zimbabwe', 26, 'Flex', 87.58, 420, 1428, 1.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1032, 'Far Rubinsky', 1, 'Honduras', 27, 'Entry Fragger', 64.66, 494, 2385, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1033, 'Barbette Biasio', 14, 'Poland', 29, 'Entry Fragger', 76.71, 170, 1615, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1034, 'Tate Suddards', 4, 'Azerbaijan', 23, 'Support', 2.71, 215, 532, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1035, 'Milicent Coade', 6, 'Madagascar', 21, 'Flex', 29.55, 292, 1376, 1.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1036, 'Valentino Boughen', 1, 'Greece', 24, 'Flex', 87.63, 384, 119, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1037, 'Emylee Pirson', 15, 'Peru', 22, 'Leader', 4.60, 334, 497, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1038, 'Karry Greenlies', 15, 'Portugal', 26, 'Entry Fragger', 44.18, 73, 2178, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1039, 'Stanleigh Rottenbury', 1, 'Poland', 35, 'Flex', 50.92, 480, 2584, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1040, 'Keith Branton', 12, 'United States', 32, 'Flex', 40.93, 470, 2509, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1041, 'Joyous Cobbald', 14, 'Gambia', 24, 'Entry Fragger', 62.45, 60, 902, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1042, 'Thomasine Proschek', 4, 'Bolivia', 35, 'Entry Fragger', 65.59, 92, 2373, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1043, 'Kele Havik', 4, 'Brazil', 22, 'Flex', 34.90, 131, 1151, 2.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1044, 'Gussie Turfin', 4, 'Armenia', 23, 'Support', 13.06, 161, 1544, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1045, 'Saraann Hanstock', 9, 'France', 41, 'Entry Fragger', 83.26, 136, 1176, 1.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1046, 'Latrena McCurdy', 1, 'Thailand', 42, 'Support', 70.44, 57, 1161, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg');
+INSERT INTO `r6_player` (`id`, `player_name`, `team_id`, `nationality`, `age`, `role`, `headshot_percentage`, `total_games`, `total_deaths`, `kd_ratio`, `created_at`, `updated_at`, `deleted_at`, `description`, `image`) VALUES
+(1047, 'Payton Vasechkin', 16, 'Brazil', 34, 'Flex', 65.60, 216, 501, 1.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1048, 'Starlene Hedworth', 15, 'China', 25, 'Support', 0.13, 248, 2141, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1049, 'Torr Ahern', 9, 'China', 19, 'Flex', 63.42, 100, 1698, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1050, 'Adriane Cassius', 12, 'Philippines', 41, 'Leader', 79.18, 67, 811, 0.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1051, 'Boigie Buff', 20, 'China', 20, 'Entry Fragger', 73.16, 194, 150, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1052, 'Rois Crofts', 4, 'New Zealand', 40, 'Leader', 60.26, 254, 146, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1053, 'Vikky Ruzicka', 14, 'Poland', 29, 'Leader', 1.28, 492, 973, 2.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1054, 'Catharina Jedrychowski', 1, 'Serbia', 37, 'Entry Fragger', 48.93, 149, 2291, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1055, 'Shurlocke Douglas', 15, 'China', 26, 'Entry Fragger', 54.75, 452, 1038, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1056, 'Lena Pactat', 12, 'Colombia', 31, 'Entry Fragger', 73.50, 161, 880, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1057, 'Margaretha Shugg', 18, 'Guatemala', 28, 'Support', 61.09, 253, 1830, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1058, 'Gloriane Blanshard', 16, 'Indonesia', 24, 'Support', 1.62, 41, 1416, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1059, 'Marie-ann Atger', 21, 'Peru', 34, 'Support', 35.23, 482, 1688, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1060, 'Sig Buckeridge', 14, 'Sweden', 33, 'Support', 11.52, 76, 1533, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1061, 'Devonne Rouge', 1, 'Portugal', 34, 'Entry Fragger', 51.96, 199, 2531, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1062, 'Gertrude Lightwood', 14, 'Afghanistan', 22, 'Entry Fragger', 98.93, 493, 1083, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1063, 'Greg Radki', 1, 'Tajikistan', 30, 'Entry Fragger', 86.25, 313, 754, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1064, 'Easter Jaslem', 14, 'Czech Republic', 38, 'Entry Fragger', 5.19, 484, 2920, 2.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1065, 'Jacobo Heaney`', 1, 'Indonesia', 24, 'Entry Fragger', 8.77, 452, 1695, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1066, 'Alvin Coldman', 1, 'Slovenia', 24, 'Flex', 88.15, 3, 2039, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1067, 'Teena Blinde', 12, 'China', 27, 'Leader', 97.59, 445, 841, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1068, 'Gerty Kubala', 16, 'Netherlands', 23, 'Entry Fragger', 70.52, 473, 1754, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1069, 'Heriberto Lally', 1, 'Greece', 24, 'Support', 96.19, 194, 522, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1070, 'Raymond Deas', 15, 'China', 42, 'Flex', 49.72, 421, 1514, 1.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1071, 'Egan Haxell', 2, 'Mexico', 26, 'Entry Fragger', 42.32, 267, 2904, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1072, 'Georgine Edmund', 2, 'Ecuador', 23, 'Entry Fragger', 43.83, 54, 2623, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1073, 'Darlene Tofano', 8, 'Japan', 27, 'Leader', 12.23, 302, 1897, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1074, 'Joan Walsh', 10, 'Spain', 23, 'Support', 59.10, 337, 2634, 0.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1075, 'Boonie Kinneally', 8, 'Yemen', 36, 'Support', 88.17, 8, 137, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1076, 'Felice Burbury', 11, 'Poland', 34, 'Flex', 72.60, 358, 100, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1077, 'Jacinda McGeachey', 20, 'Indonesia', 36, 'Leader', 15.71, 378, 1871, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1078, 'Guenna Mollene', 20, 'United States', 25, 'Leader', 91.89, 332, 1192, 0.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1079, 'Franz Newart', 12, 'France', 20, 'Leader', 72.09, 281, 2255, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1080, 'Cecilia Ruscoe', 2, 'Colombia', 30, 'Leader', 77.22, 370, 1262, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1081, 'Abby Dinley', 17, 'Serbia', 34, 'Support', 75.31, 464, 154, 1.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1082, 'Forrest Forster', 2, 'China', 31, 'Entry Fragger', 61.93, 19, 1977, 1.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1083, 'Sol Ricciardo', 8, 'Japan', 27, 'Support', 70.90, 340, 1988, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1084, 'Bradley Voelker', 10, 'Philippines', 35, 'Leader', 58.28, 142, 1704, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1085, 'Chelsey Brinsford', 2, 'Bosnia and Herzegovina', 30, 'Flex', 91.66, 25, 1835, 0.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1086, 'Stevena Gianelli', 21, 'Russia', 38, 'Support', 27.46, 3, 957, 2.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1087, 'Fara Carletti', 3, 'China', 41, 'Entry Fragger', 32.09, 185, 2268, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1088, 'Jase Olfert', 14, 'China', 23, 'Support', 61.68, 339, 2900, 1.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1089, 'Issie Astridge', 17, 'Indonesia', 22, 'Support', 88.52, 433, 2330, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1090, 'Mendy Lovett', 4, 'Brazil', 41, 'Leader', 73.84, 406, 1165, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1091, 'Meagan Wonham', 8, 'Ecuador', 22, 'Flex', 13.90, 260, 881, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1092, 'Karlie Mercy', 1, 'China', 33, 'Support', 65.37, 336, 167, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1093, 'Manny Cattenach', 13, 'Brazil', 24, 'Entry Fragger', 1.97, 334, 2454, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1094, 'Cy Schmuhl', 20, 'Philippines', 26, 'Entry Fragger', 16.08, 175, 2677, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1095, 'Bald Annear', 10, 'United Arab Emirates', 33, 'Entry Fragger', 31.89, 261, 570, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1096, 'Caro Borge', 11, 'Ukraine', 33, 'Entry Fragger', 45.90, 320, 426, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1097, 'Anabel Winnard', 11, 'Russia', 22, 'Support', 35.76, 472, 407, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1098, 'Robin Treen', 1, 'Mexico', 27, 'Support', 2.04, 195, 502, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1099, 'Cirillo Domleo', 20, 'Mali', 28, 'Flex', 81.09, 70, 2578, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1100, 'Erminie Friel', 7, 'Brazil', 35, 'Support', 86.39, 164, 2721, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1101, 'Wilton Rorke', 14, 'China', 33, 'Support', 44.75, 25, 2364, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1102, 'Anita Lorkings', 20, 'China', 30, 'Leader', 22.82, 367, 1338, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1103, 'Rowney Oxenbury', 14, 'Egypt', 35, 'Entry Fragger', 50.46, 444, 2297, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1104, 'Fredra Oneal', 17, 'China', 38, 'Leader', 91.92, 91, 1030, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1105, 'Clarinda Keal', 6, 'Egypt', 26, 'Leader', 19.79, 339, 1957, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1106, 'Sutton Londors', 16, 'Greece', 39, 'Flex', 79.06, 69, 1563, 1.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1107, 'Daron Delaney', 21, 'Japan', 18, 'Support', 0.50, 365, 1962, 2.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1108, 'Antony Elacoate', 7, 'Indonesia', 31, 'Entry Fragger', 66.42, 231, 953, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1109, 'Rickey Lansberry', 19, 'Ukraine', 22, 'Flex', 96.97, 227, 2631, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1110, 'Fairlie Heersma', 4, 'Portugal', 42, 'Leader', 60.24, 103, 2653, 1.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1111, 'Devina Deviney', 15, 'South Korea', 21, 'Flex', 1.28, 326, 1152, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1112, 'Sorcha Caddy', 11, 'Philippines', 37, 'Entry Fragger', 84.62, 327, 1864, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1113, 'Cesaro Vallender', 3, 'China', 26, 'Leader', 69.84, 326, 1067, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1114, 'Yorke Gantz', 14, 'China', 39, 'Flex', 78.47, 88, 2195, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1115, 'Kenon MacCartney', 5, 'France', 26, 'Flex', 33.64, 406, 754, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1116, 'Kania Giovannilli', 19, 'Brazil', 34, 'Entry Fragger', 65.64, 104, 1563, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1117, 'Wanda Danne', 19, 'Indonesia', 32, 'Leader', 78.05, 18, 541, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1118, 'Mei Clemence', 15, 'Indonesia', 33, 'Leader', 20.08, 39, 1960, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1119, 'Berk Goulborne', 6, 'Czech Republic', 26, 'Leader', 32.37, 93, 2539, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1120, 'Vachel Sherborn', 16, 'Nigeria', 29, 'Flex', 25.35, 305, 2495, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1121, 'Janice Toby', 10, 'Tanzania', 27, 'Support', 50.24, 27, 1555, 1.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1122, 'Flinn Lampel', 4, 'Russia', 18, 'Entry Fragger', 83.19, 63, 2825, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1123, 'Levy Blethin', 13, 'Russia', 25, 'Entry Fragger', 49.21, 459, 1804, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1124, 'Zaccaria Bielfeld', 3, 'China', 42, 'Flex', 71.16, 262, 1822, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1125, 'Gene Gooly', 1, 'Bulgaria', 38, 'Flex', 60.82, 207, 1518, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1126, 'Brianna Sewall', 4, 'Indonesia', 38, 'Entry Fragger', 16.88, 279, 1507, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1127, 'Arleta Mewrcik', 21, 'Czech Republic', 27, 'Support', 11.95, 324, 1122, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1128, 'Ines Hattoe', 8, 'Ukraine', 19, 'Flex', 20.58, 149, 2910, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1129, 'Kincaid MacCrackan', 10, 'Brazil', 32, 'Leader', 64.93, 397, 516, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1130, 'Kira Goldes', 21, 'Poland', 42, 'Leader', 23.62, 62, 168, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1131, 'De Philpot', 16, 'Greece', 21, 'Flex', 38.80, 365, 2939, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1132, 'Riley De Mitri', 14, 'Iraq', 21, 'Flex', 3.11, 62, 2358, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1133, 'Meredithe Delos', 18, 'Nigeria', 26, 'Flex', 96.68, 217, 2416, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1134, 'Rudy Teather', 4, 'Ukraine', 35, 'Leader', 45.32, 358, 884, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1135, 'Elyse Colt', 16, 'Poland', 41, 'Support', 72.73, 120, 1770, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1136, 'Colver Neill', 9, 'Indonesia', 33, 'Entry Fragger', 37.25, 353, 955, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1137, 'Noby Duffill', 13, 'China', 37, 'Flex', 76.91, 281, 2044, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1138, 'Durante Aizikov', 3, 'China', 42, 'Flex', 36.60, 138, 712, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1139, 'Allayne Mapplebeck', 11, 'China', 40, 'Entry Fragger', 26.12, 425, 678, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1140, 'Filia Leppingwell', 17, 'Sweden', 22, 'Leader', 55.73, 424, 515, 1.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1141, 'Hank Hanbury', 5, 'Philippines', 39, 'Entry Fragger', 39.31, 468, 2185, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1142, 'Kiah Comettoi', 5, 'Colombia', 28, 'Support', 44.09, 144, 2071, 0.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1143, 'Mycah Ruddom', 18, 'China', 18, 'Entry Fragger', 93.25, 293, 727, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1144, 'Burch Luby', 2, 'Kuwait', 30, 'Support', 10.67, 374, 1655, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1145, 'Chase Howen', 11, 'Malaysia', 31, 'Flex', 11.29, 12, 909, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1146, 'Wynnie Kunat', 20, 'Argentina', 29, 'Entry Fragger', 80.58, 289, 2060, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1147, 'Ingrim Elks', 4, 'China', 36, 'Entry Fragger', 87.58, 280, 105, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1148, 'Sella Adnam', 13, 'Uganda', 31, 'Support', 79.28, 53, 152, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1149, 'Melanie Deeny', 10, 'Philippines', 21, 'Entry Fragger', 40.30, 6, 1713, 2.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1150, 'Neely Woolmer', 1, 'Afghanistan', 39, 'Entry Fragger', 99.34, 490, 2798, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1151, 'Rosalia Streetfield', 20, 'Bulgaria', 27, 'Leader', 49.01, 465, 1419, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1152, 'Cordula Beattie', 9, 'China', 18, 'Flex', 39.53, 169, 2324, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1153, 'Jolene Clarkin', 20, 'Philippines', 19, 'Support', 17.30, 111, 1782, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1154, 'Amalia Blumsom', 9, 'Poland', 25, 'Leader', 34.52, 254, 2813, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1155, 'Carter Arter', 3, 'Italy', 36, 'Flex', 52.74, 387, 2445, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1156, 'Inga Oxborrow', 19, 'Sweden', 21, 'Entry Fragger', 75.85, 295, 2943, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1157, 'Sanford Lush', 11, 'Philippines', 27, 'Leader', 60.47, 57, 778, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1158, 'Leia Wannop', 8, 'China', 19, 'Leader', 44.98, 470, 1081, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1159, 'Agneta Featherston', 3, 'Thailand', 28, 'Flex', 81.70, 192, 1990, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1160, 'Lewiss Revett', 7, 'United States', 42, 'Entry Fragger', 6.83, 212, 633, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1161, 'Amie Buard', 15, 'South Korea', 37, 'Leader', 81.23, 447, 491, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1162, 'Barclay Toffolo', 16, 'China', 21, 'Leader', 90.12, 129, 553, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1163, 'Hayward Maunton', 19, 'Indonesia', 22, 'Entry Fragger', 91.63, 337, 878, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1164, 'Valentin Vasile', 16, 'Poland', 30, 'Flex', 29.29, 460, 1940, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1165, 'Danya Mounter', 20, 'Uganda', 20, 'Entry Fragger', 90.76, 430, 2195, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1166, 'Leeanne Townley', 7, 'Poland', 29, 'Flex', 49.13, 462, 1160, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1167, 'Lindsey Akehurst', 19, 'Portugal', 37, 'Leader', 14.52, 164, 1517, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1168, 'Kimberley Keppe', 6, 'China', 18, 'Leader', 95.06, 53, 166, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1169, 'Horatio Guitonneau', 8, 'France', 35, 'Entry Fragger', 50.06, 109, 621, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1170, 'Joana Rowly', 12, 'Nigeria', 19, 'Flex', 63.87, 16, 1987, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1171, 'Quint Collingwood', 8, 'Colombia', 18, 'Entry Fragger', 65.05, 260, 1993, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1172, 'Rhodia Niesegen', 21, 'Russia', 37, 'Entry Fragger', 68.43, 103, 81, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1173, 'Chris Nelthorpe', 18, 'Kazakhstan', 22, 'Entry Fragger', 3.57, 316, 795, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1174, 'Bennie Pymer', 3, 'China', 30, 'Leader', 39.12, 469, 1450, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1175, 'Magdalen Covil', 9, 'Angola', 39, 'Leader', 7.33, 421, 2037, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1176, 'Locke Doreward', 21, 'China', 19, 'Flex', 10.67, 177, 2966, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1177, 'Ardella Alliston', 18, 'Indonesia', 37, 'Flex', 88.87, 463, 2991, 2.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1178, 'Tammy Mardlin', 9, 'Czech Republic', 18, 'Leader', 25.00, 28, 624, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1179, 'Cloris Sharer', 20, 'Czech Republic', 21, 'Flex', 45.55, 222, 879, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1180, 'Bee Heers', 1, 'Latvia', 25, 'Flex', 25.41, 3, 617, 2.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1181, 'Roxanna Hanlon', 17, 'Brazil', 22, 'Flex', 8.87, 98, 838, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1182, 'Vally Pawellek', 1, 'Indonesia', 37, 'Leader', 73.65, 103, 671, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1183, 'Anna-maria Ferran', 10, 'China', 39, 'Leader', 46.60, 426, 918, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1184, 'Rochester McCumskay', 1, 'Indonesia', 35, 'Support', 32.44, 247, 2192, 1.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1185, 'Lyssa Shrubshall', 16, 'Sweden', 20, 'Support', 62.56, 451, 2546, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1186, 'Amalita Dales', 8, 'Colombia', 28, 'Leader', 56.71, 105, 1020, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1187, 'Esma Kinny', 19, 'Guatemala', 24, 'Leader', 82.38, 459, 2770, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1188, 'Pandora Lamkin', 9, 'China', 42, 'Leader', 52.74, 184, 164, 0.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1189, 'Roanna Garken', 15, 'Peru', 21, 'Entry Fragger', 76.75, 385, 1874, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1190, 'Maurice Legrice', 6, 'Norway', 27, 'Flex', 86.24, 19, 1220, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1191, 'Joleen Flory', 9, 'Mexico', 22, 'Flex', 28.25, 266, 393, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1192, 'Angelita Stedall', 7, 'Italy', 19, 'Flex', 53.09, 132, 1438, 0.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1193, 'Roddy Dingate', 19, 'China', 28, 'Support', 10.37, 468, 94, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1194, 'Katee Maffione', 15, 'China', 40, 'Entry Fragger', 83.60, 105, 203, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1195, 'Amelia Casillas', 12, 'Malaysia', 25, 'Flex', 21.73, 187, 902, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1196, 'Tallou Buscher', 1, 'Mexico', 28, 'Entry Fragger', 1.27, 469, 1599, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1197, 'Levy Stiger', 13, 'Indonesia', 24, 'Leader', 10.50, 99, 1326, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1198, 'Chase Etock', 18, 'China', 38, 'Entry Fragger', 71.76, 145, 1807, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1199, 'Gwennie Gherarducci', 7, 'Sweden', 25, 'Support', 50.65, 348, 1068, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1200, 'Delphine Tweedie', 2, 'Russia', 26, 'Leader', 39.06, 29, 2859, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1201, 'Burg Bewshire', 18, 'Tanzania', 21, 'Entry Fragger', 72.71, 294, 1092, 1.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1202, 'Charity MacConchie', 7, 'Kyrgyzstan', 28, 'Flex', 83.30, 173, 2288, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1203, 'Thadeus Carley', 4, 'China', 40, 'Flex', 52.75, 154, 2904, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1204, 'Sean Locksley', 17, 'China', 41, 'Support', 61.94, 195, 998, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1205, 'Franky Rawsthorne', 15, 'France', 21, 'Entry Fragger', 19.43, 138, 2383, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1206, 'Nonah Loudon', 7, 'China', 35, 'Leader', 90.32, 20, 451, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1207, 'Everard Sandal', 17, 'Sudan', 22, 'Leader', 35.04, 431, 1770, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1208, 'Faith Ryott', 17, 'China', 34, 'Flex', 28.93, 276, 2299, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1209, 'Gladys Sandy', 6, 'Russia', 28, 'Flex', 23.19, 16, 1598, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1210, 'Karim Skelhorne', 12, 'Nigeria', 27, 'Leader', 55.06, 500, 2870, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1211, 'Pryce Janosevic', 6, 'Russia', 31, 'Support', 55.59, 348, 2601, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1212, 'Bernelle Bruckner', 21, 'Madagascar', 23, 'Support', 68.63, 445, 1270, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1213, 'Livvie McOrkil', 11, 'Canada', 22, 'Leader', 57.07, 174, 2335, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1214, 'Sabine Hasson', 11, 'Sweden', 35, 'Flex', 52.22, 310, 2252, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1215, 'Merrielle Trenfield', 2, 'Sweden', 39, 'Support', 96.78, 49, 945, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1216, 'Marin Cahillane', 18, 'Guatemala', 26, 'Flex', 99.82, 418, 2087, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1217, 'Pattie Gresham', 18, 'France', 41, 'Support', 44.88, 193, 328, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1218, 'Emerson Kenefick', 20, 'Brazil', 37, 'Entry Fragger', 6.03, 1, 1316, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1219, 'Chariot Bows', 7, 'China', 31, 'Entry Fragger', 18.55, 417, 1876, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1220, 'Neel Kardos', 10, 'China', 19, 'Leader', 35.82, 346, 2582, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1221, 'Ardra Powlesland', 6, 'Indonesia', 28, 'Entry Fragger', 42.00, 35, 1618, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1222, 'Lanna Isacq', 8, 'Indonesia', 41, 'Flex', 88.29, 46, 734, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1223, 'Norrie Linzey', 20, 'Sweden', 27, 'Entry Fragger', 99.52, 372, 1896, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1224, 'Genovera Hambers', 16, 'Sweden', 34, 'Support', 90.91, 47, 2927, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1225, 'Julina Fosse', 6, 'France', 41, 'Entry Fragger', 15.65, 227, 2536, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1226, 'Alvy Wickes', 4, 'China', 27, 'Flex', 63.40, 256, 970, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1227, 'Antin Beaney', 20, 'Poland', 34, 'Entry Fragger', 57.56, 393, 1449, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1228, 'Mayer Weatherburn', 7, 'Russia', 29, 'Support', 9.84, 249, 2396, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1229, 'Hollyanne Wicklen', 15, 'Indonesia', 41, 'Leader', 92.47, 404, 1148, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1230, 'Dana Gawne', 8, 'Palestinian Territory', 32, 'Entry Fragger', 59.57, 88, 1227, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1231, 'Saba Emlyn', 10, 'Indonesia', 37, 'Flex', 58.47, 412, 2807, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1232, 'Clotilda Itzkovsky', 12, 'Ukraine', 22, 'Entry Fragger', 13.44, 225, 1469, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1233, 'Ferrel Goodbourn', 8, 'China', 23, 'Flex', 98.93, 5, 584, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1234, 'Randolf Meletti', 7, 'Indonesia', 41, 'Flex', 42.78, 384, 2474, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1235, 'Felic Garnsworth', 9, 'China', 38, 'Support', 74.28, 377, 2134, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1236, 'Renee Skyme', 1, 'Russia', 34, 'Entry Fragger', 51.30, 236, 1683, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1237, 'Janeta Dobkin', 11, 'Brazil', 26, 'Entry Fragger', 54.44, 195, 2496, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1238, 'Haydon Ovens', 11, 'China', 21, 'Flex', 95.42, 375, 1512, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1239, 'Julienne Okeshott', 8, 'Nigeria', 25, 'Support', 52.22, 315, 1871, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1240, 'Filip Cronkshaw', 13, 'China', 20, 'Flex', 4.61, 444, 949, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1241, 'Harald Drinkeld', 1, 'Philippines', 23, 'Support', 23.20, 301, 1790, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1242, 'Erny Cruise', 20, 'China', 37, 'Flex', 45.64, 297, 2847, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1243, 'Wolf Deetlof', 18, 'Thailand', 29, 'Entry Fragger', 50.50, 398, 2080, 2.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1244, 'Kelcie Felce', 2, 'Morocco', 41, 'Support', 55.94, 73, 567, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1245, 'Svend Elener', 9, 'Japan', 30, 'Entry Fragger', 66.40, 116, 364, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1246, 'Lucille Whettleton', 19, 'Japan', 18, 'Leader', 47.88, 242, 1555, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1247, 'Correy Cunniff', 7, 'China', 41, 'Support', 25.43, 247, 2442, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1248, 'Nalani Larsen', 9, 'Poland', 37, 'Leader', 47.74, 83, 2942, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1249, 'Regan Dresser', 14, 'Canada', 37, 'Entry Fragger', 66.67, 188, 1013, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1250, 'Thurston Boal', 11, 'France', 36, 'Entry Fragger', 91.30, 313, 1680, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1251, 'Britni Devitt', 7, 'Ivory Coast', 41, 'Flex', 60.28, 12, 2482, 0.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1252, 'Arch Abelson', 10, 'France', 25, 'Leader', 72.49, 465, 859, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1253, 'Ossie Breckwell', 18, 'Brazil', 20, 'Leader', 13.14, 418, 451, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1254, 'Evyn Collerd', 18, 'Sweden', 35, 'Leader', 37.59, 67, 105, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1255, 'Elroy Treweke', 2, 'France', 30, 'Entry Fragger', 41.38, 461, 593, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1256, 'Luisa Radnage', 19, 'Iran', 23, 'Support', 15.59, 52, 866, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1257, 'Prudy Surgener', 15, 'Poland', 20, 'Support', 81.29, 200, 936, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1258, 'Erek Licciardello', 6, 'Nepal', 20, 'Leader', 63.05, 158, 1511, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1259, 'Rockey Delaney', 17, 'Brazil', 25, 'Leader', 91.25, 18, 674, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1260, 'Rolland Vedikhov', 14, 'Afghanistan', 42, 'Entry Fragger', 1.32, 259, 799, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1261, 'Hedwiga Manhood', 18, 'China', 21, 'Entry Fragger', 40.19, 450, 1590, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1262, 'Julia Verdey', 1, 'Canada', 22, 'Leader', 24.48, 28, 2760, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1263, 'Dari Brogiotti', 11, 'Poland', 26, 'Flex', 88.30, 364, 747, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1264, 'Scarface Gathercoal', 9, 'Mexico', 27, 'Flex', 67.73, 416, 2041, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1265, 'Briney McPike', 5, 'Bosnia and Herzegovina', 28, 'Flex', 9.57, 444, 1409, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1266, 'Lucky Bellenger', 10, 'Poland', 30, 'Support', 23.70, 119, 811, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1267, 'Roscoe Falla', 1, 'France', 36, 'Leader', 60.15, 62, 1746, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1268, 'Lorens Rounsefull', 4, 'Indonesia', 23, 'Leader', 42.72, 444, 136, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1269, 'Lazare Beccero', 2, 'Brazil', 25, 'Flex', 51.06, 268, 42, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1270, 'Lexy Drillingcourt', 16, 'China', 21, 'Support', 54.00, 30, 313, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1271, 'Pooh Scorthorne', 9, 'Australia', 27, 'Flex', 30.06, 117, 435, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1272, 'Jerri Upwood', 11, 'United Arab Emirates', 29, 'Flex', 30.88, 208, 1698, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1273, 'Dania Kerswell', 3, 'Peru', 41, 'Entry Fragger', 36.35, 55, 1653, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1274, 'Darla Cagan', 15, 'Croatia', 41, 'Support', 58.33, 491, 662, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1275, 'Maddi Duggan', 4, 'Mongolia', 36, 'Leader', 78.80, 58, 619, 0.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1276, 'Allissa Mouatt', 20, 'Cambodia', 30, 'Flex', 31.54, 240, 1238, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1277, 'Doug Eilhertsen', 16, 'Indonesia', 38, 'Entry Fragger', 92.81, 103, 1456, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1278, 'Nicholas Savil', 18, 'Poland', 36, 'Entry Fragger', 16.46, 253, 82, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1279, 'Eben Breitler', 3, 'Russia', 33, 'Leader', 1.85, 284, 213, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1280, 'Arabele Triggel', 12, 'Brazil', 23, 'Entry Fragger', 66.26, 174, 1348, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1281, 'Rici Petrozzi', 15, 'Japan', 37, 'Entry Fragger', 75.29, 399, 2783, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1282, 'Karlie Mellmer', 11, 'Indonesia', 35, 'Leader', 9.68, 451, 64, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1283, 'Carena Reap', 1, 'Russia', 33, 'Entry Fragger', 69.61, 92, 1326, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1284, 'Bel Demke', 11, 'Russia', 28, 'Entry Fragger', 2.17, 443, 1412, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1285, 'Sophey Dublin', 11, 'Russia', 42, 'Entry Fragger', 69.95, 398, 1593, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1286, 'Bren Issac', 4, 'Philippines', 40, 'Leader', 74.68, 347, 1121, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1287, 'Abigail Pollen', 19, 'Thailand', 35, 'Support', 48.98, 411, 320, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1288, 'Blisse Yurukhin', 9, 'Indonesia', 33, 'Support', 69.87, 55, 1861, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1289, 'Alexander MacKim', 10, 'Sweden', 35, 'Entry Fragger', 96.09, 171, 190, 2.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1290, 'Osbourn Hardingham', 8, 'Croatia', 40, 'Entry Fragger', 73.12, 69, 2847, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1291, 'Rosaline Ridger', 19, 'Israel', 28, 'Support', 50.23, 454, 2463, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1292, 'Kikelia Cockshutt', 10, 'Philippines', 28, 'Leader', 32.85, 187, 2362, 1.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1293, 'Guthrie Turban', 18, 'Zimbabwe', 34, 'Flex', 18.18, 429, 2427, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1294, 'Paulita Garretson', 21, 'Portugal', 39, 'Flex', 40.32, 26, 565, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1295, 'Evy Bench', 15, 'Poland', 31, 'Support', 30.85, 5, 2549, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1296, 'Gardie Cattow', 5, 'Poland', 28, 'Flex', 72.51, 371, 109, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1297, 'Krystalle Walrond', 11, 'Indonesia', 25, 'Flex', 74.98, 302, 202, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1298, 'Jilly Grotty', 11, 'Denmark', 30, 'Flex', 57.40, 75, 2304, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1299, 'Demeter Quantrell', 3, 'Philippines', 23, 'Entry Fragger', 35.06, 26, 227, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1300, 'Ranique Woodley', 16, 'China', 24, 'Entry Fragger', 10.51, 67, 2117, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1301, 'Holli Dicte', 11, 'Poland', 18, 'Support', 72.09, 285, 1427, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1302, 'Alejoa Greatbatch', 6, 'China', 35, 'Entry Fragger', 87.36, 415, 247, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1303, 'Arie Kave', 12, 'Croatia', 37, 'Entry Fragger', 32.96, 352, 1164, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1304, 'Raychel Lumbley', 2, 'Kenya', 20, 'Entry Fragger', 10.48, 43, 2607, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1305, 'Carmelina Arch', 13, 'Ivory Coast', 27, 'Support', 41.87, 351, 938, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1306, 'Britteny Kuschek', 5, 'Poland', 41, 'Entry Fragger', 10.81, 458, 2877, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1307, 'Euphemia Primmer', 9, 'China', 26, 'Support', 82.46, 271, 1637, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1308, 'Ave Brandone', 1, 'Iran', 38, 'Entry Fragger', 28.22, 163, 2703, 0.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1309, 'Saxon Severy', 20, 'China', 27, 'Leader', 15.37, 292, 1689, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1310, 'Licha McAreavey', 9, 'Mexico', 32, 'Entry Fragger', 55.93, 225, 2781, 1.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1311, 'Dillon Paradis', 3, 'Kenya', 35, 'Flex', 3.20, 290, 2535, 0.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1312, 'Dorotea Markovich', 15, 'Russia', 18, 'Flex', 72.77, 281, 148, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1313, 'Bird Josse', 17, 'Poland', 40, 'Flex', 81.33, 374, 2907, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1314, 'Chantalle Seville', 10, 'China', 40, 'Leader', 65.57, 276, 1090, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1315, 'Deanna Santer', 20, 'Ukraine', 31, 'Entry Fragger', 31.62, 230, 672, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1316, 'Raleigh Placidi', 16, 'Peru', 36, 'Entry Fragger', 24.47, 42, 1833, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1317, 'Nollie Fitzharris', 15, 'Czech Republic', 41, 'Flex', 98.27, 188, 1614, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1318, 'August Yeandel', 20, 'Indonesia', 20, 'Flex', 43.59, 270, 1607, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1319, 'Annora McGauhy', 7, 'France', 31, 'Leader', 53.17, 208, 551, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1320, 'Rubetta Cominello', 16, 'Japan', 40, 'Support', 22.94, 273, 1359, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1321, 'Mollee Siseland', 20, 'Vanuatu', 25, 'Leader', 78.68, 415, 1485, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1322, 'Charlotta Bomfield', 5, 'Philippines', 32, 'Flex', 48.74, 278, 494, 2.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1323, 'Gypsy Keming', 11, 'United Arab Emirates', 40, 'Flex', 14.45, 343, 784, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1324, 'Doyle De Cruce', 20, 'Guadeloupe', 25, 'Flex', 99.45, 240, 2960, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1325, 'Eunice Buttner', 2, 'France', 20, 'Support', 62.90, 246, 398, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1326, 'Ramsay Mompesson', 21, 'Russia', 36, 'Support', 84.35, 107, 699, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1327, 'Georgeanne Chifney', 13, 'Nigeria', 28, 'Support', 74.67, 106, 157, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1328, 'Huntlee Lisciardelli', 4, 'Japan', 27, 'Entry Fragger', 62.76, 156, 245, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1329, 'Imojean Sallans', 9, 'Indonesia', 28, 'Leader', 63.75, 215, 1147, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1330, 'Lindy Benning', 19, 'Indonesia', 29, 'Leader', 51.09, 191, 2100, 1.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1331, 'Archaimbaud Kendrick', 8, 'Honduras', 22, 'Support', 10.44, 363, 1468, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1332, 'Jacquette Crutchley', 8, 'Oman', 28, 'Leader', 92.81, 128, 2679, 2.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1333, 'Trude Children', 11, 'Bosnia and Herzegovina', 18, 'Entry Fragger', 45.11, 279, 484, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1334, 'Corabelle Cribbin', 20, 'Russia', 27, 'Flex', 13.53, 215, 2538, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1335, 'Carolus Saladine', 17, 'Tunisia', 33, 'Flex', 69.69, 458, 1731, 1.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1336, 'Dominick Belin', 5, 'Armenia', 37, 'Entry Fragger', 23.29, 54, 2804, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1337, 'Kaia Do', 9, 'Sweden', 36, 'Flex', 48.87, 371, 2315, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1338, 'Chuck MacTrustrie', 10, 'Saudi Arabia', 24, 'Leader', 47.89, 449, 425, 0.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1339, 'Florence Ovill', 2, 'Zimbabwe', 19, 'Support', 10.57, 193, 2126, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1340, 'Alexis Odgaard', 20, 'Indonesia', 42, 'Support', 74.78, 384, 997, 2.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1341, 'Wolf Nesbeth', 1, 'Poland', 26, 'Flex', 86.14, 415, 1294, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1342, 'Frannie Deaville', 9, 'United States', 19, 'Leader', 32.06, 139, 1737, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1343, 'Alix Illston', 8, 'Indonesia', 31, 'Flex', 82.24, 435, 2666, 0.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1344, 'Carmel McLagain', 14, 'Guatemala', 28, 'Leader', 32.46, 91, 1406, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1345, 'Byrom Yashanov', 3, 'China', 30, 'Support', 48.09, 93, 481, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1346, 'Link Pigny', 11, 'Mexico', 41, 'Support', 26.25, 138, 1486, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1347, 'Donella Peploe', 16, 'China', 18, 'Support', 95.06, 220, 1674, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1348, 'Karita Unthank', 11, 'Brazil', 19, 'Flex', 69.18, 208, 844, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1349, 'Carrol Matzen', 19, 'China', 40, 'Flex', 67.53, 64, 2230, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1350, 'Ursa Chew', 8, 'Philippines', 28, 'Entry Fragger', 64.64, 440, 65, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1351, 'Kerwinn Garrat', 12, 'China', 34, 'Flex', 53.64, 427, 2076, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1352, 'Hildy Toothill', 13, 'Indonesia', 18, 'Entry Fragger', 72.26, 407, 886, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1353, 'Stanfield Eul', 21, 'Philippines', 32, 'Leader', 48.17, 30, 1154, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1354, 'Quent Gwioneth', 3, 'Brazil', 38, 'Flex', 25.56, 347, 2198, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1355, 'Wilma Bragge', 7, 'Morocco', 24, 'Flex', 9.81, 369, 1181, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1356, 'Gretta Gathwaite', 6, 'Vietnam', 40, 'Leader', 25.83, 381, 934, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1357, 'Sully Bridgstock', 17, 'Egypt', 23, 'Leader', 83.49, 364, 1369, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1358, 'Johnathan Coite', 2, 'Russia', 26, 'Leader', 43.15, 162, 283, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1359, 'Gunar Bernholt', 4, 'France', 30, 'Support', 42.57, 354, 2515, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1360, 'Frannie Standing', 14, 'China', 38, 'Support', 21.65, 377, 2951, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1361, 'Brooks Leall', 7, 'Macedonia', 27, 'Support', 20.24, 388, 2208, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1362, 'Evanne Witherbed', 6, 'Ukraine', 40, 'Support', 48.36, 406, 1442, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1363, 'Shurlocke Kittoe', 21, 'Iran', 39, 'Flex', 84.99, 368, 1141, 0.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1364, 'Alric Catchpole', 2, 'United States', 33, 'Flex', 21.85, 16, 800, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1365, 'Hilton Chennells', 1, 'China', 22, 'Leader', 81.76, 201, 2938, 2.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1366, 'Tiertza Chmarny', 15, 'Sweden', 18, 'Leader', 79.46, 111, 2610, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1367, 'Waverley Hudspeth', 1, 'Marshall Islands', 32, 'Support', 5.78, 79, 2999, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1368, 'Bertram Coomer', 4, 'Ukraine', 20, 'Entry Fragger', 4.60, 285, 2328, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1369, 'Nani Merkle', 11, 'Thailand', 26, 'Leader', 39.18, 165, 2076, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1370, 'Zora Marcinkowski', 18, 'Canada', 27, 'Support', 66.72, 33, 957, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1371, 'Sib Bootman', 11, 'Portugal', 23, 'Entry Fragger', 61.25, 136, 1381, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1372, 'Wiley Culbard', 10, 'Honduras', 20, 'Entry Fragger', 77.54, 479, 1338, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1373, 'Inge Yesenev', 13, 'Thailand', 20, 'Entry Fragger', 66.95, 219, 2524, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1374, 'Ami Capaldi', 21, 'Yemen', 31, 'Flex', 8.26, 323, 1968, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1375, 'Audrye Shear', 10, 'China', 34, 'Entry Fragger', 43.94, 138, 365, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1376, 'Muriel Ackenson', 21, 'United States', 37, 'Entry Fragger', 8.58, 421, 1713, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1377, 'Calida Ferrieroi', 13, 'China', 41, 'Flex', 17.72, 267, 2250, 2.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1378, 'Dyan Corona', 10, 'Indonesia', 30, 'Flex', 35.26, 284, 905, 2.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1379, 'Robers Philbrick', 8, 'China', 30, 'Flex', 89.76, 6, 2832, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1380, 'Baily Crew', 15, 'Indonesia', 41, 'Support', 91.18, 382, 40, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1381, 'Oliy Sherlock', 4, 'Canada', 27, 'Leader', 96.71, 495, 2449, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1382, 'Lynde Lisciardelli', 14, 'China', 25, 'Flex', 47.13, 347, 119, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1383, 'Steven Solley', 9, 'Ukraine', 27, 'Support', 82.54, 421, 801, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1384, 'Seumas Corney', 17, 'Indonesia', 31, 'Entry Fragger', 53.14, 462, 227, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1385, 'Clementine Diggar', 3, 'Brazil', 24, 'Leader', 35.37, 417, 1096, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1386, 'Ermin Madle', 9, 'Portugal', 36, 'Entry Fragger', 55.38, 98, 1477, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1387, 'Jonell Coneau', 5, 'France', 23, 'Entry Fragger', 12.50, 88, 1323, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1388, 'Bronson Kiellor', 14, 'China', 41, 'Support', 48.97, 450, 13, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1389, 'Sherlock Roubay', 19, 'China', 35, 'Flex', 48.29, 249, 2113, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1390, 'Fern Seeman', 16, 'Sweden', 34, 'Entry Fragger', 55.41, 262, 1685, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1391, 'Nerta Cantwell', 12, 'Philippines', 26, 'Flex', 75.41, 229, 706, 2.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1392, 'Danice Tregenza', 7, 'United States', 32, 'Entry Fragger', 95.87, 27, 1486, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1393, 'Tades Fairebrother', 17, 'Czech Republic', 34, 'Leader', 75.91, 352, 496, 2.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1394, 'Jacki Gerred', 21, 'Czech Republic', 37, 'Flex', 91.42, 298, 2777, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1395, 'Fons Helleckas', 7, 'China', 31, 'Entry Fragger', 25.44, 310, 1204, 2.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1396, 'Darelle Beggio', 20, 'Nigeria', 19, 'Entry Fragger', 16.10, 488, 1437, 2.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1397, 'Minnie Scobbie', 3, 'China', 26, 'Entry Fragger', 25.83, 462, 2315, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1398, 'Nyssa Zaple', 6, 'Brazil', 40, 'Entry Fragger', 83.38, 483, 582, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1399, 'Frayda Hark', 4, 'Germany', 41, 'Flex', 56.55, 113, 1171, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1400, 'Brooke Theze', 14, 'Montenegro', 27, 'Support', 70.37, 353, 1945, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1401, 'Rafaelita Tatham', 10, 'Cameroon', 23, 'Flex', 69.78, 253, 2830, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1402, 'Adrian Gavrielly', 6, 'Russia', 41, 'Flex', 81.49, 68, 2111, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1403, 'Xenos Wethey', 5, 'France', 37, 'Flex', 91.60, 130, 907, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1404, 'Gustavo Solano', 8, 'Colombia', 29, 'Entry Fragger', 58.86, 206, 1230, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1405, 'Vicky Cook', 9, 'Peru', 23, 'Flex', 52.67, 404, 1899, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1406, 'Dillie Matkovic', 10, 'China', 26, 'Entry Fragger', 91.44, 302, 375, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1407, 'Flint Prosch', 2, 'United States', 21, 'Support', 25.76, 125, 2941, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1408, 'Danni Rabjohns', 2, 'Ukraine', 39, 'Support', 8.14, 353, 1204, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1409, 'Ottilie Benoy', 2, 'Russia', 28, 'Entry Fragger', 3.07, 498, 1318, 2.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1410, 'Netty Seine', 3, 'Philippines', 34, 'Support', 60.42, 485, 2038, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1411, 'Philomena McCloid', 15, 'Zimbabwe', 20, 'Support', 86.94, 374, 1599, 1.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1412, 'Lainey Stroobant', 3, 'Ukraine', 21, 'Leader', 21.72, 44, 2319, 1.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1413, 'Rita Kelk', 10, 'Poland', 21, 'Support', 76.42, 63, 1519, 0.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1414, 'Haskell Morcomb', 8, 'Philippines', 19, 'Entry Fragger', 83.95, 431, 1004, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1415, 'Wilbert Fearby', 20, 'United States', 29, 'Entry Fragger', 37.40, 433, 252, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1416, 'Sutherlan Lomath', 15, 'Japan', 26, 'Leader', 97.06, 481, 2459, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1417, 'Peggy Jenicek', 5, 'Poland', 38, 'Entry Fragger', 69.61, 4, 2662, 1.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1418, 'Sholom Flement', 15, 'China', 25, 'Entry Fragger', 61.21, 255, 2091, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1419, 'Kynthia Bissill', 4, 'Philippines', 20, 'Flex', 50.12, 409, 393, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1420, 'Rance Inglish', 21, 'China', 31, 'Support', 62.09, 179, 281, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1421, 'Ceil Eilhart', 6, 'Brazil', 31, 'Flex', 70.58, 428, 2440, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1422, 'Earl Labin', 13, 'Russia', 22, 'Leader', 22.17, 150, 2112, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1423, 'Gardiner Wickrath', 9, 'Kyrgyzstan', 24, 'Entry Fragger', 22.51, 82, 2779, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1424, 'Oneida Kinchin', 19, 'Indonesia', 40, 'Leader', 52.70, 401, 735, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1425, 'Giacopo Tatnell', 1, 'Armenia', 28, 'Entry Fragger', 86.61, 358, 2749, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1426, 'Emalia Greensall', 20, 'Philippines', 41, 'Flex', 40.44, 454, 2117, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1427, 'Marji Germann', 21, 'Indonesia', 18, 'Flex', 27.62, 223, 2141, 0.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1428, 'Monti Spenley', 12, 'Slovenia', 22, 'Support', 49.80, 410, 2913, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1429, 'Tobiah Hayley', 17, 'Samoa', 21, 'Flex', 29.55, 485, 1376, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1430, 'Callie Lansbury', 19, 'Portugal', 38, 'Leader', 4.13, 215, 172, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1431, 'Robina Ricardou', 12, 'Brazil', 24, 'Leader', 35.84, 477, 452, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1432, 'Leonid Mansbridge', 17, 'China', 22, 'Entry Fragger', 94.01, 121, 32, 1.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1433, 'Genevra Burnand', 10, 'Croatia', 22, 'Leader', 45.75, 130, 2150, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1434, 'Shayna Amy', 17, 'Germany', 18, 'Leader', 77.38, 149, 875, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1435, 'Germaine Sandes', 7, 'Colombia', 33, 'Flex', 19.30, 181, 1125, 2.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1436, 'Betsey Janicki', 20, 'Indonesia', 29, 'Leader', 14.42, 394, 1184, 2.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1437, 'Nelle Puttan', 6, 'Colombia', 40, 'Support', 68.85, 272, 81, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1438, 'Ardath Littlekit', 9, 'Canada', 37, 'Flex', 64.49, 494, 1835, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1439, 'Ted Ladley', 1, 'Sweden', 35, 'Support', 65.26, 76, 663, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1440, 'Hunt Igonet', 5, 'Argentina', 32, 'Flex', 80.15, 277, 2682, 1.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1441, 'Jayme Boyington', 18, 'China', 33, 'Leader', 95.42, 24, 2778, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1442, 'Murray Pregel', 7, 'China', 23, 'Leader', 90.08, 15, 1188, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1443, 'Karmen Girone', 7, 'Russia', 42, 'Entry Fragger', 59.01, 180, 2360, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1444, 'Joleen Lorenzo', 15, 'China', 24, 'Flex', 11.78, 410, 1115, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1445, 'Clary Moreman', 21, 'United States', 23, 'Flex', 96.94, 290, 2846, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1446, 'Tabbie Smillie', 11, 'Lesotho', 34, 'Support', 89.65, 445, 2303, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1447, 'Hashim Nellis', 6, 'Peru', 22, 'Flex', 45.15, 312, 2587, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1448, 'Aguie Pockey', 16, 'United States', 23, 'Entry Fragger', 92.76, 24, 638, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1449, 'Laughton Marvin', 11, 'Portugal', 19, 'Leader', 77.65, 187, 1337, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1450, 'Chantalle Ledwidge', 5, 'China', 39, 'Leader', 12.02, 472, 686, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1451, 'Marleen Shilito', 21, 'Indonesia', 22, 'Flex', 39.85, 82, 2743, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1452, 'Antonetta Clowsley', 18, 'China', 24, 'Flex', 39.97, 405, 152, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1453, 'Bendick Wollard', 6, 'Russia', 32, 'Flex', 93.98, 244, 1077, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1454, 'Nada Slaten', 9, 'Sweden', 33, 'Flex', 79.61, 31, 2385, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1455, 'Irina Corneil', 14, 'Colombia', 29, 'Flex', 78.98, 470, 1349, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1456, 'Valdemar McCoish', 9, 'Indonesia', 23, 'Leader', 37.11, 34, 528, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1457, 'Cristie Ghiotto', 1, 'Belarus', 37, 'Flex', 67.72, 20, 134, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1458, 'Natty Attersoll', 20, 'China', 39, 'Leader', 87.57, 339, 1909, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1459, 'Ellette Crimp', 14, 'Brazil', 26, 'Leader', 74.96, 393, 2290, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1460, 'Aloise Caesar', 14, 'Portugal', 34, 'Entry Fragger', 80.06, 222, 2019, 0.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1461, 'Amara Djuricic', 11, 'Indonesia', 29, 'Support', 14.16, 296, 335, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1462, 'Rennie Medlar', 15, 'Philippines', 35, 'Flex', 46.87, 371, 527, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1463, 'Ivory Walter', 7, 'China', 32, 'Support', 27.05, 129, 2763, 1.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1464, 'Suzanne Edgson', 2, 'China', 33, 'Flex', 77.12, 416, 1825, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1465, 'Giorgi Tosney', 13, 'China', 33, 'Leader', 41.56, 64, 2145, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1466, 'Mikey Wilkennson', 9, 'Poland', 25, 'Flex', 33.68, 492, 993, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1467, 'Chevalier Basford', 4, 'Philippines', 41, 'Flex', 7.11, 283, 1376, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1468, 'Mario Madsen', 12, 'Hungary', 39, 'Flex', 80.70, 249, 2635, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1469, 'Tobi Vel', 21, 'Philippines', 41, 'Entry Fragger', 22.53, 133, 2087, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1470, 'Nisse Guys', 15, 'China', 24, 'Entry Fragger', 30.68, 136, 780, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1471, 'Delcine Odegaard', 14, 'China', 26, 'Entry Fragger', 76.84, 43, 764, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1472, 'Weston Muat', 21, 'Latvia', 40, 'Leader', 20.88, 282, 2003, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1473, 'Bengt Dayley', 13, 'Iran', 26, 'Leader', 55.99, 235, 2689, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1474, 'Alexandra Chesnay', 7, 'Azerbaijan', 26, 'Support', 95.00, 131, 1304, 0.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1475, 'Lorie Bruneau', 15, 'Thailand', 37, 'Support', 2.72, 409, 1749, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1476, 'Tilly Alenin', 4, 'Philippines', 25, 'Support', 50.30, 34, 1502, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1477, 'Ambrosio Sara', 11, 'Tunisia', 31, 'Leader', 36.13, 160, 1425, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1478, 'Jimmy Odam', 4, 'Netherlands', 28, 'Flex', 53.54, 67, 236, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1479, 'Olav Chidler', 10, 'France', 27, 'Entry Fragger', 72.25, 116, 2747, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1480, 'Rafa Reolfo', 16, 'Russia', 40, 'Entry Fragger', 13.27, 322, 495, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1481, 'Eugenius Fishlee', 4, 'Czech Republic', 41, 'Flex', 0.14, 318, 147, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1482, 'Dosi Dell Casa', 7, 'Indonesia', 28, 'Leader', 27.80, 60, 508, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1483, 'Tymothy Mollett', 9, 'Brazil', 21, 'Flex', 23.95, 478, 1442, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1484, 'Sib Wetwood', 1, 'Czech Republic', 25, 'Leader', 46.00, 133, 1170, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1485, 'Hannah McCready', 12, 'Indonesia', 41, 'Leader', 71.12, 257, 1345, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1486, 'Simeon Chrippes', 14, 'Russia', 21, 'Support', 15.49, 294, 2326, 0.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1487, 'Britni Shirtliff', 8, 'Estonia', 33, 'Flex', 92.30, 61, 936, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1488, 'Dorie Rozea', 5, 'Czech Republic', 29, 'Flex', 98.32, 80, 1891, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1489, 'Ettore McKeeman', 19, 'Brazil', 29, 'Flex', 11.39, 345, 1232, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1490, 'Carlos Strelitz', 10, 'Portugal', 28, 'Entry Fragger', 20.20, 338, 2358, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1491, 'Lyda Ashbee', 9, 'Palestinian Territory', 24, 'Entry Fragger', 27.28, 498, 928, 0.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1492, 'Evita Prys', 13, 'Poland', 29, 'Support', 76.49, 308, 1309, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1493, 'Benedetta Coupar', 2, 'Sweden', 34, 'Support', 64.02, 319, 192, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1494, 'Bettine Quinn', 18, 'Russia', 21, 'Support', 88.20, 207, 2252, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1495, 'Goldie Douberday', 13, 'Ireland', 42, 'Support', 16.74, 78, 2280, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1496, 'Allianora Bortoli', 15, 'Indonesia', 33, 'Flex', 10.41, 82, 1530, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1497, 'Zachery Fuentez', 17, 'Indonesia', 35, 'Leader', 74.49, 260, 775, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1498, 'Judas Winfield', 14, 'China', 20, 'Support', 44.02, 269, 2123, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1499, 'Farly Kender', 8, 'Poland', 28, 'Support', 37.71, 275, 1275, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1500, 'Margaret Jzhakov', 21, 'United States', 41, 'Support', 86.38, 337, 2977, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1501, 'Flin Crebbin', 2, 'Thailand', 26, 'Support', 62.47, 376, 2772, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1502, 'Angy Ashfold', 2, 'United States', 21, 'Support', 44.26, 426, 2434, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1503, 'Francyne Malthus', 12, 'Japan', 33, 'Flex', 76.25, 32, 1947, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1504, 'Tad Stopper', 14, 'China', 33, 'Leader', 4.06, 336, 1971, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1505, 'Coralie Gravell', 4, 'Russia', 34, 'Leader', 27.49, 281, 2977, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1506, 'Faustina Cometti', 10, 'Greece', 18, 'Entry Fragger', 13.56, 88, 1019, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1507, 'Dory Fredi', 6, 'Russia', 32, 'Support', 27.14, 44, 341, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1508, 'Ferrel Lande', 13, 'China', 42, 'Leader', 48.46, 428, 2756, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1509, 'Cliff Hounsome', 20, 'Sweden', 26, 'Flex', 23.31, 473, 2172, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1510, 'Tomas Willimont', 8, 'Indonesia', 26, 'Leader', 61.03, 10, 248, 1.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1511, 'Gwendolin Rainforth', 2, 'China', 35, 'Entry Fragger', 66.34, 37, 1168, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1512, 'Antoine Woodruffe', 2, 'Lithuania', 41, 'Leader', 97.52, 497, 2224, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1513, 'Bar Jodlkowski', 1, 'Colombia', 42, 'Flex', 10.70, 450, 2711, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1514, 'Udell Eastope', 11, 'Kazakhstan', 35, 'Flex', 3.48, 136, 2634, 0.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1515, 'Cecilia Ajsik', 10, 'China', 31, 'Flex', 27.77, 310, 413, 1.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1516, 'Greta Burnsyde', 11, 'Ecuador', 27, 'Support', 90.38, 398, 540, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1517, 'Franciska Colebourn', 18, 'Mongolia', 36, 'Leader', 83.85, 364, 263, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1518, 'Kara-lynn Spragge', 20, 'Venezuela', 40, 'Entry Fragger', 31.52, 153, 2359, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1519, 'Clywd Featherston', 18, 'Portugal', 38, 'Entry Fragger', 30.53, 259, 1109, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1520, 'Cletis Hodgins', 12, 'France', 21, 'Entry Fragger', 72.01, 158, 1885, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1521, 'Bunnie Gorstidge', 12, 'Thailand', 20, 'Entry Fragger', 29.51, 276, 2449, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1522, 'Orazio Arman', 9, 'Russia', 36, 'Support', 53.13, 351, 940, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1523, 'Gilbertina Heining', 5, 'Democratic Republic of the Congo', 38, 'Support', 41.16, 221, 693, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1524, 'Vincent Berney', 16, 'Morocco', 23, 'Leader', 32.37, 110, 2552, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1525, 'Janeen Aldritt', 9, 'Panama', 22, 'Support', 65.39, 291, 1670, 1.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1526, 'Jewelle Morey', 4, 'Slovenia', 18, 'Support', 1.18, 62, 2371, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1527, 'Alis Pawling', 21, 'Indonesia', 19, 'Leader', 53.81, 219, 935, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1528, 'Quintana Boole', 10, 'Peru', 38, 'Entry Fragger', 46.10, 92, 1704, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1529, 'Meade Toghill', 11, 'Portugal', 30, 'Leader', 46.10, 333, 71, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1530, 'Collin Dupre', 18, 'China', 23, 'Entry Fragger', 61.86, 468, 898, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1531, 'Ingaborg Sloper', 3, 'Russia', 37, 'Entry Fragger', 22.83, 476, 846, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1532, 'Killy Huxtable', 8, 'Indonesia', 32, 'Flex', 36.07, 47, 2707, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1533, 'Ailbert Biswell', 20, 'Greece', 22, 'Support', 70.41, 118, 1612, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1534, 'Therine McLeoid', 18, 'Brazil', 21, 'Flex', 30.02, 330, 2961, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1535, 'Florencia Lindsell', 16, 'Poland', 40, 'Support', 67.60, 260, 593, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1536, 'Sauveur Kobu', 17, 'Cameroon', 32, 'Entry Fragger', 20.27, 203, 534, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1537, 'Sander De Dantesie', 17, 'Japan', 40, 'Flex', 13.48, 307, 1414, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1538, 'Marlene Zukerman', 19, 'Nigeria', 20, 'Leader', 13.14, 15, 1378, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1539, 'Hal Kensy', 2, 'Russia', 23, 'Leader', 16.16, 388, 1889, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1540, 'Deena Warlawe', 21, 'Indonesia', 40, 'Leader', 41.41, 166, 2092, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1541, 'Roxy Margery', 3, 'Pakistan', 32, 'Flex', 75.22, 432, 717, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1542, 'Kendra Tomaselli', 19, 'China', 34, 'Leader', 63.14, 425, 1276, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1543, 'Cristal Edmund', 19, 'China', 24, 'Entry Fragger', 16.34, 203, 1280, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1544, 'Hedi Fife', 5, 'China', 24, 'Entry Fragger', 79.03, 401, 1848, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1545, 'Arron Perfitt', 9, 'Sweden', 27, 'Entry Fragger', 75.18, 78, 1428, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1546, 'Corrianne Kondratyuk', 1, 'Indonesia', 24, 'Leader', 24.05, 453, 1979, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1547, 'Camellia Goard', 2, 'South Africa', 34, 'Flex', 85.83, 454, 1220, 0.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1548, 'Tiphani Kareman', 9, 'Philippines', 33, 'Leader', 1.49, 247, 1989, 1.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1549, 'Lotti Bayfield', 11, 'Philippines', 40, 'Flex', 74.08, 322, 1795, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1550, 'Dexter Klishin', 7, 'China', 21, 'Flex', 1.68, 104, 6, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1551, 'Hanna Braganca', 8, 'Sweden', 38, 'Flex', 36.72, 396, 2671, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1552, 'Timmie Liddiard', 16, 'Morocco', 19, 'Entry Fragger', 80.44, 476, 122, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1553, 'Barret Hartfleet', 19, 'France', 31, 'Entry Fragger', 49.37, 353, 2914, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1554, 'Cthrine Bust', 5, 'Israel', 27, 'Entry Fragger', 46.58, 310, 1802, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1555, 'Emlyn Wood', 9, 'South Korea', 37, 'Support', 21.59, 283, 1674, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1556, 'Lewes Balentyne', 19, 'Indonesia', 30, 'Entry Fragger', 16.22, 90, 135, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1557, 'Roldan Grantham', 12, 'Russia', 22, 'Flex', 7.24, 301, 1871, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1558, 'Teador Woolward', 9, 'Poland', 20, 'Leader', 97.36, 244, 713, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1559, 'Yolanthe Maliphant', 18, 'China', 32, 'Leader', 5.06, 339, 184, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1560, 'Bobbye Mordanti', 20, 'Japan', 34, 'Flex', 56.50, 218, 2429, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1561, 'Coriss Fandrich', 12, 'Albania', 40, 'Support', 23.41, 338, 2172, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1562, 'Gracie Robbert', 9, 'Morocco', 24, 'Flex', 90.79, 400, 1114, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1563, 'Daphna Ranklin', 15, 'Ghana', 30, 'Flex', 55.96, 390, 2114, 0.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1564, 'Ikey Berndt', 8, 'Slovenia', 28, 'Support', 12.69, 300, 1845, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1565, 'Prudy Gonoude', 10, 'China', 30, 'Flex', 59.37, 466, 1853, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg');
+INSERT INTO `r6_player` (`id`, `player_name`, `team_id`, `nationality`, `age`, `role`, `headshot_percentage`, `total_games`, `total_deaths`, `kd_ratio`, `created_at`, `updated_at`, `deleted_at`, `description`, `image`) VALUES
+(1566, 'Mable Scoterbosh', 17, 'China', 21, 'Leader', 63.43, 438, 1042, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1567, 'Sophia Sage', 18, 'China', 41, 'Flex', 64.35, 136, 2578, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1568, 'Nehemiah Bisset', 9, 'Armenia', 21, 'Leader', 24.31, 491, 424, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1569, 'Gayel Castellan', 16, 'Cuba', 34, 'Flex', 35.81, 439, 1435, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1570, 'Fionnula McFade', 10, 'China', 31, 'Support', 77.87, 165, 761, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1571, 'Augustine Pethrick', 4, 'Sweden', 34, 'Flex', 59.08, 497, 1314, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1572, 'Daile Pryn', 19, 'China', 29, 'Support', 41.50, 350, 932, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1573, 'Pauly Claus', 2, 'Iran', 19, 'Support', 9.94, 166, 2329, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1574, 'Denys Petford', 2, 'Brazil', 42, 'Leader', 73.09, 283, 1102, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1575, 'Gram Kender', 11, 'Russia', 36, 'Flex', 49.46, 97, 1107, 1.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1576, 'Trisha Lanigan', 18, 'Ukraine', 42, 'Entry Fragger', 48.44, 490, 923, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1577, 'Teodora Vaune', 14, 'Argentina', 20, 'Leader', 46.24, 376, 222, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1578, 'Harlene Toll', 4, 'Macedonia', 20, 'Flex', 70.81, 457, 965, 0.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1579, 'Caressa Breslin', 18, 'Yemen', 34, 'Flex', 10.07, 112, 1109, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1580, 'Cam Lautie', 1, 'Ukraine', 27, 'Entry Fragger', 56.52, 499, 138, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1581, 'Pavia Westwater', 20, 'Russia', 32, 'Leader', 27.04, 410, 207, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1582, 'Yoshi Figgures', 2, 'Burundi', 19, 'Support', 42.57, 220, 143, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1583, 'Roddie Hawthorn', 19, 'Indonesia', 39, 'Support', 30.88, 326, 1007, 1.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1584, 'Lyn Perham', 15, 'Sweden', 29, 'Entry Fragger', 72.04, 266, 1785, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1585, 'Caye Nend', 3, 'Switzerland', 19, 'Entry Fragger', 13.07, 277, 63, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1586, 'Filberto Wardroper', 2, 'China', 24, 'Leader', 73.76, 77, 330, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1587, 'Witty Dutteridge', 2, 'Portugal', 21, 'Support', 44.62, 388, 696, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1588, 'Meggie McKeran', 15, 'Indonesia', 41, 'Support', 12.21, 352, 2639, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1589, 'Shirley Antao', 12, 'Czech Republic', 18, 'Leader', 23.61, 68, 819, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1590, 'Hoebart Clissett', 15, 'China', 35, 'Leader', 0.34, 325, 2759, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1591, 'Kelley Harber', 17, 'Latvia', 39, 'Flex', 65.57, 247, 614, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1592, 'North Childs', 17, 'Indonesia', 30, 'Leader', 34.26, 462, 1909, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1593, 'Chiquia Robjant', 4, 'Portugal', 36, 'Support', 10.20, 186, 2303, 1.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1594, 'Hilarius Farnon', 18, 'South Korea', 21, 'Leader', 6.82, 251, 1269, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1595, 'Dorena Lockney', 8, 'Belarus', 34, 'Support', 81.57, 250, 1520, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1596, 'Nariko Chatto', 4, 'Bosnia and Herzegovina', 24, 'Entry Fragger', 11.96, 484, 2883, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1597, 'Sammy Maynell', 8, 'United States', 29, 'Entry Fragger', 47.16, 23, 745, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1598, 'Fidelia Molan', 14, 'Brazil', 19, 'Entry Fragger', 54.19, 472, 1184, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1599, 'Bev Kerner', 10, 'Thailand', 26, 'Flex', 79.59, 39, 871, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1600, 'Dagmar Claiden', 5, 'Poland', 33, 'Flex', 89.93, 137, 2837, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1601, 'Glori Ikins', 3, 'Russia', 36, 'Leader', 80.85, 427, 309, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1602, 'Cullan Jailler', 11, 'Argentina', 39, 'Leader', 54.58, 229, 41, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1603, 'Peterus Wipper', 11, 'Spain', 23, 'Flex', 46.27, 384, 1285, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1604, 'Augustin Lissett', 18, 'Paraguay', 26, 'Support', 42.47, 158, 929, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1605, 'Dinnie Joselevitch', 14, 'China', 21, 'Flex', 57.52, 138, 2508, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1606, 'Isobel Touret', 2, 'China', 24, 'Leader', 5.39, 145, 2716, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1607, 'Debor Maddrell', 10, 'China', 31, 'Flex', 3.67, 232, 2492, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1608, 'Jillian Cathrall', 19, 'Iran', 25, 'Leader', 54.35, 336, 1719, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1609, 'Maegan Bogays', 14, 'Croatia', 27, 'Leader', 6.01, 463, 464, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1610, 'Mellisa Issacov', 15, 'Japan', 31, 'Support', 94.98, 124, 1323, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1611, 'Garreth Henkmann', 9, 'France', 40, 'Leader', 13.50, 209, 1960, 2.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1612, 'Codi Camelin', 17, 'Brazil', 30, 'Flex', 14.03, 101, 939, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1613, 'Megan Ennals', 7, 'China', 42, 'Leader', 88.69, 409, 714, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1614, 'Oswell Gigg', 21, 'Cameroon', 33, 'Support', 5.03, 474, 2920, 1.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1615, 'Wilburt McCambrois', 4, 'Sweden', 31, 'Leader', 98.90, 36, 1187, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1616, 'Ive Giscken', 2, 'Colombia', 25, 'Leader', 19.10, 408, 1813, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1617, 'Consuela Pavlov', 3, 'Sudan', 26, 'Flex', 66.30, 273, 2574, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1618, 'Micky Attridge', 18, 'China', 32, 'Flex', 61.03, 211, 2120, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1619, 'Kenneth Utting', 18, 'Papua New Guinea', 32, 'Leader', 44.85, 465, 505, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1620, 'Myrtle Huygens', 14, 'Canada', 42, 'Entry Fragger', 25.50, 86, 1083, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1621, 'Wilfred Speller', 15, 'Indonesia', 40, 'Support', 60.90, 176, 2964, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1622, 'Giacobo Lunn', 5, 'France', 30, 'Leader', 34.77, 465, 835, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1623, 'Margette Gifkins', 18, 'Bolivia', 40, 'Flex', 72.19, 214, 2354, 0.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1624, 'Meryl Feifer', 9, 'Mongolia', 25, 'Entry Fragger', 62.23, 419, 383, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1625, 'Thoma Hamberston', 6, 'Philippines', 26, 'Flex', 52.06, 385, 920, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1626, 'Ardisj Barnes', 16, 'Kazakhstan', 18, 'Flex', 55.36, 14, 373, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1627, 'Ingrid Swanborrow', 20, 'Portugal', 22, 'Entry Fragger', 4.82, 434, 999, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1628, 'Sonnie Cutford', 18, 'Greece', 31, 'Support', 17.87, 173, 663, 1.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1629, 'Eada Dornin', 11, 'France', 38, 'Leader', 97.88, 182, 2185, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1630, 'Carey Indge', 17, 'China', 37, 'Flex', 24.81, 424, 660, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1631, 'Alwyn Aldhouse', 21, 'Sweden', 39, 'Flex', 50.04, 191, 2631, 2.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1632, 'Fraser Cawthra', 19, 'United States', 33, 'Leader', 74.87, 467, 1052, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1633, 'Franz Dysert', 20, 'Peru', 31, 'Flex', 66.73, 322, 348, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1634, 'Pierette Beardsell', 12, 'Portugal', 29, 'Leader', 47.77, 325, 273, 0.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1635, 'Brigida Ainsworth', 10, 'El Salvador', 23, 'Support', 31.43, 37, 1876, 1.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1636, 'Joshia Habron', 11, 'Brazil', 20, 'Flex', 43.26, 408, 963, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1637, 'Dru Sauven', 16, 'Poland', 33, 'Flex', 4.37, 60, 984, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1638, 'Jolynn Caurah', 11, 'Portugal', 40, 'Support', 66.86, 386, 2935, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1639, 'Ashley Munehay', 5, 'China', 34, 'Leader', 8.59, 474, 513, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1640, 'Sibilla Dain', 16, 'China', 42, 'Flex', 74.96, 252, 492, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1641, 'Clementina Dinan', 14, 'Venezuela', 37, 'Leader', 27.07, 159, 2973, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1642, 'Kirsteni Thibodeaux', 20, 'Portugal', 24, 'Flex', 71.01, 319, 1520, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1643, 'Raimundo Feltoe', 13, 'Pakistan', 31, 'Flex', 54.47, 489, 2318, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1644, 'Wash Ranahan', 3, 'China', 42, 'Entry Fragger', 78.13, 160, 2475, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1645, 'Charmain Redmire', 7, 'China', 34, 'Entry Fragger', 99.97, 428, 11, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1646, 'Suellen Padell', 12, 'Sweden', 39, 'Leader', 97.69, 296, 1189, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1647, 'Jean Gamble', 2, 'Indonesia', 35, 'Flex', 21.31, 455, 1638, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1648, 'Marwin Fardo', 6, 'Egypt', 26, 'Flex', 49.80, 239, 2141, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1649, 'Wilone Cape', 17, 'Serbia', 39, 'Entry Fragger', 65.16, 342, 2895, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1650, 'Norman Crangle', 7, 'China', 36, 'Leader', 56.76, 308, 656, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1651, 'Myrilla Wibrow', 18, 'Brazil', 31, 'Flex', 48.70, 353, 1049, 2.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1652, 'Derby Fratson', 14, 'Czech Republic', 30, 'Support', 71.97, 0, 2721, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1653, 'Mae Lope', 11, 'Sweden', 41, 'Flex', 96.10, 282, 2506, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1654, 'Malvin Gorcke', 18, 'China', 39, 'Leader', 11.19, 399, 798, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1655, 'Owen Lucey', 17, 'Argentina', 40, 'Support', 36.19, 301, 1171, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1656, 'Camilla Lidgett', 16, 'Indonesia', 21, 'Support', 76.12, 122, 2021, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1657, 'Clemens Antonsson', 20, 'Nigeria', 22, 'Flex', 91.96, 315, 1093, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1658, 'Maurine Gerriessen', 3, 'Ukraine', 20, 'Support', 76.68, 7, 1700, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1659, 'Ari Bouttell', 18, 'Belarus', 41, 'Leader', 40.15, 440, 1083, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1660, 'L;urette Meneely', 10, 'China', 39, 'Support', 34.56, 7, 1660, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1661, 'Rockey Fincher', 2, 'China', 25, 'Leader', 52.68, 294, 2070, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1662, 'Dyana Lydster', 15, 'China', 37, 'Entry Fragger', 88.48, 407, 806, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1663, 'Koral Weatherhogg', 19, 'Indonesia', 18, 'Flex', 88.15, 5, 2673, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1664, 'Corby Castell', 21, 'Indonesia', 30, 'Support', 23.84, 365, 2138, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1665, 'Natividad Clout', 3, 'United States', 28, 'Flex', 45.91, 390, 403, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1666, 'Wiatt Edmonston', 8, 'China', 37, 'Flex', 56.15, 157, 237, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1667, 'Cathrin Dowyer', 12, 'Montenegro', 42, 'Flex', 80.62, 289, 2825, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1668, 'Kasper Pound', 3, 'Brazil', 33, 'Leader', 73.07, 153, 2448, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1669, 'Patty Caspell', 11, 'Sweden', 20, 'Leader', 94.81, 127, 2382, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1670, 'Scottie Cardwell', 11, 'Indonesia', 35, 'Entry Fragger', 18.02, 226, 575, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1671, 'Lana Brimilcombe', 12, 'China', 26, 'Entry Fragger', 19.59, 6, 2630, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1672, 'Darwin Abbiss', 14, 'Malta', 30, 'Entry Fragger', 10.46, 336, 1193, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1673, 'Joline Vibert', 2, 'China', 41, 'Entry Fragger', 27.65, 124, 747, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1674, 'Beale Elsdon', 3, 'Syria', 37, 'Support', 93.97, 415, 2382, 0.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1675, 'Barret Raddan', 17, 'China', 28, 'Leader', 55.68, 180, 1427, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1676, 'Lynea Summersby', 14, 'Ireland', 42, 'Entry Fragger', 93.07, 150, 2173, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1677, 'Jonell Kelly', 9, 'China', 21, 'Flex', 51.51, 137, 1220, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1678, 'Karisa Poulsom', 15, 'Costa Rica', 21, 'Flex', 55.78, 412, 2953, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1679, 'Raychel Shwenn', 12, 'Russia', 19, 'Leader', 72.41, 34, 2091, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1680, 'Franciskus Sallowaye', 13, 'China', 27, 'Support', 71.59, 301, 451, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1681, 'Aimee Atterley', 9, 'China', 38, 'Support', 89.17, 197, 99, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1682, 'Mile Madill', 19, 'Armenia', 30, 'Entry Fragger', 4.09, 34, 566, 0.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1683, 'Winslow MacMearty', 1, 'Syria', 26, 'Leader', 21.74, 493, 379, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1684, 'Ange Gault', 13, 'Czech Republic', 35, 'Support', 74.61, 195, 2580, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1685, 'Louie Tulleth', 21, 'Ethiopia', 38, 'Support', 15.26, 90, 1119, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1686, 'Opal Shevlan', 1, 'China', 23, 'Flex', 63.17, 431, 724, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1687, 'Mile McNalley', 12, 'Japan', 35, 'Entry Fragger', 48.41, 265, 2042, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1688, 'Rod Hillaby', 19, 'Philippines', 25, 'Support', 45.22, 72, 342, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1689, 'Izzy Bonnet', 19, 'Armenia', 21, 'Entry Fragger', 2.61, 69, 2832, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1690, 'Korella Marty', 11, 'Russia', 39, 'Leader', 38.46, 246, 2629, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1691, 'Nissy Wolfe', 4, 'Malaysia', 26, 'Leader', 59.46, 112, 1947, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1692, 'Curran Mikalski', 6, 'United States', 22, 'Entry Fragger', 9.41, 79, 1042, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1693, 'Ringo Tassell', 16, 'Brazil', 28, 'Entry Fragger', 28.16, 185, 1112, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1694, 'Dody Burkart', 17, 'Guam', 42, 'Support', 70.53, 31, 1814, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1695, 'Hogan Goucher', 15, 'China', 26, 'Flex', 49.06, 144, 1250, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1696, 'Boothe Islep', 19, 'Greece', 36, 'Leader', 67.74, 476, 28, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1697, 'Pattie Guiot', 20, 'Indonesia', 32, 'Leader', 20.23, 204, 105, 0.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1698, 'Kaylee Rangell', 3, 'Albania', 29, 'Entry Fragger', 98.81, 250, 1608, 2.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1699, 'Molly Farnaby', 19, 'Philippines', 29, 'Flex', 26.96, 342, 354, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1700, 'Henrietta Logsdale', 2, 'Thailand', 26, 'Entry Fragger', 35.47, 475, 1605, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1701, 'Rosmunda Garthshore', 15, 'Sweden', 31, 'Support', 78.30, 312, 1154, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1702, 'Sophi Brolan', 4, 'China', 38, 'Leader', 66.59, 272, 340, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1703, 'Zorana Ghidelli', 14, 'Indonesia', 30, 'Leader', 40.59, 13, 2296, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1704, 'Babbie Jeays', 19, 'Indonesia', 29, 'Flex', 17.42, 431, 551, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1705, 'Chicky Crippill', 6, 'Ukraine', 22, 'Leader', 58.67, 184, 1239, 2.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1706, 'Keriann Kingaby', 15, 'China', 34, 'Leader', 35.90, 472, 1681, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1707, 'Chaim Smitheman', 14, 'Greece', 22, 'Leader', 64.90, 342, 1945, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1708, 'Shena Waldron', 12, 'Ireland', 28, 'Flex', 75.61, 128, 2573, 1.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1709, 'Griffie Yaus', 20, 'China', 20, 'Flex', 67.24, 286, 2928, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1710, 'Clo Haddick', 1, 'Kenya', 41, 'Entry Fragger', 85.59, 388, 1769, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1711, 'Ediva Abbott', 7, 'China', 28, 'Flex', 61.14, 376, 317, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1712, 'Frederigo Tuckey', 14, 'Kosovo', 28, 'Support', 98.26, 91, 689, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1713, 'Darnall Clooney', 12, 'Philippines', 22, 'Leader', 3.40, 50, 2399, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1714, 'Catlee Gilder', 1, 'Colombia', 38, 'Leader', 82.66, 98, 2881, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1715, 'Zebulon Haye', 15, 'Iran', 39, 'Support', 37.17, 200, 2154, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1716, 'Christy Knapton', 14, 'Tajikistan', 28, 'Leader', 26.20, 236, 2752, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1717, 'Marissa Rucklidge', 18, 'Portugal', 31, 'Support', 52.68, 187, 1663, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1718, 'Jareb Petrolli', 13, 'Netherlands', 25, 'Leader', 94.12, 410, 2094, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1719, 'Olwen Feilden', 19, 'Russia', 24, 'Flex', 47.68, 163, 2859, 2.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1720, 'Dunstan Werrilow', 10, 'Argentina', 25, 'Leader', 82.19, 37, 2447, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1721, 'Erika McCreery', 17, 'China', 40, 'Leader', 68.30, 337, 2719, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1722, 'Waneta Flinn', 9, 'China', 19, 'Flex', 96.93, 52, 2954, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1723, 'Klaus Footer', 8, 'Sweden', 24, 'Support', 53.70, 120, 2486, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1724, 'Dimitry Becerra', 13, 'Philippines', 23, 'Support', 23.75, 19, 95, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1725, 'Toni Ritchings', 17, 'China', 41, 'Flex', 15.37, 310, 2657, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1726, 'Carmel Balstone', 12, 'Mexico', 38, 'Support', 0.19, 32, 1089, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1727, 'Hilde Itzkovich', 16, 'Brazil', 40, 'Support', 36.88, 58, 1265, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1728, 'Emlyn Dalliwater', 6, 'Georgia', 36, 'Entry Fragger', 0.71, 413, 207, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1729, 'Miltie Blaxland', 1, 'Latvia', 37, 'Leader', 73.60, 22, 2341, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1730, 'Gray Furmedge', 11, 'China', 20, 'Flex', 89.46, 126, 234, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1731, 'Alfie Duggleby', 10, 'Japan', 23, 'Flex', 0.80, 200, 2291, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1732, 'Zuzana MacGarvey', 13, 'Argentina', 25, 'Flex', 6.12, 363, 1864, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1733, 'Corina Simao', 20, 'Saint Lucia', 25, 'Support', 66.17, 120, 949, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1734, 'Filia Hizir', 2, 'Poland', 39, 'Support', 4.30, 281, 1835, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1735, 'Sibley Dudderidge', 7, 'Greece', 37, 'Entry Fragger', 1.28, 118, 2638, 1.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1736, 'Arte Lawry', 5, 'France', 39, 'Support', 35.07, 444, 368, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1737, 'Karlotte Conrard', 13, 'Indonesia', 33, 'Leader', 93.84, 118, 2998, 2.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1738, 'Davida Andrick', 14, 'China', 24, 'Entry Fragger', 30.14, 152, 1622, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1739, 'Gayle Aindriu', 4, 'China', 42, 'Entry Fragger', 24.09, 322, 182, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1740, 'Rolando Lantuff', 17, 'Poland', 38, 'Leader', 9.72, 392, 2267, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1741, 'Leland Barendtsen', 5, 'China', 34, 'Leader', 25.28, 295, 925, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1742, 'Ivor Hainning', 20, 'Portugal', 37, 'Entry Fragger', 41.61, 246, 876, 2.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1743, 'Porty Sandever', 4, 'Serbia', 39, 'Entry Fragger', 5.57, 40, 2498, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1744, 'Neely Doull', 8, 'Cuba', 34, 'Entry Fragger', 3.21, 52, 2025, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1745, 'Kaela Bowick', 10, 'Taiwan', 31, 'Support', 25.38, 463, 1808, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1746, 'Annadiane Peck', 17, 'Ukraine', 25, 'Support', 63.74, 379, 264, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1747, 'Arman Ashfull', 13, 'China', 31, 'Entry Fragger', 29.04, 15, 1491, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1748, 'Tabatha Musico', 9, 'Slovenia', 40, 'Support', 16.49, 451, 2878, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1749, 'Alec Tuttle', 10, 'France', 22, 'Flex', 16.68, 421, 1473, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1750, 'Angelico Formby', 6, 'Mexico', 36, 'Entry Fragger', 48.34, 456, 799, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1751, 'Clementius Woehler', 16, 'Japan', 38, 'Leader', 40.50, 396, 2086, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1752, 'Abeu Rayson', 6, 'China', 19, 'Leader', 9.45, 407, 281, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1753, 'Oralie Orniz', 13, 'Indonesia', 23, 'Flex', 71.32, 302, 2526, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1754, 'Wain Bentjens', 1, 'China', 24, 'Support', 41.43, 399, 1352, 1.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1755, 'Wendall Bontine', 10, 'Macedonia', 37, 'Entry Fragger', 0.13, 364, 2846, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1756, 'Rora Reubel', 10, 'Zimbabwe', 40, 'Entry Fragger', 7.92, 426, 369, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1757, 'Vanna Rolinson', 21, 'China', 23, 'Support', 56.42, 25, 1124, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1758, 'Stefanie Lghan', 21, 'Indonesia', 33, 'Support', 0.74, 220, 2882, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1759, 'Crosby Filipic', 1, 'Vietnam', 24, 'Flex', 29.49, 8, 2542, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1760, 'Sallie Ortega', 10, 'Poland', 35, 'Flex', 98.80, 452, 484, 2.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1761, 'Jabez Harms', 6, 'Indonesia', 25, 'Entry Fragger', 74.52, 495, 175, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1762, 'Faith Shambrooke', 16, 'Thailand', 35, 'Leader', 79.36, 193, 2176, 2.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1763, 'Franz Pevreal', 4, 'Egypt', 41, 'Leader', 4.72, 324, 2750, 0.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1764, 'Fern Gadesby', 10, 'France', 31, 'Flex', 12.81, 245, 454, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1765, 'Robbie Oglethorpe', 20, 'Russia', 23, 'Support', 20.20, 430, 2570, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1766, 'Marshal Sellens', 21, 'Czech Republic', 23, 'Leader', 4.18, 275, 164, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1767, 'Shanie Keetch', 18, 'Colombia', 30, 'Support', 72.01, 104, 1855, 2.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1768, 'Alikee Szymanowicz', 11, 'Croatia', 37, 'Support', 72.15, 400, 1390, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1769, 'Kassie Skentelbury', 2, 'Czech Republic', 32, 'Flex', 98.95, 262, 47, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1770, 'Tymothy Simonazzi', 7, 'Portugal', 41, 'Flex', 91.41, 368, 890, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1771, 'Gilberta Stapleford', 21, 'China', 23, 'Leader', 54.02, 481, 1862, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1772, 'Cyrus Clulee', 9, 'China', 21, 'Flex', 81.67, 56, 2477, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1773, 'Hailey Garfirth', 4, 'Yemen', 19, 'Entry Fragger', 45.45, 421, 1179, 1.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1774, 'Gwenore Woodroffe', 3, 'Argentina', 26, 'Entry Fragger', 18.73, 221, 1374, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1775, 'Emerson Clyburn', 16, 'Guatemala', 39, 'Support', 1.48, 285, 1832, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1776, 'Jason Wayt', 15, 'Tanzania', 18, 'Entry Fragger', 51.55, 60, 1851, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1777, 'Laurice Pegg', 10, 'Poland', 35, 'Flex', 78.66, 260, 823, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1778, 'Beret Larret', 8, 'Russia', 22, 'Entry Fragger', 92.51, 279, 2712, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1779, 'Ariel Waudby', 1, 'Brazil', 21, 'Support', 97.88, 217, 2886, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1780, 'Aurelea Folkard', 8, 'Poland', 41, 'Entry Fragger', 89.96, 104, 374, 0.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1781, 'Elissa Willock', 10, 'Czech Republic', 27, 'Entry Fragger', 35.11, 202, 1428, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1782, 'Stacee Brockwell', 18, 'Indonesia', 33, 'Support', 68.95, 346, 315, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1783, 'Olga Ferreras', 2, 'Colombia', 28, 'Support', 68.92, 26, 2053, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1784, 'Almira Balassi', 21, 'Poland', 20, 'Leader', 29.08, 481, 1380, 1.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1785, 'Saleem Smitham', 14, 'Czech Republic', 28, 'Leader', 69.20, 314, 1262, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1786, 'Deva Karleman', 2, 'Nigeria', 28, 'Flex', 81.95, 408, 1002, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1787, 'Carroll Denge', 4, 'Nigeria', 32, 'Support', 46.15, 422, 659, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1788, 'Pietrek Souster', 20, 'Canada', 19, 'Flex', 17.38, 98, 187, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1789, 'Gisela Andersch', 6, 'Japan', 33, 'Flex', 23.53, 273, 1308, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1790, 'Gweneth Citrine', 19, 'Indonesia', 38, 'Entry Fragger', 25.42, 270, 170, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1791, 'Johnnie Mathewson', 3, 'Brazil', 24, 'Flex', 71.03, 211, 1917, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1792, 'Dietrich Oger', 5, 'China', 25, 'Entry Fragger', 69.01, 492, 891, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1793, 'Sadye Van der Beek', 9, 'France', 36, 'Leader', 67.85, 314, 301, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1794, 'Shina Vankov', 8, 'Uganda', 41, 'Leader', 70.73, 443, 1682, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1795, 'Bertrand Somers', 19, 'Poland', 22, 'Flex', 34.52, 332, 1980, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1796, 'Chet Rollings', 5, 'Ireland', 24, 'Leader', 1.51, 217, 2527, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1797, 'Sheilah Crookston', 13, 'Armenia', 32, 'Entry Fragger', 52.80, 144, 878, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1798, 'Thedrick Brockherst', 3, 'Portugal', 33, 'Support', 99.76, 185, 1372, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1799, 'Auroora Draye', 13, 'Brazil', 37, 'Leader', 83.07, 358, 2633, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1800, 'Wendeline Brown', 5, 'Japan', 36, 'Support', 72.06, 138, 1129, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1801, 'Roxanne Leynton', 20, 'Philippines', 21, 'Entry Fragger', 8.58, 258, 1058, 0.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1802, 'Raymond Barabisch', 17, 'Tunisia', 39, 'Support', 21.74, 215, 1182, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1803, 'Pearle Corrett', 11, 'Philippines', 27, 'Entry Fragger', 11.35, 206, 2421, 2.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1804, 'Elicia Caesar', 4, 'China', 25, 'Entry Fragger', 2.37, 217, 1792, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1805, 'Fonz Castro', 2, 'Honduras', 33, 'Leader', 82.26, 378, 1211, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1806, 'Tabbitha Zavattieri', 14, 'Colombia', 23, 'Flex', 71.85, 493, 80, 1.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1807, 'Mick Purkis', 18, 'Mexico', 42, 'Entry Fragger', 77.48, 57, 178, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1808, 'Frederik Whifen', 13, 'China', 33, 'Entry Fragger', 58.80, 98, 3, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1809, 'Mora Tyer', 17, 'Yemen', 27, 'Entry Fragger', 95.81, 261, 2142, 2.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1810, 'Enrico Urion', 6, 'Ireland', 36, 'Entry Fragger', 43.00, 83, 2245, 0.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1811, 'Tonie Fidelus', 21, 'Peru', 32, 'Flex', 17.76, 481, 2015, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1812, 'Edie Eykelbosch', 6, 'Croatia', 29, 'Entry Fragger', 50.11, 367, 870, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1813, 'Kellia Bonn', 2, 'Georgia', 34, 'Support', 24.54, 371, 2309, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1814, 'Judd Rubinsaft', 6, 'Macedonia', 33, 'Leader', 86.95, 471, 2069, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1815, 'Ynez McDonnell', 16, 'Namibia', 24, 'Leader', 97.67, 114, 1589, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1816, 'Phaidra Slany', 1, 'Mexico', 24, 'Support', 41.67, 367, 739, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1817, 'Abe Alwen', 14, 'Slovenia', 33, 'Support', 94.07, 9, 878, 2.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1818, 'Marika Middup', 17, 'France', 34, 'Leader', 49.83, 375, 2313, 0.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1819, 'Bailey Curness', 14, 'China', 41, 'Flex', 43.14, 14, 614, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1820, 'Stafford Bellward', 13, 'Argentina', 24, 'Leader', 0.47, 325, 2972, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1821, 'Niles Sweetenham', 3, 'China', 33, 'Support', 41.83, 356, 996, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1822, 'Dario Tomkowicz', 10, 'Bulgaria', 38, 'Entry Fragger', 38.68, 484, 2374, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1823, 'Aubry McElrea', 21, 'Venezuela', 38, 'Flex', 78.39, 414, 62, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1824, 'Tonnie Germann', 19, 'France', 38, 'Support', 61.63, 489, 2915, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1825, 'Maribeth Ivashintsov', 19, 'China', 30, 'Support', 90.88, 172, 2324, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1826, 'Gladys Pargetter', 21, 'Uganda', 24, 'Flex', 32.19, 301, 143, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1827, 'Jaymie Cumberbatch', 19, 'Russia', 42, 'Entry Fragger', 98.93, 341, 1221, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1828, 'Stinky Gervaise', 8, 'South Korea', 37, 'Leader', 84.73, 361, 782, 1.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1829, 'Johnathon Varrow', 4, 'Czech Republic', 38, 'Flex', 43.45, 399, 2949, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1830, 'Meagan Magnay', 16, 'Canada', 28, 'Entry Fragger', 58.15, 285, 1769, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1831, 'Gabriela de Quincey', 5, 'China', 22, 'Entry Fragger', 80.61, 128, 2238, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1832, 'Britteny Matten', 8, 'New Caledonia', 32, 'Leader', 83.12, 116, 1520, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1833, 'Katherina Cecchi', 15, 'Tanzania', 37, 'Entry Fragger', 90.77, 403, 1050, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1834, 'Kellyann McMillian', 6, 'China', 20, 'Entry Fragger', 45.89, 251, 22, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1835, 'Devina Cardoso', 15, 'India', 18, 'Flex', 72.70, 138, 2191, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1836, 'Deonne Grooby', 14, 'Philippines', 24, 'Entry Fragger', 23.99, 476, 181, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1837, 'Drusi Fullman', 5, 'Indonesia', 27, 'Entry Fragger', 74.89, 102, 522, 1.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1838, 'Hollie Cheake', 12, 'Russia', 21, 'Entry Fragger', 63.09, 315, 1307, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1839, 'Dolly Ovington', 10, 'Ukraine', 31, 'Support', 18.79, 408, 1452, 0.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1840, 'Cordy Drinkwater', 21, 'Indonesia', 18, 'Flex', 63.66, 113, 2220, 2.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1841, 'Lesley Thrasher', 3, 'China', 33, 'Leader', 25.25, 46, 1871, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1842, 'Sara Braam', 7, 'Azerbaijan', 24, 'Support', 47.20, 310, 2647, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1843, 'Augustus Haking', 11, 'Poland', 38, 'Leader', 33.25, 117, 1050, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1844, 'Galina Threadgall', 1, 'Brazil', 27, 'Flex', 62.16, 153, 2051, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1845, 'Malissia Nickoll', 7, 'American Samoa', 20, 'Leader', 65.44, 479, 2062, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1846, 'Faustine Dowbiggin', 7, 'China', 31, 'Leader', 98.26, 357, 261, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1847, 'Dorelia Ewers', 18, 'Indonesia', 19, 'Flex', 55.62, 351, 833, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1848, 'Bliss Gaitone', 21, 'Argentina', 21, 'Leader', 95.92, 233, 253, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1849, 'Leonid Haton', 8, 'Macedonia', 31, 'Support', 97.87, 200, 465, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1850, 'Romona Ault', 15, 'United States', 33, 'Flex', 54.60, 150, 1092, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1851, 'Hieronymus Dmitriev', 14, 'Kazakhstan', 38, 'Flex', 51.78, 40, 477, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1852, 'Tiebold Starsmeare', 1, 'China', 26, 'Support', 32.57, 114, 2689, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1853, 'Cyndie Claybourn', 8, 'China', 37, 'Leader', 99.72, 184, 931, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1854, 'Kippy Schwandt', 1, 'Indonesia', 35, 'Leader', 50.24, 338, 1689, 2.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1855, 'Cy Mearns', 6, 'Tunisia', 24, 'Support', 76.90, 29, 1372, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1856, 'Cordie Loweth', 18, 'Poland', 23, 'Entry Fragger', 66.57, 380, 948, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1857, 'Alma Asp', 7, 'Sweden', 35, 'Entry Fragger', 2.11, 480, 143, 0.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1858, 'Jamima Segge', 9, 'China', 40, 'Flex', 5.97, 49, 2994, 1.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1859, 'Fabien Libreros', 13, 'Greece', 38, 'Flex', 85.56, 124, 2116, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1860, 'Jamaal Fancutt', 18, 'Serbia', 39, 'Support', 81.79, 80, 2663, 2.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1861, 'Rainer Yeoman', 21, 'China', 29, 'Leader', 94.18, 275, 2327, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1862, 'Bennie Hateley', 6, 'China', 35, 'Entry Fragger', 94.47, 423, 2535, 1.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1863, 'Lucita Witherden', 6, 'Indonesia', 20, 'Entry Fragger', 99.78, 224, 164, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1864, 'Carlita Ephson', 14, 'Brazil', 41, 'Support', 7.32, 27, 471, 2.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1865, 'Shelli Dell Casa', 1, 'United States', 29, 'Entry Fragger', 78.58, 235, 1620, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1866, 'Shelby Harkins', 7, 'Tanzania', 39, 'Entry Fragger', 4.05, 392, 1056, 0.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1867, 'Rosamond Regorz', 20, 'China', 23, 'Support', 20.26, 243, 2259, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1868, 'Sandi Kleehuhler', 14, 'Brazil', 35, 'Leader', 71.74, 223, 1267, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1869, 'Meridel Thorley', 1, 'China', 39, 'Entry Fragger', 6.51, 103, 2048, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1870, 'Benito Luke', 12, 'Indonesia', 41, 'Leader', 25.98, 499, 304, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1871, 'Grantham Colhoun', 4, 'Greece', 35, 'Leader', 17.64, 328, 361, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1872, 'Carolann Gifkins', 11, 'Indonesia', 34, 'Flex', 50.91, 14, 116, 2.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1873, 'Lemmy Seabrooke', 1, 'Brazil', 28, 'Entry Fragger', 28.71, 97, 455, 1.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1874, 'Cedric Moralas', 20, 'Indonesia', 28, 'Leader', 20.38, 147, 992, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1875, 'Josiah Rielly', 11, 'France', 25, 'Flex', 63.02, 224, 680, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1876, 'Jacquelynn Willatt', 20, 'France', 21, 'Support', 24.97, 19, 1147, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1877, 'Alica Snead', 11, 'Indonesia', 38, 'Support', 37.63, 480, 2644, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1878, 'Vitia Steagall', 11, 'Russia', 39, 'Support', 27.42, 390, 1365, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1879, 'Mala Unwin', 7, 'China', 36, 'Flex', 33.61, 358, 2152, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1880, 'Frans Lacky', 4, 'Poland', 38, 'Leader', 13.38, 103, 1033, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1881, 'Gale Wyleman', 10, 'Somalia', 34, 'Flex', 82.51, 429, 223, 1.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1882, 'Hillel Jobbins', 20, 'China', 31, 'Flex', 13.93, 263, 1885, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1883, 'Steven Lyptrit', 4, 'China', 33, 'Leader', 41.42, 28, 2541, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1884, 'Lief Nealy', 6, 'United States', 22, 'Leader', 48.87, 460, 2948, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1885, 'Fawn Prest', 3, 'Iran', 24, 'Flex', 40.44, 346, 1568, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1886, 'Wayne Tapper', 15, 'China', 38, 'Flex', 23.82, 46, 1426, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1887, 'Georgianne Denyukin', 2, 'Poland', 22, 'Flex', 50.38, 109, 2568, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1888, 'Erina Scurrey', 18, 'Azerbaijan', 31, 'Support', 10.55, 222, 184, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1889, 'Teri Kadwallider', 16, 'Indonesia', 29, 'Leader', 53.66, 83, 276, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1890, 'Lou Crepel', 10, 'Brazil', 35, 'Entry Fragger', 78.26, 489, 2445, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1891, 'Conrad Kepe', 15, 'China', 31, 'Support', 15.94, 97, 375, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1892, 'Rollie Mitton', 13, 'Philippines', 41, 'Entry Fragger', 64.07, 277, 916, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1893, 'Brandy Lysaght', 13, 'Peru', 39, 'Entry Fragger', 23.44, 463, 651, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1894, 'Zondra Helliwell', 13, 'Palestinian Territory', 30, 'Flex', 72.87, 294, 1300, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1895, 'Seth Helling', 17, 'Poland', 37, 'Entry Fragger', 70.23, 404, 903, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1896, 'Erny Frith', 16, 'Indonesia', 18, 'Entry Fragger', 83.45, 346, 1240, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1897, 'Elsinore Symper', 19, 'Philippines', 25, 'Flex', 59.20, 10, 2995, 2.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1898, 'Adena Stanley', 4, 'Cuba', 40, 'Flex', 96.07, 12, 2313, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1899, 'Shem Petegre', 18, 'Cuba', 25, 'Leader', 63.32, 278, 637, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1900, 'Chevalier Vizard', 19, 'France', 25, 'Entry Fragger', 74.45, 315, 1996, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1901, 'Linn Loch', 11, 'Argentina', 18, 'Leader', 90.56, 182, 1037, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1902, 'Jarrid Tizard', 1, 'Mexico', 21, 'Entry Fragger', 26.27, 231, 2756, 0.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1903, 'Jed Vasyukov', 21, 'Sweden', 25, 'Leader', 90.40, 251, 2687, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1904, 'Willy Orpwood', 11, 'Sweden', 38, 'Leader', 52.01, 335, 2848, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1905, 'Gae Hatherell', 20, 'Ecuador', 25, 'Entry Fragger', 19.58, 89, 1098, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1906, 'Jordana Pinchback', 15, 'South Sudan', 33, 'Entry Fragger', 19.36, 288, 2243, 0.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1907, 'Constantia Atto', 19, 'Brazil', 24, 'Support', 27.46, 400, 1369, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1908, 'Yevette Larvin', 12, 'Bulgaria', 37, 'Support', 40.62, 373, 2397, 1.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1909, 'Brade Nevin', 1, 'Argentina', 19, 'Support', 15.73, 235, 1098, 2.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1910, 'Raquela Crowson', 1, 'Portugal', 26, 'Flex', 70.81, 161, 1581, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1911, 'Davin Le Estut', 20, 'China', 33, 'Flex', 40.41, 153, 220, 1.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1912, 'Gothart Sapsforde', 11, 'Indonesia', 22, 'Leader', 51.86, 289, 1896, 0.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1913, 'Evin Picopp', 18, 'Democratic Republic of the Congo', 41, 'Entry Fragger', 51.42, 376, 2660, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1914, 'Daphna Woakes', 6, 'Azerbaijan', 31, 'Support', 72.78, 121, 908, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1915, 'Jonathon Obeney', 19, 'Peru', 38, 'Leader', 74.00, 437, 1030, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1916, 'Jarid Asaaf', 17, 'Cuba', 21, 'Leader', 91.00, 228, 1674, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1917, 'Hannie Park', 5, 'China', 32, 'Entry Fragger', 15.02, 93, 1301, 2.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1918, 'Annie Asquith', 13, 'Indonesia', 37, 'Leader', 73.00, 447, 1935, 1.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1919, 'Aubine Larimer', 18, 'Poland', 21, 'Flex', 11.45, 46, 706, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1920, 'Lezley Kenrick', 14, 'Italy', 29, 'Flex', 95.16, 457, 2290, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1921, 'Minnie Rodolphe', 17, 'Czech Republic', 35, 'Support', 69.51, 458, 2903, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1922, 'Welbie Gobolos', 13, 'Philippines', 34, 'Entry Fragger', 58.53, 294, 981, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1923, 'Salome Mancer', 1, 'Chile', 18, 'Entry Fragger', 88.64, 380, 482, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1924, 'Suki Asgodby', 4, 'Philippines', 24, 'Entry Fragger', 32.64, 461, 1857, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1925, 'Nicolis Mc Ilwrick', 6, 'Peru', 20, 'Flex', 35.00, 277, 2673, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1926, 'Franklyn Witherspoon', 18, 'Ukraine', 33, 'Flex', 60.65, 269, 2196, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1927, 'Modesty Vaux', 3, 'Argentina', 42, 'Leader', 18.14, 16, 2833, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1928, 'Lula Fluger', 5, 'Indonesia', 23, 'Entry Fragger', 29.23, 434, 2532, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1929, 'Roddie Duberry', 12, 'Austria', 28, 'Support', 49.58, 483, 1821, 1.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1930, 'Tye Mertel', 21, 'Democratic Republic of the Congo', 21, 'Flex', 83.39, 146, 1557, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1931, 'Britteny Tebbitt', 2, 'Armenia', 19, 'Support', 74.25, 232, 2535, 0.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1932, 'Gabe Sendley', 8, 'China', 22, 'Support', 6.05, 368, 1973, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1933, 'Elmira Chataignier', 8, 'Slovenia', 20, 'Flex', 91.86, 282, 1027, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1934, 'Cassandre Johnstone', 12, 'China', 39, 'Leader', 28.80, 318, 15, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1935, 'Donovan Grayshon', 9, 'Russia', 23, 'Leader', 59.49, 323, 1272, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1936, 'Tedra Andriss', 1, 'Indonesia', 26, 'Entry Fragger', 17.66, 245, 117, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1937, 'Cosme Adamiak', 1, 'France', 37, 'Entry Fragger', 86.11, 242, 1955, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1938, 'Magdalen Rossant', 13, 'Netherlands', 29, 'Entry Fragger', 34.73, 363, 2378, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1939, 'Hernando Goodday', 6, 'Poland', 34, 'Flex', 77.94, 51, 2760, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1940, 'Clari Runciman', 12, 'Indonesia', 41, 'Support', 66.29, 208, 1601, 2.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1941, 'Terrel Jadczak', 13, 'Serbia', 28, 'Flex', 43.18, 328, 1247, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1942, 'Allianora Studman', 2, 'Indonesia', 40, 'Support', 29.23, 92, 608, 0.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1943, 'Brennan Lombard', 17, 'Philippines', 22, 'Flex', 57.86, 229, 2143, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1944, 'Lotti Rubi', 13, 'Poland', 28, 'Support', 71.48, 99, 339, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1945, 'Myrtie Nary', 17, 'China', 29, 'Support', 76.69, 192, 2323, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1946, 'Otis Gallager', 21, 'Argentina', 22, 'Entry Fragger', 84.15, 66, 2020, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1947, 'Eilis Witty', 2, 'Spain', 27, 'Support', 36.96, 454, 2520, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1948, 'Rania Vaines', 14, 'China', 22, 'Support', 15.77, 424, 204, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1949, 'Fraze Domingues', 20, 'Macedonia', 30, 'Flex', 73.11, 235, 834, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1950, 'Emlyn Tommen', 17, 'Indonesia', 21, 'Support', 83.21, 236, 1368, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1951, 'Kilian Zealey', 6, 'Mongolia', 32, 'Flex', 7.06, 42, 2957, 0.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1952, 'Carlina Eginton', 9, 'Philippines', 18, 'Leader', 69.47, 186, 2138, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1953, 'Burty Huckster', 20, 'Indonesia', 32, 'Leader', 9.21, 379, 286, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1954, 'Gabi Longhirst', 17, 'Russia', 34, 'Flex', 31.06, 385, 1210, 0.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1955, 'Annabel Bastow', 19, 'Brazil', 41, 'Flex', 56.50, 403, 2696, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1956, 'Clevey Thorneley', 6, 'Portugal', 37, 'Flex', 94.28, 361, 2069, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1957, 'Durant Pardey', 10, 'Ukraine', 29, 'Support', 88.12, 267, 329, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1958, 'Erl Janik', 16, 'Czech Republic', 22, 'Support', 48.18, 420, 1875, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1959, 'Clarette Chamney', 13, 'Egypt', 30, 'Leader', 1.08, 19, 2955, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1960, 'Myron Coite', 19, 'Indonesia', 42, 'Leader', 96.70, 319, 2509, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1961, 'Valentina Liversley', 17, 'Indonesia', 27, 'Support', 14.69, 410, 222, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1962, 'Livia Gladwish', 14, 'Sweden', 25, 'Leader', 62.14, 136, 1039, 0.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1963, 'Gary Ende', 8, 'Spain', 19, 'Support', 82.36, 382, 1692, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1964, 'Brendan Lippitt', 13, 'Germany', 32, 'Leader', 39.90, 120, 2858, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1965, 'Willa De Zuani', 8, 'China', 36, 'Support', 39.24, 299, 423, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1966, 'Hildy Libreros', 11, 'North Korea', 31, 'Leader', 46.34, 29, 703, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1967, 'Gusella Walentynowicz', 9, 'Brazil', 32, 'Flex', 66.86, 100, 1927, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1968, 'Shalne Clayal', 8, 'Brazil', 22, 'Flex', 84.20, 463, 2358, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1969, 'Horace Pessler', 10, 'Indonesia', 26, 'Support', 88.58, 428, 217, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1970, 'Vincenty Di Maria', 16, 'Poland', 40, 'Flex', 79.61, 92, 457, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1971, 'Valentijn Rowlett', 10, 'Poland', 41, 'Support', 47.67, 131, 653, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1972, 'Arlen Fortnum', 14, 'Indonesia', 37, 'Flex', 76.19, 255, 1880, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1973, 'Myrlene Denness', 11, 'Colombia', 39, 'Entry Fragger', 55.94, 497, 326, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1974, 'Jeralee Donahue', 5, 'Indonesia', 39, 'Entry Fragger', 81.10, 259, 1440, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1975, 'Beatrisa Riglesford', 21, 'Sweden', 40, 'Support', 55.62, 419, 1890, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1976, 'Reggis Tattersill', 10, 'Serbia', 42, 'Entry Fragger', 41.57, 215, 1000, 2.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1977, 'Angie McIlherran', 11, 'Indonesia', 20, 'Leader', 86.97, 382, 2887, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1978, 'Moira Cuxon', 1, 'France', 26, 'Leader', 22.81, 156, 1660, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1979, 'Benton Featherstonhalgh', 1, 'Philippines', 37, 'Support', 87.00, 237, 2689, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1980, 'Kial Michelin', 5, 'Russia', 36, 'Flex', 11.53, 242, 104, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1981, 'Rubie Scotland', 20, 'Croatia', 18, 'Entry Fragger', 41.21, 96, 1905, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1982, 'Susannah Colquhoun', 18, 'Indonesia', 34, 'Flex', 16.56, 288, 428, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1983, 'Dee dee Dabling', 16, 'Cambodia', 33, 'Flex', 36.78, 104, 892, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1984, 'Theo Kleinplac', 14, 'France', 39, 'Leader', 91.16, 78, 1707, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1985, 'Arny Eagling', 4, 'Brazil', 42, 'Flex', 6.11, 205, 2608, 1.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1986, 'Betty Ygoe', 5, 'China', 36, 'Entry Fragger', 47.19, 347, 2313, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1987, 'Charlton Woolam', 6, 'Philippines', 20, 'Entry Fragger', 51.03, 43, 1976, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1988, 'Vanya Riding', 15, 'Russia', 26, 'Support', 86.18, 48, 2042, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1989, 'Caresse Groneway', 7, 'Slovenia', 39, 'Entry Fragger', 61.76, 322, 155, 0.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1990, 'Rosetta Poulsen', 10, 'Peru', 23, 'Flex', 11.31, 383, 163, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1991, 'Gaylord Williamson', 11, 'Portugal', 42, 'Leader', 97.62, 79, 1637, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1992, 'Roland Stockall', 18, 'Iran', 24, 'Support', 36.50, 404, 1335, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1993, 'Theodora Konzelmann', 12, 'Indonesia', 26, 'Leader', 11.00, 355, 50, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1994, 'Ailey Lanchbery', 8, 'Portugal', 20, 'Leader', 77.90, 138, 520, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1995, 'Ronnica Blakiston', 12, 'South Sudan', 32, 'Entry Fragger', 99.25, 173, 1906, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1996, 'Mimi Brownlie', 1, 'Paraguay', 30, 'Flex', 96.63, 466, 1453, 0.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1997, 'Fae McMyler', 13, 'France', 33, 'Entry Fragger', 38.97, 346, 2605, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1998, 'Orlan Waylett', 6, 'Poland', 32, 'Support', 3.42, 93, 557, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(1999, 'Grady Le Claire', 14, 'Poland', 36, 'Support', 85.61, 390, 2300, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2000, 'Delaney McReath', 20, 'Sweden', 34, 'Flex', 13.44, 270, 1199, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2001, 'Cortie Gabby', 1, 'Indonesia', 42, 'Entry Fragger', 60.79, 193, 1390, 0.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2002, 'Reamonn Deetlefs', 8, 'Indonesia', 24, 'Flex', 75.34, 438, 2233, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2003, 'Stuart Eriksson', 21, 'China', 36, 'Entry Fragger', 78.48, 346, 2401, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2004, 'Cherrita Noller', 9, 'Indonesia', 40, 'Leader', 40.11, 486, 1648, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2005, 'Kain Dionis', 13, 'Indonesia', 27, 'Flex', 63.07, 302, 1008, 2.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2006, 'Karrie Ovize', 8, 'Indonesia', 24, 'Entry Fragger', 70.39, 428, 2530, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2007, 'Addie McManus', 3, 'Greece', 21, 'Flex', 88.58, 263, 467, 0.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2008, 'Aliza Jerams', 1, 'Indonesia', 32, 'Flex', 91.00, 238, 491, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2009, 'Addie Richmond', 2, 'Brazil', 34, 'Support', 56.90, 310, 2902, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2010, 'Genevieve New', 2, 'Sweden', 39, 'Flex', 4.84, 247, 2959, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2011, 'Renae Haliburton', 5, 'Indonesia', 34, 'Leader', 93.70, 393, 1642, 1.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2012, 'Tanney Dwane', 15, 'Poland', 23, 'Support', 16.22, 482, 1485, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2013, 'Lindsay Mullis', 3, 'Indonesia', 27, 'Leader', 0.21, 75, 2851, 0.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2014, 'Rabbi Adrain', 3, 'Sweden', 40, 'Entry Fragger', 19.98, 191, 2947, 1.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2015, 'Roscoe Darko', 10, 'Greece', 21, 'Flex', 29.27, 277, 1461, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2016, 'Micah Pelcheur', 16, 'Jordan', 36, 'Flex', 40.64, 497, 741, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2017, 'Warden Maginn', 16, 'Palestinian Territory', 19, 'Support', 69.74, 16, 1842, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2018, 'Kevyn Margeram', 8, 'Argentina', 38, 'Entry Fragger', 71.32, 339, 2811, 2.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2019, 'Branden Maynell', 15, 'China', 31, 'Support', 33.31, 231, 1947, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2020, 'Felice Lorraine', 2, 'Mali', 18, 'Leader', 42.59, 105, 2222, 2.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2021, 'Hesther Armand', 20, 'Ukraine', 32, 'Flex', 13.61, 235, 80, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2022, 'Honoria Sherburn', 6, 'Poland', 40, 'Entry Fragger', 96.31, 384, 290, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2023, 'Federica Cattemull', 17, 'Afghanistan', 30, 'Entry Fragger', 16.91, 204, 2399, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2024, 'Susana Eble', 13, 'Gambia', 18, 'Support', 45.33, 244, 2909, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2025, 'Dallas Orsman', 18, 'Russia', 34, 'Entry Fragger', 61.60, 332, 842, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2026, 'Kerry Cotterell', 21, 'Sweden', 24, 'Leader', 75.15, 235, 2664, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2027, 'Vivianne Rennock', 14, 'Mexico', 21, 'Entry Fragger', 92.23, 222, 785, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2028, 'Joachim Segeswoeth', 20, 'Cameroon', 29, 'Leader', 22.99, 242, 1320, 0.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2029, 'Frankie Baudon', 20, 'Argentina', 32, 'Support', 38.26, 61, 1980, 1.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2030, 'Trace Schirach', 3, 'Serbia', 35, 'Flex', 9.48, 133, 2071, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2031, 'Nicol Giacobazzi', 17, 'Senegal', 22, 'Leader', 53.24, 182, 644, 0.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2032, 'Packston Ribou', 21, 'Russia', 31, 'Support', 36.87, 79, 2712, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2033, 'Bobby Stroyan', 16, 'Indonesia', 28, 'Entry Fragger', 62.30, 352, 1234, 0.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2034, 'Marja Eaden', 9, 'China', 28, 'Support', 45.91, 30, 2841, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2035, 'Moll Cuming', 21, 'Peru', 42, 'Leader', 40.62, 307, 136, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2036, 'Silas Barthelemy', 11, 'China', 35, 'Entry Fragger', 18.12, 62, 2757, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2037, 'Nickolai Girodias', 13, 'Italy', 36, 'Support', 87.41, 154, 2538, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2038, 'Renata Leonida', 20, 'Japan', 41, 'Support', 61.43, 479, 2463, 0.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2039, 'Thorvald Morad', 7, 'China', 21, 'Support', 40.27, 289, 1206, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2040, 'Dollie Ogg', 2, 'China', 18, 'Leader', 29.87, 400, 647, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2041, 'Woodrow Tewkesberry', 4, 'Croatia', 40, 'Entry Fragger', 11.40, 184, 2817, 0.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2042, 'Brenda Beaford', 20, 'South Africa', 42, 'Support', 32.79, 133, 1245, 1.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2043, 'Netta Woosnam', 11, 'Central African Republic', 36, 'Support', 59.55, 449, 1467, 0.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2044, 'Emanuel Dewberry', 11, 'China', 38, 'Leader', 72.32, 215, 868, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2045, 'Kent Zamorano', 21, 'Brazil', 36, 'Leader', 45.33, 31, 230, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2046, 'Gertrude Wahner', 17, 'Serbia', 42, 'Support', 99.12, 318, 269, 0.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2047, 'Rois Skokoe', 6, 'Peru', 24, 'Entry Fragger', 83.80, 158, 713, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2048, 'Heidie Road', 3, 'Thailand', 36, 'Leader', 14.82, 191, 2131, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2049, 'Shina Hurdidge', 19, 'China', 18, 'Entry Fragger', 42.88, 58, 2239, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2050, 'Tina Fetherston', 9, 'Ukraine', 32, 'Support', 78.07, 352, 1508, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2051, 'Aura Teather', 14, 'Madagascar', 36, 'Entry Fragger', 4.62, 219, 1601, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2052, 'Wallache Shiel', 3, 'Cameroon', 39, 'Entry Fragger', 94.89, 51, 357, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2053, 'Waverly Edie', 21, 'China', 38, 'Support', 2.35, 382, 2910, 2.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2054, 'Alys Pauel', 12, 'Germany', 36, 'Support', 20.97, 456, 2927, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2055, 'Chris Gidman', 6, 'Indonesia', 42, 'Flex', 53.99, 425, 2405, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2056, 'Guntar Ledbury', 11, 'Russia', 39, 'Leader', 96.59, 476, 9, 1.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2057, 'Loralee Batrim', 15, 'France', 35, 'Support', 56.01, 435, 2519, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2058, 'Klarrisa Marham', 5, 'China', 18, 'Support', 15.30, 414, 2886, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2059, 'Charita Warrack', 1, 'United States', 19, 'Leader', 65.76, 495, 862, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2060, 'Stanislaus Ridsdale', 8, 'Indonesia', 42, 'Entry Fragger', 54.69, 232, 1681, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2061, 'Salmon Venners', 15, 'Indonesia', 25, 'Leader', 64.21, 103, 1712, 1.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2062, 'Lazaro Reynish', 9, 'Israel', 26, 'Flex', 0.15, 391, 2133, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2063, 'Noelle Stitson', 6, 'Ivory Coast', 20, 'Support', 9.33, 301, 2080, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2064, 'Nicko Danilovich', 15, 'China', 28, 'Support', 12.69, 109, 190, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2065, 'Fairlie Birkby', 14, 'China', 40, 'Support', 38.31, 417, 847, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2066, 'Rossy Doherty', 17, 'Slovenia', 27, 'Support', 55.85, 21, 1331, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2067, 'Berny Widdowfield', 12, 'Indonesia', 40, 'Leader', 89.45, 129, 225, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2068, 'Bryant Eskrigge', 3, 'Spain', 41, 'Leader', 94.89, 453, 1244, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2069, 'Giffie Wafer', 19, 'Portugal', 28, 'Entry Fragger', 90.86, 209, 408, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2070, 'Liv Sayburn', 9, 'Indonesia', 41, 'Leader', 68.05, 466, 1663, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2071, 'Gigi Happel', 18, 'United States', 26, 'Leader', 31.15, 100, 2539, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2072, 'Sigismundo Amaya', 5, 'Canada', 34, 'Entry Fragger', 59.73, 35, 464, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2073, 'Gordy Swires', 20, 'Georgia', 39, 'Flex', 24.65, 214, 1818, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2074, 'Fern Keston', 21, 'Indonesia', 23, 'Entry Fragger', 1.46, 120, 1223, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2075, 'Harlen Aldrick', 4, 'Argentina', 36, 'Leader', 43.83, 173, 2748, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2076, 'Jillane Awcock', 1, 'Russia', 35, 'Support', 28.62, 403, 1776, 2.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2077, 'Othilie Truss', 15, 'France', 34, 'Entry Fragger', 45.46, 177, 1884, 2.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2078, 'Midge Geertje', 4, 'China', 26, 'Entry Fragger', 11.22, 287, 36, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2079, 'Ailis Daen', 16, 'Kazakhstan', 39, 'Support', 84.29, 365, 2348, 0.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2080, 'Wallache Pietersma', 7, 'Guatemala', 38, 'Support', 70.51, 398, 2322, 2.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2081, 'Mathew Mallinder', 1, 'Canada', 18, 'Flex', 51.65, 330, 2920, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2082, 'Lothaire Sopper', 7, 'Colombia', 18, 'Entry Fragger', 66.73, 446, 2223, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2083, 'Leo Clute', 3, 'Syria', 24, 'Leader', 41.25, 184, 2734, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2084, 'Belvia Duckit', 16, 'Japan', 21, 'Entry Fragger', 60.88, 9, 2181, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2085, 'Davita McRorie', 21, 'Vietnam', 40, 'Support', 82.22, 449, 881, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg');
+INSERT INTO `r6_player` (`id`, `player_name`, `team_id`, `nationality`, `age`, `role`, `headshot_percentage`, `total_games`, `total_deaths`, `kd_ratio`, `created_at`, `updated_at`, `deleted_at`, `description`, `image`) VALUES
+(2086, 'Tailor Covell', 15, 'Uganda', 19, 'Support', 7.07, 182, 1039, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2087, 'Devlen Brunini', 20, 'Indonesia', 37, 'Leader', 75.28, 430, 1851, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2088, 'Buddy Bambrough', 21, 'Madagascar', 27, 'Support', 87.14, 109, 1529, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2089, 'Claiborne Peto', 3, 'France', 41, 'Flex', 0.72, 4, 1502, 2.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2090, 'Linn Makin', 14, 'Grenada', 38, 'Leader', 82.26, 193, 1434, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2091, 'Clementius Stovin', 13, 'Honduras', 32, 'Support', 64.49, 383, 2460, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2092, 'Hagan Klisch', 14, 'Luxembourg', 42, 'Support', 67.52, 450, 1155, 0.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2093, 'Faye Jahan', 19, 'Zambia', 26, 'Leader', 71.61, 266, 2054, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2094, 'Shelbi McLanachan', 1, 'Guatemala', 42, 'Entry Fragger', 95.41, 146, 1006, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2095, 'Jesselyn Leverich', 11, 'Indonesia', 33, 'Leader', 26.34, 491, 1736, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2096, 'Lonni Melbury', 5, 'Indonesia', 27, 'Flex', 33.45, 371, 1748, 1.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2097, 'Tobey Seaking', 6, 'Pakistan', 37, 'Entry Fragger', 27.26, 176, 17, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2098, 'Cleveland Detloff', 11, 'Poland', 37, 'Entry Fragger', 54.53, 59, 1216, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2099, 'Ivy Warwick', 6, 'Poland', 23, 'Support', 53.86, 224, 2585, 2.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2100, 'Kellby Eastope', 4, 'Iceland', 19, 'Flex', 31.84, 380, 368, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2101, 'Linc Orlton', 4, 'France', 36, 'Entry Fragger', 30.32, 316, 682, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2102, 'Emelyne Lacoste', 17, 'Colombia', 39, 'Flex', 68.62, 49, 638, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2103, 'Melany Ferrari', 4, 'China', 27, 'Support', 35.67, 205, 2439, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2104, 'Bertram Hartle', 6, 'Argentina', 33, 'Support', 82.06, 400, 599, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2105, 'Reiko Power', 21, 'Philippines', 34, 'Flex', 73.19, 486, 47, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2106, 'Sloan Orriss', 15, 'France', 35, 'Leader', 23.82, 382, 1034, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2107, 'Gabbie Godwin', 19, 'China', 27, 'Leader', 80.68, 298, 2834, 2.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2108, 'Coriss Adicot', 10, 'Poland', 27, 'Entry Fragger', 45.51, 251, 869, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2109, 'Minni Glavin', 20, 'Ukraine', 31, 'Entry Fragger', 41.08, 350, 1118, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2110, 'Tobias Rizzone', 15, 'Russia', 40, 'Leader', 1.64, 110, 2279, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2111, 'Magdalena Domenico', 8, 'Georgia', 23, 'Support', 46.00, 490, 2067, 1.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2112, 'Jarad Tomowicz', 16, 'Nicaragua', 29, 'Flex', 9.32, 33, 797, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2113, 'Hasty Le Strange', 1, 'Sweden', 32, 'Flex', 16.62, 359, 891, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2114, 'Bond Philpott', 10, 'Indonesia', 38, 'Leader', 7.12, 109, 2373, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2115, 'Allene Cotton', 16, 'Indonesia', 42, 'Support', 24.05, 184, 649, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2116, 'Deeann Thieme', 14, 'China', 42, 'Leader', 30.21, 13, 908, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2117, 'Wilmar Banishevitz', 7, 'Ireland', 30, 'Leader', 25.16, 79, 284, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2118, 'Elita Aggett', 7, 'United States', 39, 'Entry Fragger', 24.80, 104, 1765, 1.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2119, 'Brion Lomath', 17, 'Indonesia', 27, 'Leader', 80.57, 360, 1267, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2120, 'Roxi Beaman', 13, 'New Zealand', 23, 'Entry Fragger', 76.10, 31, 2509, 0.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2121, 'Tibold Shalloe', 15, 'France', 19, 'Support', 71.99, 166, 2544, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2122, 'Helen Whitebread', 3, 'Albania', 23, 'Entry Fragger', 73.99, 380, 1489, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2123, 'Lotte Trye', 12, 'Brazil', 39, 'Entry Fragger', 75.61, 482, 1168, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2124, 'Farah Garretts', 12, 'China', 34, 'Support', 12.35, 464, 2527, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2125, 'Tony Tidball', 18, 'Malaysia', 21, 'Flex', 95.61, 32, 1703, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2126, 'Rosita Cabral', 13, 'China', 25, 'Support', 28.93, 261, 958, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2127, 'Morty Pherps', 21, 'Indonesia', 19, 'Flex', 54.67, 201, 2518, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2128, 'Jdavie Sidebotton', 7, 'New Zealand', 34, 'Leader', 18.52, 249, 1339, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2129, 'Alejandro Sessions', 18, 'Philippines', 23, 'Support', 19.62, 137, 2713, 2.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2130, 'Kimmie Laimable', 17, 'China', 35, 'Support', 1.44, 240, 2400, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2131, 'Chelsy Saffin', 9, 'Philippines', 42, 'Support', 98.27, 68, 2028, 2.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2132, 'Daisie Gutcher', 15, 'Indonesia', 26, 'Entry Fragger', 56.52, 228, 2342, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2133, 'Gabriell Spavon', 14, 'Indonesia', 32, 'Flex', 98.09, 255, 1246, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2134, 'Sherwood Leveret', 15, 'China', 22, 'Entry Fragger', 15.51, 438, 1670, 1.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2135, 'Blaire Tickle', 14, 'China', 24, 'Flex', 42.38, 214, 1726, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2136, 'Titos Lockyear', 20, 'Indonesia', 32, 'Flex', 61.40, 447, 1587, 0.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2137, 'Inness Jurek', 8, 'Indonesia', 25, 'Leader', 82.57, 60, 1305, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2138, 'Whitby Dandy', 3, 'Indonesia', 32, 'Support', 19.94, 255, 760, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2139, 'Allsun Gianasi', 4, 'Malta', 36, 'Leader', 87.69, 411, 1017, 1.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2140, 'Phillipp Castanaga', 8, 'Nicaragua', 26, 'Leader', 52.81, 222, 1699, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2141, 'Verine Zorzenoni', 13, 'Thailand', 41, 'Leader', 80.23, 146, 1392, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2142, 'Ferdy Giorgiutti', 20, 'Peru', 38, 'Flex', 23.24, 150, 2216, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2143, 'Agnes Duce', 20, 'Russia', 41, 'Flex', 40.75, 471, 1215, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2144, 'Trumaine Cano', 14, 'Indonesia', 26, 'Support', 63.82, 145, 2771, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2145, 'Normie Cammish', 6, 'Kenya', 41, 'Support', 47.10, 497, 1295, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2146, 'Anica Ninnis', 7, 'Portugal', 32, 'Leader', 51.79, 83, 2108, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2147, 'Ertha Gallone', 15, 'Indonesia', 23, 'Support', 85.92, 166, 2355, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2148, 'Beatrice Bach', 18, 'France', 40, 'Flex', 75.76, 378, 489, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2149, 'Alexandros Springtorpe', 1, 'Croatia', 32, 'Flex', 69.83, 232, 2937, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2150, 'Zahara Greenin', 4, 'Lithuania', 32, 'Flex', 36.01, 267, 2401, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2151, 'Urbain Crowhurst', 17, 'Brazil', 23, 'Leader', 77.63, 421, 378, 0.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2152, 'Annalee Crathorne', 11, 'China', 25, 'Support', 44.78, 370, 417, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2153, 'Babbie Dodsley', 3, 'Russia', 18, 'Entry Fragger', 10.75, 4, 787, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2154, 'Randi Rizzolo', 8, 'China', 38, 'Flex', 81.54, 306, 2531, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2155, 'Angelle Spyby', 21, 'China', 31, 'Flex', 26.72, 263, 161, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2156, 'Westbrooke Esslement', 10, 'Oman', 34, 'Leader', 52.93, 253, 1709, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2157, 'Joan Melesk', 5, 'Egypt', 42, 'Flex', 30.32, 80, 2795, 0.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2158, 'Lissie Duffit', 11, 'Canada', 25, 'Flex', 75.20, 407, 1539, 0.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2159, 'Filippo Troth', 15, 'China', 40, 'Flex', 77.21, 195, 782, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2160, 'Nari Swinfen', 12, 'Poland', 31, 'Flex', 14.47, 0, 2994, 2.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2161, 'Dalton Hawney', 8, 'Guadeloupe', 35, 'Support', 58.81, 461, 2945, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2162, 'Dianne Fandrich', 6, 'Sweden', 18, 'Support', 92.13, 411, 189, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2163, 'Dolph Bloys', 8, 'Macedonia', 25, 'Flex', 4.53, 426, 1972, 0.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2164, 'Roma Lax', 19, 'Thailand', 39, 'Support', 40.21, 76, 1838, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2165, 'Shantee Courcey', 18, 'Bhutan', 24, 'Leader', 5.15, 253, 450, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2166, 'Thedrick Gotcliffe', 20, 'China', 20, 'Leader', 65.07, 4, 2404, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2167, 'Julita Turpie', 16, 'Brazil', 24, 'Support', 20.23, 171, 624, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2168, 'Dalston Mertgen', 6, 'Ethiopia', 23, 'Leader', 96.63, 382, 1424, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2169, 'Gretna Backman', 2, 'China', 30, 'Leader', 14.92, 108, 394, 1.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2170, 'Corissa Hellyer', 10, 'Czech Republic', 39, 'Leader', 37.81, 86, 1988, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2171, 'Thane Immings', 9, 'Philippines', 41, 'Entry Fragger', 40.95, 301, 2890, 1.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2172, 'Aloise Treen', 10, 'Indonesia', 21, 'Leader', 26.80, 226, 2898, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2173, 'Justine Exton', 16, 'Portugal', 30, 'Entry Fragger', 87.50, 73, 2632, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2174, 'Raven Guerra', 3, 'Philippines', 18, 'Leader', 49.36, 488, 369, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2175, 'Washington Doveston', 12, 'Indonesia', 32, 'Entry Fragger', 22.45, 60, 747, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2176, 'Walden Fike', 15, 'Vietnam', 23, 'Entry Fragger', 85.78, 462, 660, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2177, 'Garwin Delouch', 11, 'Brazil', 42, 'Leader', 82.71, 404, 941, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2178, 'Zora Guard', 18, 'Philippines', 33, 'Support', 20.07, 444, 1744, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2179, 'Jasun Arne', 9, 'Portugal', 19, 'Flex', 60.65, 334, 2371, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2180, 'Alonzo Loren', 13, 'Armenia', 38, 'Leader', 15.36, 302, 1305, 2.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2181, 'Danni Gheorghie', 21, 'Philippines', 18, 'Flex', 2.21, 104, 2654, 2.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2182, 'Shaine Floweth', 4, 'China', 26, 'Entry Fragger', 43.34, 233, 90, 2.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2183, 'Kaylil Beddall', 7, 'Philippines', 27, 'Flex', 6.88, 324, 1975, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2184, 'Nelson Onele', 6, 'China', 39, 'Support', 13.76, 399, 1876, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2185, 'Danie Vittet', 10, 'Finland', 26, 'Support', 55.33, 182, 381, 2.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2186, 'Pate Baudasso', 21, 'Brazil', 39, 'Support', 69.30, 133, 95, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2187, 'Amerigo Jurgen', 11, 'China', 38, 'Flex', 44.64, 66, 84, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2188, 'Lauralee Lawty', 20, 'Brazil', 38, 'Support', 13.59, 235, 2120, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2189, 'Monika Miko', 20, 'Panama', 18, 'Flex', 16.93, 223, 1630, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2190, 'Joete Floodgate', 8, 'Poland', 39, 'Flex', 90.30, 109, 1467, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2191, 'Ody Oxbrough', 15, 'China', 22, 'Support', 18.24, 83, 1942, 0.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2192, 'Dalston Pass', 17, 'Indonesia', 29, 'Support', 48.83, 419, 838, 2.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2193, 'Kaleb Westman', 17, 'China', 38, 'Entry Fragger', 8.61, 213, 2424, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2194, 'Juliann Tiebe', 9, 'China', 37, 'Entry Fragger', 85.30, 132, 386, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2195, 'Brade Lashley', 7, 'Namibia', 40, 'Support', 96.98, 492, 1441, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2196, 'Wit Puttnam', 19, 'China', 22, 'Flex', 74.07, 256, 948, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2197, 'Robbie Christopherson', 18, 'Russia', 28, 'Entry Fragger', 27.31, 167, 2708, 0.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2198, 'Claus Fussell', 20, 'United States', 18, 'Leader', 7.82, 279, 2064, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2199, 'Julina Jeffs', 4, 'Sweden', 38, 'Leader', 71.53, 354, 1652, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2200, 'Laurianne Willison', 16, 'Indonesia', 32, 'Leader', 92.57, 344, 2680, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2201, 'Daven Deathridge', 3, 'Indonesia', 22, 'Support', 78.42, 498, 1506, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2202, 'Lev Slyne', 21, 'Colombia', 27, 'Flex', 85.26, 328, 2079, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2203, 'Rosana Levane', 16, 'South Africa', 27, 'Flex', 82.49, 30, 43, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2204, 'Gerrard Spalls', 9, 'Poland', 26, 'Support', 69.09, 205, 1216, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2205, 'Maddie Mellody', 19, 'Indonesia', 37, 'Flex', 52.78, 8, 1115, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2206, 'Gunner Lilford', 15, 'China', 37, 'Flex', 35.77, 19, 1617, 2.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2207, 'Kathie Scirman', 21, 'Czech Republic', 21, 'Support', 33.24, 159, 2292, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2208, 'Thorny Wickman', 6, 'Poland', 30, 'Support', 19.62, 455, 1177, 1.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2209, 'Pearla Brookesbie', 3, 'China', 42, 'Support', 84.05, 428, 939, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2210, 'Hester Itzkovsky', 5, 'Mali', 27, 'Leader', 25.25, 154, 1301, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2211, 'Pegeen Blew', 18, 'Indonesia', 19, 'Leader', 1.42, 174, 777, 0.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2212, 'Reeva Olney', 7, 'Mauritius', 35, 'Entry Fragger', 17.56, 143, 1076, 2.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2213, 'Addie De Vuyst', 15, 'Democratic Republic of the Congo', 22, 'Support', 37.06, 183, 2889, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2214, 'Ronni Wheelan', 1, 'Mauritania', 32, 'Support', 35.36, 364, 1146, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2215, 'Whitney Crew', 9, 'Indonesia', 22, 'Flex', 41.40, 281, 2061, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2216, 'Quinn Gaylord', 21, 'Brazil', 37, 'Leader', 45.55, 454, 2573, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2217, 'Julia Dudson', 9, 'Palestinian Territory', 23, 'Entry Fragger', 25.96, 145, 583, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2218, 'Rasia Vankeev', 2, 'Albania', 31, 'Support', 51.36, 464, 1894, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2219, 'Newton Veschambes', 18, 'Trinidad and Tobago', 35, 'Flex', 91.82, 55, 775, 1.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2220, 'Levi Lethbridge', 18, 'Finland', 35, 'Entry Fragger', 3.41, 312, 1901, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2221, 'Robert Mercik', 3, 'Honduras', 32, 'Leader', 40.57, 300, 1721, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2222, 'Kearney Torbard', 17, 'Indonesia', 26, 'Entry Fragger', 82.39, 117, 370, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2223, 'Aggi Spaight', 16, 'Poland', 38, 'Flex', 49.75, 261, 627, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2224, 'Cherri Youde', 5, 'Pakistan', 38, 'Entry Fragger', 54.52, 170, 2093, 1.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2225, 'Hildegarde Harrop', 21, 'Sweden', 35, 'Entry Fragger', 88.80, 424, 924, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2226, 'Rhoda Schultes', 7, 'Slovenia', 20, 'Support', 71.83, 249, 2883, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2227, 'Gisella Evered', 11, 'China', 23, 'Leader', 48.73, 64, 2002, 1.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2228, 'Keely Radwell', 19, 'Russia', 38, 'Flex', 34.37, 85, 2876, 1.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2229, 'Lindy Yerill', 6, 'Poland', 24, 'Entry Fragger', 14.20, 44, 2656, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2230, 'Cynthie Blaszczak', 8, 'Croatia', 27, 'Support', 91.55, 158, 413, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2231, 'Eric Hubber', 16, 'Vietnam', 31, 'Entry Fragger', 71.03, 418, 560, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2232, 'Steffane Mewes', 17, 'Portugal', 27, 'Support', 97.93, 34, 426, 2.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2233, 'Marsh Denge', 10, 'China', 39, 'Leader', 62.06, 228, 2458, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2234, 'Amil Renne', 18, 'China', 21, 'Entry Fragger', 31.17, 482, 2891, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2235, 'Janos Harkess', 13, 'Indonesia', 20, 'Support', 41.02, 35, 1195, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2236, 'Meredith Gallie', 1, 'Peru', 40, 'Support', 28.58, 55, 2118, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2237, 'Latisha Djurdjevic', 4, 'Russia', 20, 'Leader', 72.79, 376, 1580, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2238, 'Marlin Ramey', 11, 'China', 32, 'Flex', 25.87, 69, 2483, 0.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2239, 'Alister Bly', 2, 'Russia', 38, 'Flex', 72.51, 253, 1174, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2240, 'Delainey Patriche', 8, 'Paraguay', 28, 'Flex', 76.44, 414, 2212, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2241, 'Dietrich Yankov', 3, 'Portugal', 34, 'Flex', 86.12, 341, 1061, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2242, 'Alli Andresen', 2, 'France', 33, 'Support', 0.18, 207, 1891, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2243, 'Jarrad Jankiewicz', 9, 'Russia', 23, 'Leader', 79.34, 276, 1854, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2244, 'Evangeline Belk', 8, 'Brazil', 33, 'Entry Fragger', 71.53, 84, 927, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2245, 'Odelle Moye', 2, 'Madagascar', 26, 'Support', 91.19, 484, 520, 1.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2246, 'Conney Maffia', 12, 'France', 22, 'Leader', 51.69, 95, 241, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2247, 'Martina Falconar', 14, 'Mexico', 18, 'Flex', 15.02, 172, 1214, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2248, 'Simonette Crosbie', 16, 'Indonesia', 36, 'Entry Fragger', 20.27, 71, 1076, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2249, 'Josh Fuge', 5, 'China', 26, 'Leader', 20.87, 237, 2569, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2250, 'Jarid Dawes', 20, 'Yemen', 21, 'Entry Fragger', 55.97, 209, 557, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2251, 'Marcel Pelling', 2, 'Portugal', 21, 'Leader', 53.71, 393, 1468, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2252, 'Zsa zsa Petris', 18, 'Russia', 40, 'Leader', 54.08, 257, 621, 1.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2253, 'Desi Stollhofer', 17, 'Poland', 34, 'Flex', 24.82, 96, 327, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2254, 'Guthry Wallege', 21, 'Peru', 42, 'Support', 79.88, 382, 102, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2255, 'Nicolette Headington', 3, 'Ireland', 31, 'Support', 0.03, 94, 2422, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2256, 'Kathie Atchly', 10, 'Vietnam', 19, 'Leader', 66.31, 39, 336, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2257, 'Nora Volet', 10, 'China', 22, 'Support', 48.26, 29, 2000, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2258, 'Pippo Chess', 19, 'South Korea', 23, 'Flex', 50.52, 381, 1984, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2259, 'Justin Mc Caughen', 18, 'France', 36, 'Leader', 34.57, 115, 706, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2260, 'Alexina Hargraves', 21, 'United Kingdom', 31, 'Entry Fragger', 64.33, 316, 2027, 2.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2261, 'Nadia Havvock', 3, 'China', 40, 'Support', 59.05, 305, 74, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2262, 'Ramonda Passey', 8, 'Indonesia', 25, 'Entry Fragger', 22.50, 153, 241, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2263, 'Maible MacBey', 18, 'Brazil', 18, 'Leader', 32.07, 73, 310, 0.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2264, 'Clo Wanne', 19, 'Indonesia', 19, 'Leader', 86.40, 95, 2728, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2265, 'Petronille Devenport', 2, 'Russia', 37, 'Flex', 63.25, 418, 876, 0.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2266, 'Rickie McKeveney', 8, 'Ukraine', 41, 'Flex', 72.30, 44, 2333, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2267, 'Noel Maffione', 20, 'Philippines', 19, 'Entry Fragger', 58.20, 413, 1564, 2.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2268, 'Claiborn Kindell', 9, 'United States', 30, 'Entry Fragger', 41.52, 131, 521, 0.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2269, 'Boyd Gooke', 19, 'Macedonia', 26, 'Flex', 61.32, 383, 838, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2270, 'Lavina Stuther', 9, 'Netherlands', 33, 'Entry Fragger', 87.43, 450, 506, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2271, 'Dorothea Mobius', 13, 'Panama', 25, 'Flex', 84.89, 179, 1802, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2272, 'Connie Barley', 5, 'Poland', 37, 'Flex', 70.39, 7, 2320, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2273, 'Siana Limbert', 11, 'Brazil', 26, 'Leader', 68.23, 344, 2983, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2274, 'Cristie Ivantyev', 2, 'Montenegro', 37, 'Leader', 43.49, 189, 2743, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2275, 'Alano Cornfoot', 14, 'China', 22, 'Flex', 5.21, 373, 2078, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2276, 'Charo Rumford', 8, 'El Salvador', 32, 'Entry Fragger', 2.12, 270, 1320, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2277, 'Roth Escolme', 14, 'China', 31, 'Support', 25.08, 217, 1690, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2278, 'Montgomery Halversen', 19, 'Nigeria', 21, 'Entry Fragger', 1.82, 28, 579, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2279, 'Madella Goodwyn', 6, 'Georgia', 34, 'Flex', 88.50, 15, 2119, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2280, 'Paquito Revel', 5, 'Paraguay', 38, 'Support', 88.22, 301, 1848, 1.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2281, 'Jeramey Fawlo', 16, 'Portugal', 21, 'Leader', 63.85, 194, 289, 2.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2282, 'Raimund Avent', 15, 'China', 35, 'Flex', 40.05, 329, 1419, 1.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2283, 'Lusa Brandoni', 6, 'Brazil', 19, 'Entry Fragger', 74.95, 152, 378, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2284, 'Cinda Wallworke', 6, 'Russia', 40, 'Entry Fragger', 98.52, 325, 358, 2.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2285, 'Lynnell Kobpa', 5, 'Thailand', 30, 'Flex', 11.01, 11, 2144, 2.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2286, 'Lynnelle Chadwin', 3, 'Indonesia', 35, 'Support', 2.98, 74, 561, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2287, 'Wyndham Dishman', 11, 'Brazil', 39, 'Leader', 21.81, 248, 1890, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2288, 'Constantine Widdowfield', 4, 'China', 23, 'Flex', 89.38, 385, 2073, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2289, 'Lainey Schleswig-Holstein', 13, 'Brazil', 35, 'Leader', 1.24, 305, 2443, 0.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2290, 'Alard Mettrick', 11, 'Indonesia', 25, 'Flex', 82.65, 7, 2948, 1.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2291, 'Zabrina Whelan', 19, 'Sweden', 35, 'Support', 89.37, 107, 2372, 2.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2292, 'Meredith Triswell', 19, 'Indonesia', 24, 'Flex', 62.71, 278, 508, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2293, 'Auberta Chetwin', 5, 'Egypt', 26, 'Entry Fragger', 94.99, 68, 2215, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2294, 'Chris Mountjoy', 1, 'China', 39, 'Support', 10.00, 350, 751, 0.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2295, 'Haily Krzyzowski', 16, 'Yemen', 22, 'Flex', 77.51, 98, 2869, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2296, 'Norry Benck', 2, 'China', 36, 'Flex', 53.94, 118, 2808, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2297, 'Tally Moakler', 1, 'China', 27, 'Leader', 63.31, 345, 1799, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2298, 'Nikolas Millsom', 10, 'Indonesia', 41, 'Support', 77.24, 346, 71, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2299, 'Lou Graham', 12, 'Ivory Coast', 31, 'Leader', 56.27, 456, 2491, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2300, 'Lynnelle Paolino', 7, 'South Africa', 19, 'Leader', 52.34, 113, 2722, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2301, 'Lucie Klosges', 2, 'Brazil', 26, 'Flex', 49.37, 316, 2045, 2.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2302, 'Benoite Bellon', 11, 'China', 23, 'Flex', 6.60, 215, 1315, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2303, 'Anica Andree', 14, 'Brazil', 41, 'Support', 3.16, 88, 423, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2304, 'Kory Dunbleton', 19, 'China', 29, 'Leader', 46.60, 409, 1432, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2305, 'Myriam Ruusa', 10, 'China', 39, 'Flex', 78.00, 335, 2846, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2306, 'Jemima Pilger', 8, 'Japan', 41, 'Flex', 40.98, 157, 1697, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2307, 'Renault Bonar', 18, 'South Korea', 30, 'Support', 81.60, 83, 2183, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2308, 'Lorilyn Eveque', 10, 'Brazil', 26, 'Entry Fragger', 1.82, 184, 1959, 2.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2309, 'Alys Keely', 14, 'Indonesia', 42, 'Flex', 53.30, 267, 2968, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2310, 'Amalia Stoite', 4, 'Indonesia', 25, 'Entry Fragger', 18.52, 53, 605, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2311, 'Mirabel Hartzog', 15, 'Gambia', 31, 'Support', 51.08, 272, 1359, 1.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2312, 'Emelen Pignon', 20, 'Philippines', 24, 'Leader', 12.92, 441, 213, 1.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2313, 'Mace Hansell', 16, 'China', 42, 'Entry Fragger', 60.61, 248, 1709, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2314, 'Webb Flahy', 13, 'China', 24, 'Support', 85.87, 288, 471, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2315, 'Fay Penhearow', 2, 'Brazil', 27, 'Flex', 27.85, 257, 2673, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2316, 'Idette Bodimeade', 19, 'Peru', 38, 'Entry Fragger', 86.34, 44, 2431, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2317, 'Gwenette Mitchinson', 12, 'Indonesia', 37, 'Entry Fragger', 58.25, 444, 1381, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2318, 'Elfreda Cowle', 16, 'Indonesia', 36, 'Support', 73.89, 108, 106, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2319, 'Jesus Steventon', 15, 'Indonesia', 39, 'Flex', 67.98, 289, 679, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2320, 'Celestia Bradberry', 17, 'Japan', 40, 'Flex', 99.04, 492, 598, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2321, 'Wilhelmina Eckh', 1, 'China', 22, 'Leader', 88.33, 249, 123, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2322, 'Meris Tattersall', 20, 'China', 32, 'Entry Fragger', 2.34, 423, 2127, 1.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2323, 'Matt Danson', 2, 'Portugal', 33, 'Support', 93.95, 128, 2152, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2324, 'Donetta Schulze', 1, 'Philippines', 37, 'Flex', 79.98, 148, 808, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2325, 'Brok Shickle', 17, 'Mongolia', 32, 'Flex', 8.93, 273, 2410, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2326, 'Myrah Pigney', 15, 'Brazil', 37, 'Flex', 25.85, 449, 1792, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2327, 'Carl Jirzik', 21, 'France', 32, 'Flex', 54.37, 54, 2859, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2328, 'Lexi Godsil', 14, 'Russia', 33, 'Entry Fragger', 27.18, 489, 2653, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2329, 'Sigvard Champain', 14, 'China', 20, 'Leader', 45.66, 131, 2962, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2330, 'Janetta Hassey', 10, 'China', 33, 'Flex', 62.35, 269, 71, 2.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2331, 'Page Deverock', 9, 'China', 38, 'Entry Fragger', 41.31, 475, 210, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2332, 'Cheryl Maciocia', 18, 'Indonesia', 26, 'Leader', 69.26, 356, 2410, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2333, 'Alexine Pelosi', 11, 'Poland', 26, 'Flex', 80.91, 254, 997, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2334, 'Colette Handscomb', 15, 'United States', 20, 'Entry Fragger', 11.50, 87, 1943, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2335, 'Cassius Jeandel', 13, 'China', 40, 'Leader', 84.70, 15, 863, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2336, 'Darrin Acott', 9, 'China', 36, 'Support', 59.74, 268, 2355, 1.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2337, 'Neddie Plaid', 17, 'Russia', 39, 'Leader', 69.73, 420, 1082, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2338, 'Ardelle Gaymar', 7, 'Indonesia', 24, 'Entry Fragger', 5.89, 276, 2180, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2339, 'Cristine Burdfield', 6, 'China', 33, 'Flex', 15.13, 166, 1914, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2340, 'Welch Bennett', 17, 'Mexico', 29, 'Flex', 73.52, 302, 2506, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2341, 'Eliza Colpus', 17, 'Philippines', 19, 'Support', 65.50, 176, 1652, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2342, 'Daniela Scholard', 19, 'Indonesia', 29, 'Leader', 98.29, 350, 1773, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2343, 'Silvanus Bierman', 17, 'China', 30, 'Entry Fragger', 97.70, 11, 513, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2344, 'Alyson Crunden', 13, 'Belarus', 30, 'Flex', 59.31, 285, 751, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2345, 'Blythe MacCafferty', 9, 'Canada', 39, 'Leader', 69.22, 470, 1877, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2346, 'Ceciley Ramard', 9, 'Egypt', 22, 'Entry Fragger', 55.44, 261, 262, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2347, 'Desiri McKernon', 14, 'Serbia', 36, 'Support', 39.32, 458, 1507, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2348, 'Sophey Adam', 4, 'China', 32, 'Leader', 70.60, 407, 593, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2349, 'Arnoldo Lisett', 2, 'France', 40, 'Entry Fragger', 90.64, 355, 2571, 1.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2350, 'Marianne Casiroli', 8, 'China', 26, 'Flex', 56.26, 42, 1373, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2351, 'Finley Deeks', 7, 'Thailand', 18, 'Flex', 92.00, 4, 144, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2352, 'Shelbi Backson', 18, 'China', 27, 'Leader', 94.56, 63, 849, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2353, 'Flora Andell', 6, 'China', 25, 'Support', 88.45, 452, 1188, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2354, 'Rani Bernardt', 15, 'Dominican Republic', 25, 'Support', 81.74, 106, 117, 2.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2355, 'Tommy Carse', 19, 'Poland', 25, 'Support', 25.85, 214, 977, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2356, 'Daryle Erie', 3, 'China', 19, 'Flex', 71.14, 237, 1130, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2357, 'Finn Dunan', 15, 'China', 23, 'Entry Fragger', 28.64, 413, 959, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2358, 'Michale Robbel', 9, 'China', 18, 'Entry Fragger', 44.01, 305, 1403, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2359, 'Clarance Dodamead', 8, 'Poland', 38, 'Support', 38.42, 175, 825, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2360, 'Prissie Semiras', 21, 'Thailand', 19, 'Leader', 23.11, 34, 2746, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2361, 'Agosto Semble', 18, 'Burkina Faso', 35, 'Support', 76.35, 330, 956, 0.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2362, 'Veronike Giacobini', 17, 'United States', 26, 'Support', 4.49, 409, 2072, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2363, 'Leopold Moorey', 11, 'Russia', 33, 'Entry Fragger', 80.96, 120, 2232, 1.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2364, 'Archibald Schneidau', 17, 'Indonesia', 21, 'Leader', 66.52, 413, 1808, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2365, 'Gaelan Skrine', 6, 'Czech Republic', 32, 'Entry Fragger', 27.94, 135, 2996, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2366, 'Neysa Balasini', 2, 'Indonesia', 42, 'Leader', 98.03, 170, 1759, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2367, 'Latashia Glitherow', 3, 'Cameroon', 28, 'Entry Fragger', 87.94, 462, 1966, 2.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2368, 'Dolli Mills', 9, 'Palestinian Territory', 33, 'Flex', 88.56, 497, 2260, 0.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2369, 'Findlay Daber', 12, 'Brazil', 38, 'Leader', 61.70, 286, 1984, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2370, 'Hector Eirwin', 10, 'China', 26, 'Leader', 22.33, 385, 2761, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2371, 'Shalne Leonarde', 6, 'Indonesia', 25, 'Support', 68.45, 233, 2556, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2372, 'Helga Best', 15, 'Ukraine', 32, 'Flex', 93.53, 150, 1952, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2373, 'Melody Drummond', 13, 'Portugal', 26, 'Support', 41.33, 52, 1093, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2374, 'Irena Hospital', 8, 'Brazil', 38, 'Flex', 77.13, 33, 1886, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2375, 'Nikolai Schiell', 6, 'Ethiopia', 25, 'Flex', 5.84, 71, 780, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2376, 'Inger Fellgatt', 11, 'France', 35, 'Flex', 20.98, 130, 1913, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2377, 'Masha Grieveson', 8, 'China', 22, 'Entry Fragger', 8.52, 99, 982, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2378, 'Nathanial Menichelli', 7, 'Japan', 34, 'Flex', 47.53, 37, 838, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2379, 'Dyan Bruin', 17, 'Russia', 42, 'Flex', 13.60, 30, 988, 2.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2380, 'Tait McFadin', 18, 'Philippines', 24, 'Leader', 69.51, 130, 2432, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2381, 'Ada McGarel', 2, 'Tunisia', 24, 'Support', 68.72, 178, 2672, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2382, 'Aldwin Overshott', 6, 'Armenia', 37, 'Support', 34.02, 450, 1331, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2383, 'Alec Townsend', 12, 'Indonesia', 24, 'Leader', 65.35, 238, 1859, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2384, 'Kristian Capozzi', 12, 'United States', 23, 'Entry Fragger', 75.77, 195, 1677, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2385, 'Jasmine Wybourne', 16, 'Macedonia', 29, 'Leader', 37.21, 28, 103, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2386, 'Clyve Gerring', 5, 'Poland', 35, 'Entry Fragger', 32.06, 375, 569, 0.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2387, 'Oby Rasor', 12, 'Canada', 41, 'Entry Fragger', 18.63, 27, 1191, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2388, 'Amelie Morrison', 8, 'Russia', 42, 'Support', 66.30, 128, 1594, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2389, 'Vivie St Louis', 12, 'China', 18, 'Entry Fragger', 71.05, 405, 1033, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2390, 'Jessa Hayes', 4, 'Philippines', 25, 'Leader', 58.70, 53, 1600, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2391, 'Bartolomeo Beernaert', 6, 'Vietnam', 27, 'Support', 42.68, 236, 629, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2392, 'Aigneis Bovis', 18, 'Czech Republic', 25, 'Support', 32.92, 252, 652, 3.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2393, 'Stanley Wilshere', 20, 'Sweden', 42, 'Flex', 2.19, 397, 1800, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2394, 'Isaak Rubery', 1, 'Czech Republic', 35, 'Flex', 88.49, 442, 2215, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2395, 'Richart Fernie', 9, 'United States', 28, 'Flex', 25.94, 9, 1900, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2396, 'Eada Tireman', 4, 'Lithuania', 41, 'Entry Fragger', 14.75, 456, 2145, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2397, 'Austina Joye', 20, 'Canada', 34, 'Flex', 87.61, 132, 1427, 0.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2398, 'Laure Lamblin', 3, 'China', 20, 'Leader', 20.34, 29, 443, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2399, 'Perrine Shears', 20, 'Poland', 21, 'Leader', 83.55, 436, 2042, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2400, 'Rosabel Pollastrino', 8, 'Philippines', 18, 'Flex', 28.86, 186, 1153, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2401, 'Osborne Dearth', 5, 'French Polynesia', 23, 'Leader', 52.66, 347, 808, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2402, 'Sigismondo Proudlove', 1, 'Philippines', 20, 'Flex', 3.83, 36, 1777, 2.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2403, 'Ddene Tue', 19, 'Mexico', 23, 'Flex', 35.23, 44, 1077, 1.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2404, 'Brittani Shewan', 3, 'Ethiopia', 42, 'Flex', 7.82, 369, 1201, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2405, 'Vincent Pendle', 13, 'Ivory Coast', 22, 'Support', 69.12, 244, 1591, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2406, 'Donn Perrottet', 19, 'China', 31, 'Leader', 23.02, 221, 2967, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2407, 'Virgie Messenbird', 7, 'Japan', 42, 'Flex', 34.52, 181, 881, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2408, 'Shelley Dinsey', 16, 'Ecuador', 22, 'Entry Fragger', 70.01, 221, 214, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2409, 'Emmery Charnick', 6, 'Ireland', 23, 'Leader', 98.68, 25, 2363, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2410, 'Adina Crews', 8, 'Portugal', 38, 'Entry Fragger', 34.70, 23, 2649, 2.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2411, 'Wat Lumsdale', 14, 'Ghana', 38, 'Entry Fragger', 78.96, 485, 593, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2412, 'Carolann Wemes', 19, 'Indonesia', 30, 'Entry Fragger', 39.28, 95, 649, 1.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2413, 'Basil Lister', 2, 'China', 31, 'Flex', 46.36, 462, 1067, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2414, 'Mendel Crickett', 10, 'China', 37, 'Support', 65.61, 46, 2036, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2415, 'Zebulen Ranscome', 6, 'Nicaragua', 36, 'Leader', 25.41, 482, 571, 0.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2416, 'Salomi McAllen', 12, 'Iran', 31, 'Support', 15.11, 299, 1729, 2.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2417, 'Bent Tallant', 4, 'Japan', 23, 'Support', 83.22, 274, 127, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2418, 'Alick Blackborn', 10, 'Thailand', 33, 'Leader', 48.01, 360, 1736, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2419, 'Ahmed Weir', 5, 'Sweden', 40, 'Flex', 57.15, 7, 1774, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2420, 'Cyrille Smouten', 16, 'China', 28, 'Support', 3.84, 357, 2144, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2421, 'Joshia Ebbetts', 13, 'Mexico', 25, 'Support', 80.29, 485, 2882, 0.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2422, 'Kasey Hazell', 2, 'Guinea', 40, 'Leader', 10.86, 311, 2520, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2423, 'Edi Lebreton', 4, 'Mongolia', 23, 'Support', 13.35, 402, 557, 2.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2424, 'Jacob Bobasch', 15, 'Japan', 35, 'Leader', 20.28, 14, 287, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2425, 'Krysta Unthank', 16, 'United States', 38, 'Support', 59.55, 135, 1429, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2426, 'Leda Danbrook', 7, 'Canada', 39, 'Flex', 63.43, 110, 430, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2427, 'Andy Copestick', 4, 'Finland', 27, 'Flex', 13.80, 87, 2736, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2428, 'Manda McCarney', 8, 'Indonesia', 40, 'Support', 39.85, 156, 783, 0.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2429, 'Alonso Harget', 21, 'Indonesia', 25, 'Leader', 99.68, 349, 730, 1.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2430, 'Yulma Stacey', 10, 'China', 36, 'Leader', 20.70, 365, 116, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2431, 'Raleigh Warr', 20, 'China', 36, 'Support', 84.49, 474, 616, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2432, 'Morganica Shovell', 10, 'Honduras', 24, 'Flex', 45.69, 12, 344, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2433, 'Merla Cristofori', 20, 'Venezuela', 18, 'Entry Fragger', 30.38, 222, 622, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2434, 'Emmanuel Jess', 8, 'Indonesia', 37, 'Flex', 84.97, 258, 1152, 1.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2435, 'Carroll Turner', 1, 'China', 38, 'Leader', 35.25, 184, 2573, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2436, 'Davida Foxten', 13, 'China', 18, 'Support', 75.27, 32, 2688, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2437, 'Sidonnie Payton', 16, 'Kenya', 42, 'Flex', 42.36, 322, 1237, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2438, 'Janette Ashelford', 5, 'Japan', 40, 'Entry Fragger', 94.52, 426, 2470, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2439, 'Phillip Lowell', 3, 'Russia', 29, 'Support', 27.55, 128, 209, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2440, 'Krissie Riach', 4, 'Ukraine', 23, 'Support', 68.84, 181, 2762, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2441, 'Prescott Reinhart', 21, 'Russia', 33, 'Support', 43.69, 439, 320, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2442, 'Yolande Conway', 19, 'Colombia', 27, 'Leader', 43.04, 115, 1030, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2443, 'Damon Carslake', 6, 'Democratic Republic of the Congo', 39, 'Entry Fragger', 17.88, 58, 172, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2444, 'Kirsteni Spadotto', 16, 'Tanzania', 23, 'Flex', 54.91, 66, 1422, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2445, 'Dolly Aldwich', 1, 'Portugal', 28, 'Leader', 34.71, 31, 2779, 1.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2446, 'Ollie Rama', 19, 'Libya', 41, 'Entry Fragger', 91.19, 18, 472, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2447, 'Caye Beckers', 6, 'Indonesia', 36, 'Flex', 1.32, 8, 445, 0.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2448, 'Mindy Eisikowitz', 12, 'France', 36, 'Support', 87.19, 276, 1327, 0.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2449, 'Neale Kadd', 5, 'Indonesia', 41, 'Flex', 14.28, 329, 633, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2450, 'Patin Broadway', 12, 'Russia', 20, 'Leader', 67.30, 280, 835, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2451, 'Lancelot Di Filippo', 11, 'South Africa', 39, 'Flex', 72.99, 95, 2192, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2452, 'Baron Thurbon', 18, 'Norway', 21, 'Entry Fragger', 85.97, 139, 822, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2453, 'Petunia Germon', 20, 'Montenegro', 27, 'Entry Fragger', 14.92, 145, 243, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2454, 'Ellswerth Petrol', 1, 'Sweden', 18, 'Entry Fragger', 96.39, 445, 2617, 1.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2455, 'Ginni Goodisson', 15, 'Ireland', 35, 'Support', 94.44, 252, 1066, 2.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2456, 'Clayson Layburn', 8, 'Indonesia', 19, 'Support', 48.64, 442, 167, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2457, 'Mada Abelevitz', 1, 'Indonesia', 25, 'Support', 84.03, 406, 1597, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2458, 'Douglass Tethcote', 8, 'Greece', 21, 'Support', 31.56, 160, 1738, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2459, 'Spike Ivanilov', 6, 'United States', 38, 'Flex', 2.75, 459, 481, 2.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2460, 'Brianne Troman', 14, 'Bulgaria', 34, 'Support', 69.09, 170, 180, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2461, 'Haskel Burlingham', 2, 'Philippines', 32, 'Flex', 12.51, 455, 729, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2462, 'Ira Bothbie', 19, 'Czech Republic', 19, 'Entry Fragger', 55.27, 16, 1816, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2463, 'Rog Toulamain', 3, 'Ukraine', 41, 'Entry Fragger', 33.04, 245, 2455, 1.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2464, 'Shellysheldon Feldheim', 12, 'Sweden', 32, 'Support', 47.64, 204, 1472, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2465, 'Julius Boxe', 2, 'Brazil', 36, 'Leader', 16.86, 359, 1419, 1.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2466, 'Hannis Aburrow', 21, 'Japan', 31, 'Flex', 67.99, 433, 2436, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2467, 'Marti Donneely', 12, 'Ukraine', 38, 'Entry Fragger', 98.41, 190, 2316, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2468, 'Eddie Gainsboro', 20, 'China', 18, 'Leader', 68.24, 70, 2608, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2469, 'Clio Chavrin', 2, 'China', 23, 'Leader', 25.56, 445, 1839, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2470, 'Chrissy Arnold', 5, 'China', 31, 'Leader', 2.05, 423, 63, 0.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2471, 'Constantina Pearsall', 9, 'Philippines', 21, 'Flex', 57.79, 137, 2325, 1.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2472, 'Denny Seamans', 7, 'Brazil', 38, 'Support', 7.08, 422, 2248, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2473, 'Romola Lissimore', 10, 'China', 18, 'Leader', 7.30, 345, 539, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2474, 'Halimeda McLanaghan', 13, 'Philippines', 25, 'Leader', 48.64, 399, 1473, 2.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2475, 'Merv Stiff', 6, 'Russia', 27, 'Entry Fragger', 8.55, 444, 742, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2476, 'Natasha Yakushkev', 21, 'Indonesia', 31, 'Leader', 20.50, 415, 2875, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2477, 'Katey Railton', 20, 'Nigeria', 26, 'Flex', 93.25, 368, 455, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2478, 'Gwendolin Druhan', 13, 'Portugal', 34, 'Flex', 53.02, 2, 2065, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2479, 'Margarethe Eydel', 10, 'China', 37, 'Support', 31.26, 243, 2280, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2480, 'Lynett Gimert', 7, 'Estonia', 36, 'Support', 7.03, 288, 2440, 1.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2481, 'Travers Demkowicz', 12, 'China', 19, 'Support', 63.65, 437, 2459, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2482, 'Jeanette Brauns', 12, 'Czech Republic', 39, 'Entry Fragger', 11.77, 220, 95, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2483, 'Quincy Mogg', 13, 'Brazil', 39, 'Flex', 66.60, 369, 629, 1.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2484, 'Sherilyn Hub', 15, 'Czech Republic', 42, 'Entry Fragger', 54.26, 33, 1645, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2485, 'Sabra Guerrero', 13, 'Finland', 28, 'Flex', 53.03, 276, 2811, 1.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2486, 'Alfons Creak', 8, 'Argentina', 21, 'Entry Fragger', 42.81, 137, 1276, 2.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2487, 'Dennison Bickerstaffe', 4, 'Philippines', 18, 'Entry Fragger', 47.55, 497, 1659, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2488, 'Forbes Sells', 8, 'Argentina', 29, 'Flex', 76.95, 338, 2423, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2489, 'Amalita Seamon', 9, 'Ukraine', 36, 'Flex', 90.34, 3, 21, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2490, 'Cosette Thurstan', 10, 'Brazil', 20, 'Support', 43.50, 296, 1981, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2491, 'Tandi Janton', 8, 'Peru', 39, 'Entry Fragger', 30.91, 104, 1906, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2492, 'Bonita Condict', 11, 'Uganda', 27, 'Support', 18.26, 308, 2775, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2493, 'Dody Barrat', 5, 'China', 32, 'Entry Fragger', 60.70, 329, 1921, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2494, 'Liza De La Salle', 8, 'Luxembourg', 30, 'Leader', 53.54, 489, 1156, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2495, 'Nikolai Cardero', 7, 'China', 40, 'Entry Fragger', 63.28, 421, 2278, 1.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2496, 'Cloe Stefi', 1, 'Indonesia', 22, 'Support', 61.64, 21, 2932, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2497, 'Vidovic Cadamy', 5, 'Indonesia', 37, 'Support', 63.97, 388, 310, 0.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2498, 'Leonidas Jurzyk', 2, 'China', 30, 'Entry Fragger', 80.97, 178, 2274, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2499, 'Jennifer Dedden', 11, 'Sweden', 25, 'Support', 51.15, 42, 2266, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2500, 'Meryl Hallihane', 12, 'Moldova', 26, 'Entry Fragger', 73.26, 58, 2907, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2501, 'Olivia Bryson', 10, 'China', 39, 'Entry Fragger', 26.29, 67, 836, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2502, 'Bonnibelle Cianni', 21, 'Poland', 36, 'Leader', 74.43, 288, 574, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2503, 'Amabel Saward', 17, 'Venezuela', 20, 'Leader', 36.36, 77, 903, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2504, 'Ermina McCathay', 4, 'Iran', 40, 'Support', 83.76, 47, 2759, 1.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2505, 'Beltran Lowre', 17, 'Hungary', 20, 'Flex', 66.02, 226, 841, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2506, 'Josi Seamer', 5, 'Macedonia', 38, 'Entry Fragger', 50.43, 293, 2608, 0.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2507, 'Norris Learmount', 3, 'Thailand', 40, 'Flex', 57.81, 67, 1846, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2508, 'Marion Hoyle', 11, 'Finland', 29, 'Entry Fragger', 92.17, 383, 1867, 1.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2509, 'Carey Scotford', 2, 'Afghanistan', 31, 'Support', 65.27, 126, 1553, 1.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2510, 'Sansone Ferenczi', 18, 'Russia', 37, 'Entry Fragger', 77.04, 338, 2352, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2511, 'Laurie Covely', 7, 'Pakistan', 29, 'Entry Fragger', 40.05, 481, 2733, 0.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2512, 'Muire Stiegers', 11, 'Mayotte', 20, 'Flex', 17.52, 167, 1709, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2513, 'Carmella Dadds', 15, 'Poland', 39, 'Support', 91.57, 64, 1236, 2.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2514, 'Averill Ruoss', 16, 'United States', 37, 'Support', 42.31, 436, 2656, 0.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2515, 'Cynthie Dullard', 6, 'Indonesia', 40, 'Flex', 23.79, 187, 2196, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2516, 'Blane Orbine', 13, 'Poland', 35, 'Entry Fragger', 63.70, 99, 956, 1.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2517, 'Dasie Shilleto', 21, 'China', 32, 'Flex', 34.25, 210, 1947, 2.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2518, 'Analise Domerc', 7, 'Azerbaijan', 28, 'Flex', 63.26, 250, 1258, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2519, 'Willette Moodie', 13, 'Azerbaijan', 38, 'Flex', 87.39, 359, 1423, 1.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2520, 'Dennet Featley', 13, 'Ethiopia', 37, 'Flex', 4.98, 395, 669, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2521, 'Jeramey Barrand', 4, 'Portugal', 29, 'Entry Fragger', 95.03, 107, 1810, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2522, 'Arne Selbie', 20, 'China', 24, 'Entry Fragger', 90.63, 65, 1191, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2523, 'Christophorus Drains', 4, 'Sweden', 37, 'Entry Fragger', 66.27, 234, 2237, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2524, 'Aura Usherwood', 4, 'Vietnam', 32, 'Entry Fragger', 19.59, 289, 1390, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2525, 'Corabella Brolly', 5, 'United States', 35, 'Support', 92.54, 33, 1919, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2526, 'Micheline Guerrieri', 13, 'Philippines', 23, 'Entry Fragger', 41.01, 303, 2311, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2527, 'Woodie Maunsell', 3, 'Sweden', 21, 'Entry Fragger', 92.15, 455, 2402, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2528, 'Ginger Hemeret', 5, 'Tanzania', 27, 'Entry Fragger', 23.06, 24, 1544, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2529, 'Datha Murkus', 21, 'Yemen', 42, 'Entry Fragger', 26.40, 432, 2633, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2530, 'Kimmy Colclough', 11, 'Vietnam', 33, 'Leader', 41.83, 233, 426, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2531, 'Baxie Scriviner', 14, 'China', 36, 'Flex', 37.94, 272, 990, 0.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2532, 'Trevor Woolfenden', 19, 'Japan', 38, 'Support', 34.59, 428, 884, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2533, 'Brooke McEntagart', 13, 'Lebanon', 32, 'Entry Fragger', 82.86, 201, 2848, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2534, 'Giustino Tondeur', 9, 'Belarus', 37, 'Support', 76.36, 426, 736, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2535, 'Clim Onthank', 13, 'Peru', 27, 'Support', 16.88, 330, 1923, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2536, 'Cedric Fleckno', 1, 'Brazil', 26, 'Support', 2.94, 282, 2168, 2.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2537, 'Brod Clancy', 1, 'Brazil', 37, 'Entry Fragger', 92.35, 188, 1243, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2538, 'Hersh Scholl', 2, 'China', 19, 'Leader', 78.96, 384, 1973, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2539, 'Kathe Snalham', 6, 'Indonesia', 33, 'Entry Fragger', 95.06, 316, 1737, 0.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2540, 'Rozamond Knowlson', 9, 'China', 22, 'Leader', 24.74, 494, 2257, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2541, 'Ken Braunstein', 10, 'Peru', 35, 'Support', 5.42, 352, 2800, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2542, 'Teddie Enrich', 17, 'China', 33, 'Leader', 59.80, 400, 325, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2543, 'Emilie Belly', 20, 'Mexico', 29, 'Support', 70.20, 279, 1341, 2.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2544, 'Eveleen Jerwood', 14, 'Thailand', 36, 'Support', 25.57, 15, 2327, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2545, 'Kylie Lanahan', 18, 'Russia', 19, 'Support', 23.40, 355, 2122, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2546, 'Amalia Frid', 5, 'Armenia', 24, 'Flex', 26.55, 290, 1283, 1.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2547, 'Nap Sapena', 17, 'Brazil', 40, 'Entry Fragger', 85.71, 354, 2057, 2.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2548, 'Luigi Leat', 19, 'Mozambique', 20, 'Flex', 99.31, 221, 1913, 2.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2549, 'Chrotoem Bagster', 5, 'Yemen', 37, 'Support', 38.45, 469, 722, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2550, 'Tomasine Charity', 10, 'Greece', 25, 'Flex', 6.46, 136, 1347, 1.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2551, 'Catherine Edgell', 12, 'Slovenia', 27, 'Flex', 8.92, 316, 2792, 2.29, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2552, 'Chicky Scotchmer', 18, 'Slovenia', 22, 'Leader', 25.01, 69, 2929, 1.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2553, 'Shawn Hookes', 11, 'China', 23, 'Entry Fragger', 64.35, 106, 1208, 0.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2554, 'Reeba Accombe', 3, 'South Sudan', 37, 'Support', 47.03, 298, 2803, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2555, 'Boony MacMenamin', 2, 'Ukraine', 37, 'Support', 15.07, 294, 2990, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2556, 'Wallace Salt', 20, 'Peru', 31, 'Support', 24.05, 252, 611, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2557, 'Bambi Duckwith', 3, 'China', 21, 'Entry Fragger', 40.56, 498, 2174, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2558, 'Carry Gniewosz', 10, 'China', 20, 'Entry Fragger', 89.53, 128, 505, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2559, 'Jillie Torbett', 21, 'Vietnam', 29, 'Leader', 80.42, 281, 311, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2560, 'Alex Lehrle', 7, 'China', 37, 'Support', 18.73, 374, 2652, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2561, 'Amber Giller', 5, 'France', 36, 'Flex', 33.21, 139, 2535, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2562, 'Rollins Batte', 9, 'Northern Mariana Islands', 25, 'Support', 18.70, 269, 1324, 1.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2563, 'Jaime Seakes', 7, 'Vietnam', 42, 'Leader', 13.64, 267, 1682, 2.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2564, 'Galina Riall', 1, 'Sweden', 29, 'Flex', 18.29, 70, 286, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2565, 'Sibley Hosburn', 7, 'Poland', 23, 'Support', 30.09, 56, 599, 1.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2566, 'Elladine Lindeboom', 4, 'United States', 39, 'Support', 78.48, 52, 622, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2567, 'Artemis Fields', 2, 'Peru', 33, 'Flex', 1.99, 308, 2779, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2568, 'Tomi Dishmon', 8, 'China', 33, 'Support', 43.22, 284, 1612, 1.68, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2569, 'Sophie Born', 19, 'New Zealand', 34, 'Support', 83.98, 453, 398, 1.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2570, 'Boyce Ranvoise', 17, 'China', 33, 'Flex', 55.22, 260, 589, 2.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2571, 'Devondra Amiranda', 11, 'Indonesia', 33, 'Leader', 48.75, 485, 1927, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2572, 'Leroi Ivers', 13, 'Ukraine', 35, 'Entry Fragger', 95.76, 324, 520, 2.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2573, 'Gottfried Rackley', 10, 'Morocco', 40, 'Entry Fragger', 87.17, 371, 300, 2.17, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2574, 'Hanson Nutten', 12, 'Philippines', 24, 'Flex', 21.62, 427, 842, 2.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2575, 'Garry Tunnick', 7, 'New Zealand', 28, 'Entry Fragger', 24.75, 373, 1453, 0.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2576, 'Silvester Minico', 18, 'Finland', 23, 'Support', 12.40, 458, 757, 2.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2577, 'Tito Wallbutton', 3, 'Indonesia', 39, 'Entry Fragger', 22.79, 56, 988, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2578, 'Florence Simeoli', 6, 'China', 39, 'Flex', 30.12, 422, 831, 2.94, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2579, 'Keith Bertomier', 18, 'China', 35, 'Flex', 64.74, 211, 472, 0.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2580, 'Inesita Moxon', 16, 'China', 22, 'Support', 8.21, 304, 894, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2581, 'Saunderson Etheridge', 15, 'Yemen', 36, 'Flex', 2.21, 474, 2686, 0.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2582, 'Magdaia Edsall', 4, 'Thailand', 28, 'Entry Fragger', 78.81, 318, 2911, 2.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2583, 'Loydie Kern', 19, 'China', 24, 'Entry Fragger', 81.12, 153, 2737, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2584, 'Fredric Betjeman', 19, 'Canada', 41, 'Entry Fragger', 24.79, 81, 2386, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2585, 'Hewitt Nipper', 16, 'Sweden', 25, 'Flex', 76.88, 426, 1531, 0.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2586, 'Vale Duthie', 7, 'Indonesia', 26, 'Support', 0.08, 352, 2796, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2587, 'Verne Clelle', 5, 'Indonesia', 24, 'Entry Fragger', 33.94, 46, 476, 1.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2588, 'Eva Govier', 13, 'Philippines', 18, 'Entry Fragger', 4.22, 283, 709, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2589, 'Ives Hearley', 3, 'Tunisia', 18, 'Leader', 74.99, 159, 475, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2590, 'Raynard Woehler', 5, 'Sweden', 24, 'Support', 37.67, 25, 1033, 1.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2591, 'Alberto Hebard', 3, 'Portugal', 24, 'Support', 69.48, 440, 1464, 2.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2592, 'Jorrie Baythrop', 19, 'Philippines', 23, 'Flex', 13.26, 411, 81, 1.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2593, 'Kareem Gobourn', 13, 'Indonesia', 39, 'Support', 93.73, 384, 2033, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2594, 'Tommi Shewery', 11, 'Indonesia', 22, 'Flex', 3.55, 459, 2419, 1.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2595, 'Crawford Argile', 8, 'Japan', 19, 'Leader', 17.86, 232, 972, 0.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2596, 'Gearalt Vasiliu', 15, 'China', 25, 'Flex', 15.00, 106, 1634, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2597, 'Kennan Dandison', 7, 'Philippines', 29, 'Support', 34.97, 115, 2455, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2598, 'Lincoln Dawson', 20, 'Indonesia', 40, 'Leader', 36.99, 88, 1143, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2599, 'Averell Ledbury', 11, 'China', 31, 'Flex', 95.92, 81, 114, 1.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2600, 'Maryann Eckhard', 20, 'Honduras', 21, 'Leader', 61.36, 53, 1424, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2601, 'Anna-diana Salling', 9, 'South Africa', 39, 'Entry Fragger', 86.85, 469, 1518, 0.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2602, 'Birgitta Petroff', 18, 'Croatia', 22, 'Leader', 21.23, 445, 2149, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2603, 'Frannie Lambarton', 17, 'Peru', 32, 'Support', 45.83, 290, 186, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2604, 'Avrom Cannavan', 1, 'Denmark', 26, 'Support', 72.82, 431, 490, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2605, 'Payton Windsor', 3, 'Turkey', 29, 'Support', 16.49, 305, 233, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg');
+INSERT INTO `r6_player` (`id`, `player_name`, `team_id`, `nationality`, `age`, `role`, `headshot_percentage`, `total_games`, `total_deaths`, `kd_ratio`, `created_at`, `updated_at`, `deleted_at`, `description`, `image`) VALUES
+(2606, 'Ron Keerl', 17, 'Albania', 30, 'Flex', 7.64, 465, 916, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2607, 'Caralie Sylett', 4, 'China', 38, 'Flex', 96.98, 248, 321, 1.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2608, 'Daphene Imlach', 19, 'France', 22, 'Leader', 35.44, 407, 1955, 2.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2609, 'Boy Varnham', 5, 'Germany', 29, 'Leader', 28.27, 337, 1323, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2610, 'Georgianne Guislin', 7, 'Mongolia', 42, 'Leader', 38.34, 260, 2308, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2611, 'Valerie Cherrington', 4, 'China', 34, 'Flex', 72.28, 112, 2327, 1.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2612, 'Regine Iacobacci', 10, 'Brazil', 36, 'Flex', 80.15, 233, 584, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2613, 'Phaedra Jersh', 11, 'Indonesia', 30, 'Leader', 45.86, 10, 589, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2614, 'Aimee Pershouse', 8, 'China', 29, 'Flex', 99.42, 23, 2487, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2615, 'Rosana McGinnis', 6, 'Portugal', 31, 'Flex', 42.60, 107, 2745, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2616, 'Johny Magrannell', 5, 'China', 41, 'Flex', 49.26, 351, 14, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2617, 'Madlen Jehu', 5, 'Argentina', 33, 'Entry Fragger', 7.08, 254, 1947, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2618, 'Filmer Haddeston', 21, 'China', 25, 'Leader', 6.18, 156, 1277, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2619, 'Patti Raddenbury', 13, 'Philippines', 19, 'Leader', 91.63, 148, 119, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2620, 'Law Grenshiels', 14, 'United States', 42, 'Leader', 29.37, 204, 630, 0.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2621, 'Hilary Thredder', 7, 'Indonesia', 30, 'Support', 22.12, 316, 1146, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2622, 'Zebedee Forlonge', 12, 'Senegal', 18, 'Leader', 31.07, 128, 2623, 2.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2623, 'Starlin Gert', 10, 'Pakistan', 39, 'Support', 78.76, 443, 2433, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2624, 'Sandra Orrock', 17, 'Bulgaria', 36, 'Leader', 40.24, 500, 1071, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2625, 'Pepe Hazel', 8, 'China', 31, 'Flex', 82.50, 116, 999, 2.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2626, 'Theresina Adamek', 21, 'Guatemala', 22, 'Entry Fragger', 76.33, 419, 2346, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2627, 'Nannette Davidwitz', 13, 'Nigeria', 27, 'Leader', 71.56, 253, 195, 2.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2628, 'Husein Franceschielli', 6, 'Colombia', 28, 'Support', 61.46, 77, 1065, 0.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2629, 'Donn Mahood', 18, 'Canada', 39, 'Flex', 18.16, 81, 214, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2630, 'Mylo Caller', 8, 'Sweden', 38, 'Flex', 68.38, 153, 466, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2631, 'Page Braithwaite', 20, 'Norway', 22, 'Support', 36.22, 398, 1837, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2632, 'Corabel Spiteri', 2, 'Finland', 31, 'Support', 60.22, 291, 2121, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2633, 'Jacqui Goodredge', 9, 'China', 22, 'Entry Fragger', 61.53, 476, 2268, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2634, 'Annalee Comelini', 10, 'Portugal', 31, 'Support', 59.07, 149, 1186, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2635, 'Torrin Ponsford', 19, 'China', 34, 'Leader', 15.24, 299, 2570, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2636, 'Sheela Cullum', 2, 'China', 34, 'Support', 79.02, 471, 234, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2637, 'Kippie Goundry', 10, 'Morocco', 41, 'Flex', 29.49, 498, 1964, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2638, 'Lem Caldwall', 20, 'Guatemala', 31, 'Leader', 53.59, 238, 1101, 0.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2639, 'Harlan Widmore', 14, 'China', 25, 'Support', 57.95, 204, 1941, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2640, 'Joby Ibarra', 1, 'Russia', 31, 'Support', 31.17, 226, 973, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2641, 'Sarina Klehyn', 6, 'United States', 31, 'Support', 79.59, 388, 2413, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2642, 'Raquela Lockhart', 4, 'Ukraine', 18, 'Support', 4.33, 139, 1560, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2643, 'Gonzales Garrard', 1, 'Japan', 19, 'Flex', 27.16, 341, 944, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2644, 'Eydie Dranfield', 11, 'Denmark', 37, 'Entry Fragger', 20.24, 179, 49, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2645, 'Umberto Twatt', 8, 'China', 19, 'Flex', 35.46, 412, 880, 2.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2646, 'Rourke Lissandrini', 4, 'Armenia', 24, 'Flex', 32.92, 68, 1325, 2.80, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2647, 'Sherm Corington', 1, 'China', 37, 'Leader', 88.69, 173, 17, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2648, 'Camile Pressman', 1, 'Kazakhstan', 32, 'Leader', 26.55, 463, 2959, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2649, 'Samaria Sant', 21, 'China', 24, 'Entry Fragger', 7.59, 3, 797, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2650, 'Annissa Walmsley', 21, 'Myanmar', 19, 'Entry Fragger', 84.54, 112, 406, 0.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2651, 'Omar Philps', 10, 'China', 36, 'Support', 43.16, 419, 1278, 2.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2652, 'Randi Stannion', 19, 'China', 26, 'Entry Fragger', 64.59, 152, 1290, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2653, 'Elinore Gooder', 3, 'Nigeria', 29, 'Leader', 82.16, 150, 1066, 1.48, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2654, 'Flemming Merriman', 10, 'Bangladesh', 26, 'Entry Fragger', 12.21, 286, 735, 1.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2655, 'Morlee Sterrie', 12, 'China', 34, 'Leader', 9.17, 459, 953, 0.61, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2656, 'Jerrie Moorrud', 6, 'Estonia', 24, 'Leader', 93.83, 25, 1402, 1.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2657, 'Mile Drews', 1, 'Peru', 30, 'Leader', 75.12, 279, 1408, 1.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2658, 'Immanuel Swaile', 16, 'China', 21, 'Leader', 2.23, 171, 80, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2659, 'Robinetta Goodhall', 7, 'France', 32, 'Flex', 31.61, 422, 1991, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2660, 'Raphael Braiden', 3, 'Guatemala', 30, 'Support', 35.91, 293, 895, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2661, 'Collette Lyvon', 11, 'Sweden', 37, 'Leader', 54.48, 114, 1522, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2662, 'Fran Winckle', 10, 'Portugal', 40, 'Flex', 24.10, 438, 2370, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2663, 'Frans Hornig', 17, 'France', 20, 'Leader', 53.22, 204, 212, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2664, 'Kevyn Lynas', 10, 'Poland', 35, 'Flex', 40.11, 89, 1392, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2665, 'Joline Ilyas', 1, 'Belarus', 38, 'Entry Fragger', 11.22, 221, 559, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2666, 'Gabe Lermouth', 5, 'Russia', 26, 'Flex', 73.10, 324, 822, 2.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2667, 'Mab Balshen', 21, 'Philippines', 29, 'Entry Fragger', 1.88, 59, 51, 0.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2668, 'Marianne Allibon', 14, 'Argentina', 37, 'Flex', 1.78, 355, 2981, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2669, 'Matias Chestnut', 8, 'Portugal', 28, 'Leader', 4.11, 327, 2351, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2670, 'Dulce Choak', 5, 'China', 20, 'Support', 81.72, 275, 1624, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2671, 'Rolf Brayn', 14, 'Northern Mariana Islands', 29, 'Entry Fragger', 94.27, 152, 1309, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2672, 'Wilbert Askam', 11, 'Portugal', 27, 'Flex', 10.82, 333, 2116, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2673, 'Corrie Ducarel', 2, 'China', 33, 'Flex', 75.00, 73, 2206, 1.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2674, 'Eal Pipes', 6, 'Russia', 27, 'Flex', 52.33, 467, 2364, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2675, 'Alon Sonner', 17, 'China', 40, 'Support', 77.35, 298, 2438, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2676, 'Pauline Flockhart', 5, 'Indonesia', 36, 'Support', 90.84, 455, 844, 1.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2677, 'Lowe Benedetti', 9, 'Russia', 42, 'Flex', 39.75, 500, 1261, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2678, 'Chloris De Brett', 9, 'Sweden', 29, 'Flex', 83.42, 237, 434, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2679, 'Stephannie McGrane', 3, 'China', 29, 'Flex', 85.73, 461, 1238, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2680, 'Brier Bilbee', 17, 'China', 18, 'Flex', 45.19, 268, 1691, 0.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2681, 'Robinetta Hynam', 2, 'South Africa', 29, 'Leader', 74.83, 439, 1153, 0.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2682, 'Hana Tidball', 12, 'China', 41, 'Leader', 49.94, 64, 2501, 2.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2683, 'Cherri Mapston', 8, 'Russia', 24, 'Entry Fragger', 96.31, 257, 2318, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2684, 'Israel Abbatini', 4, 'France', 39, 'Flex', 49.72, 421, 1430, 0.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2685, 'Magdaia Saltwell', 13, 'Indonesia', 37, 'Entry Fragger', 25.97, 459, 2555, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2686, 'Melosa Duckham', 4, 'Colombia', 20, 'Leader', 80.75, 372, 289, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2687, 'Wilek Milesop', 20, 'Colombia', 31, 'Entry Fragger', 0.04, 468, 339, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2688, 'Ahmed Dugan', 9, 'Indonesia', 31, 'Flex', 12.36, 42, 874, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2689, 'Del Damp', 5, 'Indonesia', 28, 'Flex', 63.80, 133, 503, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2690, 'Nico Godon', 15, 'Honduras', 27, 'Support', 69.25, 242, 2808, 1.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2691, 'Norry Mathissen', 12, 'Russia', 39, 'Flex', 99.63, 140, 790, 0.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2692, 'Reed Vanderson', 13, 'Nigeria', 26, 'Entry Fragger', 23.07, 312, 94, 0.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2693, 'Giuditta Merrien', 19, 'Philippines', 40, 'Support', 5.64, 225, 2118, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2694, 'Rowland Smiths', 15, 'Portugal', 37, 'Entry Fragger', 40.21, 398, 2355, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2695, 'Torrey Churchill', 12, 'France', 29, 'Flex', 90.90, 55, 1227, 1.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2696, 'Cherida Teanby', 10, 'Peru', 27, 'Flex', 25.50, 27, 2883, 2.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2697, 'Merrick Brosoli', 3, 'China', 42, 'Leader', 93.87, 123, 2937, 2.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2698, 'Annadiane Pidcock', 14, 'China', 19, 'Support', 85.52, 98, 1476, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2699, 'Doloritas Stolberger', 21, 'Syria', 40, 'Leader', 28.59, 104, 2256, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2700, 'Estella Surgenor', 19, 'Guatemala', 41, 'Leader', 76.92, 218, 797, 2.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2701, 'Reina Antczak', 21, 'Libya', 24, 'Support', 56.59, 257, 2478, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2702, 'Levin Bhatia', 10, 'Poland', 26, 'Flex', 13.67, 156, 279, 2.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2703, 'Arie Lumpkin', 19, 'Sweden', 31, 'Support', 94.14, 142, 1157, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2704, 'Liam MacClenan', 5, 'China', 30, 'Flex', 77.15, 99, 2481, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2705, 'Pamella Clemes', 18, 'Latvia', 34, 'Support', 80.79, 54, 2520, 1.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2706, 'Romola Cordle', 6, 'China', 35, 'Support', 1.27, 337, 1255, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2707, 'Joane McCloch', 21, 'China', 22, 'Flex', 34.81, 290, 2888, 0.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2708, 'Roscoe Laverick', 17, 'Indonesia', 30, 'Support', 35.79, 456, 726, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2709, 'Desmond Citrine', 13, 'Albania', 34, 'Leader', 93.01, 242, 1688, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2710, 'Pedro Leigh', 8, 'Madagascar', 35, 'Leader', 89.42, 477, 1312, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2711, 'Clive Eaves', 5, 'China', 32, 'Support', 27.49, 66, 496, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2712, 'Quent Berzen', 20, 'Sweden', 32, 'Support', 99.27, 428, 1178, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2713, 'Freeman Ambrodi', 6, 'Malaysia', 18, 'Leader', 69.45, 14, 2180, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2714, 'Danika Rodd', 17, 'Albania', 36, 'Flex', 5.92, 463, 752, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2715, 'Heath Monk', 8, 'Philippines', 31, 'Leader', 0.05, 478, 1377, 2.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2716, 'Crissy Hollow', 11, 'China', 26, 'Support', 99.28, 32, 322, 2.00, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2717, 'Faye Wybern', 8, 'Indonesia', 40, 'Leader', 83.03, 206, 2944, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2718, 'Web Fermor', 7, 'China', 32, 'Entry Fragger', 38.38, 18, 1805, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2719, 'Minnaminnie Fearnley', 8, 'Ukraine', 23, 'Entry Fragger', 58.24, 361, 1608, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2720, 'Cal MacBrearty', 16, 'United States', 25, 'Entry Fragger', 87.71, 294, 1901, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2721, 'Mahalia Dawes', 16, 'Philippines', 33, 'Support', 37.70, 257, 1903, 0.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2722, 'Earle Pingston', 9, 'Serbia', 33, 'Flex', 24.26, 134, 971, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2723, 'Chris Boays', 8, 'Pakistan', 27, 'Support', 98.26, 375, 360, 1.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2724, 'Felipe Prue', 19, 'Sweden', 34, 'Entry Fragger', 97.88, 307, 2167, 2.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2725, 'Rosalie Fells', 11, 'Russia', 32, 'Flex', 90.71, 352, 1536, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2726, 'Lillian Codi', 8, 'Czech Republic', 30, 'Entry Fragger', 33.34, 456, 795, 1.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2727, 'Farand Huddy', 5, 'Ecuador', 36, 'Support', 25.40, 485, 1668, 1.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2728, 'Gearalt Watling', 18, 'Indonesia', 22, 'Leader', 52.68, 269, 1952, 2.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2729, 'Tobe Pebworth', 10, 'Peru', 19, 'Entry Fragger', 57.88, 373, 1506, 0.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2730, 'Dulcy McCoughan', 14, 'Indonesia', 42, 'Flex', 48.29, 38, 160, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2731, 'Rancell Cottill', 15, 'United States', 42, 'Support', 93.94, 344, 140, 0.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2732, 'Hilary Dennistoun', 13, 'Nigeria', 28, 'Support', 94.39, 239, 2826, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2733, 'Hannah Duffill', 3, 'China', 36, 'Support', 77.52, 288, 2573, 1.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2734, 'Haydon Dawley', 21, 'Thailand', 31, 'Entry Fragger', 63.55, 476, 2814, 2.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2735, 'Stavros Slatten', 4, 'Colombia', 31, 'Leader', 18.42, 67, 1230, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2736, 'Belva Mogey', 6, 'South Africa', 38, 'Support', 37.92, 249, 947, 0.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2737, 'Vincent Gamble', 3, 'China', 38, 'Support', 21.32, 28, 68, 0.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2738, 'Berton Curle', 19, 'China', 38, 'Support', 60.77, 346, 2012, 2.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2739, 'Mirabella Bascombe', 5, 'China', 27, 'Entry Fragger', 93.84, 481, 1222, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2740, 'Raphael Heinig', 17, 'Poland', 34, 'Flex', 94.08, 82, 1457, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2741, 'Thorny Gyorffy', 11, 'Thailand', 42, 'Flex', 27.47, 288, 601, 0.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2742, 'Berne Bangiard', 8, 'France', 23, 'Entry Fragger', 18.97, 181, 1325, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2743, 'Arliene McMillian', 1, 'China', 33, 'Entry Fragger', 47.93, 228, 575, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2744, 'Osgood Shenton', 3, 'Spain', 27, 'Leader', 29.92, 84, 2197, 1.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2745, 'Luciano Edwick', 9, 'Philippines', 30, 'Leader', 76.30, 56, 2806, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2746, 'Viola Eyers', 14, 'South Africa', 40, 'Flex', 84.77, 374, 2603, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2747, 'Yvor Rippingale', 14, 'Macedonia', 34, 'Entry Fragger', 37.98, 138, 697, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2748, 'Boyd Biscomb', 11, 'China', 30, 'Leader', 2.75, 470, 1252, 0.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2749, 'Nancey Elldred', 19, 'Peru', 22, 'Flex', 90.47, 407, 806, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2750, 'Rosella Fradgley', 12, 'China', 35, 'Support', 24.07, 158, 1464, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2751, 'Lauralee Walhedd', 8, 'China', 37, 'Flex', 25.67, 496, 2882, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2752, 'Wain Collecott', 12, 'Albania', 29, 'Support', 44.03, 434, 1901, 2.05, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2753, 'Shell Tongs', 1, 'Ethiopia', 34, 'Support', 96.03, 193, 2191, 0.35, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2754, 'Vivyanne Schwaiger', 15, 'Macedonia', 22, 'Entry Fragger', 30.00, 339, 480, 0.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2755, 'Anissa Hagwood', 14, 'Philippines', 25, 'Leader', 74.01, 297, 1524, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2756, 'Garvey Dyter', 6, 'New Zealand', 33, 'Support', 37.35, 384, 46, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2757, 'Taffy Axtonne', 21, 'Sweden', 34, 'Flex', 20.03, 132, 1957, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2758, 'Cam Elverstone', 6, 'China', 42, 'Entry Fragger', 29.57, 75, 2699, 0.26, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2759, 'Judith Conniam', 15, 'France', 40, 'Flex', 52.59, 65, 2595, 0.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2760, 'Dewey Edlyne', 7, 'Indonesia', 31, 'Entry Fragger', 49.32, 321, 133, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2761, 'James McLukie', 15, 'Russia', 30, 'Support', 96.90, 499, 1705, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2762, 'Maude Roswarn', 7, 'Philippines', 25, 'Leader', 69.77, 441, 2970, 0.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2763, 'Ettore Thal', 6, 'China', 37, 'Support', 50.16, 422, 329, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2764, 'Lulu Bradfield', 5, 'Japan', 31, 'Flex', 83.84, 340, 962, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2765, 'Rickie Jose', 1, 'Indonesia', 40, 'Entry Fragger', 16.41, 9, 73, 2.09, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2766, 'Claus Benini', 1, 'China', 25, 'Support', 66.11, 461, 2386, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2767, 'Fleurette Reburn', 8, 'Indonesia', 23, 'Support', 37.78, 468, 2125, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2768, 'Alla Abbys', 6, 'Poland', 38, 'Entry Fragger', 55.77, 197, 1668, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2769, 'Rollin Ingleby', 16, 'China', 26, 'Leader', 83.21, 287, 1875, 0.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2770, 'Manuel Stimpson', 6, 'Portugal', 28, 'Support', 25.98, 50, 2845, 2.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2771, 'Meredith Baxstare', 11, 'Brazil', 25, 'Flex', 17.59, 202, 2601, 0.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2772, 'Henrietta Kynder', 8, 'Afghanistan', 29, 'Leader', 97.08, 394, 1020, 1.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2773, 'Zena Eastam', 18, 'Micronesia', 34, 'Leader', 78.77, 373, 381, 1.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2774, 'Bernette Crickmer', 9, 'Indonesia', 18, 'Flex', 47.22, 436, 2836, 1.08, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2775, 'Liza McNevin', 18, 'China', 33, 'Leader', 99.42, 189, 1155, 2.36, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2776, 'Valera Todarello', 1, 'China', 24, 'Leader', 71.12, 370, 2665, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2777, 'Melisa Dubock', 6, 'Indonesia', 31, 'Leader', 31.54, 305, 2069, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2778, 'Lucretia Withey', 3, 'Indonesia', 33, 'Support', 25.42, 286, 909, 1.79, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2779, 'Carrissa Suttle', 19, 'Indonesia', 40, 'Leader', 0.06, 432, 1436, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2780, 'Nels Bradwell', 21, 'Belarus', 20, 'Flex', 32.30, 400, 480, 0.46, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2781, 'Nikolia Daws', 7, 'Sweden', 22, 'Support', 67.58, 426, 1487, 1.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2782, 'Bert Ousby', 9, 'Ireland', 37, 'Entry Fragger', 82.61, 442, 2201, 0.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2783, 'Ailey Haywood', 6, 'South Africa', 20, 'Entry Fragger', 71.29, 404, 2247, 1.97, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2784, 'Sean Galfour', 13, 'Venezuela', 18, 'Entry Fragger', 2.23, 415, 1901, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2785, 'Herculie Paireman', 12, 'China', 42, 'Support', 37.37, 96, 170, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2786, 'Othella Walpole', 21, 'Ukraine', 40, 'Flex', 49.34, 282, 1816, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2787, 'Felecia Crathern', 19, 'Indonesia', 25, 'Support', 21.00, 80, 945, 2.62, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2788, 'Garrek De Coursey', 4, 'China', 40, 'Entry Fragger', 82.97, 194, 601, 2.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2789, 'Jedidiah Ivory', 18, 'Germany', 20, 'Entry Fragger', 79.45, 498, 2036, 0.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2790, 'Egon Lafford', 3, 'Egypt', 39, 'Leader', 2.80, 203, 836, 2.59, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2791, 'Aurea Turvie', 13, 'China', 26, 'Flex', 90.07, 237, 892, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2792, 'Tine Denacamp', 12, 'Czech Republic', 34, 'Leader', 88.30, 272, 2410, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2793, 'Benton Whittam', 21, 'Costa Rica', 34, 'Support', 6.02, 178, 689, 1.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2794, 'Ichabod Nannetti', 9, 'Kazakhstan', 19, 'Support', 13.23, 394, 2814, 0.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2795, 'Emilia Gregg', 5, 'China', 41, 'Flex', 17.12, 477, 2088, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2796, 'Harrison Bevir', 2, 'Costa Rica', 41, 'Leader', 83.64, 220, 1506, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2797, 'Barbi Gammack', 6, 'Sweden', 32, 'Leader', 13.62, 93, 968, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2798, 'Nedi Godier', 4, 'Mexico', 33, 'Leader', 37.86, 81, 2916, 1.64, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2799, 'Dolli Shyres', 3, 'France', 32, 'Support', 39.61, 95, 1080, 1.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2800, 'Sigrid Patsall', 5, 'Bahamas', 39, 'Support', 96.98, 314, 655, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2801, 'Nanni Forgie', 4, 'Morocco', 41, 'Entry Fragger', 89.07, 469, 409, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2802, 'Gypsy Fydo', 8, 'China', 25, 'Entry Fragger', 68.14, 272, 314, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2803, 'Melinda Mobius', 14, 'Colombia', 23, 'Support', 17.93, 395, 1504, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2804, 'Sisile Merryfield', 10, 'Indonesia', 20, 'Support', 5.52, 27, 1325, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2805, 'Jasper Grahlman', 20, 'Brazil', 35, 'Entry Fragger', 12.72, 311, 494, 1.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2806, 'Iosep Petts', 14, 'Peru', 31, 'Support', 32.29, 70, 276, 0.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2807, 'Jasen Harwick', 16, 'China', 28, 'Support', 0.12, 486, 2778, 1.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2808, 'Eleen Flynn', 21, 'China', 31, 'Support', 23.79, 246, 310, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2809, 'Yankee Varvara', 8, 'Dominican Republic', 39, 'Flex', 7.00, 30, 1409, 0.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2810, 'Malina Tesyro', 12, 'Japan', 40, 'Leader', 2.17, 247, 1366, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2811, 'Antonina Butcher', 12, 'China', 21, 'Flex', 69.26, 159, 1655, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2812, 'Garwood Doumerc', 21, 'France', 37, 'Support', 57.77, 355, 1751, 2.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2813, 'Randell Sowman', 8, 'Indonesia', 30, 'Entry Fragger', 63.74, 347, 2925, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2814, 'Van Daykin', 8, 'Lithuania', 38, 'Leader', 35.45, 122, 2131, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2815, 'Dov Knapman', 3, 'Indonesia', 39, 'Leader', 76.18, 44, 1998, 1.69, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2816, 'Gaven Gladbeck', 4, 'Vietnam', 26, 'Flex', 16.55, 440, 1672, 2.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2817, 'Titus Gosneye', 18, 'Ivory Coast', 38, 'Entry Fragger', 27.84, 481, 2108, 0.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2818, 'Bernardina Rays', 18, 'China', 19, 'Entry Fragger', 56.14, 350, 2240, 2.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2819, 'Letti Bunworth', 3, 'China', 34, 'Support', 16.65, 292, 1575, 0.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2820, 'Elva Josey', 19, 'Zambia', 39, 'Support', 8.04, 313, 2213, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2821, 'Debee Gonet', 8, 'Belarus', 37, 'Support', 85.83, 29, 1478, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2822, 'Sibella Litchfield', 19, 'China', 37, 'Flex', 83.37, 172, 347, 1.83, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2823, 'Nessa Reubbens', 21, 'Bulgaria', 18, 'Support', 21.87, 58, 1426, 0.44, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2824, 'Rodrick Renackowna', 9, 'Nigeria', 37, 'Support', 24.11, 278, 485, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2825, 'Celene Treppas', 7, 'Poland', 28, 'Leader', 33.63, 166, 1617, 0.73, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2826, 'Dasya Stitcher', 3, 'Ukraine', 42, 'Support', 84.40, 437, 1210, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2827, 'Rutger Peace', 2, 'South Africa', 26, 'Entry Fragger', 90.98, 297, 98, 1.89, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2828, 'Emeline Lemary', 15, 'Russia', 28, 'Flex', 22.18, 24, 1386, 0.42, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2829, 'Louisette Camoys', 15, 'Indonesia', 25, 'Entry Fragger', 0.53, 394, 2750, 0.81, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2830, 'Palmer Cuckoo', 6, 'Bangladesh', 30, 'Support', 61.26, 167, 2763, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2831, 'Maryanna Camacke', 12, 'Afghanistan', 36, 'Flex', 30.63, 130, 235, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2832, 'Merv Guerner', 13, 'Russia', 28, 'Flex', 70.58, 298, 2291, 2.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2833, 'Barth Asgodby', 10, 'Sweden', 22, 'Flex', 73.93, 178, 2587, 1.40, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2834, 'Stacy Tratton', 12, 'Indonesia', 42, 'Entry Fragger', 88.15, 436, 454, 2.76, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2835, 'Ira Baumler', 13, 'Russia', 22, 'Entry Fragger', 62.24, 430, 1858, 2.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2836, 'Louisette Hadgraft', 7, 'China', 18, 'Leader', 24.20, 62, 2312, 2.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2837, 'Herman Skates', 10, 'China', 35, 'Entry Fragger', 43.49, 130, 2838, 2.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2838, 'Budd Bahike', 18, 'Russia', 39, 'Support', 21.93, 385, 2203, 1.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2839, 'Lorilee Breeton', 17, 'Indonesia', 28, 'Entry Fragger', 22.95, 281, 2837, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2840, 'Laina Emmines', 14, 'Philippines', 20, 'Flex', 17.80, 294, 1677, 0.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2841, 'Gilbertine Spikins', 6, 'United States', 24, 'Leader', 3.52, 78, 1210, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2842, 'Annadiana Roby', 2, 'Kazakhstan', 24, 'Leader', 66.89, 266, 1504, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2843, 'Karyl Trundle', 1, 'Dominica', 25, 'Flex', 1.61, 99, 2259, 0.11, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2844, 'Morie Jerrard', 15, 'Ukraine', 26, 'Flex', 27.17, 62, 1270, 1.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2845, 'Blondie Brenard', 7, 'Brazil', 21, 'Support', 42.92, 167, 2987, 0.96, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2846, 'Olive Blanning', 21, 'East Timor', 38, 'Entry Fragger', 61.67, 42, 337, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2847, 'Fidela Retallack', 5, 'Argentina', 33, 'Entry Fragger', 59.20, 325, 2299, 2.74, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2848, 'Bobbee Melan', 11, 'China', 28, 'Leader', 36.09, 194, 39, 1.25, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2849, 'Dallas Dowyer', 15, 'India', 20, 'Support', 28.33, 137, 2420, 2.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2850, 'Isabelita Duns', 4, 'China', 35, 'Support', 86.26, 450, 2963, 1.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2851, 'Antonietta Falco', 21, 'Malta', 32, 'Entry Fragger', 9.38, 430, 965, 0.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2852, 'Elizabet Hatherell', 10, 'China', 39, 'Flex', 41.73, 380, 550, 2.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2853, 'Dieter Mallia', 14, 'Russia', 28, 'Flex', 80.16, 159, 1551, 2.75, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2854, 'Genevra Godley', 20, 'Indonesia', 26, 'Support', 32.74, 110, 1127, 1.41, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2855, 'Melesa Recher', 1, 'Indonesia', 33, 'Support', 47.86, 261, 2147, 1.12, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2856, 'Jeri Croucher', 14, 'Nigeria', 39, 'Entry Fragger', 7.37, 365, 2519, 1.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2857, 'Kaiser Sime', 16, 'China', 23, 'Flex', 77.40, 243, 1103, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2858, 'Zita Lionel', 12, 'China', 19, 'Leader', 31.08, 79, 980, 2.49, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2859, 'Quintana Baskwell', 21, 'Russia', 28, 'Support', 97.34, 236, 692, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2860, 'Ara Tolossi', 12, 'Indonesia', 42, 'Support', 78.13, 123, 574, 0.71, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2861, 'Agace Manske', 11, 'Thailand', 32, 'Leader', 60.20, 234, 2289, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2862, 'Caitlin Flockhart', 14, 'China', 24, 'Support', 51.69, 311, 186, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2863, 'Lyssa Bradick', 12, 'Philippines', 20, 'Entry Fragger', 74.93, 133, 1469, 2.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2864, 'Lanni Greatreax', 11, 'Russia', 23, 'Entry Fragger', 40.12, 132, 37, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2865, 'Samson Dyster', 5, 'Indonesia', 31, 'Flex', 59.81, 49, 2793, 0.82, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2866, 'Gratiana Stoter', 12, 'Poland', 41, 'Flex', 98.40, 49, 1968, 1.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2867, 'Cherie Sissel', 3, 'China', 31, 'Entry Fragger', 15.67, 301, 1617, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2868, 'Sterling Killingworth', 17, 'Brazil', 30, 'Leader', 42.42, 84, 2505, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2869, 'Maje Errol', 1, 'Bahamas', 21, 'Entry Fragger', 55.75, 177, 1035, 0.03, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2870, 'Odele Almeida', 5, 'United States', 25, 'Leader', 43.38, 367, 1871, 2.14, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2871, 'Cari Jacob', 21, 'Kazakhstan', 39, 'Flex', 12.46, 244, 1084, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2872, 'Elka Snipe', 17, 'China', 29, 'Support', 29.91, 14, 2667, 2.91, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2873, 'Lotta Hendriksen', 19, 'Portugal', 38, 'Support', 16.61, 202, 1248, 2.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2874, 'Merle Itzhak', 18, 'Brazil', 34, 'Flex', 17.01, 302, 1514, 2.07, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2875, 'Calli Utteridge', 15, 'Russia', 40, 'Support', 62.28, 254, 1327, 0.28, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2876, 'Christa Seage', 12, 'Vietnam', 21, 'Entry Fragger', 8.04, 261, 365, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2877, 'Tierney Byers', 16, 'Russia', 38, 'Support', 13.57, 366, 2266, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2878, 'Ingeborg Paulsen', 8, 'Indonesia', 28, 'Leader', 96.03, 90, 1470, 2.27, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2879, 'Constantin Gorrissen', 12, 'France', 29, 'Entry Fragger', 86.91, 75, 659, 1.19, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2880, 'Cristabel Forbes', 18, 'Greece', 35, 'Entry Fragger', 85.42, 101, 1538, 0.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2881, 'Wilone Sorrill', 11, 'Mongolia', 39, 'Entry Fragger', 23.50, 403, 2978, 2.45, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2882, 'Larisa Massei', 11, 'Denmark', 22, 'Leader', 29.22, 396, 1255, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2883, 'Marco Piddick', 4, 'China', 37, 'Support', 58.25, 435, 654, 0.37, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2884, 'Nonnah Bachs', 18, 'Kazakhstan', 29, 'Entry Fragger', 58.61, 243, 2931, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2885, 'Erna Phalp', 20, 'France', 28, 'Entry Fragger', 28.15, 107, 72, 2.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2886, 'Cathi Mattea', 5, 'China', 23, 'Leader', 93.23, 267, 2679, 0.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2887, 'Delmar Lightbown', 17, 'China', 42, 'Leader', 22.54, 196, 1759, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2888, 'Wilhelmine English', 5, 'Brazil', 20, 'Leader', 79.32, 303, 2505, 2.20, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2889, 'Joice Lehrian', 18, 'China', 33, 'Support', 23.13, 356, 612, 0.24, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2890, 'Papagena McKain', 2, 'Russia', 33, 'Leader', 37.28, 315, 2530, 0.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2891, 'Pooh Lesmonde', 20, 'Poland', 25, 'Leader', 93.61, 315, 826, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2892, 'Bert Carress', 14, 'Indonesia', 19, 'Support', 55.43, 342, 2810, 2.39, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2893, 'Jacklin Leverette', 17, 'Tajikistan', 31, 'Flex', 72.48, 161, 41, 2.16, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2894, 'Leonelle Shorthouse', 6, 'Slovenia', 28, 'Leader', 53.59, 237, 2550, 2.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2895, 'York Mileham', 19, 'Russia', 31, 'Leader', 85.10, 178, 1950, 1.66, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2896, 'Tabbatha Ipgrave', 12, 'Brazil', 34, 'Entry Fragger', 12.78, 149, 1150, 0.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2897, 'Nanon Pochet', 3, 'Brazil', 26, 'Flex', 32.59, 195, 898, 0.52, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2898, 'Archy Boys', 16, 'Tanzania', 27, 'Support', 1.67, 64, 1329, 2.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2899, 'Elysha Willets', 16, 'United States', 18, 'Support', 19.29, 176, 2263, 1.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2900, 'Pablo Beach', 5, 'Sri Lanka', 36, 'Support', 11.84, 43, 1753, 1.21, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2901, 'Claudell Leechman', 21, 'Poland', 28, 'Entry Fragger', 61.45, 198, 821, 2.06, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2902, 'Cyrus Kohring', 14, 'Indonesia', 26, 'Entry Fragger', 56.52, 166, 1471, 2.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2903, 'Selle Prewer', 21, 'Greece', 37, 'Flex', 55.91, 324, 1820, 1.77, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2904, 'Rahal Pach', 18, 'China', 23, 'Flex', 40.90, 144, 2853, 0.13, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2905, 'Catarina Eicheler', 17, 'Argentina', 32, 'Support', 41.86, 360, 1808, 2.34, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2906, 'Riki Revens', 11, 'Netherlands', 30, 'Support', 0.88, 246, 1305, 1.04, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2907, 'Carleton Larret', 11, 'China', 35, 'Leader', 48.53, 239, 2150, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2908, 'Danyelle McWhannel', 15, 'Brazil', 38, 'Entry Fragger', 55.30, 264, 1748, 2.54, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2909, 'Brittany Hawgood', 15, 'Poland', 19, 'Flex', 0.85, 147, 2222, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2910, 'Broderick Priditt', 15, 'Indonesia', 40, 'Entry Fragger', 98.60, 279, 1931, 2.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2911, 'Silvie Digwood', 9, 'Sweden', 20, 'Entry Fragger', 47.68, 322, 594, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2912, 'Nappie Pinkie', 12, 'Kosovo', 23, 'Leader', 47.83, 402, 2602, 1.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2913, 'Oneida Eyckelberg', 2, 'Philippines', 28, 'Entry Fragger', 2.81, 267, 196, 1.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2914, 'Jordana Gartan', 19, 'Turkmenistan', 19, 'Support', 42.69, 202, 994, 0.51, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2915, 'Sayer Shwalbe', 11, 'Armenia', 37, 'Support', 6.38, 136, 1417, 0.47, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2916, 'Mercedes Mullineux', 13, 'Indonesia', 29, 'Entry Fragger', 22.49, 181, 2395, 1.72, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2917, 'Jasun Torr', 19, 'United States', 20, 'Flex', 42.61, 454, 630, 0.10, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2918, 'Tandy Meanwell', 12, 'Peru', 28, 'Leader', 27.04, 20, 2653, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2919, 'Elroy Balmann', 7, 'Thailand', 28, 'Flex', 1.17, 438, 377, 2.84, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2920, 'Sheila Cullen', 7, 'China', 18, 'Support', 71.98, 20, 512, 2.67, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2921, 'Dalli Landsbury', 4, 'Indonesia', 39, 'Entry Fragger', 70.85, 111, 2005, 2.85, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2922, 'Abbe Scholey', 9, 'Russia', 29, 'Support', 17.22, 259, 1740, 0.32, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2923, 'Chauncey Pawson', 3, 'Palestinian Territory', 39, 'Flex', 33.90, 182, 736, 0.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2924, 'Ancell Timblett', 5, 'China', 35, 'Leader', 54.53, 423, 1840, 2.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2925, 'Marti Effnert', 12, 'China', 36, 'Entry Fragger', 9.70, 138, 1762, 2.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2926, 'Claudelle Reolfo', 1, 'Argentina', 36, 'Entry Fragger', 71.54, 242, 506, 1.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2927, 'Correy Wight', 6, 'Portugal', 34, 'Leader', 25.51, 469, 1210, 1.53, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2928, 'Con Glenton', 2, 'Brazil', 35, 'Flex', 66.43, 100, 505, 2.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2929, 'Carroll Groom', 1, 'Uzbekistan', 27, 'Flex', 62.02, 278, 481, 1.90, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2930, 'Bennie Reskelly', 3, 'China', 24, 'Leader', 33.78, 10, 103, 0.56, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2931, 'Daune Basant', 5, 'Ukraine', 42, 'Leader', 4.97, 386, 1647, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2932, 'Kaja Grinvalds', 17, 'Uzbekistan', 20, 'Leader', 77.60, 211, 595, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2933, 'Hetty Beaconsall', 12, 'China', 41, 'Entry Fragger', 8.31, 145, 1792, 1.57, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2934, 'Mandy Widdall', 17, 'United States', 27, 'Support', 56.95, 470, 1995, 2.78, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2935, 'Austina Swate', 2, 'Poland', 37, 'Entry Fragger', 93.07, 190, 1274, 2.95, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2936, 'Wendel Ahlin', 9, 'France', 41, 'Entry Fragger', 18.51, 2, 1743, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2937, 'Shir Wileman', 3, 'Philippines', 30, 'Support', 9.95, 312, 1641, 0.92, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2938, 'Grace Mintrim', 9, 'China', 42, 'Support', 46.34, 433, 536, 0.99, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2939, 'Carolee Code', 15, 'China', 36, 'Entry Fragger', 4.34, 269, 881, 1.87, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2940, 'Cecile Romanetti', 1, 'China', 37, 'Flex', 28.90, 446, 1856, 0.22, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2941, 'Willie Cavolini', 16, 'Philippines', 18, 'Flex', 18.99, 391, 1890, 1.02, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2942, 'Bastian Bothie', 13, 'Indonesia', 34, 'Flex', 84.89, 403, 2446, 1.93, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2943, 'Nollie Straker', 19, 'Bulgaria', 36, 'Support', 18.31, 26, 2977, 0.30, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2944, 'Buck Rutland', 13, 'Philippines', 33, 'Support', 81.18, 130, 2526, 0.18, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2945, 'Marie-ann Spriggen', 21, 'Indonesia', 31, 'Support', 83.73, 365, 483, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2946, 'Jan Crummy', 9, 'Russia', 42, 'Leader', 98.51, 462, 468, 0.86, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2947, 'Blair Benesevich', 21, 'Philippines', 25, 'Leader', 74.79, 448, 1678, 0.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2948, 'Ulrike Kermath', 5, 'Czech Republic', 36, 'Support', 43.04, 497, 1784, 1.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2949, 'Jessika Kunze', 3, 'Peru', 18, 'Entry Fragger', 54.21, 60, 1715, 1.58, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2950, 'Ramon Berendsen', 15, 'Philippines', 39, 'Entry Fragger', 82.54, 149, 254, 0.88, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2951, 'Sherill Jaffra', 17, 'Uzbekistan', 42, 'Support', 13.44, 484, 2744, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2952, 'Christabella Lamswood', 4, 'Russia', 30, 'Leader', 82.76, 92, 1931, 1.63, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2953, 'Hilliary Couvet', 9, 'Peru', 39, 'Entry Fragger', 38.56, 281, 2813, 1.38, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2954, 'Bunnie Abbe', 9, 'China', 33, 'Flex', 89.52, 47, 2264, 1.31, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2955, 'Doll Tripp', 16, 'Portugal', 34, 'Support', 55.18, 127, 1493, 1.33, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2956, 'Garth Rossetti', 3, 'Indonesia', 23, 'Support', 41.86, 40, 1157, 0.23, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2957, 'Rudie Bowskill', 3, 'Sweden', 29, 'Leader', 53.01, 36, 1883, 1.50, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2958, 'Tuck Vine', 6, 'Mauritania', 34, 'Support', 63.62, 389, 889, 0.98, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2959, 'Dylan Giacovetti', 2, 'Peru', 25, 'Flex', 17.90, 455, 2884, 1.43, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2960, 'Micah Kidgell', 11, 'Indonesia', 21, 'Flex', 15.70, 39, 1483, 0.65, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2961, 'Rudyard Peschet', 21, 'China', 34, 'Support', 47.24, 176, 2791, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2962, 'Merrili Westgarth', 17, 'Brazil', 39, 'Flex', 14.65, 401, 2748, 2.55, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2963, 'Pattie Brittoner', 17, 'Russia', 20, 'Support', 59.76, 324, 181, 1.15, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2964, 'Jessey Ridewood', 11, 'Philippines', 41, 'Leader', 49.98, 268, 1610, 1.60, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2965, 'Nannie Espinel', 19, 'China', 40, 'Leader', 48.58, 387, 277, 2.01, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2966, 'Cris Clinkard', 16, 'Indonesia', 18, 'Entry Fragger', 80.99, 206, 1943, 2.70, 0, 0, NULL, NULL, 'blank-pfp.jpg'),
+(2967, 'Catrina Webster', 11, 'China', 32, 'Flex', 69.82, 49, 214, 0.91, 0, 0, NULL, NULL, 'blank-pfp.jpg');
+
+--
+-- Indexy pro exportované tabulky
+--
+
+--
+-- Indexy pro tabulku `r6_player`
+--
+ALTER TABLE `r6_player`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pro tabulky
+--
+
+--
+-- AUTO_INCREMENT pro tabulku `r6_player`
+--
+ALTER TABLE `r6_player`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2968;
+COMMIT;

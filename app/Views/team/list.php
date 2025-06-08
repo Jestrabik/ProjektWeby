@@ -4,7 +4,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Domů</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Hráči</li>
+    <li class="breadcrumb-item active" aria-current="page">Týmy</li>
   </ol>
 </nav>
 

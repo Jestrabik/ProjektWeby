@@ -50,7 +50,6 @@ class PlayerController extends BaseController
         return view('player/create', [
             'nationalities' => $this->nationalityModel->findAll(),
             'teams' => $this->teamModel->findAll(),
-            'roles' => $this->roleModel->findAll(),
         ]);
     }
 
@@ -62,9 +61,9 @@ class PlayerController extends BaseController
         $validation = \Config\Services::validation();
         $validation->setRules([
             'player_name' => 'required',
-            'nationality_id' => 'required|is_not_unique[nationalities.id]',
-            'team_id' => 'required|is_not_unique[r6_team.id]',
-            'role_id' => 'required|is_not_unique[r6_role.id]',
+            'nationality' => 'required',
+            'team_id' => 'required|is_not_unique[r6_team.team_id]',
+            'role' => 'required',
             'image' => 'uploaded[image]|is_image[image]|max_size[image,2048]',
         ]);
         if (! $validation->withRequest($this->request)->run()) {
@@ -107,55 +106,36 @@ class PlayerController extends BaseController
             'player' => $player,
             'nationalities' => $this->nationalityModel->findAll(),
             'teams' => $this->teamModel->findAll(),
-            'roles' => $this->roleModel->findAll(),
         ]);
     }
 
     // Uloží změny hráče
     public function update($id)
     {
-        $player = $this->playerModel->find($id);
-        if (!$player) {
-            AlertLibrary::setAlert('danger', 'Hráč nebyl nalezen.');
-            return redirect()->to('/players');
+        $playerModel = new \App\Models\PlayerModel();
+        $player = $playerModel->find($id);
+
+        $data = $this->request->getPost();
+
+        // Zpracování uploadu obrázku
+        $img = $this->request->getFile('image');
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            $newName = $img->getRandomName();
+            $img->move(ROOTPATH . 'public/images', $newName);
+            $data['image'] = $newName;
+
+            // Smazání starého obrázku (pokud není defaultní)
+            if (!empty($player['image']) && $player['image'] !== 'blank-pfp.jpg') {
+                @unlink(ROOTPATH . 'public/images/' . $player['image']);
+            }
+        } else {
+            // Pokud nebyl nahrán nový obrázek, ponech původní
+            $data['image'] = $player['image'];
         }
 
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'player_name' => 'required',
-            'nationality_id' => 'required|is_not_unique[r6_nationality.id]',
-            'team_id' => 'required|is_not_unique[r6_team.id]',
-            'role_id' => 'required|is_not_unique[r6_role.id]',
-        ]);
-        if (! $validation->withRequest($this->request)->run()) {
-            AlertLibrary::setAlert('danger', 'Chyba validace. Zkontrolujte formulář.');
-            return redirect()->back()->withInput();
-        }
+        $playerModel->update($id, $data);
 
-        $data = [
-            'player_name' => $this->request->getPost('player_name'),
-            'nationality_id' => $this->request->getPost('nationality_id'),
-            'team_id' => $this->request->getPost('team_id'),
-            'role_id' => $this->request->getPost('role_id'),
-            'age' => $this->request->getPost('age'),
-            'headshot_percentage' => $this->request->getPost('headshot_percentage'),
-            'total_games' => $this->request->getPost('total_games'),
-            'total_deaths' => $this->request->getPost('total_deaths'),
-            'kd_ratio' => $this->request->getPost('kd_ratio'),
-            'description' => $this->request->getPost('description'),
-        ];
-
-        $image = $this->request->getFile('image');
-        if ($image && $image->isValid() && !$image->hasMoved()) {
-            $imageName = $image->getRandomName();
-            $image->move(WRITEPATH . 'uploads', $imageName);
-            $data['image'] = $imageName;
-        }
-
-        $this->playerModel->update($id, $data);
-
-        AlertLibrary::setAlert('success', 'Hráč byl úspěšně upraven.');
-        return redirect()->to('/players');
+        return redirect()->to('players/detail/' . $id)->with('success', 'Hráč byl upraven.');
     }
 
     // Soft delete hráče

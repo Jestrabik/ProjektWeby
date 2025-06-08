@@ -1,9 +1,9 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
-<h1 class="mb-4 text-center">Vítejte v administraci R6 projektu</h1>
+<h1 class="mb-4 text-center">Projekt - R6 esport</h1>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="card text-center mb-4">
             <div class="card-body">
                 <h5 class="card-title">Správa hráčů</h5>
@@ -12,12 +12,21 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="card text-center mb-4">
             <div class="card-body">
                 <h5 class="card-title">Správa týmů</h5>
-                <p class="card-text">Prohlížejte, přidávejte, upravujte a mažte týmy v databázi.</p>
+                <p class="card-text">Prohlížejte týmy v databázi.</p>
                 <a href="<?= site_url('teams') ?>" class="btn btn-primary">Přejít na týmy</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Zápasy</h5>
+                <p class="card-text">Prohlížejte všechny esport zápasy v databázi.</p>
+                <a href="<?= site_url('matches') ?>" class="btn btn-primary">Přejít na zápasy</a>
             </div>
         </div>
     </div>

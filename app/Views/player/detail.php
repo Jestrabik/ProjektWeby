@@ -5,11 +5,9 @@
 <div class="d-flex justify-content-center">
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
-      <?php if (!empty($player['image'])): ?>
       <div class="col-md-4 d-flex align-items-center">
-        <img src="<?= base_url('writable/uploads/' . $player['image']) ?>" class="img-fluid rounded-start mx-auto d-block" alt="player image">
+        <img src="<?= base_url('images/' . (!empty($player['image']) ? $player['image'] : 'blank-pfp.jpg')) ?>" class="img-fluid rounded-start mx-auto d-block" alt="player image">
       </div>
-      <?php endif; ?>
       <div class="col-md-8">
         <div class="card-body text-center">
           <h5 class="card-title"><?= esc($player['player_name']) ?></h5>
@@ -30,5 +28,6 @@
 </div>
 <div class="text-center">
   <a href="<?= site_url('players') ?>" class="btn btn-secondary">Zpět na seznam</a>
+  <a href="<?= site_url('players/edit/' . $player['id']) ?>" class="btn btn-warning ms-2">Upravit hráče</a>
 </div>
 <?= $this->endSection() ?>

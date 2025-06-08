@@ -22,8 +22,8 @@ class PlayerModel extends Model
         'total_games',
         'total_deaths',
         'kd_ratio',
-        'image',
         'description',
+        'image',
     ];
 
     protected $useTimestamps = true;

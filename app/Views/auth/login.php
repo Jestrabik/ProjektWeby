@@ -13,6 +13,11 @@
         <input type="password" class="form-control" name="password" id="password" required>
     </div>
     <button type="submit" class="btn btn-primary">Přihlásit se</button>
+    <a href="<?= site_url('register') ?>" class="btn btn-link">Zaregistrovat se</a>
 </form>
+
+<?php if (isset($error)): ?>
+    <div class="alert alert-danger mt-3"><?= esc($error) ?></div>
+<?php endif; ?>
 
 <?= $this->endSection() ?>
